@@ -1,0 +1,35 @@
+<div class="image-uploader" layout="column" layout-align="start start" layout-wrap flex>
+    <div class="btn-file" aria-label="Choose Image">
+        <span ng-if="imageTitle">
+            <md-icon md-font-icon="icon-file-image-box md-accent"></md-icon>{{imageTitle}}
+        </span>
+        <span ng-if="!imageTitle">
+            <md-icon md-font-icon="icon-file-image-box md-accent"></md-icon>Choose Image
+        </span>
+        <input type='file' ng-model-instant onchange="angular.element(this).scope().imageUpload(this)" />
+    </div>
+</div>
+<!-- <div class="image-uploader" layout="row" layout-align="start center" layout-wrap flex>
+
+       <ms-widget flippable="true"  ng-repeat="item in itemList">
+            <ms-widget-front class="white-bg"  ng-mouseover="item.hover = true" ng-mouseleave="item.hover = false">
+
+                      <div layout="row" ng-show="item.hover"
+                       layout-align="start center" class="increase-buttons">
+                            <md-icon md-font-icon="icon-plus-box" class="icon"
+                             ng-click="vm.increaseSize(item); $event.stopPropagation();"></md-icon>
+
+                             <md-icon md-font-icon="icon-minus-box" class="icon"
+                             ng-click="vm.decreaseSize(item); $event.stopPropagation();"></md-icon>
+
+                             <md-icon  md-font-icon="icon-close-circle" class="icon btn-remove-image"
+                             ng-click="vm.removeImage(item)"></md-icon>
+
+                       </div>
+
+
+                    <img class="h-{{vm.getSize(item)}} w-{{vm.getSize(item)}}"
+                    ng-src="{{item.data}}"/>
+            </ms-widget-front>
+     </ms-widget>
+     </div> -->

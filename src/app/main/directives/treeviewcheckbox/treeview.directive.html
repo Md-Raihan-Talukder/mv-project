@@ -1,0 +1,10 @@
+<div ng-if="vm.items" ui-tree="vm.treeOptions" style="width: 100%; clear: both;">
+    <ol ui-tree-nodes ng-class="{hidden: collapsed}" style="width: 100%;" ng-model="vm.items" data-nodrag>
+        <li data-nodrag ng-repeat="node in vm.items | filter: vm.itemFilter" ui-tree-node flex="100" style="width: 100%;" ng-include="'app/main/directives/treeviewcheckbox/treeview-template.html'"></li>
+    </ol>
+
+</div>
+
+<md-button style="float: right; margin: 10px;" ng-if="vm.options.showAddBtn" class="md-fab md-accent md-icon-button small-add-button" ng-click="vm.addNewItem($event)" aria-label="add">
+    <md-icon md-font-icon="icon-plus"></md-icon>
+</md-button>

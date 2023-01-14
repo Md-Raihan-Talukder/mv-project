@@ -1,0 +1,111 @@
+<div id="todo" class="page-layout carded left-sidenav" layout="row">
+
+    <!-- TOP BACKGROUND -->
+    <div class="top-bg md-accent-bg"></div>
+    <!-- / TOP BACKGROUND -->
+
+    <!-- LEFT SIDENAV -->
+    <md-sidenav class="sidenav" md-is-locked-open="$mdMedia('gt-md')" md-component-id="main-sidenav" ng-include="'app/main/tasks/todo/sidenavs/main/main-sidenav.html'" ms-scroll ms-sidenav-helper>
+    </md-sidenav>
+    <!-- / LEFT SIDENAV -->
+
+    <!-- CENTER -->
+    <div class="center" layout="column" flex>
+
+        <!-- CONTENT HEADER -->
+        <div class="header" layout="row" layout-align="start center">
+            <div class="search-wrapper md-whiteframe-4dp" flex layout="row" layout-align="start center">
+                <md-button class="md-icon-button sidenav-toggle" ng-click="vm.toggleSidenav('main-sidenav')" hide-gt-md aria-label="Toggle sidenav">
+                    <md-icon md-font-icon="icon-menu" class="icon"></md-icon>
+                </md-button>
+
+                <div class="search" flex layout="row" layout-align="start center">
+                    <input flex ng-model="vm.taskFilters.search" type="text" placeholder="Search for a text or tag">
+                </div>
+
+                <md-button class="md-icon-button sidenav-toggle" aria-label="search">
+                    <md-icon md-font-icon="icon-magnify" class="icon s24"></md-icon>
+                    <md-tooltip><span>Write semicolon eparated text and click here to get more data</span></md-tooltip>
+                </md-button>
+
+            </div>
+        </div>
+        <!-- / CONTENT HEADER -->
+
+        <!-- CONTENT CARD -->
+        <div class="content-card" layout="column" flex>
+
+            <!-- CONTENT TOOLBAR -->
+            <div class="toolbar" layout="row" layout-wrap layout-align="space-between center">
+
+                <div flex layout-gt-sm="row" layout="column" layout-wrap layout-align="space-between start">
+
+                    <div layout="row" class="pt-5" layout-align="start center">
+
+                        <md-select class="simplified" ng-model="vm.selectedFilter.dueDate" placeholder="Due Date">
+                            <md-option value="Next 3 days">Next 3 days</md-option>
+                            <md-option value="Next 7 days">Next 7 days</md-option>
+                            <md-option value="Next 2 weeks">Next 2 weeks</md-option>
+                            <md-option value="Next month">Next month</md-option>
+                        </md-select>
+
+                    </div>
+
+                    <div layout="row" layout-align="start center">
+                        <span class="page-info">{{
+                            vm.filteredItems.length===0 ? 0 : (vm.currentPage * vm.pageSize) + 1}} -
+                            {{(vm.currentPage + 1) * vm.pageSize > vm.filteredItems.length ?
+                            vm.filteredItems.length : (vm.currentPage + 1) * vm.pageSize}} of {{ vm.filteredItems.length }}</span>
+                        <md-button class="md-icon-button arrow" aria-label="Previous" ng-disabled="vm.currentPage == 0" ng-click="vm.currentPage= vm.currentPage-1">
+                            <md-icon md-font-icon="icon-chevron-left"></md-icon>
+                            <md-tooltip><span>Previous</span></md-tooltip>
+                        </md-button>
+
+                        <md-button class="md-icon-button arrow" aria-label="Next" ng-click="vm.currentPage= vm.currentPage+1" ng-disabled="vm.currentPage >= vm.filteredItems.length/ vm.pageSize - 1">
+                            <md-icon md-font-icon="icon-chevron-right"></md-icon>
+                            <md-tooltip><span>Next</span></md-tooltip>
+                        </md-button>
+                    </div>
+                </div>
+
+                <div flex layout="row" layout-align="end center">
+                    <md-select class="simplified" ng-model="vm.taskOrder" placeholder="Order" ng-change="vm.taskOrderDescending = vm.taskOrder === '' ? false : vm.taskOrderDescending">
+                        <md-option value="startDateTimestamp">Start Date</md-option>
+                        <md-option value="dueDateTimestamp">Due Date</md-option>
+                        <md-option value="">Manual</md-option>
+                        <md-option value="title">Title</md-option>
+                    </md-select>
+
+                    <md-button class="md-icon-button" ng-disabled="vm.taskOrder === ''" ng-click="vm.taskOrderDescending = !vm.taskOrderDescending" aria-label="Sort Direction">
+                        <md-icon md-font-icon="icon-sort-ascending" ng-if="vm.taskOrderDescending === false"></md-icon>
+                        <md-icon md-font-icon="icon-sort-descending" ng-if="vm.taskOrderDescending === true"></md-icon>
+                    </md-button>
+                </div>
+
+            </div>
+            <!-- / CONTENT TOOLBAR -->
+
+            <!-- CONTENT -->
+            <div class="content" layout="row" flex>
+
+                <!-- Todo list pane -->
+                <md-content class="todo-list-pane" flex ng-include="'app/main/tasks/todo/views/list/list-view.html'" ms-scroll="vm.msScrollOptions">
+                </md-content>
+                <!-- / Todo list pane -->
+
+                <!-- ADD CONTACT BUTTON -->
+                <md-button class="md-fab md-accent md-icon-button" id="add-task-button" ng-click="vm.openTaskDialog($event)" aria-label="add task">
+                    <md-icon md-font-icon="icon-plus"></md-icon>
+                </md-button>
+                <!-- / ADD CONTACT BUTTON -->
+
+            </div>
+            <!-- / CONTENT -->
+
+        </div>
+        <!-- / CONTENT CARDb-->
+
+    </div>
+    <!-- / CENTER -->
+
+</div>

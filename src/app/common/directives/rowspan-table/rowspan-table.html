@@ -1,0 +1,26 @@
+<div class="p-5 msb-report-table ">
+    <table class="">
+        <thead>
+            <th ng-repeat="th in vm.headerDef">
+                {{th.title}}
+            </th>
+        </thead>
+        <tr ng-repeat="row in vm.tableItems" ng-init="strip=vm.getStrip(row)">
+            <td ng-repeat="col in row" rowspan="{{col.rowSpan}}" ng-init="column=vm.getColumn(col)">
+
+                <!-- <msb-strip-table-column strip-def= "stripDef" 
+                        row-height = "vmRowheight"
+                        strip-column="column"
+                        all-columns = "vm.headerDef" 
+                        strip-object="vm.strips[0]"
+                        on-change = "vm.onChangeValue(column, strip)"
+                        on-remove = "vm.onRemove(strip)"
+                        on-edit="vm.onEdit(strip)"
+                        on-layout="vm.onLayout(strip)">                       
+                    </msb-strip-table-column>   -->
+
+                <!-- {{col.text}} -->
+            </td>
+        </tr>
+    </table>
+</div>

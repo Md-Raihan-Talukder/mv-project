@@ -1,0 +1,88 @@
+<div style="height: 100%;width:100%; background-color: rgb(255, 255, 255);" layout="column">
+
+    <div class="header md-accent-bg" layout="column">
+        <div class="logo mt-5" layout="row">
+            <span class="logo-icon">
+                <md-icon md-font-icon="icon-menu" class="icon s24 ml-10"></md-icon>
+            </span>
+            <span class="header-title text-truncate">{{vm.sideNav.subMenuHeader}}</span>
+        </div>
+    </div>
+
+
+    <div class="content flex-scrollable only-y" style="height: 100%;" ms-scroll>
+        <div layout="row" ng-repeat="item in vm.sideNav.menuList">
+            <div layout="column" ng-if="!item.child" class="navigation-simple" style="width:100%;background-color:rgb(248, 248, 248)">
+                <md-button layout="row" class="h-35 item bb" ui-sref="{{item.state}}" ui-sref-active="active blue-100-bg" ng-click="vm.headerTitle=item.title">
+                    <div layout="column" style="margin-left: -10px;">
+                        <md-icon md-font-icon="icon-apps" class="s16"></md-icon>
+                    </div>
+                    <div layout="column" class="black-fg">
+                        <span class=""></span>{{item.title}}</span>
+                    </div>
+                </md-button>
+            </div>
+
+
+            <msb-expand-collapse ng-if="item.child && item.child.length>0">
+                <div layout="row" class="msb-collapse-header cursor-pointer navigation-simple" style="width:100%" ng-click="(clicked) ?  clicked=false: clicked=true">
+                    <md-button class="h-40 item  bb" style="width:100%;background-color: rgb(255, 237, 204);">
+                        <div layout="row" layout-align="start center" style="height: 100%;margin-left: -10px;">
+                            <md-icon md-font-icon="icon-view-list" class="s16 md-accent"></md-icon>
+                            <div class="w-135">{{item.title}}</div>
+                            <md-icon ng-if="!clicked" md-font-icon="icon-chevron-right" class="s16 md-accent"></md-icon>
+                            <md-icon ng-if="clicked" md-font-icon="icon-chevron-down" class="s16 md-accent">
+                            </md-icon>
+                        </div>
+                    </md-button>
+                </div>
+
+                <div class="msb-collapse-content navigation-simple" style="width: 100%;display: none;background-color: rgb(248, 248, 248)">
+                    <div ng-repeat="items in item.child">
+                        <md-button layout="row" ng-if="!items.child" class="h-35 item bb" style="width: 100%;" ui-sref="{{items.state}}" ui-sref-active="active blue-100-bg" ng-click="vm.headerTitle=items.title">
+                            <div layout="column" class="">
+                                <md-icon md-font-icon=" icon-apps" class="s16">
+                                </md-icon>
+                            </div>
+                            <div layout="column" class="black-fg">
+                                <span>{{items.title}}</span>
+                            </div>
+                        </md-button>
+
+                        <msb-expand-collapse ng-if="items.child && items.child.length>0">
+
+                            <div layout="row" class="msb-collapse-header cursor-pointer navigation-simple" style="width:100%" ng-click="(clicked) ? clicked=false: clicked=true">
+                                <md-button class="h-35 item  bb" style="width:100%;background-color:  rgb(255, 248, 235)">
+                                    <div layout="row" layout-align="start center" style="height: 100%;">
+                                        <md-icon md-font-icon="icon-view-list" class="s14 md-accent">
+                                        </md-icon>
+                                        <div class="w-120" style="margin-left: -5px;">{{items.title}}</div>
+                                        <md-icon ng-if="clicked" md-font-icon="icon-chevron-right" class="s16 md-accent">
+                                        </md-icon>
+                                        <md-icon ng-if="!clicked" md-font-icon="icon-chevron-down" class="s16 md-accent">
+                                        </md-icon>
+                                    </div>
+                                </md-button>
+                            </div>
+
+
+                            <div class="msb-collapse-content navigation-simple" style="width: 100%;display: none;background-color: rgb(248, 248, 248) ">
+                                <md-button layout="row" ng-repeat="subItem in items.child" class="h-40 item bb" style="width: 100%;" ui-sref="{{subItem.state}}" ui-sref-active="active blue-100-bg" ng-click="vm.headerTitle=subItem.title">
+                                    <div layout="column" style="margin-left: 10px;">
+                                        <md-icon md-font-icon=" icon-apps" class="s12">
+                                        </md-icon>
+                                    </div>
+
+                                    <div layout="column" class="black-fg">
+                                        <span>{{subItem.title}}</span>
+                                    </div>
+                                </md-button>
+                            </div>
+                        </msb-expand-collapse>
+                    </div>
+                </div>
+            </msb-expand-collapse>
+
+        </div>
+    </div>
+</div>

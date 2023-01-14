@@ -1,0 +1,268 @@
+<div id="test-setup" layout="row" layout-align="start center" style="min-height: 100%; height:100%; overflow:hidden; ">
+
+
+    <div class="left w-420 border-right" style="min-height: 100%; height:100%; max-height: 100%;" layout="column" layout-align="start top">
+        <ms-widget layout="column" style="padding: 0; min-height: 100%; height:100%; width: 100% " layout-align="start top">
+
+            <ms-widget-front style="min-height: 100%; height:100%; width: 100%;" layout="column" layout-align="start top">
+                <div layout="column">
+                    <div class=" pl-5 grey-200-bg md-subhead h-55 b" layout="row" layout-align="start center" flex="100">
+                        <div class="pl-20" flex>Tests</div>
+
+                        <div class="p-15">
+                            <a ng-click="vm.createTest()">
+                                <u>New</u>
+                                <md-tooltip>
+                                    <span>New Test</span>
+                                </md-tooltip>
+                            </a>
+                        </div>
+                    </div>
+                    <div style="min-height: 100%; height:100%; width: 100%;" ms-scroll>
+                        <div class="border-bottom" layout="column">
+                            <div layout="row" layout-align="start center">
+                                <div class="pl-20 mr-15">
+                                    <md-input-container md-no-float class="md-block">
+                                        <input ng-model="vm.labTest.title" placeholder="Title">
+                                    </md-input-container>
+                                </div>
+                                <div class="mr-15">
+                                    <md-input-container md-no-float class="md-block">
+                                        <input ng-model="vm.labTest.description" placeholder="Description">
+                                    </md-input-container>
+                                </div>
+                            </div>
+                            <div class="mb-5" layout="row">
+
+                                <div flex class="ml-15 cursor-pointer" ng-click="vm.selectColorDependentTest(vm.labTest)">
+                                    <md-icon ng-if="!vm.labTest.colorDependent" md-font-icon="icon-checkbox-blank-outline" class="icon">
+                                    </md-icon>
+                                    <md-icon ng-if="vm.labTest.colorDependent" md-font-icon="icon-checkbox-marked-outline" class="icon md-accent">
+                                    </md-icon>
+                                    <span ng-if="!vm.labTest.colorDependent"> Color Independent </span>
+                                    <span ng-if="vm.labTest.colorDependent"> Color Dependent </span>
+
+                                </div>
+                                <div class="mr-10">
+                                    <md-button ng-click="vm.addTest()" class="b grey-100-bg" style="border-color: #009999;">
+                                        Add
+                                    </md-button>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="grey-100-bg w-420 h-40" layout="row" layout-align="start center">
+                            <div flex="35">
+                                <span class="font-size-14 ml-15"> Title </span>
+                            </div>
+                            <div flex="10" class="m-5">
+                                <span class="font-size-14"> Color </span>
+                            </div>
+                            <div flex="40">
+                                <span class="font-size-14"> Description </span>
+                            </div>
+                        </div>
+                        <div layout="row" layout-align="start center" class="" aria-label="Test" ng-repeat="test in vm.testList">
+                            <div class="cursor-pointer test-item w-420 h-40 border-bottom brad-5" layout="row" layout-align="start center" ng-click="vm.selectTest(test)" flex="100" ng-class="{'blue-100-bg': test.TECHDISER_ID == vm.selectedTest.TECHDISER_ID}">
+                                <div flex="35">
+                                    <span class="font-size-14 ml-15">{{test.title}}</span>
+                                </div>
+                                <div flex="10" class="m-5">
+                                    <md-icon ng-if="!test.colorDependent" md-font-icon="icon-checkbox-blank-outline" class="icon">
+                                    </md-icon>
+                                    <md-icon ng-if="test.colorDependent" md-font-icon="icon-checkbox-marked-outline" class="icon md-accent">
+                                    </md-icon>
+                                </div>
+                                <div flex="40">
+                                    <span class="font-size-14">{{test.description}}</span>
+                                </div>
+
+                                <div flex="10" layout="row" layout-align="start center">
+                                    <div class="show-action-button">
+                                        <md-icon ng-click="vm.editTest(test);" md-font-icon="icon-pencil" class="s16 mr-5" style="border-radius:100px;color:#9c9c9c;">
+                                            <md-tooltip><span>Edit Test</span></md-tooltip>
+                                        </md-icon>
+                                    </div>
+                                    <div class="cursor-pointer show-action-button">
+                                        <md-icon style="color: red;" ng-click="vm.deleteTest(test)" md-font-icon="icon-close" class="icon md-accent">
+                                            <md-tooltip><span>Delete Test</span></md-tooltip>
+                                        </md-icon>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </ms-widget-front>
+        </ms-widget>
+    </div>
+    <div class="right border" flex style="min-height: 100%; height:100%; max-height: 100%; width: 100%;" layout="column" layout-align="start top">
+
+        <ms-widget layout="column" style="padding: 0; min-height: 100%; height:100%; width: 100% " layout-align="start top">
+
+            <ms-widget-front style="min-height: 100%; height:100%; width: 100%;" layout="column" layout-align="start top">
+                <div class=" pl-5 grey-200-bg md-subhead h-55 b mb-10" flex="100" layout="row" layout-align="space-between center">
+                    <div>
+                        <span>{{vm.selectedTest.title}}</span>
+                    </div>
+                    <div class="mr-20">
+                        <md-button ng-click="vm.save()" class="b grey-300-bg" style="border-color: #009999;">
+                            save
+                        </md-button>
+                    </div>
+                </div>
+                <div style="min-height: 100%; height:100%; width: 100%;" ms-scroll>
+                    <div layout="row" flex="100">
+
+                        <div class="mr-5 border-right" style="min-height: 900px;" flex="20">
+                            <div class="h-55 grey-200-bg font-size-16 b" layout="row" layout-align="start center">
+                                <div class="ml-10" flex>
+                                    Attributes
+                                </div>
+                                <div class="p-15">
+                                    <a ng-click="vm.createAttribute()">
+                                        <u>New</u>
+                                        <md-tooltip>
+                                            <span>New Attribute</span>
+                                        </md-tooltip>
+                                    </a>
+                                </div>
+                            </div>
+                            <div layout="column" layout-align="start start" flex="100">
+                                <div class="border-bottom" layout="column" layout-align="start start">
+                                    <div layout="row" layout-align="start center">
+                                        <div class="pl-20 mr-15">
+                                            <md-input-container md-no-float class="md-block">
+                                                <input ng-model="vm.attribute.title" placeholder="Attribute Title">
+                                            </md-input-container>
+                                        </div>
+                                        <div class="mr-10">
+                                            <md-button ng-click="vm.addAttribute()" class="b grey-300-bg" style="border-color: #009999;">Add</md-button>
+                                        </div>
+                                    </div>
+                                    <div class="ml-20" style="height: 40px;">
+                                        <md-input-container style="min-width: 180px; position: relative; top: -20px;">
+                                            <label>Unit</label>
+                                            <md-select aria-label="input" ng-model-options="{debounce : 500}" ng-model="vm.attribute.testUnitId" ng-init="vm.attribute.testUnitId = vm.testingUnits[0].key">
+                                                <md-optgroup>
+                                                    <md-option ng-value="testUnit.key" ng-repeat="testUnit in vm.testingUnits">
+                                                        {{testUnit.value}}
+                                                    </md-option>
+                                                </md-optgroup>
+                                            </md-select>
+                                        </md-input-container>
+                                    </div>
+                                </div>
+                                <div layout="row" layout-align="start center" class="" aria-label="Test Method" ng-repeat="attribute in vm.selectedTest.attributes" layout-wrap>
+                                    <div flex="100" class="cursor-pointer test-item w-240 h-40 border-bottom brad-5" layout="row" layout-align="start center" ng-click="vm.selectAttribute(attribute)" ng-class="{'blue-100-bg': attribute.TECHDISER_ID == vm.selectedAttribute.TECHDISER_ID}">
+                                        <div flex="80">
+                                            <span class="font-size-14 ml-15">{{attribute.title}}</span>
+                                            <span class="font-size-12 ml-5">({{vm.getTestUnit(attribute.testUnitId)}})</span>
+                                        </div>
+
+                                        <div flex="20" layout="row" layout-align="start center">
+                                            <div class="show-action-button">
+                                                <md-icon ng-click="vm.editAttribute(attribute);" md-font-icon="icon-pencil" class="s16 mr-5" style="border-radius:100px;color:#9c9c9c;">
+                                                    <md-tooltip><span>Edit Attribute</span></md-tooltip>
+                                                </md-icon>
+                                            </div>
+                                            <div class="cursor-pointer show-action-button">
+                                                <md-icon style="color: red;" ng-click="vm.deleteAttribute(attribute)" md-font-icon="icon-close" class="icon md-accent mr-5">
+                                                    <md-tooltip><span>Delete Attribute</span></md-tooltip>
+                                                </md-icon>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mr-5 border-right" style="min-height: 900px;" flex="25">
+                            <div class="h-55 grey-200-bg font-size-16 b" layout="row" layout-align="start center">
+                                <div class="ml-10" flex>
+                                    Methods
+                                </div>
+                                <div class="p-15">
+                                    <a ng-click="vm.createMethod()">
+                                        <u>New</u>
+                                        <md-tooltip>
+                                            <span>New Method</span>
+                                        </md-tooltip>
+                                    </a>
+                                </div>
+                            </div>
+                            <div layout="column" layout-align="start start" flex="100">
+                                <div class="border-bottom" layout="row" layout-align="start center">
+
+                                    <div class="pl-20 mr-15">
+                                        <md-input-container md-no-float class="md-block">
+                                            <input ng-model="vm.method.title" placeholder="Method Title">
+                                        </md-input-container>
+                                    </div>
+                                    <div class="mr-10">
+                                        <md-button ng-click="vm.addMethod()" class="b grey-300-bg" style="border-color: #009999;">Add</md-button>
+                                    </div>
+                                </div>
+                                <div layout="row" layout-align="start center" class="" aria-label="Test Method" ng-repeat="method in vm.selectedTest.methods" layout-wrap>
+                                    <div flex="100" class="cursor-pointer test-item w-300 h-40 border-bottom brad-5" layout="row" layout-align="start center" ng-click="vm.selectMethod(method)" ng-class="{'blue-100-bg': method.TECHDISER_ID == vm.selectedMethod.TECHDISER_ID}">
+                                        <div flex="85">
+                                            <span class="font-size-14 ml-15">{{method.title}}</span>
+                                        </div>
+
+                                        <div flex="15" layout="row" layout-align="start center">
+                                            <div class="show-action-button">
+                                                <md-icon ng-click="vm.editMethod(method);" md-font-icon="icon-pencil" class="s16 mr-5" style="border-radius:100px;color:#9c9c9c;">
+                                                    <md-tooltip><span>Edit Method</span></md-tooltip>
+                                                </md-icon>
+                                            </div>
+                                            <div class="cursor-pointer show-action-button">
+                                                <md-icon style="color: red;" ng-click="vm.deleteMethod(method)" md-font-icon="icon-close" class="icon md-accent mr-5">
+                                                    <md-tooltip><span>Delete Method</span></md-tooltip>
+                                                </md-icon>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="min-height: 100%" flex="55">
+                            <div class="h-55 grey-200-bg font-size-16 b" layout="row" layout-align="start center">
+                                <div class="ml-10" flex>
+                                    Environments <span ng-if="vm.selectedMethod" class="ml-30">{{vm.selectedMethod.title}}</span>
+                                </div>
+                            </div>
+                            <div layout="row" layout-align="start" flex="100">
+                                <div flex layout="row">
+                                    <div class="p-10" layout="row" layout-wrap>
+                                        <div class="box-shadow mt-10 mb-10 ml-5 h-280 w-230 mr-10" ng-repeat="i in vm.selectedMethod.environments | limitTo:Math.ceil(vm.selectedMethod.environments.length/5)">
+                                            <div ng-repeat="environment1 in vm.selectedMethod.environments.slice($index*5, $index*5+5)" layout="column" layout-align="start start">
+                                                <div class="m-5">
+                                                    <textarea ng-model="environment1.title" aria-label="input" placeholder="Environment" style="border-bottom: 1px solid #ddd; width: 220px; padding:5px;" columns="1" max-rows="2">
+                                                   </textarea>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="box-shadow mt-10 mb-10 ml-5 h-280 w-230 mr-10" layout="row" layout-align="center">
+                                            <div ng-click="vm.addEnvironmentSet();" class="cursor-pointer font-size-20 bold grey-400-fg" style="font-family: impact; font-weight: 900" layout="row" layout-align="start center">
+                                                ADD ENVIRONMENTS
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </ms-widget-front>
+        </ms-widget>
+    </div>
+</div>

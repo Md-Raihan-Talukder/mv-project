@@ -1,0 +1,150 @@
+<table style='border-bottom: 1px solid #B4B5B0;' cellspacing="2" cellpadding="1">
+    <tr ng-if='index==0'>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>Start Date</td>
+        <td>End Date</td>
+        <td>Cal. Days</td>
+        <td>Work Days</td>
+        <td>Calandar</td>
+        <td>Quantity</td>
+        <td>Status</td>
+        <td>Remark</td>
+    </tr>
+    <tr>
+        <td rowspan='2' class="w-300">
+            <table cellspacing="0" cellpadding="0" border='0' width='100%'>
+                <tr>
+                    <td width='90%'>
+                        <U><label ng-bind-html="accordion.titleDirective.info[0].data" /></U>
+                    </td>
+                    <td width='10%'>
+                        <md-icon ng-click='approvalRemove(accordion)' md-font-icon="icon-cancel" class='setup-items-cancel' title="remove"></md-icon>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan='2'>
+                        <div layout="row" layout-wrap>
+                            <div layout-wrap ng-repeat='test in accordion.titleDirective.calculationPolicy.appraovalPath track by $index'>
+                                <div ng-if='$index==0' layout-align="start top">Path : <label ng-bind-html="test" /></div>
+                                <div ng-if='$index>0' layout-align="start top">&nbsp;&nbsp;>>&nbsp;&nbsp;<label ng-bind-html="test" /></div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </td>
+
+        <td width='70px'>Planed</td>
+        <!-- Start Date -->
+        <td class="w-{{accordion.titleDirective.info[1].width}}">
+            <input ng-model='accordion.titleDirective.info[1].data' ng-focus="updateValue(accordion.id,accordion.parentId,accordion.titleDirective.info[1].data)" ng-blur="dataChange(accordion.id,accordion.parentId, accordion.titleDirective.info[1].id,accordion.titleDirective.info[1].data)" class="w-{{accordion.titleDirective.info[1].width-10}}" type='text' value='{{accordion.titleDirective.info[1].data}}' />
+        </td>
+        <!-- End Date -->
+        <td class="w-{{accordion.titleDirective.info[2].width}}">
+            <table ng-if='accordion.planedEndDate.userProvided' cellspacing="0" cellpadding="0" style=' border: 1px solid #aaa;'>
+                <tr>
+                    <td>
+                        <input ng-model='accordion.titleDirective.info[2].data' ng-focus="updateValue(accordion.id,accordion.parentId,accordion.titleDirective.info[2].data)" ng-blur="dataChange(accordion.id,accordion.parentId, accordion.titleDirective.info[2].id,accordion.titleDirective.info[2].data)" class="w-{{accordion.titleDirective.info[2].width-10}}" type='text' value='{{accordion.titleDirective.info[2].data}}' />
+                    </td>
+                </tr>
+            </table>
+            <table ng-if='!accordion.planedEndDate.userProvided' cellspacing="0" cellpadding="0" border='0'>
+                <tr>
+                    <td>
+                        <input ng-model='accordion.titleDirective.info[2].data' ng-focus="updateValue(accordion.id,accordion.parentId,accordion.titleDirective.info[2].data)" ng-blur="dataChange(accordion.id,accordion.parentId, accordion.titleDirective.info[2].id,accordion.titleDirective.info[2].data)" class="w-{{accordion.titleDirective.info[2].width-10}}" type='text' value='{{accordion.titleDirective.info[2].data}}' />
+                    </td>
+                </tr>
+            </table>
+        </td>
+
+        <!-- Calander Days -->
+        <td class="w-{{accordion.titleDirective.info[3].width}}">
+            <table cellspacing="0" cellpadding="0">
+                <tr>
+                    <td>
+                        <input class="w-{{accordion.titleDirective.info[3].width-10}} angled" type='text' readonly value='{{accordion.titleDirective.info[3].data}}' />
+                    </td>
+                </tr>
+            </table>
+        </td>
+
+        <!-- Work Days -->
+        <td class="w-{{accordion.titleDirective.info[6].width}}">
+            <table ng-if='accordion.plannedDayDef.userProvided' cellspacing="0" cellpadding="0" style=' border: 1px solid #aaa;'>
+                <tr>
+                    <td>
+                        <input ng-model='accordion.titleDirective.info[6].data' ng-focus="updateValue(accordion.id,accordion.parentId,accordion.titleDirective.info[6].data)" ng-blur="dataChange(accordion.id,accordion.parentId, accordion.titleDirective.info[6].id,accordion.titleDirective.info[6].data)" class="w-{{accordion.titleDirective.info[6].width-10}}" type='text' value='{{accordion.titleDirective.info[6].data}}' />
+                    </td>
+                </tr>
+            </table>
+            <table ng-if='!accordion.plannedDayDef.userProvided' cellspacing="0" cellpadding="0">
+                <tr>
+                    <td>
+                        <input ng-model='accordion.titleDirective.info[6].data' ng-focus="updateValue(accordion.id,accordion.parentId,accordion.titleDirective.info[6].data)" ng-blur="dataChange(accordion.id,accordion.parentId, accordion.titleDirective.info[6].id,accordion.titleDirective.info[6].data)" class="w-{{accordion.titleDirective.info[6].width-10}}" type='text' value='{{accordion.titleDirective.info[6].data}}' />
+                    </td>
+                </tr>
+            </table>
+        </td>
+
+        <!-- Calandar -->
+        <td class='w-50'>
+            <div layout-align='center center'>
+                <md-icon ng-click="openCalandarDialog($event);" class="setup-items-test-dim" md-font-icon="icon-calendar-select"></md-icon>
+            </div>
+        </td>
+
+
+        <!-- Quantity -->
+        <td class="w-{{accordion.titleDirective.info[7].width}}">
+            <input ng-model='accordion.titleDirective.info[7].data' ng-focus="updateValue(accordion.id,accordion.parentId,accordion.titleDirective.info[7].data)" ng-blur="dataChange(accordion.id,accordion.parentId, accordion.titleDirective.info[7].id,accordion.titleDirective.info[7].data)" class="w-{{accordion.titleDirective.info[7].width-10}}" type='text' value='{{accordion.titleDirective.info[7].data}}' />
+        </td>
+        <!-- Status -->
+        <td rowspan='2' valign='middle' class="w-{{accordion.titleDirective.info[15].width}}">
+            <input ng-model='accordion.titleDirective.info[15].data' ng-focus="updateValue(accordion.id,accordion.parentId,accordion.titleDirective.info[15].data)" ng-blur="dataChange(accordion.id,accordion.parentId, accordion.titleDirective.info[15].id,accordion.titleDirective.info[15].data)" class="w-{{accordion.titleDirective.info[15].width-10}}" type='text' value='{{accordion.titleDirective.info[15].data}}' />
+        </td>
+        <!-- Remark -->
+        <td rowspan='2' valign='top' class="w-{{accordion.titleDirective.info[16].width}}">
+            <textarea rows='3' ng-model='accordion.titleDirective.info[16].data' class="w-{{accordion.titleDirective.info[16].width-10}}">{{accordion.titleDirective.info[16].data}}</textarea>
+        </td>
+    </tr>
+    <tr>
+
+        <td>Actual</td>
+
+        <!-- Start Date -->
+
+        <td class="w-{{accordion.titleDirective.info[8].width}}"><input ng-model='accordion.titleDirective.info[8].data' ng-focus="updateValue(accordion.id,accordion.parentId,accordion.titleDirective.info[8].data)" ng-blur="dataChange(accordion.id,accordion.parentId, accordion.titleDirective.info[8].id,accordion.titleDirective.info[8].data)" class="w-{{accordion.titleDirective.info[8].width-10}}" type='text' value='{{accordion.titleDirective.info[8].data}}' /></td>
+
+        <!-- End Date -->
+        <td class="w-{{accordion.titleDirective.info[9].width}}"><input ng-model='accordion.titleDirective.info[9].data' ng-focus="updateValue(accordion.id,accordion.parentId,accordion.titleDirective.info[9].data)" ng-blur="dataChange(accordion.id,accordion.parentId, accordion.titleDirective.info[9].id,accordion.titleDirective.info[9].data)" class="w-{{accordion.titleDirective.info[9].width-10}}" type='text' value='{{accordion.titleDirective.info[9].data}}' /></td>
+
+        <!-- Calander Days -->
+        <td class="w-{{accordion.titleDirective.info[10].width}}">
+            <table cellspacing="0" cellpadding="0">
+                <tr>
+                    <td>
+                        <input class="w-{{accordion.titleDirective.info[10].width-10}} angled" type='text' readonly value='{{accordion.titleDirective.info[10].data}}' />
+                    </td>
+                </tr>
+            </table>
+        </td>
+
+        <!-- Work Days -->
+
+        <td class="w-{{accordion.titleDirective.info[13].width}}"><input ng-model='accordion.titleDirective.info[13].data' ng-focus="updateValue(accordion.id,accordion.parentId,accordion.titleDirective.info[13].data)" ng-blur="dataChange(accordion.id,accordion.parentId, accordion.titleDirective.info[13].id,accordion.titleDirective.info[13].data)" class="w-{{accordion.titleDirective.info[13].width-10}}" type='text' value='{{accordion.titleDirective.info[13].data}}' /></td>
+
+        <!-- Calandar -->
+        <td class='w-50'>
+            <div layout-align='center center'>
+                <md-icon ng-click="openCalandarDialog($event);" class="setup-items-test-dim" md-font-icon="icon-calendar-select"></md-icon>
+            </div>
+        </td>
+
+
+
+        <!-- Progress -->
+        <td class="w-{{accordion.titleDirective.info[14].width}}"><input ng-model='accordion.titleDirective.info[14].data' ng-focus="updateValue(accordion.id,accordion.parentId,accordion.titleDirective.info[14].data)" ng-blur="dataChange(accordion.id,accordion.parentId, accordion.titleDirective.info[14].id,accordion.titleDirective.info[14].data)" class="w-{{accordion.titleDirective.info[14].width-10}}" type='text' value='{{accordion.titleDirective.info[14].data}}' /></td>
+
+    </tr>
+</table>

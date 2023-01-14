@@ -1,0 +1,124 @@
+<div class="barcode-generator border">
+    <div class="barcode-gen-text-container">
+        <div class="barcode-gen-text-header h-30 grey-200-bg border p-5" layout="row" layout-align="start center">
+            <span class="text-bold secondary-text"> Barcode Text</span>
+            <div ng-if="!plainText" class="ml-25 cursor-pointer" layout="row" layout-align="start center">
+                <div ng-click="vm.updateIncludeLabel()" class="cursor-pointer" layout="row" layout-align="start center">
+                    <md-icon ng-if="!includeLabel" md-font-icon="icon-checkbox-blank-outline" class="icon" aria-hidden="true"></md-icon>
+                    <md-icon ng-if="includeLabel" md-font-icon="icon-checkbox-marked-outline" class="icon" aria-hidden="true"></md-icon>
+                    <span class="ml-5">Include Label</span>
+                </div>
+
+                <span class="ml-25 mr-5">Label Separator : </span>
+                <input style="width: 50px;" type="text" name="LabSep" ng-model="vm.labSep" ng-change="vm.onSepChange('label')" ng-trim="false" ng-model-options="{debounce : 500}">
+
+                <span class="ml-25 mr-5">Item Separator : </span>
+                <span class="ml-5 mr-5 border brad-5 grey-500-bg ph-5 w-80" ng-class="{'selected-sep': itemSepNewLine}" ng-click="vm.updateItemSep('new-line');"> New Line </span>
+                <span class="ml-5 mr-5 border brad-5 grey-500-bg pl-25 w-80" ng-class="{'selected-sep': itemSepTab}" ng-click="vm.updateItemSep('tab');"> Tab </span>
+                <span class="ml-5 mr-5"> Or : </span>
+
+                <input style="width: 50px;" type="text" name="llLabSep" ng-model="vm.itemSep" ng-trim="false" ng-change="vm.onSepChange('item')" ng-model-options="{debounce : 500}">
+
+            </div>
+        </div>
+        <div class="barcode-gen-text h-100 p-5">
+            <textarea name="barcode-text" ng-model="text" aria-label="input" ng-change="vm.onSetingsChange()" ng-model-options="{debounce : 500}" style="padding-left: 5px; width: 100%; height: 100%; min-height:30px;" columns="1" max-rows="6">
+            </textarea>
+        </div>
+    </div>
+    <div class="barcode-gen-barcode-container">
+        <div class="barcode-gen-barcode-header h-30 grey-200-bg border p-5" layout="row" layout-align="start center">
+            <span class="text-bold secondary-text"> Barcode </span>
+            <div flex class="ml-25 ph-5" layout="row" layout-align="space-between center">
+                <div class="cursor-pointer" layout="row" layout-align="start center">
+
+                    <span class="ml-5 mr-5 border brad-5 grey-500-bg ph-5 w-115" ng-class="{'selected-sep': linearDefault}" ng-click="linearDefault = !linearDefault; twoDimDefault = false; vm.onChangeType();"> Linear Default </span>
+                    <span class="ml-5 mr-5 border brad-5 grey-500-bg pl-15 w-100" ng-class="{'selected-sep': twoDimDefault}" ng-click="twoDimDefault = !twoDimDefault; linearDefault = false; vm.onChangeType();"> 2D Default </span>
+                    <div class="ml-5 cursor-pointer" layout="row" layout-align="start center" ng-click="vm.selecteType();" style="color: rgb(3,155,229); font-weight: bold;">
+                        <u>More</u>
+                    </div>
+
+                    <span class="ml-100 text-bold secondary-text"> Barcode Type:</span>
+                    <span class="ml-5">{{vm.selectedBarcode.name}}</span>
+
+                </div>
+                <div class="mr-10">
+                    <md-icon ng-click="vm.showSettings = !vm.showSettings" md-font-icon="icon-cog" class="icon cursor-pointer" aria-hidden="true"></md-icon>
+                </div>
+
+
+            </div>
+
+        </div>
+        <div class="barcode-gen-barcode p-15" layout="column" layout-align="center center" style="position: relative; min-height: 200px;">
+
+            <div class="p-10 border h-180 black-fg font-size-14 grey-300-bg" style="position: absolute; right: 10px; top: 0px;  min-width: 350px;" ng-if="vm.showSettings">
+
+                <div layout="row" layout-align="start center" class="">
+                    <div class="w-70">Alt Text: </div>
+                    <div class="w-300 text-bold border-bottom">
+                        <input class="w-300" type="text" ng-model="vm.altText" ng-change="vm.onSetingsChange()" ng-model-options="{debounce : 500}" />
+                    </div>
+                </div>
+
+                <div layout="row" layout-align="start center" class="mt-10">
+                    <div class="w-70">Options: </div>
+                    <div class="w-300 text-bold border-bottom">
+                        <input class="w-300" type="text" ng-model="vm.options" ng-change="vm.onSetingsChange()" ng-model-options="{debounce : 500}" />
+                    </div>
+                </div>
+
+                <div layout="row" layout-align="start center" class="mt-10">
+                    <div class="w-100">Image Rotation:</div>
+                    <div class="w-250 text-bold border-bottom">
+                        <select class="w-250" ng-model="vm.rotation" ng-change="vm.onSetingsChange()">
+                            <option value="N">Normal</option>
+                            <option value="R">90CW</option>
+                            <option value="L">90CCW</option>
+                            <option value="I">180</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div layout="row" layout-align="start center" class="mt-10">
+                    <div class="w-100">Font Rendering:</div>
+                    <div class="w-250 text-bold border-bottom">
+                        <select class="w-250" ng-model="vm.rendering" ng-change="vm.onSetingsChange()">
+                            <option value="0">Anti-Aliased</option>
+                            <option value="1">Monochrome</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div layout="row" layout-align="start center" class="mt-10">
+                    <div layout="row" layout-align="start center">
+                        <div class="w-50">ScaleX: </div>
+                        <div class="ml-5 w-50 text-bold border-bottom">
+                            <input class="w-50" type="number" min="1" ng-model="vm.scaleX" ng-change="vm.onSetingsChange()" ng-model-options="{debounce : 500}" />
+                        </div>
+                    </div>
+                    <div layout="row" layout-align="start center" class="ml-15">
+                        <div class="w-50">ScaleY: </div>
+                        <div class="ml-5 w-50 text-bold border-bottom">
+                            <input class="w-50" type="number" min="1" ng-model="vm.scaleY" ng-change="vm.onSetingsChange()" ng-model-options="{debounce : 500}" />
+                        </div>
+                    </div>
+                    <div layout="row" layout-align="start center" class="ml-25">
+                        <div class="w-70">Bg Color: </div>
+                        <div class="w-50 text-bold border-bottom">
+                            <input class="grey-300-bg" type="color" ng-model="vm.bgColor" ng-change="vm.onSetingsChange()" ng-model-options="{debounce : 500}" />
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+
+            <msb-barcode config="vm.selection" on-complete="vm.onComplete(imageData)"></msb-barcode>
+
+        </div>
+    </div>
+
+</div>

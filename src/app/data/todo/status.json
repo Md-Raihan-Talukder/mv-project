@@ -1,0 +1,49 @@
+{
+    "data": [
+        {
+            "id": 1,
+            "name": "Not Due",
+            "color": ""
+        },
+        {
+            "id": 2,
+            "name": "Due",
+            "color": "md-deep-purple-500-bg"
+        },
+        {
+            "id": 3,
+            "name": "Over Due",
+            "color": "md-pink-900-bg"
+        },
+        {
+            "id": 4,
+            "name": "Long Pending",
+            "color": "md-red-A700-bg"
+        },
+        {
+            "id": 5,
+            "name": "In Progress",
+            "color": "md-green-200-bg"
+        },
+        {
+            "id": 6,
+            "name": "Done",
+            "color": "md-green-500-bg"
+        },
+        {
+            "id": 7,
+            "name": "Deferred",
+            "color": "md-purple-200-bg"
+        },
+        {
+            "id": 8,
+            "name": "Canceled",
+            "color": "md-grey-500-bg"
+        },
+        {
+            "id": 9,
+            "name": "Inactive",
+            "color": "md-red-200-bg"
+        }
+    ]
+}

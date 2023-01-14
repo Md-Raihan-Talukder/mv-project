@@ -1,0 +1,259 @@
+{
+    "data": [
+        {
+            "TECHDISER_ID": "ExportShipmentSetupObj1",
+            "TECHDISER_SERIAL_NO": 1,
+            "documentDefinition": [
+                {
+                    "TECHDISER_ID": "ExportShipmentTypeDocument1",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "title": "Document 1",
+                    "purpose": "Document 1 Purpose",
+                    "templates": []
+                },
+                {
+                    "TECHDISER_ID": "ExportShipmentTypeDocument2",
+                    "TECHDISER_SERIAL_NO": 2,
+                    "title": "Document 2",
+                    "purpose": "Document 2 Purpose",
+                    "templates": []
+                },
+                {
+                    "TECHDISER_ID": "ExportShipmentTypeDocument3",
+                    "TECHDISER_SERIAL_NO": 3,
+                    "title": "Document 3",
+                    "purpose": "Document 3 Purpose",
+                    "templates": []
+                },
+                {
+                    "TECHDISER_ID": "ExportShipmentTypeDocument4",
+                    "TECHDISER_SERIAL_NO": 4,
+                    "title": "Document 4",
+                    "purpose": "Document 4 Purpose",
+                    "templates": []
+                },
+                {
+                    "TECHDISER_ID": "ExportShipmentTypeDocument5",
+                    "TECHDISER_SERIAL_NO": 5,
+                    "title": "Document 5",
+                    "purpose": "Document 5 Purpose",
+                    "templates": []
+                }
+            ],
+            "stepDefinition": [
+                {
+                    "TECHDISER_ID": "ExportShipmentStep1",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "title": "Step 1",
+                    "code": "Step 1 Code",
+                    "description": "Step 1 Description"
+                },
+                {
+                    "TECHDISER_ID": "ExportShipmentStep2",
+                    "TECHDISER_SERIAL_NO": 2,
+                    "title": "Step 2",
+                    "code": "Step 2 Code",
+                    "description": "Step 2 Description"
+                },
+                {
+                    "TECHDISER_ID": "ExportShipmentStep3",
+                    "TECHDISER_SERIAL_NO": 3,
+                    "title": "Step 3",
+                    "code": "Step 3 Code",
+                    "description": "Step 3 Description"
+                },
+                {
+                    "TECHDISER_ID": "ExportShipmentStep4",
+                    "TECHDISER_SERIAL_NO": 4,
+                    "title": "Step 4",
+                    "code": "Step 4 Code",
+                    "description": "Step 4 Description"
+                },
+                {
+                    "TECHDISER_ID": "ExportShipmentStep5",
+                    "TECHDISER_SERIAL_NO": 5,
+                    "title": "Step 5",
+                    "code": "Step 5 Code",
+                    "description": "Step 5 Description"
+                },
+                {
+                    "TECHDISER_ID": "ExportShipmentStep6",
+                    "TECHDISER_SERIAL_NO": 6,
+                    "title": "Step 6",
+                    "code": "Step 6 Code",
+                    "description": "Step 6 Description"
+                }
+            ],
+            "typeDefinition": [
+                {
+                    "TECHDISER_ID": "ExportShipmentType1",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "title": "X Facroty",
+                    "description": "X Facroty Description",
+                    "isPortToPortTransport": true,
+                    "dataSheet": [
+                        "Data Value 1",
+                        "Data Value 2",
+                        "Data Value 3"
+                    ],
+                    "steps": [
+                        {
+                            "TECHDISER_ID": "ShipmentTypeStep1",
+                            "TECHDISER_SERIAL_NO": 1,
+                            "stepId": "ExportShipmentStep1",
+                            "isRisk": true,
+                            "isPayment": true
+                        },
+                        {
+                            "TECHDISER_ID": "ShipmentTypeStep2",
+                            "TECHDISER_SERIAL_NO": 2,
+                            "stepId": "ExportShipmentStep2",
+                            "isRisk": false,
+                            "isPayment": false
+                        },
+                        {
+                            "TECHDISER_ID": "ShipmentTypeStep3",
+                            "TECHDISER_SERIAL_NO": 3,
+                            "stepId": "ExportShipmentStep3",
+                            "isRisk": true,
+                            "isPayment": false
+                        },
+                        {
+                            "TECHDISER_ID": "ShipmentTypeStep4",
+                            "TECHDISER_SERIAL_NO": 4,
+                            "stepId": "ExportShipmentStep4",
+                            "isRisk": false,
+                            "isPayment": true
+                        },
+                        {
+                            "TECHDISER_ID": "ShipmentTypeStep5",
+                            "TECHDISER_SERIAL_NO": 5,
+                            "stepId": "ExportShipmentStep5",
+                            "isRisk": false,
+                            "isPayment": false
+                        },
+                        {
+                            "TECHDISER_ID": "ShipmentTypeStep6",
+                            "TECHDISER_SERIAL_NO": 6,
+                            "stepId": "ExportShipmentStep6",
+                            "isRisk": false,
+                            "isPayment": false
+                        }
+                    ],
+                    "documentId": [
+                        "ExportShipmentTypeDocument1",
+                        "ExportShipmentTypeDocument2"
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "ShipmentType2",
+                    "TECHDISER_SERIAL_NO": 2,
+                    "title": "CnF",
+                    "description": "CnF Description",
+                    "isPortToPortTransport": true,
+                    "dataSheet": [
+                        "Data Value 4",
+                        "Data Value 5",
+                        "Data Value 6"
+                    ],
+                    "steps": [
+                        {
+                            "TECHDISER_ID": "ShipmentTypeStep7",
+                            "TECHDISER_SERIAL_NO": 1,
+                            "stepId": "ExportShipmentStep2",
+                            "isRisk": false,
+                            "isPayment": false
+                        },
+                        {
+                            "TECHDISER_ID": "ShipmentTypeStep8",
+                            "TECHDISER_SERIAL_NO": 2,
+                            "stepId": "ExportShipmentStep3",
+                            "isRisk": false,
+                            "isPayment": false
+                        },
+                        {
+                            "TECHDISER_ID": "ShipmentTypeStep9",
+                            "TECHDISER_SERIAL_NO": 3,
+                            "stepId": "ExportShipmentStep4",
+                            "isRisk": false,
+                            "isPayment": false
+                        },
+                        {
+                            "TECHDISER_ID": "ShipmentTypeStep10",
+                            "TECHDISER_SERIAL_NO": 4,
+                            "stepId": "ExportShipmentStep5",
+                            "isRisk": false,
+                            "isPayment": false
+                        },
+                        {
+                            "TECHDISER_ID": "ShipmentTypeStep11",
+                            "TECHDISER_SERIAL_NO": 5,
+                            "stepId": "ExportShipmentStep6",
+                            "isRisk": false,
+                            "isPayment": false
+                        }
+                    ],
+                    "documentId": [
+                        "ExportShipmentTypeDocument2",
+                        "ExportShipmentTypeDocument3",
+                        "ExportShipmentTypeDocument4"
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "ShipmentType3",
+                    "TECHDISER_SERIAL_NO": 3,
+                    "title": "Type 3",
+                    "description": "Type 3 Description",
+                    "isPortToPortTransport": false,
+                    "dataSheet": [
+                        "Data Value 7",
+                        "Data Value 8",
+                        "Data Value 9"
+                    ],
+                    "steps": [
+                        {
+                            "TECHDISER_ID": "ExportShipmentTypeStep12",
+                            "TECHDISER_SERIAL_NO": 1,
+                            "stepId": "ExportShipmentStep3",
+                            "isRisk": false,
+                            "isPayment": false
+                        },
+                        {
+                            "TECHDISER_ID": "ExportShipmentTypeStep13",
+                            "TECHDISER_SERIAL_NO": 2,
+                            "stepId": "ExportShipmentStep4",
+                            "isRisk": false,
+                            "isPayment": false
+                        },
+                        {
+                            "TECHDISER_ID": "ExportShipmentTypeStep14",
+                            "TECHDISER_SERIAL_NO": 3,
+                            "stepId": "ExportShipmentStep5",
+                            "isRisk": false,
+                            "isPayment": false
+                        },
+                        {
+                            "TECHDISER_ID": "ExportShipmentTypeStep15",
+                            "TECHDISER_SERIAL_NO": 4,
+                            "stepId": "ExportShipmentStep6",
+                            "isRisk": false,
+                            "isPayment": false
+                        },
+                        {
+                            "TECHDISER_ID": "ExportShipmentTypeStep16",
+                            "TECHDISER_SERIAL_NO": 5,
+                            "stepId": "ShipmentStep7",
+                            "isRisk": false,
+                            "isPayment": false
+                        }
+                    ],
+                    "documentId": [
+                        "ExportShipmentTypeDocument3",
+                        "ExportShipmentTypeDocument4",
+                        "ExportShipmentTypeDocument5"
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,173 @@
+<md-dialog class="common-dialog" aria-label="Card Card Dialog">
+    <form name="moduleForm" class="md-inline-form taskCardForm" novalidate>
+        <md-toolbar class="md-accent">
+            <div class="md-toolbar-tools">
+                <span ng-if="vm.isNew">Add New User</span>
+                <span ng-if="!vm.isNew">{{vm.user.name}}</span>
+
+                <md-menu md-offset="0 48px" class="options">
+                    <md-button class="md-icon-button" ng-click="$mdOpenMenu($event)" aria-label="Options">
+                        <md-icon md-menu-origin md-font-icon="icon-dots-horizontal"></md-icon>
+                    </md-button>
+                    <md-menu-content ms-scroll class="options-menu-content" width="4">
+
+                        <md-menu-item>
+                            <md-button ng-click="vm.user.deleted = !vm.user.deleted" aria-label="Toggle delete">
+                                <md-icon ng-class="vm.user.deleted === false ? 'grey-fg' : 'amber-600-fg'" md-font-icon="icon-close" class="s18"></md-icon>
+                                <span ng-show="!vm.user.deleted">Mark as Inactive</span>
+                                <span ng-show="vm.user.deleted">Mark as Active</span>
+                            </md-button>
+                        </md-menu-item>
+
+                        <md-menu-item>
+                            <md-button ng-click="vm.user.important = !vm.user.important" aria-label="Toggle important">
+                                <md-icon ng-class="vm.user.important === false ? 'grey-fg' : 'red-600-fg'" md-font-icon="icon-alert-circle" class="s18"></md-icon>
+                                <span ng-show="!vm.user.important"> Mark as important</span>
+                                <span ng-show="vm.user.important">Remove important</span>
+                            </md-button>
+                        </md-menu-item>
+
+                        <md-menu-item>
+                            <md-button ng-click="vm.user.starred = !vm.user.starred" aria-label="Toggle star">
+                                <md-icon ng-class="vm.user.starred === false ? 'grey-fg' : 'amber-600-fg'" md-font-icon="icon-star" class="s18"></md-icon>
+                                <span ng-show="!vm.user.starred">Add star</span>
+                                <span ng-show="vm.user.starred">Remove star</span>
+                            </md-button>
+                        </md-menu-item>
+
+                    </md-menu-content>
+                </md-menu>
+
+                <span flex></span>
+
+                <md-button class="md-icon-button" ng-click="vm.closeDialog()" aria-label="Close Dialog">
+                    <md-icon md-font-icon="icon-close"></md-icon>
+                </md-button>
+
+            </div>
+        </md-toolbar>
+
+        <md-dialog-content ms-scroll>
+            <div class="sections" flex>
+                <form name="taskCardForm" class="md-inline-form taskCardForm" novalidate>
+
+                    <div layout-gt-sm="row" layout="column" flex="100" layout-wrap layout-align="space-between start">
+                        <div flex layout="row" layout-align="end center">
+                            <div class="buttons" layout="row" layout-align="start center">
+                                <md-icon ng-show="vm.user.deleted" md-font-icon="icon-close" class="is-important red-600-fg"></md-icon>
+                                <md-icon ng-show="vm.user.important" md-font-icon="icon-alert-circle" class="is-important red-600-fg"></md-icon>
+                                <md-icon ng-show="vm.user.starred" md-font-icon="icon-star" class="is-starred amber-600-fg"></md-icon>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div layout="row" flex="100">
+                        <div layout="column" flex="50">
+                            <div flex class="description">
+                                <md-input-container class="md-block">
+                                    <label>Name</label>
+                                    <input class="md-title" name="name" ng-model="vm.user.name" required autocomplete="off">
+                                    <div ng-messages="moduleForm.name.$error" role="alert">
+                                        <div ng-message="required">
+                                            <span>Name is required</span>
+                                        </div>
+                                    </div>
+                                </md-input-container>
+                            </div>
+                        </div>
+                        <div layout="column" flex="50">
+                            <div flex class="description">
+                                <md-input-container class="md-block">
+                                    <label>Designation</label>
+                                    <input class="md-title" name="designation" ng-model="vm.user.designation" required autocomplete="off">
+                                    <div ng-messages="moduleForm.designation.$error" role="alert">
+                                        <div ng-message="required">
+                                            <span>Designation is required</span>
+                                        </div>
+                                    </div>
+                                </md-input-container>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div layout="row" flex="100">
+                        <div layout="column" flex="50">
+                            <div flex class="description">
+                                <md-input-container class="md-block">
+                                    <label>Email</label>
+                                    <input class="md-title" name="email" ng-model="vm.user.email" required autocomplete="off">
+                                    <div ng-messages="moduleForm.email.$error" role="alert">
+                                        <div ng-message="required">
+                                            <span>Email is required</span>
+                                        </div>
+                                    </div>
+                                </md-input-container>
+                            </div>
+                        </div>
+                        <div layout="column" flex="50">
+                            <div flex class="description">
+                                <md-input-container class="md-block">
+                                    <label>Phonenumber</label>
+                                    <input type="tel" class="md-title" name="phoneNumber" ng-model="vm.user.phoneNumber" required autocomplete="off" ng-intl-tel-input>
+                                    <div ng-messages="moduleForm.phoneNumber.$error" role="alert">
+                                        <div ng-message="required">
+                                            <span>Phonenumber is required</span>
+                                        </div>
+                                    </div>
+                                </md-input-container>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div layout="row" flex="100">
+                        <div layout="column" flex="50">
+                            <div flex class="description">
+                                <md-input-container>
+                                    <label>Role</label>
+                                    <md-select class="m-0 p-0 h-20" name="select" ng-model="vm.user.roleId" ng-change="vm.updateData();" aria-label="Select">
+                                        <md-option value="{{item.key}}" ng-repeat="item in vm.roles">{{item.value}}
+                                        </md-option>
+                                    </md-select>
+                                </md-input-container>
+                            </div>
+                        </div>
+                        <div layout="column" flex="50">
+                            <div flex class="description">
+                                <md-input-container>
+                                    <label>Groups</label>
+                                    <md-select ng-model="vm.user.groups" ng-model-options="{trackBy: '$value.TECHDISER_ID'}" multiple="">
+                                        <md-optgroup label="groups">
+                                            <md-option ng-value="group" ng-repeat="group in vm.groups">{{group.name}}</md-option>
+                                        </md-optgroup>
+                                    </md-select>
+                                </md-input-container>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+
+            </div>
+
+        </md-dialog-content>
+
+    </form>
+
+    <md-dialog-actions layout="row" layout-align="space-between center">
+        <div layout="row" layout-align="start center">
+            <md-button ng-click="vm.saveTask()" class="send-button md-accent md-raised" ng-disabled="moduleForm.$invalid" aria-label="SAVE">
+                <span ng-if="vm.isNew">ADD</span>
+                <span ng-if="!vm.isNew">UPDATE</span>
+            </md-button>
+
+        </div>
+        <div layout="row">
+            <md-button class="md-icon-button" ng-click="vm.deleteUser($event)" aria-label="Delete" ng-disabled="vm.isNew">
+                <md-icon md-font-icon="icon-account-alert"></md-icon>
+                <md-tooltip><span>INACTIVATE</span></md-tooltip>
+            </md-button>
+        </div>
+    </md-dialog-actions>
+
+</md-dialog>

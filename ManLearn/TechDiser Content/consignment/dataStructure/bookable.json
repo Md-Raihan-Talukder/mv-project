@@ -1,0 +1,19 @@
+{
+    "data": [
+        {
+            "TECHDISER_ID": "po1demand1bookable1",
+            "demand": "Demand 1",
+            "demandId": "demand1",
+            "bookable": "Bookable 1",
+            "etdIds": [
+                "etd1",
+                "etd2",
+                "etd3"
+            ],
+            "workFlow": {
+                "isConfirm": 0,
+                "isBooked": 0
+            }
+        }
+    ]
+}

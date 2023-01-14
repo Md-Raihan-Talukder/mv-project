@@ -1,0 +1,180 @@
+{
+    "data": [
+        {
+            "TECHDISER_ID": "ShipmentTimeDefinition1",
+            "TECHDISER_SERIAL_NO": 1,
+            "shipmentTimeDef": [
+                {
+                    "TECHDISER_ID": "CountryZone1",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "title": "Local",
+                    "transportModes": [
+                        {
+                            "TECHDISER_ID": "CountryZone1_SeaMode",
+                            "TECHDISER_SERIAL_NO": 1,
+                            "shipmentModeId": "ShipmentMode1",
+                            "shipmentTime": 19
+                        },
+                        {
+                            "TECHDISER_ID": "CountryZone1_AirMode",
+                            "TECHDISER_SERIAL_NO": 2,
+                            "shipmentModeId": "ShipmentMode2",
+                            "shipmentTime": 22
+                        },
+                        {
+                            "TECHDISER_ID": "CountryZone1_TrainMode",
+                            "TECHDISER_SERIAL_NO": 3,
+                            "shipmentModeId": "ShipmentMode3",
+                            "shipmentTime": 23
+                        }
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "CountryZone2",
+                    "TECHDISER_SERIAL_NO": 2,
+                    "title": "Sub Continent",
+                    "transportModes": [
+                        {
+                            "TECHDISER_ID": "CountryZone2_SeaMode",
+                            "TECHDISER_SERIAL_NO": 1,
+                            "shipmentModeId": "ShipmentMode1",
+                            "shipmentTime": 4
+                        },
+                        {
+                            "TECHDISER_ID": "CountryZone2_AirMode",
+                            "TECHDISER_SERIAL_NO": 2,
+                            "shipmentModeId": "ShipmentMode2",
+                            "shipmentTime": 3
+                        },
+                        {
+                            "TECHDISER_ID": "CountryZone2_TrainMode",
+                            "TECHDISER_SERIAL_NO": 3,
+                            "shipmentModeId": "ShipmentMode3",
+                            "shipmentTime": 24
+                        }
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "CountryZone3",
+                    "TECHDISER_SERIAL_NO": 3,
+                    "title": "Asia",
+                    "transportModes": [
+                        {
+                            "TECHDISER_ID": "CountryZone3_SeaMode",
+                            "TECHDISER_SERIAL_NO": 1,
+                            "shipmentModeId": "ShipmentMode1",
+                            "shipmentTime": 17
+                        },
+                        {
+                            "TECHDISER_ID": "CountryZone3_AirMode",
+                            "TECHDISER_SERIAL_NO": 2,
+                            "shipmentModeId": "ShipmentMode2",
+                            "shipmentTime": 5
+                        },
+                        {
+                            "TECHDISER_ID": "CountryZone3_TrainMode",
+                            "TECHDISER_SERIAL_NO": 3,
+                            "shipmentModeId": "ShipmentMode3",
+                            "shipmentTime": 28
+                        }
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "CountryZone4",
+                    "TECHDISER_SERIAL_NO": 4,
+                    "title": "Eastern Europe",
+                    "transportModes": [
+                        {
+                            "TECHDISER_ID": "CountryZone4_SeaMode",
+                            "TECHDISER_SERIAL_NO": 1,
+                            "shipmentModeId": "ShipmentMode1",
+                            "shipmentTime": 13
+                        },
+                        {
+                            "TECHDISER_ID": "CountryZone4_AirMode",
+                            "TECHDISER_SERIAL_NO": 2,
+                            "shipmentModeId": "ShipmentMode2",
+                            "shipmentTime": 9
+                        },
+                        {
+                            "TECHDISER_ID": "CountryZone4_TrainMode",
+                            "TECHDISER_SERIAL_NO": 3,
+                            "shipmentModeId": "ShipmentMode3",
+                            "shipmentTime": 11
+                        }
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "CountryZone5",
+                    "TECHDISER_SERIAL_NO": 5,
+                    "title": "Western Europe",
+                    "transportModes": [
+                        {
+                            "TECHDISER_ID": "CountryZone5_SeaMode",
+                            "TECHDISER_SERIAL_NO": 1,
+                            "shipmentModeId": "ShipmentMode1",
+                            "shipmentTime": 16
+                        },
+                        {
+                            "TECHDISER_ID": "CountryZone5_AirMode",
+                            "TECHDISER_SERIAL_NO": 2,
+                            "shipmentModeId": "ShipmentMode2",
+                            "shipmentTime": 14
+                        },
+                        {
+                            "TECHDISER_ID": "CountryZone5_TrainMode",
+                            "TECHDISER_SERIAL_NO": 3,
+                            "shipmentModeId": "ShipmentMode3",
+                            "shipmentTime": 27
+                        }
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "CountryZone6",
+                    "TECHDISER_SERIAL_NO": 6,
+                    "title": "America",
+                    "transportModes": [
+                        {
+                            "TECHDISER_ID": "CountryZone6_SeaMode",
+                            "TECHDISER_SERIAL_NO": 1,
+                            "shipmentModeId": "ShipmentMode1",
+                            "shipmentTime": 21
+                        },
+                        {
+                            "TECHDISER_ID": "CountryZone6_AirMode",
+                            "TECHDISER_SERIAL_NO": 2,
+                            "shipmentModeId": "ShipmentMode2",
+                            "shipmentTime": 18
+                        },
+                        {
+                            "TECHDISER_ID": "CountryZone6_TrainMode",
+                            "TECHDISER_SERIAL_NO": 3,
+                            "shipmentModeId": "ShipmentMode3",
+                            "shipmentTime": 39
+                        }
+                    ]
+                }
+            ],
+            "shipmentModeDefinition": [
+                {
+                    "TECHDISER_ID": "ShipmentMode1",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "billingPolicy": "seaCNF",
+                    "shipmentMode": "Sea"
+                },
+                {
+                    "TECHDISER_ID": "ShipmentMode2",
+                    "TECHDISER_SERIAL_NO": 2,
+                    "billingPolicy": "airCNF",
+                    "shipmentMode": "Air"
+                },
+                {
+                    "TECHDISER_ID": "ShipmentMode3",
+                    "TECHDISER_SERIAL_NO": 3,
+                    "billingPolicy": "inlandTransport",
+                    "shipmentMode": "Train"
+                }
+            ]
+        }
+    ]
+}

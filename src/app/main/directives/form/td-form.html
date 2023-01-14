@@ -1,0 +1,10 @@
+<div style="width: 100%;">
+
+    <div layout="row" layout-wrap layout-align="start start" style="width: 100%;">
+        <div ng-repeat="col in vm.form.columns " flex="{{vm.isFullPage(col)? 100: 50}}">
+            <td-form-column-renderer item="objectProperty" col="col">
+            </td-form-column-renderer>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,634 @@
+{
+    "data": [
+        {
+            "TECHDISER_ID": "packinglabelsetup1",
+            "buyerId": "card1",
+            "productId": "Product_Casual_Leather",
+            "barcodes": [
+                {
+                    "title": "Bar Code - 2",
+                    "attributes": [
+                        {
+                            "label": "Po No",
+                            "propertyCode": "poNo",
+                            "type": "keyVal",
+                            "controlType": "label",
+                            "showInForm": true
+                        },
+                        {
+                            "label": "Item Description",
+                            "propertyCode": "itemDescription",
+                            "type": "keyVal",
+                            "controlType": "label",
+                            "showInForm": true
+                        }
+                    ],
+                    "imageData": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAElUlEQVR4Xu2d246jMBBEyf9/dFb7iJE4OqomkEztq01fqvpmzGRf27a9tw/+e7/P1b1er5016f5V3uqqlX81VP+9LyEnKBOh0wSVEJmx0wSs8krI0wmhmmojZLonpPrp+dV/az/JP2TE0jMPGVJC9i21hMgpiyLSNuVmyILodET+HCGfdoj02Qi28qjGk37KWHoeewg5RActG/GkjxyidbK3hEDJIgCJcEtwCSkhOwQeX7KuHsOvzkArv4QsiFEPovWfb+rNkOXdDjVFm5IEMDVpikBaJ38oA2id9NPzX1+yCGACKA0oq7+ESEYIMFondfR8M6RN/dorXIpQWqcIpvVUPmYIKaB1atJpDaaTNdmX9hArn+wtIWHJKiEXX7lSSaKx3RK0VohmyNMzxDJs99sItD3oavnWX7v/9q9OngY4EWoBtvtLCNzh2ynQEnCYuu7+crEZsqfk9Z4eG9IQWZ5PCaO5/2nulxAYo4fjC8WVkBKCQbLb8OdK1trUqaZagKbfFaVTjx1raT/h5cJv2/RJvYS4PygqIYAARfx0RpeQbyeEziFUouycTz3ARrCNwFS+7Rnk7wG/ErLvCURwCVneNRFgtN4Mkd95pYD9PCHTPcJOMbTf2kf7p/VRDz7cGFIPIQfSiLbPUw0nAMifEhKWNALYElhCSsj+3R1dUF1dUigiaY639tmmT/un7cMrXOvwdImYdpgAJvupRKYBVkIWBEsIAPLnMyQtURZAKiG2RJA8618qj/Qd1umCygJs95PDJSQcQ0vI+QUWHVzxxtACbPc3Q5ZfH1pfnRCgdqyjGmrl0X5LcFoSrX9k/+EzoBKS3Y/E+DVD9jEbAyrvbw4ZVkIeRgiNvVST04iiGm5rdHrSTp8nvMgfnLJIQQmZ7TklJPyNxzQgDzeGLVnZl4jjhNimTjWQ5uzpEkjyrL3T9pP+eMoiBdMOEeC0bu2dtp/0l5DwnEABgO+q6G8aW7LOIU7HYJ0h9k59+tyQlgiKWLLXPp/uJ4L0FS45SArJIRuRJI/stc+n+wmfEpIiLJ8vIQtg9twg8cbtSIj9lBQ1yg0EEDlA6uzztmSm9uPYSw5Or6cOkT0lhBCSJcQCSlObDQByx8rDc0pL1h7y20sWnUMoQuw6OZxGnLXHZhRlbOofjr2pg+SwPScQIKm9JN+uW/9KyIKYBZx6QgkJU+RxhFANtP5SBNG61UcRaQEn/dTz6PmDvemNISkkwGmd5NM6yad1K5/203p8p44K6P1/eKd9t/5mCDEAB8+vL1k2AlKHp/XR2G31yXjYLB5YsqzB1gBqwgQA6Ssh8PclNMVNB0AJKSG7GKAMPqzT2DsdsdZAKllXj61kL9lHFUGfQ0rI+f+vXkLkWEuAUcA1Q+QPG7dkQchRRFFN/TTAlEG0Thlmp7zHn0OIQHuOsfJKSPhuiyK2hEiAW7K2bTfXXR1B0/LTkmUDgPbTOpZAOhiSAFpPDST5JUQiVELO/6tZfVKX+B+2l5CQkJQAep7OKXZu/7Q+2wNp6sMMIQfT9RJyjuDt32VRBFkC0wwjfc0Q+YNq307IPxBKd/7IVOa4AAAAAElFTkSuQmCC",
+                    "TECHDISER_ID": "724d.a8db0ce8b3426.0c012896fe57c.b84a3d6c8e951.32163aa3c5957.8e66723c55311.4d3e3dd43"
+                },
+                {
+                    "title": "Bar Code - 1",
+                    "attributes": [
+                        {
+                            "label": "Po No",
+                            "propertyCode": "poNo",
+                            "type": "keyVal",
+                            "controlType": "label",
+                            "showInForm": true
+                        },
+                        {
+                            "label": "Style No",
+                            "propertyCode": "styleNo",
+                            "type": "keyVal",
+                            "controlType": "label",
+                            "showInForm": true
+                        },
+                        {
+                            "label": "Hs Code",
+                            "propertyCode": "hsCode",
+                            "type": "keyVal",
+                            "controlType": "label",
+                            "showInForm": true
+                        }
+                    ],
+                    "imageData": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAEb0lEQVR4Xu3d3a7bMAwD4Pb9H7rDLuMC+UDIabOVu5V/ZFKUbNc5ez4ej9fjg/9er+N0z+fzdHa1X+3rYOv4aq/+V0P1F40ScoKyAmY3QSUEiJaQBaCfT1lpjpVkr87hU8Ku9j8d/y1llZAjhNOAKiHLrm0aYCVkCSkV1Z9LWQJkleTVACkFyK71pP5rvBQf1pDdE05TiACXXespIUJws72EbC6yU35KCAgRQFMC1F8pVLus1H+lxK/XkHRBAji1l5DwtjcFOG1fQkrIIWbWDHG7lKUcq4hOFaL2P19DSsjyA5UAUUSp/267/JnaqxDUmJ9PWf9ahO1WoBSyGx8W9d0TCjDNp/6ftstf2eNdlgaUXRGWHgw/Dbj81/plLyFhjfo6IWJ0ar9bhAvwVMFTfG73DOjuhE0BV/8ScrPb6BJyN0Jenz5pLZpVjpZ7aQ1IU6JSzG77s4QcH3srAHYTsI5XQu72E3MVcjOFrJ8jpJJNc/huyasmrPOl7af+Cs/tJ/USck5ZCRl+kTVVhBT5VsQXf8e3vVXIxQpJI0Q5WZJVxGh8RWQaMJpPduEnPMYndTkoB0rIEYESEl6dKACrkAUBAXa1/XJCtIBpDp+mrNQ/Aab1yF/1Z03Td+rpgtVeNYUOhykmJUCAlpDhT64lJARQEZcqTtf5KUGpoqUwZgDdZU0XmC4oJWBK6BRAzZ+Oz5N6Cclug4WXAq6EDLfNVchSowSIIjJNKWkKTsenQtIiKMmm403bi5ApwNv9U1FPJywhGWJvAVNCzv9+29UBVkLCRw3/PCGZYN1aBykV9bSoqr3mU01S/+1F3RBnLUoItpUZnPPWJaSEHKJIKSgNGKYsPZRLi5r2/WmOnmvsOMLu9ewmjE9Jdy+ghGCbXYWca1CKr0KGOWy34m9HiBwSflcDpKIru/xXkVb/NwVOU1YJ2bxpKCHZD1CK+LHiS8jNCJk+A9IuRBGllKeIm84v/3bb5S+fkmoA2bWgEnJUaAlRxGy2K4BLyGbANRwJUVHXBFN7WiO071cK/HZ/rZd3WVPA1V8OCuDpwe7T/bXeEhL+pDtVWAmBRG+nEJ1DlHJSu4qarucVYak/6XxT/+Ufd1kaILVPF1RCUsTRvoScA1SFLPgoYGRXClR8X/4MKC2aaUoSQLKPAcRfjhABl79cvHpbKAAVACJc5x6tTwTQ/91ve+WwFizAuKDhR6HyT+srIeE3jSL89oRoAVdHbDq+2u+O8LEi0r8GVEJSyM/ba5PBXVYJKSGnCCjCmrKGB6u98fd4pIoWgel42hRovK+nrBJyRKCEhApXAFUhC0JKCSmg6Xj/HSG6+hCgsgvg3ZsGnXviuywtIC2KaQSpvQgQIKn/ai9/FHC3qyFyWAuWXQFWhaAGVCGbP/qcRrz6T+1KaQoIKU6KjWuIBpRdgE37a3zZS0ioQAE6tZeQEnKIAaYspZCpXbuYNGdrvOk2daog9X+z3+2hXAlZ/j/1qQLUXxFdQkqIYuhg1yZCg2mb/AcGc1PyZnk8sgAAAABJRU5ErkJggg==",
+                    "TECHDISER_ID": "ba7f.4eb2a64fd7010.96a673f827519.d788e8fd1ad3b.cd75ae81fc157.050fc8bca423a.55afb7b4b"
+                }
+            ],
+            "labels": [
+                {
+                    "TECHDISER_ID": "setuplabel2",
+                    "title": "Label-2",
+                    "template": {
+                        "layoutType": "flat",
+                        "rows": [
+                            {
+                                "columns": [
+                                    {
+                                        "hSegments": [
+                                            {
+                                                "vSegments": [
+                                                    {
+                                                        "type": "static",
+                                                        "dataSource": "static",
+                                                        "dataValue": "New segment",
+                                                        "TECHDISER_ID": "3a82.e615735658c57.8da311187d4f5.2efd925ee074f.0e7f196d4d674.bd52e0abb17b5.2ed183aee",
+                                                        "value": "Po No"
+                                                    },
+                                                    {
+                                                        "type": "column",
+                                                        "dataSource": "static",
+                                                        "dataValue": "New segment",
+                                                        "TECHDISER_ID": "7962.c2ebac637e39a.57f155234e328.5f09a55a6f307.6622ac34ab909.eeb9a12e7aa0d.0940892b2",
+                                                        "colPropertyCode": "poNo"
+                                                    }
+                                                ],
+                                                "TECHDISER_ID": "2300.9fb3ec44f0e1d.bdfea77715676.170e3bd3ebafa.58d908531f607.0cdd7bbdc3630.b5ed57e5b"
+                                            }
+                                        ],
+                                        "TECHDISER_ID": "23db.783edb05e7a15.b964e62344aca.aff0ba525c433.67d529d466079.d1c438f4dc8eb.0a9f9bbef"
+                                    }
+                                ],
+                                "TECHDISER_ID": "d15f.7718087b4912f.7aed030379d14.09bf15c92154d.647339246072e.8f570bb836d58.b6f84eaee"
+                            },
+                            {
+                                "columns": [
+                                    {
+                                        "hSegments": [
+                                            {
+                                                "vSegments": [
+                                                    {
+                                                        "type": "static",
+                                                        "dataSource": "static",
+                                                        "dataValue": "New segment",
+                                                        "TECHDISER_ID": "d2f6.ecf6c5c38ed21.f90f6db8ff4bd.2db7d2ef51ba8.1e1e877c15ece.982f07a75888c.487e126f5",
+                                                        "value": "Cartoon Quantity"
+                                                    },
+                                                    {
+                                                        "type": "column",
+                                                        "dataSource": "static",
+                                                        "dataValue": "New segment",
+                                                        "TECHDISER_ID": "3ad1.0789d88294bb2.c06cab7fa91ee.c90755599e777.634184715f3ee.d0b5084456043.d95615e23",
+                                                        "colPropertyCode": "cartoonQty"
+                                                    }
+                                                ],
+                                                "TECHDISER_ID": "6cf1.b378db0d56e8a.ccde8e313024e.2800240a3e09c.a991dc9f72139.026ba657a77e0.9d895ff92"
+                                            }
+                                        ],
+                                        "TECHDISER_ID": "c248.034a4e33601e0.df88dc4ae0eef.9c55b648a5087.6c792d6632201.a5c1a88db53b3.2af2c3363"
+                                    }
+                                ],
+                                "TECHDISER_ID": "8b88.af34d543ea56f.71642e14f84f0.06df89a424af0.9b6444ad4076f.7283f10dfa3b7.2a08896fa"
+                            },
+                            {
+                                "columns": [
+                                    {
+                                        "hSegments": [
+                                            {
+                                                "vSegments": [
+                                                    {
+                                                        "type": "column",
+                                                        "dataSource": "static",
+                                                        "dataValue": "New segment",
+                                                        "TECHDISER_ID": "dca5.f96906036ad79.151e66e97cf7c.2ff8b8b5babcf.7d1ce2b13477d.caee1fafafbcb.20b764e82",
+                                                        "colPropertyCode": "BarCode - 2"
+                                                    }
+                                                ],
+                                                "TECHDISER_ID": "4f5f.debe33f2a58df.77fb2c3eafad8.be5d2b52dedd4.8da1f2833a291.9662896ea8b4e.23ad5da65"
+                                            }
+                                        ],
+                                        "TECHDISER_ID": "40eb.3345acf55d9b7.44aa37fefe8b1.2b55d6f13e60.c1584e8dd297.88fcf3c1a9caa.a008e4ae9"
+                                    }
+                                ],
+                                "TECHDISER_ID": "87f2.767ed3601c30c.b62bb865c253c.a530967cf407d.65c9568fba7d8.8ae9f97f5afba.e44feaae3"
+                            }
+                        ]
+                    },
+                    "labelColumns": [
+                        {
+                            "label": "Po No",
+                            "propertyCode": "poNo",
+                            "type": "keyVal",
+                            "controlType": "label",
+                            "showInForm": true
+                        },
+                        {
+                            "label": "Style No",
+                            "propertyCode": "styleNo",
+                            "type": "keyVal",
+                            "controlType": "label",
+                            "showInForm": true
+                        },
+                        {
+                            "label": "Hs Code",
+                            "propertyCode": "hsCode",
+                            "type": "keyVal",
+                            "controlType": "label",
+                            "showInForm": true
+                        },
+                        {
+                            "label": "Item Description",
+                            "propertyCode": "itemDescription",
+                            "type": "keyVal",
+                            "controlType": "label",
+                            "showInForm": true
+                        },
+                        {
+                            "label": "Brand Name",
+                            "propertyCode": "brandName",
+                            "type": "keyVal",
+                            "controlType": "label",
+                            "showInForm": true
+                        },
+                        {
+                            "label": "Destination",
+                            "propertyCode": "destination",
+                            "type": "keyVal",
+                            "controlType": "label",
+                            "showInForm": true
+                        },
+                        {
+                            "label": "Destination Code",
+                            "propertyCode": "destinationCode",
+                            "type": "keyVal",
+                            "controlType": "label",
+                            "showInForm": true
+                        },
+                        {
+                            "label": "Zone",
+                            "propertyCode": "zone",
+                            "type": "keyVal",
+                            "controlType": "label",
+                            "showInForm": true
+                        },
+                        {
+                            "label": "Zone Code",
+                            "propertyCode": "zoneCode",
+                            "type": "keyVal",
+                            "controlType": "label",
+                            "showInForm": true
+                        },
+                        {
+                            "label": "Cartoon Quantity",
+                            "propertyCode": "cartoonQty",
+                            "type": "keyVal",
+                            "controlType": "label",
+                            "showInForm": true
+                        },
+                        {
+                            "label": "Cartoon NO",
+                            "propertyCode": "cartoonNo",
+                            "type": "keyVal",
+                            "controlType": "label",
+                            "showInForm": true
+                        },
+                        {
+                            "barcodeId": "ba7f.4eb2a64fd7010.96a673f827519.d788e8fd1ad3b.cd75ae81fc157.050fc8bca423a.55afb7b4b",
+                            "label": "Bar Code - 1",
+                            "propertyCode": "BarCode - 1",
+                            "showInForm": true,
+                            "imageData": {
+                                "file": "",
+                                "data": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAEb0lEQVR4Xu3d3a7bMAwD4Pb9H7rDLuMC+UDIabOVu5V/ZFKUbNc5ez4ej9fjg/9er+N0z+fzdHa1X+3rYOv4aq/+V0P1F40ScoKyAmY3QSUEiJaQBaCfT1lpjpVkr87hU8Ku9j8d/y1llZAjhNOAKiHLrm0aYCVkCSkV1Z9LWQJkleTVACkFyK71pP5rvBQf1pDdE05TiACXXespIUJws72EbC6yU35KCAgRQFMC1F8pVLus1H+lxK/XkHRBAji1l5DwtjcFOG1fQkrIIWbWDHG7lKUcq4hOFaL2P19DSsjyA5UAUUSp/267/JnaqxDUmJ9PWf9ahO1WoBSyGx8W9d0TCjDNp/6ftstf2eNdlgaUXRGWHgw/Dbj81/plLyFhjfo6IWJ0ar9bhAvwVMFTfG73DOjuhE0BV/8ScrPb6BJyN0Jenz5pLZpVjpZ7aQ1IU6JSzG77s4QcH3srAHYTsI5XQu72E3MVcjOFrJ8jpJJNc/huyasmrPOl7af+Cs/tJ/USck5ZCRl+kTVVhBT5VsQXf8e3vVXIxQpJI0Q5WZJVxGh8RWQaMJpPduEnPMYndTkoB0rIEYESEl6dKACrkAUBAXa1/XJCtIBpDp+mrNQ/Aab1yF/1Z03Td+rpgtVeNYUOhykmJUCAlpDhT64lJARQEZcqTtf5KUGpoqUwZgDdZU0XmC4oJWBK6BRAzZ+Oz5N6Cclug4WXAq6EDLfNVchSowSIIjJNKWkKTsenQtIiKMmm403bi5ApwNv9U1FPJywhGWJvAVNCzv9+29UBVkLCRw3/PCGZYN1aBykV9bSoqr3mU01S/+1F3RBnLUoItpUZnPPWJaSEHKJIKSgNGKYsPZRLi5r2/WmOnmvsOMLu9ewmjE9Jdy+ghGCbXYWca1CKr0KGOWy34m9HiBwSflcDpKIru/xXkVb/NwVOU1YJ2bxpKCHZD1CK+LHiS8jNCJk+A9IuRBGllKeIm84v/3bb5S+fkmoA2bWgEnJUaAlRxGy2K4BLyGbANRwJUVHXBFN7WiO071cK/HZ/rZd3WVPA1V8OCuDpwe7T/bXeEhL+pDtVWAmBRG+nEJ1DlHJSu4qarucVYak/6XxT/+Ufd1kaILVPF1RCUsTRvoScA1SFLPgoYGRXClR8X/4MKC2aaUoSQLKPAcRfjhABl79cvHpbKAAVACJc5x6tTwTQ/91ve+WwFizAuKDhR6HyT+srIeE3jSL89oRoAVdHbDq+2u+O8LEi0r8GVEJSyM/ba5PBXVYJKSGnCCjCmrKGB6u98fd4pIoWgel42hRovK+nrBJyRKCEhApXAFUhC0JKCSmg6Xj/HSG6+hCgsgvg3ZsGnXviuywtIC2KaQSpvQgQIKn/ai9/FHC3qyFyWAuWXQFWhaAGVCGbP/qcRrz6T+1KaQoIKU6KjWuIBpRdgE37a3zZS0ioQAE6tZeQEnKIAaYspZCpXbuYNGdrvOk2daog9X+z3+2hXAlZ/j/1qQLUXxFdQkqIYuhg1yZCg2mb/AcGc1PyZnk8sgAAAABJRU5ErkJggg=="
+                            },
+                            "controlType": "image",
+                            "type": "barcode"
+                        },
+                        {
+                            "barcodeId": "724d.a8db0ce8b3426.0c012896fe57c.b84a3d6c8e951.32163aa3c5957.8e66723c55311.4d3e3dd43",
+                            "label": "Bar Code - 2",
+                            "propertyCode": "BarCode - 2",
+                            "showInForm": true,
+                            "imageData": {
+                                "file": "",
+                                "data": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAElUlEQVR4Xu2d246jMBBEyf9/dFb7iJE4OqomkEztq01fqvpmzGRf27a9tw/+e7/P1b1er5016f5V3uqqlX81VP+9LyEnKBOh0wSVEJmx0wSs8krI0wmhmmojZLonpPrp+dV/az/JP2TE0jMPGVJC9i21hMgpiyLSNuVmyILodET+HCGfdoj02Qi28qjGk37KWHoeewg5RActG/GkjxyidbK3hEDJIgCJcEtwCSkhOwQeX7KuHsOvzkArv4QsiFEPovWfb+rNkOXdDjVFm5IEMDVpikBaJ38oA2id9NPzX1+yCGACKA0oq7+ESEYIMFondfR8M6RN/dorXIpQWqcIpvVUPmYIKaB1atJpDaaTNdmX9hArn+wtIWHJKiEXX7lSSaKx3RK0VohmyNMzxDJs99sItD3oavnWX7v/9q9OngY4EWoBtvtLCNzh2ynQEnCYuu7+crEZsqfk9Z4eG9IQWZ5PCaO5/2nulxAYo4fjC8WVkBKCQbLb8OdK1trUqaZagKbfFaVTjx1raT/h5cJv2/RJvYS4PygqIYAARfx0RpeQbyeEziFUouycTz3ARrCNwFS+7Rnk7wG/ErLvCURwCVneNRFgtN4Mkd95pYD9PCHTPcJOMbTf2kf7p/VRDz7cGFIPIQfSiLbPUw0nAMifEhKWNALYElhCSsj+3R1dUF1dUigiaY639tmmT/un7cMrXOvwdImYdpgAJvupRKYBVkIWBEsIAPLnMyQtURZAKiG2RJA8618qj/Qd1umCygJs95PDJSQcQ0vI+QUWHVzxxtACbPc3Q5ZfH1pfnRCgdqyjGmrl0X5LcFoSrX9k/+EzoBKS3Y/E+DVD9jEbAyrvbw4ZVkIeRgiNvVST04iiGm5rdHrSTp8nvMgfnLJIQQmZ7TklJPyNxzQgDzeGLVnZl4jjhNimTjWQ5uzpEkjyrL3T9pP+eMoiBdMOEeC0bu2dtp/0l5DwnEABgO+q6G8aW7LOIU7HYJ0h9k59+tyQlgiKWLLXPp/uJ4L0FS45SArJIRuRJI/stc+n+wmfEpIiLJ8vIQtg9twg8cbtSIj9lBQ1yg0EEDlA6uzztmSm9uPYSw5Or6cOkT0lhBCSJcQCSlObDQByx8rDc0pL1h7y20sWnUMoQuw6OZxGnLXHZhRlbOofjr2pg+SwPScQIKm9JN+uW/9KyIKYBZx6QgkJU+RxhFANtP5SBNG61UcRaQEn/dTz6PmDvemNISkkwGmd5NM6yad1K5/203p8p44K6P1/eKd9t/5mCDEAB8+vL1k2AlKHp/XR2G31yXjYLB5YsqzB1gBqwgQA6Ssh8PclNMVNB0AJKSG7GKAMPqzT2DsdsdZAKllXj61kL9lHFUGfQ0rI+f+vXkLkWEuAUcA1Q+QPG7dkQchRRFFN/TTAlEG0Thlmp7zHn0OIQHuOsfJKSPhuiyK2hEiAW7K2bTfXXR1B0/LTkmUDgPbTOpZAOhiSAFpPDST5JUQiVELO/6tZfVKX+B+2l5CQkJQAep7OKXZu/7Q+2wNp6sMMIQfT9RJyjuDt32VRBFkC0wwjfc0Q+YNq307IPxBKd/7IVOa4AAAAAElFTkSuQmCC"
+                            },
+                            "controlType": "image",
+                            "type": "barcode"
+                        }
+                    ],
+                    "stripObject": {
+                        "TECHDISER_ID": "11",
+                        "poNo": "PO.123",
+                        "styleNo": "ABC123",
+                        "hsCode": "HS123",
+                        "itemDescription": "full sleeve t shirt",
+                        "brandName": "Denim",
+                        "destination": "China",
+                        "destinationCode": "DT0011",
+                        "zone": "Asia",
+                        "zoneCode": "7720",
+                        "cartoonQty": "5",
+                        "cartoonNo": "1001",
+                        "BarCode - 1": {
+                            "file": "",
+                            "data": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAEb0lEQVR4Xu3d3a7bMAwD4Pb9H7rDLuMC+UDIabOVu5V/ZFKUbNc5ez4ej9fjg/9er+N0z+fzdHa1X+3rYOv4aq/+V0P1F40ScoKyAmY3QSUEiJaQBaCfT1lpjpVkr87hU8Ku9j8d/y1llZAjhNOAKiHLrm0aYCVkCSkV1Z9LWQJkleTVACkFyK71pP5rvBQf1pDdE05TiACXXespIUJws72EbC6yU35KCAgRQFMC1F8pVLus1H+lxK/XkHRBAji1l5DwtjcFOG1fQkrIIWbWDHG7lKUcq4hOFaL2P19DSsjyA5UAUUSp/267/JnaqxDUmJ9PWf9ahO1WoBSyGx8W9d0TCjDNp/6ftstf2eNdlgaUXRGWHgw/Dbj81/plLyFhjfo6IWJ0ar9bhAvwVMFTfG73DOjuhE0BV/8ScrPb6BJyN0Jenz5pLZpVjpZ7aQ1IU6JSzG77s4QcH3srAHYTsI5XQu72E3MVcjOFrJ8jpJJNc/huyasmrPOl7af+Cs/tJ/USck5ZCRl+kTVVhBT5VsQXf8e3vVXIxQpJI0Q5WZJVxGh8RWQaMJpPduEnPMYndTkoB0rIEYESEl6dKACrkAUBAXa1/XJCtIBpDp+mrNQ/Aab1yF/1Z03Td+rpgtVeNYUOhykmJUCAlpDhT64lJARQEZcqTtf5KUGpoqUwZgDdZU0XmC4oJWBK6BRAzZ+Oz5N6Cclug4WXAq6EDLfNVchSowSIIjJNKWkKTsenQtIiKMmm403bi5ApwNv9U1FPJywhGWJvAVNCzv9+29UBVkLCRw3/PCGZYN1aBykV9bSoqr3mU01S/+1F3RBnLUoItpUZnPPWJaSEHKJIKSgNGKYsPZRLi5r2/WmOnmvsOMLu9ewmjE9Jdy+ghGCbXYWca1CKr0KGOWy34m9HiBwSflcDpKIru/xXkVb/NwVOU1YJ2bxpKCHZD1CK+LHiS8jNCJk+A9IuRBGllKeIm84v/3bb5S+fkmoA2bWgEnJUaAlRxGy2K4BLyGbANRwJUVHXBFN7WiO071cK/HZ/rZd3WVPA1V8OCuDpwe7T/bXeEhL+pDtVWAmBRG+nEJ1DlHJSu4qarucVYak/6XxT/+Ufd1kaILVPF1RCUsTRvoScA1SFLPgoYGRXClR8X/4MKC2aaUoSQLKPAcRfjhABl79cvHpbKAAVACJc5x6tTwTQ/91ve+WwFizAuKDhR6HyT+srIeE3jSL89oRoAVdHbDq+2u+O8LEi0r8GVEJSyM/ba5PBXVYJKSGnCCjCmrKGB6u98fd4pIoWgel42hRovK+nrBJyRKCEhApXAFUhC0JKCSmg6Xj/HSG6+hCgsgvg3ZsGnXviuywtIC2KaQSpvQgQIKn/ai9/FHC3qyFyWAuWXQFWhaAGVCGbP/qcRrz6T+1KaQoIKU6KjWuIBpRdgE37a3zZS0ioQAE6tZeQEnKIAaYspZCpXbuYNGdrvOk2daog9X+z3+2hXAlZ/j/1qQLUXxFdQkqIYuhg1yZCg2mb/AcGc1PyZnk8sgAAAABJRU5ErkJggg=="
+                        },
+                        "BarCode - 2": {
+                            "file": "",
+                            "data": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAElUlEQVR4Xu2d246jMBBEyf9/dFb7iJE4OqomkEztq01fqvpmzGRf27a9tw/+e7/P1b1er5016f5V3uqqlX81VP+9LyEnKBOh0wSVEJmx0wSs8krI0wmhmmojZLonpPrp+dV/az/JP2TE0jMPGVJC9i21hMgpiyLSNuVmyILodET+HCGfdoj02Qi28qjGk37KWHoeewg5RActG/GkjxyidbK3hEDJIgCJcEtwCSkhOwQeX7KuHsOvzkArv4QsiFEPovWfb+rNkOXdDjVFm5IEMDVpikBaJ38oA2id9NPzX1+yCGACKA0oq7+ESEYIMFondfR8M6RN/dorXIpQWqcIpvVUPmYIKaB1atJpDaaTNdmX9hArn+wtIWHJKiEXX7lSSaKx3RK0VohmyNMzxDJs99sItD3oavnWX7v/9q9OngY4EWoBtvtLCNzh2ynQEnCYuu7+crEZsqfk9Z4eG9IQWZ5PCaO5/2nulxAYo4fjC8WVkBKCQbLb8OdK1trUqaZagKbfFaVTjx1raT/h5cJv2/RJvYS4PygqIYAARfx0RpeQbyeEziFUouycTz3ARrCNwFS+7Rnk7wG/ErLvCURwCVneNRFgtN4Mkd95pYD9PCHTPcJOMbTf2kf7p/VRDz7cGFIPIQfSiLbPUw0nAMifEhKWNALYElhCSsj+3R1dUF1dUigiaY639tmmT/un7cMrXOvwdImYdpgAJvupRKYBVkIWBEsIAPLnMyQtURZAKiG2RJA8618qj/Qd1umCygJs95PDJSQcQ0vI+QUWHVzxxtACbPc3Q5ZfH1pfnRCgdqyjGmrl0X5LcFoSrX9k/+EzoBKS3Y/E+DVD9jEbAyrvbw4ZVkIeRgiNvVST04iiGm5rdHrSTp8nvMgfnLJIQQmZ7TklJPyNxzQgDzeGLVnZl4jjhNimTjWQ5uzpEkjyrL3T9pP+eMoiBdMOEeC0bu2dtp/0l5DwnEABgO+q6G8aW7LOIU7HYJ0h9k59+tyQlgiKWLLXPp/uJ4L0FS45SArJIRuRJI/stc+n+wmfEpIiLJ8vIQtg9twg8cbtSIj9lBQ1yg0EEDlA6uzztmSm9uPYSw5Or6cOkT0lhBCSJcQCSlObDQByx8rDc0pL1h7y20sWnUMoQuw6OZxGnLXHZhRlbOofjr2pg+SwPScQIKm9JN+uW/9KyIKYBZx6QgkJU+RxhFANtP5SBNG61UcRaQEn/dTz6PmDvemNISkkwGmd5NM6yad1K5/203p8p44K6P1/eKd9t/5mCDEAB8+vL1k2AlKHp/XR2G31yXjYLB5YsqzB1gBqwgQA6Ssh8PclNMVNB0AJKSG7GKAMPqzT2DsdsdZAKllXj61kL9lHFUGfQ0rI+f+vXkLkWEuAUcA1Q+QPG7dkQchRRFFN/TTAlEG0Thlmp7zHn0OIQHuOsfJKSPhuiyK2hEiAW7K2bTfXXR1B0/LTkmUDgPbTOpZAOhiSAFpPDST5JUQiVELO/6tZfVKX+B+2l5CQkJQAep7OKXZu/7Q+2wNp6sMMIQfT9RJyjuDt32VRBFkC0wwjfc0Q+YNq307IPxBKd/7IVOa4AAAAAElFTkSuQmCC"
+                        },
+                        "columnStatus": {
+                            "poNo": true,
+                            "styleNo": true,
+                            "hsCode": true,
+                            "itemDescription": true,
+                            "brandName": true,
+                            "destination": true,
+                            "destinationCode": true,
+                            "zone": true,
+                            "zoneCode": true,
+                            "cartoonQty": true,
+                            "cartoonNo": true,
+                            "BarCode - 1": true,
+                            "BarCode - 2": true
+                        }
+                    },
+                    "stripDef": {
+                        "parameters": [],
+                        "formTemplate": {
+                            "layoutType": "flat",
+                            "rows": [
+                                {
+                                    "columns": [
+                                        {
+                                            "hSegments": [
+                                                {
+                                                    "vSegments": [
+                                                        {
+                                                            "type": "static",
+                                                            "dataSource": "static",
+                                                            "dataValue": "New segment",
+                                                            "TECHDISER_ID": "3a82.e615735658c57.8da311187d4f5.2efd925ee074f.0e7f196d4d674.bd52e0abb17b5.2ed183aee",
+                                                            "value": "Po No"
+                                                        },
+                                                        {
+                                                            "type": "column",
+                                                            "dataSource": "static",
+                                                            "dataValue": "New segment",
+                                                            "TECHDISER_ID": "7962.c2ebac637e39a.57f155234e328.5f09a55a6f307.6622ac34ab909.eeb9a12e7aa0d.0940892b2",
+                                                            "colPropertyCode": "poNo"
+                                                        }
+                                                    ],
+                                                    "TECHDISER_ID": "2300.9fb3ec44f0e1d.bdfea77715676.170e3bd3ebafa.58d908531f607.0cdd7bbdc3630.b5ed57e5b"
+                                                }
+                                            ],
+                                            "TECHDISER_ID": "23db.783edb05e7a15.b964e62344aca.aff0ba525c433.67d529d466079.d1c438f4dc8eb.0a9f9bbef"
+                                        }
+                                    ],
+                                    "TECHDISER_ID": "d15f.7718087b4912f.7aed030379d14.09bf15c92154d.647339246072e.8f570bb836d58.b6f84eaee"
+                                },
+                                {
+                                    "columns": [
+                                        {
+                                            "hSegments": [
+                                                {
+                                                    "vSegments": [
+                                                        {
+                                                            "type": "static",
+                                                            "dataSource": "static",
+                                                            "dataValue": "New segment",
+                                                            "TECHDISER_ID": "d2f6.ecf6c5c38ed21.f90f6db8ff4bd.2db7d2ef51ba8.1e1e877c15ece.982f07a75888c.487e126f5",
+                                                            "value": "Cartoon Quantity"
+                                                        },
+                                                        {
+                                                            "type": "column",
+                                                            "dataSource": "static",
+                                                            "dataValue": "New segment",
+                                                            "TECHDISER_ID": "3ad1.0789d88294bb2.c06cab7fa91ee.c90755599e777.634184715f3ee.d0b5084456043.d95615e23",
+                                                            "colPropertyCode": "cartoonQty"
+                                                        }
+                                                    ],
+                                                    "TECHDISER_ID": "6cf1.b378db0d56e8a.ccde8e313024e.2800240a3e09c.a991dc9f72139.026ba657a77e0.9d895ff92"
+                                                }
+                                            ],
+                                            "TECHDISER_ID": "c248.034a4e33601e0.df88dc4ae0eef.9c55b648a5087.6c792d6632201.a5c1a88db53b3.2af2c3363"
+                                        }
+                                    ],
+                                    "TECHDISER_ID": "8b88.af34d543ea56f.71642e14f84f0.06df89a424af0.9b6444ad4076f.7283f10dfa3b7.2a08896fa"
+                                },
+                                {
+                                    "columns": [
+                                        {
+                                            "hSegments": [
+                                                {
+                                                    "vSegments": [
+                                                        {
+                                                            "type": "column",
+                                                            "dataSource": "static",
+                                                            "dataValue": "New segment",
+                                                            "TECHDISER_ID": "dca5.f96906036ad79.151e66e97cf7c.2ff8b8b5babcf.7d1ce2b13477d.caee1fafafbcb.20b764e82",
+                                                            "colPropertyCode": "BarCode - 2"
+                                                        }
+                                                    ],
+                                                    "TECHDISER_ID": "4f5f.debe33f2a58df.77fb2c3eafad8.be5d2b52dedd4.8da1f2833a291.9662896ea8b4e.23ad5da65"
+                                                }
+                                            ],
+                                            "TECHDISER_ID": "40eb.3345acf55d9b7.44aa37fefe8b1.2b55d6f13e60.c1584e8dd297.88fcf3c1a9caa.a008e4ae9"
+                                        }
+                                    ],
+                                    "TECHDISER_ID": "87f2.767ed3601c30c.b62bb865c253c.a530967cf407d.65c9568fba7d8.8ae9f97f5afba.e44feaae3"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "TECHDISER_ID": "setuplabel1",
+                    "title": "Label-1",
+                    "template": {
+                        "layoutType": "flat",
+                        "rows": [
+                            {
+                                "columns": [
+                                    {
+                                        "hSegments": [
+                                            {
+                                                "vSegments": [
+                                                    {
+                                                        "type": "static",
+                                                        "dataSource": "static",
+                                                        "dataValue": "New segment",
+                                                        "TECHDISER_ID": "1265.66f7cca36e255.2c637ae3fd955.7768c25423748.d186947e313b6.617e83325547f.06f3cb10c",
+                                                        "value": "Po No"
+                                                    },
+                                                    {
+                                                        "type": "column",
+                                                        "dataSource": "static",
+                                                        "dataValue": "New segment",
+                                                        "TECHDISER_ID": "1b15.7141b200527f9.f17dd7982eb1d.3766b671d4f6e.60e273e780f5c.bdb4dc74f4992.b8eb67a95",
+                                                        "colPropertyCode": "poNo"
+                                                    }
+                                                ],
+                                                "TECHDISER_ID": "9ef8.1ab8f4ecb05f8.f28334ae4bac6.5136ad26e1c99.aa2cfb6bdfab1.9ac594441ace0.a59f23485"
+                                            }
+                                        ],
+                                        "TECHDISER_ID": "cbcf.a7ef5bfd236a5.83e6f1ed15e25.ddddb4a3ff41c.507779aa8ee78.b14e72e737c1b.71080a1d1"
+                                    }
+                                ],
+                                "TECHDISER_ID": "bd56.739d1110f6c85.aaa341ace1870.fd350609fdf0f.8b756a3f931bb.14b9bd882e1d9.c128b2312"
+                            },
+                            {
+                                "columns": [
+                                    {
+                                        "hSegments": [
+                                            {
+                                                "vSegments": [
+                                                    {
+                                                        "type": "column",
+                                                        "dataSource": "static",
+                                                        "dataValue": "New segment",
+                                                        "TECHDISER_ID": "172f.60b862cd2f22a.e932ee147a18.cd4402907e3d8.c2b1673d76e2a.2bf86d5fec089.75ea7ba81",
+                                                        "colPropertyCode": "BarCode - 1"
+                                                    }
+                                                ],
+                                                "TECHDISER_ID": "6d3d.25d8513f1ae4f.ec02408ef54eb.620b8bdad311.13dfbd937b432.35e982c040d1c.ad5795e97"
+                                            }
+                                        ],
+                                        "TECHDISER_ID": "a82b.33a07b022ace8.642b6103ac77d.1594fc57ee6f4.0389df56590be.b6d8901d21f99.a3047ad0a"
+                                    }
+                                ],
+                                "TECHDISER_ID": "6ec8.83b16796df891.f4a3be88430d3.2c4387636a371.98d55b5243757.f182bf3a635cf.5ac39d19b"
+                            }
+                        ]
+                    },
+                    "labelColumns": [
+                        {
+                            "label": "Po No",
+                            "propertyCode": "poNo",
+                            "type": "keyVal",
+                            "controlType": "label",
+                            "showInForm": true
+                        },
+                        {
+                            "label": "Style No",
+                            "propertyCode": "styleNo",
+                            "type": "keyVal",
+                            "controlType": "label",
+                            "showInForm": true
+                        },
+                        {
+                            "label": "Hs Code",
+                            "propertyCode": "hsCode",
+                            "type": "keyVal",
+                            "controlType": "label",
+                            "showInForm": true
+                        },
+                        {
+                            "label": "Item Description",
+                            "propertyCode": "itemDescription",
+                            "type": "keyVal",
+                            "controlType": "label",
+                            "showInForm": true
+                        },
+                        {
+                            "label": "Brand Name",
+                            "propertyCode": "brandName",
+                            "type": "keyVal",
+                            "controlType": "label",
+                            "showInForm": true
+                        },
+                        {
+                            "label": "Destination",
+                            "propertyCode": "destination",
+                            "type": "keyVal",
+                            "controlType": "label",
+                            "showInForm": true
+                        },
+                        {
+                            "label": "Destination Code",
+                            "propertyCode": "destinationCode",
+                            "type": "keyVal",
+                            "controlType": "label",
+                            "showInForm": true
+                        },
+                        {
+                            "label": "Zone",
+                            "propertyCode": "zone",
+                            "type": "keyVal",
+                            "controlType": "label",
+                            "showInForm": true
+                        },
+                        {
+                            "label": "Zone Code",
+                            "propertyCode": "zoneCode",
+                            "type": "keyVal",
+                            "controlType": "label",
+                            "showInForm": true
+                        },
+                        {
+                            "label": "Cartoon Quantity",
+                            "propertyCode": "cartoonQty",
+                            "type": "keyVal",
+                            "controlType": "label",
+                            "showInForm": true
+                        },
+                        {
+                            "label": "Cartoon NO",
+                            "propertyCode": "cartoonNo",
+                            "type": "keyVal",
+                            "controlType": "label",
+                            "showInForm": true
+                        },
+                        {
+                            "barcodeId": "ba7f.4eb2a64fd7010.96a673f827519.d788e8fd1ad3b.cd75ae81fc157.050fc8bca423a.55afb7b4b",
+                            "label": "Bar Code - 1",
+                            "propertyCode": "BarCode - 1",
+                            "showInForm": true,
+                            "imageData": {
+                                "file": "",
+                                "data": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAEb0lEQVR4Xu3d3a7bMAwD4Pb9H7rDLuMC+UDIabOVu5V/ZFKUbNc5ez4ej9fjg/9er+N0z+fzdHa1X+3rYOv4aq/+V0P1F40ScoKyAmY3QSUEiJaQBaCfT1lpjpVkr87hU8Ku9j8d/y1llZAjhNOAKiHLrm0aYCVkCSkV1Z9LWQJkleTVACkFyK71pP5rvBQf1pDdE05TiACXXespIUJws72EbC6yU35KCAgRQFMC1F8pVLus1H+lxK/XkHRBAji1l5DwtjcFOG1fQkrIIWbWDHG7lKUcq4hOFaL2P19DSsjyA5UAUUSp/267/JnaqxDUmJ9PWf9ahO1WoBSyGx8W9d0TCjDNp/6ftstf2eNdlgaUXRGWHgw/Dbj81/plLyFhjfo6IWJ0ar9bhAvwVMFTfG73DOjuhE0BV/8ScrPb6BJyN0Jenz5pLZpVjpZ7aQ1IU6JSzG77s4QcH3srAHYTsI5XQu72E3MVcjOFrJ8jpJJNc/huyasmrPOl7af+Cs/tJ/USck5ZCRl+kTVVhBT5VsQXf8e3vVXIxQpJI0Q5WZJVxGh8RWQaMJpPduEnPMYndTkoB0rIEYESEl6dKACrkAUBAXa1/XJCtIBpDp+mrNQ/Aab1yF/1Z03Td+rpgtVeNYUOhykmJUCAlpDhT64lJARQEZcqTtf5KUGpoqUwZgDdZU0XmC4oJWBK6BRAzZ+Oz5N6Cclug4WXAq6EDLfNVchSowSIIjJNKWkKTsenQtIiKMmm403bi5ApwNv9U1FPJywhGWJvAVNCzv9+29UBVkLCRw3/PCGZYN1aBykV9bSoqr3mU01S/+1F3RBnLUoItpUZnPPWJaSEHKJIKSgNGKYsPZRLi5r2/WmOnmvsOMLu9ewmjE9Jdy+ghGCbXYWca1CKr0KGOWy34m9HiBwSflcDpKIru/xXkVb/NwVOU1YJ2bxpKCHZD1CK+LHiS8jNCJk+A9IuRBGllKeIm84v/3bb5S+fkmoA2bWgEnJUaAlRxGy2K4BLyGbANRwJUVHXBFN7WiO071cK/HZ/rZd3WVPA1V8OCuDpwe7T/bXeEhL+pDtVWAmBRG+nEJ1DlHJSu4qarucVYak/6XxT/+Ufd1kaILVPF1RCUsTRvoScA1SFLPgoYGRXClR8X/4MKC2aaUoSQLKPAcRfjhABl79cvHpbKAAVACJc5x6tTwTQ/91ve+WwFizAuKDhR6HyT+srIeE3jSL89oRoAVdHbDq+2u+O8LEi0r8GVEJSyM/ba5PBXVYJKSGnCCjCmrKGB6u98fd4pIoWgel42hRovK+nrBJyRKCEhApXAFUhC0JKCSmg6Xj/HSG6+hCgsgvg3ZsGnXviuywtIC2KaQSpvQgQIKn/ai9/FHC3qyFyWAuWXQFWhaAGVCGbP/qcRrz6T+1KaQoIKU6KjWuIBpRdgE37a3zZS0ioQAE6tZeQEnKIAaYspZCpXbuYNGdrvOk2daog9X+z3+2hXAlZ/j/1qQLUXxFdQkqIYuhg1yZCg2mb/AcGc1PyZnk8sgAAAABJRU5ErkJggg=="
+                            },
+                            "controlType": "image",
+                            "type": "barcode"
+                        },
+                        {
+                            "barcodeId": "724d.a8db0ce8b3426.0c012896fe57c.b84a3d6c8e951.32163aa3c5957.8e66723c55311.4d3e3dd43",
+                            "label": "Bar Code - 2",
+                            "propertyCode": "BarCode - 2",
+                            "showInForm": true,
+                            "imageData": {
+                                "file": "",
+                                "data": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAElUlEQVR4Xu2d246jMBBEyf9/dFb7iJE4OqomkEztq01fqvpmzGRf27a9tw/+e7/P1b1er5016f5V3uqqlX81VP+9LyEnKBOh0wSVEJmx0wSs8krI0wmhmmojZLonpPrp+dV/az/JP2TE0jMPGVJC9i21hMgpiyLSNuVmyILodET+HCGfdoj02Qi28qjGk37KWHoeewg5RActG/GkjxyidbK3hEDJIgCJcEtwCSkhOwQeX7KuHsOvzkArv4QsiFEPovWfb+rNkOXdDjVFm5IEMDVpikBaJ38oA2id9NPzX1+yCGACKA0oq7+ESEYIMFondfR8M6RN/dorXIpQWqcIpvVUPmYIKaB1atJpDaaTNdmX9hArn+wtIWHJKiEXX7lSSaKx3RK0VohmyNMzxDJs99sItD3oavnWX7v/9q9OngY4EWoBtvtLCNzh2ynQEnCYuu7+crEZsqfk9Z4eG9IQWZ5PCaO5/2nulxAYo4fjC8WVkBKCQbLb8OdK1trUqaZagKbfFaVTjx1raT/h5cJv2/RJvYS4PygqIYAARfx0RpeQbyeEziFUouycTz3ARrCNwFS+7Rnk7wG/ErLvCURwCVneNRFgtN4Mkd95pYD9PCHTPcJOMbTf2kf7p/VRDz7cGFIPIQfSiLbPUw0nAMifEhKWNALYElhCSsj+3R1dUF1dUigiaY639tmmT/un7cMrXOvwdImYdpgAJvupRKYBVkIWBEsIAPLnMyQtURZAKiG2RJA8618qj/Qd1umCygJs95PDJSQcQ0vI+QUWHVzxxtACbPc3Q5ZfH1pfnRCgdqyjGmrl0X5LcFoSrX9k/+EzoBKS3Y/E+DVD9jEbAyrvbw4ZVkIeRgiNvVST04iiGm5rdHrSTp8nvMgfnLJIQQmZ7TklJPyNxzQgDzeGLVnZl4jjhNimTjWQ5uzpEkjyrL3T9pP+eMoiBdMOEeC0bu2dtp/0l5DwnEABgO+q6G8aW7LOIU7HYJ0h9k59+tyQlgiKWLLXPp/uJ4L0FS45SArJIRuRJI/stc+n+wmfEpIiLJ8vIQtg9twg8cbtSIj9lBQ1yg0EEDlA6uzztmSm9uPYSw5Or6cOkT0lhBCSJcQCSlObDQByx8rDc0pL1h7y20sWnUMoQuw6OZxGnLXHZhRlbOofjr2pg+SwPScQIKm9JN+uW/9KyIKYBZx6QgkJU+RxhFANtP5SBNG61UcRaQEn/dTz6PmDvemNISkkwGmd5NM6yad1K5/203p8p44K6P1/eKd9t/5mCDEAB8+vL1k2AlKHp/XR2G31yXjYLB5YsqzB1gBqwgQA6Ssh8PclNMVNB0AJKSG7GKAMPqzT2DsdsdZAKllXj61kL9lHFUGfQ0rI+f+vXkLkWEuAUcA1Q+QPG7dkQchRRFFN/TTAlEG0Thlmp7zHn0OIQHuOsfJKSPhuiyK2hEiAW7K2bTfXXR1B0/LTkmUDgPbTOpZAOhiSAFpPDST5JUQiVELO/6tZfVKX+B+2l5CQkJQAep7OKXZu/7Q+2wNp6sMMIQfT9RJyjuDt32VRBFkC0wwjfc0Q+YNq307IPxBKd/7IVOa4AAAAAElFTkSuQmCC"
+                            },
+                            "controlType": "image",
+                            "type": "barcode"
+                        }
+                    ],
+                    "stripObject": {
+                        "TECHDISER_ID": "11",
+                        "poNo": "PO.123",
+                        "styleNo": "ABC123",
+                        "hsCode": "HS123",
+                        "itemDescription": "full sleeve t shirt",
+                        "brandName": "Denim",
+                        "destination": "China",
+                        "destinationCode": "DT0011",
+                        "zone": "Asia",
+                        "zoneCode": "7720",
+                        "cartoonQty": "5",
+                        "cartoonNo": "1001",
+                        "BarCode - 1": {
+                            "file": "",
+                            "data": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAEb0lEQVR4Xu3d3a7bMAwD4Pb9H7rDLuMC+UDIabOVu5V/ZFKUbNc5ez4ej9fjg/9er+N0z+fzdHa1X+3rYOv4aq/+V0P1F40ScoKyAmY3QSUEiJaQBaCfT1lpjpVkr87hU8Ku9j8d/y1llZAjhNOAKiHLrm0aYCVkCSkV1Z9LWQJkleTVACkFyK71pP5rvBQf1pDdE05TiACXXespIUJws72EbC6yU35KCAgRQFMC1F8pVLus1H+lxK/XkHRBAji1l5DwtjcFOG1fQkrIIWbWDHG7lKUcq4hOFaL2P19DSsjyA5UAUUSp/267/JnaqxDUmJ9PWf9ahO1WoBSyGx8W9d0TCjDNp/6ftstf2eNdlgaUXRGWHgw/Dbj81/plLyFhjfo6IWJ0ar9bhAvwVMFTfG73DOjuhE0BV/8ScrPb6BJyN0Jenz5pLZpVjpZ7aQ1IU6JSzG77s4QcH3srAHYTsI5XQu72E3MVcjOFrJ8jpJJNc/huyasmrPOl7af+Cs/tJ/USck5ZCRl+kTVVhBT5VsQXf8e3vVXIxQpJI0Q5WZJVxGh8RWQaMJpPduEnPMYndTkoB0rIEYESEl6dKACrkAUBAXa1/XJCtIBpDp+mrNQ/Aab1yF/1Z03Td+rpgtVeNYUOhykmJUCAlpDhT64lJARQEZcqTtf5KUGpoqUwZgDdZU0XmC4oJWBK6BRAzZ+Oz5N6Cclug4WXAq6EDLfNVchSowSIIjJNKWkKTsenQtIiKMmm403bi5ApwNv9U1FPJywhGWJvAVNCzv9+29UBVkLCRw3/PCGZYN1aBykV9bSoqr3mU01S/+1F3RBnLUoItpUZnPPWJaSEHKJIKSgNGKYsPZRLi5r2/WmOnmvsOMLu9ewmjE9Jdy+ghGCbXYWca1CKr0KGOWy34m9HiBwSflcDpKIru/xXkVb/NwVOU1YJ2bxpKCHZD1CK+LHiS8jNCJk+A9IuRBGllKeIm84v/3bb5S+fkmoA2bWgEnJUaAlRxGy2K4BLyGbANRwJUVHXBFN7WiO071cK/HZ/rZd3WVPA1V8OCuDpwe7T/bXeEhL+pDtVWAmBRG+nEJ1DlHJSu4qarucVYak/6XxT/+Ufd1kaILVPF1RCUsTRvoScA1SFLPgoYGRXClR8X/4MKC2aaUoSQLKPAcRfjhABl79cvHpbKAAVACJc5x6tTwTQ/91ve+WwFizAuKDhR6HyT+srIeE3jSL89oRoAVdHbDq+2u+O8LEi0r8GVEJSyM/ba5PBXVYJKSGnCCjCmrKGB6u98fd4pIoWgel42hRovK+nrBJyRKCEhApXAFUhC0JKCSmg6Xj/HSG6+hCgsgvg3ZsGnXviuywtIC2KaQSpvQgQIKn/ai9/FHC3qyFyWAuWXQFWhaAGVCGbP/qcRrz6T+1KaQoIKU6KjWuIBpRdgE37a3zZS0ioQAE6tZeQEnKIAaYspZCpXbuYNGdrvOk2daog9X+z3+2hXAlZ/j/1qQLUXxFdQkqIYuhg1yZCg2mb/AcGc1PyZnk8sgAAAABJRU5ErkJggg=="
+                        },
+                        "columnStatus": {
+                            "poNo": true,
+                            "styleNo": true,
+                            "hsCode": true,
+                            "itemDescription": true,
+                            "brandName": true,
+                            "destination": true,
+                            "destinationCode": true,
+                            "zone": true,
+                            "zoneCode": true,
+                            "cartoonQty": true,
+                            "cartoonNo": true,
+                            "BarCode - 1": true,
+                            "BarCode - 2": true
+                        }
+                    },
+                    "stripDef": {
+                        "parameters": [],
+                        "formTemplate": {
+                            "layoutType": "flat",
+                            "rows": [
+                                {
+                                    "columns": [
+                                        {
+                                            "hSegments": [
+                                                {
+                                                    "vSegments": [
+                                                        {
+                                                            "type": "static",
+                                                            "dataSource": "static",
+                                                            "dataValue": "New segment",
+                                                            "TECHDISER_ID": "1265.66f7cca36e255.2c637ae3fd955.7768c25423748.d186947e313b6.617e83325547f.06f3cb10c",
+                                                            "value": "Po No"
+                                                        },
+                                                        {
+                                                            "type": "column",
+                                                            "dataSource": "static",
+                                                            "dataValue": "New segment",
+                                                            "TECHDISER_ID": "1b15.7141b200527f9.f17dd7982eb1d.3766b671d4f6e.60e273e780f5c.bdb4dc74f4992.b8eb67a95",
+                                                            "colPropertyCode": "poNo"
+                                                        }
+                                                    ],
+                                                    "TECHDISER_ID": "9ef8.1ab8f4ecb05f8.f28334ae4bac6.5136ad26e1c99.aa2cfb6bdfab1.9ac594441ace0.a59f23485"
+                                                }
+                                            ],
+                                            "TECHDISER_ID": "cbcf.a7ef5bfd236a5.83e6f1ed15e25.ddddb4a3ff41c.507779aa8ee78.b14e72e737c1b.71080a1d1"
+                                        }
+                                    ],
+                                    "TECHDISER_ID": "bd56.739d1110f6c85.aaa341ace1870.fd350609fdf0f.8b756a3f931bb.14b9bd882e1d9.c128b2312"
+                                },
+                                {
+                                    "columns": [
+                                        {
+                                            "hSegments": [
+                                                {
+                                                    "vSegments": [
+                                                        {
+                                                            "type": "column",
+                                                            "dataSource": "static",
+                                                            "dataValue": "New segment",
+                                                            "TECHDISER_ID": "172f.60b862cd2f22a.e932ee147a18.cd4402907e3d8.c2b1673d76e2a.2bf86d5fec089.75ea7ba81",
+                                                            "colPropertyCode": "BarCode - 1"
+                                                        }
+                                                    ],
+                                                    "TECHDISER_ID": "6d3d.25d8513f1ae4f.ec02408ef54eb.620b8bdad311.13dfbd937b432.35e982c040d1c.ad5795e97"
+                                                }
+                                            ],
+                                            "TECHDISER_ID": "a82b.33a07b022ace8.642b6103ac77d.1594fc57ee6f4.0389df56590be.b6d8901d21f99.a3047ad0a"
+                                        }
+                                    ],
+                                    "TECHDISER_ID": "6ec8.83b16796df891.f4a3be88430d3.2c4387636a371.98d55b5243757.f182bf3a635cf.5ac39d19b"
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}

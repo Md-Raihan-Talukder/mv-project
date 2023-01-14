@@ -1,0 +1,26 @@
+.decision-tree-container {
+  .node {
+    cursor: pointer;
+  }
+
+  .node circle {
+    fill: #fff;
+    stroke: steelblue;
+    stroke-width: 1.5px;
+  }
+
+  .node text {
+    font: 14px sans-serif;
+  }
+
+  .link {
+    fill: none;
+    stroke: gray;
+    stroke-width: 0.3px;
+  }
+  .activelink {
+    fill: none;
+    stroke: red;
+    stroke-width: 0.75px;
+  }
+}

@@ -1,0 +1,68 @@
+{
+    "data": [
+        {
+            "TECHDISER_ID": "shippingLine1ship1",
+            "shippingLineId": "shippingLine1",
+            "shipId": "ship1",
+            "bookables": [
+                {
+                    "bookableId": "bookable1"
+                },
+                {
+                    "bookableId": "bookable2"
+                }
+            ],
+            "fclContainer": [
+                {
+                    "TECHDISER_ID": "shippingLine1ship160ft",
+                    "containerTypeId": "60ft",
+                    "containerCount": 2,
+                    "bookableId": "bookable1",
+                    "space": "2x2x1.5",
+                    "unit": "feet",
+                    "containerDetails": [
+                        {
+                            "TECHDISER_ID": "",
+                            "TECHDISERSERIAL_NO": 1,
+                            "containerTypeId": "60ft",
+                            "space": "2x2x1.5",
+                            "unit": "feet",
+                            "bookableId": "bookable1",
+                            "containerCode": "K-22"
+                        },
+                        {
+                            "TECHDISER_ID": "",
+                            "TECHDISERSERIAL_NO": 1,
+                            "containerTypeId": "60ft",
+                            "space": "2x2x1.5",
+                            "unit": "feet",
+                            "bookableId": "bookable1",
+                            "containerCode": "K-22"
+                        }
+                    ]
+                }
+            ],
+            "lclContainer": [
+                {
+                    "TECHDISER_ID": "shippingLine1ship1lclContainer60ft",
+                    "TECHDISERSERIAL": 1,
+                    "containerTypeId": "60ft",
+                    "space": "2x2x1.5",
+                    "unit": "feet",
+                    "bookables": [
+                        {
+                            "TECHDISER_ID": "shippingLine1ship1lclContainer60ftbookablesbookable1",
+                            "bookableId": "bookable1"
+                        },
+                        {
+                            "TECHDISER_ID": "shippingLine1ship1lclContainer60ftbookablesbookable2",
+                            "bookableId": "bookable2"
+                        }
+                    ]
+                }
+            ]
+        },
+        {},
+        {}
+    ]
+}

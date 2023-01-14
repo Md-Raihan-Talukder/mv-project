@@ -1,0 +1,38 @@
+<!-- <h1>Main Side Nav !</h1> -->
+
+
+<div layout="column" layout-align="space-between start">
+
+    <div layout="row" layout-align="start center">
+
+        <span class="ml-20">
+            <h3>Select An Organization</h3>
+        </span>
+    </div>
+</div>
+
+<div class="content">
+
+    <div class="navigation-simple" layout="column">
+
+        <md-button class="item subheader" aria-label="All Organization" ng-class="{'selected':vm.showAllItems }" ng-click="vm.resetFilters()">
+            <div layout="row" layout-align="start center">
+                <md-icon md-font-icon="icon-view-headline" class="s16"></md-icon>
+                <span class="title">All Organization</span>
+            </div>
+        </md-button>
+        <div class="ml-25">
+            <md-input-container>
+                <label>Search Organization</label>
+                <input type="text" ng-model="searchOrg" ng-pattern="/^[a-zA-Z0-9]{1,10}$/" />
+            </md-input-container>
+        </div>
+
+        <md-button ng-repeat="organization in vm.organizations | filter:searchOrg" class="item" aria-label="Starred" ng-click="vm.select(organization);vm.toggleFilterWithEmpty(vm.organizations[$index].name)" ng-class="{'selected': vm.selected == organization}">
+            <md-icon md-font-icon="icon-bank" class="s16"></md-icon>
+            <span class="title">{{organization.name}}</span>
+        </md-button>
+
+    </div>
+
+</div>

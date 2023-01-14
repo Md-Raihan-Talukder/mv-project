@@ -1,0 +1,67 @@
+<md-dialog class="pdf-load-dialog" aria-label="Card Card Dialog">
+
+
+    <md-dialog-content style="padding: 5px; overflow: hidden;">
+        <div layout="row" layout-align="start start">
+            <p>
+                <input type="file" name="pdffile" id="pdffile">
+            </p>
+
+            <div class="pagination" layout="row" layout-align="start start">
+                <md-button class="md-icon-button md-accent md-button md-default-theme " ng-click="vm.updatePageNo('first');" aria-label="Close dialog">
+                    <md-icon md-font-icon="icon-chevron-double-left" class="icon"></md-icon>
+                </md-button>
+                <md-button class="md-icon-button md-accent md-button md-default-theme " ng-click="vm.updatePageNo('decr');" aria-label="Close dialog">
+                    <md-icon md-font-icon="icon-chevron-left" class="icon"></md-icon>
+                </md-button>
+
+                <div class="p-10">{{vm.currentPage}} / {{vm.totalPage}}</div>
+
+                <md-button class="md-icon-button md-accent md-button md-default-theme " ng-click="vm.updatePageNo('incr');" aria-label="Close dialog">
+                    <md-icon md-font-icon="icon-chevron-right" class="icon"></md-icon>
+                </md-button>
+                <md-button class="md-icon-button md-accent md-button md-default-theme " ng-click="vm.updatePageNo('last');" aria-label="Close dialog">
+                    <md-icon md-font-icon="icon-chevron-double-right" class="icon"></md-icon>
+                </md-button>
+
+            </div>
+
+
+
+        </div>
+        <md-button class="md-icon-button maximage-close-dialog" ng-click="vm.closeDialog();" aria-label="Close dialog">
+            <md-icon md-font-icon="icon-close-circle" class="icon"></md-icon>
+        </md-button>
+
+        <div layout="row" layout-align="start start">
+            <div class="left-part border mr-5 pb-25" flex style="min-height: 700px; max-height: 700px; overflow: auto;">
+                <div id="pdf-canvas-holder"></div>
+            </div>
+
+            <div class="right-part border mr-5" flex style="min-height: 700px; max-height: 700px;overflow: hidden;" layout="column" layout-align="start start">
+
+                <div style="min-height: 300px; max-height: 300px;
+                      overflow: auto; width: 100%; text-align: center;
+                      padding: 5px; border: 1px solid #ddd;">
+                    <canvas id="img-canvas" style="border: 1px solid black;
+                     vertical-align: middle;">
+
+                    </canvas>
+                </div>
+
+                <input type="button" ng-click="vm.loadData()" value="load text">
+
+                <div style="min-height: 300px; max-height: 300px;
+                      overflow: auto; width: 100%; text-align: center;
+                      padding: 5px; border: 1px solid #ddd;">
+                    <div id="the-text"></div>
+                </div>
+
+
+
+
+            </div>
+        </div>
+    </md-dialog-content>
+
+</md-dialog>

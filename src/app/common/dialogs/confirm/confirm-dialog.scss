@@ -1,0 +1,13 @@
+md-dialog {
+  &.confirm-dialog {
+    width: 600px;
+    max-width: 70%;
+    overflow: hidden;
+
+    md-dialog-content {
+      min-height: 300px;
+      position: relative;
+      background-color: #f5f5f5;
+    }
+  }
+}

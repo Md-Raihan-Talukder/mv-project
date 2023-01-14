@@ -1,0 +1,12 @@
+[contenteditable]:hover {
+  background-color: #f5f5f5;
+  border: 1px dotted #999;
+  width: 120%;
+}
+[contenteditable]:focus {
+  background-color: #fbf3ea;
+  border: 1px solid #fed5c3;
+  width: 120%;
+  padding-left: 10px;
+  padding-right: 10px;
+}

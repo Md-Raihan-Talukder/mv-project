@@ -1,0 +1,93 @@
+<div id="common-detail-entry" class="page-layout simple right-sidenav" layout="row" ng-if="vm.isReady">
+
+    <md-sidenav class="left-sidenav" md-component-id="left-sidenav" md-is-locked-open="$mdMedia('gt-md') && vm.leftNavPined " ng-include="'app/main/common/details-entry/sidenavs/left/left-sidenav.html'" ms-sidenav-helper style="overflow:hidden;">
+    </md-sidenav>
+
+
+    <div class="center" layout="column" flex>
+
+        <div class="header md-accent-bg">
+
+            <div class="header-content" layout="column" layout-align="space-between">
+
+                <div class="toolbar" layout="row" layout-align="space-between">
+
+                    <div layout="row" layout-align="start center" flex>
+                        <md-button class="md-icon-button main-sidenav-toggle" ng-click="vm.toggleSidenav('left-sidenav')" aria-label="Toggle Main Sidenav">
+                            <md-icon md-font-icon="icon-backburger" class="icon" ng-class="{'transform-180' : !vm.leftNavPined}"></md-icon>
+                        </md-button>
+
+                        <div class="header-title " layout="row" layout-align="start center" flex>
+
+                            <div class="mr-25" layout="row" layout-align="start center" ng-if="vm.headerTitle">
+
+                                <span>{{vm.headerTitle}}</span>
+
+                            </div>
+
+                            <div class="mr-25" layout="row" layout-align="start center" ng-if="keyVal.show" ng-repeat="keyVal in vm.keyValues">
+                                <span>{{keyVal.label}}</span>
+                                <span ng-if="keyVal.label.length">:</span>
+                                <span class="ml-5 " ng-class="{'font-weight-900': keyVal.label.length}">{{keyVal.value}}</span>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                    <div class="right-side" layout="row">
+
+                        <md-button ng-click="vm.onSave()" class="md-accent md-raised " style="margin: 3px; line-height: 25px; width: 120px;" aria-label="SAVE">
+                            Save
+                        </md-button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+        <md-content class="content" flex style="overflow:hidden;">
+            <div ng-if="vm.selectedMenu.header && vm.selectedMenu.header.type !== 'service'" class="h-30 grey-100-bg p-5 border-bottom">
+                {{ vm.menuheader }}
+            </div>
+            <div ng-if="vm.selectedMenu.header.type === 'service'" class="h-30 grey-100-bg p-5 border-bottom" layout="row" layout-align="start center">
+
+                <div class="mr-25" layout="row" layout-align="start center" ng-repeat="keyVal in vm.menuheader">
+                    <span class="secondary-text">{{keyVal.label}}</span>
+                    <span ng-if="keyVal.label.length">:</span>
+                    <span class="ml-5" ng-if="keyVal.filter">{{keyVal.value | picker: keyVal.filter}}</span>
+                    <span class="ml-5" ng-if="!keyVal.filter">{{keyVal.value }}</span>
+
+                </div>
+            </div>
+            <div ng-if="vm.directiveInfo" style="min-height: calc(100% - 30px); height:calc(100% - 30px); overflow:hidden;">
+                <msb-dynamic-directive info="vm.directiveInfo"></msb-dynamic-directive>
+            </div>
+
+            <div ng-if="!vm.directiveInfo" style="width:100%;  min-height:650px;" layout="column" layout-align="center center">
+                <md-progress-circular class="md-accent" md-mode="indeterminate" md-diameter="32">
+                </md-progress-circular>
+            </div>
+
+        </md-content>
+
+
+    </div>
+
+    <!--  <md-sidenav class="right-sidenav md-sidenav-right" md-component-id="right-sidenav"
+                ng-include="'app/main/landing/sidenavs/right/right-sidenav.html'"
+                ms-scroll ms-sidenav-helper>
+    </md-sidenav>  -->
+
+
+</div>
+
+<div style="width:100%; min-height:600px;" layout="column" layout-align="center center" ng-if="!vm.isReady">
+    <md-progress-circular class="md-accent" md-mode="indeterminate" md-diameter="32">
+    </md-progress-circular>
+</div>

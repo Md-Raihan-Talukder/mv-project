@@ -1,0 +1,80 @@
+<div id="add-new-license" class="item-detail register-definition page-layout simple tabbed" layout="column">
+    <div class="header md-accent-bg" layout="row" layout-align="start center">
+        <div layout="row" layout-align="start center" flex>
+
+            <div layout="row" layout-align="start center">
+                <div class="white-fg" layout="column" layout-align="start start">
+                    <div class="md-title organization-title secondary-text">
+                        <span>{{vm.license.organizationInfo.name}}</span>
+                        <span ng-if="!vm.license.organizationId">Add New License</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <md-button ng-disabled="licenseForm.$invalid" ng-click="vm.licenseActivation(); vm.license.active=!vm.license.active" class="md-raised md-background" aria-label="save">
+            <span ng-if="vm.license.active">Deactivate License</span>
+            <span ng-if="!vm.license.active">Activate License</span>
+        </md-button>
+        <md-button ng-disabled="licenseForm.$invalid" ng-click="vm.saveLicense(vm.license)" class="md-raised md-background" aria-label="save">
+            <span ng-if="unSaveState" style="color: red;">SAVE</span>
+            <span ng-if="!unSaveState">SAVE</span>
+        </md-button>
+        <md-button class="md-raised md-background" ng-click="vm.backToList($event)">
+            <span>Back</span>
+        </md-button>
+    </div>
+
+
+    <div class="content">
+
+        <md-tabs md-dynamic-height class="tabs">
+            <!-- Organization Info TAB -->
+            <md-tab label="Organization Info">
+                <form name="licenseForm" novalidate>
+                    <div class="p-20 tab-content" ng-include="'app/main/licenses/add/tabs/organization-info.html'">
+
+                    </div>
+                </form>
+            </md-tab>
+            <!-- License info TAB -->
+            <md-tab label="License info">
+                <form name="licenseForm" novalidate>
+                    <div class="p-20 tab-content" ng-include="'app/main/licenses/add/tabs/license-info.html'">
+
+                    </div>
+                </form>
+
+            </md-tab>
+            <!-- Legal TAB -->
+            <md-tab label="Legal">
+                <div class="p-20 tab-content" ng-include="'app/main/licenses/add/tabs/legal.html'">
+
+                </div>
+            </md-tab>
+            <!-- Implementation TAB -->
+            <md-tab label="SLA">
+                <div class="p-20 tab-content" ng-include="'app/main/licenses/add/tabs/sla.html'">
+
+                </div>
+            </md-tab>
+            <md-tab label="Contact">
+                <div class="p-20 tab-content" ng-include="'app/main/licenses/add/tabs/mangrove-contact.html'">
+
+                </div>
+            </md-tab>
+            <md-tab label="Implementation">
+                <div class="p-20 tab-content" ng-include="'app/main/licenses/add/tabs/implementation.html'">
+
+                </div>
+            </md-tab>
+            <md-tab label="Lead">
+                <div class="p-20 tab-content" ng-include="'app/main/licenses/add/tabs/lead.html'">
+
+                </div>
+            </md-tab>
+
+        </md-tabs>
+
+    </div>
+</div>

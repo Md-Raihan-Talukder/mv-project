@@ -1,0 +1,1826 @@
+<div layout="row" layout-align="start center" id="supply-definition" style="min-height: 100%; height:100%; overflow:hidden; ">
+
+
+    <div class="left w-250 border-right" style="min-height: 100%; height:100%; max-height: 100%;" layout="column" layout-align="start top">
+        <ms-widget layout="column" style="padding: 0; min-height: 100%; height:100%; width: 100% " layout-align="start top">
+
+            <ms-widget-front style="min-height: 100%; height:100%; width: 100%;" layout="column" layout-align="start top">
+                <div style="position: relative;" class="md-subhead p-10 md-blue-grey-50-bg">
+                    <span>Supply Definition</span>
+                    <md-button style="position: absolute; right: 10px; top: 4px;" ng-click="vm.saveSupplyDefinition()" class="md-raised">Save</md-button>
+                </div>
+
+                <div style="min-height: 100%; height:100%; width: 100%;" ms-scroll>
+
+                    <div>
+
+                        <div class="m-10">
+
+                            <td-tree-view ng-if="vm.supplies" items="vm.supplies" options="vm.categoryTreeOptions" on-add-item="vm.addNewCategory(item, event, callBack)" on-remove-item="vm.deleteCategory(item, event, callBack)" on-select-item="vm.selectCategory(item, event, callBack)">
+                            </td-tree-view>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </ms-widget-front>
+
+        </ms-widget>
+
+
+    </div>
+
+    <div class="border w-280" flex style="min-height: 100%; height:100%; max-height: 100%; width: 100%;" layout="column" layout-align="start top">
+
+        <ms-widget layout="column" style="padding: 0; min-height: 100%; height:100%; width: 100% " layout-align="start top">
+
+            <ms-widget-front style="min-height: 100%; height:100%; width: 100%;" layout="column" layout-align="start top">
+                <!-- Head -->
+                <div class="h-45" layout="column">
+                    <div class="md-blue-grey-50-bg pt-10 pb-10 pl-10 md-subhead" layout="row" layout-align="start center">
+                        Supply Item
+                    </div>
+                </div>
+                <div ng-if="vm.isNewCategory || vm.isSelectedCategory" layout="column">
+
+                    <div class="ml-10 mt-10">
+                        <md-input-container>
+                            <label>Title</label>
+                            <input ng-model="vm.category.title" autocomplete="off">
+                        </md-input-container>
+                    </div>
+
+                    <div class="ml-10 mt-10">
+                        <md-input-container class="md-block" style="padding: 0; width: 200px;">
+                            <label>Material Type</label>
+                            <md-select aria-label="Type" ng-model="vm.category.typeId">
+                                <md-option ng-repeat="type in vm.getCategoryTypeOrCategoryTypeGroup()" value="{{type.key}}">
+                                    {{type.value}}
+                                </md-option>
+                            </md-select>
+                        </md-input-container>
+                    </div>
+
+
+                    <div layout="row" flex="100" class="ml-10 mt-10" ng-if="vm.category.typeId === 'packingMaterials'">
+
+                        <div class="cursor-pointer" ng-click="vm.category.isSizeDependent = !vm.category.isSizeDependent" flex="50">
+                            <md-icon ng-if="!vm.category.isSizeDependent" md-font-icon="icon-checkbox-blank-outline" class="icon">
+                            </md-icon>
+                            <md-icon ng-if="vm.category.isSizeDependent" md-font-icon="icon-checkbox-marked-outline" class="icon md-accent">
+                            </md-icon>
+                            <span>Size Dependent</span>
+                        </div>
+                        <div class="cursor-pointer" ng-click="vm.category.isColorDependent = !vm.category.isColorDependent" flex="50">
+                            <md-icon ng-if="!vm.category.isColorDependent" md-font-icon="icon-checkbox-blank-outline" class="icon">
+                            </md-icon>
+                            <md-icon ng-if="vm.category.isColorDependent" md-font-icon="icon-checkbox-marked-outline" class="icon md-accent">
+                            </md-icon>
+                            <span>Color Dependent</span>
+                        </div>
+
+                    </div>
+
+
+                    <div layout="row" flex="100" class="ml-10 mt-10">
+
+                        <div class="cursor-pointer" ng-click="vm.category.isUnitType = !vm.category.isUnitType" flex="50">
+                            <md-icon ng-if="!vm.category.isUnitType" md-font-icon="icon-checkbox-blank-outline" class="icon">
+                            </md-icon>
+                            <md-icon ng-if="vm.category.isUnitType" md-font-icon="icon-checkbox-marked-outline" class="icon md-accent">
+                            </md-icon>
+                            <span>Unit</span>
+                        </div>
+                        <!-- <div class="cursor-pointer" ng-click="vm.category.isAssortType = !vm.category.isAssortType" flex="33">
+                                 <md-icon ng-if="!vm.category.isAssortType"
+                                     md-font-icon="icon-checkbox-blank-outline" class="icon">
+                                 </md-icon>
+                                 <md-icon ng-if="vm.category.isAssortType"
+                                     md-font-icon="icon-checkbox-marked-outline" class="icon md-accent">
+                                 </md-icon>
+                                 <span>Assort</span>
+                             </div> -->
+                        <div class="cursor-pointer" ng-click="vm.category.isContainerType = !vm.category.isContainerType" flex="50">
+                            <md-icon ng-if="!vm.category.isContainerType" md-font-icon="icon-checkbox-blank-outline" class="icon">
+                            </md-icon>
+                            <md-icon ng-if="vm.category.isContainerType" md-font-icon="icon-checkbox-marked-outline" class="icon md-accent">
+                            </md-icon>
+                            <span>Container</span>
+                        </div>
+
+                    </div>
+
+
+                    <div layout="column" flex="100" class="ml-10 mt-15" ng-if="vm.category.typeId != 'packContainer'">
+
+                        <div>
+                            <span class="mr-10 font-size-14">Handle Policy</span>
+                        </div>
+                        <div layout="row" class="mt-10">
+                            <div class="cursor-pointer" ng-click="vm.selectCuttableCountableThread(vm.category, 'cuttable')" flex="33">
+                                <md-icon ng-if="!vm.category.cuttable" md-font-icon="icon-checkbox-blank-outline" class="icon">
+                                </md-icon>
+                                <md-icon ng-if="vm.category.cuttable" md-font-icon="icon-checkbox-marked-outline" class="icon md-accent">
+                                </md-icon>
+                                <span>Cuttable</span>
+                            </div>
+                            <div class="cursor-pointer" ng-click="vm.selectCuttableCountableThread(vm.category, 'countable')" flex="33">
+                                <md-icon ng-if="!vm.category.countable" md-font-icon="icon-checkbox-blank-outline" class="icon">
+                                </md-icon>
+                                <md-icon ng-if="vm.category.countable" md-font-icon="icon-checkbox-marked-outline" class="icon md-accent">
+                                </md-icon>
+                                <span>Countable</span>
+                            </div>
+                            <div class="cursor-pointer" ng-click="vm.selectCuttableCountableThread(vm.category, 'thread')" flex="33">
+                                <md-icon ng-if="!vm.category.thread" md-font-icon="icon-checkbox-blank-outline" class="icon">
+                                </md-icon>
+                                <md-icon ng-if="vm.category.thread" md-font-icon="icon-checkbox-marked-outline" class="icon md-accent">
+                                </md-icon>
+                                <span>Thread</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="ml-10 mt-20">
+                        <div class="font-size-14" ng-if="vm.showLeafNode">
+                            <a ng-click="vm.selectCostingHeadsDialog(vm.category)" aria-label="Add">
+                                <u class="mr-5">Costing Heads</u>
+                                <span class="grey-900-fg" ng-if="vm.category.costingHeadId">{{vm.leafCostingHead.title}}</span>
+                                <md-tooltip><span>Select Costing Heads</span></md-tooltip>
+                            </a>
+                        </div>
+                        <div class="font-size-14" ng-if="vm.showLeafNode" layout-align="start center" layout="row">
+                            <span class="mr-10">BOM Heads</span>
+                            <md-input-container>
+                                <md-select ng-model="vm.category.bomHeadId" aria-label="select Bom">
+                                    <md-option ng-repeat="materialGroup in vm.materialGroups" ng-value="materialGroup.TECHDISER_ID">
+                                        {{materialGroup.title}}
+                                    </md-option>
+                                </md-select>
+                            </md-input-container>
+                        </div>
+
+                        <div class="pl-5 pb-5" layout="row" layout-align="start center">
+                            <div class="grey-600-fg pr-5"> Inspection Tool </div> :
+                            <div class="h-35" layout="row" layout-align="start center">
+                                <md-input-container>
+                                    <md-select aria-label="Inspection Tool" ng-model="vm.category.inspectionTool" class="w-140">
+                                        <md-option ng-repeat="inspectionTool in vm.inspectionTools" ng-value="inspectionTool.key">
+                                            {{inspectionTool.value}}
+                                        </md-option>
+                                    </md-select>
+                                </md-input-container>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- <div class="ml-10">
+                                <md-input-container class="md-block" style="padding: 0; width: 200px;">
+                                 <label>Item Dimension Type</label>
+                                 <md-select aria-label="Dimension"
+                                      ng-change="vm.getMeasurementUnits(vm.category.dimensionId)"
+                                      ng-model="vm.category.dimensionId">
+                                      <md-option ng-repeat="dimension in vm.dimensionTypes" value="{{dimension.key}}">
+                                      {{dimension.value}}
+                                      </md-option>
+                                 </md-select>
+                                </md-input-container>
+                            </div> -->
+
+                    <!-- <div class="ml-10">
+                                <md-input-container class="md-block" style="padding: 0; width: 200px;">
+                                    <label>Measurement Unit</label>
+                                    <md-select aria-label="Measurement Unit"
+                                        ng-model="vm.category.measurementUnitId">
+                                        <md-option ng-repeat="measurementUnit in vm.measurementUnits |
+                                           filter: vm.getMeasurementUnits(vm.category.dimensionId)"
+                                           value="{{measurementUnit.key}}">
+                                            {{measurementUnit.value}}
+                                        </md-option>
+                                    </md-select>
+                                </md-input-container>
+                            </div> -->
+
+
+                    <div class="ml-10 mt-10">
+                        <md-input-container class="md-block" style="padding: 0; width: 200px;">
+                            <label>Sourcing Type</label>
+                            <md-select aria-label="Type" ng-model="vm.category.sourcingTypeId">
+                                <md-option ng-repeat="sourcingType in vm.sourcingTypes" value="{{sourcingType.key}}">
+                                    {{sourcingType.value}}
+                                </md-option>
+                            </md-select>
+                        </md-input-container>
+                    </div>
+
+                    <div ng-if="vm.isNewCategory || vm.isSelectedCategory" class="ml-10 mt-20" layout="row" layout-align="start center">
+                        <md-button ng-click="vm.saveCategory(vm.category, vm.isNewCategory)" class="md-raised md-light-blue-200-bg font-size-12 text-bold h-30 w-60" aria-label="save">
+                            <span ng-if="vm.addCategory">Add</span><span ng-if="vm.updateCategory">Update</span>
+                        </md-button>
+                    </div>
+
+                </div>
+
+            </ms-widget-front>
+
+        </ms-widget>
+
+    </div>
+
+
+    <div class="right w-200 border-left" style="min-height: 100%; height:100%; max-height: 100%;" layout="column" layout-align="start top">
+        <ms-widget layout="column" style="padding: 0; min-height: 100%; height:100%; width: 100% " layout-align="start top">
+
+            <ms-widget-front style="min-height: 100%; height:100%; width: 100%;" layout="column" layout-align="start top">
+                <div class="md-subhead p-10 md-blue-grey-50-bg">Menus</div>
+                <div style="min-height: 100%; height:100%; width: 100%;" ms-scroll>
+
+                    <div ng-if="vm.isSelectedCategory">
+                        <!-- Start Menu List -->
+                        <div class="content" ms-scroll>
+                            <div class="common-detail-menus navigation-simple" layout="column">
+
+                                <md-button class="item" aria-label="section" ng-click="vm.selectMenu('type')" ng-class="{'blue-100-bg': vm.visibleType === true}">
+                                    <div class="context" layout="row" layout-align="start center">
+                                        <md-icon md-font-icon="icon-view-headline" class="s16"></md-icon>
+                                        <div class="title">Type</div>
+                                    </div>
+                                </md-button>
+
+                                <md-button class="item" aria-label="section" ng-click="vm.selectMenu('SpecSheet')" ng-class="{'blue-100-bg': vm.visibleSpecSheet === true}">
+                                    <div class="context" layout="row" layout-align="start center">
+                                        <md-icon md-font-icon="icon-view-headline" class="s16"></md-icon>
+                                        <div class="title">Spec Sheet</div>
+                                    </div>
+                                </md-button>
+
+                                <md-button class="item" aria-label="section" ng-click="vm.selectMenu('Position')" ng-class="{'blue-100-bg': vm.visiblePosition === true}">
+                                    <div class="context" layout="row" layout-align="start center">
+                                        <md-icon md-font-icon="icon-view-headline" class="s16"></md-icon>
+                                        <div class="title">Position</div>
+                                    </div>
+                                </md-button>
+
+                                <md-button class="item" aria-label="section" ng-click="vm.selectMenu('Test')" ng-class="{'blue-100-bg': vm.visibleTest === true}">
+                                    <div class="context" layout="row" layout-align="start center">
+                                        <md-icon md-font-icon="icon-view-headline" class="s16"></md-icon>
+                                        <div class="title">Test</div>
+                                    </div>
+                                </md-button>
+
+                                <md-button class="item" aria-label="section" ng-click="vm.selectMenu('Defect')" ng-class="{'blue-100-bg': vm.visibleDefect === true}">
+                                    <div class="context" layout="row" layout-align="start center">
+                                        <md-icon md-font-icon="icon-view-headline" class="s16"></md-icon>
+                                        <div class="title">Defect Definition</div>
+                                    </div>
+                                </md-button>
+
+                                <md-button class="item" aria-label="section" ng-click="vm.selectMenu('MeasurementPolicy')" ng-class="{'blue-100-bg': vm.visibleMeasurementPolicy === true}">
+                                    <div class="context" layout="row" layout-align="start center">
+                                        <md-icon md-font-icon="icon-view-headline" class="s16"></md-icon>
+                                        <div class="title">Scale Definition</div>
+                                    </div>
+                                </md-button>
+
+                                <md-button class="item" aria-label="section" ng-click="vm.selectMenu('Matric')" ng-class="{'blue-100-bg': vm.visibleMetric === true}">
+                                    <div class="context" layout="row" layout-align="start center">
+                                        <md-icon md-font-icon="icon-view-headline" class="s16"></md-icon>
+                                        <div class="title">Size Definition</div>
+                                    </div>
+                                </md-button>
+
+
+                                <md-button class="item" aria-label="section" ng-click="vm.selectMenu('Container')" ng-class="{'blue-100-bg': vm.visibleContainer === true}">
+                                    <div class="context" layout="row" layout-align="start center">
+                                        <md-icon md-font-icon="icon-view-headline" class="s16"></md-icon>
+                                        <div class="title">Container Definition</div>
+                                    </div>
+                                </md-button>
+
+                                <md-button class="item" aria-label="section" ng-click="vm.selectMenu('PreCaution')" ng-class="{'blue-100-bg': vm.visiblePreCaution === true}">
+                                    <div class="context" layout="row" layout-align="start center">
+                                        <md-icon md-font-icon="icon-view-headline" class="s16"></md-icon>
+                                        <div class="title">Pre Caution Marks</div>
+                                    </div>
+                                </md-button>
+
+                                <md-button class="item" aria-label="section" ng-click="vm.selectMenu('ProductionTime')" ng-class="{'blue-100-bg': vm.visibleProductionTime === true}">
+                                    <div class="context" layout="row" layout-align="start center">
+                                        <md-icon md-font-icon="icon-view-headline" class="s16"></md-icon>
+                                        <div class="title">Production Time</div>
+                                    </div>
+                                </md-button>
+
+                                <!-- <md-button class="item" aria-label="section"
+                                        ng-click="vm.selectMenu('LumpSumCost')"
+                                        ng-class="{'blue-100-bg': vm.visibleLumpSumCost === true}">
+                                        <div class="context" layout="row" layout-align="start center">
+                                            <md-icon md-font-icon="icon-view-headline" class="s16"></md-icon>
+                                            <div class="title">Lump Sum Cost</div>
+                                        </div>
+                                    </md-button> -->
+
+
+                            </div>
+
+                        </div>
+                        <!-- End Menu List -->
+                    </div>
+
+                </div>
+
+            </ms-widget-front>
+
+        </ms-widget>
+
+
+    </div>
+
+    <div class="border" flex style="min-height: 100%; height:100%; max-height: 100%; width: 100%;" layout="column" layout-align="start top">
+
+        <ms-widget layout="column" style="padding: 0; min-height: 100%; height:100%; width: 100% " layout-align="start top">
+
+            <ms-widget-front style="min-height: 100%; height:100%; width: 100%;" layout="column" layout-align="start top">
+
+                <div class="h-45 md-blue-grey-50-bg p-10 md-subhead">
+
+                    <div ng-if="!vm.visibleType  && !vm.visibleSpecSheet &&
+                            !vm.visiblePosition && !vm.visibleTest && !vm.visibleDefect &&
+                            !vm.visibleContainer && !vm.visibleMetric && !vm.visiblePreCaution &&
+                            !vm.visibleProductionTime && !vm.visibleMeasurementPolicy" layout="row" layout-align="start center" flex="100">
+                        Menu Detail
+                    </div>
+
+                    <div ng-if="vm.visibleType" layout="row" layout-align="start center" flex="100">
+                        <div>Type</div>
+                        <div flex></div>
+                        <div flex="10" ng-if="vm.isSelectedCategory">
+                            <a ng-click="vm.isExapndType=true; vm.type={};
+                                   vm.isNewType=true; vm.updateType=false;">
+                                <u>New</u>
+                                <md-tooltip>
+                                    <span>New Type</span>
+                                </md-tooltip>
+                            </a>
+                        </div>
+                    </div>
+                    <div ng-if="vm.visibleSpecSheet" layout="row" layout-align="start center" flex="100">
+                        <div>Spec Sheet</div>
+                        <div flex></div>
+                        <div flex="10" ng-if="vm.isSelectedCategory">
+                            <a ng-click="vm.selectDataSheet(vm.category.title)">
+                                <u>Select</u>
+                                <md-tooltip>
+                                    <span>Select Spec Sheet</span>
+                                </md-tooltip>
+                            </a>
+                        </div>
+                    </div>
+                    <div ng-if="vm.visiblePosition" layout="row" layout-align="start center" flex="100">
+                        <div>Position</div>
+                        <div flex></div>
+                        <div flex="10" ng-if="vm.isSelectedCategory">
+                            <a ng-click="vm.isExapndPositionItem=true; vm.positionItem={}; vm.isNewPositionItem=true; vm.updatePositionItem=false">
+                                <u>New</u>
+                                <md-tooltip>
+                                    <span>New Position</span>
+                                </md-tooltip>
+                            </a>
+                        </div>
+                    </div>
+                    <div ng-if="vm.visibleTest" layout="row" layout-align="start center" flex="100">
+                        <div>Test</div>
+                        <div flex></div>
+                        <div flex="50" ng-if="vm.isSelectedCategory">
+                            <a ng-click="vm.selectTestDefinitionDialog();">
+                                <u>Select Test</u>
+                                <md-tooltip>
+                                    <span>Select Test Item</span>
+                                </md-tooltip>
+                            </a>
+                        </div>
+                        <!-- <div flex="10" ng-if="vm.isSelectedCategory">
+                               <a ng-click="vm.getInitialTestMaxMinValue(); vm.isExapndTestItem=true; vm.testItem={ 'units': []}; vm.isNewTestItem=true; vm.updateTestItem=false">
+                                   <u>New</u>
+                                   <md-tooltip>
+                                       <span>New Test Item</span>
+                                   </md-tooltip>
+                               </a>
+                           </div> -->
+                    </div>
+                    <div ng-if="vm.visibleDefect" layout="row" layout-align="start center" flex="100">
+                        <div>Defect Definition</div>
+                        <div flex></div>
+                        <div flex="10" ng-if="vm.isSelectedCategory">
+                            <a ng-click="vm.isExapndDefectItem=true; vm.newDefectModel();
+                                 vm.isNewDefectItem=true; vm.updateDefectItem=false">
+                                <u>New</u>
+                                <md-tooltip>
+                                    <span>New Defect item</span>
+                                </md-tooltip>
+                            </a>
+                        </div>
+                    </div>
+                    <div ng-if="vm.visibleMetric" layout="row" layout-align="start center" flex="100">
+                        <div>Size Definition</div>
+                        <div flex></div>
+                    </div>
+                    <div ng-if="vm.visibleMeasurementPolicy" layout="row" layout-align="start center" flex="100">
+                        <div>Scale Definition</div>
+                        <div flex></div>
+                    </div>
+                    <div ng-if="vm.visibleContainer" layout="row" layout-align="start center" flex="100">
+                        <div>Container</div>
+                        <div flex></div>
+                        <div flex="10" ng-if="vm.isSelectedCategory">
+                            <!-- <a ng-click="vm.addContainer();">
+                                 <u>New</u>
+                                 <md-tooltip>
+                                     <span>New Container item</span>
+                                 </md-tooltip>
+                             </a> -->
+                            <a ng-click="vm.selectContainerDialog();">
+                                <u>Select</u>
+                                <md-tooltip>
+                                    <span>Select Container item</span>
+                                </md-tooltip>
+                            </a>
+                        </div>
+                    </div>
+                    <div ng-if="vm.visiblePreCaution" layout="row" layout-align="start center" flex="100">
+                        <div>Pre Caution Mark</div>
+                        <div flex></div>
+                        <div flex="10" ng-if="vm.isSelectedCategory">
+                            <a ng-click="vm.isExapndPreCaution=true; vm.preCaution={ 'image': [], 'materialTypeIds': []};
+                                 vm.isNewPreCaution=true; vm.updatePreCaution=false;">
+                                <u>New</u>
+                                <md-tooltip>
+                                    <span>New Pre Caution Mark</span>
+                                </md-tooltip>
+                            </a>
+                        </div>
+                    </div>
+                    <div ng-if="vm.visibleProductionTime" layout="row" layout-align="start center" flex="100">
+                        <div>Production Time</div>
+                        <div flex></div>
+                        <div flex="10" ng-if="vm.isSelectedCategory">
+                            <a ng-click="vm.isExapndProductionTime=true; vm.productionTime={ 'materialTypeIds': [] };
+                                 vm.isNewProductionTime=true; vm.updateProductionTime=false">
+                                <u>New</u>
+                                <md-tooltip>
+                                    <span>New Production Time</span>
+                                </md-tooltip>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- <div ng-if="vm.visibleLumpSumCost" layout="row" layout-align="start center" flex="100">
+                           <div>Lump Sum Cost</div>
+                           <div flex></div>
+                           <div flex="10" ng-if="vm.isSelectedCategory">
+                             <a ng-click="vm.isExapndLumpSumCost=true; vm.lumpSumCost={ 'countryCosts': [], 'materialTypeIds': [] };
+                                 vm.isNewLumpSumCost=true; vm.updateLumpSumCost=false">
+                                 <u>New</u>
+                                 <md-tooltip>
+                                     <span>New Lump Sum Cost</span>
+                                 </md-tooltip>
+                             </a>
+                           </div>
+                       </div> -->
+                </div>
+
+                <div style="min-height: 100%; height:100%; width: 100%;" ms-scroll>
+
+                    <div ng-if="vm.visibleType">
+
+                        <div>
+                            <div layout="column">
+
+                                <div class="p-10" ng-if="vm.isExapndType">
+                                    <ms-widget flippable="false" layout="column" class="test-card">
+                                        <ms-widget-front class="white-bg p-5">
+                                            <div layout="row" layout-align="end center" flex>
+                                                <div>
+                                                    <md-icon ng-click="vm.isExapndType=false" md-font-icon="icon-cancel" class="icon red-500-fg s14">
+                                                    </md-icon>
+                                                </div>
+                                            </div>
+
+                                            <div ng-if="vm.category.materialType == 'fabrics' ||
+                                                       vm.category.materialType == 'button' ||
+                                                       vm.category.materialType == 'zipper' ||
+                                                       vm.category.materialType == 'labels' ||
+                                                       vm.category.materialType == 'thread'" flex class="description" layout="column" layout-align="start start">
+                                                <div class="" layout="row" layout-align="start center">
+                                                    <td-material-profile-summary ng-if="vm.isReborn == 1" material="vm.type" type="vm.category.materialType"></td-material-profile-summary>
+                                                    <div>
+                                                        <md-button ng-click="vm.getMaterialProfileSummaryId()" class="cool-btn-md">Add</md-button>
+                                                    </div>
+                                                </div>
+                                                <div ng-if="vm.type.profileSummaryId">
+                                                    <md-input-container class="md-block">
+                                                        <label>
+                                                            <span>Title</span>
+                                                        </label>
+                                                        <input class="md-subhead" name="title" ng-model="vm.type.title" required autocomplete="off">
+                                                        <div ng-messages="categoryForm.title.$error" role="alert">
+                                                            <div ng-message="required">
+                                                                <span>Title is required</span>
+                                                            </div>
+                                                        </div>
+                                                    </md-input-container>
+                                                    <md-input-container class="md-block">
+                                                        <label>
+                                                            <span>Type Description</span>
+                                                        </label>
+                                                        <input class="md-subhead" name="description" ng-model="vm.type.description" autocomplete="off">
+                                                    </md-input-container>
+
+                                                    <md-input-container class="md-block">
+                                                        <label>
+                                                            <span>Wastage (%)</span>
+                                                        </label>
+                                                        <input class="md-subhead" name="wastage" ng-model="vm.type.wastage" required autocomplete="off">
+                                                        <div ng-messages="categoryForm.wastage.$error" role="alert">
+                                                            <div ng-message="required">
+                                                                <span>Wastage is required</span>
+                                                            </div>
+                                                        </div>
+                                                    </md-input-container>
+                                                </div>
+                                            </div>
+
+                                            <div ng-if="vm.category.materialType == 'fabrics' ||
+                                                         vm.category.materialType == 'button' ||
+                                                         vm.category.materialType == 'zipper' ||
+                                                         vm.category.materialType == 'labels' ||
+                                                         vm.category.materialType == 'thread'" layout="row" layout-align="end center" flex>
+                                                <div ng-if="vm.isExapndType && vm.type.profileSummaryId">
+                                                    <md-button ng-click="vm.saveSummaryType(vm.category, vm.type, vm.isNewType);" class="md-raised md-light-blue-200-bg font-size-10 text-bold h-25 w-60" style="line-height: 0px" aria-label="save">
+                                                        <span ng-if="vm.isNewType">Add</span><span ng-if="vm.updateType">Update</span>
+                                                    </md-button>
+                                                </div>
+                                            </div>
+
+                                            <div ng-if="vm.category.materialType != 'fabrics' &&
+                                                         vm.category.materialType != 'button' &&
+                                                         vm.category.materialType != 'zipper' &&
+                                                         vm.category.materialType != 'labels' &&
+                                                         vm.category.materialType != 'thread'" flex class="description" layout="row" layout-align="start start">
+                                                <div>
+                                                    <md-input-container class="md-block">
+                                                        <label>
+                                                            <span>Title</span>
+                                                        </label>
+                                                        <input class="md-subhead" name="title" ng-model="vm.type.title" required autocomplete="off">
+                                                        <div ng-messages="categoryForm.title.$error" role="alert">
+                                                            <div ng-message="required">
+                                                                <span>Title is required</span>
+                                                            </div>
+                                                        </div>
+                                                    </md-input-container>
+                                                    <md-input-container class="md-block">
+                                                        <label>
+                                                            <span>Type Description</span>
+                                                        </label>
+                                                        <input class="md-subhead" name="description" ng-model="vm.type.description" autocomplete="off">
+                                                    </md-input-container>
+
+                                                    <md-input-container class="md-block">
+                                                        <label>
+                                                            <span>Wastage (%)</span>
+                                                        </label>
+                                                        <input class="md-subhead" name="wastage" ng-model="vm.type.wastage" required autocomplete="off">
+                                                        <div ng-messages="categoryForm.wastage.$error" role="alert">
+                                                            <div ng-message="required">
+                                                                <span>Wastage is required</span>
+                                                            </div>
+                                                        </div>
+                                                    </md-input-container>
+                                                </div>
+
+
+                                            </div>
+
+                                            <div ng-if="vm.category.materialType != 'fabrics' &&
+                                                         vm.category.materialType != 'button' &&
+                                                         vm.category.materialType != 'zipper' &&
+                                                         vm.category.materialType != 'labels' &&
+                                                         vm.category.materialType != 'thread'" layout="row" layout-align="end center" flex>
+                                                <div ng-if="vm.isExapndType">
+                                                    <md-button ng-click="vm.saveType(vm.category, vm.type, vm.isNewType); vm.type={}" class="md-raised md-light-blue-200-bg font-size-10 text-bold h-25 w-60" style="line-height: 0px" aria-label="save">
+                                                        <span ng-if="vm.isNewType">Add</span><span ng-if="vm.updateType">Update</span>
+                                                    </md-button>
+                                                </div>
+                                            </div>
+                                        </ms-widget-front>
+                                    </ms-widget>
+                                </div>
+                                <div layout="column" class="p-10">
+                                    <div ng-if="vm.category.types.length > 0" class="widget-group mt-15" flex="100" layout-wrap>
+                                        <ms-widget ng-repeat="type in vm.category.types" ng-click="vm.selectType(type)" ng-class="{'selected':vm.selectedType === type}" flippable="false" layout="column" class="test-card">
+                                            <ms-widget-front class="white-bg p-5 h-auto">
+                                                <div layout="row" flex="100">
+                                                    <div flex="95">
+                                                        <div class="line-height-small" layout="column" layout-align="start start">
+                                                            <label>{{type.title}}</label>
+                                                            <div class="line-height-small">{{type.description}}</div>
+                                                            <div class="line-height-small">Wastage: {{type.wastage}}%</div>
+                                                        </div>
+                                                    </div>
+                                                    <div ng-if="vm.selectedType === type" flex="5" layout="column" layout-align="center end">
+                                                        <md-icon ng-click="vm.deleteType(vm.category, type)" md-font-icon="icon-cancel" class="icon red-500-fg s14" style="position:relative; left:3px; top:0px">
+                                                        </md-icon>
+                                                        <md-icon ng-click="vm.isExapndType=true" md-font-icon="icon-pencil" class="icon md-accent s14" style="position:relative; left:3px; top:5px">
+                                                        </md-icon>
+                                                        <div flex></div>
+                                                    </div>
+                                                </div>
+                                            </ms-widget-front>
+                                        </ms-widget>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div ng-if="vm.visibleSpecSheet">
+
+                        <div>
+                            <div class="p-10" ng-if="vm.isExapndDataSheet" flex>
+                                <ms-widget flippable="false" layout="column" class="test-card">
+                                    <ms-widget-front class="white-bg p-5 w-300">
+                                        <div layout="row" layout-align="end center" flex>
+                                            <div>
+                                                <md-icon ng-click="vm.isExapndDataSheet=false" md-font-icon="icon-cancel" class="icon red-500-fg s14">
+                                                </md-icon>
+                                            </div>
+                                        </div>
+
+                                        <div flex class="description" layout="row" layout-align="start start">
+                                            <div>
+                                                <md-input-container class="md-block">
+                                                    <label>
+                                                        <span>Title</span>
+                                                    </label>
+                                                    <input class="md-subhead" name="title" ng-model="vm.dataSheet.title" required autocomplete="off">
+                                                    <div ng-messages="categoryForm.title.$error" role="alert">
+                                                        <div ng-message="required">
+                                                            <span>Title is required</span>
+                                                        </div>
+                                                    </div>
+                                                </md-input-container>
+                                            </div>
+
+                                        </div>
+
+                                        <div layout="row" layout-align="end center" flex>
+                                            <div ng-if="vm.isExapndDataSheet">
+                                                <md-button ng-click="vm.saveDataSheet(vm.category, vm.dataSheet, vm.isNewDataSheet); vm.dataSheet={}" class="md-raised md-light-blue-200-bg font-size-10 text-bold h-25 w-60" style="line-height: 0px" aria-label="save">
+                                                    <span ng-if="vm.isNewDataSheet">Add</span><span ng-if="vm.updateDataSheet">Update</span>
+                                                </md-button>
+                                            </div>
+                                        </div>
+                                    </ms-widget-front>
+                                </ms-widget>
+                            </div>
+                            <div layout="column" flex class="p-10">
+                                <div class="widget-group mt-15" layout="column" layout-align="start start" flex="100" layout-wrap>
+                                    <ms-widget ng-repeat="dataSheet in vm.category.dataSheet" ng-click="vm.selectDataSheet(dataSheet)" ng-class="{'selected':vm.selectedDataSheet === dataSheet}" flippable="false" layout="column" class="test-card">
+                                        <ms-widget-front class="white-bg p-5 h-auto w-300" style="min-height:40px;">
+                                            <div layout="row" flex="100">
+                                                <div layout="column" flex="90">
+                                                    <div class="line-height-small">{{vm.getMaterialAttTitle(dataSheet, vm.category.title)}}</div>
+                                                </div>
+                                                <div ng-if="vm.selectedDataSheet === dataSheet" flex="10" layout="column" layout-align="center end">
+                                                    <md-icon ng-click="vm.deleteDataSheet(vm.category, dataSheet)" md-font-icon="icon-cancel" class="icon red-500-fg s14" style="position:relative; left:0px; top:0px">
+                                                    </md-icon>
+                                                    <md-icon ng-click="vm.isExapndDataSheet=true" md-font-icon="icon-pencil" class="icon md-accent s14" style="position:relative; left:0px; top:5px">
+                                                    </md-icon>
+                                                    <div flex></div>
+                                                </div>
+                                            </div>
+                                        </ms-widget-front>
+                                    </ms-widget>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div ng-if="vm.visiblePosition">
+
+                        <div>
+                            <div class="p-10" ng-if="vm.isExapndPositionItem" flex>
+                                <ms-widget flippable="false" layout="column" class="test-card">
+                                    <ms-widget-front class="white-bg p-5 w-300">
+                                        <div layout="row" layout-align="end center" flex>
+                                            <div>
+                                                <md-icon ng-click="vm.isExapndPositionItem=false" md-font-icon="icon-cancel" class="icon red-500-fg s14">
+                                                </md-icon>
+                                            </div>
+                                        </div>
+
+                                        <div flex class="description" layout="row" layout-align="start start">
+                                            <div>
+                                                <md-input-container class="md-block">
+                                                    <label>
+                                                        <span>Title</span>
+                                                    </label>
+                                                    <input class="md-subhead" name="title" ng-model="vm.positionItem.title" required autocomplete="off">
+                                                    <div ng-messages="categoryForm.title.$error" role="alert">
+                                                        <div ng-message="required">
+                                                            <span>Title is required</span>
+                                                        </div>
+                                                    </div>
+                                                </md-input-container>
+                                            </div>
+
+                                        </div>
+
+                                        <div layout="row" layout-align="end center" flex>
+                                            <div ng-if="vm.isExapndPositionItem">
+                                                <md-button ng-click="vm.savePositionItem(vm.category, vm.positionItem, vm.isNewPositionItem); vm.positionItem={}" class="md-raised md-light-blue-200-bg font-size-10 text-bold h-25 w-60" style="line-height: 0px" aria-label="save">
+                                                    <span ng-if="vm.isNewPositionItem">Add</span><span ng-if="vm.updatePositionItem">Update</span>
+                                                </md-button>
+                                            </div>
+                                        </div>
+                                    </ms-widget-front>
+                                </ms-widget>
+                            </div>
+                            <div layout="column" flex class="p-10">
+                                <div class="widget-group mt-15" layout="column" layout-align="start start" flex="100" layout-wrap>
+                                    <ms-widget ng-repeat="positionItem in vm.category.positions" ng-click="vm.selectPositionItem(positionItem)" ng-class="{'selected':vm.selectedPositionItem === positionItem}" flippable="false" layout="column" class="test-card">
+                                        <ms-widget-front class="white-bg p-5 h-auto w-300" style="min-height:40px;">
+                                            <div layout="row" flex="100">
+                                                <div layout="column" flex="90">
+                                                    <div class="line-height-small">{{positionItem.title}}</div>
+                                                </div>
+                                                <div ng-if="vm.selectedPositionItem === positionItem" flex="10" layout="column" layout-align="center end">
+                                                    <md-icon ng-click="vm.deletePositionItem(vm.category, positionItem)" md-font-icon="icon-cancel" class="icon red-500-fg s14" style="position:relative; left:0px; top:0px">
+                                                    </md-icon>
+                                                    <md-icon ng-click="vm.isExapndPositionItem=true" md-font-icon="icon-pencil" class="icon md-accent s14" style="position:relative; left:0px; top:5px">
+                                                    </md-icon>
+                                                    <div flex></div>
+                                                </div>
+                                            </div>
+                                        </ms-widget-front>
+                                    </ms-widget>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div ng-if="vm.visibleTest" layout="row" layout-align="start start" flex>
+
+                        <div flex="40" class="mb-50">
+
+                            <div layout="column" flex class="p-10">
+                                <div class="widget-group mt-15" layout="column" layout-align="start start" flex="100" layout-wrap>
+                                    <ms-widget ng-repeat="testItem in vm.category.tests" ng-click="vm.selectTestItem(testItem)" ng-class="{'selected':vm.selectedTestItem === testItem}" flippable="false" layout="column" class="test-card">
+                                        <ms-widget-front class="white-bg p-5 h-auto w-260" style="min-height:90px;">
+                                            <div layout="row" flex="100">
+                                                <div layout="column" flex="90">
+                                                    <div class="line-height-small">
+                                                        <label>{{vm.getTestTitle(testItem)}}</label>
+                                                    </div>
+                                                    <div class="line-height-small mb-5">{{vm.getTestDescription(testItem)}}</div>
+                                                    <div layout="row">
+                                                        <div ng-if="type.isSelectedType" ng-repeat="type in testItem.materialTypes" class="label-chip line-height-small">{{vm.getPreCautionsType(type.materialTypeId)}}</div>
+                                                    </div>
+                                                </div>
+
+                                                <div ng-if="vm.selectedTestItem === testItem" flex="10" layout="column" layout-align="center end">
+                                                    <md-icon ng-click="vm.deleteTestItem(vm.category, testItem)" md-font-icon="icon-cancel" class="icon red-500-fg s14" style="position:relative; left:3px; top:0px">
+                                                    </md-icon>
+                                                    <!-- <md-icon ng-click=""
+                                                              md-font-icon="icon-pencil" class="icon md-accent s14"
+                                                              style="position:relative; left:3px; top:5px">
+                                                          </md-icon> -->
+                                                    <div flex></div>
+                                                </div>
+                                            </div>
+                                        </ms-widget-front>
+                                    </ms-widget>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="right border-left border-top mb-50" style="min-height: 100%; height:100%; max-height: 100%;" layout="column" layout-align="start top" flex>
+
+                            <ms-widget layout="column" style="padding: 0; min-height: 100%; height:100%; width: 100%" layout-align="start top">
+
+                                <ms-widget-front style="min-height: 100%; height:100%; width: 100%;" layout="column" layout-align="start top">
+                                    <div class="md-subhead md-blue-grey-50-bg" layout="row" layout-align="start center" flex>
+                                        <div class="p-10" flex="45">
+                                            Types
+                                        </div>
+                                        <div flex></div>
+                                    </div>
+                                    <div style="min-height: 100%; height:100%; width: 100%;" ms-scroll>
+
+                                        <div ng-if="vm.isSelectedCategory">
+                                            <!-- Start Type List -->
+                                            <div class="widget-group" layout="row" flex="100" layout-wrap>
+                                                <ms-widget ng-repeat="type in vm.selectedTestItem.materialTypes" class="buyer-card tags" flippable="false" layout="column">
+                                                    <ms-widget-front class="white-bg p-5 h-45 w-380">
+                                                        <div layout="row" layout-align="start center" flex="100">
+                                                            <div layout="column" flex="30">
+                                                                <span class="font-size-14" layout-wrap>{{vm.getMaterialTypeTitle(type.materialTypeId)}}</span>
+                                                            </div>
+
+                                                            <div layout="column" flex="10">
+                                                                <md-icon ng-if="!vm.checkTestTypeExist(type)" style="position:relative;left:5px;" ng-click="vm.selectTypeForTest(type)" md-font-icon="icon-checkbox-blank-outline" class="icon">
+                                                                </md-icon>
+                                                                <md-icon ng-if="vm.checkTestTypeExist(type)" style="position:relative;left:5px;" ng-click="vm.selectTypeForTest(type)" md-font-icon="icon-checkbox-marked-outline" class="icon md-accent">
+                                                                </md-icon>
+                                                            </div>
+                                                            <div class="" flex>
+                                                                <div class="ml-10">
+                                                                    <md-input-container class="md-block" style="padding: 0; width: 200px;">
+                                                                        <label>Methods</label>
+                                                                        <md-select aria-label="Methods" multiple ng-change="vm.selectTestMethods(type)" ng-model="type.methodIds">
+                                                                            <md-option ng-repeat="method in vm.testMethods" value="{{method.TECHDISER_ID}}">
+                                                                                {{method.title}}
+                                                                            </md-option>
+                                                                        </md-select>
+                                                                    </md-input-container>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </ms-widget-front>
+                                                    <div class="">
+                                                        <!--  -->
+                                                        <div layout="row" layout-align="start center">
+                                                            <div class="quantity-def-table">
+                                                                <div class="quantity-def-table-head" ng-if="type.attributes.length > 0" layout="row" layout-align="start center">
+
+                                                                    <div class="w-80 border-left border-top grey-100-bg quantity-def-table-head-column" style="height: 30px;" layout="column" layout-align="center center">
+                                                                        <span> Attribute </span>
+                                                                    </div>
+
+                                                                    <div class="w-80 border-left border-top grey-100-bg quantity-def-table-head-column" style="height: 30px;" layout="column" layout-align="center center">
+                                                                        <span> Max </span>
+                                                                    </div>
+
+                                                                    <div class="w-80 border-left border-top border-right grey-100-bg quantity-def-table-head-column" style="height: 30px;" layout="column" layout-align="center center">
+                                                                        <span> Min </span>
+                                                                    </div>
+
+                                                                    <div class="w-140 border-top border-right grey-100-bg quantity-def-table-head-column" style="height: 30px;" layout="column" layout-align="center center">
+                                                                        <span> Unit </span>
+                                                                    </div>
+
+                                                                </div>
+
+                                                                <div class="quantity-def-table-body" layout="row" layout-align="start center" ng-repeat="attribute in type.attributes">
+
+                                                                    <div class="w-80 h-30 border-left border-right border-bottom quantity-def-table-body-column" layout="column" layout-align="center center">
+                                                                        <span> {{vm.getTestAttributeTitle(attribute.attributeId)}} </span>
+                                                                    </div>
+
+                                                                    <div class="w-80 h-30 border-right border-bottom quantity-def-table-body-column" layout="column" layout-align="center center">
+                                                                        <div>
+                                                                            <input class="md-title font-size-12" type="number" ng-model="attribute.maxRange" ng-model-options="{debounce : 500}" ng-change="vm.updateIsSave();" placeholder="Max">
+                                                                        </div>
+
+                                                                    </div>
+
+                                                                    <div class="w-80 h-30 border-right border-bottom quantity-def-table-body-column" layout="column" layout-align="center center">
+                                                                        <div>
+                                                                            <input class="md-title font-size-12" type="number" ng-model="attribute.minRange" ng-model-options="{debounce : 500}" ng-change="vm.updateIsSave();" placeholder="Min">
+                                                                        </div>
+
+                                                                    </div>
+
+                                                                    <div class="w-140 h-30 border-right border-bottom quantity-def-table-head-column" layout="column" layout-align="center center">
+                                                                        <div>
+                                                                            <!-- <md-input-container style="min-width: 140px;">
+                                                                                           <md-select aria-label="input" ng-model-options="{debounce : 500}"
+                                                                                            ng-model="attribute.testUnitId" ng-init="vm.testItem.testUnitId = vm.testingUnits[0].key">
+                                                                                             <md-optgroup>
+                                                                                               <md-option ng-value="testUnit.key" ng-repeat="testUnit in vm.testingUnits">
+                                                                                                   {{testUnit.value}}
+                                                                                               </md-option>
+                                                                                             </md-optgroup>
+                                                                                           </md-select>
+                                                                                       </md-input-container> -->
+                                                                            {{vm.getTestUnit(attribute.testUnitId)}}
+                                                                        </div>
+
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+
+
+                                                        </div>
+                                                        <!--  -->
+                                                    </div>
+                                                </ms-widget>
+                                            </div>
+                                            <!--  -->
+
+                                            <div class="content" ms-scroll>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </ms-widget-front>
+                            </ms-widget>
+                        </div>
+
+                    </div>
+
+                    <div ng-if="vm.visibleDefect" layout="row" layout-align="start start" flex>
+
+                        <div flex>
+                            <div layout="column" flex class="p-10">
+                                <div class="widget-group mt-15" layout="column" layout-align="start start" flex="100" layout-wrap>
+                                    <ms-widget ng-repeat="defectItem in vm.category.defectDef" ng-click="vm.selectDefectItem(defectItem)" ng-class="{'selected':vm.selectedDefectItem === defectItem}" flippable="false" layout="column" class="test-card">
+                                        <ms-widget-front class="white-bg p-10 h-auto w-300" style="min-height:80px;">
+                                            <div layout="row" flex="100">
+                                                <div layout="column" flex="90">
+                                                    <label>{{defectItem.title}}</label>
+                                                    <div class="line-height-small mb-5">
+                                                        {{defectItem.code}}
+                                                    </div>
+                                                    <div class="line-height-small mb-5">{{defectItem.description}}</div>
+
+                                                    <div class="line-height-small mb-5" layout="row" layout-align="start center">
+                                                        <div layout="column">
+                                                            <md-icon ng-if="!vm.isItemGenericDefect(defectItem)" md-font-icon="icon-checkbox-blank-outline" class="icon">
+                                                            </md-icon>
+                                                            <md-icon ng-if="vm.isItemGenericDefect(defectItem)" md-font-icon="icon-checkbox-marked-outline" class="icon md-accent">
+                                                            </md-icon>
+                                                        </div>
+                                                        <span class="ml-10"> Generic Defect </span>
+                                                    </div>
+                                                    <div class="line-height-small mb-5">
+                                                        {{vm.defectTypeTitile(defectItem.defectTypeId)}}
+                                                    </div>
+                                                    <md-radio-group ng-model="defectItem.isRecoverable" layout="column">
+                                                        <div ng-if="defectItem.isRecoverable==0">
+                                                            <md-radio-button value="0">Irrecoverable</md-radio-button>
+                                                        </div>
+                                                        <div ng-if="defectItem.isRecoverable==1">
+                                                            <md-radio-button value="1">Recoverable</md-radio-button>
+                                                        </div>
+                                                    </md-radio-group>
+                                                    <div ng-if="defectItem.isRecoverable==1" class="line-height-small mb-5">
+                                                        {{defectItem.guideLine}}
+                                                    </div>
+                                                    <div ng-if="defectItem.isRecoverable==1" class="line-height-small mb-5">
+                                                        {{defectItem.requireTime}}
+                                                    </div>
+                                                    <div layout="row">
+                                                        <div ng-repeat="type in defectItem.materialTypeIds" class="label-chip line-height-small">{{vm.getPreCautionsType(type)}}</div>
+                                                    </div>
+                                                </div>
+                                                <div ng-if="vm.selectedDefectItem === defectItem" flex="10" layout="column" layout-align="center end">
+                                                    <md-icon ng-click="vm.deleteDefectItem(vm.category, defectItem)" md-font-icon="icon-cancel" class="icon red-500-fg s14" style="position:relative; left:3px; top:0px">
+                                                    </md-icon>
+                                                    <md-icon ng-click="vm.isExapndDefectItem=true" md-font-icon="icon-pencil" class="icon md-accent s14" style="position:relative; left:3px; top:5px">
+                                                    </md-icon>
+                                                    <div flex></div>
+                                                </div>
+                                            </div>
+                                        </ms-widget-front>
+                                    </ms-widget>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="right border-left border-top" style="min-height: 100%; height:100%; max-height: 100%;" layout="column" layout-align="start top" flex>
+
+                            <!-- newBox -->
+                            <div class="p-10" ng-if="vm.isExapndDefectItem" flex>
+                                <ms-widget flippable="false" layout="column" class="test-card">
+                                    <ms-widget-front class="white-bg p-5 w-300">
+                                        <div layout="row" layout-align="end center" flex>
+                                            <div>
+                                                <md-icon ng-click="vm.isExapndDefectItem=false" md-font-icon="icon-cancel" class="icon red-500-fg s14">
+                                                </md-icon>
+                                            </div>
+                                        </div>
+
+                                        <div flex class="description" layout="column" layout-align="start start">
+                                            <!-- <div>
+                                                        <md-input-container class="md-block">
+                                                           <label>
+                                                               <span>Title</span>
+                                                           </label>
+                                                           <input class="md-subhead" name="title"
+                                                                   ng-model="vm.defectItem.title"  required autocomplete="off">
+                                                           <div ng-messages="categoryForm.title.$error" role="alert">
+                                                               <div ng-message="required">
+                                                                   <span>Title is required</span>
+                                                               </div>
+                                                           </div>
+                                                       </md-input-container>
+                                                   </div> -->
+                                            <!-- <div>
+                                                        <md-input-container class="md-block">
+                                                           <label>
+                                                               <span>Description</span>
+                                                           </label>
+                                                           <input class="md-subhead" name="description"
+                                                                   ng-model="vm.defectItem.description"  required autocomplete="off">
+                                                           <div ng-messages="categoryForm.description.$error" role="alert">
+                                                               <div ng-message="required">
+                                                                   <span>Description is required</span>
+                                                               </div>
+                                                           </div>
+                                                       </md-input-container>
+                                                   </div> -->
+                                            <!-- <div class="ml-5">
+                                                       <md-input-container class="md-block" style="padding: 0; width: 200px;">
+                                                           <label>Defect Type</label>
+                                                           <md-select aria-label="Defect Type"
+                                                               ng-model="vm.defectItem.defectTypeId">
+                                                               <md-option ng-repeat="defectType in vm.defectTypeDefs" value="{{defectType.TECHDISER_ID}}">
+                                                                   {{defectType.title}}
+                                                               </md-option>
+                                                           </md-select>
+                                                       </md-input-container>
+                                                   </div> -->
+                                            <td-defect defect="vm.defectItem">
+                                            </td-defect>
+                                            <div layout="row" layout="row" layout-align="start center">
+                                                <md-icon ng-if="vm.defectItem.isGenericDefect==0" style="position:relative;left:5px;" ng-click="vm.selectGenericDefect()" md-font-icon="icon-checkbox-blank-outline" class="icon">
+                                                </md-icon>
+                                                <md-icon ng-if="vm.defectItem.isGenericDefect==1" style="position:relative;left:5px;" ng-click="vm.selectGenericDefect()" md-font-icon="icon-checkbox-marked-outline" class="icon md-accent">
+                                                </md-icon>
+                                                <div class="ml-10">
+                                                    Generic Defect
+                                                </div>
+                                            </div>
+                                            <div layout="row" class="m-5 mt-20">
+                                                <div ng-repeat="type in vm.defectItem.materialTypeIds" class="label-chip line-height-small">{{vm.getPreCautionsType(type)}}</div>
+                                            </div>
+
+                                        </div>
+
+
+
+                                        <div layout="row" layout-align="end center" flex>
+                                            <div ng-if="vm.isExapndDefectItem">
+                                                <md-button ng-click="vm.saveDefectItem(vm.category, vm.defectItem, vm.isNewDefectItem); vm.defectItem={}" class="md-raised md-light-blue-200-bg font-size-10 text-bold h-25 w-60" style="line-height: 0px" aria-label="save">
+                                                    <span ng-if="vm.isNewDefectItem">Add</span><span ng-if="vm.updateDefectItem">Update</span>
+                                                </md-button>
+                                            </div>
+                                        </div>
+                                    </ms-widget-front>
+                                </ms-widget>
+                            </div>
+                            <!-- newBox -->
+                            <ms-widget layout="column" style="padding: 0; min-height: 100%; height:100%; width: 100%" layout-align="start top">
+
+                                <ms-widget-front style="min-height: 100%; height:100%; width: 100%;" layout="column" layout-align="start top">
+                                    <div class="md-subhead p-10 md-blue-grey-50-bg">Types</div>
+                                    <div style="min-height: 100%; height:100%; width: 100%;" ms-scroll>
+
+                                        <div ng-if="vm.isSelectedCategory && vm.category.defectDef.length > 0">
+                                            <!-- Start Type List -->
+                                            <div class="widget-group" layout="row" flex="100" layout-wrap>
+                                                <ms-widget ng-repeat="type in vm.defectTypes" class="buyer-card p-5 tags" flippable="false" layout="column">
+                                                    <ms-widget-front class="white-bg h-40 w-320">
+                                                        <div layout="row" flex="100" class="m-10">
+                                                            <div layout="column" flex="90">
+                                                                <span class="font-size-14">{{type.text}}</span>
+                                                            </div>
+                                                            <div layout="column" flex="10">
+                                                                <md-icon ng-if="!vm.checkDefectTypeExist(type.id)" style="position:relative;left:5px;" ng-click="vm.selectTypeForDefect(type.id)" md-font-icon="icon-checkbox-blank-outline" class="icon">
+                                                                </md-icon>
+                                                                <md-icon ng-if="vm.checkDefectTypeExist(type.id)" style="position:relative;left:5px;" ng-click="vm.selectTypeForDefect(type.id)" md-font-icon="icon-checkbox-marked-outline" class="icon md-accent">
+                                                                </md-icon>
+                                                            </div>
+                                                        </div>
+                                                    </ms-widget-front>
+                                                </ms-widget>
+                                            </div>
+                                            <!--  -->
+
+                                            <div class="content" ms-scroll>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </ms-widget-front>
+                            </ms-widget>
+                        </div>
+
+                    </div>
+
+                    <div ng-if="vm.visibleMeasurementPolicy">
+                        <div flex>
+                            <div layout="column" layout-align="star start" flex class="p-5">
+                                <div class="m-10" layout="row" layout-align="start start">
+                                    <md-button ng-class="{'md-light-blue-200-bg' : vm.matricApplication == application} " ng-click="vm.getPolicies(application);" ng-repeat="application in vm.applications">
+                                        {{application}}
+                                    </md-button>
+                                </div>
+                                <div layout="row" layout-align="star center" flex class="p-0">
+                                    <div class="pl-10">
+                                        <md-input-container class="md-block" style="padding: 0; width: 200px;">
+                                            <label>Handle Policy</label>
+                                            <md-select ng-model="vm.matricPolicy" ng-change="vm.getHandleUnits()">
+                                                <md-option ng-repeat="item in vm.matricPolicies" ng-value="item">
+                                                    {{item}}
+                                                </md-option>
+                                            </md-select>
+                                        </md-input-container>
+                                    </div>
+                                    <div class="pl-10">
+                                        <md-input-container class="md-block" style="padding: 0; width: 200px;">
+                                            <label>Handle Unit</label>
+                                            <md-select ng-model="vm.matricHandleUnit" ng-change="vm.getCases()">
+                                                <md-option ng-repeat="item in vm.matricHandleUnits" ng-value="item">
+                                                    {{item}}
+                                                </md-option>
+                                            </md-select>
+                                        </md-input-container>
+                                    </div>
+                                    <div class="pl-10">
+                                        <md-input-container class="md-block" style="padding: 0; width: 200px;">
+                                            <label>Case</label>
+                                            <md-select ng-model="vm.matricCase" ng-change="vm.getDimensions()">
+                                                <md-option ng-repeat="item in vm.matricCases" ng-value="item">
+                                                    {{item}}
+                                                </md-option>
+                                            </md-select>
+                                        </md-input-container>
+                                    </div>
+
+                                </div>
+
+                                <div layout="row" layout-align="star center" flex class="p-0">
+                                    <div class="pl-10">
+                                        <md-input-container class="md-block" style="padding: 0; width: 200px;">
+                                            <label>Dimension</label>
+                                            <md-select ng-model="vm.dimentionInfo.matricDimension" ng-change="vm.getUnits()">
+                                                <md-option ng-repeat="item in vm.dimentionInfo.dimentionDef" ng-value="item">
+                                                    {{item}}
+                                                </md-option>
+                                            </md-select>
+                                        </md-input-container>
+                                    </div>
+                                    <div class="pl-10">
+                                        <md-input-container class="md-block" style="padding: 0; width: 130px;">
+                                            <label>Scale</label>
+                                            <md-select ng-change="vm.setDimensionPolicy();" ng-model="vm.dimentionInfo.measurementUnitId">
+                                                <md-option ng-repeat="item in vm.dimentionInfo.matricUnits" ng-value="item">
+                                                    {{item}}
+                                                </md-option>
+                                            </md-select>
+                                        </md-input-container>
+                                    </div>
+                                    <!-- <div class="pl-10"  ng-repeat="unitDef in vm.dimentionInfo.unitDef">
+                                                    <md-input-container class="md-block" style="padding: 0; width: 130px;">
+                                                            <label>{{unitDef.value}}</label>
+                                                            <md-select ng-model = "unitDef.selectedUnit">                                                            
+                                                                <md-option ng-repeat="item in unitDef.units" ng-value="item">
+                                                                    {{item}}
+                                                                </md-option>
+                                                            </md-select>
+                                                    </md-input-container>
+                                                </div> -->
+                                    <div class="pl-10">
+                                        <md-button ng-click="vm.addMatricInfo();" class="md-raised md-light-blue-200-bg font-size-10 text-bold h-25 w-60" style="line-height: 0px" aria-label="add">
+                                            <span>Add</span>
+                                        </md-button>
+                                    </div>
+
+                                </div>
+
+                                <div class="mt-10 pl-5">
+                                    <h4>Unit Info</h4>
+                                </div>
+                                <div layout="column" layout-align="start start" flex class="p-5 mt-5">
+                                    <div class="p-5" layout="row" layout-align="center center" flex>
+                                        <h4 class="pl-5 pt-5 w-100 h-30 md-light-blue-100-bg">Handle Policy</h4>
+                                        <h4 class="pl-5 pt-5 w-150 h-30 md-light-blue-100-bg">Application</h4>
+                                        <h4 class="pl-5 pt-5 w-150 h-30 md-light-blue-100-bg">Handle Unit</h4>
+                                        <h4 class="pl-5 pt-5 w-150 h-30 md-light-blue-100-bg">Case</h4>
+                                        <h4 class="pl-5 pt-5 w-100 h-30 md-light-blue-100-bg">Dimension</h4>
+                                        <h4 class="pl-5 pt-5 w-100 h-30 md-light-blue-100-bg">Scale</h4>
+                                    </div>
+                                    <md-card ng-repeat="matricInfo in vm.category.measurementMatricInfo">
+                                        <div class="p-5" layout="row" layout-align="start start" flex>
+                                            <div class="w-100">{{matricInfo.matricPolicy}}</div>
+                                            <div class="w-150">{{matricInfo.matricApplication}}</div>
+                                            <div class="w-150">{{matricInfo.handleUnit}}</div>
+                                            <div class="w-150">{{matricInfo.matricCase}}</div>
+                                            <div class="w-100">{{matricInfo.matricDimension.substring(0, matricInfo.matricDimension.indexOf(":"))}}</div>
+                                            <div class="w-100">{{matricInfo.measurementUnitId}}</div>
+                                        </div>
+                                    </md-card>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div ng-if="vm.visibleMetric">
+                        <div ng-if="!vm.itemDimension">
+                            <h4>Size Definition for 'sizeDef' is not found in Matric Policie Setups</h4>
+                        </div>
+                        <div ng-if="vm.itemDimension" layout="row" layout-align="start center" class="border-bottom pl-10 pt-10">
+                            <div class="pl-10">
+                                Size ({{vm.itemDimension.dimention}}) :
+                            </div>
+                            <div class="pl-10" ng-repeat="unitDef in vm.itemDimension.unitInfo">
+                                <md-input-container class="md-block" style="padding: 0; width: 130px;">
+                                    <label>{{unitDef.value}}</label>
+                                    <input ng-model="unitDef.newSizeUnit">
+                                    </input>
+                                </md-input-container>
+                            </div>
+                            <div class="pl-10">
+                                ( {{vm.itemDimension.measurementUnitId}} )
+                            </div>
+                            <div class="pl-10">
+                                <md-button ng-click="vm.addSizeInfoItem();" class="md-raised md-light-blue-200-bg font-size-10 text-bold h-25 w-60" style="line-height: 0px" aria-label="add">
+                                    <span>Add Size</span>
+                                </md-button>
+                            </div>
+                        </div>
+
+                        <div layout="column" style="width: 100%" layout-align="start start" ng-repeat="sizeInfoItem in vm.category.sizeDef.sizeInfo track by $index">
+                            <div ng-if="$index==0" style="width: 100%" class="mt-10 pl-5 border-bottom">
+                                <h4>Defined Sizes ( {{sizeDefUnitInfo.matricDimension}} : {{vm.itemDimension.measurementUnitId}} )</h4>
+                            </div>
+                            <div layout="row" style="width: 100%" class="border-bottom" layout-align="start center">
+                                <div class="w-70 pt-10 pl-10 pr-10" ng-repeat="sizeItem in sizeInfoItem.split(vm.sizeSeperator)  track by $index">
+                                    <h4>{{sizeItem}} </h4>
+                                </div>
+                                <md-button class="m-0" ng-click="vm.category.sizeDef.sizeInfo.splice($index,1)"> remove </md-button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- containerDimension -->
+
+                    <div ng-if="vm.visibleContainer" layout="row" layout-align="start start" flex>
+                        <!-- <div ng-if="vm.category.typeId === 'packContainer'" layout="row" layout-align="start center" flex="100">
+                                 <div class="m-20 font-size-20"> Container Entry Not Applicable for Packaging Container Type Material </div>
+                             </div> -->
+                        <!-- Start Container-->
+                        <div layout="column" layout-align="center start" flex="25">
+                            <md-button ng-repeat="containerItem in vm.category.containers" class="item h-40 w-210" aria-label="Container" ng-click="vm.selectContainerItem(containerItem)" ng-class="{'selected':vm.selectedContainerItem === containerItem}" style="position:relative;">
+                                <span ng-if="$index==0" ng-init="vm.selectContainerItem(containerItem)"></span>
+                                <span>{{vm.getContainerTitle(containerItem.containerId)}}</span>
+                                <div ng-if="vm.selectedContainerItem.TECHDISER_ID === containerItem.TECHDISER_ID">
+                                    <md-icon ng-click="vm.deleteContainerItem(vm.category, containerItem)" md-font-icon="icon-cancel" class="icon red-500-fg s14" style="position:absolute; right:5px; top:10px">
+                                    </md-icon>
+                                    <!-- <md-icon ng-click="vm.editContainer(containerItem); $event.stopPropagation();"
+                                              md-font-icon="icon-pencil" class="icon md-accent s14"
+                                              style="position:absolute; right:25px; top:10px">
+                                          </md-icon> -->
+                                    <div flex></div>
+                                </div>
+                            </md-button>
+                        </div>
+                        <!-- End Container-->
+                        <!-- Sizes -->
+                        <div class="right border-left border-top" style="min-height: 100%; height:100%; max-height: 100%;" layout="column" layout-align="start top" flex>
+                            <span ng-if="vm.isNewContainerItem || vm.updateContainerItem" class="pb-10">
+                                <input ng-model="vm.containerItem.title" style="margin-top: 10px; margin-left:5px; border: 1px solid #43bdff; height: 25px; width:140px;" placeholder=" Container.." onfocus="true">
+                                <md-icon ng-click="vm.saveContainerItem(vm.category, vm.containerItem, vm.isNewContainerItem); vm.isNewContainerItem = false; vm.updateContainerItem = false;" md-font-icon="icon-check" class="s16 md-accent-bg mr-5 ml-5" style="border-radius:100px;color:#ffffff;">
+                                </md-icon>
+                                <md-icon ng-click="vm.isNewContainerItem = false; vm.updateContainerItem = false" md-font-icon="icon-window-close" class="s16 red-400-bg" style="border-radius:100px;color:#ffffff;">
+                                </md-icon>
+                            </span>
+                            <ms-widget layout="column" style="padding: 0; min-height: 100%; height:100%; width: 100%" layout-align="start top">
+
+                                <ms-widget-front style="min-height: 100%; height:100%; width: 100%;" layout="column" layout-align="start top">
+                                    <div class="md-subhead md-blue-grey-50-bg" layout="row" layout-align="start center">
+                                        <span class="ml-20 mr-30">Size</span>
+                                    </div>
+                                    <div style="min-height: 100%; height:100%; width: 100%;" ms-scroll>
+
+                                        <div>
+                                            <div ng-if="!vm.containerDimension">
+                                                <h4>Size Definition for 'containerDef' is not found in Matric Policie Setups</h4>
+                                            </div>
+                                            <div ng-if="vm.containerDimension" layout="row" layout-align="start center" class="pl-10 pt-10">
+                                                <div class="pl-10">
+                                                    Item Size ({{vm.containerDimension.dimention}}) :
+                                                </div>
+                                                <div class="pl-10" ng-repeat="unitDef in vm.containerDimension.unitInfo">
+                                                    <md-input-container class="md-block" style="padding: 0; width: 80px;">
+                                                        <label>{{unitDef.value}}</label>
+                                                        <input ng-model="unitDef.newSizeUnit">
+                                                        </input>
+                                                    </md-input-container>
+                                                </div>
+                                                <div class="pl-10">
+                                                    ( {{vm.containerDimension.measurementUnitId}} )
+                                                </div>
+                                            </div>
+                                            <div ng-if="vm.containerDimension" layout="row" layout-align="start center" class="border-bottom pl-10">
+                                                <div class="pl-10">
+                                                    No. of Items per {{vm.getContainerTitle(vm.selectedContainerItem.containerId)}} :
+                                                </div>
+                                                <div class="pl-10">
+                                                    <md-input-container class="md-block" style="padding: 0; width: 80px;">
+                                                        <input ng-model="vm.containerDimension.noOfUnits">
+                                                        </input>
+                                                    </md-input-container>
+                                                </div>
+                                                <div class="pl-20">
+                                                    <md-button ng-click="vm.addContainerSize();" class="md-raised md-light-blue-200-bg font-size-10 text-bold h-25 w-100" style="line-height: 0px" aria-label="add">
+                                                        <span>Add Container</span>
+                                                    </md-button>
+                                                </div>
+
+                                            </div>
+                                            <!-- Start Container Size List -->
+                                            <div layout="column" class="ml-10 mb-20 mt-10" ms-scroll>
+                                                <ms-widget ng-repeat="containerType in vm.selectedContainerItem.sizes" ng-if="vm.category.containers[0].sizes.length > 0" ng-click="vm.selectContainerSize(containerType)" ng-class="{'selected':vm.selectedContainerType === containerType}" flippable="false" layout="column" layout-align="start start" class="test-card">
+                                                    <ms-widget-front class="white-bg p-5 h-40 w-500">
+                                                        <div layout="row" layout-align="start center" flex="100">
+                                                            <div flex="50" layout="row">
+                                                                Item Size ({{containerType.dimentionInfo.substring(0,containerType.dimentionInfo.indexOf(":"))}}): {{containerType.unitSize}} {{containerType.measurementUnitId}}
+                                                            </div>
+                                                            <div flex="30" layout="row" class="pl-10">
+                                                                No. of Items : {{containerType.noOfUnits}}
+                                                            </div>
+                                                            <md-button class="m-0" ng-click="vm.selectedContainerItem.sizes.splice($index,1)"> remove </md-button>
+                                                        </div>
+                                                    </ms-widget-front>
+                                                </ms-widget>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </ms-widget-front>
+                            </ms-widget>
+                        </div>
+                    </div>
+
+                    <div ng-if="vm.visiblePreCaution" layout="row" layout-align="start start" flex>
+
+                        <div flex>
+
+                            <div layout="column" flex class="p-10">
+                                <div class="widget-group mt-15" layout="column" layout-align="start start" flex="100" layout-wrap>
+                                    <ms-widget ng-repeat="preCaution in vm.category.preCautionMarks" ng-click="vm.selectPreCautionMark(preCaution)" ng-class="{'selected':vm.selectedPreCaution === preCaution}" flippable="false" layout="column" class="test-card">
+                                        <ms-widget-front class="white-bg p-5 h-auto w-300" style="min-height:80px;">
+                                            <div layout="row" flex="100">
+                                                <div layout="column" flex="30">
+                                                    <div ms-scroll class="h-60">
+                                                        <p align="center" ng-if="!preCaution.image[0]">
+                                                            <img ng-src="{{vm.imgHolder}}" class="h-50 w-auto" style="border-radius:0px;">
+                                                        </p>
+                                                        <div class="p-5" ng-repeat="image in preCaution.image">
+                                                            <div align="center" style="position: relative;" ng-mouseover="image.showHandle = true;" ng-mouseleave="image.showHandle = false;">
+                                                                <img class="h-50" style="border-radius:0px;" ng-src="{{image.data}}" />
+
+                                                                <div style="position:absolute; top:0; right:0; " class="m-5 image-buttons cursor-pointer" layout="row" ng-if="image.showHandle" layout-wrap>
+
+
+                                                                    <div class="grey-100-bg border ml-5" ng-click="vm.expandImage(image); $event.stopPropagation();">
+                                                                        <md-icon md-font-icon="icon-arrow-expand" class="icon"></md-icon>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                                <div layout="column" flex="60">
+                                                    <label>{{preCaution.title}}</label>
+                                                    <div layout="row">
+                                                        <div ng-repeat="type in preCaution.materialTypeIds" class="label-chip mt-5">{{vm.getPreCautionsType(type)}}</div>
+                                                    </div>
+                                                </div>
+                                                <div ng-if="vm.selectedPreCaution === preCaution" flex="10" layout="column" layout-align="center end">
+                                                    <md-icon ng-click="vm.deletePreCautionMark(vm.category, preCaution)" md-font-icon="icon-cancel" class="icon red-500-fg s14" style="position:relative; left:3px; top:0px">
+                                                    </md-icon>
+                                                    <md-icon ng-click="vm.isExapndPreCaution=true" md-font-icon="icon-pencil" class="icon md-accent s14" style="position:relative; left:3px; top:5px">
+                                                    </md-icon>
+                                                    <div flex></div>
+                                                </div>
+                                            </div>
+                                        </ms-widget-front>
+                                    </ms-widget>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="right border-left border-top" style="min-height: 100%; height:100%; max-height: 100%;" layout="column" layout-align="start top" flex>
+
+                            <!-- newBox -->
+                            <div class="p-10" ng-if="vm.isExapndPreCaution" flex>
+
+                                <div class="w-300" layout="column" layout-align="start top">
+                                    <ms-widget layout="column" layout-align="start top" style="padding: 0; !important">
+
+                                        <ms-widget-front style="height: 350px; position: relative;" layout="column" layout-align="start top">
+                                            <div layout="row" layout-align="end center" style="position: absolute; top:3px; right:5px;">
+                                                <div>
+                                                    <md-icon ng-click="vm.isExapndPreCaution=false" md-font-icon="icon-cancel" class="icon red-500-fg s14">
+                                                    </md-icon>
+                                                </div>
+                                            </div>
+                                            <div class="h-40 grey-100-bg mb-10 border p-5" layout="row" layout-align="space-between center">
+
+                                                <div class="ml-10 font-size-14">
+                                                    <td-image-loader type="inform" selection-type="'inform'" image-object="" max-size="5" image-title="' Add Pre Caution Mark'" item-list="vm.preCaution.image" on-upload="vm.onUpload(info)">
+                                                    </td-image-loader>
+                                                </div>
+                                            </div>
+                                            <div ms-scroll class="h-120 border-bottom">
+
+                                                <p align="center" ng-if="!vm.preCaution.image[0]">
+                                                    <img ng-src="{{vm.imgHolder}}" class="h-100 w-auto" style="border-radius:0px;">
+                                                </p>
+
+                                                <div class="mb-10 p-5" ng-repeat="image in vm.preCaution.image">
+                                                    <div align="center" style="position: relative;" ng-mouseover="image.showHandle = true;" ng-mouseleave="image.showHandle = false;">
+                                                        <img class="h-110" style="border-radius:0px;" ng-src="{{image.data}}" />
+
+                                                        <div style="position:absolute; top:0; right:0; " class="m-5 image-buttons cursor-pointer" layout="row" ng-if="image.showHandle" layout-wrap>
+
+
+                                                            <div class="grey-100-bg border ml-5" ng-click="vm.expandImage(image); $event.stopPropagation();">
+                                                                <md-icon md-font-icon="icon-arrow-expand" class="icon"></md-icon>
+                                                            </div>
+                                                            <div class="grey-100-bg border ml-5" ng-click="vm.removeImage(image, vm.preCaution.image); $event.stopPropagation();">
+                                                                <md-icon md-font-icon="icon-close"></md-icon>
+                                                            </div>
+
+
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+
+                                            <div class="pl-10 pr-10 h-40">
+                                                <md-input-container class="md-block">
+                                                    <label>
+                                                        <span>Title</span>
+                                                    </label>
+                                                    <input class="md-subhead" name="title" ng-model="vm.preCaution.title" required autocomplete="off">
+                                                    <div ng-messages="categoryForm.title.$error" role="alert">
+                                                        <div ng-message="required">
+                                                            <span>Title is required</span>
+                                                        </div>
+                                                    </div>
+                                                </md-input-container>
+                                            </div>
+
+                                            <div layout="row" class="m-5 mt-20">
+                                                <div ng-repeat="type in vm.preCaution.materialTypeIds" class="label-chip line-height-small">{{vm.getPreCautionsType(type)}}</div>
+                                            </div>
+
+                                            <div layout="row" layout-align="end center" flex style="position: absolute; bottom:3px; right:5px;">
+                                                <div ng-if="vm.isExapndPreCaution">
+                                                    <md-button ng-click="vm.addPreCautionMark(vm.category, vm.preCaution, vm.isNewPreCaution); vm.preCaution={'image': [], 'materialTypeIds': []}" class="md-raised md-light-blue-200-bg font-size-10 text-bold h-25 w-60" style="line-height: 0px" aria-label="save">
+                                                        <span ng-if="vm.isNewPreCaution">Add</span><span ng-if="vm.updatePreCaution">Update</span>
+                                                    </md-button>
+                                                </div>
+                                            </div>
+
+
+
+                                        </ms-widget-front>
+
+                                    </ms-widget>
+
+
+                                </div>
+                            </div>
+                            <!-- newBox -->
+                            <ms-widget layout="column" style="padding: 0; min-height: 100%; height:100%; width: 100%" layout-align="start top">
+
+                                <ms-widget-front style="min-height: 100%; height:100%; width: 100%;" layout="column" layout-align="start top">
+                                    <div class="md-subhead p-10 md-blue-grey-50-bg">Types</div>
+                                    <div style="min-height: 100%; height:100%; width: 100%;" ms-scroll>
+
+                                        <div ng-if="vm.isSelectedCategory && vm.category.types.length > 0">
+                                            <!-- Start Type List vm.preCautionTypes -->
+                                            <div class="widget-group" layout="row" flex="100" layout-wrap>
+                                                <ms-widget ng-repeat="type in vm.preCautionTypes" class="buyer-card p-5 tags" flippable="false" layout="column">
+                                                    <ms-widget-front class="white-bg h-40 w-320">
+                                                        <div layout="row" flex="100" class="m-10">
+                                                            <div layout="column" flex="90">
+                                                                <span class="font-size-14">{{type.text}}</span>
+                                                            </div>
+                                                            <div layout="column" flex="10">
+                                                                <md-icon ng-if="!vm.checkPreCautionTypeExist(type.id)" style="position:relative;left:5px;" ng-click="vm.selectTypeForPreCaution(type.id)" md-font-icon="icon-checkbox-blank-outline" class="icon">
+                                                                </md-icon>
+                                                                <md-icon ng-if="vm.checkPreCautionTypeExist(type.id)" style="position:relative;left:5px;" ng-click="vm.selectTypeForPreCaution(type.id)" md-font-icon="icon-checkbox-marked-outline" class="icon md-accent">
+                                                                </md-icon>
+                                                            </div>
+                                                        </div>
+                                                    </ms-widget-front>
+                                                </ms-widget>
+                                            </div>
+                                            <!--  -->
+
+                                            <div class="content" ms-scroll>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </ms-widget-front>
+                            </ms-widget>
+                        </div>
+
+
+                    </div>
+
+                    <div ng-if="vm.visibleProductionTime" layout="row" layout-align="start start" flex>
+
+                        <div flex>
+                            <div layout="column" flex class="p-10">
+                                <div class="widget-group mt-15" layout="column" layout-align="start start" flex="100" layout-wrap>
+                                    <ms-widget ng-repeat="productionTime in vm.category.productionTimes" ng-click="vm.selectProductionTime(productionTime)" ng-class="{'selected':vm.selectedProductionTime === productionTime}" flippable="false" layout="column" class="test-card">
+                                        <ms-widget-front class="white-bg p-5 h-auto w-300" style="min-height:80px;">
+                                            <div layout="row" flex="100">
+                                                <div layout="column" flex="90">
+                                                    <label>Quantity : {{productionTime.quantity}}</label>
+                                                    <div class="line-height-small mb-5">Day: {{productionTime.timeDays}}</div>
+                                                    <div layout="row">
+                                                        <div ng-repeat="type in productionTime.materialTypeIds" class="label-chip line-height-small">{{vm.getProductionTimeType(type)}}</div>
+                                                    </div>
+                                                </div>
+                                                <div ng-if="vm.selectedProductionTime === productionTime" flex="10" layout="column" layout-align="center end">
+                                                    <md-icon ng-click="vm.deleteProductionTime(vm.category, productionTime)" md-font-icon="icon-cancel" class="icon red-500-fg s14" style="position:relative; left:3px; top:0px">
+                                                    </md-icon>
+                                                    <md-icon ng-click="vm.isExapndProductionTime=true" md-font-icon="icon-pencil" class="icon md-accent s14" style="position:relative; left:3px; top:5px">
+                                                    </md-icon>
+                                                    <div flex></div>
+                                                </div>
+                                            </div>
+                                        </ms-widget-front>
+                                    </ms-widget>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="right border-left border-top" style="min-height: 100%; height:100%; max-height: 100%;" layout="column" layout-align="start top" flex>
+
+                            <!-- newBox -->
+                            <div class="p-10" ng-if="vm.isExapndProductionTime" flex>
+                                <ms-widget flippable="false" layout="column" class="test-card">
+                                    <ms-widget-front class="white-bg p-5 w-300">
+                                        <div layout="row" layout-align="end center" flex>
+                                            <div>
+                                                <md-icon ng-click="vm.isExapndProductionTime=false" md-font-icon="icon-cancel" class="icon red-500-fg s14">
+                                                </md-icon>
+                                            </div>
+                                        </div>
+
+                                        <div flex class="description" layout="column" layout-align="start start">
+                                            <div>
+                                                <md-input-container class="md-block">
+                                                    <label>
+                                                        <span>Quantity</span>
+                                                    </label>
+                                                    <input class="md-subhead" name="quantity" ng-model="vm.productionTime.quantity" required autocomplete="off">
+                                                    <div ng-messages="categoryForm.quantity.$error" role="alert">
+                                                        <div ng-message="required">
+                                                            <span>Quantity is required</span>
+                                                        </div>
+                                                    </div>
+                                                </md-input-container>
+                                            </div>
+                                            <div>
+                                                <md-input-container class="md-block">
+                                                    <label>
+                                                        <span>Days</span>
+                                                    </label>
+                                                    <input class="md-subhead" name="timeDays" ng-model="vm.productionTime.timeDays" required autocomplete="off">
+                                                    <div ng-messages="categoryForm.timeDays.$error" role="alert">
+                                                        <div ng-message="required">
+                                                            <span>Days is required</span>
+                                                        </div>
+                                                    </div>
+                                                </md-input-container>
+                                            </div>
+
+                                            <div layout="row" class="m-5 mt-20">
+                                                <div ng-repeat="type in vm.productionTime.materialTypeIds" class="label-chip line-height-small">{{vm.getProductionTimeType(type)}}</div>
+                                            </div>
+
+                                        </div>
+
+
+
+                                        <div layout="row" layout-align="end center" flex>
+                                            <div ng-if="vm.isExapndProductionTime">
+                                                <md-button ng-click="vm.saveProductionTime(vm.category, vm.productionTime, vm.isNewProductionTime); vm.productionTime={}" class="md-raised md-light-blue-200-bg font-size-10 text-bold h-25 w-60" style="line-height: 0px" aria-label="save">
+                                                    <span ng-if="vm.isNewProductionTime">Add</span><span ng-if="vm.updateProductionTime">Update</span>
+                                                </md-button>
+                                            </div>
+                                        </div>
+                                    </ms-widget-front>
+                                </ms-widget>
+                            </div>
+                            <!-- newBox -->
+                            <ms-widget layout="column" style="padding: 0; min-height: 100%; height:100%; width: 100%" layout-align="start top">
+
+                                <ms-widget-front style="min-height: 100%; height:100%; width: 100%;" layout="column" layout-align="start top">
+                                    <div class="md-subhead p-10 md-blue-grey-50-bg">Types</div>
+                                    <div style="min-height: 100%; height:100%; width: 100%;" ms-scroll>
+
+                                        <div ng-if="vm.isSelectedCategory && vm.category.productionTimes.length > 0">
+                                            <!-- Start Type List -->
+                                            <div class="widget-group" layout="row" flex="100" layout-wrap>
+                                                <ms-widget ng-repeat="type in vm.productionTimeTypes" class="buyer-card p-5 tags" flippable="false" layout="column">
+                                                    <ms-widget-front class="white-bg h-40 w-320">
+                                                        <div layout="row" flex="100" class="m-10">
+                                                            <div layout="column" flex="90">
+                                                                <span class="font-size-14">{{type.text}}</span>
+                                                            </div>
+                                                            <div layout="column" flex="10">
+                                                                <md-icon ng-if="!vm.checkProductionTimeTypeExist(type.id)" style="position:relative;left:5px;" ng-click="vm.selectTypeForProductionTime(type.id)" md-font-icon="icon-checkbox-blank-outline" class="icon">
+                                                                </md-icon>
+                                                                <md-icon ng-if="vm.checkProductionTimeTypeExist(type.id)" style="position:relative;left:5px;" ng-click="vm.selectTypeForProductionTime(type.id)" md-font-icon="icon-checkbox-marked-outline" class="icon md-accent">
+                                                                </md-icon>
+                                                            </div>
+                                                        </div>
+                                                    </ms-widget-front>
+                                                </ms-widget>
+                                            </div>
+                                            <!--  -->
+
+                                            <div class="content" ms-scroll>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </ms-widget-front>
+                            </ms-widget>
+                        </div>
+
+                    </div>
+
+                    <!-- start lsc -->
+                    <!-- <div ng-if="vm.visibleLumpSumCost" layout="row" layout-align="start start" flex>
+
+                             <div flex>
+                                  <div layout="column" flex class="p-10">
+                                     <div class="widget-group mt-15"
+                                         layout="column" layout-align="start start" flex="100" layout-wrap>
+                                         <ms-widget ng-repeat="lumpSumCost in vm.category.lumpSumCosts"
+                                             ng-click="vm.selectLumpSumCost(lumpSumCost)"
+                                             ng-class="{'selected':vm.selectedLumpSumCost === lumpSumCost}"
+                                             flippable="false" layout="column"
+                                             class="test-card">
+                                             <ms-widget-front class="white-bg p-5 h-auto w-300"  style="min-height:80px;">
+                                                 <div layout="row" flex="100">
+                                                     <div layout="column" flex="90">
+                                                        <label> {{lumpSumCost.quantity}} </label>
+                                                        <div class="line-height-small mb-5"> {{lumpSumCost.timeDays}} </div>
+                                                        <div layout="row">
+                                                             <div ng-repeat="type in lumpSumCost.materialTypeIds" class="label-chip line-height-small">{{vm.getLumpSumCostType(type)}}</div>
+                                                        </div>
+                                                     </div>
+                                                     <div ng-if="vm.selectedLumpSumCost === lumpSumCost" flex="10" layout="column" layout-align="center end">
+                                                        <md-icon ng-click="vm.deleteProductionTime(vm.category, lumpSumCost)"
+                                                             md-font-icon="icon-cancel" class="icon red-500-fg s14"
+                                                             style="position:relative; left:3px; top:0px">
+                                                        </md-icon>
+                                                        <md-icon ng-click="vm.isExapndLumpSumCost=true"
+                                                             md-font-icon="icon-pencil" class="icon md-accent s14"
+                                                             style="position:relative; left:3px; top:5px">
+                                                        </md-icon>
+                                                        <div flex></div>
+                                                     </div>
+                                                 </div>
+                                             </ms-widget-front>
+                                         </ms-widget>
+                                     </div>
+                                 </div>
+                             </div>
+
+                              <div class="right border-left border-top" style="min-height: 100%; height:100%; max-height: 100%;"
+                                  layout="column" layout-align="start top" flex>
+
+                                  <div class="p-10" ng-if="vm.isExapndLumpSumCost" flex>
+                                     <ms-widget flippable="false" layout="column" class="test-card">
+                                         <ms-widget-front class="white-bg p-5 w-300">
+                                             <div layout="row" layout-align="end center" flex>
+                                                 <div>
+                                                     <md-icon ng-click="vm.isExapndLumpSumCost=false"
+                                                        md-font-icon="icon-cancel" class="icon red-500-fg s14">
+                                                     </md-icon>
+                                                 </div>
+                                             </div>
+
+                                             <div flex class="description" layout="column" layout-align="start start" >
+                                                  <div>
+                                                       <md-input-container class="md-block">
+                                                          <label>
+                                                          </label>
+                                                          <input class="md-subhead" name="quantity"
+                                                                  ng-model="vm.lumpSumCost.quantity"  required autocomplete="off">
+
+                                                      </md-input-container>
+                                                  </div>
+                                                  <div>
+                                                       <md-input-container class="md-block">
+                                                          <label>
+                                                          </label>
+                                                          <input class="md-subhead" name="timeDays"
+                                                                  ng-model="vm.lumpSumCost.timeDays"  required autocomplete="off">
+
+                                                      </md-input-container>
+                                                  </div>
+
+                                                  <div layout="row" class="m-5 mt-20">
+                                                     <div ng-repeat="type in vm.lumpSumCost.materialTypeIds" class="label-chip line-height-small">{{vm.getLumpSumCostType(type)}}</div>
+                                                 </div>
+
+                                             </div>
+
+
+
+                                             <div layout="row" layout-align="end center" flex>
+                                                 <div ng-if="vm.isExapndLumpSumCost">
+                                                     <md-button
+                                                        ng-click="vm.saveLumpSumCost(vm.category, vm.lumpSumCost, vm.isNewLumpSumCost); vm.lumpSumCost={}"
+                                                        class="md-raised md-light-blue-200-bg font-size-10 text-bold h-25 w-60"
+                                                          style="line-height: 0px" aria-label="save">
+                                                        <span ng-if="vm.isNewLumpSumCost">Add</span><span ng-if="vm.updateLumpSumCost">Update</span>
+                                                     </md-button>
+                                                 </div>
+                                             </div>
+                                         </ms-widget-front>
+                                     </ms-widget>
+                                  </div>
+
+                                  <ms-widget layout="column" style="padding: 0; min-height: 100%; height:100%; width: 100%"
+                                       layout-align="start top" >
+
+                                       <ms-widget-front style="min-height: 100%; height:100%; width: 100%;"
+                                           layout="column" layout-align="start top">
+                                           <div class="md-subhead p-10 md-blue-grey-50-bg">Types</div>
+                                           <div style="min-height: 100%; height:100%; width: 100%;"  ms-scroll>
+
+                                             <div ng-if="vm.isSelectedCategory && vm.category.lumpSumCosts.length > 0">
+
+                                                      <div class="widget-group" layout="row" flex="100" layout-wrap>
+                                                          <ms-widget ng-repeat="type in vm.lumpsumCostTypes"
+                                                             class="buyer-card p-5 tags"
+                                                             flippable="false" layout="column">
+                                                             <ms-widget-front class="white-bg h-40 w-320">
+                                                                  <div layout="row" flex="100" class="m-10">
+                                                                      <div layout="column" flex="90">
+                                                                          <span class="font-size-14">{{type.text}}</span>
+                                                                      </div>
+                                                                      <div layout="column" flex="10">
+                                                                          <md-icon ng-if="!vm.checkLumpSumCostTypeExist(type.id)"
+                                                                              style="position:relative;left:5px;"
+                                                                              ng-click="vm.selectTypeForLumpSumCost(type.id)"
+                                                                              md-font-icon="icon-checkbox-blank-outline"
+                                                                              class="icon">
+                                                                          </md-icon>
+                                                                          <md-icon ng-if="vm.checkLumpSumCostTypeExist(type.id)"
+                                                                              style="position:relative;left:5px;"
+                                                                              ng-click="vm.selectTypeForLumpSumCost(type.id)"
+                                                                              md-font-icon="icon-checkbox-marked-outline"
+                                                                              class="icon md-accent">
+                                                                          </md-icon>
+                                                                      </div>
+                                                                  </div>
+                                                             </ms-widget-front>
+                                                          </ms-widget>
+                                                      </div>
+
+                                                  <div class="content" ms-scroll>
+
+                                                  </div>
+                                              </div>
+                                         </div>
+                                      </ms-widget-front>
+                                  </ms-widget>
+                              </div>
+
+                        </div> -->
+
+                </div>
+
+            </ms-widget-front>
+
+        </ms-widget>
+
+
+
+    </div>
+
+</div>

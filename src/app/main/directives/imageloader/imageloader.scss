@@ -1,0 +1,47 @@
+.image-uploader {
+  .btn-file {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn-file input[type="file"] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    cursor: pointer;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+  }
+
+  .image-name {
+    padding: 5px 25px 5px 12px;
+    border-radius: 16px;
+    display: block;
+    font-size: 13px;
+    background: rgb(224, 224, 224);
+    color: rgb(66, 66, 66);
+    margin: 0 5px;
+    position: relative;
+  }
+
+  .increase-buttons {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  .increase-buttons md-icon[md-font-icon] {
+    cursor: pointer;
+    font-size: 13px;
+    width: 13px;
+    height: 13px;
+    min-width: 13px;
+    min-height: 13px;
+    line-height: 13px;
+    color: rgb(244, 67, 54) !important;
+  }
+}

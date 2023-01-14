@@ -1,0 +1,174 @@
+{
+    "data": [
+        {
+            "TECHDISER_ID": "Shipment_Destination_Country_1",
+            "TECHDISER_SERIAL_NO": 1,
+            "country": "China",
+            "zoneId": "CountryZone3",
+            "ports": [
+                {
+                    "TECHDISER_ID": "Country_1_Port_1",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "port": "Shanghai",
+                    "code": "ShanghaiCode",
+                    "modeId": "ShipmentMode1"
+                },
+                {
+                    "TECHDISER_ID": "Country_1_Port_2",
+                    "TECHDISER_SERIAL_NO": 2,
+                    "port": "Shenzhen",
+                    "code": "ShenzhenCode",
+                    "modeId": "ShipmentMode1"
+                }
+            ]
+        },
+        {
+            "TECHDISER_ID": "Shipment_Destination_Country_2",
+            "TECHDISER_SERIAL_NO": 2,
+            "country": "South Korea",
+            "zoneId": "CountryZone3",
+            "ports": [
+                {
+                    "TECHDISER_ID": "Country_2_Port_3",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "port": "Busan",
+                    "code": "BusanCode",
+                    "modeId": "ShipmentMode1"
+                },
+                {
+                    "TECHDISER_ID": "Country_2_Port_4",
+                    "TECHDISER_SERIAL_NO": 2,
+                    "port": "Mogpo",
+                    "code": "MogpoCode",
+                    "modeId": "ShipmentMode2"
+                }
+            ]
+        },
+        {
+            "TECHDISER_ID": "Shipment_Destination_Country_3",
+            "TECHDISER_SERIAL_NO": 3,
+            "country": "U.S.A.",
+            "zoneId": "CountryZone6",
+            "ports": [
+                {
+                    "TECHDISER_ID": "Country_3_Port_5",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "port": "Los Angeles",
+                    "code": "LosCode",
+                    "modeId": "ShipmentMode1"
+                },
+                {
+                    "TECHDISER_ID": "Country_3_Port_6",
+                    "TECHDISER_SERIAL_NO": 2,
+                    "port": "Virginia",
+                    "code": "VirginiaCode",
+                    "modeId": "ShipmentMode2"
+                }
+            ]
+        },
+        {
+            "TECHDISER_ID": "Shipment_Destination_Country_4",
+            "TECHDISER_SERIAL_NO": 4,
+            "country": "Canada",
+            "zoneId": "CountryZone4",
+            "ports": [
+                {
+                    "TECHDISER_ID": "Country_4_Port_7",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "port": "Botwood",
+                    "code": "BotwoodCode",
+                    "modeId": "ShipmentMode1"
+                },
+                {
+                    "TECHDISER_ID": "Country_4_Port_8",
+                    "TECHDISER_SERIAL_NO": 2,
+                    "port": "Amherstburg",
+                    "code": "AmherstburgCode",
+                    "modeId": "ShipmentMode2"
+                }
+            ]
+        },
+        {
+            "TECHDISER_ID": "Shipment_Destination_Country_5",
+            "TECHDISER_SERIAL_NO": 5,
+            "country": "Russia",
+            "zoneId": "CountryZone4",
+            "ports": [
+                {
+                    "TECHDISER_ID": "Country_5_Port_9",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "port": "St. Petersburg.",
+                    "code": "StPetersburgCode",
+                    "modeId": "ShipmentMode1"
+                }
+            ]
+        },
+        {
+            "TECHDISER_ID": "Shipment_Destination_Country_6",
+            "TECHDISER_SERIAL_NO": 6,
+            "country": "Australia",
+            "title": "Western Europe",
+            "zoneId": "CountryZone4",
+            "ports": [
+                {
+                    "TECHDISER_ID": "Country_6_Port_10",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "port": "Abbot Point",
+                    "code": "AbbotCode",
+                    "modeId": "ShipmentMode1"
+                }
+            ]
+        },
+        {
+            "TECHDISER_ID": "Shipment_Destination_Country_7",
+            "TECHDISER_SERIAL_NO": 7,
+            "country": "Germany",
+            "zoneId": "CountryZone4",
+            "ports": [
+                {
+                    "TECHDISER_ID": "Country_7_Port_11",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "port": "Berlin",
+                    "code": "BerlinCode",
+                    "modeId": "ShipmentMode1"
+                }
+            ]
+        },
+        {
+            "TECHDISER_ID": "Sailing_Country_1",
+            "TECHDISER_SERIAL_NO": 8,
+            "country": "Bangladesh",
+            "zoneId": "CountryZone3",
+            "ports": [
+                {
+                    "TECHDISER_ID": "Sailing_Port_1",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "port": "Chittagong",
+                    "code": "CtgCode",
+                    "modeId": "ShipmentMode1"
+                },
+                {
+                    "TECHDISER_ID": "Sailing_Port_2",
+                    "TECHDISER_SERIAL_NO": 2,
+                    "port": "Mongla",
+                    "code": "MonglaCode",
+                    "modeId": "ShipmentMode1"
+                },
+                {
+                    "TECHDISER_ID": "Sailing_Port_3",
+                    "TECHDISER_SERIAL_NO": 3,
+                    "port": "Chalna",
+                    "code": "CtgCode",
+                    "modeId": "ShipmentMode1"
+                },
+                {
+                    "TECHDISER_ID": "Sailing_Port_4",
+                    "TECHDISER_SERIAL_NO": 4,
+                    "port": "Dhaka",
+                    "code": "DhakaCode",
+                    "modeId": "ShipmentMode2"
+                }
+            ]
+        }
+    ]
+}

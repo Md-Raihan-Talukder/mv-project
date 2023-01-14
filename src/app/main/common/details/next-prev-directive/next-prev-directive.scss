@@ -1,0 +1,27 @@
+.common-detail-save-prev-next-button {
+  top: 0px;
+  right: 15px;
+  position: fixed;
+
+  .next-prev-buttons {
+    .md-button {
+      line-height: 20px !important;
+      min-height: 20px !important;
+      font-size: 12px;
+      padding: 0;
+      max-width: 20px !important;
+    }
+  }
+
+  .common-detail-save-button {
+    line-height: 25px !important;
+    min-height: 25px !important;
+    font-size: 12px;
+    padding: 0;
+  }
+}
+
+.unsaved-state {
+  color: red !important;
+  border: 1px solid red !important;
+}

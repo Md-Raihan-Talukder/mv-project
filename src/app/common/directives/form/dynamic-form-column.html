@@ -1,0 +1,136 @@
+<!-- <div layout="row" layout-wrap layout-align="start center"
+	 	 ng-if="vm.getCategory(col) === 'text'" class="mr-20">
+		<label class="mr-5" >{{col.title}}: </label> 	
+		<md-input-container class="md-block  mr-20" md-no-float  >
+			
+			<input ng-if="col.type === 'text'" name="{{col.data}}" 
+				ng-model="item[col.data]" 
+				type="text"  aria-label="input"
+				ng-readonly="isReadOnly"> 
+
+			<input ng-if="col.type === 'numeric'" name="{{col.data}}" 
+				ng-model="item[col.data]" type="text" 
+				ng-readonly="isReadOnly || col.formula"
+				ng-keypress="vm.isNumberKey($event, item[col.data]);"
+				aria-label="input">
+			
+			<textarea ng-if="col.type === 'multilineText'" name="{{col.data}}"        
+			          ng-model="item[col.data]"  aria-label="input" 
+					 columns="1"  max-rows="4"></textarea>
+		</md-input-container>
+	</div> -->
+
+<md-input-container class="md-block  mr-20" ng-if="vm.getCategory(col) === 'text'">
+    <label>{{col.title}}</label>
+
+    <input ng-if="col.type === 'text'" name="{{col.data}}" ng-model="item[col.data]" type="text" aria-label="input" ng-readonly="isReadOnly">
+
+    <input ng-if="col.type === 'numeric'" name="{{col.data}}" ng-model="item[col.data]" type="text" ng-readonly="isReadOnly || col.formula" ng-keypress="vm.isNumberKey($event, item[col.data]);" aria-label="input">
+
+    <textarea ng-if="col.type === 'multilineText'" name="{{col.data}}" ng-model="item[col.data]" aria-label="input" columns="1" max-rows="4"></textarea>
+
+    <md-select class="" name="datatype" ng-model="item[col.data]" ng-if="col.type === 'dropDown'" aria-label="datatype">
+
+        <md-option ng-repeat="item in col.items" value="{{item.id}}">
+            {{item.text}}
+        </md-option>
+    </md-select>
+
+    <md-select class="" name="datatype" ng-model="item[col.data]" multiple ng-if="col.type === 'multidropDown'" aria-label="datatype">
+
+        <md-option ng-repeat="item in col.items" value="{{item.id}}">
+            {{item.text}}
+        </md-option>
+    </md-select>
+
+</md-input-container>
+
+<div ng-if="col.type === 'multiCheck'" flex class="p-5">
+    <label class="mr-5">{{col.title}}</label>
+    <div layout='row' layout-align="start center" layout-wrap>
+        <md-checkbox style="margin: 10px 0 0 10px;" ng-repeat="chkItem in col.items" ng-checked="vm.multyCheckExists(chkItem, item, col)" ng-click="vm.multyCheckToggle(chkItem, item, col)">
+            {{ chkItem }}
+        </md-checkbox>
+    </div>
+</div>
+
+<div ng-if="col.type === 'radio'" flex class="p-5">
+    <label class="mr-5">{{col.title}}</label>
+
+    <md-radio-group ng-model="item[col.data]" layout='row' layout-align="start center" layout-wrap>
+        <md-radio-button value="{{chkItem}}" style="margin: 10px 0 0 10px;" ng-repeat="chkItem in col.items">
+            {{chkItem}}
+        </md-radio-button>
+    </md-radio-group>
+</div>
+
+
+<md-checkbox ng-if="vm.getCategory(col) === 'checkbox'" flex class="p-15" name="checkbox" style="margin: 10px 0 0 10px;" ng-model="item[col.data]" aria-label="checkbox">
+    <span>{{col.title}}</span>
+</md-checkbox>
+
+<td-date-time-picker date-time="item[col.data]" ng-if="col.type === 'date'" date-time-text="vm.getDatePickerTitle(col.title)" is-date='true' picker-class="''">
+</td-date-time-picker>
+
+<td-date-time-picker date-time="item[col.data]" ng-if="col.type === 'dateTime'" date-time-text="vm.getDatePickerTitle(col.title)" is-time='true' is-date='true' picker-class="''" no-width="true">
+</td-date-time-picker>
+
+<div layout="column" ng-if="col.type === 'html'">
+    <div>
+        <span class="md-subhead">{{col.title}} :</span>
+        <md-icon ng-click="vm.updateColumnMode(col)" ng-if="!col.editMode" md-font-icon="icon-pencil" class="icon">
+        </md-icon>
+        <md-icon ng-click="vm.updateColumnMode(col)" ng-if="col.editMode" md-font-icon="icon-close" class="icon">
+        </md-icon>
+    </div>
+
+    <text-angular ng-if="col.editMode" ta-toolbar="vm.taToolbar" ng-model="item[col.data]">
+
+    </text-angular>
+
+    <span ng-if="!col.editMode" ng-bind-html="item[col.data] | unsafeHtml">
+    </span>
+
+
+</div>
+
+<msb-attachments ng-if="col.type === 'attachment'" label="col.title" item-list="item[col.data]">
+</msb-attachments>
+
+<msb-image-loader ng-if="col.type === 'image'" item-list="item[col.data]" image-title="col.title">
+</msb-image-loader>
+
+<msb-image-loader ng-if="col.type === 'singleImage'" selection-type="'single'" image-object="item[col.data]" image-title="col.title">
+</msb-image-loader>
+
+<div ng-if="col.type === 'singleObjectInline' " class="mr-15">
+    <label>{{col.title}}</label>
+    <div class="width-100-percent p-20">
+        <msb-form form-id="col.formId" object-property="item[col.data]">
+        </msb-form>
+    </div>
+</div>
+
+<div ng-if="col.type === 'select' || col.type === 'multiSelect' || 
+					  col.type === 'singleObject' || col.type === 'multiObject'" class="mr-15">
+    <div class="border-bottom p-15" layout='row' layout-align="space-between center">
+        <span>{{col.title}}</span>
+        <div ng-click="vm.selectItem(col, item)" ng-if="col.type === 'select' || col.type === 'multiSelect'" class="cursor-pointer" style="color: rgb(3,155,229); font-weight: bold;">
+            <u>Select {{col.title}}</u>
+        </div>
+
+        <div ng-click="vm.onAddItem(col, item)" ng-if="col.type === 'singleObject' || col.type === 'multiObject'" class="cursor-pointer" style="color: rgb(3,155,229); font-weight: bold;">
+            <u>Add Students</u>
+        </div>
+    </div>
+
+    <div class="mt-10">
+        <msb-form-column-ref-renderer ng-if="vm.refDirReady && col.isList" item="item" col="col" on-item-click="vm.onItemClick(col, item, listItem)">
+        </msb-form-column-ref-renderer>
+
+        <msb-grid ng-if="vm.refDirReady && !col.isList" grid-def-id="col.gridDefId" enable-row-selection="true" enable-full-row-selection="true" enable-edit="true" enable-delete="true" helper-items="[col, item]" set-fns="vm.setFns(addFn, selectedFn)" grid-data="item[col.data]" on-add-click="vm.addFromGrid(helperItems, callBack)" on-edit-click="vm.editFromGrid(helperItems, gridItem, callBack)" on-delete-click="vm.removeFromGrid(helperItems, gridItem, callBack)" on-selected-click="vm.onSelectedClick(helperItems, selectedItems, callBack)">
+        </msb-grid>
+
+    </div>
+
+</div>

@@ -1,0 +1,58 @@
+<div class="custom-directive-container">
+
+
+    <!-- COMMENTS SECTION -->
+    <div class="section border-bottom pb-10">
+        <div class="comments">
+
+            <div class="section-header" layout="row" layout-align="start center">
+
+                <div id="file-uploader" flow-init="vm.ngFlowOptions" flow-name="vm.ngFlow.flow" flow-files-submitted="vm.upload()" flow-file-added="vm.fileAdded($file)" flow-file-success="vm.fileSuccess($file, $message)" flow-complete="vm.uploadComplete()">
+
+                    <button flow-btn class="btn-expand-colupse md-icon-button md-accent md-button md-default-theme md-ink-ripple" type="button" aria-label="upload file" ng-click="vm.addFile($event)">
+
+                        <md-icon md-font-icon="icon-plus-box" class="icon"></md-icon>
+                    </button>
+
+                </div>
+
+                <span class="section-title">Attachments</span>
+
+            </div>
+
+            <div class="section-content">
+
+                <div class="comment" layout="row" ng-repeat="attachment in itemList">
+                    <div class="attachment-list">
+                        <div class="attachment" layout="row" layout-align="space-between center">
+                            <div>
+                                <span class="filename">{{attachment.name}}</span>
+                                <span class="size">({{attachment.size}})</span>
+                                <div>
+                                    <span class="subtitle secondary-text">
+                                        <strong class="mr-5">Uploaded:</strong> {{attachment.uploaded}}
+                                    </span>
+                                    <span class="subtitle secondary-text">
+                                        <strong class="mr-5">Last Modified:</strong>
+                                        {{attachment.modified}}
+                                    </span>
+                                </div>
+                            </div>
+                            <div layout="row" layout-align="start center">
+                                <md-button class="md-icon-button">
+                                    <md-icon md-font-icon="icon-cloud-download" aria-label="delete attachment" class="s16"></md-icon>
+                                </md-button>
+                                <md-button class="md-icon-button" ng-click="vm.removeFile(attachment);">
+                                    <md-icon md-font-icon="icon-close" aria-label="delete attachment" class="s16"></md-icon>
+                                </md-button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- / COMMENTS SECTION -->
+
+</div>

@@ -1,0 +1,166 @@
+<div id="project-contacts" class="page-layout simple left-sidenav inner-sidenav">
+
+    <!-- HEADER -->
+    <div class="header md-accent-bg" layout="row" layout-align="space-between center">
+
+        <!-- APP TITLE -->
+        <div layout="row" layout-align="start center">
+            <md-button class="md-icon-button sidenav-toggle" hide-gt-md ng-click="vm.toggleSidenav('project-contacts-sidenav')" aria-label="Toggle sidenav" translate translate-attr-aria-label="CONTACTS.TOGGLE_SIDENAV">
+                <md-icon md-font-icon="icon-menu" class="icon"></md-icon>
+            </md-button>
+
+            <div class="logo" layout="row" layout-align="start center">
+                <span class="logo-icon">
+                    <md-icon md-font-icon="icon-account-box" class="s24"></md-icon>
+                </span>
+                <span class="logo-text">PO wise team members</span>
+            </div>
+        </div>
+        <!-- / APP TITLE -->
+
+    </div>
+    <!-- / HEADER -->
+
+
+
+    <!-- CONTENT -->
+    <div class="content" md-background-bg layout="row" layout-align="start start">
+
+        <!-- SIDENAV -->
+        <md-sidenav class="sidenav main-sidenav md-white-bg w-220" ms-scroll md-is-locked-open="$mdMedia('gt-md')" md-component-id="project-contacts-sidenav" ms-sidenav-helper ng-include="'app/main/team/projectteam/sidenavs/main/main-sidenav.html'">
+        </md-sidenav>
+        <!-- / SIDENAV -->
+
+        <!-- MAIN -->
+        <div class="main" ms-scroll>
+
+
+            <!-- CONTACT LIST HEADER -->
+            <md-subheader class="md-no-sticky md-white-bg">
+
+                <div layout="row" flex="100" layout-align="start center">
+
+                    <div flex="50" layout="row" layout-align="start center">
+                        <div flex="50" layout="row" layout-align="start center">
+                            <strong class="mr-5">PO#:</strong> {{vm.selectedPo.poNo}}
+                        </div>
+                        <div flex="50" layout="row" layout-align="start center">
+                            <strong class="mr-5">Style#:</strong> {{vm.selectedPo.styleNo}}
+                        </div>
+                    </div>
+
+                    <div flex="50" layout="row" layout-align="start start">
+                        <strong class="mr-5">Buyer:</strong> {{vm.selectedPo.name}}
+                    </div>
+
+
+                </div>
+
+            </md-subheader>
+            <!-- / CONTACT LIST HEADER -->
+
+
+            <div class="widget-group" layout="column" layout-wrap>
+                <ms-widget flippable="true" layout="column" ng-repeat="team in vm.selectedPo.teams">
+                    <ms-widget-front class="white-bg audit-detail" md-dynamic-height>
+
+                        <div class="border-bottom border-top h-45" layout="row" layout-align="space-between center">
+                            <div class="header-left" layout="row" layout-align="start center">
+                                <div class="p-10">
+                                    <span class="org-name md-subhead">{{team.title}}</span>
+                                </div>
+                            </div>
+
+                            <div class="header-right mr-10" layout="row" layout-align="left  center">
+
+
+                                <!-- SIDENAV HEADER -->
+                                <div layout="row" layout-align="start center">
+
+                                    <md-autocomplete md-search-text-change="vm.searchTextChange1(team.searchText)" md-search-text="team.searchText" md-selected-item-change="vm.selectedItemChange1(team, item)" md-items="item in vm.querySearch1(team.searchText)" md-item-text="item.name" md-min-length="0" placeholder="Search for contacts" md-menu-class="autocomplete-custom-template">
+
+                                        <md-item-template>
+                                            <div class="po-autocomplete-template" layout="row" layout-align="start start">
+                                                <div class="title">
+                                                    <div class="avatar-wrapper">
+                                                        <img md-menu-align-target class="avatar" ng-src="{{item.avatar}}">
+                                                    </div>
+                                                </div>
+                                                <div layout="column" layout-align="start start">
+                                                    <div class="po-row"> {{item.name}} </div>
+                                                    <div class="po-row"> {{item.jobTitle}} </div>
+
+                                                </div>
+                                            </div>
+                                        </md-item-template>
+
+                                    </md-autocomplete>
+
+
+                                </div>
+                                <!-- / SIDENAV HEADER -->
+
+
+
+                                <button class="md-icon-button md-accent md-button md-default-theme md-ink-ripple" type="button" aria-label="expand" ng-click="vm.openContactDialog($event)">
+
+                                    <md-icon md-font-icon="icon-plus-box" class="icon"></md-icon>
+
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="border-bottom border-top  audit-detail-info" layout="row" layout-align="start top" layout-wrap>
+
+                            <ms-widget flippable="true" ng-repeat="member in team.members">
+
+                                <ms-widget-front class="white-bg h-180 w-150">
+                                    <md-button class="md-icon-button maximage-close-dialog" ng-click="vm.removeMember(team, member);" aria-label="Close dialog">
+                                        <md-icon md-font-icon="icon-close-circle" class="icon"></md-icon>
+                                    </md-button>
+
+                                    <img class="h-200 w-180" ng-src=" {{member.avatar}}" />
+                                    <div class="contact-info-on-image" layout="column" layout-align="start start">
+                                        <div class="contact-name">
+                                            {{member.name}}
+                                        </div>
+                                        <div class="contact-job-title">
+                                            {{member.jobTitle}}
+                                        </div>
+                                        <div class="contact-company">
+                                            {{member.company}}
+                                        </div>
+                                    </div>
+
+                                </ms-widget-front>
+
+                            </ms-widget>
+
+                        </div>
+
+                    </ms-widget-front>
+
+                </ms-widget>
+
+            </div>
+
+
+
+
+        </div>
+        <!-- / MAIN -->
+
+    </div>
+    <!-- / CONTENT -->
+
+    <!-- ADD CONTACT BUTTON -->
+    <md-list-item class="new-Team-form" ng-show="newTeamForm.$visible">
+        <p class="pl-8" editable-text="vm.newTemName" e-form="newTeamForm" onaftersave="vm.addNewTeam(vm.newTemName)"></p>
+    </md-list-item>
+
+    <md-button id="add-team-button" class="md-fab md-accent md-icon-button" ng-click="newTeamForm.$show()" ng-hide="newTeamForm.$visible" aria-label="add team">
+        <md-icon md-font-icon="icon-account-plus"></md-icon>
+    </md-button>
+    <!-- / ADD CONTACT BUTTON -->
+
+</div>

@@ -1,0 +1,42 @@
+<div id="import-inco">
+    <div layout="row" layout-align="start center" class="h-40">
+        <div flex="50" class="md-subhead ml-20">
+            <span>Steps</span>
+            <span>
+                <md-button class="md-icon-button mb-10" aria-label="Add" ng-click="vm.addTypeStep(vm.typeStep, true)">
+                    <md-icon class="md-background md-accent" md-font-icon="icon-plus-box"></md-icon>
+                    <md-tooltip><span>Add Step</span></md-tooltip>
+                </md-button>
+            </span>
+        </div>
+
+        <div flex class="md-subhead">Risk</div>
+        <div flex class="md-subhead">Payment</div>
+    </div>
+    <md-divider></md-divider>
+    <div layout="row" layout-align="start center" flex>
+
+        <div flex class="common-info">
+            <div flex layout="row" layout-align="start center" ng-repeat="step in vm.inCoStepDefs" class="common-list-item h-50">
+                <div class="ml-10" flex="50">
+                    <md-checkbox ng-checked="vm.checkStepExist(step.TECHDISER_ID)" aria-label="step" ng-click="vm.selectTypeStep(step)" class="md-accent">
+                        <span class="ml-5 text-bold">{{step.title}}</span>
+                    </md-checkbox>
+                </div>
+                <div class="ml-10 mt-10" flex>
+                    <md-checkbox ng-checked="vm.checkRiskExist(step)" aria-label="isRisk" ng-click="vm.checkRisk(step.TECHDISER_ID)" class="md-accent"><span></span>
+                    </md-checkbox>
+                </div>
+                <div class="ml-10 mt-10" flex>
+                    <md-checkbox ng-checked="vm.checkPaymentExist(step)" aria-label="isPayment" ng-click="vm.checkPayment(step.TECHDISER_ID)" class="md-accent"><span></span>
+                    </md-checkbox>
+                </div>
+                <span style="float:right;">
+                    <md-icon ng-click="vm.addTypeStep(step, false); $event.stopPropagation()" md-font-icon="icon-pencil" class="s16 mr-10" style="border-radius:100px;color:#9c9c9c;">
+                    </md-icon>
+                </span>
+            </div>
+        </div>
+
+    </div>
+</div>

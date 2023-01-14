@@ -1,0 +1,46 @@
+{
+    "definition": {
+        "sysBookedDays": [
+            "2016-12-30",
+            "2016-12-31",
+            "2017-01-01",
+            "2017-01-02",
+            "2017-01-03",
+            "2017-01-04",
+            "2017-01-05",
+            "2017-01-06",
+            "2017-01-07",
+            "2017-01-08"
+        ],
+        "sysHollydays": [
+            "2017-01-08",
+            "2017-01-09"
+        ],
+        "monthNames": [
+            "January",
+            "February",
+            "March",
+            "April",
+            "May",
+            "June",
+            "July",
+            "August",
+            "September",
+            "October",
+            "November",
+            "December"
+        ],
+        "weekday": [
+            "Sunday",
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday"
+        ],
+        "weekends": [
+            "Friday"
+        ]
+    }
+}

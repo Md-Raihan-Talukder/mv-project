@@ -1,0 +1,26 @@
+<div id="export-inco" class="mt-0">
+    <div class="mb-10">
+        <div class="h-35" layout="row" layout-align="start center" flex="100">
+            <div layout="column" flex class="ml-20 font-size-18">InCo Types</div>
+            <div layout="column">
+                <md-button class="md-icon-button" aria-label="Add" ng-click="vm.shipmentType={ isPortToPortTransport : false }; vm.addShipmentType(vm.shipmentType, true)">
+                    <md-icon class="mt-5 md-background md-accent" md-font-icon="icon-plus-box"></md-icon>
+                    <md-tooltip><span>Add Type</span></md-tooltip>
+                </md-button>
+            </div>
+        </div>
+    </div>
+    <md-divider></md-divider>
+    <div class="content" ms-scroll style="max-height:260px;">
+        <div class="navigation-simple" layout="column">
+            <md-button ng-repeat="shipmentType in vm.inCoTypeDefs" class="item h-40" ng-click="vm.selectInCoType(shipmentType)" ng-class="{'selected':vm.selectedIncoType.TECHDISER_ID === shipmentType.TECHDISER_ID}">
+                <md-icon md-font-icon="icon-tag-multiple" class="s16"></md-icon>
+                <span class="title">{{shipmentType.title}}</span>
+                <span style="float:right;">
+                    <md-icon ng-click="vm.addShipmentType(shipmentType, false); $event.stopPropagation()" md-font-icon="icon-pencil" class="s16 mr-10" style="border-radius:100px;color:#9c9c9c;">
+                    </md-icon>
+                </span>
+            </md-button>
+        </div>
+    </div>
+</div>

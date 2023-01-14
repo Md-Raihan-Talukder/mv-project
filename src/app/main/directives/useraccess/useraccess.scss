@@ -1,0 +1,30 @@
+.user-access-directive {
+  .members {
+    .section-content {
+      padding: 8px 0 32px 0;
+    }
+
+    .member-chips {
+      .md-chips {
+        box-shadow: none;
+        padding: 0;
+
+        md-chip {
+          padding-left: 0;
+
+          .member-chip {
+            .member-chip-avatar {
+              width: 32px;
+              border-radius: 50%;
+            }
+          }
+
+          ._md-chip-remove-container {
+            right: 6px;
+            line-height: 30px;
+          }
+        }
+      }
+    }
+  }
+}

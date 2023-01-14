@@ -1,0 +1,330 @@
+<td-common-detail-prev-next un-save-state="unSaveState" on-save="vm.save(callBack)">
+</td-common-detail-prev-next>
+<div class="md-accent-bg h-50 font-size-16 p-10">
+    Conatiner Setup
+</div>
+<msb-expand-collapse>
+    <div layout="row" class="msb-collapse-header grey-300-bg mb-5 h-45 b cursor-pointer">
+        <div flex class="font-size-16 p-10">
+            Shipping Container Setup
+        </div>
+    </div>
+    <div class="msb-collapse-content" style="min-height:100px;">
+        <div layout="row" class="p-10" layout-wrap>
+            <div class="box-shadow w-300 h-350 m-10 brad-5" ng-repeat="container in vm.allContainers" ng-if="container.type=='container'">
+                <div class="p-10 grey-200-bg bb font-size-14" layout="row">
+                    <div flex>
+                        {{container.title}}
+                    </div>
+                    <div>
+                        <md-icon ng-click="vm.removeContainer(container)" md-font-icon="icon-close" class="b icon red-500-fg"></md-icon>
+                    </div>
+                </div>
+                <div class="p-10 font-size-14" style="line-height:30px;">
+                    <div>
+                        <span class="grey-600-fg">Height: </span> <span>{{container.height}}</span>
+                    </div>
+                    <div>
+                        <span class="grey-600-fg">Width: </span> <span>{{container.width}}</span>
+                    </div>
+                    <div>
+                        <span class="grey-600-fg">Length: </span> <span>{{container.length}}</span>
+                    </div>
+                    <div>
+                        <span class="grey-600-fg">Net Weight: </span> <span>{{container.netWeight}}</span>
+                    </div>
+                    <div>
+                        <span class="grey-600-fg">Gross Weight: </span> <span>{{container.grossWeight}}</span>
+                    </div>
+                    <div>
+                        <span class="grey-600-fg">Load Capacity: </span> <span>{{container.loadCapacity}}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="box-shadow w-300 h-350 m-10">
+                <div class="p-10 blue-100-bg bb font-size-14">
+                    Add New Container
+                </div>
+                <div class="p-10 font-size-14">
+                    <div>
+                        <span class="grey-600-fg">Title: </span>
+                        <span>
+                            <md-input-container class="m-0">
+                                <input type="text" ng-model="vm.newCont.container.title" ng-model-options="{debounce:500}" aria-label="" ng-change="vm.update()" />
+                            </md-input-container>
+                        </span>
+                    </div>
+                    <div>
+                        <span class="grey-600-fg">Height: </span>
+                        <span>
+                            <md-input-container class="m-0 w-100">
+                                <input type="text" ng-model="vm.newCont.container.height" ng-model-options="{debounce:500}" aria-label="" ng-change="vm.update()" />
+                            </md-input-container>
+                        </span>
+                    </div>
+                    <div>
+                        <span class="grey-600-fg">Width: </span>
+                        <span>
+                            <md-input-container class="m-0 w-100">
+                                <input type="text" ng-model="vm.newCont.container.width" ng-model-options="{debounce:500}" aria-label="" ng-change="vm.update()" />
+                            </md-input-container>
+                        </span>
+                    </div>
+                    <div>
+                        <span class="grey-600-fg">Length: </span>
+                        <span>
+                            <md-input-container class="m-0 w-100">
+                                <input type="text" ng-model="vm.newCont.container.length" ng-model-options="{debounce:500}" aria-label="" ng-change="vm.update()" />
+                            </md-input-container>
+                        </span>
+                    </div>
+                    <div>
+                        <span class="grey-600-fg">Net Weight: </span>
+                        <span>
+                            <md-input-container class="m-0 w-100">
+                                <input type="text" ng-model="vm.newCont.container.netWeight" ng-model-options="{debounce:500}" aria-label="" ng-change="vm.update()" />
+                            </md-input-container>
+                        </span>
+                    </div>
+                    <div>
+                        <span class="grey-600-fg">Gross Weight: </span>
+                        <span>
+                            <md-input-container class="m-0 w-100">
+                                <input type="text" ng-model="vm.newCont.container.grossWeight" ng-model-options="{debounce:500}" aria-label="" ng-change="vm.update()" />
+                            </md-input-container>
+                        </span>
+                    </div>
+                    <div>
+                        <span class="grey-600-fg">Load Capacity: </span>
+                        <span>
+                            <md-input-container class="m-0 w-100">
+                                <input type="text" ng-model="vm.newCont.container.loadCapacity" ng-model-options="{debounce:500}" aria-label="" ng-change="vm.update()" />
+                            </md-input-container>
+                        </span>
+                    </div>
+                    <div align="right">
+                        <md-button ng-click="vm.addNewContainer('container', vm.newCont)" class="cool-btn-md">Add</md-button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</msb-expand-collapse>
+
+
+<msb-expand-collapse>
+    <div layout="row" class="msb-collapse-header grey-300-bg mb-5 h-45 b cursor-pointer">
+        <div flex class="font-size-16 p-10">
+            Local Transport Setup
+        </div>
+    </div>
+    <div class="msb-collapse-content" style="min-height:100px;">
+        <div layout="row" class="p-10" layout-wrap>
+            <div class="box-shadow w-300 h-350 m-10" ng-repeat="container in vm.allContainers" ng-if="container.type=='truck'">
+                <div class="p-10 grey-200-bg bb font-size-14" layout="row">
+                    <div flex>
+                        {{container.title}}
+                    </div>
+                    <div>
+                        <md-icon ng-click="vm.removeContainer(container)" md-font-icon="icon-close" class="b icon red-500-fg"></md-icon>
+                    </div>
+                </div>
+                <div class="p-10 font-size-14" style="line-height:30px;">
+                    <div>
+                        <span class="grey-600-fg">Height: </span> <span>{{container.height}}</span>
+                    </div>
+                    <div>
+                        <span class="grey-600-fg">Width: </span> <span>{{container.width}}</span>
+                    </div>
+                    <div>
+                        <span class="grey-600-fg">Length: </span> <span>{{container.length}}</span>
+                    </div>
+                    <div>
+                        <span class="grey-600-fg">Net Weight: </span> <span>{{container.netWeight}}</span>
+                    </div>
+                    <div>
+                        <span class="grey-600-fg">Gross Weight: </span> <span>{{container.grossWeight}}</span>
+                    </div>
+                    <div>
+                        <span class="grey-600-fg">Load Capacity: </span> <span>{{container.loadCapacity}}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="box-shadow w-300 h-350 m-10">
+                <div class="p-10 blue-100-bg bb font-size-14">
+                    Add New Local Transport
+                </div>
+                <div class="p-10 font-size-14">
+                    <div>
+                        <span class="grey-600-fg">Title: </span>
+                        <span>
+                            <md-input-container class="m-0 w-100">
+                                <input type="text" ng-model="vm.newCont.truck.title" ng-model-options="{debounce:500}" aria-label="" ng-change="vm.update()" />
+                            </md-input-container>
+                        </span>
+                    </div>
+                    <div>
+                        <span class="grey-600-fg">Height: </span>
+                        <span>
+                            <md-input-container class="m-0 w-100">
+                                <input type="text" ng-model="vm.newCont.truck.height" ng-model-options="{debounce:500}" aria-label="" ng-change="vm.update()" />
+                            </md-input-container>
+                        </span>
+                    </div>
+                    <div>
+                        <span class="grey-600-fg">Width: </span>
+                        <span>
+                            <md-input-container class="m-0 w-100">
+                                <input type="text" ng-model="vm.newCont.truck.width" ng-model-options="{debounce:500}" aria-label="" ng-change="vm.update()" />
+                            </md-input-container>
+                        </span>
+                    </div>
+                    <div>
+                        <span class="grey-600-fg">Length: </span>
+                        <span>
+                            <md-input-container class="m-0 w-100">
+                                <input type="text" ng-model="vm.newCont.truck.length" ng-model-options="{debounce:500}" aria-label="" ng-change="vm.update()" />
+                            </md-input-container>
+                        </span>
+                    </div>
+                    <div>
+                        <span class="grey-600-fg">Net Weight: </span>
+                        <span>
+                            <md-input-container class="m-0 w-100">
+                                <input type="text" ng-model="vm.newCont.truck.netWeight" ng-model-options="{debounce:500}" aria-label="" ng-change="vm.update()" />
+                            </md-input-container>
+                        </span>
+                    </div>
+                    <div>
+                        <span class="grey-600-fg">Gross Weight: </span>
+                        <span>
+                            <md-input-container class="m-0 w-100">
+                                <input type="text" ng-model="vm.newCont.container.grossWeight" ng-model-options="{debounce:500}" aria-label="" ng-change="vm.update()" />
+                            </md-input-container>
+                        </span>
+                    </div>
+                    <div>
+                        <span class="grey-600-fg">Load Capacity: </span>
+                        <span>
+                            <md-input-container class="m-0 w-100">
+                                <input type="text" ng-model="vm.newCont.truck.loadCapacity" ng-model-options="{debounce:500}" aria-label="" ng-change="vm.update()" />
+                            </md-input-container>
+                        </span>
+                    </div>
+                    <div align="right">
+                        <md-button ng-click="vm.addNewContainer('truck', vm.newCont)" class="cool-btn-md">Add</md-button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</msb-expand-collapse>
+
+
+<msb-expand-collapse>
+    <div layout="row" class="msb-collapse-header grey-300-bg mb-5 h-45 b cursor-pointer">
+        <div flex class="font-size-16 p-10">
+            Air Transport Container Setup
+        </div>
+    </div>
+    <div class="msb-collapse-content" style="min-height:100px;">
+        <div layout="row" class="p-10" layout-wrap>
+            <div class="box-shadow w-300 h-350 m-10" ng-repeat="container in vm.allContainers" ng-if="container.type=='aircraft'">
+                <div class="p-10 grey-200-bg bb font-size-14" layout="row">
+                    <div flex>
+                        {{container.title}}
+                    </div>
+                    <div>
+                        <md-icon ng-click="vm.removeContainer(container)" md-font-icon="icon-close" class="b icon red-500-fg"></md-icon>
+                    </div>
+                </div>
+                <div class="p-10 font-size-14" style="line-height:30px;">
+                    <div>
+                        <span class="grey-600-fg">Height: </span> <span>{{container.height}}</span>
+                    </div>
+                    <div>
+                        <span class="grey-600-fg">Width: </span> <span>{{container.width}}</span>
+                    </div>
+                    <div>
+                        <span class="grey-600-fg">Length: </span> <span>{{container.length}}</span>
+                    </div>
+                    <div>
+                        <span class="grey-600-fg">Net Weight: </span> <span>{{container.netWeight}}</span>
+                    </div>
+                    <div>
+                        <span class="grey-600-fg">Gross Weight: </span> <span>{{container.grossWeight}}</span>
+                    </div>
+                    <div>
+                        <span class="grey-600-fg">Load Capacity: </span> <span>{{container.loadCapacity}}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="box-shadow w-300 h-350 m-10">
+                <div class="p-10 blue-100-bg bb font-size-14">
+                    Add Air Transport Container
+                </div>
+                <div class="p-10 font-size-14">
+                    <div>
+                        <span class="grey-600-fg">Title: </span>
+                        <span>
+                            <md-input-container class="m-0 w-100">
+                                <input type="text" ng-model="vm.newCont.aircraft.title" ng-model-options="{debounce:500}" aria-label="" ng-change="vm.update()" />
+                            </md-input-container>
+                        </span>
+                    </div>
+                    <div>
+                        <span class="grey-600-fg">Height: </span>
+                        <span>
+                            <md-input-container class="m-0 w-100">
+                                <input type="text" ng-model="vm.newCont.aircraft.height" ng-model-options="{debounce:500}" aria-label="" ng-change="vm.update()" />
+                            </md-input-container>
+                        </span>
+                    </div>
+                    <div>
+                        <span class="grey-600-fg">Width: </span>
+                        <span>
+                            <md-input-container class="m-0 w-100">
+                                <input type="text" ng-model="vm.newCont.aircraft.width" ng-model-options="{debounce:500}" aria-label="" ng-change="vm.update()" />
+                            </md-input-container>
+                        </span>
+                    </div>
+                    <div>
+                        <span class="grey-600-fg">Length: </span>
+                        <span>
+                            <md-input-container class="m-0 w-100">
+                                <input type="text" ng-model="vm.newCont.aircraft.length" ng-model-options="{debounce:500}" aria-label="" ng-change="vm.update()" />
+                            </md-input-container>
+                        </span>
+                    </div>
+                    <div>
+                        <span class="grey-600-fg">Net Weight: </span>
+                        <span>
+                            <md-input-container class="m-0 w-100">
+                                <input type="text" ng-model="vm.newCont.aircraft.netWeight" ng-model-options="{debounce:500}" aria-label="" ng-change="vm.update()" />
+                            </md-input-container>
+                        </span>
+                    </div>
+                    <div>
+                        <span class="grey-600-fg">Gross Weight: </span>
+                        <span>
+                            <md-input-container class="m-0 w-100">
+                                <input type="text" ng-model="vm.newCont.aircraft.grossWeight" ng-model-options="{debounce:500}" aria-label="" ng-change="vm.update()" />
+                            </md-input-container>
+                        </span>
+                    </div>
+                    <div>
+                        <span class="grey-600-fg">Load Capacity: </span>
+                        <span>
+                            <md-input-container class="m-0 w-100">
+                                <input type="text" ng-model="vm.newCont.aircraft.loadCapacity" ng-model-options="{debounce:500}" aria-label="" ng-change="vm.update()" />
+                            </md-input-container>
+                        </span>
+                    </div>
+                    <div align="right">
+                        <md-button ng-click="vm.addNewContainer('aircraft', vm.newCont)" class="cool-btn-md">Add</md-button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</msb-expand-collapse>

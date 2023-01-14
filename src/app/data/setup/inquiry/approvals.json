@@ -1,0 +1,124 @@
+{
+    "data": [
+        {
+            "TECHDISER_ID": "enquiry_aaproval_1",
+            "TECHDISER_SERIAL_NO": 1,
+            "title": "Order Confirmation",
+            "deleted": false,
+            "eventId": "orderConfirmationDate"
+        },
+        {
+            "TECHDISER_ID": "enquiry_aaproval_2",
+            "TECHDISER_SERIAL_NO": 2,
+            "title": "Payment Confirmation",
+            "deleted": false,
+            "eventId": "paymentConfirmationDate"
+        },
+        {
+            "TECHDISER_ID": "enquiry_aaproval_3",
+            "TECHDISER_SERIAL_NO": 3,
+            "title": "PP Sample",
+            "deleted": false,
+            "type": "sample",
+            "sampleKey": "",
+            "eventId": ""
+        },
+        {
+            "TECHDISER_ID": "enquiry_aaproval_4",
+            "TECHDISER_SERIAL_NO": 4,
+            "title": "Fit Sample",
+            "deleted": false,
+            "type": "sample",
+            "sampleKey": "fit",
+            "eventId": ""
+        },
+        {
+            "TECHDISER_ID": "enquiry_aaproval_5",
+            "TECHDISER_SERIAL_NO": 5,
+            "title": "Size Set Sample",
+            "deleted": false,
+            "type": "sample",
+            "sampleKey": "ss",
+            "eventId": ""
+        },
+        {
+            "TECHDISER_ID": "enquiry_aaproval_6",
+            "TECHDISER_SERIAL_NO": 6,
+            "title": "Photo/Salseman Sample",
+            "deleted": false,
+            "type": "sample",
+            "sampleKey": "",
+            "eventId": ""
+        },
+        {
+            "TECHDISER_ID": "enquiry_aaproval_7",
+            "TECHDISER_SERIAL_NO": 7,
+            "title": "Material Card Approval",
+            "eventId": ""
+        },
+        {
+            "TECHDISER_ID": "enquiry_aaproval_8",
+            "TECHDISER_SERIAL_NO": 8,
+            "title": "Shade Approval",
+            "eventId": ""
+        },
+        {
+            "TECHDISER_ID": "enquiry_aaproval_9",
+            "TECHDISER_SERIAL_NO": 9,
+            "title": "Wash Approval",
+            "eventId": ""
+        },
+        {
+            "TECHDISER_ID": "enquiry_aaproval_10",
+            "TECHDISER_SERIAL_NO": 10,
+            "title": "Pre-Production Sample",
+            "type": "sample",
+            "sampleKey": "pp",
+            "eventId": ""
+        },
+        {
+            "TECHDISER_ID": "enquiry_aaproval_11",
+            "TECHDISER_SERIAL_NO": 11,
+            "title": "Wash Range Sample",
+            "type": "sample",
+            "sampleKey": "",
+            "eventId": ""
+        },
+        {
+            "TECHDISER_ID": "enquiry_aaproval_12",
+            "TECHDISER_SERIAL_NO": 12,
+            "title": "Top Sample",
+            "type": "sample",
+            "sampleKey": "top",
+            "eventId": ""
+        },
+        {
+            "TECHDISER_ID": "enquiry_aaproval_13",
+            "TECHDISER_SERIAL_NO": 13,
+            "title": "Shipment Sample",
+            "type": "sample",
+            "sampleKey": "",
+            "eventId": ""
+        },
+        {
+            "TECHDISER_ID": "enquiry_aaproval_14",
+            "TECHDISER_SERIAL_NO": 14,
+            "title": "Catalog Sample",
+            "type": "sample",
+            "sampleKey": "",
+            "eventId": ""
+        },
+        {
+            "TECHDISER_ID": "enquiry_aaproval_15",
+            "TECHDISER_SERIAL_NO": 15,
+            "title": "Fabric Performance Testing",
+            "eventId": ""
+        },
+        {
+            "TECHDISER_ID": "enquiry_aaproval_16",
+            "TECHDISER_SERIAL_NO": 16,
+            "title": "Garments Performance Testing",
+            "eventId": ""
+        }
+    ]
+}

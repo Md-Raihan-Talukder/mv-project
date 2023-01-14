@@ -1,0 +1,81 @@
+<div ng-if="vm.toViewController">
+    <md-toolbar class="md-accent">
+        <div class="md-toolbar-tools">
+            <span flex="95">Calender</span>
+            <md-button class="md-icon-button" ng-click="vm.closeDialog()" aria-label="Close Dialog">
+                <md-icon md-font-icon="icon-close"></md-icon>
+            </md-button>
+        </div>
+    </md-toolbar>
+    <div ng-if="vm.addOption" ng-repeat="holidayItem in vm.holiday" class="font-size-15" layout="row">
+        <div class="p-10" layout="row" flex="25">
+            <div class="mt-10">Start Date : </div>
+            <md-input-container class="m-0 w-100 md-default-theme md-input-has-value">
+                <input ng-model="holidayItem.startDate"></input>
+            </md-input-container>
+        </div>
+        <div class="p-10" layout="row" flex="25">
+            <div class="mt-10">End Date : </div>
+            <md-input-container class="m-0 w-100 md-default-theme md-input-has-value">
+                <input ng-model="holidayItem.endDate"></input>
+            </md-input-container>
+        </div>
+        <div class="p-10" layout="row" flex="40">
+            <div class="mt-10">Reason : </div>
+            <md-input-container class="m-0 w-250 md-default-theme md-input-has-value">
+                <input ng-model="holidayItem.reason"></input>
+            </md-input-container>
+        </div>
+        <md-button class="md-raised" ng-click="vm.addHoliday()">Add</md-button>
+    </div>
+    <div class="font-size-20 ml-20">List of holidays:</div>
+    <div class="quantity-def-table m-10">
+        <div class="quantity-def-table-head" layout="row" layout-align="start center">
+
+            <div class="w-200 border-left border-top blue-100-bg  border-bottom" style="height: 42px;" layout="column" layout-align="center center">
+                <span> Start Data </span>
+            </div>
+
+            <div class="w-200 border-left border-top blue-100-bg  border-bottom" style="height: 42px;" layout="column" layout-align="center center">
+                <span> End Date </span>
+            </div>
+
+            <div class="w-200 border-left border-top blue-100-bg  border-bottom" style="height: 42px;" layout="column" layout-align="center center">
+                <span> Number of Holidays </span>
+            </div>
+
+            <div class="w-200 border-left border-top blue-100-bg  border-bottom" style="height: 42px;" layout="column" layout-align="center center">
+                <span> Reason </span>
+            </div>
+
+            <div class="w-200 border-left border-right border-top blue-100-bg border-bottom" style="height: 42px;" layout="column" layout-align="center center">
+                <span> Action </span>
+            </div>
+
+        </div>
+
+        <div class="quantity-def-table-body" layout="row" layout-align="start center" ng-repeat="calendarDataItem in vm.calendarData">
+
+            <div class="w-200 border-left border-top grey-100-bg border-bottom quantity-def-table-head-column" style="height: 42px;" layout="column" layout-align="center center">
+                <span> {{calendarDataItem.startDate}} </span>
+            </div>
+
+            <div class="w-200 border-left border-top grey-100-bg border-bottom quantity-def-table-head-column" style="height: 42px;" layout="column" layout-align="center center">
+                <span> {{calendarDataItem.endDate}} </span>
+            </div>
+
+            <div class="w-200 border-left border-top grey-100-bg border-bottom quantity-def-table-head-column" style="height: 42px;" layout="column" layout-align="center center">
+                <span> {{calendarDataItem.numberOfHolidays}} days</span>
+            </div>
+
+            <div class="w-200 border-left border-top grey-100-bg border-bottom quantity-def-table-head-column" style="height: 42px;" layout="column" layout-align="center center">
+                <span> {{calendarDataItem.reason}} </span>
+            </div>
+
+            <div class="w-200 border-left border-right border-top grey-100-bg border-bottom quantity-def-table-head-column" style="height: 42px;" layout="column" layout-align="center center">
+                <button class="w-80 h-30 font-size-10 text-bold md-warn md-raised md-button md-default-theme md-ink-ripple" ng-click="vm.removeItemFromCalendarData(calendarDataItem.holidayId)">Remove</button>
+            </div>
+
+        </div>
+    </div>
+</div>

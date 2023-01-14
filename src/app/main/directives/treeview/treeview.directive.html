@@ -1,0 +1,9 @@
+<md-button style="float: right;text-transform:none; margin-bottom: 5px;" ng-if="vm.options.showAddBtn" class="md-teal-50-bg text-bold h-30" ng-click="vm.addNewItem($event)" aria-label="add">
+    <span style="position:relative;top:-3px;">Add Root</span>
+</md-button>
+<div id="tree-view" ng-if="vm.items" ui-tree="vm.treeOptions" style="width: 100%; clear: both;">
+    <ol ui-tree-nodes ng-class="{hidden: collapsed}" style="width: 100%;" ng-model="vm.items" data-nodrag class="node">
+        <li data-nodrag ng-repeat="node in vm.items" ui-tree-node flex="100" style="width: 100%;" ng-include="'app/main/directives/treeview/treeview-template.html'"></li>
+    </ol>
+
+</div>

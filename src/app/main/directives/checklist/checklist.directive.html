@@ -1,0 +1,99 @@
+<div class="custom-directive-container">
+    <!-- CHECKLISTS SECTION -->
+    <div class="section border-bottom pb-50" ng-repeat="checklist in itemList">
+        <div class="checklist">
+            <div class="section-header" layout="row" layout-align="start center">
+                <i class="icon-checkbox-marked s18"></i>
+                <span flex class="section-title" ng-hide="editChecklistForm.$visible">{{checklist.name}}</span>
+
+                <!-- <span flex class="section-title" editable-text="checklist.name"
+                              ng-show="editChecklistForm.$visible"
+                              e-form="editChecklistForm"></span> -->
+
+                <md-menu ng-if="!checklist.readOnly" md-position-mode="target-right target" class="options">
+                    <md-button class="md-icon-button" ng-click="$mdOpenMenu($event)" aria-label="options">
+                        <md-icon md-menu-origin md-font-icon="icon-dots-vertical"></md-icon>
+                    </md-button>
+
+                    <md-menu-content class="options-menu-content">
+                        <md-menu-item>
+                            <md-button ng-click="editChecklistForm.$show()" aria-label="Edit">
+                                <md-icon md-font-icon="icon-pencil" class="s20"></md-icon>
+                                <span>Edit Checklist</span>
+                            </md-button>
+                        </md-menu-item>
+                        <md-menu-item>
+                            <md-button ng-click="vm.removeChecklist(checklist)" aria-label="Remove Checklist">
+                                <md-icon md-font-icon="icon-delete"></md-icon>
+                                <span>Remove Checklist</span>
+                            </md-button>
+                        </md-menu-item>
+                    </md-menu-content>
+                </md-menu>
+            </div>
+
+            <div class="section-content">
+
+                <div class="checklist-progress" layout="row" layout-align="start center">
+                    <span class="checklist-progress-value">
+                        {{checklist.checkItemsChecked}} / {{checklist.checkItems.length}}
+                    </span>
+
+                    <md-progress-linear class="md-accent checklist-progressbar" md-mode="determinate" value="{{100 * checklist.checkItemsChecked / checklist.checkItems.length}}">
+                    </md-progress-linear>
+                </div>
+
+                <div class="check-items">
+                    <div class="check-item" ng-repeat="checkItem in checklist.checkItems" layout="row" layout-align="space-between center">
+
+                        <md-checkbox ng-model="checkItem.checked" ng-change="vm.updateCheckedCount(checklist)" aria-label="{{checkItem.name}}" ng-hide="editCheckItemForm.$visible">
+                            {{checkItem.name}}
+                        </md-checkbox>
+
+                        <span flex editable-text="checkItem.name" ng-show="editCheckItemForm.$visible" e-form="editCheckItemForm"></span>
+
+                        <md-menu md-position-mode="target-right target" class="options">
+
+                            <md-button class="md-icon-button" ng-click="$mdOpenMenu($event)" aria-label="options">
+                                <md-icon md-menu-origin md-font-icon="icon-dots-vertical" class="s20"></md-icon>
+                            </md-button>
+
+                            <md-menu-content class="options-menu-content">
+                                <md-menu-item>
+                                    <md-button ng-click="editCheckItemForm.$show()" aria-label="Edit">
+                                        <md-icon md-font-icon="icon-pencil" class="s20"></md-icon>
+                                        <span>Edit</span>
+                                    </md-button>
+                                </md-menu-item>
+                                <md-menu-item>
+                                    <md-button ng-click="vm.removeChecklistItem(checkItem, checklist)" aria-label="Remove">
+                                        <md-icon md-font-icon="icon-delete"></md-icon>
+                                        <span>Remove</span>
+                                    </md-button>
+                                </md-menu-item>
+                            </md-menu-content>
+                        </md-menu>
+
+                    </div>
+                </div>
+
+                <form name="newCheckItemForm" class="new-check-item-form" ng-submit="vm.addCheckItem(vm[checklist.id].newCheckItem, checklist);vm[checklist.id].newCheckItem = ''" layout="row" layout-align="start center">
+
+                    <md-input-container class="no-errors-spacer" flex>
+                        <label>
+                            <i class="icon-plus s18"></i>
+                            <span>Add an item</span>
+                        </label>
+                        <input type="text" autocomplete="off" ng-model="vm[checklist.id].newCheckItem">
+                    </md-input-container>
+
+                    <md-button type="submit" class="md-raised md-accent" aria-label="Add">
+                        <span>Add</span>
+                    </md-button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+    <!-- / CHECKLISTS SECTION -->
+</div>

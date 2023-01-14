@@ -1,0 +1,37 @@
+<md-dialog class="pdf-load-dialog" aria-label="Card Card Dialog">
+    <md-button class="md-icon-button maximage-close-dialog" ng-click="vm.closeDialog();" aria-label="Close dialog">
+        <md-icon md-font-icon="icon-close-circle" class="icon"></md-icon>
+    </md-button>
+
+    <md-dialog-content ms-scroll style="padding: 5px;">
+        <div layout="row" layout-align="start start">
+            <div class="left-part border mr-5" flex style="min-height: 700px;">
+
+
+                <h1> Hello Pdf! </h1>
+                <h1> Mouse Position: <input type="text" id="pos" style="width:200px" /> </h1>
+                <h1> Mouse Down: <input type="text" id="down" style="width:200px" /> Mouse Up: <input type="text" id="up" style="width:200px" /></h1>
+                <div id="rectangle_container"></div>
+                <div id="shadow_container"><canvas id="shadow-canvas" style="border:1px solid black" width="0" height="0"></canvas></div>
+                <div id="container">
+                    <div><canvas id="the-canvas" style="border:1px solid black"></canvas></div>
+                    <div><canvas id="img-canvas" style="border:1px solid black" width="300" height="300"></canvas> <input type="button" onclick="loadData()" value="load text"> <input type="button" onclick="clearShadow()" value="clear"> </div>
+                    <div>
+                        <div id="the-text"></div>
+                    </div>
+                </div>
+
+
+
+
+
+
+            </div>
+
+            <div class="right-part border mr-5" flex style="min-height: 700px;">
+                right
+            </div>
+        </div>
+    </md-dialog-content>
+
+</md-dialog>

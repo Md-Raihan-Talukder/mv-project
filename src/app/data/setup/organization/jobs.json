@@ -1,0 +1,100 @@
+{
+    "data": [
+        {
+            "TECHDISER_ID": "Org_Job_1",
+            "organizationId": "Organization_1",
+            "catalogId": "Catalog_Woven",
+            "TECHDISER_SERIAL_NO": 1,
+            "title": "Sew",
+            "jobGroups": [
+                {
+                    "TECHDISER_ID": "job_type_1",
+                    "title": "Cutting"
+                },
+                {
+                    "TECHDISER_ID": "job_type_2",
+                    "title": "Sewing"
+                },
+                {
+                    "TECHDISER_ID": "job_type_3",
+                    "title": "Finishing"
+                },
+                {
+                    "TECHDISER_ID": "job_type_4",
+                    "title": "Packing"
+                }
+            ],
+            "productCats": [
+                {
+                    "TECHDISER_ID": "Cat_Item_1",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "catalogId": "Catalog_Woven",
+                    "workAreaIds": [
+                        "job_type_1",
+                        "job_type_2",
+                        "job_type_3",
+                        "job_type_4"
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "Cat_Item_2",
+                    "TECHDISER_SERIAL_NO": 2,
+                    "catalogId": "Catalog_Knit",
+                    "workAreaIds": [
+                        "job_type_1",
+                        "job_type_2",
+                        "job_type_3",
+                        "job_type_4"
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "Cat_Item_3",
+                    "TECHDISER_SERIAL_NO": 3,
+                    "catalogId": "Catalog_Lingerie",
+                    "workAreaIds": [
+                        "job_type_1",
+                        "job_type_2",
+                        "job_type_3",
+                        "job_type_4"
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "Cat_Item_4",
+                    "TECHDISER_SERIAL_NO": 4,
+                    "catalogId": "Catalog_Sweater",
+                    "workAreaIds": [
+                        "job_type_1",
+                        "job_type_2",
+                        "job_type_3",
+                        "job_type_4"
+                    ]
+                }
+            ],
+            "$$hashKey": "object:2991"
+        },
+        {
+            "TECHDISER_ID": "SupplyDefinitionMaterialCategory6|Catalog_Woven",
+            "title": "Print",
+            "TECHDISER_SERIAL_NO": 2,
+            "organizationId": "Organization_1",
+            "catalogId": "Catalog_Woven",
+            "$$hashKey": "object:3130"
+        },
+        {
+            "TECHDISER_ID": "SupplyDefinitionMaterialCategory7|Catalog_Woven",
+            "title": "Embroidery",
+            "TECHDISER_SERIAL_NO": 3,
+            "organizationId": "Organization_1",
+            "catalogId": "Catalog_Woven",
+            "$$hashKey": "object:3131"
+        },
+        {
+            "TECHDISER_ID": "SupplyDefinitionMaterialCategory8|Catalog_Woven",
+            "title": "Wash",
+            "TECHDISER_SERIAL_NO": 4,
+            "organizationId": "Organization_1",
+            "catalogId": "Catalog_Woven",
+            "$$hashKey": "object:3132"
+        }
+    ]
+}

@@ -1,0 +1,68 @@
+<div layout="column" id="">
+    <div layout="row" layout-align="start center" style="min-height: 100%; height:100%; overflow:hidden; ">
+
+        <div flex style="min-height: 100%; height:100%; max-height: 100%; width: 100%;" layout="column" layout-align="start top">
+
+            <ms-widget layout="column" style="padding: 0; min-height: 100%; height:100%; width: 100% " layout-align="start top">
+
+                <ms-widget-front style="min-height: 100%; height:100%; width: 100%;" layout="column" layout-align="start top">
+
+                    <div class="h-40 pl-5 grey-200-bg border-bottom" layout="row" layout-align="space-between center">
+                        <div class="font-size-16 pl-20 mr-10">
+                            PI Heads
+                        </div>
+                    </div>
+
+                    <div style="height: calc(100% - 50px);
+                                 max-height: calc(100% - 50px);
+                                 min-height: calc(100% - 50px);
+                                 width: 100%;" ms-scroll>
+
+                        <div class="" layout="row">
+
+                            <div flex="100" class="border">
+                                <div layout="column" class="white-bg" style="margin-top: 2px;">
+                                    <div flex="100">
+                                        <div layout="row">
+
+                                            <div class="ml-10" flex="50" layout="column" style="min-height: 900px;">
+                                                <!-- <div class="h-30 pl-5 mt-5 mb-5 border-bottom font-size-14">
+                                                              Project Types
+                                                          </div> -->
+                                                <div class="" ng-repeat="lifeCycle in vm.piHeads">
+                                                    <div class="p-5 h-35 light-green-50-bg mt-5 b" flex>
+                                                        {{lifeCycle.title}}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- <div class="border ml-5 mr-5" style="min-height: 850px;">
+
+                                                      </div> -->
+                                            <!-- <div class="mr-10" flex="50" layout="column">
+                                                          <div class="h-30 pl-5 mt-5 mb-5 border-bottom font-size-14">
+                                                              Task Groups
+                                                          </div>
+                                                          <div ng-repeat="taskGroup in vm.taskGroupDefs">
+                                                              <div class="p-5 h-35 light-green-50-bg mb-5 b" flex>
+                                                                  {{taskGroup.taskGroupTitle}}
+                                                              </div>
+                                                          </div>
+                                                      </div> -->
+
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                </ms-widget-front>
+            </ms-widget>
+        </div>
+
+    </div>
+</div>

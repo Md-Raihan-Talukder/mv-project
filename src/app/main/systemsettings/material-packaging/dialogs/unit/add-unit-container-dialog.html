@@ -1,0 +1,46 @@
+<md-dialog style="width: 480px !important; min-height: 400px;" class="common-dialog" aria-label="Material Category Dialog" data-drag="1" data-jqyoui-options jqyoui-draggable="{animate:true}">
+    <form name="costingHeadsForm" class="md-inline-form taskCardForm" novalidate>
+        <md-toolbar class="md-accent" style="cursor:pointer;">
+            <div class="md-toolbar-tools">
+                <div>
+                    <label>Select Unit Containers</label>
+                </div>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="vm.closeDialog()" aria-label="Close Dialog">
+                    <md-icon md-font-icon="icon-close"></md-icon>
+                </md-button>
+
+            </div>
+        </md-toolbar>
+
+        <div style=" min-height: 400px;" layout="column" flex="100" ms-scroll>
+            <md-dialog-content ms-scroll>
+                <div class="widget-group" layout="row" flex="100" layout-wrap>
+                    <ms-widget ng-repeat="unitContainer in vm.unitContainers" class="buyer-card p-5 tags" flippable="false" layout="column">
+                        <ms-widget-front class="white-bg h-40 w-400">
+                            <div layout="row" flex="100" class="m-10">
+                                <div layout="column" flex="90">
+                                    <span class="font-size-14">{{vm.getContainerTitle(unitContainer.containerId)}}</span>
+                                </div>
+                                <div layout="column" flex="10">
+                                    <md-icon ng-if="!vm.checkContainerExist(unitContainer.containerId)" style="position:relative;left:5px;" ng-click="vm.selectContainer(unitContainer)" md-font-icon="icon-checkbox-blank-outline" class="icon">
+                                    </md-icon>
+                                    <md-icon ng-if="vm.checkContainerExist(unitContainer.containerId)" style="position:relative;left:5px;" ng-click="vm.selectContainer(unitContainer)" md-font-icon="icon-checkbox-marked-outline" class="icon md-accent">
+                                    </md-icon>
+                                </div>
+                            </div>
+                        </ms-widget-front>
+                    </ms-widget>
+                </div>
+            </md-dialog-content>
+        </div>
+
+    </form>
+    <md-dialog-actions layout="row" layout-align="end center">
+        <div layout="row" layout-align="start center">
+            <md-button ng-click="vm.addUnitContainer()" class="send-button md-accent md-raised" ng-disabled="costingHeadsForm.$invalid" aria-label="ADD">
+                <span>Ok</span>
+            </md-button>
+        </div>
+    </md-dialog-actions>
+</md-dialog>

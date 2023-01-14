@@ -1,0 +1,34 @@
+<div class="due-date" ng-class="pickerClass" flex="100" layout="row" layout-align="start start">
+    <div ng-if="isDate" class="date-container">
+        <md-input-container>
+
+            <div disable="isDisable" class="picker day-picker" moment-picker="vm.date" format=" DD.MM.YYYY" min-view="year" max-view="month" start-view="month">
+                <md-icon md-font-icon="icon-calendar" class="icon"></md-icon>
+            </div>
+        </md-input-container>
+
+        <md-input-container>
+            <label>{{dateTimeText}} Date</label>
+
+            <input ng-readonly="isDisable" class="picker day-picker" ng-class="{'w-90': !noWidth}" ng-model="vm.date" ng-model-options="{ updateOn: 'blur' }">
+        </md-input-container>
+
+    </div>
+
+    <div ng-if="isTime" class="time-container">
+
+        <md-input-container>
+            <div disable="isDisable" class="picker hour-picker" moment-picker="vm.time" format="LT" min-view="day" max-view="hour" start-view="day">
+                <md-icon md-font-icon="icon-clock" class="icon"></md-icon>
+
+            </div>
+        </md-input-container>
+
+        <md-input-container>
+            <label>{{dateTimeText}} Time</label>
+            <input ng-readonly="isDisable" class="picker hour-picker" ng-class="{'w-90': !noWidth}" ng-model="vm.time" ng-model-options="{ updateOn: 'blur' }">
+        </md-input-container>
+
+    </div>
+
+</div>

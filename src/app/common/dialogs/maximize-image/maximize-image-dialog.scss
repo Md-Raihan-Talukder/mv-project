@@ -1,0 +1,29 @@
+.maximage-close-dialog {
+  position: absolute;
+  top: 0;
+  right: 5px;
+}
+
+md-dialog {
+  &.maximize-image-dialog {
+    max-width: 95%;
+    width: auto;
+    max-height: 95%;
+    height: auto;
+
+    md-dialog-content {
+      display: block;
+      position: relative;
+
+      .title {
+        color: #333 !important;
+        width: auto;
+      }
+
+      .text {
+        color: #333 !important;
+        width: auto;
+      }
+    }
+  }
+}

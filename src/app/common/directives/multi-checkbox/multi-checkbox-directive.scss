@@ -1,0 +1,11 @@
+.msb-multi-checkbox-container {
+  max-height: 120px;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+
+  .msb-multi-checkbox {
+    padding-left: 20px;
+    width: 100%;
+  }
+}

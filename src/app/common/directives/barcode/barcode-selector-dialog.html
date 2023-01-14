@@ -1,0 +1,57 @@
+<md-dialog class="barcode-selector-dialog" aria-label="Dialog" data-drag="true" jqyoui-draggable="{animate:true}" data-jqyoui-options="{ handle: '.drag-handle'}">
+
+    <md-toolbar class="md-accent drag-handle">
+        <div class="md-toolbar-tools" layout="row" layout-align="space-between center">
+            <span class="title">Select Barcode Type</span>
+
+            <md-button class="md-icon-button" ng-click="vm.closeDialog()">
+                <md-icon md-font-icon="icon-close" aria-label="Close dialog"></md-icon>
+            </md-button>
+        </div>
+    </md-toolbar>
+
+
+    <md-dialog-content ms-scroll>
+
+
+        <div class="navigation-simple" layout="column">
+            <div layout="column" ng-repeat="group in vm.barcodeGroups" class="mb-5">
+                <msb-expand-collapse>
+
+                    <md-button style="line-height: 30px; width: 100%;" class="msb-collapse-header grey-200-bg item h-30 border" aria-label="MaterialGruop">
+                        <span class="secondary-text pl-5">{{group.title}}</span>
+                    </md-button>
+
+                    <div class="msb-collapse-content p-10 border" style="display: none;">
+
+                        <md-button style="line-height: 25px; width: 100%; margin-bottom: 2px;" ng-repeat="barcode in group.barcodes " ng-click="vm.selectBarcode(barcode)" ng-class="{'selected-barcode': barcode.type === vm.selected.type}" class="grey-100-bg item h-30 border" aria-label="MaterialGruop">
+
+                            <span class="secondary-text pl-5">{{barcode.name}}</span>
+
+                        </md-button>
+
+                    </div>
+
+                </msb-expand-collapse>
+
+            </div>
+        </div>
+
+
+    </md-dialog-content>
+
+
+    <md-dialog-actions layout="row" layout-align="space-between center">
+
+        <md-button ng-click="vm.onOk()" class="md-accent md-raised" aria-label="SAVE">
+            OK
+        </md-button>
+
+        <md-button ng-click="vm.closeDialog()" class="md-raised" aria-label="Close">
+            Cancel
+        </md-button>
+
+    </md-dialog-actions>
+
+
+</md-dialog>

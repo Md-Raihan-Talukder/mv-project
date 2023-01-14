@@ -1,0 +1,17 @@
+{
+    "data": [
+        {
+            "TECHDISER_ID": "po1dRoute1Demand1",
+            "poId": "po1",
+            "demand": "Demand 1",
+            "routeId": "",
+            "sailingPortId": "",
+            "destinationPortId": "",
+            "etdIds": [
+                "etd1",
+                "etd2",
+                "etd3"
+            ]
+        }
+    ]
+}

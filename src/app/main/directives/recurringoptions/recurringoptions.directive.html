@@ -1,0 +1,83 @@
+<div class="custom-directive-container recuring-directive">
+
+    <div ng-if="schedule.recurringOptions.isRecurring" class="body">
+        <div layout-gt-sm="row" class="mb-20" layout="column" flex="100" layout-wrap layout-align="start start">
+            <span class="section-title mr-10 w-100">Repeats: </span>
+            <div class="recurning-mode">
+                <md-radio-group layout="row" ng-change="vm.modeChange()" ng-model="schedule.recurringOptions.recurringMode">
+                    <md-radio-button value="daily">Daily</md-radio-button>
+                    <md-radio-button value="weekly"> Weekly </md-radio-button>
+                    <md-radio-button value="monthly">Monthly</md-radio-button>
+                    <md-radio-button value="yearly">Yearly</md-radio-button>
+                </md-radio-group>
+
+            </div>
+        </div>
+        <div layout-gt-sm="row" class="mb-20" layout="column" flex="100" layout-wrap layout-align="start start">
+            <span class="section-title mr-10 mt-10 w-100">Repeat every </span>
+            <div class="recurning-mode" layout="row">
+
+                <md-select name="type" class="mr-10" ng-model="schedule.recurringOptions.repeatEvery" aria-label="reminder">
+                    <md-option ng-repeat="i in vm.recurringEveryValues track by $index" value="{{i}}">{{i}}</md-option>
+                </md-select>
+                <span class="section-title ml-10 mt-10"> {{vm.getEveryText()}} </span>
+            </div>
+
+        </div>
+
+        <div ng-if="schedule.recurringOptions.recurringMode !=='daily'" layout-gt-sm="row" layout="column" flex="100" layout-wrap layout-align="start start">
+            <span class="section-title mr-10 mt-10 w-100">Repeat on </span>
+            <div class="recurning-mode" layout="row">
+
+                <md-select ng-model="schedule.recurringOptions.recurringValues" multiple aria-label="reminder">
+                    <md-option ng-repeat="i in vm.getRepeatOn() track by $index" value="{{i}}">{{vm.getDayName(i)}}</md-option>
+                </md-select>
+
+                <div ng-if="schedule.recurringOptions.recurringMode ==='yearly'" layout="row" class="ml-20">
+                    <span class="ml-10 mt-10 mr-20"> at </span>
+                    <md-select ng-model="schedule.recurringOptions.recurringDays" multiple aria-label="reminder">
+                        <md-option ng-repeat="i in vm.getRepeatAt() track by $index" value="{{i}}">{{i}}</md-option>
+                    </md-select>
+                </div>
+            </div>
+        </div>
+
+        <div ng-if="options.needTimeDuration" layout-gt-sm="row" layout="column" flex="100" layout-wrap layout-align="start start">
+            <span class="section-title mr-10 mt-30 w-100">Time Duration</span>
+            <div class="recurning-mode" layout-gt-sm="row" layout="column" layout-align="start start">
+                <md-checkbox name="isAllDay" class="time-duration-chk w-100" ng-model="schedule.recurringOptions.isAllDay" aria-label="recuring">
+                    <span>All Day</span>
+                </md-checkbox>
+                <div ng-if="!schedule.recurringOptions.isAllDay" class="mt-10" layout="row" layout-wrap layout-align="start start">
+                    <td-date-time-picker date-time="schedule.recurringOptions.startDateTime" date-time-text="'Start'" is-time='true' picker-class="''">
+                    </td-date-time-picker>
+                    <td-date-time-picker date-time="schedule.recurringOptions.endDateTime" date-time-text="'End'" is-time='true' picker-class="''">
+                    </td-date-time-picker>
+                </div>
+            </div>
+
+        </div>
+
+        <!--  <div layout-gt-sm="row" layout="column" flex="100" layout-wrap layout-align="start start">
+		<span class="section-title mr-10 mt-30 w-100">Starts On </span>
+	    <div class="recurning-mode" layout="row">
+	    	<td-date-time-picker date-time="schedule.recurringOptions.startDateTime"
+                    date-time-text = "'Start'" is-time= 'true' picker-class="''" >
+            </td-date-time-picker>
+	    </div>
+
+	 </div>
+
+	 <div layout-gt-sm="row" layout="column" flex="100" layout-wrap layout-align="start start">
+		<span class="section-title mr-10 mt-30 w-100">Ends On </span>
+	    <div class="recurning-mode" layout="row">
+	    	<td-date-time-picker date-time="schedule.recurringOptions.startDateTime"
+                    date-time-text = "'End'" is-time= 'true' picker-class="''" >
+            </td-date-time-picker>
+	    </div>
+
+	 </div>
+ -->
+
+    </div>
+</div>

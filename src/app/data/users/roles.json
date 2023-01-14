@@ -1,0 +1,19 @@
+{
+    "data": [
+        {
+            "TECHDISER_ID": "1",
+            "name": "Admin",
+            "icon": "icon-account"
+        },
+        {
+            "TECHDISER_ID": "2",
+            "name": "Super Admin",
+            "icon": "icon-account"
+        },
+        {
+            "TECHDISER_ID": "3",
+            "name": "User",
+            "icon": "icon-account"
+        }
+    ]
+}

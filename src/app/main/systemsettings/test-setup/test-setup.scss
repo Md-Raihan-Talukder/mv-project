@@ -1,0 +1,11 @@
+#test-setup {
+  .selected {
+    background-color: rgba(47, 183, 255, 0.46) !important;
+  }
+  .show-action-button {
+    display: none;
+  }
+  .test-item:hover .show-action-button {
+    display: block;
+  }
+}

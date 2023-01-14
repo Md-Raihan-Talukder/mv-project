@@ -1,0 +1,86 @@
+<div layout="row" layout-align="start center" class="white-bg" style="min-height: 100%; height:100%; overflow:hidden; ">
+    <div class="right border" flex style="min-height: 100%; height:100%; max-height: 100%; width: 100%;" layout="column" layout-align="start top">
+
+        <ms-widget layout="column" style="padding: 0; min-height: 100%; height:100%; width: 100% " layout-align="start top">
+
+            <ms-widget-front style="min-height: 100%; height:100%; width: 100%;" layout="column" layout-align="start top">
+                <div class="h-50 p-15" layout="row" layout-align="start center">
+                    <h3 class="w-225">Packing Consumption</h3>
+                    <md-button ng-click="vm.savePackingType()" class="md-raised">Save</md-button>
+                </div>
+
+                <div style="min-height: 100%; height:100%; width: 100%;" ms-scroll>
+                    <div ng-repeat="materialType in vm.materialTypes" class="p-10">
+                        <div class="h-35 grey-200-bg p-10" layout="row" layout-align="start center">
+                            <div class="mr-10 w-205">
+                                {{vm.getMaterialTypeTitle(materialType.typeId)}}
+                            </div>
+                            <div>
+                                <md-icon ng-click="vm.selectMaterialCategoryDialog(materialType)" md-font-icon="icon-plus-box" class="icon md-accent s-20">
+                                </md-icon>
+                            </div>
+                        </div>
+                        <div class="p-5 mt-5 h-35 b" ng-repeat="material in materialType.materials">
+                            <div layout="row" layout-align="start center">
+                                <div class="mr-20 w-200">
+                                    {{vm.getMaterialTitle(material.materialId)}}
+                                </div>
+                                <div layout="row" class="mr-20" layout-align="start center">
+                                    <md-icon ng-if="material.hasWidth" ng-click="material.hasWidth = !material.hasWidth" md-font-icon="icon-checkbox-marked-outline" class="icon  mr-5 s-20">
+                                    </md-icon>
+                                    <md-icon ng-if="!material.hasWidth" ng-click="material.hasWidth = !material.hasWidth" md-font-icon="icon-checkbox-blank-outline" class="icon  mr-5 s-20">
+                                    </md-icon>
+                                    <span>Width</span>
+                                </div>
+                                <div layout="row" class="mr-20" layout-align="start center">
+                                    <md-icon ng-if="material.hasHeight" ng-click="material.hasHeight = !material.hasHeight" md-font-icon="icon-checkbox-marked-outline" class="icon  mr-5 s-20">
+                                    </md-icon>
+                                    <md-icon ng-if="!material.hasHeight" ng-click="material.hasHeight = !material.hasHeight" md-font-icon="icon-checkbox-blank-outline" class="icon  mr-5 s-20">
+                                    </md-icon>
+                                    <span>Height</span>
+                                </div>
+                                <div layout="row" class="mr-20" layout-align="start center">
+                                    <md-icon ng-if="material.hasLength" ng-click="material.hasLength = !material.hasLength" md-font-icon="icon-checkbox-marked-outline" class="icon  mr-5 s-20">
+                                    </md-icon>
+                                    <md-icon ng-if="!material.hasLength" ng-click="material.hasLength = !material.hasLength" md-font-icon="icon-checkbox-blank-outline" class="icon  mr-5 s-20">
+                                    </md-icon>
+                                    <span>Length</span>
+                                </div>
+                                <div layout="row" class="mr-20" layout-align="start center">
+                                    <span class="mr-5">Consumption </span>
+                                    <input ng-model="material.consumptionValue" type="number" ng-model-options="{debounce : 500}" ng-change="vm.updateQty(materialType)" class="ng-pristine ng-untouched ng-valid ng-not-empty w-60 mr-5" aria-invalid="false">
+                                    <span class="mr-5"> / </span>
+                                    <span class="mr-5">{{vm.getSqQu(material)}}</span>
+                                    <!-- <input ng-model="material.consumptionUnit"
+                                          class="ng-pristine ng-untouched ng-valid ng-not-empty w-60 mr-5" aria-invalid="false"> -->
+                                    <md-input-container style="margin: 0px; padding: 0px;">
+                                        <md-select ng-model="material.consumptionUnit">
+                                            <md-option value="m">
+                                                m
+                                            </md-option>
+                                            <md-option value="ft">
+                                                ft
+                                            </md-option>
+                                            <md-option value="cm">
+                                                cm
+                                            </md-option>
+                                            <md-option value="inch">
+                                                inch
+                                            </md-option>
+                                        </md-select>
+                                    </md-input-container>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </ms-widget-front>
+
+        </ms-widget>
+
+
+
+    </div>
+
+</div>

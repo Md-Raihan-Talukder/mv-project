@@ -1,0 +1,82 @@
+<div layout="row" flex="100">
+    <div layout="column" flex="25" class="mr-50">
+        <div flex class="description">
+            <label class="title">License Type & Tenure</label>
+            <md-input-container class="md-block pt-10">
+                <label>License Type</label>
+                <md-select name="select" ng-model="vm.license.licenseInfo.licenseType" ng-change="vm.formChanged()" required>
+                    <md-option ng-repeat="license in vm.licenseType" value="{{license}}">
+                        {{license}}
+                    </md-option>
+                </md-select>
+                <div ng-messages="licenseForm.select.$error" role="alert">
+                    <div ng-message="required">
+                        <span>This field is required</span>
+                    </div>
+                </div>
+            </md-input-container>
+        </div>
+    </div>
+    <div layout="column" flex="20">
+        <td-date-time-picker date-time="vm.license.licenseInfo.activationDate" class="mt-30" date-time-text="'Activation'" is-time='false' is-date='true' picker-class="''" required>
+        </td-date-time-picker>
+
+
+    </div>
+    <div layout="column" flex="15" class="mt-30 mr-20">
+        <md-input-container class="md-block">
+            <label>Tenure (month)</label>
+            <input type="number" name="duration" ng-model="vm.license.licenseInfo.tenure" ng-change="vm.formChanged()" min="0" max="60" step="1" required ng-pattern="/^[0-9]{1,7}$/"></input>
+        </md-input-container>
+    </div>
+    <div layout="column" flex="25" style="pointer-events:none;">
+        <td-date-time-picker date-time="vm.license.licenseInfo.validityDate" class="mt-30" date-time-text="'Validity'" is-time='false' is-date='true' picker-class="''">
+        </td-date-time-picker>
+
+    </div>
+</div>
+
+<br />
+<md-divider></md-divider>
+<br />
+
+<label class="title">Modules</label>
+<div class="widget-group" layout="row" flex="100" layout-wrap>
+
+    <ms-widget ng-repeat="module in vm.license.modules" class="buyer-card  mt-20" flippable="false" layout="column">
+        <ms-widget-front class="white-bg h-400 w-300">
+            <div class="border-bottom border-top h-45 grey-100-bg " layout="row" layout-align="start center">
+                <div class="mr-15 ml-10" ng-click="vm.toggleActiveModule(module);module.active = !module.active" ng-model="vm.license.modules.active">
+                    <md-icon ng-if="module.active" md-font-icon="icon-checkbox-marked-outline" aria-label="checked" class="icon md-accent">
+                    </md-icon>
+                    <md-icon ng-if="!module.active" md-font-icon="icon-checkbox-blank-outline" aria-label="checked" class="icon">
+                    </md-icon>
+                </div>
+                <div class="buyer-name md-subhead">{{module.title}}</div>
+            </div>
+
+            <div class="ml-20 mr-20" ms-scroll class="content" layout="column" layout-align="start start">
+                <b class="mt-10">Description</b>
+                <p>
+                    {{module.description}}
+                </p>
+                <b>Features</b>
+                <ul style="list-style-type:none;">
+                    <li ng-repeat="feature in vm.license.modules[$index].features" ng-click="vm.formChanged();feature.active = !feature.active" ng-model="vm.license.modules.features.active">
+                        <span>
+                            <md-icon ng-if="!feature.active" md-font-icon="icon-checkbox-blank-outline" aria-label="checked" class="icon"></md-icon>
+                            <md-icon ng-if="feature.active" md-font-icon="icon-checkbox-marked-outline" aria-label="checked" class="icon md-accent">
+                            </md-icon>
+                        </span>
+                        <span>{{feature.title}}</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="border-top h-30 grey-50-bg" layout="row" layout-align="space-between center">
+            </div>
+        </ms-widget-front>
+    </ms-widget>
+
+</div>
+
+</div>

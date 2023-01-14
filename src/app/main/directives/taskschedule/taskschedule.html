@@ -1,0 +1,87 @@
+<div class="custom-directive-container">
+    <div ng-if="showSchedule" class="section">
+        <div flex="100" class="section-header mb-10" layout="row" layout-align="start start">
+            <div layout="row" layout-align="start top">
+                <div layout="row" layout-align="start center">
+                    <i class="icon-calendar-clock s18"></i>
+                    <span class="section-title mr-20">Schedule</span>
+                </div>
+            </div>
+        </div>
+
+        <div layout-gt-sm="row" class="section-content pt-10 pb-10 pl-20  border-bottom" layout="column" flex="100" layout-wrap layout-align="space-between start">
+
+            <div flex="50" layout="column" layout-align="start start">
+                <div flex layout="row" layout-align="start start">
+                    <span class="font-bold mb-10 ml-10">Plan</span>
+                    <div ng-if="showAllDay" ng-change="{{schedule.timeRequired = !schedule.isAllDay}}" class="ml-35">
+                        <md-checkbox name="isAllDay" class="w-100" ng-model="schedule.isAllDay" aria-label="recuring">
+                            <span>All Day</span>
+                        </md-checkbox>
+                    </div>
+                </div>
+
+                <div class="due-date" flex layout="row" layout-align="start start">
+                    <td-date-time-picker date-time="schedule.startDateTime" date-time-text="'Start'" is-time='vm.timeRequired()' is-date='true' picker-class="''"> </td-date-time-picker>
+                </div>
+
+
+                <div class="due-date" flex layout="row" layout-align="start start">
+                    <td-date-time-picker date-time="schedule.endDateTime" date-time-text="'End'" is-time='vm.timeRequired()' is-date='true' picker-class="''"> </td-date-time-picker>
+
+                </div>
+            </div>
+
+            <div flex="50" layout="column" layout-align="start start">
+                <span class="font-bold">Actual</span>
+
+                <div class="due-date ml-40" flex layout="row" layout-align="start start">
+                    <span class="mr-10 mt-20  w-90 font-bold"> Start Date: </span>
+                    <span class="mt-20">{{schedule.startDateTime}}</span>
+                </div>
+
+                <div class="due-date ml-40" flex layout="row" layout-align="start start">
+                    <span class="mr-10  mt-20 w-90 font-bold"> End Date: </span>
+                    <span class="mt-20">{{schedule.startDateTime}}</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div ng-if="showRepeat" class="section recursive-section border-bottom mt-20">
+        <div flex="100" class="section-header" layout="row" layout-align="start start">
+            <md-checkbox name="isrecuring" ng-model="schedule.recurringOptions.isRecurring" aria-label="recuring">
+                <span class="section-title mr-20">Repeat</span>
+            </md-checkbox>
+        </div>
+
+        <div layout-gt-sm="row" class="section-content" layout="column" flex="100" layout-wrap layout-align="space-between start">
+
+            <td-recurring-options schedule="schedule">
+            </td-recurring-options>
+
+        </div>
+    </div>
+
+    <div ng-if="showDuePolicy" class="section duepolicy-section border-bottom mt-20">
+        <div flex="100" class="section-header" layout="row" layout-align="start start">
+            <div layout="row" layout-align="start top">
+                <md-button class="btn-advance-policy md-hue-2" ng-click="schedule.showAdvance= false; schedule.showDuePolicy= !schedule.showDuePolicy">
+                    <md-icon ng-if="!schedule.showDuePolicy" md-font-icon="icon-plus-box" class="icon"></md-icon>
+                    <md-icon ng-if="schedule.showDuePolicy" md-font-icon="icon-minus-box" class="icon"></md-icon>
+                    <span style="text-transform: capitalize;"> Due policy </span>
+                </md-button>
+            </div>
+        </div>
+
+        <div layout-gt-sm="row" ng-if="schedule.showDuePolicy" class="section-content" layout="column" flex="100" layout-wrap layout-align="space-between start">
+
+            <td-due-policy schedule="schedule" style="width:100%;">
+            </td-due-policy>
+
+        </div>
+    </div>
+
+
+</div>

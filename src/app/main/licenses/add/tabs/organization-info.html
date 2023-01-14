@@ -1,0 +1,76 @@
+<div layout="row" flex="50">
+    <div layout="column" flex="50" class="mr-50">
+        <div flex class="description">
+            <label class="title">Basic Info</label>
+            <md-input-container class="md-block pt-10">
+                <label>Organization Name</label>
+                <md-select name="select" ng-model="vm.license.organizationId" ng-change="vm.formChanged()" required>
+                    <md-select-header>
+                        <input type="text" ng-model="searchOrg" placeholder="Search Organization..." ng-keydown="$event.stopPropagation()" ng-pattern="/^[a-zA-Z0-9]{1,10}$/" />
+                    </md-select-header>
+                    <md-option ng-repeat="organization in vm.organizations | filter:searchOrg" value="{{organization.TECHDISER_ID}}">
+                        {{organization.name}}
+                    </md-option>
+                </md-select>
+                <div ng-messages="licenseForm.select.$error" role="alert">
+                    <div ng-message="required">
+                        <span>This field is required</span>
+                    </div>
+                </div>
+            </md-input-container>
+        </div>
+    </div>
+    <div layout="column" flex="50">
+        <div class="description mt-30">
+            <md-input-container class="md-block">
+                <label>Total Number Of Users</label>
+                <input name="numberOfUser" ng-model="vm.license.organizationInfo.numberOfUsers" columns="1" max-rows="4" ng-disabled="true"></input>
+                <div ng-messages="licenseForm.numberOfUser.$error" role="alert">
+                    <div ng-message="required">
+                        <span>This field is required</span>
+                    </div>
+                </div>
+            </md-input-container>
+        </div>
+
+    </div>
+</div>
+
+<br />
+<label>Number Of Users</label>
+<md-divider></md-divider><br />
+<p>Enter number of users corresponding to the module and their roles.</p>
+
+
+<form name="licenseForm" novalidate>
+    <div layout="row" flex="100" ng-repeat="module in vm.license.organizationInfo.users.modules">
+        <div layout="column" flex="100" class="mr-50">
+            <div ng-model="expanded" ng-click="expanded=!expanded">
+                <md-icon ng-if="!expanded" md-font-icon="icon-plus-circle" class="icon md-accent"></md-icon>
+                <md-icon ng-if="expanded" md-font-icon="icon-minus-circle-outline" class="icon"></md-icon>
+                <span>{{module.title}} Module <span ng-if="vm.getUserPerModule.length>0">({{vm.getUserPerModule[$index]}} Users)</span>
+
+                </span>
+            </div>
+
+            <div ng-if="expanded">
+                <div layout="row">
+                    <div flex="50" class="description mt-15" ng-repeat="role in module.roles">
+                        <md-input-container class="md-block m-10">
+                            <label>{{role.title}}</label>
+                            <input ng-model="role.numberOfUsers" name="userPerRole" ng-change="vm.formChanged()" columns="1" required type="number" ng-pattern="/^[0-9]{1,2}$/"></input>
+                            <div ng-messages="licenseForm.userPerRole.$error" role="alert">
+                                <div ng-message="required">
+                                    <span>This field is required</span>
+                                </div>
+                            </div>
+                        </md-input-container>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</form>

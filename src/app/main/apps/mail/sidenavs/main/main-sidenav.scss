@@ -1,0 +1,130 @@
+#mail {
+  .po-info-container {
+  }
+
+  .po-labels {
+    background: #fafafa;
+    padding: 6px;
+    .label {
+      display: inline-block;
+      font-size: 12px;
+      padding: 5px;
+      margin: 6px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  }
+
+  .item-btn {
+    width: 100%;
+  }
+
+  .sidebar-buttons {
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    width: 70px;
+  }
+  .new-label-form {
+    .editable-text {
+      width: 100%;
+
+      .editable-controls {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        padding-left: 8px;
+
+        .editable-input {
+          border: 1px solid rgba(0, 0, 0, 0.2);
+          padding: 4px 2px;
+          margin-bottom: 8px;
+          font-size: 13px;
+          width: 100%;
+        }
+
+        .editable-buttons {
+          .md-button {
+            margin: 0;
+            margin: 0;
+            padding: 0;
+            height: 32px;
+            min-height: 32px;
+            line-height: 32px;
+            width: 32px;
+          }
+        }
+      }
+    }
+  }
+
+  // Sidenav
+  .sidenav {
+    .header {
+      .logo {
+        .logo-icon {
+          margin: 0 16px 0 0;
+        }
+
+        .logo-text {
+          font-size: 24px;
+        }
+      }
+
+      .account {
+        width: 100%;
+
+        .account-selection {
+          margin: 0;
+          padding: 0;
+
+          .md-select-label {
+            width: 100%;
+          }
+
+          .md-select-value {
+            padding-left: 0;
+          }
+        }
+      }
+    }
+
+    .content {
+      padding: 24px 0;
+
+      .compose-button {
+        padding: 0 24px 24px 24px;
+
+        .md-button {
+          width: 100%;
+          margin: 0;
+        }
+      }
+    }
+
+    &._md-locked-open {
+      .header {
+        color: #ffffff;
+
+        .logo {
+          padding-top: 27px;
+
+          .logo-icon {
+            md-icon {
+              color: #ffffff;
+            }
+          }
+        }
+      }
+    }
+
+    &:not(._md-locked-open) {
+      .header {
+        height: 150px;
+        min-height: 150px;
+        max-height: 150px;
+        padding-top: 24px;
+      }
+    }
+  }
+}

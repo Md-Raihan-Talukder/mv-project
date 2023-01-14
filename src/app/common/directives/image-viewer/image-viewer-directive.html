@@ -1,0 +1,32 @@
+<div class="msb-image-viewer border" flex="100" ng-if="items">
+
+    <ul rn-carousel="imageViewerCarousel" rn-carousel-index="imageViewerCarouselIndex" rn-carousel-auto-slide="5" rn-carousel-buffered="" class="image-viwer-carousel border" layout="column" layout-align="start top" style="padding:0; margin: 0;">
+
+        <li ng-repeat="item in items">
+
+            <ms-widget flippable="true" style="padding:0; margin: 0;">
+                <ms-widget-front class="white-bg" ng-mouseover="item.hover = true" ng-mouseleave="item.hover = false">
+
+                    <div layout="row" ng-show="item.hover" layout-align="start center" class="image-buttons">
+                        <md-icon md-font-icon="icon-arrow-expand" class="icon expand-button" ng-click="vm.expandImage(item); $event.stopPropagation();"></md-icon>
+
+                        <md-icon md-font-icon="icon-close-circle" class="icon close-button" ng-click="vm.removeImage(item)"></md-icon>
+
+                    </div>
+                    <img ng-src="{{item.data}}" style="
+                                object-fit: scale-down;
+                                max-width: 100%;
+                                max-height: 100%;
+                                width: auto;
+                                height: 100px;" />
+                </ms-widget-front>
+            </ms-widget>
+
+        </li>
+    </ul>
+
+    <div class="image-viwer-carousel-indicator cursor-pointer" layout="row" layout-align="center center" ng-show="items.length > 1">
+        <span ng-repeat="item in items" ng-class="{'active': $index==$parent.imageViewerCarouselIndex}" ng-click="$parent.imageViewerCarouselIndex = $index">★</span>
+    </div>
+
+</div>

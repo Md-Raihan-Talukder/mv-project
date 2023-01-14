@@ -1,0 +1,14 @@
+{
+    "data": [
+        {
+            "TECHDISER_ID": "matgroup1",
+            "TECHDISER_SERIAL_NO": 1,
+            "title": "Fabric"
+        },
+        {
+            "TECHDISER_ID": "matgroup2",
+            "TECHDISER_SERIAL_NO": 2,
+            "title": "Trims"
+        }
+    ]
+}

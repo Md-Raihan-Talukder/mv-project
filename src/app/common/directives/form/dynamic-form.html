@@ -1,0 +1,10 @@
+<div style="width: 100%;">
+
+    <div layout="row" layout-wrap layout-align="start start" style="width: 100%;">
+        <div ng-repeat="col in columnDefs " flex="{{vm.getFlex(col)}}">
+            <msb-form-column-renderer item="objectProperty" col="col">
+            </msb-form-column-renderer>
+        </div>
+    </div>
+
+</div>

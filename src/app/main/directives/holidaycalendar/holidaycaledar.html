@@ -1,0 +1,104 @@
+<div class="holiday-calendar-container">
+    <button ng-if="!vm.listView" class="btn-holiday-calendar md-icon-button md-accent md-button md-default-theme md-ink-ripple" type="button" aria-label="reminder" ng-click="vm.show = !vm.show; vm.addDayClickEvent(true);">
+        <md-icon md-font-icon="icon-calendar" class="icon"></md-icon>
+    </button>
+    <div ng-if="vm.show" class="holiday-calendar-wraper ">
+
+        <div ng-if="!vm.listView" class="holiday-calendar md-whiteframe-2dp" flex layout="column" ng-class="vm.currentMonthShort">
+
+            <!-- CALENDAR HEADER -->
+            <div class="calendar-header" layout="row" layout-align="space-between center" layout-xs="column">
+
+
+                <div class="" layout="row" layout-align="start center">
+                    <md-button class="md-icon-button arrow" ng-click="vm.calendar.prev()" aria-label="Previous">
+                        <md-icon md-font-icon="icon-chevron-left"></md-icon>
+                    </md-button>
+
+                    <div class="title">
+                        {{vm.calendarView.title}}
+                    </div>
+
+                    <md-button class="md-icon-button arrow" ng-click="vm.calendar.next()" aria-label="Next">
+                        <md-icon md-font-icon="icon-chevron-right"></md-icon>
+                    </md-button>
+                </div>
+
+                <div>
+                    <md-button class="md-icon-button" ng-click="vm.listView = !vm.listView" aria-label="list">
+                        <md-icon md-font-icon="icon-format-list-bulleted"></md-icon>
+                        <md-tooltip><span>List View</span></md-tooltip>
+                    </md-button>
+                    <md-button class="btn-close-calendar md-icon-button" ng-click="vm.show = !vm.show; vm.addDayClickEvent();"" aria-label=" close">
+                        <md-icon md-font-icon="icon-close-circle" class="icon"></md-icon>
+                        <md-tooltip><span>Close</span></md-tooltip>
+                    </md-button>
+                </div>
+
+            </div>
+            <!-- / CALENDAR HEADER -->
+
+            <!-- CALENDAR MAIN -->
+            <div class="calendar-main" ms-scroll flex ui-calendar="vm.calendarUiConfig.calendar" ng-model="vm.eventSources" calendar="main"></div>
+            <!-- / CALENDAR MAIN -->
+
+        </div>
+
+        <div ng-if="vm.listView" class="holiday-list-view content" flex layout="column">
+            <md-tabs md-dynamic-height>
+                <md-tab label="Holidays">
+                    <div class="content p-10">
+                        <md-list>
+                            <md-list-item class="md-whiteframe-2dp pl-20 pl-r0" ng-repeat="item in vm.getEvents() | orderBy: 'end' " layout="row" layout-align="space-between center">
+                                <div layout="row" layout-wrap>
+                                    <span class="font-bold mr-10">{{item.title}},</span>
+                                    <span class=" mr-10">From</span>
+                                    <span class="font-bold mr-10">{{vm.formatDate(item.start,'dddd, dd MMMM yyyy')}}</span>
+                                    <span class="mr-10">To</span>
+                                    <span class="font-bold">{{vm.formatDate(item.end,'dddd, dd MMMM yyyy', true)}}</span>
+                                </div>
+                                <md-button class="btn-close-calendar md-icon-button" aria-label="close" ng-click="vm.deleteEvent({eventId: item.id})">
+                                    <md-icon md-font-icon="icon-close-circle" class="icon"></md-icon>
+                                    <md-tooltip><span>Remove</span></md-tooltip>
+                                </md-button>
+                            </md-list-item>
+                        </md-list>
+                    </div>
+                </md-tab>
+                <md-tab label="Weekends">
+                    <div class="content ml-10">
+                        <md-list>
+                            <md-list-item class="md-whiteframe-2dp pl-20 pl-r0" ng-repeat="item in vm.getEvents(true) | orderBy: 'end'" layout="row" layout-align="space-between center">
+                                <div layout="row">
+                                    <span class="font-bold mr-10">{{item.title}},</span>
+                                    <span class="">{{vm.formatDate(item.start,'dddd, dd MMMM yyyy')}}</span>
+                                </div>
+                                <md-button class="btn-close-calendar md-icon-button" aria-label="close" ng-click="vm.deleteEvent({eventId: item.id})">
+                                    <md-icon md-font-icon="icon-close-circle" class="icon"></md-icon>
+                                    <md-tooltip><span>Remove</span></md-tooltip>
+                                </md-button>
+                            </md-list-item>
+                        </md-list>
+                    </div>
+                </md-tab>
+
+            </md-tabs>
+
+
+            <div class="holiday-change-view">
+                <md-button style="margin-right: -15px;" class="md-icon-button" ng-click="vm.listView = !vm.listView" aria-label="list">
+                    <md-icon md-font-icon="icon-calendar"></md-icon>
+                    <md-tooltip><span>Calendar View</span></md-tooltip>
+                </md-button>
+                <md-button class="btn-close-calendar md-icon-button" ng-click="vm.show = !vm.show; 
+                     vm.listView = false; vm.addDayClickEvent();" aria-label="close">
+                    <md-icon md-font-icon="icon-close-circle" class="icon"></md-icon>
+                    <md-tooltip><span>Close</span></md-tooltip>
+                </md-button>
+            </div>
+
+        </div>
+
+
+    </div>
+</div>

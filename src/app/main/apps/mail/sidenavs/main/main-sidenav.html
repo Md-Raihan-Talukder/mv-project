@@ -1,0 +1,138 @@
+<!-- SIDENAV HEADER -->
+<div class="header" layout="column" layout-align="space-between start">
+
+    <div class="logo" layout="row" layout-align="start center">
+        <span class="logo-icon">
+            <md-icon md-font-icon="icon-email" class="icon"></md-icon>
+        </span>
+        <span class="logo-text" translate="MAIL.MAILBOX">Mailbox</span>
+    </div>
+
+    <div class="account">
+        <div class="title">John Doe</div>
+        <md-select class="account-selection simplified" placeholder="Mail Selection" ng-model="vm.selectedAccount">
+            <md-option ng-repeat="(provider, address) in vm.accounts" value="{{provider}}">{{address}}
+            </md-option>
+        </md-select>
+    </div>
+
+</div>
+<!-- / SIDENAV HEADER -->
+
+<!-- SIDENAV CONTENT -->
+<md-content ms-scroll class="content" flex>
+
+    <div class="compose-button">
+        <md-button class="md-accent md-raised" aria-label="compose" ng-click="vm.composeDialog($event)" translate="MAIL.COMPOSE">COMPOSE
+        </md-button>
+    </div>
+
+    <div class="navigation-simple" layout="column">
+
+
+        <div class="item subheader">Folders</div>
+        <div flex="100" ng-repeat="folder in vm.folders">
+
+            <md-list-item class="new-label-form" ng-show="editfolderForm.$visible">
+                <p editable-text="folder.title" e-form="editfolderForm"></p>
+            </md-list-item>
+
+            <md-button class="item item-btn" aria-label="inbox" ng-click="vm.loadFolder(folder.name)" ng-class="{'selected':vm.isFolderActive(folder.name)}" ng-mouseover="folder.hover = true" ng-mouseleave="folder.hover = false">
+
+                <div layout="row" flex="100" layout-align="space-between top">
+                    <div layout="row" flex="100" layout-align="start center">
+                        <md-icon md-font-icon="{{folder.icon}}" class="s16"></md-icon>
+                        <span class="title">{{folder.title}}</span>
+                    </div>
+
+                    <div ng-show="folder.hover" layout="row" layout-align="start center" class="sidebar-buttons">
+
+                        <md-button class="md-icon-button" ng-hide="editfolderForm.$visible" ng-click="editfolderForm.$show()" aria-label="edit label">
+                            <md-icon md-font-icon="icon-pencil" class="s16">
+                            </md-icon>
+                        </md-button>
+
+                        <md-button class="md-icon-button" ng-hide="editfolderForm.$visible" ng-click="vm.deleteLabel($event, label)" aria-label="delete label">
+                            <md-icon md-font-icon="icon-delete" class="s16">
+                            </md-icon>
+                        </md-button>
+                    </div>
+
+                </div>
+
+            </md-button>
+        </div>
+
+        <div>
+
+            <!-- NEW folder -->
+            <md-list-item class="new-label-form" ng-show="newFolderForm.$visible">
+                <p editable-text="vm.newFolder.name" e-form="newFolderForm" onaftersave="vm.addNewFolder(vm.newFolder.name)"></p>
+            </md-list-item>
+
+            <md-list-item class="" ng-click="newFolderForm.$show()" ng-hide="newFolderForm.$visible">
+                <p class="md-accent-fg">New Folder</p>
+            </md-list-item>
+            <!-- NEW folder -->
+        </div>
+
+
+
+
+
+        <div class="item subheader">Labels</div>
+
+        <div flex="100" ng-repeat="label in vm.labels">
+
+            <md-list-item class="new-label-form" ng-show="editLabelForm.$visible">
+                <p editable-text="label.title" e-form="editLabelForm"></p>
+            </md-list-item>
+
+            <md-button class="item item-btn" ng-click="vm.loadLabel(label.name)" ng-class="{'selected':vm.isLabelActive(label.name)}" ng-hide="editLabelForm.$visible" ng-mouseover="label.hover = true" ng-mouseleave="label.hover = false">
+
+                <div layout="row" flex="100" layout-align="start center" layout-wrap>
+
+                    <ms-material-color-picker ng-model="label.color">
+                        <md-icon class="mr-16" md-font-icon="icon-label" ng-style="{color:$selectedColor.bgColorValue}"></md-icon>
+                    </ms-material-color-picker>
+
+                    <span class="title">{{label.title}}</span>
+
+                    <div ng-show="label.hover" layout="row" layout-align="start center" class="sidebar-buttons">
+
+                        <md-button class="md-icon-button" ng-hide="editLabelForm.$visible" ng-click="editLabelForm.$show()" aria-label="edit label">
+                            <md-icon md-font-icon="icon-pencil" class="s16">
+                            </md-icon>
+                        </md-button>
+
+                        <md-button class="md-icon-button" ng-hide="editLabelForm.$visible" ng-click="vm.deleteLabel($event, label)" aria-label="delete label">
+                            <md-icon md-font-icon="icon-delete" class="s16">
+                            </md-icon>
+                        </md-button>
+                    </div>
+
+                </div>
+
+
+            </md-button>
+        </div>
+
+
+
+        <!-- NEW label -->
+        <md-list-item class="new-label-form" ng-show="newLabelForm.$visible">
+            <p editable-text="vm.newFolder.name" e-form="newLabelForm" onaftersave="vm.addNewLabels(vm.newFolder.name)"></p>
+        </md-list-item>
+
+        <md-list-item class="" ng-click="newLabelForm.$show()" ng-hide="newLabelForm.$visible">
+            <p class="md-accent-fg">Add New Tag</p>
+        </md-list-item>
+        <!-- NEW label -->
+
+
+
+
+    </div>
+
+</md-content>
+<!-- / SIDENAV CONTENT -->

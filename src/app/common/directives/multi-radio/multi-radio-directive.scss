@@ -1,0 +1,12 @@
+.msb-multi-radio-container {
+  max-height: 120px;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  padding-top: 5px;
+
+  .msb-multi-radio {
+    padding-left: 20px;
+    width: 100%;
+  }
+}

@@ -1,0 +1,325 @@
+<div id="material-packaging" layout="row" layout-align="start center" style="min-height: 100%; height:100%; overflow:hidden; ">
+
+
+    <div class="left w-230 border-right" style="min-height: 100%; height:100%; max-height: 100%;" layout="column" layout-align="start top">
+        <ms-widget layout="column" style="padding: 0; min-height: 100%; height:100%; width: 100% " layout-align="start top">
+
+            <ms-widget-front style="min-height: 100%; height:100%; width: 100%;" layout="column" layout-align="start top">
+                <div class="h-45 b grey-200-bg pl-5 text-bold font-size-16 grey-700-fg" layout="row" layout-align="start center">
+                    Category
+                </div>
+                <div style="min-height: 100%; height:100%; width: 100%;" ms-scroll>
+
+                    <div style="min-height: 2000px;">
+                        <div ng-click="vm.selectCategory(supply)" ng-repeat="supply in vm.supplies" ng-if="supply.typeId == 'garmentMaterials'" class="cursor-pointer p-10 h-35 " layout="row" layout-align="start center" ng-class="{'blue-100-bg': supply.TECHDISER_ID == vm.selectedSupply.TECHDISER_ID}">
+                            <span>{{supply.title}}</span>
+                        </div>
+                    </div>
+                </div>
+            </ms-widget-front>
+        </ms-widget>
+    </div>
+
+    <div class="left w-230 border-right" style="min-height: 100%; height:100%; max-height: 100%;" layout="column" layout-align="start top">
+        <ms-widget layout="column" style="padding: 0; min-height: 100%; height:100%; width: 100% " layout-align="start top">
+
+            <ms-widget-front style="min-height: 100%; height:100%; width: 100%;" layout="column" layout-align="start top">
+                <div class="h-45 b grey-200-bg pl-5 text-bold font-size-16 grey-700-fg" layout="row" layout-align="start center">
+                    Type
+                </div>
+                <div style="min-height: 100%; height:100%; width: 100%;" ms-scroll>
+
+                    <div style="min-height: 2000px;">
+                        <div ng-click="vm.selectSupplyType(supplyType)" ng-repeat="supplyType in vm.supplyTypes" class="cursor-pointer p-10 h-35 " layout="row" layout-align="start center" ng-class="{'blue-100-bg': supplyType.TECHDISER_ID == vm.selectedSupplyType.TECHDISER_ID}">
+                            <span>{{supplyType.title}}</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </ms-widget-front>
+
+        </ms-widget>
+
+
+    </div>
+
+    <div class="right border" flex style="min-height: 100%; height:100%; max-height: 100%; width: 100%;" layout="column" layout-align="start top">
+
+        <ms-widget layout="column" style="padding: 0; min-height: 100%; height:100%; width: 100% " layout-align="start top">
+
+            <ms-widget-front style="min-height: 100%; height:100%; width: 100%;" layout="column" layout-align="start top">
+                <div class="h-45 b grey-200-bg pl-5 text-bold font-size-16 grey-700-fg" layout="row" layout-align="space-between">
+                    <div layout="row" layout-align="start center">
+                        <span>{{vm.selectedSupply.title}} / {{vm.selectedSupplyType.title}}</span>
+                    </div>
+                    <div class="mr-10" layout="row" layout-align="start center">
+                        <md-button ng-click="vm.save()" class="b grey-100-bg" style="border-color: #009999;">
+                            save
+                        </md-button>
+                    </div>
+                </div>
+                <div style="min-height: 100%; height:100%; width: 100%;" ms-scroll>
+                    <div style="min-height: 2000px;">
+                        <md-tabs md-dynamic-height md-border-bottom class="tabs">
+                            <md-tab label="Packaging">
+                                <div layout="column" layout-align="start">
+                                    <div class="h-45 mb-5 b grey-200-bg pl-5  font-size-16 " layout="row" layout-align="start center">
+                                        <div class="mr-20 text-bold grey-700-fg" layout="row" layout-align="start center">
+                                            <span>Inner to Outer Packing</span>
+                                        </div>
+                                        <div class="" layout="row" layout-align="start center">
+                                            <md-icon class="mr-5" ng-if="vm.selectedMatPacking.isCheckAtUnload == 0 || vm.selectedMatPacking.isCheckAtUnload == undefined" ng-click="vm.setCheckAtUnload(vm.selectedMatPacking)" md-font-icon="icon-checkbox-blank-outline"></md-icon>
+                                            <md-icon class="mr-5 md-accent" ng-if="vm.selectedMatPacking.isCheckAtUnload == 1" ng-click="vm.setCheckAtUnload(vm.selectedMatPacking)" md-font-icon="icon-checkbox-marked-outline"></md-icon>
+                                            <span>Physical Check Applied</span>
+                                        </div>
+                                    </div>
+                                    <div class="" ng-repeat="level in vm.selectedMatPacking.levels">
+                                        <div class="h-45 b grey-200-bg pl-5 font-size-16 grey-700-fg" layout="row" layout-align="start center" flex="100">
+                                            <div class="w-100" layout="row" layout-align="start center">
+                                                <span>Level {{$index + 1}}</span>
+                                            </div>
+                                            <div class="w-300" layout="row" layout-align="start center">
+                                                <div class="" ng-if="$index <= 1" layout="row" layout-align="start center">
+                                                    <md-icon class="mr-10" ng-if="level.isAssort == 0" ng-click="vm.setAssortToLevel($index, vm.selectedMatPacking.levels)" md-font-icon="icon-checkbox-blank-outline"></md-icon>
+                                                    <md-icon class="mr-10 md-accent" ng-if="level.isAssort == 1" md-font-icon="icon-checkbox-marked-outline"></md-icon>
+                                                    <span>Assort Packing</span>
+                                                </div>
+                                            </div>
+                                            <div class="w-500" layout="row" layout-align="start center">
+                                                <md-button ng-click="vm.addUnitContainer(level)" class="md-accent md-primary b">
+                                                    Select Container
+                                                </md-button>
+                                            </div>
+                                            <div class="w-200">
+                                                <div class="mr-70" ng-if="$index == vm.selectedMatPacking.levels.length - 1 && $index < 3" layout="row" layout-align="start center">
+                                                    <md-button ng-click="vm.addLevel(vm.selectedMatPacking.levels)" class="md-accent md-primary b">
+                                                        Add Level
+                                                    </md-button>
+                                                </div>
+                                            </div>
+                                            <div class="w-50">
+                                                <div ng-if="$index == (vm.selectedMatPacking.levels.length - 1) && $index > 0" class="on-close">
+                                                    <md-icon ng-click="vm.removeLevel(level, vm.selectedMatPacking.levels); vm.changeData()" md-font-icon="icon-close-circle" class="delete-packet cursor-pointer grey-500-fg s24">
+                                                        <md-tooltip>Remove Level</md-tooltip>
+                                                    </md-icon>
+                                                </div>
+                                            </div>
+                                            <!-- <md-icon ng-click="vm.addUnitContainer()" md-font-icon="icon-plus-box" class="md-accent"></md-icon> -->
+                                        </div>
+                                        <div layout="row" layout-align="start center" layout-wrap>
+                                            <div ng-repeat="container in level.containers" ng-click="vm.selectContainer(container)" class="box-shadow b mt-10 mb-10 ml-10 w-370 mr-10" layout="column" layout-align="start">
+                                                <div class="p-10 h-35 border-bottom grey-200-bg" layout="row" layout-align="space-between">
+                                                    <div>
+                                                        <span class="w-100">{{container.title}}</span>
+                                                    </div>
+                                                    <div>
+                                                        <span>Set as Default </span>
+                                                        <md-icon ng-if="!container.isdefault" style="position:relative;left:5px;" ng-click="vm.setAsDefault(level.containers, container)" md-font-icon="icon-checkbox-blank-outline" class="icon">
+                                                        </md-icon>
+                                                        <md-icon ng-if="container.isdefault" style="position:relative;left:5px;" md-font-icon="icon-checkbox-marked-outline" class="icon md-accent">
+                                                        </md-icon>
+                                                    </div>
+                                                </div>
+                                                <div class="p-10" layout="column">
+                                                    <div ng-repeat="spec in container.specs" class="mt-5" layout="row" layout-align="start center">
+                                                        <span class="w-130">{{spec}}:</span>
+                                                        <md-input-container md-no-float class="md-block" aria-label="spec">
+                                                            <input ng-model="container[spec]" autocomplete="off" aria-label="spec">
+                                                        </md-input-container>
+                                                    </div>
+                                                    <div class="mt-5" layout="column" layout-align="start">
+                                                        <div class="h-25 b grey-200-bg" layout="row" layout-align="start center">
+                                                            <div class="ml-5 w-60 text-bold grey-600-fg">
+                                                                <span class="">Labels</span>
+                                                            </div>
+                                                            <div class="ml-5 w-120 text-bold grey-600-fg">
+                                                                <span class="">Position</span>
+                                                            </div>
+                                                            <div class="ml-5 w-130 text-bold grey-600-fg">
+                                                                <span class="">Description</span>
+                                                            </div>
+                                                            <div class="mr-5">
+                                                                <md-icon ng-click="vm.selectLabel(container)" md-font-icon="icon-plus-box" class="cursor-pointer md-accent"></md-icon>
+                                                            </div>
+                                                        </div>
+                                                        <div class="p-5" ng-repeat="label in container.labels" layout="row" layout-align="start center">
+                                                            <div class="w-60" layout="row" layout-align="start center">
+                                                                <span class="">{{label.title}}</span>
+                                                            </div>
+                                                            <div class="w-120" layout="row" layout-align="start center">
+                                                                <md-input-container md-no-float class="md-block" aria-label="spec">
+                                                                    <md-select class="" name="positions" ng-model="label.positions" multiple aria-label="positions">
+                                                                        <md-option ng-repeat="labelPosition in vm.labelPositions" value="{{labelPosition.key}}">
+                                                                            {{labelPosition.value}}
+                                                                        </md-option>
+                                                                    </md-select>
+                                                                </md-input-container>
+                                                            </div>
+                                                            <div class="w-130" layout="row" layout-align="start center">
+                                                                <md-input-container md-no-float class="md-block" aria-label="spec">
+                                                                    <input ng-model="label.description" autocomplete="off">
+                                                                </md-input-container>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </md-tab>
+                            <md-tab label="Attributes">
+                                <div class="msb-collapse-content">
+                                    <msb-expand-collapse>
+                                        <div class="msb-collapse-header grey-200-bg mb-5 h-40 b cursor-pointer" layout="row" layout-align="start center">
+                                            <span class="p-10 grey-700-fg font-size-16">Package Marking</span>
+                                        </div>
+                                        <div class="msb-collapse-content">
+                                            <div class="p-10" layout="row">
+                                                Caution Mark
+                                            </div>
+                                            <div class="p-10" layout="row">
+                                                Identification Mark
+                                            </div>
+                                        </div>
+                                    </msb-expand-collapse>
+                                </div>
+                                <div class="msb-collapse-content">
+                                    <msb-expand-collapse>
+                                        <div class="msb-collapse-header grey-200-bg mb-5 h-40 b cursor-pointer" layout="row" layout-align="start center">
+                                            <span class="p-10 grey-700-fg font-size-16">Material Attributes</span>
+                                        </div>
+                                        <div class="msb-collapse-content">
+                                            <div ng-repeat="matAttribute in vm.getMaterialAttributes()" layout="row">
+                                                <div class="p-10" layout="row">
+                                                    {{matAttribute.attributeTitle}}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </msb-expand-collapse>
+                                </div>
+                                <div class="msb-collapse-content">
+                                    <msb-expand-collapse>
+                                        <div class="msb-collapse-header grey-200-bg mb-5 h-40 b cursor-pointer" layout="row" layout-align="start center">
+                                            <span class="p-10 grey-700-fg font-size-16">Unit Packaging Attributes</span>
+                                        </div>
+                                        <div class="msb-collapse-content">
+                                            <div ng-repeat="unitContainer in vm.getUnitContainers()" layout="column" layout-align="start">
+                                                <div class="h-35 grey-50-bg b" layout="row" layout-align="start center">
+                                                    <span class="p-10">{{vm.getContainerTitle(unitContainer.containerId)}}</span>
+                                                </div>
+                                                <div ng-if="unitContainer[vm.primaryColumnName] == unitPackAttribute.sourceId" ng-repeat="unitPackAttribute in vm.getUnitPackagingAttributes()" layout="row">
+                                                    <div class="p-10" layout="row">
+                                                        {{unitPackAttribute.attributeTitle}}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </msb-expand-collapse>
+                                </div>
+                                <div class="msb-collapse-content">
+                                    <msb-expand-collapse>
+                                        <div class="msb-collapse-header grey-200-bg mb-5 h-40 b cursor-pointer" layout="row" layout-align="start center">
+                                            <span class="p-10 grey-700-fg font-size-16">Container Packaging Attributes</span>
+                                        </div>
+                                        <div class="msb-collapse-content">
+                                            <div ng-repeat="container in vm.getContainers()">
+                                                <div class="h-35 grey-50-bg b" layout="row" layout-align="start center">
+                                                    <span class="p-10">{{vm.getContainerTitle(container.containerId)}}</span>
+                                                </div>
+                                                <div ng-if="container[vm.primaryColumnName] == contPackAttribute.sourceId" ng-repeat="contPackAttribute in vm.getContainerPackagingAttributes()" layout="row">
+                                                    <div class="p-10" layout="row">
+                                                        {{contPackAttribute.attributeTitle}}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </msb-expand-collapse>
+                                </div>
+                            </md-tab>
+                            <md-tab label="Bar-Code">
+                                <div class="h-40 grey-200-bg b" layout="row" layout-align="start center">
+                                    <span class="p-10 grey-700-fg font-size-16 mr-40">Bar-Codes</span>
+                                    <md-button ng-click="vm.addBarcode(true, {})" class="blue-100-bg h-30">Add</md-button>
+                                </div>
+                                <div layout="row" layout-align="start center" layout-wrap>
+                                    <div ng-repeat="barcode in vm.getBarCodes()" class="box-shadow b mt-10 mb-10 ml-10 h-250 w-360 mr-10" layout="column" layout-align="start">
+                                        <div class="p-10 h-40 border-bottom grey-200-bg" layout="row" layout-align="space-between">
+                                            <div>
+                                                <span class="w-100">{{barcode.title}}</span>
+                                            </div>
+                                            <div>
+                                                <md-icon style="position:relative;left:5px;" ng-click="vm.addBarcode(false, barcode)" md-font-icon="icon-pen" class="icon cursor-pointer">
+                                                </md-icon>
+                                                <md-icon style="position:relative;left:5px;" ng-click="vm.removeBarcode(barcode)" md-font-icon="icon-close-circle" class="icon cursor-pointer">
+                                                </md-icon>
+                                            </div>
+                                        </div>
+                                        <div class="p-10" layout="column">
+                                            <div class="border-bottom" layout="row" layout-align="start center">
+                                                <div class="" layout="row" layout-align="start center">
+                                                    <md-icon ng-if="barcode.isQrCode == 1" md-font-icon="icon-checkbox-marked-outline">
+                                                    </md-icon>
+                                                    <md-icon ng-if="barcode.isQrCode == 0 || barcode.isQrCode == undefined" md-font-icon="icon-checkbox-blank-outline">
+                                                    </md-icon>
+                                                    <span class="mr-10">QR Code</span>
+                                                </div>
+                                                <div class="" layout="row" layout-align="start center">
+                                                    <md-icon ng-if="barcode.isBarCode == 1" md-font-icon="icon-checkbox-marked-outline">
+                                                    </md-icon>
+                                                    <md-icon ng-if="barcode.isBarCode == 0 || barcode.isBarCode == undefined" md-font-icon="icon-checkbox-blank-outline">
+                                                    </md-icon>
+                                                    <span class="mr-10">Barcode</span>
+                                                </div>
+                                            </div>
+                                            <div ng-repeat="attribute in barcode.attributes" class="mt-5" layout="row" layout-align="start center">
+                                                <span class="w-130">{{attribute.attributeTitle}}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </md-tab>
+                            <md-tab label="Label">
+                                <div layout="row" layout-align="start" flex="100">
+                                    <div flex layout="row">
+                                        <div class="p-10" layout="row" layout-wrap>
+                                            <div ng-repeat="label in vm.selectedMatPacking.labels" class="box-shadow mt-10 mb-10 ml-10 h-280 w-360 mr-10">
+                                                <div class="border-bottom p-10 teal-50-bg" layout="row" layout-align="space-between">
+                                                    <div>
+                                                        <md-input-container style="margin: 0px; padding: 0px;" md-no-float class="md-block w-280">
+                                                            <input ng-model="label.title" placeholder="Title">
+                                                        </md-input-container>
+                                                    </div>
+                                                    <div layout="row">
+                                                        <md-icon class="mr-5 cursor-pointer" ng-click="vm.defineLabelLayout(label)" md-font-icon="icon-view-quilt">
+                                                            <md-tooltip>Define Template</md-tooltip>
+                                                        </md-icon>
+                                                    </div>
+                                                    <div class="" style="" layout="row">
+                                                        <md-icon class="mr-5 cursor-pointer" ng-click="vm.deleteLabel(label)" md-font-icon="icon-close-circle">
+                                                            <md-tooltip>Delete Label</md-tooltip>
+                                                        </md-icon>
+                                                    </div>
+                                                </div>
+                                                <div class="h-180" ms-scroll>
+                                                    <msb-strip-form strip-columns="label.labelColumns" strips="vm.strips" row-height="vm.rowHeight" strip-object="label.stripObject" strip-def="label.stripDef" on-change="vm.onChangeValue(column, strip, isAuto)">
+                                                    </msb-strip-form>
+                                                </div>
+                                            </div>
+                                            <div class="box-shadow mt-10 mb-10 ml-10 h-280 w-360 mr-10 grey-50-bg" layout="row" layout-align="center">
+                                                <div ng-click="vm.addLabel()" class="cursor-pointer font-size-30 bold grey-300-fg" style="font-family: impact; font-weight: 900" layout="row" layout-align="start center">
+                                                    ADD LABEL
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </md-tab>
+                        </md-tabs>
+                    </div>
+                </div>
+            </ms-widget-front>
+        </ms-widget>
+    </div>
+</div>

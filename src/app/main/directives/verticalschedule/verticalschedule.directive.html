@@ -1,0 +1,48 @@
+<div layout="row" class="w-1200" layout-align="left center" layout-wrap>
+    <div ng-repeat="infrmtn in accordion.titleDirective.info">
+        <md-card ng-if='infrmtn.type=="task"'>
+            <table border='1' width='230px;'>
+                <tr>
+                    <td colspan='4'> <input type='checkbox' ng-model="infrmtn.required"> {{infrmtn.taskName}}</td>
+                </tr>
+                <tr>
+                    <td>Progress</td>
+                    <td><input style="width:70px;" type='text' value='{{infrmtn.progess}}' /></td>
+                    <td>Status</td>
+                    <td>{{infrmtn.status}}</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>From</td>
+                    <td>To</td>
+                    <td>Duration</td>
+                </tr>
+                <tr>
+                    <td>Planed</td>
+                    <td><input style="width:70px;" type='text' ng-model='infrmtn.plan.start' ng-focus="updateValue(accordion.id,accordion.parentId,infrmtn.plan.start)" ng-blur="dataChange(accordion.id,accordion.parentId, 'PlanedStartDate',infrmtn.plan.start)" value='{{infrmtn.plan.start}}' /></td>
+                    <td><input style="width:70px;" type='text' ng-model='infrmtn.plan.end' ng-focus="updateValue(accordion.id,accordion.parentId,infrmtn.plan.end)" ng-blur="dataChange(accordion.id,accordion.parentId, 'PlanedEndDate',infrmtn.plan.end)" value='{{infrmtn.plan.end}}' /></td>
+                    <td><input style="width:70px;" type='text' ng-model='infrmtn.plan.duration' ng-focus="updateValue(accordion.id,accordion.parentId,infrmtn.plan.duration)" ng-blur="dataChange(accordion.id,accordion.parentId, 'PlanedDuration',infrmtn.plan.duration)" value='{{infrmtn.plan.duration}}' /></td>
+                </tr>
+                <tr>
+                    <td>Actual</td>
+                    <td><input style="width:70px;" type='text' value='{{infrmtn.actual.start}}' /></td>
+                    <td><input style="width:70px;" type='text' value='{{infrmtn.actual.end}}' /></td>
+                    <td><input style="width:70px;" type='text' value='{{infrmtn.actual.duration}}' /></td>
+                </tr>
+                <tr>
+                    <td>Remark</td>
+                    <td colspan='3'><textarea style="width:100%;">{{infrmtn.remark}}</textarea></td>
+                </tr>
+            </table>
+        </md-card>
+        <table ng-if='infrmtn.type=="totalDays"' border='0' width='200px;'>
+            <tr>
+                <td rowspan='2'>=</td>
+                <td>{{infrmtn.label}}</td>
+            </tr>
+            <tr>
+                <td>{{infrmtn.data}}</td>
+            </tr>
+        </table>
+    </div>
+</div>

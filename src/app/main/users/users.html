@@ -1,0 +1,57 @@
+<div id="users" class="page-layout simple right-sidenav" layout="row">
+
+    <md-sidenav class="main-sidenav" md-component-id="main-sidenav" md-is-locked-open="$mdMedia('gt-md') && vm.leftNavPined" ng-include="'app/main/users/sidenavs/main/main-sidenav.html'" ms-scroll ms-sidenav-helper>
+    </md-sidenav>
+
+    <div class="center" layout="column" flex>
+
+        <div class="header md-accent-bg">
+
+            <div class="header-content" layout="column" layout-align="space-between">
+
+                <div class="toolbar" layout="row" layout-align="space-between">
+
+                    <div layout="row" layout-align="start center">
+                        <md-button class="md-icon-button main-sidenav-toggle" ng-click="vm.toggleSidenav('main-sidenav')" aria-label="Toggle Main Sidenav">
+                            <md-icon md-font-icon="icon-backburger" class="icon" ng-class="{'transform-180' : !vm.leftNavPined}"></md-icon>
+                        </md-button>
+
+                        <div class="breadcrumb text-truncate" layout="row" layout-align="start center">
+                            <span>{{vm.title}}</span>
+                        </div>
+                    </div>
+
+                    <div class="right-side" layout="row">
+                        <div class="search-input-wrapper" layout="row" layout-align="start center">
+                            <label for="search">
+                                <md-icon md-font-icon="icon-magnify"></md-icon>
+                            </label>
+                            <md-input-container md-no-float class="m-0">
+                                <input id="search" placeholder="Search for User" type="text" ng-model="vm.usersFilters.search">
+                            </md-input-container>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+            <a ui-sref="app.users.add()">
+                <md-button class="add-file-button md-fab md-warn" aria-label="Add user">
+                    <md-icon md-font-icon="icon-plus"></md-icon>
+                </md-button>
+            </a>
+
+        </div>
+
+        <md-content class="content" flex ms-scroll>
+            <div ng-include="'app/main/users/list/list-view.html'"></div>
+        </md-content>
+
+    </div>
+
+    <md-sidenav class="sidenav details-sidenav md-sidenav-right" md-is-locked-open="$mdMedia('gt-md')" md-component-id="details-sidenav" ng-include="'app/main/users/sidenavs/details/details-sidenav.html'" ms-scroll ms-sidenav-helper>
+    </md-sidenav>
+
+</div>

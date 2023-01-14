@@ -1,0 +1,381 @@
+<div id="import-inco" class="content page-layout simple inco-mainnav" layout="row">
+
+    <div class="content">
+        <md-tabs md-dynamic-height class="tabs" md-selected="0">
+            <md-tab label="Definition">
+                <md-divider></md-divider>
+                <div layout="column" flex>
+                    <div layout="row" flex>
+                        <md-sidenav class="main-sidenav" md-component-id="main-sidenav" md-is-locked-open="$mdMedia('gt-md') && vm.leftNavPined" ng-include="'app/main/systemsettings/import-inco/sidenavs/main/main-sidenav.html'" ms-scroll ms-sidenav-helper>
+                        </md-sidenav>
+                        <div layout="column" class="" flex>
+                            <div layout="row" class="h-35 mt-10 border-bottom">
+                                <div flex="20">
+                                    <span class="md-subhead ml-20">{{vm.selectedIncoType.title}}</span>
+                                </div>
+                                <div class="ml-10 cursor-pointer">
+                                    <md-icon ng-if="!vm.selectedIncoType.isPortToPortTransport" md-font-icon="icon-checkbox-blank-outline" class="icon">
+                                    </md-icon>
+                                    <md-icon ng-if="vm.selectedIncoType.isPortToPortTransport" md-font-icon="icon-checkbox-marked-outline" class="icon md-accent">
+                                    </md-icon>
+                                    Transport required
+                                </div>
+
+                                <div class="ml-15 cursor-pointer">
+                                    <md-icon ng-if="vm.selectedIncoType.isDestinationPort === 0" md-font-icon="icon-checkbox-blank-outline" class="icon">
+                                    </md-icon>
+                                    <md-icon ng-if="vm.selectedIncoType.isDestinationPort === 1" md-font-icon="icon-checkbox-marked-outline" class="icon md-accent">
+                                    </md-icon>
+                                    Destination Port
+                                </div>
+
+                                <div class="ml-15 cursor-pointer">
+                                    <md-icon ng-if="vm.selectedIncoType.isSailingPort === 0" md-font-icon="icon-checkbox-blank-outline" class="icon">
+                                    </md-icon>
+                                    <md-icon ng-if="vm.selectedIncoType.isSailingPort === 1" md-font-icon="icon-checkbox-marked-outline" class="icon md-accent">
+                                    </md-icon>
+                                    Sailing Port
+                                </div>
+
+                                <div class="ml-15 cursor-pointer">
+                                    <md-icon ng-if="vm.selectedIncoType.isDeliveryPoint === 0" md-font-icon="icon-checkbox-blank-outline" class="icon">
+                                    </md-icon>
+                                    <md-icon ng-if="vm.selectedIncoType.isDeliveryPoint === 1" md-font-icon="icon-checkbox-marked-outline" class="icon md-accent">
+                                    </md-icon>
+                                    Delivery Point
+                                </div>
+                            </div>
+                            <div layout="row" layout-align="start start" class="center" flex="100">
+                                <div class="border-right" flex="40" style="min-height: 900px;">
+                                    <md-content class="content" flex ms-scroll>
+                                        <div ng-include="'app/main/systemsettings/import-inco/list/list-view.html'"></div>
+                                    </md-content>
+                                </div>
+                                <div class="border-left" flex style="min-height: 900px;">
+                                    <div layout="row" class="h-35 mt-10 border-bottom">
+                                        <div flex>
+                                            <span class="md-subhead ml-20"> Imports </span>
+                                        </div>
+                                    </div>
+                                    <div class="mr-5" ng-repeat="importStakeholder in vm.selectedIncoType.importers" ng-if="vm.checkStakeholderExist(importStakeholder, 'importer')">
+                                        <msb-expand-collapse>
+                                            <div class=" msb-collapse-header cursor-pointer teal-50-bg p-5 border-bottom" ng-click="$event.stopPropagation();">
+                                                <div class="h-25 p-5" layout="row" layout-align="start center">
+                                                    <div flex>
+                                                        {{vm.getStakeholderTitle(importStakeholder.stakeholderId)}}
+                                                    </div>
+                                                    <div class="cursor-pointer w-100" layout="row">
+                                                        <md-icon md-font-icon="icon-plus-box" class="mr-15 s20" ng-click="vm.addBill(importStakeholder, null, true, 'importer'); $event.stopPropagation();">
+                                                            <md-tooltip>Add Bill</md-tooltip>
+                                                        </md-icon>
+                                                        <i class="icon icon-chevron-down s16 "></i>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="msb-collapse-content" style="display: none">
+                                                <div class="b material-viewer" layout="column" flex="100" layout-wrap>
+
+                                                    <div layout="column" layout-align="start start" class="p-10 box-shadow m-5 etd-item cursor-pointer" style="min-height: 150px; position: relative;" ng-repeat="importBill in importStakeholder.bills | filter: {'TD_IS_DELETED': 0}">
+
+                                                        <div layout="column">
+                                                            <div layout="row" layout-align="start center" style="position: absolute; top: 5px; right: 10px;">
+                                                                <div class="show-action-button">
+                                                                    <md-icon ng-click="vm.addBill(importStakeholder, importBill, false, 'importer');" md-font-icon="icon-pencil" class="s16 mr-5" style="border-radius:100px;color:#9c9c9c;">
+                                                                        <md-tooltip><span>Edit Bill</span></md-tooltip>
+                                                                    </md-icon>
+                                                                </div>
+                                                                <div class="cursor-pointer show-action-button">
+                                                                    <md-icon style="color: red;" ng-click="vm.deleteBill(importStakeholder, importBill)" md-font-icon="icon-close" class="icon md-accent mr-5">
+                                                                        <md-tooltip><span>Delete Bill</span></md-tooltip>
+                                                                    </md-icon>
+                                                                </div>
+                                                            </div>
+                                                            <div layout="row" layout-align="start center">
+                                                                <span class="secondary-text w-50"> Title </span>
+                                                                <span class="secondary-text"> : </span>
+                                                                <span class="w-130 ml-10 font-weight-900"> {{importBill.title}} </span>
+                                                            </div>
+
+                                                            <div layout="row" layout-align="start center" class="mt-10">
+                                                                <span class="secondary-text w-50"> Policy </span>
+                                                                <span class="secondary-text"> : </span>
+                                                                <span class="ml-10"> {{vm.getBillPolicyTitle(importBill.policy)}} </span>
+                                                            </div>
+
+                                                            <div layout="row" layout-align="start center" class="mt-10 border-bottom">
+                                                                <span class="secondary-text w-50"> Steps </span>
+                                                                <span class="secondary-text"> : </span>
+                                                                <span class="w-120"></span>
+                                                            </div>
+
+                                                            <div class="mt-10" ng-repeat="stepId in importBill.stepIds" layout="row" layout-align="start center">
+
+                                                                <div class="">
+                                                                    <md-icon md-font-icon="icon-checkbox-marked-outline" class="icon md-accent">
+                                                                    </md-icon>
+                                                                </div>
+
+                                                                <div class="pl-10 font-weight-900">
+                                                                    {{vm.getStepTitle(stepId)}}
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+
+
+                                                </div>
+                                            </div>
+                                        </msb-expand-collapse>
+                                    </div>
+                                </div>
+                                <div class="border-left border-right" flex style="min-height: 900px;">
+                                    <div layout="row" class="h-35 mt-10 border-bottom">
+                                        <div flex>
+                                            <span class="md-subhead ml-20"> Exports </span>
+                                        </div>
+                                    </div>
+                                    <div class="mr-5" ng-repeat="exportStakeholder in vm.selectedIncoType.exporters" ng-if="vm.checkStakeholderExist(exportStakeholder, 'exporter')">
+                                        <msb-expand-collapse>
+                                            <div class=" msb-collapse-header cursor-pointer teal-50-bg p-5 border-bottom" ng-click="$event.stopPropagation();">
+                                                <div class="h-25 p-5" layout="row" layout-align="start center">
+                                                    <div flex>
+                                                        {{vm.getStakeholderTitle(exportStakeholder.stakeholderId)}}
+                                                    </div>
+                                                    <div class="cursor-pointer w-100" layout="row">
+                                                        <md-icon md-font-icon="icon-plus-box" class="mr-15 s20" ng-click="vm.addBill(exportStakeholder, null, true, 'exporter'); $event.stopPropagation();">
+                                                            <md-tooltip>Add Bill</md-tooltip>
+                                                        </md-icon>
+                                                        <i class="icon icon-chevron-down s16 "></i>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                            <div class="msb-collapse-content" style="display: none">
+                                                <div class="b material-viewer" layout="column" flex="100" layout-wrap>
+
+                                                    <div layout="column" layout-align="start start" class="p-10 box-shadow m-5 etd-item cursor-pointer" style="min-height: 150px; position: relative;" ng-repeat="exportBill in exportStakeholder.bills | filter: {'TD_IS_DELETED': 0}">
+
+                                                        <div layout="column">
+                                                            <div layout="row" layout-align="start center" style="position: absolute; top: 5px; right: 10px;">
+                                                                <div class="show-action-button">
+                                                                    <md-icon ng-click="vm.addBill(exportStakeholder, exportBill, false, 'importer');" md-font-icon="icon-pencil" class="s16 mr-5" style="border-radius:100px;color:#9c9c9c;">
+                                                                        <md-tooltip><span>Edit Bill</span></md-tooltip>
+                                                                    </md-icon>
+                                                                </div>
+                                                                <div class="cursor-pointer show-action-button">
+                                                                    <md-icon style="color: red;" ng-click="vm.deleteBill(exportStakeholder, exportBill)" md-font-icon="icon-close" class="icon md-accent mr-5">
+                                                                        <md-tooltip><span>Delete Bill</span></md-tooltip>
+                                                                    </md-icon>
+                                                                </div>
+                                                            </div>
+                                                            <div layout="row" layout-align="start center">
+                                                                <span class="secondary-text w-50"> Title </span>
+                                                                <span class="secondary-text"> : </span>
+                                                                <span class="w-130 ml-10 font-weight-900"> {{exportBill.title}} </span>
+                                                            </div>
+
+                                                            <div layout="row" layout-align="start center" class="mt-10">
+                                                                <span class="secondary-text w-50"> Policy </span>
+                                                                <span class="secondary-text"> : </span>
+                                                                <span class="ml-10"> {{vm.getBillPolicyTitle(exportBill.policy)}} </span>
+                                                            </div>
+
+                                                            <div layout="row" layout-align="start center" class="mt-10 border-bottom">
+                                                                <span class="secondary-text w-50"> Steps </span>
+                                                                <span class="secondary-text"> : </span>
+                                                                <span class="w-120"></span>
+                                                            </div>
+
+                                                            <div class="mt-10" ng-repeat="stepId in exportBill.stepIds" layout="row" layout-align="start center">
+
+                                                                <div class="">
+                                                                    <md-icon md-font-icon="icon-checkbox-marked-outline" class="icon md-accent">
+                                                                    </md-icon>
+                                                                </div>
+
+                                                                <div class="pl-10 font-weight-900">
+                                                                    {{vm.getStepTitle(stepId)}}
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+
+                                                    </div>
+
+
+                                                </div>
+                                            </div>
+                                        </msb-expand-collapse>
+                                    </div>
+                                </div>
+
+                                <md-sidenav class="sidenav type-details-sidenav md-sidenav-right" md-is-locked-open="$mdMedia('gt-md')" md-component-id="details-sidenav" ng-include="'app/main/systemsettings/import-inco/sidenavs/details/shipment-type-document-sidenav.html'" ms-scroll ms-sidenav-helper>
+                                </md-sidenav>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </md-tab>
+            <md-tab label="Document">
+                <md-divider></md-divider>
+                <div layout="column" flex style="min-height: 900px;">
+                    <div layout="row" layout-align="start center" flex class="md-subhead ml-20 h-45">
+                        <div class="" flex="90">
+                            <span>Documents</span>
+                        </div>
+                        <div flex="10">
+                            <md-button class="md-icon-button mb-10" aria-label="Add" ng-click="vm.addTypeDocument(vm.typeDocument, true)">
+                                <md-icon class="md-background md-accent" md-font-icon="icon-plus-box"></md-icon>
+                                <md-tooltip><span>Add Document</span></md-tooltip>
+                            </md-button>
+                        </div>
+                    </div>
+                    <md-divider></md-divider>
+                    <div flex>
+                        <div class="widget-group ml-10" layout="column" flex="100" layout-wrap>
+                            <ms-widget ng-repeat="document in vm.inCoDocumentDefs" class="tags card-document" ng-click="vm.selectDocument(document)" ng-class="{'selected':vm.selectedDocument.TECHDISER_ID === document.TECHDISER_ID}" flippable="false" layout="column">
+                                <ms-widget-front class="white-bg h-auto w-500 tags m-5 p-5">
+                                    <div layout="column" flex="100" class="p-5">
+                                        <div layout="row" class="">
+                                            <div flex="95">
+                                                <div class="user-list-sidenav-user-info">Title: <strong>{{document.title}}</strong></div>
+                                                <div class="user-list-sidenav-user-info">Purpose: {{document.purpose}}</div>
+                                            </div>
+                                            <div flex="5">
+                                                <md-icon ng-click="vm.addTypeDocument(document, false); $event.stopPropagation()" md-font-icon="icon-pencil" class="s16 md-accent" style="position:relative; border-radius:100px; left:10px">
+                                                </md-icon>
+                                            </div>
+                                        </div>
+                                        <div ms-scroll class="h-auto">
+                                            <td-attachments item-list="document.templates" type="attachment" self="true">
+                                            </td-attachments>
+                                        </div>
+                                    </div>
+                                </ms-widget-front>
+                            </ms-widget>
+                        </div>
+                    </div>
+                </div>
+            </md-tab>
+            <md-tab label="Stakeholders">
+                <md-divider></md-divider>
+                <div layout="column" flex>
+                    <div layout="row" flex>
+                        <div class="center" flex="50">
+
+                            <div layout="column" flex>
+                                <div layout="row" layout-align="start center" flex class="md-subhead ml-20 h-45">
+                                    <div class="" flex="90">
+                                        <span>Stakeholders</span>
+                                    </div>
+                                    <div flex="10">
+                                        <md-button class="md-icon-button mb-10" aria-label="Add" ng-click="vm.addStakeholder(vm.typeDocument, true)">
+                                            <md-icon class="md-background md-accent" md-font-icon="icon-plus-box"></md-icon>
+                                            <md-tooltip><span>Add Stakeholder</span></md-tooltip>
+                                        </md-button>
+                                    </div>
+                                </div>
+                                <md-divider></md-divider>
+                                <div flex>
+                                    <div class="widget-group ml-10" layout="column" flex="100" layout-wrap>
+                                        <ms-widget ng-repeat="stakeholder in vm.stakeholderDefs" class="tags card-document mr-10" ng-click="vm.selectStakeholder(stakeholder)" ng-class="{'selected':vm.selectedStakeholder.TECHDISER_ID === stakeholder.TECHDISER_ID}" flippable="false" layout="column">
+                                            <ms-widget-front class="white-bg h-auto tags p-5" style="margin: 2px; margin-right:5px;">
+                                                <div layout="column" class="p-5" flex="100">
+                                                    <div layout="row" class="">
+                                                        <div flex="95">
+                                                            <div class="user-list-sidenav-user-info">Title: <strong>{{stakeholder.title}}</strong></div>
+                                                            <div class="user-list-sidenav-user-info">Description: {{stakeholder.description}}</div>
+                                                        </div>
+                                                        <div flex="5">
+                                                            <md-icon ng-click="vm.addStakeholder(stakeholder, false); $event.stopPropagation()" md-font-icon="icon-pencil" class="s16 md-accent" style="position:relative; border-radius:100px; left:10px">
+                                                            </md-icon>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </ms-widget-front>
+                                        </ms-widget>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div flex="50" class="data-sidenav">
+                            <div layout="row" layout-align="start center" flex class="header font-size-16" flex="100">
+                                <span flex="20" class="mr-20">Data Sheet</span>
+                                <span flex>( {{vm.selectedStakeholder.title}} )</span>
+                                <div class="p-15">
+                                    <a ng-click="vm.createNewDataSheet()">
+                                        <u>New</u>
+                                        <md-tooltip>
+                                            <span>New Data Sheet</span>
+                                        </md-tooltip>
+                                    </a>
+                                </div>
+                            </div>
+                            <md-divider></md-divider>
+                            <div ng-if="vm.isExapndDataSheet">
+                                <ms-widget flippable="false" layout="column" class="test-card">
+                                    <ms-widget-front class="white-bg w-300 p-5">
+                                        <div layout="row" layout-align="end center" flex>
+                                            <md-icon ng-click="vm.isExapndDataSheet=false" md-font-icon="icon-cancel" class="icon red-500-fg s14" style="position:relative; left:135px; top:-3px">
+                                            </md-icon>
+                                        </div>
+                                        <div flex class="description" layout="column" layout-align="start start">
+                                            <div>
+                                                <md-input-container class="md-block">
+                                                    <label>
+                                                        <span>Title</span>
+                                                    </label>
+                                                    <input class="md-subhead" name="Title" ng-model="vm.dataSheet.title" required autocomplete="off">
+                                                    <div ng-messages="categoryForm.title.$error" role="alert">
+                                                        <div ng-message="required">
+                                                            <span>Title is required</span>
+                                                        </div>
+                                                    </div>
+                                                </md-input-container>
+                                            </div>
+
+                                        </div>
+                                        <div layout="row" layout-align="end center" flex>
+                                            <div ng-if="vm.isExapndDataSheet">
+                                                <md-button ng-click="vm.saveDataSheet(vm.selectedStakeholder, vm.dataSheet, vm.isNewDataSheet); vm.createNewDataSheet()" class="md-raised md-light-blue-200-bg font-size-10 text-bold h-25 w-60" style="line-height: 0px" aria-label="save">
+                                                    <span ng-if="vm.isNewDataSheet">Add</span><span ng-if="vm.updateDataSheet">Update</span>
+                                                </md-button>
+                                            </div>
+                                        </div>
+                                    </ms-widget-front>
+                                </ms-widget>
+                            </div>
+                            <div layout="column" flex class="p-10">
+                                <div class="widget-group" layout="column" layout-align="start start" flex="100" layout-wrap>
+                                    <ms-widget ng-repeat="dataSheet in vm.selectedStakeholder.dataSheets" ng-click="vm.selectDataSheet(dataSheet)" ng-class="{'selected':vm.selectedDataSheet === dataSheet}" flippable="false" layout="column" class="test-card card-padding">
+                                        <ms-widget-front class="white-bg p-5 h-auto w-300" style="min-height: 40px">
+                                            <div layout="row" flex="100">
+                                                <div layout="column" flex="90">
+                                                    <div class="line-height-small">{{dataSheet.title}}</div>
+                                                </div>
+                                                <div ng-if="vm.selectedDataSheet === dataSheet" flex="10" layout="column" layout-align="center end">
+                                                    <md-icon ng-click="vm.deleteDataSheet(vm.selectedStakeholder, dataSheet)" md-font-icon="icon-cancel" class="icon red-500-fg s14" style="position:relative; left:0px; top:0px">
+                                                    </md-icon>
+                                                    <md-icon ng-click="vm.isExapndDataSheet = true;" md-font-icon="icon-pencil" class="icon md-accent s14" style="position:relative; left:0px; top:5px">
+                                                    </md-icon>
+                                                    <div flex></div>
+                                                </div>
+                                            </div>
+                                        </ms-widget-front>
+                                    </ms-widget>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </md-tab>
+        </md-tabs>
+
+    </div>
+
+</div>

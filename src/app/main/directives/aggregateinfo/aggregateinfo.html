@@ -1,0 +1,107 @@
+<div class="custom-directive-container user-access-directive">
+
+    <div class="section-header" layout="row" layout-align="start center" ng-if="!viewMode">
+        <button class="btn-expand-colupse md-icon-button md-accent md-button md-default-theme md-ink-ripple" type="button" aria-label="reminder" ng-click="vm.expand = !vm.expand">
+
+            <md-icon ng-if="!vm.expand" md-font-icon="icon-plus-box" class="icon"></md-icon>
+            <md-icon ng-if="vm.expand" md-font-icon="icon-minus-box" class="icon"></md-icon>
+        </button>
+        <span class="section-title">Aggregate info</span>
+    </div>
+
+    <div ng-if="vm.expand" flex>
+
+        <div flex layout="row" layout-align="start center">
+
+            <md-input-container flex class="md-block mr-20">
+                <label>Aggregate Options</label>
+                <md-select class="" name="agt" ng-model="info.aggregateOption" aria-label="agt">
+                    <md-option value="">None</md-option>
+                    <md-option ng-repeat="ago in vm.aggregateOptions" value="{{ago.id}}">
+                        {{ago.text}}</md-option>
+                </md-select>
+            </md-input-container>
+
+            <md-input-container flex class="md-block">
+                <label>Group by</label>
+                <md-select class="" name="gb" multiple ng-model="info.groupBy" aria-label="gb">
+                    <md-option ng-repeat="gbc in columns" value="{{gbc.data}}">
+                        {{gbc.title}}
+                    </md-option>
+                </md-select>
+            </md-input-container>
+
+        </div>
+
+        <div flex layout="row" layout-align="start center" ng-if="info.aggregateOption === 'Last' || info.aggregateOption === 'First'">
+
+            <md-input-container flex class="md-block  mr-20">
+                <label>Column</label>
+                <md-select class="" name="sc" multiple ng-model="info.columnIds" aria-label="sc">
+                    <md-option ng-repeat="sc in columns" value="{{sc.data}}">
+                        {{sc.title}}
+                    </md-option>
+                </md-select>
+            </md-input-container>
+
+        </div>
+
+
+        <div flex layout="row" layout-align="start center" ng-if="info.aggregateOption === 'ColumnWise'">
+
+            <md-input-container flex class="md-block  mr-20">
+                <label>Column</label>
+                <md-select class="" name="aggc" ng-model="vm.columnId" aria-label="aggc">
+                    <md-option ng-repeat="aggc in columns" ng-if="aggc.type === 'numeric'" value="{{aggc[vm.primaryColumnName]}}">
+                        {{aggc.title}}
+                    </md-option>
+                </md-select>
+            </md-input-container>
+
+            <md-input-container flex class="md-block">
+                <label>Aggregate Type</label>
+                <md-select class="" name="agt" ng-model="vm.aggregateType" aria-label="agt">
+                    <md-option value="">None</md-option>
+                    <md-option ng-repeat="agt in vm.aggregateTypes" value="{{agt.id}}">
+                        {{agt.text}}</md-option>
+                </md-select>
+            </md-input-container>
+
+        </div>
+        <div flex layout="row" layout-align="end center" ng-if="info.aggregateOption === 'ColumnWise'">
+            <md-button ng-click="vm.addNewItem($event)" class="send-button md-accent md-raised" aria-label="SAVE">
+                Add
+            </md-button>
+        </div>
+
+    </div>
+
+    <md-divider class="mt-20" ng-if="info.columns.length"></md-divider>
+
+    <div class="border-bottom" md-ink-ripple layout="row" layout-align="start center" ng-repeat="column in info.columns" style="padding-left: 0;">
+        <div layout="row" layout-align="start center" flex>
+
+            <div class="info" flex>
+                <div class="tags" layout="row" layout-align="start center" layout-wrap>
+
+                    <div class="title">
+                        {{$index + 1}}. Column: {{column.title}}
+                    </div>
+
+                    <div class="ml-15">
+                        Aggregate Type: {{column.type}}
+                    </div>
+
+                </div>
+            </div>
+
+            <md-button class="md-warn md-icon-button " ng-click="vm.removeItem(column, $event)" aria-label="add task">
+                <md-icon md-font-icon="icon-close-circle"></md-icon>
+            </md-button>
+
+
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,182 @@
+<div class="list-strip" ng-if="vm.templateReady">
+    <div class="list-strip-items" ng-repeat="(key, value) in vm.gruopByItems">
+        <msb-expand-collapse>
+            <div layout="row" class="msb-collapse-header cursor-pointer h-30 grey-50-bg border p-5 width-100-percent">
+                <div class="w-30">
+                    <i class="icon icon-chevron-down s16 "></i>
+                </div>
+                <div layout="row" ng-repeat="ln in vm.template.groupColumns" class="mr-10">
+                    <div ng-repeat="column in columns" layout="row" ng-if="column.propertyCode === ln.colPropertyCode">
+
+
+                        <msb-list-column column-type="'keyVal'" strip-column="column" list-column="ln" , all-columns="columns" strip-object="value[0]">
+                        </msb-list-column>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="list-strip-items pl-10 msb-collapse-content ">
+                <div class="list-strip-item border-top" ng-click="vm.rowClicked(strip)" ng-class="{'selected-row': strip.TD_IS_SELECTED, 'border-bottom': $index === items.length - 1}" ng-style="{'height': vm.listHeight + 'px', 'min-height': vm.listHeight  + 'px', 'max-height': vm.listHeight  + 'px'}" ng-if="strip[groupBy]===key && !strip['TD_IS_DELETED']" ng-repeat="strip in items">
+
+                    <div layout="row" layout-align="start center" class="height-100-percent">
+                        <div class="w-30" ng-if="vm.template.useCheckBox">
+
+                            <md-icon ng-if="strip.TD_IS_SELECTED" md-font-icon="icon-checkbox-marked-outline" class="md-accent">
+
+                            </md-icon>
+
+                            <md-icon ng-if="!strip.TD_IS_SELECTED" md-font-icon="icon-checkbox-blank-outline">
+
+                            </md-icon>
+                        </div>
+                        <div layout="row" layout-align="start center" class="height-100-percent" flex>
+
+                            <div class="mr-5 list-strip-item-image height-100-percent br" ng-if="vm.template.image && column.propertyCode === vm.template.image.colPropertyCode" ng-style="{'width': vm.template.image.width + 'px', 'min-width': vm.template.image.width  + 'px', 'max-width': vm.template.image.width  + 'px'}" ng-repeat="column in columns">
+
+                                <msb-strip-list-column ng-if="isStrip" strip-def="stripDef" column-type="'image'" strip-column="column" all-columns="columns" strip-object="strip">
+                                </msb-strip-list-column>
+
+                                <msb-list-column ng-if="!isStrip" column-type="'image'" strip-column="column" all-columns="columns" strip-object="strip">
+                                </msb-list-column>
+
+
+                            </div>
+
+                            <div class="list-strip-item-lines height-100-percent width-100-percent" flex layout="column" layout-align="start center" style="padding:3px;">
+
+                                <div class="list-strip-item-lines-top width-100-percent" flex layout="row" layout-align="start center">
+
+                                    <div layout="column" layout-align="start center" flex ng-if="vm.template.rows.length" ng-style="{'min-width': vm.template.minRowWidth  + 'px'}" class="list-strip-item-lines-container height-100-percent">
+
+                                        <div class="list-strip-item-line1 width-100-percent" flex layout="row" layout-align="start center" ng-repeat="row in vm.template.rows">
+                                            <div ng-repeat="ln in row.columns" class="mr-10">
+                                                <div ng-repeat="column in columns" layout="row" ng-if="column.propertyCode === ln.colPropertyCode">
+
+
+                                                    <msb-strip-list-column ng-if="isStrip" strip-def="stripDef" column-type="'keyVal'" list-column="ln" , strip-column="column" all-columns="columns" strip-object="strip">
+                                                    </msb-strip-list-column>
+
+                                                    <msb-list-column ng-if="!isStrip" column-type="'keyVal'" strip-column="column" list-column="ln" , all-columns="columns" strip-object="strip">
+                                                    </msb-list-column>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="list-strip-item-tags  width-100-percent" ng-if="!vm.template.tagFullWidth && vm.template.tags.length" flex layout="row" layout-align="start center">
+
+                                            <div ng-repeat="ln in vm.template.tags">
+                                                <div ng-repeat="column in columns" ng-if="column.propertyCode === ln.colPropertyCode">
+
+                                                    <msb-strip-list-column ng-if="isStrip" strip-def="stripDef" column-type="'tag'" list-column="ln" , strip-column="column" all-columns="columns" strip-object="strip">
+                                                    </msb-strip-list-column>
+
+                                                    <msb-list-column ng-if="!isStrip" column-type="'tag'" strip-column="column" list-column="ln" , all-columns="columns" strip-object="strip">
+                                                    </msb-list-column>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="list-strip-item-cards height-100-percent" layout="row" layout-align="start center" ng-if="vm.template.cards.length">
+
+                                        <div class="card height-100-percent border mr-5" ng-repeat="card in vm.template.cards" layout="column" layout-align="start start" ng-style="{'width': card.width + 'px', 'min-width': card.width  + 'px', 'max-width': card.width  + 'px'}">
+
+                                            <div class="h-20 border-bottom pl-5 width-100-percent" ng-if="card.header">
+                                                {{card.header}}
+                                            </div>
+                                            <div ng-repeat="ln in card.columns" class="pl-5 width-100-percent" layout="column" layout-align="start center" flex>
+                                                <div ng-repeat="column in columns" flex class="width-100-percent" layout="row" ng-if="column.propertyCode === ln.colPropertyCode">
+
+                                                    <msb-strip-list-column ng-if="isStrip" strip-def="stripDef" column-type="'keyVal'" list-column="ln" , strip-column="column" all-columns="columns" strip-object="strip">
+                                                    </msb-strip-list-column>
+
+                                                    <msb-list-column ng-if="!isStrip" column-type="'keyVal'" strip-column="column" list-column="ln" , all-columns="columns" strip-object="strip">
+                                                    </msb-list-column>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+
+
+                                <div class="list-strip-item-lines-bottom width-100-percent" ng-if="vm.template.tagFullWidth && vm.template.tags.length" flex="25" layout="column" layout-align="start center">
+
+                                    <div class="list-strip-item-tags  width-100-percent" flex layout="row" layout-align="start center">
+
+                                        <div ng-repeat="ln in vm.template.tags">
+                                            <div ng-repeat="column in columns" ng-if="column.propertyCode === ln.colPropertyCode">
+
+                                                <msb-strip-list-column ng-if="isStrip" strip-def="stripDef" column-type="'tag'" list-column="ln" , strip-column="column" all-columns="columns" strip-object="strip">
+                                                </msb-strip-list-column>
+
+                                                <msb-list-column ng-if="!isStrip" column-type="'tag'" strip-column="column" list-column="ln" , all-columns="columns" strip-object="strip">
+                                                </msb-list-column>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                        </div>
+
+                        <div ng-if="vm.template.buttons" class="buttons pr-5" layout="row" layout-align="start center">
+
+                            <md-button ng-click="vm.listButtonClick(but, strip); vm.preventDefault($event)" aria-label="Toggle done" class="md-raised list-button" ng-repeat="but in vm.template.buttons">
+                                <span>{{but.text}}</span>
+                            </md-button>
+
+                        </div>
+
+                        <div ng-if="vm.template.iconButtons" class="buttons pr-5" layout="row" layout-align="start center">
+
+
+                            <md-button class="md-icon-button" aria-label="More" ng-repeat="but in vm.template.iconButtons">
+                                <md-icon md-font-icon="{{but.icon}}" ng-click="vm.listButtonClick(but, strip); vm.preventDefault($event)"></md-icon>
+                                <md-tooltip>{{but.text}}</md-tooltip>
+                            </md-button>
+
+                        </div>
+
+                        <div ng-if="vm.template.menus" class="buttons pr-5" layout="row" layout-align="start center">
+                            <md-menu>
+                                <md-button class="md-icon-button" aria-label="More" ng-click="$mdOpenMenu($event);  vm.preventDefault($event)">
+                                    <md-icon md-font-icon="icon-dots-vertical"></md-icon>
+                                </md-button>
+
+                                <md-menu-content width="4">
+                                    <md-menu-item ng-repeat="but in vm.template.menus">
+                                        <md-button ng-click="vm.listButtonClick(but, strip); vm.preventDefault($event)" aria-label="Toggle done">
+                                            <div layout="row" layout-align="space-between center">
+                                                <span flex>{{but.text}}</span>
+                                                <div>
+                                                    <md-icon ng-if="but.icon" md-font-icon="{{but.icon}}"></md-icon>
+                                                </div>
+                                            </div>
+                                        </md-button>
+                                    </md-menu-item>
+                                </md-menu-content>
+                            </md-menu>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </div>
+        </msb-expand-collapse>
+
+    </div>
+</div>

@@ -1,0 +1,175 @@
+<div layout="column" flex="100">
+    <div class="p-10 font-size-12">
+        <div layout="row" layout-align="center center" flex="100">
+            <div flex="100">
+
+                <div class="grey-100-bg h-30 pl-20 mb-10" layout="row" layout-align="space-between center">
+                    <div class="" layout="row" layout-align="start center">
+                        <div class="mr-20">Quantity : </div>
+                        <div class="description mr-100 intext">
+                            <span ng-if="vm.garmentQuantity" class="font-bold">{{vm.garmentQuantity}}</span>
+                        </div>
+                    </div>
+                    <div class="mr-50">
+                        <md-button ng-click="vm.showThreadComboConsumption()" class="cool-btn-sm">Combo Consumption</md-button>
+                    </div>
+                </div>
+
+                <!--Thread table -->
+
+                <div class="quantity-def-table">
+
+                    <div class="quantity-def-table-head" layout="row" layout-align="start center">
+
+                        <div class="w-150 border-left border-top grey-100-bg  border-bottom quantity-def-table-head-column" style="height: 40px;" layout="column" layout-align="center center">
+                            <span> Thread </span>
+                        </div>
+
+                        <div class="w-200 border-left border-top grey-100-bg  border-bottom quantity-def-table-head-column" style="height: 40px;" layout="column" layout-align="center center">
+                            <span> Description </span>
+                        </div>
+
+                        <div class="w-150 border-left border-top grey-100-bg  border-bottom quantity-def-table-head-column" style="height: 40px;" layout="column" layout-align="center center">
+                            <span> Color </span>
+                        </div>
+
+                        <div class="w-150 border-left border-top grey-100-bg  border-bottom quantity-def-table-head-column" style="height: 40px;" layout="row" layout-align="center center">
+                            <span> Count </span>
+                        </div>
+
+                        <div class="w-200 border-left border-right border-top grey-100-bg border-bottom quantity-def-table-head-column" style="height: 40px;" layout="column" layout-align="center center">
+                            <span> Total Consumption </span>
+                        </div>
+
+                        <div class="w-200 border-left border-right border-top grey-100-bg border-bottom quantity-def-table-head-column" style="height: 40px;" layout="column" layout-align="center center">
+                            <span> Unit </span>
+                        </div>
+
+                    </div>
+
+                    <div class="quantity-def-table-body" ng-if="vm.threadCons" layout="row" layout-align="start center" ng-repeat="cons in vm.threadCons">
+
+                        <div class="w-150 h-30 border-left border-bottom quantity-def-table-body-column" layout="column" layout-align="center center">
+                            <span> {{ cons.title }}</span>
+                        </div>
+
+                        <div class="w-200 h-30 border-left border-bottom quantity-def-table-body-column" layout="column" layout-align="center center">
+                            <span> {{cons.description}} </span>
+                        </div>
+
+                        <div class="w-150 h-30 border-left border-bottom quantity-def-table-head-column" style="height: 40px;" layout="row" layout-align="center center">
+                            <span> {{cons.color}} </span>
+                        </div>
+
+                        <div class="w-150 h-30 border-left border-bottom quantity-def-table-head-column" style="height: 40px;" layout="row" layout-align="center center">
+                            <span> {{cons.matSize}} </span>
+                        </div>
+
+                        <div class="w-200 h-30 border-left border-bottom quantity-def-table-head-column" layout="column" layout-align="center center">
+                            <span> {{cons.consumption}} </span>
+                        </div>
+
+                        <div class="w-200 h-30 border-right border-left border-bottom quantity-def-table-head-column" layout="column" layout-align="center center">
+                            <span> {{cons.TKDR_MEASUREMENT_UNIT}} </span>
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+                <!-- ETD -->
+
+                <div class="h-40 grey-50-bg p-10 mt-10 border-left border-right border-top border-bottom" layout="row" layout-align="space-between center">
+                    <div class="pl-10 font-size-16"> ETD Wise Thread Consumption </div>
+                </div>
+                <div class="quantity-def-table m-10 font-size-12">
+                    <div class="quantity-def-table-head" layout="row" layout-align="start center">
+
+                        <div class="w-150 border-left border-top grey-100-bg  border-bottom quantity-def-table-head-column" style="height: 40px;" layout="column" layout-align="center center">
+                            <span> Thread </span>
+                        </div>
+
+                        <div class="w-200 border-left border-top grey-100-bg  border-bottom quantity-def-table-head-column" style="height: 40px;" layout="column" layout-align="center center">
+                            <span> Description </span>
+                        </div>
+
+                        <div class="w-150 border-left border-top grey-100-bg  border-bottom quantity-def-table-head-column" style="height: 40px;" layout="column" layout-align="center center">
+                            <span> Color </span>
+                        </div>
+
+                        <div class="w-150 border-left border-top grey-100-bg  border-bottom quantity-def-table-head-column" style="height: 40px;" layout="row" layout-align="center center">
+                            <span> Count </span>
+                        </div>
+
+                        <div class="w-200 border-left border-right border-top grey-100-bg border-bottom quantity-def-table-head-column" style="height: 40px;" layout="column" layout-align="center center">
+                            <span> Total Consumption </span>
+                        </div>
+
+                        <div class="w-200 border-left border-right border-top grey-100-bg border-bottom quantity-def-table-head-column" style="height: 40px;" layout="column" layout-align="center center">
+                            <span> Unit </span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="quantity-def-table-head" layout="column" layout-align="center start" ng-if="vm.etdThreadCons && vm.etds" ng-repeat="etd in vm.etds">
+
+                        <div class="quantity-def-table-head" layout="column" layout-align="center start" ng-repeat="destination in etd.destinations">
+
+                            <div class="width: 100%" layout="row" layout-align="start center">
+                                <div class="w-350 border-left border-bottom grey-100-bg quantity-def-table-head-column" style="height: 42px;" layout="row" layout-align="space-between center">
+                                    <div class="ml-15"> ETD : {{etd.description}} </div>
+                                    <div class="ml-25"> Date : {{etd.date}} </div>
+                                </div>
+                                <div class="border-bottom w-300 grey-100-bg quantity-def-table-head-column" style="height: 42px;" layout="row" layout-align="start center">
+                                    <div class="ml-25"> Assort Quantity : {{etd.assortQuantity}} </div>
+                                </div>
+                                <div class="border-bottom w-200 grey-100-bg quantity-def-table-head-column" style="height: 42px;" layout="row" layout-align="start center">
+                                    &nbsp;
+                                </div>
+                                <div class="border-right border-bottom w-200 grey-100-bg quantity-def-table-head-column" style="height: 42px;" layout="row" layout-align="start center">
+                                    &nbsp;
+                                </div>
+                            </div>
+
+                            <div class="quantity-def-table-body" ng-if="vm.etdThreadCons" layout="row" layout-align="start center" ng-repeat="threadCons in vm.getEtdConsumptions(etd)">
+
+                                <div class="w-150 h-30 border-left border-bottom quantity-def-table-body-column" layout="column" layout-align="center center">
+                                    <span> {{ threadCons.title }}</span>
+                                </div>
+
+                                <div class="w-200 h-30 border-left border-bottom quantity-def-table-body-column" layout="column" layout-align="center center">
+                                    <span> {{ threadCons.description }}</span>
+                                </div>
+
+                                <div class="w-150 h-30 border-left border-bottom quantity-def-table-head-column" style="height: 40px;" layout="row" layout-align="center center">
+                                    <span> {{ threadCons.color }}</span>
+                                </div>
+
+                                <div class="w-150 h-30 border-left border-bottom quantity-def-table-head-column" style="height: 40px;" layout="row" layout-align="center center">
+                                    <span> {{ threadCons.matSize }}</span>
+                                </div>
+
+                                <div class="w-200 h-30 border-left border-right border-bottom quantity-def-table-head-column" layout="column" layout-align="center center">
+                                    <span> {{ threadCons.consumption }}</span>
+                                </div>
+
+                                <div class="w-200 h-30 border-left border-right border-bottom quantity-def-table-head-column" layout="column" layout-align="center center">
+                                    <span> {{threadCons.TKDR_MEASUREMENT_UNIT}} </span>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+                <!-- ETD -->
+
+            </div>
+            <div flex="30"></div>
+        </div>
+
+    </div>
+</div>

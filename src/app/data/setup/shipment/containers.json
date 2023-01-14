@@ -1,0 +1,202 @@
+{
+    "data": [
+        {
+            "TECHDISER_ID": "Conatiner_type_1",
+            "title": "20 ft dry shipping container",
+            "type": "container",
+            "height": 10,
+            "width": 10,
+            "length": 20,
+            "netWeight": 2000,
+            "grossWeight": 2100,
+            "loadCapacity": 133
+        },
+        {
+            "TECHDISER_ID": "Conatiner_type_2",
+            "title": "40 ft dry shipping container",
+            "type": "container",
+            "height": 10,
+            "width": 20,
+            "length": 40,
+            "netWeight": 2000,
+            "grossWeight": 2100,
+            "loadCapacity": 133
+        },
+        {
+            "TECHDISER_ID": "Conatiner_type_3",
+            "title": "40 ft dry high cube shipping container",
+            "type": "container",
+            "height": 42,
+            "width": 25,
+            "length": 40,
+            "netWeight": 2000,
+            "grossWeight": 2100,
+            "loadCapacity": 133
+        },
+        {
+            "TECHDISER_ID": "Conatiner_type_4",
+            "title": "45 ft dry high cube shipping container",
+            "type": "container",
+            "height": 45,
+            "width": 20,
+            "length": 40,
+            "netWeight": 2000,
+            "grossWeight": 2100,
+            "loadCapacity": 133
+        },
+        {
+            "TECHDISER_ID": "Conatiner_type_5",
+            "title": "20 ft flat rack shipping container",
+            "type": "container",
+            "height": 20,
+            "width": 20,
+            "length": 20,
+            "netWeight": 2000,
+            "grossWeight": 2100,
+            "loadCapacity": 133
+        },
+        {
+            "TECHDISER_ID": "Conatiner_type_6",
+            "title": "40 ft flat rack shipping container",
+            "type": "container",
+            "height": 20,
+            "width": 20,
+            "length": 40,
+            "netWeight": 2000,
+            "grossWeight": 2100,
+            "loadCapacity": 133
+        },
+        {
+            "TECHDISER_ID": "Conatiner_type_7",
+            "title": "20 ft refrigerated shipping container",
+            "type": "container",
+            "height": 20,
+            "width": 20,
+            "length": 40,
+            "netWeight": 2000,
+            "grossWeight": 2100,
+            "loadCapacity": 133
+        },
+        {
+            "TECHDISER_ID": "Conatiner_type_8",
+            "title": "40 ft refrigerated shipping container",
+            "type": "container",
+            "height": 20,
+            "width": 20,
+            "length": 40,
+            "netWeight": 2000,
+            "grossWeight": 2100,
+            "loadCapacity": 133
+        },
+        {
+            "TECHDISER_ID": "Conatiner_type_9",
+            "title": "20 ft tank shipping container",
+            "type": "container",
+            "height": 20,
+            "width": 20,
+            "length": 40,
+            "netWeight": 2000,
+            "grossWeight": 2100,
+            "loadCapacity": 133
+        },
+        {
+            "TECHDISER_ID": "Conatiner_type_10",
+            "title": "Full Stack Truck",
+            "type": "truck",
+            "height": 20,
+            "width": 20,
+            "length": 40,
+            "netWeight": 2000,
+            "grossWeight": 2100,
+            "loadCapacity": 133
+        },
+        {
+            "TECHDISER_ID": "Conatiner_type_11",
+            "title": "Half Stack Truck",
+            "type": "truck",
+            "height": 20,
+            "width": 20,
+            "length": 40,
+            "netWeight": 2000,
+            "grossWeight": 2100,
+            "loadCapacity": 133
+        },
+        {
+            "TECHDISER_ID": "Conatiner_type_12",
+            "title": "AMA Container",
+            "type": "aircraft",
+            "height": 20,
+            "width": 20,
+            "length": 40,
+            "netWeight": 2000,
+            "grossWeight": 2100,
+            "loadCapacity": 133
+        },
+        {
+            "TECHDISER_ID": "Conatiner_type_13",
+            "title": "AMU Container",
+            "type": "aircraft",
+            "height": 20,
+            "width": 20,
+            "length": 40,
+            "netWeight": 2000,
+            "grossWeight": 2100,
+            "loadCapacity": 133
+        },
+        {
+            "TECHDISER_ID": "Conatiner_type_14",
+            "title": "ALF Container",
+            "type": "aircraft",
+            "height": 20,
+            "width": 20,
+            "length": 40,
+            "netWeight": 2000,
+            "grossWeight": 2100,
+            "loadCapacity": 133
+        },
+        {
+            "TECHDISER_ID": "Conatiner_type_15",
+            "title": "AAU Container",
+            "type": "aircraft",
+            "height": 20,
+            "width": 20,
+            "length": 40,
+            "netWeight": 2000,
+            "grossWeight": 2100,
+            "loadCapacity": 133
+        },
+        {
+            "TECHDISER_ID": "Conatiner_type_16",
+            "title": "AAP Container",
+            "type": "aircraft",
+            "height": 20,
+            "width": 20,
+            "length": 40,
+            "netWeight": 2000,
+            "grossWeight": 2100,
+            "loadCapacity": 133
+        },
+        {
+            "TECHDISER_ID": "Conatiner_type_17",
+            "title": "AKE Container",
+            "type": "aircraft",
+            "height": 20,
+            "width": 20,
+            "length": 40,
+            "netWeight": 2000,
+            "grossWeight": 2100,
+            "loadCapacity": 133
+        },
+        {
+            "TECHDISER_ID": "Conatiner_type_18",
+            "title": "AVJ Container",
+            "type": "aircraft",
+            "height": 20,
+            "width": 20,
+            "length": 40,
+            "netWeight": 2000,
+            "grossWeight": 2100,
+            "loadCapacity": 133
+        }
+    ]
+}

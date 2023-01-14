@@ -1,0 +1,143 @@
+{
+    "data": [
+        {
+            "TECHDISER_ID": "user1",
+            "profileId": "AlexandraAlsopProfile",
+            "invitationId": "1",
+            "invitationStatus": 0,
+            "organizationId": "Organization_1",
+            "name": "Alexandra Alsop",
+            "isAdmin": true,
+            "email": "amiriindustries@gmail.com",
+            "phoneNumber": "786-2203",
+            "designation": "IE Manager",
+            "deleted": false,
+            "important": false,
+            "starred": false,
+            "preview": "assets/images/avatars/Copeland.jpg",
+            "roleId": "MarketingLevel1Post2",
+            "additionalRoleIds": [
+                "DepartmentTeam2",
+                "DepartmentTeam1"
+            ],
+            "forumIds": [
+                "forum1",
+                "forum2"
+            ],
+            "specialPermissions": [
+                {
+                    "TECHDISER_ID": "user1_Sp_Activity_1_type_1",
+                    "activityId": "Activity_37",
+                    "type": 2
+                },
+                {
+                    "TECHDISER_ID": "user1_Sp_Activity_1_type_2",
+                    "activityId": "Activity_38",
+                    "type": 4
+                }
+            ],
+            "denyPermissions": [
+                {
+                    "TECHDISER_ID": "user1_Deny_Activity_1_type_1",
+                    "activityId": "Activity_17",
+                    "type": 1
+                },
+                {
+                    "TECHDISER_ID": "user1_Deny_Activity_1_type_2",
+                    "activityId": "Activity_38",
+                    "type": 1
+                }
+            ],
+            "revokedRoleIds": [],
+            "permissionSet": []
+        },
+        {
+            "TECHDISER_ID": "user2",
+            "invitationId": "2",
+            "organizationId": "Organization_1",
+            "name": "Amelia Joe",
+            "email": "bugmenot@gmail.com",
+            "phoneNumber": "656-6787",
+            "designation": "Merchandiser",
+            "deleted": false,
+            "important": false,
+            "starred": false,
+            "preview": "assets/images/avatars/Barrera.jpg",
+            "roleId": "card1",
+            "additionalRoleIds": [
+                "card1",
+                "DepartmentTeam1"
+            ],
+            "forumIds": [],
+            "specialPermissions": [],
+            "denyPermissions": [],
+            "permissionSet": []
+        },
+        {
+            "TECHDISER_ID": "user3",
+            "invitationId": "3",
+            "organizationId": "Organization_1",
+            "name": "Carolyn Luke",
+            "email": "courrieltemporaire@hotmail.com",
+            "phoneNumber": "969-9787",
+            "designation": "Merchandiser",
+            "deleted": false,
+            "important": false,
+            "starred": false,
+            "preview": "assets/images/avatars/Tillman.jpg",
+            "roleId": "card1",
+            "additionalRoleIds": [
+                "card1",
+                "DepartmentTeam1"
+            ],
+            "forumIds": [],
+            "specialPermissions": [],
+            "denyPermissions": [],
+            "permissionSet": []
+        },
+        {
+            "TECHDISER_ID": "user4",
+            "invitationId": "",
+            "organizationId": "0363.ssss3e688886e9492.4d71bc74f9ea6.93a22ca1971ca.f2b8c820b9e76.50740bd55f51e.5d945f769",
+            "name": "Diane Jonathan",
+            "email": "digitalsanctuary@yahoo.com",
+            "phoneNumber": "996-6743",
+            "designation": "Merchandiser",
+            "deleted": false,
+            "important": false,
+            "starred": false,
+            "preview": "assets/images/avatars/joyce.jpg",
+            "roleId": "card1",
+            "additionalRoleIds": [
+                "card1",
+                "DepartmentTeam1"
+            ],
+            "forumIds": [],
+            "specialPermissions": [],
+            "denyPermissions": [],
+            "permissionSet": []
+        },
+        {
+            "TECHDISER_ID": "user5",
+            "invitationId": "",
+            "organizationId": "0363.ssss3e688886e9492.4d71bc74f9ea6.93a22ca1971ca.f2b8c820b9e76.50740bd55f51e.5d945f769",
+            "name": "Katherine Kevin",
+            "email": "kasmail@live.com",
+            "phoneNumber": "451-9593",
+            "designation": "IE Manager",
+            "deleted": false,
+            "important": false,
+            "starred": false,
+            "preview": "assets/images/avatars/Mai.jpg",
+            "roleId": "card1",
+            "additionalRoleIds": [
+                "card1",
+                "DepartmentTeam1"
+            ],
+            "forumIds": [],
+            "specialPermissions": [],
+            "denyPermissions": [],
+            "permissionSet": []
+        }
+    ]
+}

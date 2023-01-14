@@ -1,0 +1,134 @@
+<div class="tdGrid" ng-if="vm.dataReady">
+    <table class="dataTable row-border hover" datatable="ng" dt-instance="vm.dtInstance" width="100%" dt-options="vm.dtOptions">
+        <thead>
+            <tr>
+                <th class="secondary-text border" ng-repeat="column in vm.columns
+                              | filter: vm.itemFilter" ng-class="{'w-30': column.type === 'button' || column.type === 'index',
+                                'type-register':  column.type === 'register' || column.type === 'group'}">
+                    <div class="table-header" layout="row" layout-align="space-between center">
+                        <span flex class="column-title">
+                            {{column.displayTitle || column.title}}
+                        </span>
+                    </div>
+
+                    <span ng-if="column.type === 'register'">
+                        <td-inner-header dir-type="'table-header'" register-id="column.registerId" column="column">
+                        </td-inner-header>
+                    </span>
+
+                    <span ng-if="column.type === 'group'">
+                        <td-inner-header dir-type="'group-header'" columns="vm.allColumns" column="column">
+                        </td-inner-header>
+                    </span>
+                </th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="row in tableData | filter: vm.itemFilter" ng-click="vm.onRowClick(row)" ng-init="rowIndex = $index">
+
+                <td class="border-right" ng-class="{'w-30': column.type === 'button',
+                                'type-register':  column.type === 'register'}" ng-repeat="column in vm.columns | filter: vm.itemFilter">
+
+                    <span ng-if="column.type === 'image'">
+                        <span ng-repeat="step in row[column.data]">
+                            <img class="avatar" ng-src="{{step.data}}" />
+                        </span>
+                    </span>
+
+                    <span ng-if="column.type === 'attachment'">
+                        <span ng-if="row[column.data].length > 1">
+                            {{row[column.data].length}} Attachments
+                        </span>
+                        <span ng-if="row[column.data].length <= 1">
+                            {{row[column.data].length}} Attachment
+                        </span>
+                    </span>
+
+
+                    <span ng-if="column.type === 'html'" ng-bind-html="row[column.data] | unsafeHtml">
+                    </span>
+
+                    <span ng-if="column.type === 'trueFalse'">
+                        <button class="md-icon-button md-accent 
+                                       md-button md-default-theme md-ink-ripple" type="button" aria-label="reminder" ng-click="vm.shoHideForm('notes')">
+
+                            <md-icon ng-if="!row[column.data]" md-font-icon="icon-checkbox-blank-outline" class="icon"></md-icon>
+                            <md-icon ng-if="row[column.data]" md-font-icon="icon-checkbox-marked-outline" class="icon"></md-icon>
+
+                        </button>
+                    </span>
+
+                    <span ng-if="column.type === 'register'">
+                        <!-- <span class="link-div" 
+                                        ng-if="column.displayType !== 'all'" 
+                                        ng-click="vm.preventDefault($event); 
+                                        vm.showRegister(row, column)">
+                                       {{vm.getValue(row, column, rowIndex, tableData)}}      
+                                    </span>  -->
+
+                        <td-inner-table dir-type="'table'" register-id="column.registerId" row-id="row[vm.primaryColumnName]" column="column">
+                        </td-inner-table>
+                    </span>
+
+                    <span ng-if="column.type === 'group'">
+                        <td-inner-table dir-type="'group'" columns="vm.allColumns" item="row" column="column">
+                        </td-inner-table>
+                    </span>
+
+                    <!-- <span ng-if="column.type === 'link'"> 
+                                  <span class="link-div">
+                                       <a href="http://www.w3schools.com" target="_blank">Visit W3Schools</a>
+                                  </span> 
+                                </span>  -->
+
+                    <span ng-if="column.type === 'button'">
+                        <md-menu>
+                            <md-icon md-font-icon="icon-dots-vertical" aria-label="More" ng-click="$mdOpenMenu($event)">
+                            </md-icon>
+
+                            <md-menu-content width="3">
+                                <md-menu-item>
+                                    <md-button aria-label="T" ng-click="vm.onDetail(row)">
+                                        <span> Detail</span>
+                                    </md-button>
+                                </md-menu-item>
+
+                                <md-menu-item>
+                                    <md-button aria-label="T" ng-click="vm.onDelete(row)">
+                                        <span> Delete</span>
+                                    </md-button>
+                                </md-menu-item>
+
+                            </md-menu-content>
+                        </md-menu>
+
+                    </span>
+
+
+                    <span ng-if="column.type !== 'button' &&  column.type !== 'image' && 
+                                  column.type !== 'html' && column.type !== 'trueFalse'
+                                  && column.type !== 'register' && column.type !== 'link'
+                                  && column.type !== 'attachment' && column.type !== 'group'">
+                        {{vm.getValue(row, column, rowIndex, tableData)}}
+                    </span>
+
+                </td>
+
+            </tr>
+
+        </tbody>
+        <!-- <tfoot >
+                      <tr>
+                            <th class="secondary-text border" ng-repeat= "column in gridData.columns">
+                                    <span flex class="column-title">{{vm.getFootterData()}}</span>
+                            </th>                            
+                        </tr>
+                        
+                    </tfoot> -->
+    </table>
+
+    <md-button class="md-fab md-accent md-icon-button" id="add-grid-item-button" ng-if="isInner" ng-click="vm.onRowClick()" aria-label="add task">
+        <md-icon md-font-icon="icon-plus"></md-icon>
+    </md-button>
+</div>

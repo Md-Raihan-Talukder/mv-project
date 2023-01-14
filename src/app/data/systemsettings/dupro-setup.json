@@ -1,0 +1,147 @@
+{
+    "data": [
+        {
+            "TECHDISER_ID": "Dupro_Setup",
+            "duproInspections": [
+                {
+                    "TECHDISER_ID": "Dupro_Inspection_1",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "title": "Dupro Inspection 1",
+                    "code": "DuproInspection1",
+                    "description": "Dupro Inspection description 1",
+                    "catalogId": "Catalog_Woven",
+                    "jobId": "SupplyDefinitionMaterialCategory6|Catalog_Woven",
+                    "processId": null,
+                    "time": "11:00 AM",
+                    "hourlyFrequency": 10,
+                    "isOnlyJob": "1",
+                    "$$hashKey": "object:2604"
+                },
+                {
+                    "TECHDISER_ID": "Dupro_Inspection_2",
+                    "TECHDISER_SERIAL_NO": 2,
+                    "title": "Dupro Inspection 2",
+                    "code": "DuproInspection2",
+                    "description": "Dupro Inspection description 2",
+                    "catalogId": "Catalog_Woven",
+                    "jobId": "SupplyDefinitionMaterialCategory7|Catalog_Woven",
+                    "processId": null,
+                    "time": "11:00 AM",
+                    "hourlyFrequency": 6,
+                    "isOnlyJob": 1,
+                    "$$hashKey": "object:2198"
+                },
+                {
+                    "TECHDISER_ID": "Dupro_Inspection_3",
+                    "TECHDISER_SERIAL_NO": 3,
+                    "title": "Dupro Inspection 3",
+                    "code": "DuproInspection3",
+                    "description": "Dupro Inspection description 3",
+                    "catalogId": "Catalog_Woven",
+                    "jobId": "SupplyDefinitionMaterialCategory6|Catalog_Woven",
+                    "processId": "Woven_Print_Op_Brkdwn_2",
+                    "time": "11:00 AM",
+                    "hourlyFrequency": 7,
+                    "isOnlyJob": 0,
+                    "$$hashKey": "object:2199"
+                },
+                {
+                    "TECHDISER_ID": "Dupro_Inspection_4",
+                    "TECHDISER_SERIAL_NO": 4,
+                    "title": "Dupro Inspection 4",
+                    "code": "DuproInspection4",
+                    "description": "Dupro Inspection description 4",
+                    "catalogId": "Catalog_Woven",
+                    "jobId": "SupplyDefinitionMaterialCategory6|Catalog_Woven",
+                    "processId": "Woven_Print_Op_Brkdwn_3",
+                    "time": "11:00 AM",
+                    "hourlyFrequency": 5,
+                    "isOnlyJob": 0,
+                    "$$hashKey": "object:2200"
+                },
+                {
+                    "TECHDISER_ID": "Dupro_Inspection_5",
+                    "TECHDISER_SERIAL_NO": 5,
+                    "title": "Dupro Inspection 5",
+                    "code": "DuproInspection5",
+                    "description": "Dupro Inspection description 5",
+                    "catalogId": "Catalog_Woven",
+                    "jobId": "SupplyDefinitionMaterialCategory6|Catalog_Woven",
+                    "processId": "Woven_Print_Op_Brkdwn_4",
+                    "time": "11:00 AM",
+                    "hourlyFrequency": 3,
+                    "isOnlyJob": 0,
+                    "$$hashKey": "object:2201"
+                }
+            ],
+            "duproQualityControls": [
+                {
+                    "TECHDISER_ID": "Dupro_QC_1",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "title": "Dupro QC 1",
+                    "code": "DuproQC1",
+                    "description": "Dupro QC description 1",
+                    "catalogId": "Catalog_Woven",
+                    "jobId": "SupplyDefinitionMaterialCategory6|Catalog_Woven",
+                    "processId": null,
+                    "time": "11:00 AM",
+                    "hourlyFrequency": 3,
+                    "isOnlyJob": 1
+                },
+                {
+                    "TECHDISER_ID": "Dupro_QC_2",
+                    "TECHDISER_SERIAL_NO": 2,
+                    "title": "Dupro QC 2",
+                    "code": "DuproQC2",
+                    "description": "Dupro QC description 2",
+                    "catalogId": "Catalog_Woven",
+                    "jobId": "SupplyDefinitionMaterialCategory7|Catalog_Woven",
+                    "processId": null,
+                    "time": "11:00 AM",
+                    "hourlyFrequency": 5,
+                    "isOnlyJob": 1
+                },
+                {
+                    "TECHDISER_ID": "Dupro_QC_3",
+                    "TECHDISER_SERIAL_NO": 3,
+                    "title": "Dupro QC 3",
+                    "code": "DuproQC3",
+                    "description": "Dupro QC description 3",
+                    "catalogId": "Catalog_Woven",
+                    "jobId": "SupplyDefinitionMaterialCategory6|Catalog_Woven",
+                    "processId": "Woven_Print_Op_Brkdwn_2",
+                    "time": "11:00 AM",
+                    "hourlyFrequency": 7,
+                    "isOnlyJob": 0
+                },
+                {
+                    "TECHDISER_ID": "Dupro_QC_4",
+                    "TECHDISER_SERIAL_NO": 4,
+                    "title": "Dupro QC 4",
+                    "code": "DuproQC4",
+                    "description": "Dupro QC description 4",
+                    "catalogId": "Catalog_Woven",
+                    "jobId": "SupplyDefinitionMaterialCategory6|Catalog_Woven",
+                    "processId": "Woven_Print_Op_Brkdwn_3",
+                    "time": "11:00 AM",
+                    "hourlyFrequency": 6,
+                    "isOnlyJob": 0
+                },
+                {
+                    "TECHDISER_ID": "Dupro_QC_5",
+                    "TECHDISER_SERIAL_NO": 5,
+                    "title": "Dupro QC 5",
+                    "code": "DuproQC5",
+                    "description": "Dupro QC description 5",
+                    "catalogId": "Catalog_Woven",
+                    "jobId": "SupplyDefinitionMaterialCategory6|Catalog_Woven",
+                    "processId": null,
+                    "time": "11:00 AM",
+                    "hourlyFrequency": 10,
+                    "isOnlyJob": "1",
+                    "$$hashKey": "object:2862"
+                }
+            ]
+        }
+    ]
+}

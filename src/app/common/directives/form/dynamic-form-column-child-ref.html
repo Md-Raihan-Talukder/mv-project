@@ -1,0 +1,22 @@
+<div layout="row" layout-align="start center">
+
+
+    <div layout="column" ng-repeat="listItem in vm.data" layout-align="start top" class="p-10">
+
+        <div class="ml-5 mr-10" ng-if="vm.getImageColumn(col)">
+            <img ng-src="{{listItem[vm.getImageColumn(col)]}}" style=" max-height: 100px;" />
+        </div>
+
+
+        <div layout="row" layout-align="start center" layout-wrap>
+            <div class="mr-25" ng-if="refCol.type !== 'iconPicture'" ng-repeat="refCol in col.refferenceColumns">
+
+                <span>{{refCol.label}}:</span>
+                <span class="ml-5 text-bold">
+                    {{listItem[refCol.key]}}</span>
+
+            </div>
+        </div>
+
+    </div>
+</div>

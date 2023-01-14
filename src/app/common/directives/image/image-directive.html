@@ -1,0 +1,47 @@
+<div class="border-bottom pr-15 pv-15 image-uploader" layout='row' layout-align="space-between center">
+
+    <span>{{imageTitle}}</span>
+
+    <div class="btn-file" aria-label="Choose Image">
+        <u style="color: rgb(3,155,229); font-weight: bold;">Select Image</u>
+        <input type='file' ng-model-instant onchange="angular.element(this).scope().imageUpload(this)" />
+    </div>
+</div>
+
+<div class="image-uploader" style="position: relative;" layout="row" layout-align="start center" layout-wrap flex ng-if="!doNotShow">
+
+
+    <ms-widget flippable="true" ng-repeat="item in itemList" ng-if="selectionType !== 'single'">
+        <ms-widget-front class="white-bg" ng-mouseover="item.hover = true" ng-mouseleave="item.hover = false">
+
+            <div layout="row" ng-show="item.hover" layout-align="start center" class="image-buttons">
+                <md-icon md-font-icon="icon-arrow-expand" class="icon expand-button" ng-click="vm.expandImage(item); $event.stopPropagation();"></md-icon>
+
+                <md-icon md-font-icon="icon-close-circle" class="icon close-button" ng-click="vm.removeImage(item)"></md-icon>
+
+            </div>
+
+
+            <img class="h-{{vm.getSize(item, 'h')}} w-{{vm.getSize(item, 'w')}}" ng-src="{{item.data}}" />
+        </ms-widget-front>
+    </ms-widget>
+
+
+    <ms-widget flippable="true" ng-if="selectionType === 'single' && imageObject.data">
+        <ms-widget-front class="white-bg" ng-mouseover="imageObject.hover = true" ng-mouseleave="imageObject.hover = false">
+
+            <div layout="row" ng-show="imageObject.hover" layout-align="start center" class="image-buttons">
+                <md-icon md-font-icon="icon-arrow-expand" class="icon expand-button" ng-click="vm.expandImage(imageObject); $event.stopPropagation();"></md-icon>
+
+                <md-icon md-font-icon="icon-close-circle" class="icon close-button" ng-click="vm.removeImage(imageObject)"></md-icon>
+
+            </div>
+
+
+            <img class="h-{{vm.getSize(imageObject, 'h')}} w-{{vm.getSize(imageObject, 'w')}}" ng-src="{{imageObject.data}}" />
+        </ms-widget-front>
+    </ms-widget>
+
+
+
+</div>

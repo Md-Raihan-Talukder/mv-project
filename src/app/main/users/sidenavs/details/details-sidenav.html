@@ -1,0 +1,43 @@
+<div class="header md-accent-bg" layout="column" layout-align="space-between">
+    <div>
+        <div class="title">{{vm.selected.name}}</div>
+        <div class="subtitle secondary-text"><span>Designation</span>: {{vm.selected.designation}}</div>
+    </div>
+</div>
+
+<md-content class="content" flex ms-scroll>
+
+    <div class="user-details">
+        <div layout="row" layout-align="center center">
+            <img ng-src="{{vm.selected.preview}}">
+        </div>
+
+        <md-divider></md-divider>
+
+        <table>
+            <tr class="email">
+                <th>Email</th>
+                <td>{{vm.selected.email}}</td>
+            </tr>
+
+            <tr class="phonenumber">
+                <th>Phone Number</th>
+                <td>{{vm.selected.phoneNumber}}</td>
+            </tr>
+
+            <tr class="groups">
+                <th>Groups</th>
+                <td>
+                    <div ng-repeat="group in vm.selected.groups">{{group.name}}</div>
+                </td>
+            </tr>
+
+            <tr class="role">
+                <th>Role</th>
+                <td>{{vm.selected.role.title}}</td>
+            </tr>
+
+        </table>
+    </div>
+
+</md-content>

@@ -1,0 +1,87 @@
+.pdf-template {
+  &.page-layout.simple.fullwidth {
+    /*
+        min-height: none; 
+        height: auto; */
+
+    .header {
+      height: 50px !important;
+      min-height: 50px !important;
+      max-height: 50px !important;
+      padding: 8px !important;
+
+      .template-header-buttons {
+        position: absolute;
+        right: 10px;
+        top: 5px;
+        .md-button {
+          line-height: 26px;
+          min-height: 26px;
+        }
+      }
+    }
+
+    .todo-item {
+      position: relative;
+      padding: 5px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+      text-transform: none;
+      cursor: pointer;
+
+      &.todo-item-placeholder {
+        background: rgba(0, 0, 0, 0.12);
+        * {
+          opacity: 0;
+        }
+      }
+    }
+  }
+}
+
+md-dialog {
+  &.column-setup-dialog {
+    md-dialog-content {
+      padding: 0;
+    }
+  }
+
+  &.column-setup-dialog,
+  &.page-setup-dialog {
+    width: 90%;
+    max-width: 800px;
+
+    md-dialog-content {
+      display: block;
+      position: relative;
+      min-height: 300px;
+
+      .todo-item {
+        position: relative;
+        padding: 5px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        text-transform: none;
+        cursor: pointer;
+
+        &.todo-item-placeholder {
+          background: rgba(0, 0, 0, 0.12);
+          * {
+            opacity: 0;
+          }
+        }
+      }
+    }
+
+    md-toolbar {
+      .title {
+        font-size: 17px;
+      }
+    }
+
+    md-dialog-actions {
+      position: relative;
+      justify-content: space-between;
+      border-top: 1px solid rgba(0, 0, 0, 0.12);
+      background-color: rgba(0, 0, 0, 0.03);
+    }
+  }
+}

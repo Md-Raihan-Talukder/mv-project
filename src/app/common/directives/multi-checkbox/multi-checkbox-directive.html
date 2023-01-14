@@ -1,0 +1,7 @@
+<div class="msb-multi-checkbox-container" flex="100" layout="column" layout-align="start center">
+    <div class="msb-multi-checkbox" flex="100" ng-repeat="item in selectItems">
+        <md-checkbox ng-checked="exists(item, selectedIds)" ng-click="toggle(item, selectedIds)">
+            {{ item[valueProperty] }}
+        </md-checkbox>
+    </div>
+</div>

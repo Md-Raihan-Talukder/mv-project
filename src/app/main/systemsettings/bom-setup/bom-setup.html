@@ -1,0 +1,30 @@
+<div class="h-55 grey-300-bg b" layout="row" layout-align="start center">
+    <div class="p-10 font-size-16 text-bold grey-700-fg w-300">
+        Material Group
+    </div>
+    <div class="mr-20">
+        <md-input-container md-no-float class="md-block">
+            <input ng-model="vm.groupTitle" placeholder="Title">
+        </md-input-container>
+    </div>
+    <div class="mr-20">
+        <md-button ng-click="vm.addGroup()" class="b grey-100-bg" style="border-color: #009999;">
+            Add
+        </md-button>
+    </div>
+    <div class="">
+        <md-button ng-click="vm.save()" class="b grey-100-bg" style="border-color: #009999;">
+            save
+        </md-button>
+    </div>
+</div>
+<div class="todo-items" ng-class="{'sortable': vm.taskOrder === ''}" ng-sortable="vm.sortableOptions" ng-model="vm.thread">
+    <div class="border p-10 h-55 font-size-14" layout="row" layout-align="start center" flex="100" ng-click="vm.selectPhase(phase)" ng-repeat="matGroup in vm.materialGroups" ng-class="{'selected-milestone' : vm.selectedPhase === phase}">
+        <div class="handle w-40" flex="5">
+            <md-icon md-font-icon="icon-drag-vertical" class="icon"></md-icon>
+        </div>
+        <div class="" flex="25">
+            {{matGroup.title}}
+        </div>
+    </div>
+</div>

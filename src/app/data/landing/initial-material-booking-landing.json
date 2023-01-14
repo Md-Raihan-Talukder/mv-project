@@ -1,0 +1,75 @@
+{
+    "data": [
+        {
+            "TECHDISER_ID": "initial-material-booking1",
+            "title": "Material Booking List",
+            "menuId": "initial-material-booking1",
+            "pageTitle": "Material Booking List",
+            "leftSlider": {
+                "selectedFilters": {},
+                "filters": [
+                    {
+                        "id": "status",
+                        "title": "Status",
+                        "type": "keyValue",
+                        "key": "key",
+                        "value": "value",
+                        "comparisonKey": "isActive",
+                        "multiSelect": false,
+                        "items": [
+                            {
+                                "key": true,
+                                "value": "Active",
+                                "icon": "icon-calendar-clock"
+                            },
+                            {
+                                "key": false,
+                                "value": "Inactive",
+                                "icon": "icon-thumb-up-outline"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "mainList": {
+                "type": "strip",
+                "minWidth": "500px",
+                "stripDef": {
+                    "id": "mainList",
+                    "title": "PO",
+                    "type": "card",
+                    "rowHeight": 50,
+                    "stripCode": "material_booking_list",
+                    "taskId": "material_booking_list",
+                    "parameters": null,
+                    "selectable": true,
+                    "addButton": true,
+                    "addOption": {
+                        "type": "service",
+                        "serviceName": "materialBookingService",
+                        "functionName": "addNewBooking"
+                    }
+                }
+            },
+            "componentsWidth": 1000,
+            "componentTabs": [
+                {
+                    "title": "Basic",
+                    "components": [
+                        {
+                            "flex": 100
+                        }
+                    ]
+                },
+                {
+                    "title": "ETAs",
+                    "components": [
+                        {
+                            "flex": 100
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,28 @@
+<div class="common-detail-save-prev-next-button" layout="row" layout-align="start center">
+    <md-button class="common-detail-save-button md-raised" ng-class="{'unsaved-state':  unSaveState}" ng-click="vm.onSave()" aria-label="SAVE">
+        save
+    </md-button>
+
+    <div layout="row" layout-align="start center" class="ml-20 white-fg font-weight-900 cursor-pointer" ng-click="vm.updateSaveAnd()">
+        <md-button class="md-icon-button" aria-label="Toggle">
+            <md-icon ng-if="!vm.saveAnd" md-font-icon="icon-checkbox-blank-outline" class="icon"></md-icon>
+
+            <md-icon ng-if="vm.saveAnd" md-font-icon="icon-checkbox-marked-outline" class="icon"></md-icon>
+
+        </md-button>
+        <span> Save and Go </span>
+
+    </div>
+
+    <div class="next-prev-buttons ml-10 white-fg">
+        <md-button class="md-icon-button" aria-label="next" ng-click="vm.gotoDir('prev')">
+            <md-icon md-font-icon="icon-arrow-left-bold" class="icon"></md-icon>
+        </md-button>
+        <md-button class="md-icon-button" aria-label="next" ng-click="vm.gotoDir('next')">
+            <md-icon md-font-icon="icon-arrow-right-bold" class="icon"></md-icon>
+
+        </md-button>
+
+    </div>
+
+</div>

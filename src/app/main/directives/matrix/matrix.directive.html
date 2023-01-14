@@ -1,0 +1,23 @@
+<div layout="row" class="w-1200" layout-align="left center" layout-wrap>
+    <div ng-repeat="infrmtn in accordion.titleDirective.items">
+        <md-card ng-if='infrmtn.type=="matrix"'>
+            <table border='1' width='230px;'>
+                <tr ng-repeat="row in infrmtn.info">
+                    <td ng-repeat="infrmtnCol in row.columns">
+                        <label ng-if="infrmtnCol.type=='label'">{{infrmtnCol.data}}</label>
+                        <input ng-if="infrmtnCol.type=='text'" type="text" value="{{infrmtnCol.data}}" />
+                    </td>
+                </tr>
+            </table>
+        </md-card>
+        <table ng-if='infrmtn.type=="totalDays"' border='0' width='200px;'>
+            <tr>
+                <td rowspan='2'>=</td>
+                <td>{{infrmtn.label}}</td>
+            </tr>
+            <tr>
+                <td>{{infrmtn.data}}</td>
+            </tr>
+        </table>
+    </div>
+</div>

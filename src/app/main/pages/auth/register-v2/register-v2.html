@@ -1,0 +1,158 @@
+<div id="register-v2" layout="row" layout-align="start">
+    <div id="register-v2-intro" flex hide show-gt-sm>
+        <div class="logo md-accent-bg">
+            <span>TD</span>
+        </div>
+        <div class="title">
+            Welcome to the TechDiser!
+        </div>
+        <div class="description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ullamcorper nisl erat,
+            vel convallis elit fermentum pellentesque. Sed mollis velit facilisis facilisis viverra.
+        </div>
+    </div>
+
+    <div id="register-v2-form-wrapper" class="flex-scrollable md-whiteframe-8dp" layout="column" flex ms-scroll>
+        <div id="register-v2-form">
+            <div class="logo md-accent-bg" hide-gt-sm>
+                <span>TD</span>
+            </div>
+
+            <div class="title">Create an account</div>
+            <div class="description">Sed mollis velit facilisis facilisis viverra
+            </div>
+
+            <form name="registerForm" novalidate ng-show="!vm.emailSend">
+                <md-input-container class="md-block" md-no-float>
+                    <label>Name</label>
+                    <input name="username" ng-model="vm.registerInfo.name" required>
+                    <div ng-messages="registerForm.username.$error" role="alert">
+                        <div ng-message="required">
+                            <span>Username field is required</span>
+                        </div>
+                    </div>
+                </md-input-container>
+
+                <md-input-container class="md-block" md-no-float>
+                    <label>Email</label>
+                    <input type="email" name="email" ng-model="vm.registerInfo.email" ng-pattern="/^.+@.+\..+$/" required>
+                    <div ng-messages="registerForm.email.$error" role="alert" multiple>
+                        <div ng-message="required">
+                            <span>Email field is required</span>
+                        </div>
+                        <div ng-message="pattern">
+                            <span>Email must be a valid e-mail address</span>
+                        </div>
+                    </div>
+                </md-input-container>
+
+                <md-input-container class="md-block" md-no-float>
+                    <label>Mobile number</label>
+                    <input name="usermobile" ng-model="vm.registerInfo.mobile" required>
+                    <div ng-messages="registerForm.usermobile.$error" role="alert">
+                        <div ng-message="required">
+                            <span>Mobile number field is required</span>
+                        </div>
+                    </div>
+                </md-input-container>
+
+                <md-input-container class="md-block" md-no-float>
+                    <label>Register as</label>
+                    <md-select name="registeras" class="seleect-register-as" ng-model="vm.registerInfo.registerAs" required>
+                        <md-option ng-repeat="item in vm.registerAs" value="{{item.key}}">{{item.value}}</md-option>
+                    </md-select>
+                    <div ng-messages="registerForm.registeras.$error" role="alert">
+                        <div ng-message="required">
+                            <span>Register as field is required</span>
+                        </div>
+                    </div>
+
+                </md-input-container>
+
+
+                <md-input-container class="md-block" md-no-float>
+                    <label>Password</label>
+                    <input type="password" name="password" ng-model="vm.registerInfo.password" required>
+                    <div ng-messages="registerForm.password.$error" role="alert">
+                        <div ng-message="required">
+                            <span>Password field is required</span>
+                        </div>
+                    </div>
+                </md-input-container>
+
+                <md-input-container class="md-block" md-no-float>
+                    <label>Password (Confirm)</label>
+                    <input type="password" name="passwordConfirm" ng-model="vm.registerInfo.passwordConfirm" compare-to="vm.registerInfo.password" required>
+                    <div ng-messages="registerForm.passwordConfirm.$error" role="alert" md-auto-hide="false">
+                        <div ng-message="required" ng-if='registerForm.passwordConfirm.$touched'>
+                            <span>Password (Confirm) field is required</span>
+                        </div>
+
+                        <div ng-message="compareTo" ng-if='registerForm.passwordConfirm.$touched'>
+                            <span>Password doesnot match</span>
+                        </div>
+
+                    </div>
+                </md-input-container>
+
+                <div class="terms" layout="row" layout-align="center center">
+                    <md-checkbox name="terms" ng-model="vm.isAgree" aria-label="I read and accept" required><span>I read and accept</span></md-checkbox>
+                    <div layout="row" layout-sm="column" layout-align="start center">
+                        <a ng-click="vm.showTearmsAndConditions()" class="md-accent-color">terms and conditions</a>
+                    </div>
+                </div>
+
+                <md-button type="submit" class="md-raised md-accent submit-button" aria-label="CREATE MY ACCOUNT" ng-disabled="registerForm.$invalid || registerForm.$pristine" ng-click="vm.registerUser()">
+                    CREATE MY ACCOUNT
+                </md-button>
+            </form>
+            <div ng-show="vm.emailSend">
+                <form name="registerConfirmForm" novalidate>
+                    <div class="description">
+                        Please put the code into following textbox and click <b>CONFIRM MY ACCOUNT</b> button.
+                    </div>
+                    <md-input-container class="md-block" md-no-float>
+                        <label>Confirmation code</label>
+                        <input name="confirmRegister" ng-model="vm.form.confirmRegister" required>
+                        <div ng-messages="registerConfirmForm.confirmRegister.$error" role="alert">
+                            <div ng-message="required">
+                                <span>Confirmation code field is required</span>
+                            </div>
+                        </div>
+                    </md-input-container>
+
+                    <md-button class="md-raised md-accent submit-button" aria-label="CONFIRM MY ACCOUNT" ng-disabled="registerConfirmForm.$invalid || registerConfirmForm.$pristine" ng-click="vm.confirmRegister()">
+                        CONFIRM MY ACCOUNT
+                    </md-button>
+
+                    <a class="link lnk-resend-code" ng-click="vm.showResendCodeBlock()">Resend code</a>
+
+                </form>
+                <form ng-show="vm.codeNotFound" id="registerConfirmFormResendCode" name="registerConfirmFormResendCode" novalidate>
+                    <div class="description">
+                        If you didnot recieve any code please seleect your preference and click <b>SEND AGAIN</b> button.
+                    </div>
+
+                    <div class="terms" layout="row" layout-align="start center">
+                        <md-checkbox name="chk-send-again" value="mobile" ng-model="vm.sendCodeToMobile" aria-label="Send code to my mobile" ng-required="vm.checkSendType()"><span>Send code to my mobile</span></md-checkbox>
+                    </div>
+                    <div class="terms" layout="row" layout-align="start center">
+                        <md-checkbox name="chk-send-again" value="email" ng-model="vm.sendCodeToEmail" aria-label="Send code to my email" ng-required="vm.checkSendType()"><span>Send code to my email</span></md-checkbox>
+                    </div>
+
+                    <md-button class="md-raised md-accent submit-button" aria-label="SEND AGAIN" ng-disabled="registerConfirmFormResendCode.$invalid || registerConfirmFormResendCode.$pristine" ng-click="vm.ResendCode()">
+                        SEND AGAIN
+                    </md-button>
+
+
+                </form>
+            </div>
+
+            <div class="login" layout="row" layout-sm="column" layout-align="center center">
+                <span class="text">Already have an account?</span>
+                <a class="link" ui-sref="app.pages_auth_login-v2">Log in</a>
+            </div>
+        </div>
+    </div>
+
+</div>

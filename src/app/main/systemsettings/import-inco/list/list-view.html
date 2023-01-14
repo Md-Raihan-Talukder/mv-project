@@ -1,0 +1,56 @@
+<div id="import-inco">
+    <div layout="row" layout-align="start center" class="h-40">
+        <div flex="35" class="md-subhead">
+            <span class="pl-20">Steps</span>
+            <span>
+                <md-button class="md-icon-button mb-10" aria-label="Add" ng-click="vm.addTypeStep(vm.typeStep, true); vm.checkImportExportStakeholders();">
+                    <md-icon class="md-background md-accent" md-font-icon="icon-plus-box"></md-icon>
+                    <md-tooltip><span>Add Step</span></md-tooltip>
+                </md-button>
+            </span>
+        </div>
+
+        <div flex="10" class="md-subhead pl-10">Imprtr</div>
+        <div flex="10" class="md-subhead pl-10">Exprtr</div>
+        <div flex class="md-subhead pl-20">Stakeholder</div>
+    </div>
+    <md-divider></md-divider>
+
+    <div layout="row" layout-align="start center" flex>
+
+        <div flex class="common-info">
+            <div flex layout="row" layout-align="start center" ng-repeat="selectedStep in vm.selectedIncoType.steps" ng-click="vm.selectInCoTypeStep(selectedStep); $event.stopPropagation()" ng-class="{'selected':vm.selectedInCoTypeStep.TECHDISER_ID == selectedStep.TECHDISER_ID}">
+                <div flex layout="row" layout-align="start center" ng-repeat="step in vm.inCoStepDefs | orderBy:'TECHDISER_SERIAL_NO'" ng-if="selectedStep.stepId == step[vm.primaryColumnName]" class="common-list-item h-50">
+                    <div class="ml-10 mt-15" flex>
+                        <md-checkbox ng-checked="vm.checkStepExist(selectedStep)" aria-label="step" ng-click="vm.selectTypeStep(step); $event.stopPropagation()" class="md-accent">
+                            <span class="ml-5 text-bold">{{step.title}}</span>
+                        </md-checkbox>
+                    </div>
+                    <div class="mb-5" flex="10">
+                        <md-checkbox ng-checked="vm.checkImportExist(step)" aria-label="Importer" ng-click="vm.checkPayment(step.TECHDISER_ID, true); vm.checkImportExportStakeholders();" class="md-accent"><span></span>
+                        </md-checkbox>
+                    </div>
+                    <div class="mb-5" flex="10">
+                        <md-checkbox ng-checked="vm.checkExportExist(step)" aria-label="Exporter" ng-click="vm.checkPayment(step.TECHDISER_ID, false); vm.checkImportExportStakeholders();" class="md-accent"><span></span>
+                        </md-checkbox>
+                    </div>
+                    <div layout="row" layout-align="start center" flex>
+                        <md-input-container class="md-block" style="padding: 0; width: 160px;">
+                            <md-select aria-label="Stakeholder" placeholder="Stakeholder" ng-model="selectedStep.stakeholderId" ng-change="vm.callSaveType(vm.selectedIncoType);">
+                                <md-option ng-repeat="stakeholder in vm.stakeholderDefs" value="{{stakeholder.TECHDISER_ID}}">
+                                    {{stakeholder.title}}
+                                </md-option>
+                            </md-select>
+                        </md-input-container>
+                    </div>
+                    <span style="float:right;">
+                        <md-icon ng-click="vm.addTypeStep(step, false); vm.checkImportExportStakeholders(); $event.stopPropagation()" md-font-icon="icon-pencil" class="s16" style="border-radius:100px;color:#9c9c9c;">
+                        </md-icon>
+                    </span>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,10 @@
+<span class="font-bold">{{col.title}} </span>
+
+<div layout-gt-sm="row" layout="column" layout-wrap layout-align="start start" ng-if="vm.ready" class="p-10 border mt-10">
+    <div ng-repeat="col in vm.columns | filter: vm.columnFilter" flex="{{vm.isFullPage(col)? 100: 50}}">
+
+        <td-data-capture-column-renderer item="item" col="col" columns="vm.columns">
+        </td-data-capture-column-renderer>
+
+    </div>
+</div>

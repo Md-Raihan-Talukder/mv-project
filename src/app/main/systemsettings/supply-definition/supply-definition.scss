@@ -1,0 +1,119 @@
+#supply-definition {
+  background-color: #ffffff;
+  .selected {
+    background-color: #bcdff9 !important;
+  }
+  .dialog-tree {
+    min-height: 450px !important;
+    max-height: 450px !important;
+    height: 450px !important;
+  }
+  .show-action-button {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .show-action-button:hover {
+    overflow: visible;
+  }
+  .side-menu {
+    height: 800px;
+    min-height: 800px !important;
+    // max-height: 700px !important;
+    box-shadow: 2px 0px 5px 0px #bbbbbb;
+  }
+  .section-head {
+    position: relative;
+    height: 40px;
+    min-height: 40px;
+    max-height: 40px;
+    padding: 5px;
+    padding-left: 20px;
+  }
+
+  .test-card {
+    padding: 2px !important;
+  }
+
+  .head-subhead {
+    background-color: #ab4040;
+  }
+  .label-chip {
+    padding: 0 6px 0 6px;
+    margin-right: 2px;
+    border-radius: 8px;
+    display: block;
+    height: 20px;
+    line-height: 20px;
+    font-size: 10px;
+    background-color: rgba(204, 208, 255, 0.46);
+    // background-color: #FDEDEC;
+    // background-color: #D6EAF8;
+  }
+  .content {
+    padding: 0;
+    .common-detail-menus {
+      padding: 0;
+
+      &.navigation-simple {
+        .selected {
+          background-color: rgb(3, 155, 229);
+          color: white;
+        }
+        .item {
+          line-height: 30px;
+          max-height: 30px;
+          height: 30px;
+          padding: 0 10px;
+        }
+        .subheader {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+
+  .test-card {
+    padding-top: 5px !important;
+  }
+
+  .quantity-def-table {
+    .quantity-def-table-head {
+      .quantity-def-table-head-column {
+        input {
+          height: 100%;
+          width: 100%;
+          border: 0;
+          text-align: center;
+        }
+
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+          margin: 0;
+        }
+      }
+    }
+
+    .quantity-def-table-body {
+      .quantity-def-table-body-column {
+        input {
+          height: 100%;
+          width: 100%;
+          border: 0;
+          text-align: center;
+        }
+
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+          margin: 0;
+        }
+      }
+    }
+  }
+}

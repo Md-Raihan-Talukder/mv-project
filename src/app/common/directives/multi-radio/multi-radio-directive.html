@@ -1,0 +1,11 @@
+<div class="msb-multi-radio-container" flex="100" layout="column" layout-align="start center">
+
+    <md-radio-group name="refProperty" ng-model="modelObject[refProperty]" ng-change="vm.onRadioChange()" class="msb-multi-radio" flex="100">
+
+        <md-radio-button value="{{item[keyProperty]}}" ng-repeat="item in selectItems">{{ item[valueProperty] }}
+        </md-radio-button>
+
+    </md-radio-group>
+
+
+</div>

@@ -1,0 +1,67 @@
+{
+    "data": [
+        {
+            "TECHDISER_ID": "Shipment_Destination_1",
+            "SERIAL_COLUMN_NAME": 1,
+            "title": "Shanghai, China",
+            "code": "ShanghaiCode",
+            "port": "Shanghai",
+            "address": "Shanghai, China",
+            "country": "China"
+        },
+        {
+            "TECHDISER_ID": "Shipment_Destination_2",
+            "SERIAL_COLUMN_NAME": 2,
+            "title": "Busan, South Korea",
+            "code": "BusanCode",
+            "port": "Busan",
+            "address": "Busan, South Korea",
+            "country": "South Korea"
+        },
+        {
+            "TECHDISER_ID": "Shipment_Destination_3",
+            "SERIAL_COLUMN_NAME": 3,
+            "title": "Los Angeles, U.S.A.",
+            "code": "LosCode",
+            "port": "Los Angeles",
+            "address": "Los Angeles, U.S.A.",
+            "country": "U.S.A."
+        },
+        {
+            "TECHDISER_ID": "Shipment_Destination_4",
+            "SERIAL_COLUMN_NAME": 4,
+            "title": "New York-New Jersey, U.S.A.",
+            "code": "NewYorkCode",
+            "port": "New York-New Jersey",
+            "address": "New York-New Jersey, U.S.A.",
+            "country": "U.S.A."
+        },
+        {
+            "TECHDISER_ID": "Shipment_Destination_5",
+            "SERIAL_COLUMN_NAME": 5,
+            "title": "Felixstowe, U.K.",
+            "code": "FelixstoweCode",
+            "port": "Felixstowe",
+            "address": "Felixstowe, U.K.",
+            "country": "U.K."
+        },
+        {
+            "TECHDISER_ID": "Shipment_Destination_6",
+            "SERIAL_COLUMN_NAME": 6,
+            "title": "Abbot Point, Australia",
+            "code": "AbbotCode",
+            "port": "Abbot Point",
+            "address": "Abbot Point, Australia",
+            "country": "Australia"
+        },
+        {
+            "TECHDISER_ID": "Shipment_Destination_7",
+            "SERIAL_COLUMN_NAME": 7,
+            "title": "Berlin, Germany",
+            "code": "BerlinCode",
+            "port": "Berlin",
+            "address": "Berlin, Germany",
+            "country": "Germany"
+        }
+    ]
+}

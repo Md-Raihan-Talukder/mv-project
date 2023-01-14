@@ -1,0 +1,44 @@
+{
+    "data": [
+        {
+            "TECHDISER_ID": "1",
+            "TECHDISER_SERIAL_NO": 1,
+            "title": "Fabric",
+            "code": "F22",
+            "weight": 20,
+            "deleted": false
+        },
+        {
+            "TECHDISER_ID": "2",
+            "TECHDISER_SERIAL_NO": 2,
+            "title": "Button",
+            "code": "B22",
+            "weight": 18,
+            "deleted": false
+        },
+        {
+            "TECHDISER_ID": "3",
+            "TECHDISER_SERIAL_NO": 3,
+            "title": "Label",
+            "code": "L22",
+            "weight": 15,
+            "deleted": false
+        },
+        {
+            "TECHDISER_ID": "4",
+            "TECHDISER_SERIAL_NO": 4,
+            "title": "Thread",
+            "code": "T22",
+            "weight": 20,
+            "deleted": false
+        },
+        {
+            "TECHDISER_ID": "5",
+            "TECHDISER_SERIAL_NO": 5,
+            "title": "Wash",
+            "code": "W22",
+            "weight": 18,
+            "deleted": false
+        }
+    ]
+}

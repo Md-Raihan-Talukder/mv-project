@@ -1,0 +1,207 @@
+{
+    "data": [
+        {
+            "TECHDISER_ID": "1",
+            "organizationId": "0363.3e688886e9492.4d71bc74f9ea6.93a22ca1971ca.f2b8c820b9e76.50740bd55f51e.5d945f769",
+            "active": true,
+            "organizationInfo": {
+                "name": "Nike",
+                "numberOfUsers": 22,
+                "users": {
+                    "modules": [
+                        {
+                            "title": "HR",
+                            "roles": [
+                                {
+                                    "title": "Hiring Manager",
+                                    "numberOfUsers": 2
+                                },
+                                {
+                                    "title": "Service Center Coordinator",
+                                    "numberOfUsers": 3
+                                },
+                                {
+                                    "title": "Compliance",
+                                    "numberOfUsers": 5
+                                }
+                            ]
+                        },
+                        {
+                            "title": "Merchandising",
+                            "roles": [
+                                {
+                                    "title": "Director of Merchandising",
+                                    "numberOfUsers": 1
+                                },
+                                {
+                                    "title": "Assistant Merchandise Manager",
+                                    "numberOfUsers": 2
+                                },
+                                {
+                                    "title": "Digital Merchandising Manager",
+                                    "numberOfUsers": 3
+                                }
+                            ]
+                        },
+                        {
+                            "title": "Production",
+                            "roles": [
+                                {
+                                    "title": "Production GM",
+                                    "numberOfUsers": 2
+                                },
+                                {
+                                    "title": "Production Manager",
+                                    "numberOfUsers": 2
+                                },
+                                {
+                                    "title": "Quality Controler",
+                                    "numberOfUsers": 2
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "contactInfo": [
+                    {
+                        "TECHDISER_ID": "hdgsgf6757667dbwe7u3687873e65ev36e537v6e3",
+                        "isMangrove": false,
+                        "purpose": "MD",
+                        "name": "Jahangir Alam",
+                        "department": "HR",
+                        "designation": "Officer",
+                        "email": "alampana@yahoo.com",
+                        "countryCode": "88",
+                        "phone": "01785457812",
+                        "active": true,
+                        "type": "Organization",
+                        "isLead": false
+                    },
+                    {
+                        "TECHDISER_ID": "77776757667rrre7u3687873e65ev36e537v6e3",
+                        "isMangrove": false,
+                        "purpose": "TECHNICAL",
+                        "name": "Mustafizur Rahman",
+                        "department": "Support",
+                        "designation": "Engineer",
+                        "email": "alampana@yahoo.com",
+                        "countryCode": "88",
+                        "phone": "01785457812",
+                        "active": true,
+                        "type": "Organization",
+                        "isLead": false
+                    },
+                    {
+                        "TECHDISER_ID": "1111f6757667dbwe7u3687873e65ev36e537v6e3",
+                        "isMangrove": false,
+                        "purpose": "POLICY",
+                        "name": "Jahangir Alam",
+                        "department": "HR",
+                        "designation": "Officer",
+                        "email": "alampana@yahoo.com",
+                        "countryCode": "88",
+                        "phone": "01785457812",
+                        "active": true,
+                        "type": "Mangrove",
+                        "isLead": false
+                    }
+                ]
+            },
+            "licenseInfo": {
+                "licenseType": "Custom",
+                "tenure": 12,
+                "activationDate": 2017,
+                "validityDate": 2018,
+                "remainingInDay": 17668
+            },
+            "modules": [
+                {
+                    "moduleName": "Production",
+                    "active": true,
+                    "features": [
+                        {
+                            "title": "Production Estimation",
+                            "active": true
+                        },
+                        {
+                            "title": "Production Calculation",
+                            "active": true
+                        },
+                        {
+                            "title": "Production Productivity",
+                            "active": true
+                        }
+                    ]
+                },
+                {
+                    "name": "HR",
+                    "active": false,
+                    "features": [
+                        {
+                            "title": "HR Estimation",
+                            "active": false
+                        },
+                        {
+                            "title": "HR Calculation",
+                            "active": false
+                        },
+                        {
+                            "title": "HR Productivity",
+                            "active": false
+                        }
+                    ]
+                },
+                {
+                    "name": "Marchandising",
+                    "active": true,
+                    "features": [
+                        {
+                            "title": "Marchandiser Estimation",
+                            "active": true
+                        },
+                        {
+                            "title": "Marchandiser Calculation",
+                            "active": true
+                        },
+                        {
+                            "title": "Marchandiser Productivity",
+                            "active": true
+                        }
+                    ]
+                }
+            ],
+            "checklist": [
+                {
+                    "id": "63021cfdbe1x72wcf1fc451v",
+                    "name": "Domain",
+                    "checkItemsChecked": 0,
+                    "checkItems": [
+                        {
+                            "name": "Create Domain",
+                            "checked": false
+                        },
+                        {
+                            "name": "Create Email",
+                            "checked": false
+                        }
+                    ]
+                },
+                {
+                    "id": "42334423435ggfdg4343",
+                    "name": "Backup",
+                    "checkItemsChecked": 0,
+                    "checkItems": [
+                        {
+                            "name": "Create Backup",
+                            "checked": false
+                        },
+                        {
+                            "name": "Start Backup",
+                            "checked": false
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

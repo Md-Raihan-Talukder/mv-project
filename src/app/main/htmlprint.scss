@@ -1,0 +1,29 @@
+.a4-portrait-page {
+  min-height: 11in;
+  max-height: 11in;
+  height: 11in;
+  min-width: 8.27in;
+  max-width: 8.27in;
+  width: 8.27in;
+  overflow: hidden !important;
+}
+
+.print-page-content {
+  padding: 1in 0.5in 0.5in 0.5in;
+  overflow: hidden !important;
+  /* border: 1px solid red;*/
+}
+
+.print-page-content-items {
+  position: relative;
+  min-height: 10in;
+  max-height: 10in;
+  height: 10in;
+  overflow: hidden !important;
+}
+
+.print-page-footer-items {
+  position: absolute;
+  left: 0;
+  bottom: 100px;
+}

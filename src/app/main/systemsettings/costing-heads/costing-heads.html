@@ -1,0 +1,63 @@
+<div layout="column" id="supply-definition">
+    <div class="content">
+        <div layout="row" flex="100">
+            <div layout="column" flex="60" class=" p-20 br">
+                <span class="md-subhead">Costing Heads</span>
+                <td-tree-view ng-if="vm.costingHeads" items="vm.costingHeads" options="vm.costingHeadsTreeOptions" on-add-item="vm.addNewCategory(item, event, callBack)" on-remove-item="vm.deleteCategory(item, event, callBack)" on-select-item="vm.selectCategory(item, event, callBack)">
+                </td-tree-view>
+            </div>
+            <div layout="column" flex="40">
+                <div class="md-background-bg h-35 pt-5 pl-15">
+                    <div class="md-subhead">
+                        <span>
+                            <span ng-if=" !vm.isNewCategory  && !vm.isSelectedCategory ">Costing Heads</span>
+                            <span ng-if="vm.category.level==1">Costing Heads / {{vm.category.title}}</span>
+                            <span ng-if="vm.category.level==2">Category / {{vm.category.title}}</span>
+                        </span>
+                    </div>
+                </div>
+                <md-divider></md-divider>
+                <div layout="row">
+                    <div flex class="side-menu">
+                        <div layout="row" layout-align="start center" flex class="font-size-16 section-head">
+                            <span flex>Basic</span>
+                            <div ng-if="vm.isNewCategory || vm.isSelectedCategory">
+                                <md-button ng-click="vm.saveCategory(vm.category, vm.isNewCategory)" class="md-raised md-background font-size-12 text-bold md-accent h-30 w-60" aria-label="save">
+                                    <span ng-if="vm.addCategory">Add</span><span ng-if="vm.updateCategory">Update</span>
+                                </md-button>
+                            </div>
+                        </div>
+                        <md-divider></md-divider>
+                        <div layout="column" flex class="p-20" ng-if="vm.isNewCategory || vm.isSelectedCategory">
+                            <span class="md-subhead">
+
+                                <span ng-if="vm.isNewCategory && !vm.hasCategory">Add A Costing Heads
+                                    <md-divider></md-divider>
+                                </span>
+                                <span ng-if="vm.isParentCategory  && !vm.isSelectedCategory " class="h4 pt-10">Add A
+                                    <span ng-if="vm.selectedItemCategory.level==1">Category</span>
+                                    <span ng-if="vm.selectedItemCategory.level==2">Category</span>
+                                    <md-divider></md-divider>
+                                </span>
+                                <form name="cardForm" novalidate>
+                                    <div flex class="mt-10 font-size-12">
+                                        <msb-form column-defs="vm.supplyServiceColumns" object-property="vm.category">
+                                        </msb-form>
+                                    </div>
+                                </form>
+                                <div class="font-size-12">
+                                    <span class="mr-20">PI Head : </span>
+                                    <a ng-click="vm.selectPiHeadsDialog(vm.category)" aria-label="Add PI Head">
+                                        <u class="mr-5" ng-if="!vm.category.piHeadId">Select PI Head</u>
+                                        <u ng-if="vm.category.piHeadId">{{vm.getPiHeadTitle(vm.category.piHeadId)}}</u>
+                                        <md-tooltip><span>Select PI Head</span></md-tooltip>
+                                    </a>
+                                </div>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

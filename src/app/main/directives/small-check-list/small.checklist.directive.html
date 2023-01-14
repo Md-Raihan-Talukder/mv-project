@@ -1,0 +1,23 @@
+<div>
+    <div layout="row" ng-if="addNew==true">
+        <div class="pr-10">
+            <md-input-container>
+                <input placeholder="Title" ng-model="vm.title" />
+            </md-input-container>
+        </div>
+        <div class="b p-5 cursor-pointer grey-100-bg h-25 mt-20 mr-10" ng-click="vm.createCheckList(checkList, vm.title)">
+            Add
+        </div>
+    </div>
+    <div ng-repeat="item in checkList" layout="row" flex="100" layout-wrap>
+        <md-icon ng-if="item.isChecked" class="pr-5" style="color:rgb(48, 149, 207);" ng-click="item.isChecked = !item.isChecked" md-font-icon="icon-checkbox-marked-outline" class="s18">
+        </md-icon>
+        <md-icon ng-if="!item.isChecked" class="pr-5" ng-click="item.isChecked = !item.isChecked" md-font-icon="icon-checkbox-blank-outline" class="s18">
+        </md-icon>
+        <div flex class="pl-5 pt-5">{{item.title}}</div>
+        <div>
+            <md-icon class="pr-5" ng-click="vm.removeCheckList(checkList, item)" md-font-icon="icon-close" class="s16">
+            </md-icon>
+        </div>
+    </div>
+</div>

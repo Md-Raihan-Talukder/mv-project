@@ -1,0 +1,660 @@
+{
+    "data": [
+        {
+            "TECHDISER_ID": "1",
+            "title": "Production",
+            "active": true,
+            "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "features": [
+                {
+                    "TECHDISER_ID": "1",
+                    "title": "Production Estimation",
+                    "functionalities": [
+                        {
+                            "TECHDISER_ID": "1",
+                            "title": "Functionality 1",
+                            "hasActivePermission": false,
+                            "hasApprovePermission": true,
+                            "hasArchivePermission": true,
+                            "accessTypes": [],
+                            "activities": [
+                                {
+                                    "title": "Activity 1",
+                                    "accessTypes": []
+                                },
+                                {
+                                    "title": "Activity 2",
+                                    "accessTypes": []
+                                },
+                                {
+                                    "title": "Activity 3",
+                                    "accessTypes": []
+                                }
+                            ]
+                        },
+                        {
+                            "TECHDISER_ID": "2",
+                            "title": "Functionality 2",
+                            "hasActivePermission": true,
+                            "hasApprovePermission": true,
+                            "hasArchivePermission": false,
+                            "accessTypes": [],
+                            "activities": [
+                                {
+                                    "title": "Activity 1",
+                                    "accessTypes": []
+                                },
+                                {
+                                    "title": "Activity 2",
+                                    "accessTypes": []
+                                },
+                                {
+                                    "title": "Activity 3",
+                                    "accessTypes": []
+                                }
+                            ]
+                        },
+                        {
+                            "TECHDISER_ID": "3",
+                            "title": "Functionality 3",
+                            "hasActivePermission": true,
+                            "hasApprovePermission": true,
+                            "hasArchivePermission": true,
+                            "accessTypes": [],
+                            "activities": [
+                                {
+                                    "title": "Activity 1",
+                                    "accessTypes": []
+                                },
+                                {
+                                    "title": "Activity 2",
+                                    "accessTypes": []
+                                },
+                                {
+                                    "title": "Activity 3",
+                                    "accessTypes": []
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "2",
+                    "title": "Production Calculator",
+                    "functionalities": [
+                        {
+                            "TECHDISER_ID": "1",
+                            "title": "Functionality 1",
+                            "hasActivePermission": true,
+                            "hasApprovePermission": true,
+                            "hasArchivePermission": true,
+                            "accessTypes": [],
+                            "activities": [
+                                {
+                                    "title": "Activity 1",
+                                    "accessTypes": []
+                                },
+                                {
+                                    "title": "Activity 2",
+                                    "accessTypes": []
+                                },
+                                {
+                                    "title": "Activity 3",
+                                    "accessTypes": []
+                                }
+                            ]
+                        },
+                        {
+                            "TECHDISER_ID": "2",
+                            "title": "Functionality 2",
+                            "hasActivePermission": true,
+                            "hasApprovePermission": true,
+                            "hasArchivePermission": true,
+                            "accessTypes": [],
+                            "activities": [
+                                {
+                                    "title": "Activity 1",
+                                    "accessTypes": []
+                                },
+                                {
+                                    "title": "Activity 2",
+                                    "accessTypes": []
+                                },
+                                {
+                                    "title": "Activity 3",
+                                    "accessTypes": []
+                                }
+                            ]
+                        },
+                        {
+                            "TECHDISER_ID": "3",
+                            "title": "Functionality 3",
+                            "hasActivePermission": true,
+                            "hasApprovePermission": true,
+                            "hasArchivePermission": true,
+                            "accessTypes": [],
+                            "activities": [
+                                {
+                                    "title": "Activity 1",
+                                    "accessTypes": []
+                                },
+                                {
+                                    "title": "Activity 2",
+                                    "accessTypes": []
+                                },
+                                {
+                                    "title": "Activity 3",
+                                    "accessTypes": []
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "3",
+                    "title": "Production Productivity",
+                    "functionalities": [
+                        {
+                            "TECHDISER_ID": "1",
+                            "title": "Functionality 1",
+                            "hasActivePermission": true,
+                            "hasApprovePermission": true,
+                            "hasArchivePermission": true,
+                            "accessTypes": [],
+                            "activities": [
+                                {
+                                    "title": "Activity 1",
+                                    "accessTypes": []
+                                },
+                                {
+                                    "title": "Activity 1",
+                                    "accessTypes": []
+                                },
+                                {
+                                    "title": "Activity 1",
+                                    "accessTypes": []
+                                }
+                            ]
+                        },
+                        {
+                            "TECHDISER_ID": "2",
+                            "title": "Functionality 2",
+                            "hasActivePermission": true,
+                            "hasApprovePermission": true,
+                            "hasArchivePermission": true,
+                            "accessTypes": [],
+                            "activities": [
+                                {
+                                    "title": "Activity 1",
+                                    "accessTypes": []
+                                },
+                                {
+                                    "title": "Activity 1",
+                                    "accessTypes": []
+                                },
+                                {
+                                    "title": "Activity 1",
+                                    "accessTypes": []
+                                }
+                            ]
+                        },
+                        {
+                            "TECHDISER_ID": "3",
+                            "title": "Functionality 3",
+                            "hasActivePermission": true,
+                            "hasApprovePermission": true,
+                            "hasArchivePermission": true,
+                            "accessTypes": [],
+                            "activities": [
+                                {
+                                    "title": "Activity 1",
+                                    "accessTypes": []
+                                },
+                                {
+                                    "title": "Activity 1",
+                                    "accessTypes": []
+                                },
+                                {
+                                    "title": "Activity 1",
+                                    "accessTypes": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "roles": [
+                {
+                    "title": "Production GM",
+                    "active": true
+                },
+                {
+                    "title": "Production Manager",
+                    "active": true
+                },
+                {
+                    "title": "Quality Controller",
+                    "active": true
+                }
+            ]
+        },
+        {
+            "TECHDISER_ID": "2",
+            "title": "Marchandising",
+            "active": true,
+            "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "features": [
+                {
+                    "TECHDISER_ID": "1",
+                    "title": "Pricing",
+                    "functionalities": [
+                        {
+                            "TECHDISER_ID": "1",
+                            "title": "Functionality 1",
+                            "hasActivePermission": true,
+                            "hasApprovePermission": true,
+                            "hasArchivePermission": true,
+                            "accessTypes": [],
+                            "activities": [
+                                {
+                                    "title": "Product Specification",
+                                    "accessTypes": []
+                                },
+                                {
+                                    "title": "Expected Delivery",
+                                    "accessTypes": []
+                                },
+                                {
+                                    "title": "Approximate Qty",
+                                    "accessTypes": []
+                                },
+                                {
+                                    "title": "Destination ",
+                                    "accessTypes": []
+                                },
+                                {
+                                    "title": "Product Price ",
+                                    "accessTypes": []
+                                },
+                                {
+                                    "title": "ETD confirmation",
+                                    "accessTypes": []
+                                }
+                            ]
+                        },
+                        {
+                            "TECHDISER_ID": "2",
+                            "title": "Functionality 2",
+                            "hasActivePermission": true,
+                            "hasApprovePermission": true,
+                            "hasArchivePermission": true,
+                            "accessTypes": [],
+                            "activities": [
+                                {
+                                    "title": "Product Price Confirm",
+                                    "accessTypes": []
+                                },
+                                {
+                                    "title": "Production Book",
+                                    "accessTypes": []
+                                },
+                                {
+                                    "title": "Intial Booking",
+                                    "accessTypes": []
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "2",
+                    "title": "Work Order",
+                    "functionalities": [
+                        {
+                            "TECHDISER_ID": "1",
+                            "title": "Functionality 1",
+                            "hasActivePermission": true,
+                            "hasApprovePermission": true,
+                            "hasArchivePermission": true,
+                            "accessTypes": [],
+                            "activities": [
+                                {
+                                    "title": "PO",
+                                    "accessTypes": []
+                                },
+                                {
+                                    "title": "ETD",
+                                    "accessTypes": []
+                                },
+                                {
+                                    "title": "Proforma Invoice",
+                                    "accessTypes": []
+                                }
+                            ]
+                        },
+                        {
+                            "TECHDISER_ID": "2",
+                            "title": "Functionality 2",
+                            "hasActivePermission": true,
+                            "hasApprovePermission": true,
+                            "hasArchivePermission": true,
+                            "accessTypes": [],
+                            "activities": [
+                                {
+                                    "title": "Destination",
+                                    "accessTypes": []
+                                },
+                                {
+                                    "title": "AQL",
+                                    "accessTypes": []
+                                },
+                                {
+                                    "title": "Inspector",
+                                    "accessTypes": []
+                                }
+                            ]
+                        },
+                        {
+                            "TECHDISER_ID": "3",
+                            "title": "Functionality 3",
+                            "hasActivePermission": true,
+                            "hasApprovePermission": true,
+                            "hasArchivePermission": true,
+                            "accessTypes": [],
+                            "activities": [
+                                {
+                                    "title": "Proforma Invoice",
+                                    "accessTypes": []
+                                },
+                                {
+                                    "title": "Style Development ",
+                                    "accessTypes": []
+                                },
+                                {
+                                    "title": "Materials Development",
+                                    "accessTypes": []
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "3",
+                    "title": "Pre-Production",
+                    "functionalities": [
+                        {
+                            "TECHDISER_ID": "1",
+                            "title": "Functionality 1",
+                            "hasActivePermission": true,
+                            "hasApprovePermission": true,
+                            "hasArchivePermission": true,
+                            "accessTypes": [],
+                            "activities": [
+                                {
+                                    "title": "PP Sample Approval",
+                                    "accessTypes": []
+                                },
+                                {
+                                    "title": "PP Meeting",
+                                    "accessTypes": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "roles": [
+                {
+                    "title": "Director of Merchandising",
+                    "active": true
+                },
+                {
+                    "title": "Assistant Merchandise Manager",
+                    "active": true
+                },
+                {
+                    "title": "Digital Merchandising Manager",
+                    "active": true
+                }
+            ]
+        },
+        {
+            "TECHDISER_ID": "3",
+            "title": "IE",
+            "active": true,
+            "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "features": [
+                {
+                    "TECHDISER_ID": "1",
+                    "title": "Layout",
+                    "functionalities": [
+                        {
+                            "TECHDISER_ID": "1",
+                            "title": "Functionality 1",
+                            "hasActivePermission": true,
+                            "hasApprovePermission": true,
+                            "hasArchivePermission": true,
+                            "accessTypes": [],
+                            "activities": [
+                                {
+                                    "title": "Activity 1",
+                                    "accessTypes": []
+                                },
+                                {
+                                    "title": "Activity 2",
+                                    "accessTypes": []
+                                },
+                                {
+                                    "title": "Activity 3",
+                                    "accessTypes": []
+                                }
+                            ]
+                        },
+                        {
+                            "TECHDISER_ID": "2",
+                            "title": "Functionality 2",
+                            "hasActivePermission": true,
+                            "hasApprovePermission": true,
+                            "hasArchivePermission": true,
+                            "accessTypes": [],
+                            "activities": [
+                                {
+                                    "title": "Activity 1",
+                                    "accessTypes": []
+                                },
+                                {
+                                    "title": "Activity 2",
+                                    "accessTypes": []
+                                },
+                                {
+                                    "title": "Activity 3",
+                                    "accessTypes": []
+                                }
+                            ]
+                        },
+                        {
+                            "TECHDISER_ID": "3",
+                            "title": "Functionality 3",
+                            "hasActivePermission": true,
+                            "hasApprovePermission": true,
+                            "hasArchivePermission": true,
+                            "accessTypes": [],
+                            "activities": [
+                                {
+                                    "title": "Activity 1",
+                                    "accessTypes": []
+                                },
+                                {
+                                    "title": "Activity 2",
+                                    "accessTypes": []
+                                },
+                                {
+                                    "title": "Activity 3",
+                                    "accessTypes": []
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "2",
+                    "title": "Line Balancing",
+                    "functionalities": [
+                        {
+                            "TECHDISER_ID": "1",
+                            "title": "Functionality 1",
+                            "hasActivePermission": true,
+                            "hasApprovePermission": true,
+                            "hasArchivePermission": true,
+                            "accessTypes": [],
+                            "activities": [
+                                {
+                                    "title": "Activity 1",
+                                    "accessTypes": []
+                                },
+                                {
+                                    "title": "Activity 2",
+                                    "accessTypes": []
+                                },
+                                {
+                                    "title": "Activity 3",
+                                    "accessTypes": []
+                                }
+                            ]
+                        },
+                        {
+                            "TECHDISER_ID": "2",
+                            "title": "Functionality 2",
+                            "hasActivePermission": true,
+                            "hasApprovePermission": true,
+                            "hasArchivePermission": true,
+                            "accessTypes": [],
+                            "activities": [
+                                {
+                                    "title": "Activity 1",
+                                    "accessTypes": []
+                                },
+                                {
+                                    "title": "Activity 2",
+                                    "accessTypes": []
+                                },
+                                {
+                                    "title": "Activity 3",
+                                    "accessTypes": []
+                                }
+                            ]
+                        },
+                        {
+                            "TECHDISER_ID": "3",
+                            "title": "Functionality 3",
+                            "hasActivePermission": true,
+                            "hasApprovePermission": true,
+                            "hasArchivePermission": true,
+                            "accessTypes": [],
+                            "activities": [
+                                {
+                                    "title": "Activity 1",
+                                    "accessTypes": []
+                                },
+                                {
+                                    "title": "Activity 2",
+                                    "accessTypes": []
+                                },
+                                {
+                                    "title": "Activity 3",
+                                    "accessTypes": []
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "3",
+                    "title": "Trouble Shooting",
+                    "functionalities": [
+                        {
+                            "TECHDISER_ID": "1",
+                            "title": "Functionality 1",
+                            "hasActivePermission": true,
+                            "hasApprovePermission": true,
+                            "hasArchivePermission": true,
+                            "accessTypes": [],
+                            "activities": [
+                                {
+                                    "title": "Activity 1",
+                                    "accessTypes": []
+                                },
+                                {
+                                    "title": "Activity 2",
+                                    "accessTypes": []
+                                },
+                                {
+                                    "title": "Activity 3",
+                                    "accessTypes": []
+                                }
+                            ]
+                        },
+                        {
+                            "TECHDISER_ID": "2",
+                            "title": "Functionality 2",
+                            "hasActivePermission": true,
+                            "hasApprovePermission": true,
+                            "hasArchivePermission": true,
+                            "accessTypes": [],
+                            "activities": [
+                                {
+                                    "title": "Activity 1",
+                                    "accessTypes": []
+                                },
+                                {
+                                    "title": "Activity 2",
+                                    "accessTypes": []
+                                },
+                                {
+                                    "title": "Activity 3",
+                                    "accessTypes": []
+                                }
+                            ]
+                        },
+                        {
+                            "TECHDISER_ID": "3",
+                            "title": "Functionality 3",
+                            "hasActivePermission": true,
+                            "hasApprovePermission": true,
+                            "hasArchivePermission": true,
+                            "accessTypes": [],
+                            "activities": [
+                                {
+                                    "title": "Activity 1",
+                                    "accessTypes": []
+                                },
+                                {
+                                    "title": "Activity 2",
+                                    "accessTypes": []
+                                },
+                                {
+                                    "title": "Activity 3",
+                                    "accessTypes": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "roles": [
+                {
+                    "title": "Hiring Manager",
+                    "active": true
+                },
+                {
+                    "title": "Service Center Coordinator",
+                    "active": true
+                },
+                {
+                    "title": "Compliance",
+                    "active": true
+                }
+            ]
+        }
+    ]
+}

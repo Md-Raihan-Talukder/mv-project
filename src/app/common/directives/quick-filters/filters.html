@@ -1,0 +1,28 @@
+<div class="msb-quick-filters navigation-simple" layout="column">
+    <!-- <md-button class="item border-bottom" aria-label="inbox">
+        <div class="context" layout="row" layout-align="start center">                    
+            <div class="title">&nbsp;</div>
+        </div>
+    </md-button> -->
+
+    <md-button class="item" aria-label="inbox" ng-click="vm.selectAll(filter, item)" ng-class="{'selected': vm.isAllSelected()}">
+        <div class="context" layout="row" layout-align="start center">
+            <md-icon md-font-icon="icon-view-headline" class="s16"></md-icon>
+            <div class="title">All</div>
+        </div>
+    </md-button>
+
+    <div ng-repeat="filter in filters">
+        <div class="item subheader">
+            {{filter.title}}
+        </div>
+
+        <md-button class="item" aria-label="{{item[filter.key]}}" ng-click="vm.toggleFilter(filter, item)" ng-class="{'selected': vm.isFilterSelected(filter, item)}" ng-repeat="item in filter.items" style="width: 100%; margin-bottom: 2px;">
+            <div class="context" layout="row" layout-align="start center">
+                <md-icon md-font-icon="{{item.icon}}" class="s16"></md-icon>
+                <div class="title">{{item[filter.value]}}</div>
+            </div>
+        </md-button>
+    </div>
+
+</div>

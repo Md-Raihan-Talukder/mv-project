@@ -1,0 +1,89 @@
+<md-dialog id="import-inco" class="shipment-dialog  w-400 h-auto" aria-label="Type Step Dialog" data-drag="1" data-jqyoui-options jqyoui-draggable="{animate:true}">
+    <form>
+        <md-toolbar class="md-accent" style="cursor:pointer;">
+            <div class="md-toolbar-tools">
+                <div>
+                    <label>{{vm.title}}</label>
+                </div>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="vm.closeDialog()" aria-label="Close Dialog">
+                    <md-icon md-font-icon="icon-close"></md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+        <div layout="row" flex="100">
+            <div layout="column" flex="100" ms-scroll>
+                <md-dialog-content ms-scroll>
+                    <form name="addShipmentTypeStepForm" novalidate>
+                        <div layout="column">
+                            <div class="mb-10">
+                                <!-- <msb-form column-defs="vm.shipmentStepsColumns"
+                                    object-property="vm.typeStep">
+
+                                </msb-form> -->
+                                <div flex class="description" layout="column" layout-align="start start">
+                                    <div layout="row" layout-align="start center">
+                                        <span class="secondary-text w-120"> Title </span>
+                                        <md-input-container class="md-block">
+                                            <label>
+                                                <span>Title</span>
+                                            </label>
+                                            <input class="md-subhead" name="Description" ng-model="vm.typeStep.title" required autocomplete="off">
+                                            <div ng-messages="addShipmentTypeStepForm.title.$error" role="alert">
+                                                <div ng-message="required">
+                                                    <span>Title is required</span>
+                                                </div>
+                                            </div>
+                                        </md-input-container>
+                                    </div>
+
+                                </div>
+                                <div flex class="description" layout="column" layout-align="start start">
+                                    <div layout="row" layout-align="start center">
+                                        <span class="secondary-text w-120"> Code </span>
+                                        <md-input-container class="md-block">
+                                            <label>
+                                                <span>Code</span>
+                                            </label>
+                                            <input class="md-subhead" name="Code" ng-model="vm.typeStep.code" required autocomplete="off">
+                                            <div ng-messages="addShipmentTypeStepForm.code.$error" role="alert">
+                                                <div ng-message="required">
+                                                    <span>Code is required</span>
+                                                </div>
+                                            </div>
+                                        </md-input-container>
+                                    </div>
+
+                                </div>
+                                <div flex class="description" layout="column" layout-align="start start">
+                                    <div layout="row" layout-align="start center">
+                                        <span class="secondary-text w-120"> Description </span>
+                                        <md-input-container class="md-block">
+                                            <label>
+                                                <span>Description</span>
+                                            </label>
+                                            <input class="md-subhead" name="Description" ng-model="vm.typeStep.description" required autocomplete="off">
+                                            <div ng-messages="addShipmentTypeStepForm.description.$error" role="alert">
+                                                <div ng-message="required">
+                                                    <span>Description is required</span>
+                                                </div>
+                                            </div>
+                                        </md-input-container>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </form>
+                </md-dialog-content>
+            </div>
+        </div>
+    </form>
+    <md-dialog-actions layout="row" layout-align="end center" class="h-50">
+        <div layout="row" layout-align="start center">
+            <md-button ng-disabled="!vm.typeStep.title" ng-click="vm.addShipmentTypeStepDetail(vm.typeStep)" class="send-button md-accent md-raised" ng-disabled="addShipmentTypeStepForm.$invalid" aria-label="SAVE">
+                <span ng-if="vm.isNew">Add</span><span ng-if="!vm.isNew">Update</span>
+            </md-button>
+        </div>
+    </md-dialog-actions>
+</md-dialog>

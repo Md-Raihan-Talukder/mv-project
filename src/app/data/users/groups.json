@@ -1,0 +1,1327 @@
+{
+    "data": [
+        {
+            "TECHDISER_ID": "1",
+            "TECHDISER_SERIAL_NO": 1,
+            "organizationId": "Organization_1",
+            "deleted": false,
+            "name": "GM Forum",
+            "icon": "icon-people",
+            "permissions": [
+                {
+                    "TECHDISER_ID": "hdgfwye523reyte52yre27",
+                    "title": "Production",
+                    "active": true,
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                    "features": [
+                        {
+                            "title": "Production Estimation",
+                            "functionalities": [
+                                {
+                                    "title": "Functionality 1",
+                                    "hasActivePermission": false,
+                                    "hasApprovePermission": true,
+                                    "hasArchivePermission": true,
+                                    "accessTypes": [],
+                                    "activities": [
+                                        {
+                                            "title": "Activity 1",
+                                            "accessTypes": []
+                                        },
+                                        {
+                                            "title": "Activity 2",
+                                            "accessTypes": []
+                                        },
+                                        {
+                                            "title": "Activity 3",
+                                            "accessTypes": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "title": "Functionality 2",
+                                    "hasActivePermission": true,
+                                    "hasApprovePermission": true,
+                                    "hasArchivePermission": false,
+                                    "accessTypes": [],
+                                    "activities": [
+                                        {
+                                            "title": "Activity 1",
+                                            "accessTypes": []
+                                        },
+                                        {
+                                            "title": "Activity 2",
+                                            "accessTypes": []
+                                        },
+                                        {
+                                            "title": "Activity 3",
+                                            "accessTypes": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "title": "Functionality 3",
+                                    "hasActivePermission": true,
+                                    "hasApprovePermission": true,
+                                    "hasArchivePermission": true,
+                                    "accessTypes": [],
+                                    "activities": [
+                                        {
+                                            "title": "Activity 1",
+                                            "accessTypes": []
+                                        },
+                                        {
+                                            "title": "Activity 2",
+                                            "accessTypes": []
+                                        },
+                                        {
+                                            "title": "Activity 3",
+                                            "accessTypes": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "title": "Production Calculator",
+                            "functionalities": [
+                                {
+                                    "title": "Functionality 1",
+                                    "hasActivePermission": true,
+                                    "hasApprovePermission": true,
+                                    "hasArchivePermission": true,
+                                    "accessTypes": [],
+                                    "activities": [
+                                        {
+                                            "title": "Activity 1",
+                                            "accessTypes": [
+                                                1,
+                                                2,
+                                                3,
+                                                4
+                                            ]
+                                        },
+                                        {
+                                            "title": "Activity 2",
+                                            "accessTypes": [
+                                                1,
+                                                2
+                                            ]
+                                        },
+                                        {
+                                            "title": "Activity 3",
+                                            "accessTypes": [
+                                                3,
+                                                4
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "title": "Functionality 2",
+                                    "hasActivePermission": true,
+                                    "hasApprovePermission": true,
+                                    "hasArchivePermission": true,
+                                    "accessTypes": [],
+                                    "activities": [
+                                        {
+                                            "title": "Activity 1",
+                                            "accessTypes": []
+                                        },
+                                        {
+                                            "title": "Activity 2",
+                                            "accessTypes": []
+                                        },
+                                        {
+                                            "title": "Activity 3",
+                                            "accessTypes": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "title": "Functionality 3",
+                                    "hasActivePermission": true,
+                                    "hasApprovePermission": true,
+                                    "hasArchivePermission": true,
+                                    "accessTypes": [],
+                                    "activities": [
+                                        {
+                                            "title": "Activity 1",
+                                            "accessTypes": []
+                                        },
+                                        {
+                                            "title": "Activity 2",
+                                            "accessTypes": []
+                                        },
+                                        {
+                                            "title": "Activity 3",
+                                            "accessTypes": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "title": "Production Productivity",
+                            "functionalities": [
+                                {
+                                    "title": "Functionality 1",
+                                    "hasActivePermission": true,
+                                    "hasApprovePermission": true,
+                                    "hasArchivePermission": true,
+                                    "accessTypes": [],
+                                    "activities": [
+                                        {
+                                            "title": "Activity 1",
+                                            "accessTypes": []
+                                        },
+                                        {
+                                            "title": "Activity 1",
+                                            "accessTypes": []
+                                        },
+                                        {
+                                            "title": "Activity 1",
+                                            "accessTypes": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "title": "Functionality 2",
+                                    "hasActivePermission": true,
+                                    "hasApprovePermission": true,
+                                    "hasArchivePermission": true,
+                                    "accessTypes": [],
+                                    "activities": [
+                                        {
+                                            "title": "Activity 1",
+                                            "accessTypes": []
+                                        },
+                                        {
+                                            "title": "Activity 1",
+                                            "accessTypes": []
+                                        },
+                                        {
+                                            "title": "Activity 1",
+                                            "accessTypes": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "title": "Functionality 3",
+                                    "hasActivePermission": true,
+                                    "hasApprovePermission": true,
+                                    "hasArchivePermission": true,
+                                    "accessTypes": [],
+                                    "activities": [
+                                        {
+                                            "title": "Activity 1",
+                                            "accessTypes": []
+                                        },
+                                        {
+                                            "title": "Activity 1",
+                                            "accessTypes": []
+                                        },
+                                        {
+                                            "title": "Activity 1",
+                                            "accessTypes": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "roles": [
+                        {
+                            "title": "Production GM",
+                            "active": true
+                        },
+                        {
+                            "title": "Production Manager",
+                            "active": true
+                        },
+                        {
+                            "title": "Quality Controller",
+                            "active": true
+                        }
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "hdgfwye523reyte52yr7",
+                    "title": "Marchandising",
+                    "active": true,
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                    "features": [
+                        {
+                            "title": "Pricing",
+                            "functionalities": [
+                                {
+                                    "title": "Functionality 1",
+                                    "hasActivePermission": true,
+                                    "hasApprovePermission": true,
+                                    "hasArchivePermission": true,
+                                    "accessTypes": [],
+                                    "activities": [
+                                        {
+                                            "title": "Product Specification",
+                                            "accessTypes": []
+                                        },
+                                        {
+                                            "title": "Expected Delivery",
+                                            "accessTypes": []
+                                        },
+                                        {
+                                            "title": "Approximate Qty",
+                                            "accessTypes": []
+                                        },
+                                        {
+                                            "title": "Destination ",
+                                            "accessTypes": []
+                                        },
+                                        {
+                                            "title": "Product Price ",
+                                            "accessTypes": []
+                                        },
+                                        {
+                                            "title": "ETD confirmation",
+                                            "accessTypes": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "title": "Functionality 2",
+                                    "hasActivePermission": true,
+                                    "hasApprovePermission": true,
+                                    "hasArchivePermission": true,
+                                    "accessTypes": [],
+                                    "activities": [
+                                        {
+                                            "title": "Product Price Confirm",
+                                            "accessTypes": []
+                                        },
+                                        {
+                                            "title": "Production Book",
+                                            "accessTypes": []
+                                        },
+                                        {
+                                            "title": "Intial Booking",
+                                            "accessTypes": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "title": "Work Order",
+                            "functionalities": [
+                                {
+                                    "title": "Functionality 1",
+                                    "hasActivePermission": true,
+                                    "hasApprovePermission": true,
+                                    "hasArchivePermission": true,
+                                    "accessTypes": [],
+                                    "activities": [
+                                        {
+                                            "title": "PO",
+                                            "accessTypes": []
+                                        },
+                                        {
+                                            "title": "ETD",
+                                            "accessTypes": []
+                                        },
+                                        {
+                                            "title": "Proforma Invoice",
+                                            "accessTypes": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "title": "Functionality 2",
+                                    "hasActivePermission": true,
+                                    "hasApprovePermission": true,
+                                    "hasArchivePermission": true,
+                                    "accessTypes": [],
+                                    "activities": [
+                                        {
+                                            "title": "Destination",
+                                            "accessTypes": []
+                                        },
+                                        {
+                                            "title": "AQL",
+                                            "accessTypes": []
+                                        },
+                                        {
+                                            "title": "Inspector",
+                                            "accessTypes": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "title": "Functionality 3",
+                                    "hasActivePermission": true,
+                                    "hasApprovePermission": true,
+                                    "hasArchivePermission": true,
+                                    "accessTypes": [],
+                                    "activities": [
+                                        {
+                                            "title": "Proforma Invoice",
+                                            "accessTypes": []
+                                        },
+                                        {
+                                            "title": "Style Development ",
+                                            "accessTypes": []
+                                        },
+                                        {
+                                            "title": "Materials Development",
+                                            "accessTypes": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "title": "Pre-Production",
+                            "functionalities": [
+                                {
+                                    "title": "Functionality 1",
+                                    "hasActivePermission": true,
+                                    "hasApprovePermission": true,
+                                    "hasArchivePermission": true,
+                                    "accessTypes": [],
+                                    "activities": [
+                                        {
+                                            "title": "PP Sample Approval",
+                                            "accessTypes": [
+                                                1,
+                                                2.3,
+                                                4
+                                            ]
+                                        },
+                                        {
+                                            "title": "PP Meeting",
+                                            "accessTypes": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "roles": [
+                        {
+                            "title": "Director of Merchandising",
+                            "active": true
+                        },
+                        {
+                            "title": "Assistant Merchandise Manager",
+                            "active": true
+                        },
+                        {
+                            "title": "Digital Merchandising Manager",
+                            "active": true
+                        }
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "hdgfwye523rgeyte52yr7",
+                    "title": "HR",
+                    "active": true,
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                    "features": [
+                        {
+                            "title": "HR Development",
+                            "functionalities": [
+                                {
+                                    "title": "Functionality 1",
+                                    "hasActivePermission": true,
+                                    "hasApprovePermission": true,
+                                    "hasArchivePermission": true,
+                                    "accessTypes": [],
+                                    "activities": [
+                                        {
+                                            "title": "Activity 1",
+                                            "accessTypes": []
+                                        },
+                                        {
+                                            "title": "Activity 1",
+                                            "accessTypes": []
+                                        },
+                                        {
+                                            "title": "Activity 1",
+                                            "accessTypes": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "title": "Functionality 2",
+                                    "hasActivePermission": true,
+                                    "hasApprovePermission": true,
+                                    "hasArchivePermission": true,
+                                    "accessTypes": [],
+                                    "activities": [
+                                        {
+                                            "title": "Activity 1",
+                                            "accessTypes": []
+                                        },
+                                        {
+                                            "title": "Activity 1",
+                                            "accessTypes": []
+                                        },
+                                        {
+                                            "title": "Activity 1",
+                                            "accessTypes": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "title": "Functionality 3",
+                                    "hasActivePermission": true,
+                                    "hasApprovePermission": true,
+                                    "hasArchivePermission": true,
+                                    "accessTypes": [],
+                                    "activities": [
+                                        {
+                                            "title": "Activity 1",
+                                            "accessTypes": []
+                                        },
+                                        {
+                                            "title": "Activity 1",
+                                            "accessTypes": []
+                                        },
+                                        {
+                                            "title": "Activity 1",
+                                            "accessTypes": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "title": "HR Training",
+                            "functionalities": [
+                                {
+                                    "title": "Functionality 1",
+                                    "hasActivePermission": true,
+                                    "hasApprovePermission": true,
+                                    "hasArchivePermission": true,
+                                    "accessTypes": [],
+                                    "activities": [
+                                        {
+                                            "title": "Activity 1",
+                                            "accessTypes": []
+                                        },
+                                        {
+                                            "title": "Activity 1",
+                                            "accessTypes": []
+                                        },
+                                        {
+                                            "title": "Activity 1",
+                                            "accessTypes": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "title": "Functionality 2",
+                                    "hasActivePermission": true,
+                                    "hasApprovePermission": true,
+                                    "hasArchivePermission": true,
+                                    "accessTypes": [],
+                                    "activities": [
+                                        {
+                                            "title": "Activity 1",
+                                            "accessTypes": []
+                                        },
+                                        {
+                                            "title": "Activity 1",
+                                            "accessTypes": []
+                                        },
+                                        {
+                                            "title": "Activity 1",
+                                            "accessTypes": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "title": "Functionality 3",
+                                    "hasActivePermission": true,
+                                    "hasApprovePermission": true,
+                                    "hasArchivePermission": true,
+                                    "accessTypes": [],
+                                    "activities": [
+                                        {
+                                            "title": "Activity 1",
+                                            "accessTypes": []
+                                        },
+                                        {
+                                            "title": "Activity 1",
+                                            "accessTypes": []
+                                        },
+                                        {
+                                            "title": "Activity 1",
+                                            "accessTypes": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "title": "HR Hiring",
+                            "functionalities": [
+                                {
+                                    "title": "Functionality 1",
+                                    "hasActivePermission": true,
+                                    "hasApprovePermission": true,
+                                    "hasArchivePermission": true,
+                                    "accessTypes": [],
+                                    "activities": [
+                                        {
+                                            "title": "Activity 1",
+                                            "accessTypes": []
+                                        },
+                                        {
+                                            "title": "Activity 1",
+                                            "accessTypes": []
+                                        },
+                                        {
+                                            "title": "Activity 1",
+                                            "accessTypes": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "title": "Functionality 2",
+                                    "hasActivePermission": true,
+                                    "hasApprovePermission": true,
+                                    "hasArchivePermission": true,
+                                    "accessTypes": [],
+                                    "activities": [
+                                        {
+                                            "title": "Activity 1",
+                                            "accessTypes": []
+                                        },
+                                        {
+                                            "title": "Activity 1",
+                                            "accessTypes": []
+                                        },
+                                        {
+                                            "title": "Activity 1",
+                                            "accessTypes": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "title": "Functionality 3",
+                                    "hasActivePermission": true,
+                                    "hasApprovePermission": true,
+                                    "hasArchivePermission": true,
+                                    "accessTypes": [],
+                                    "activities": [
+                                        {
+                                            "title": "Activity 1",
+                                            "accessTypes": []
+                                        },
+                                        {
+                                            "title": "Activity 1",
+                                            "accessTypes": []
+                                        },
+                                        {
+                                            "title": "Activity 1",
+                                            "accessTypes": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "roles": [
+                        {
+                            "title": "Hiring Manager",
+                            "active": true
+                        },
+                        {
+                            "title": "Service Center Coordinator",
+                            "active": true
+                        },
+                        {
+                            "title": "Compliance",
+                            "active": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "TECHDISER_ID": "2",
+            "TECHDISER_SERIAL_NO": 2,
+            "organizationId": "Organization_1",
+            "deleted": false,
+            "name": "Senior Q/A",
+            "icon": "icon-people",
+            "permissions": [
+                {
+                    "TECHDISER_ID": "hdgfwye523reyte52yre27",
+                    "title": "Production",
+                    "active": true,
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                    "features": [
+                        {
+                            "title": "Production Estimation",
+                            "functionalities": [
+                                {
+                                    "title": "Functionality 1",
+                                    "hasActivePermission": false,
+                                    "hasApprovePermission": true,
+                                    "hasArchivePermission": true,
+                                    "accessTypes": [],
+                                    "activities": [
+                                        {
+                                            "title": "Activity 1",
+                                            "accessTypes": []
+                                        },
+                                        {
+                                            "title": "Activity 2",
+                                            "accessTypes": []
+                                        },
+                                        {
+                                            "title": "Activity 3",
+                                            "accessTypes": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "title": "Functionality 2",
+                                    "hasActivePermission": true,
+                                    "hasApprovePermission": true,
+                                    "hasArchivePermission": false,
+                                    "accessTypes": [],
+                                    "activities": [
+                                        {
+                                            "title": "Activity 1",
+                                            "accessTypes": []
+                                        },
+                                        {
+                                            "title": "Activity 2",
+                                            "accessTypes": []
+                                        },
+                                        {
+                                            "title": "Activity 3",
+                                            "accessTypes": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "title": "Functionality 3",
+                                    "hasActivePermission": true,
+                                    "hasApprovePermission": true,
+                                    "hasArchivePermission": true,
+                                    "accessTypes": [],
+                                    "activities": [
+                                        {
+                                            "title": "Activity 1",
+                                            "accessTypes": []
+                                        },
+                                        {
+                                            "title": "Activity 2",
+                                            "accessTypes": []
+                                        },
+                                        {
+                                            "title": "Activity 3",
+                                            "accessTypes": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "title": "Production Calculator",
+                            "functionalities": [
+                                {
+                                    "title": "Functionality 1",
+                                    "hasActivePermission": true,
+                                    "hasApprovePermission": true,
+                                    "hasArchivePermission": true,
+                                    "accessTypes": [],
+                                    "activities": [
+                                        {
+                                            "title": "Activity 1",
+                                            "accessTypes": [
+                                                1,
+                                                2
+                                            ]
+                                        },
+                                        {
+                                            "title": "Activity 2",
+                                            "accessTypes": [
+                                                3,
+                                                4
+                                            ]
+                                        },
+                                        {
+                                            "title": "Activity 3",
+                                            "accessTypes": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "title": "Functionality 2",
+                                    "hasActivePermission": true,
+                                    "hasApprovePermission": true,
+                                    "hasArchivePermission": true,
+                                    "accessTypes": [
+                                        1,
+                                        2
+                                    ],
+                                    "activities": [
+                                        {
+                                            "title": "Activity 1",
+                                            "accessTypes": []
+                                        },
+                                        {
+                                            "title": "Activity 2",
+                                            "accessTypes": []
+                                        },
+                                        {
+                                            "title": "Activity 3",
+                                            "accessTypes": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "title": "Functionality 3",
+                                    "hasActivePermission": true,
+                                    "hasApprovePermission": true,
+                                    "hasArchivePermission": true,
+                                    "accessTypes": [],
+                                    "activities": [
+                                        {
+                                            "title": "Activity 1",
+                                            "accessTypes": []
+                                        },
+                                        {
+                                            "title": "Activity 2",
+                                            "accessTypes": []
+                                        },
+                                        {
+                                            "title": "Activity 3",
+                                            "accessTypes": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "title": "Production Productivity",
+                            "functionalities": [
+                                {
+                                    "title": "Functionality 1",
+                                    "hasActivePermission": true,
+                                    "hasApprovePermission": true,
+                                    "hasArchivePermission": true,
+                                    "accessTypes": [],
+                                    "activities": [
+                                        {
+                                            "title": "Activity 1",
+                                            "accessTypes": []
+                                        },
+                                        {
+                                            "title": "Activity 1",
+                                            "accessTypes": []
+                                        },
+                                        {
+                                            "title": "Activity 1",
+                                            "accessTypes": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "title": "Functionality 2",
+                                    "hasActivePermission": true,
+                                    "hasApprovePermission": true,
+                                    "hasArchivePermission": true,
+                                    "accessTypes": [],
+                                    "activities": [
+                                        {
+                                            "title": "Activity 1",
+                                            "accessTypes": []
+                                        },
+                                        {
+                                            "title": "Activity 1",
+                                            "accessTypes": []
+                                        },
+                                        {
+                                            "title": "Activity 1",
+                                            "accessTypes": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "title": "Functionality 3",
+                                    "hasActivePermission": true,
+                                    "hasApprovePermission": true,
+                                    "hasArchivePermission": true,
+                                    "accessTypes": [],
+                                    "activities": [
+                                        {
+                                            "title": "Activity 1",
+                                            "accessTypes": []
+                                        },
+                                        {
+                                            "title": "Activity 1",
+                                            "accessTypes": []
+                                        },
+                                        {
+                                            "title": "Activity 1",
+                                            "accessTypes": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "roles": [
+                        {
+                            "title": "Production GM",
+                            "active": true
+                        },
+                        {
+                            "title": "Production Manager",
+                            "active": true
+                        },
+                        {
+                            "title": "Quality Controller",
+                            "active": true
+                        }
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "hdgfwye523reyte52yr7",
+                    "title": "Marchandising",
+                    "active": true,
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                    "features": [
+                        {
+                            "title": "Pricing",
+                            "functionalities": [
+                                {
+                                    "title": "Functionality 1",
+                                    "hasActivePermission": true,
+                                    "hasApprovePermission": true,
+                                    "hasArchivePermission": true,
+                                    "accessTypes": [],
+                                    "activities": [
+                                        {
+                                            "title": "Product Specification",
+                                            "accessTypes": []
+                                        },
+                                        {
+                                            "title": "Expected Delivery",
+                                            "accessTypes": []
+                                        },
+                                        {
+                                            "title": "Approximate Qty",
+                                            "accessTypes": []
+                                        },
+                                        {
+                                            "title": "Destination ",
+                                            "accessTypes": []
+                                        },
+                                        {
+                                            "title": "Product Price ",
+                                            "accessTypes": []
+                                        },
+                                        {
+                                            "title": "ETD confirmation",
+                                            "accessTypes": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "title": "Functionality 2",
+                                    "hasActivePermission": true,
+                                    "hasApprovePermission": true,
+                                    "hasArchivePermission": true,
+                                    "accessTypes": [],
+                                    "activities": [
+                                        {
+                                            "title": "Product Price Confirm",
+                                            "accessTypes": []
+                                        },
+                                        {
+                                            "title": "Production Book",
+                                            "accessTypes": []
+                                        },
+                                        {
+                                            "title": "Intial Booking",
+                                            "accessTypes": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "title": "Work Order",
+                            "functionalities": [
+                                {
+                                    "title": "Functionality 1",
+                                    "hasActivePermission": true,
+                                    "hasApprovePermission": true,
+                                    "hasArchivePermission": true,
+                                    "accessTypes": [],
+                                    "activities": [
+                                        {
+                                            "title": "PO",
+                                            "accessTypes": [
+                                                1,
+                                                2,
+                                                3,
+                                                4
+                                            ]
+                                        },
+                                        {
+                                            "title": "ETD",
+                                            "accessTypes": [
+                                                1,
+                                                3
+                                            ]
+                                        },
+                                        {
+                                            "title": "Proforma Invoice",
+                                            "accessTypes": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "title": "Functionality 2",
+                                    "hasActivePermission": true,
+                                    "hasApprovePermission": true,
+                                    "hasArchivePermission": true,
+                                    "accessTypes": [],
+                                    "activities": [
+                                        {
+                                            "title": "Destination",
+                                            "accessTypes": []
+                                        },
+                                        {
+                                            "title": "AQL",
+                                            "accessTypes": []
+                                        },
+                                        {
+                                            "title": "Inspector",
+                                            "accessTypes": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "title": "Functionality 3",
+                                    "hasActivePermission": true,
+                                    "hasApprovePermission": true,
+                                    "hasArchivePermission": true,
+                                    "accessTypes": [],
+                                    "activities": [
+                                        {
+                                            "title": "Proforma Invoice",
+                                            "accessTypes": []
+                                        },
+                                        {
+                                            "title": "Style Development ",
+                                            "accessTypes": []
+                                        },
+                                        {
+                                            "title": "Materials Development",
+                                            "accessTypes": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "title": "Pre-Production",
+                            "functionalities": [
+                                {
+                                    "title": "Functionality 1",
+                                    "hasActivePermission": true,
+                                    "hasApprovePermission": true,
+                                    "hasArchivePermission": true,
+                                    "accessTypes": [],
+                                    "activities": [
+                                        {
+                                            "title": "PP Sample Approval",
+                                            "accessTypes": []
+                                        },
+                                        {
+                                            "title": "PP Meeting",
+                                            "accessTypes": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "roles": [
+                        {
+                            "title": "Director of Merchandising",
+                            "active": true
+                        },
+                        {
+                            "title": "Assistant Merchandise Manager",
+                            "active": true
+                        },
+                        {
+                            "title": "Digital Merchandising Manager",
+                            "active": true
+                        }
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "hdgfwye523rgeyte52yr7",
+                    "title": "HR",
+                    "active": true,
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                    "features": [
+                        {
+                            "title": "HR Development",
+                            "functionalities": [
+                                {
+                                    "title": "Functionality 1",
+                                    "hasActivePermission": true,
+                                    "hasApprovePermission": true,
+                                    "hasArchivePermission": true,
+                                    "accessTypes": [],
+                                    "activities": [
+                                        {
+                                            "title": "Activity 1",
+                                            "accessTypes": []
+                                        },
+                                        {
+                                            "title": "Activity 1",
+                                            "accessTypes": []
+                                        },
+                                        {
+                                            "title": "Activity 1",
+                                            "accessTypes": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "title": "Functionality 2",
+                                    "hasActivePermission": true,
+                                    "hasApprovePermission": true,
+                                    "hasArchivePermission": true,
+                                    "accessTypes": [],
+                                    "activities": [
+                                        {
+                                            "title": "Activity 1",
+                                            "accessTypes": []
+                                        },
+                                        {
+                                            "title": "Activity 1",
+                                            "accessTypes": []
+                                        },
+                                        {
+                                            "title": "Activity 1",
+                                            "accessTypes": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "title": "Functionality 3",
+                                    "hasActivePermission": true,
+                                    "hasApprovePermission": true,
+                                    "hasArchivePermission": true,
+                                    "accessTypes": [],
+                                    "activities": [
+                                        {
+                                            "title": "Activity 1",
+                                            "accessTypes": []
+                                        },
+                                        {
+                                            "title": "Activity 1",
+                                            "accessTypes": []
+                                        },
+                                        {
+                                            "title": "Activity 1",
+                                            "accessTypes": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "title": "HR Training",
+                            "functionalities": [
+                                {
+                                    "title": "Functionality 1",
+                                    "hasActivePermission": true,
+                                    "hasApprovePermission": true,
+                                    "hasArchivePermission": true,
+                                    "accessTypes": [],
+                                    "activities": [
+                                        {
+                                            "title": "Activity 1",
+                                            "accessTypes": []
+                                        },
+                                        {
+                                            "title": "Activity 1",
+                                            "accessTypes": []
+                                        },
+                                        {
+                                            "title": "Activity 1",
+                                            "accessTypes": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "title": "Functionality 2",
+                                    "hasActivePermission": true,
+                                    "hasApprovePermission": true,
+                                    "hasArchivePermission": true,
+                                    "accessTypes": [],
+                                    "activities": [
+                                        {
+                                            "title": "Activity 1",
+                                            "accessTypes": []
+                                        },
+                                        {
+                                            "title": "Activity 1",
+                                            "accessTypes": []
+                                        },
+                                        {
+                                            "title": "Activity 1",
+                                            "accessTypes": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "title": "Functionality 3",
+                                    "hasActivePermission": true,
+                                    "hasApprovePermission": true,
+                                    "hasArchivePermission": true,
+                                    "accessTypes": [],
+                                    "activities": [
+                                        {
+                                            "title": "Activity 1",
+                                            "accessTypes": []
+                                        },
+                                        {
+                                            "title": "Activity 1",
+                                            "accessTypes": []
+                                        },
+                                        {
+                                            "title": "Activity 1",
+                                            "accessTypes": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "title": "HR Hiring",
+                            "functionalities": [
+                                {
+                                    "title": "Functionality 1",
+                                    "hasActivePermission": true,
+                                    "hasApprovePermission": true,
+                                    "hasArchivePermission": true,
+                                    "accessTypes": [],
+                                    "activities": [
+                                        {
+                                            "title": "Activity 1",
+                                            "accessTypes": []
+                                        },
+                                        {
+                                            "title": "Activity 1",
+                                            "accessTypes": []
+                                        },
+                                        {
+                                            "title": "Activity 1",
+                                            "accessTypes": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "title": "Functionality 2",
+                                    "hasActivePermission": true,
+                                    "hasApprovePermission": true,
+                                    "hasArchivePermission": true,
+                                    "accessTypes": [],
+                                    "activities": [
+                                        {
+                                            "title": "Activity 1",
+                                            "accessTypes": []
+                                        },
+                                        {
+                                            "title": "Activity 1",
+                                            "accessTypes": []
+                                        },
+                                        {
+                                            "title": "Activity 1",
+                                            "accessTypes": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "title": "Functionality 3",
+                                    "hasActivePermission": true,
+                                    "hasApprovePermission": true,
+                                    "hasArchivePermission": true,
+                                    "accessTypes": [],
+                                    "activities": [
+                                        {
+                                            "title": "Activity 1",
+                                            "accessTypes": []
+                                        },
+                                        {
+                                            "title": "Activity 1",
+                                            "accessTypes": []
+                                        },
+                                        {
+                                            "title": "Activity 1",
+                                            "accessTypes": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "roles": [
+                        {
+                            "title": "Hiring Manager",
+                            "active": true
+                        },
+                        {
+                            "title": "Service Center Coordinator",
+                            "active": true
+                        },
+                        {
+                            "title": "Compliance",
+                            "active": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "TECHDISER_ID": "3",
+            "name": "Mid Level Developer",
+            "icon": "icon-people"
+        },
+        {
+            "TECHDISER_ID": "4",
+            "name": "Junior Developer",
+            "icon": "icon-people"
+        },
+        {
+            "TECHDISER_ID": "5",
+            "name": "Quality Assurance",
+            "icon": "icon-people"
+        },
+        {
+            "TECHDISER_ID": "6",
+            "name": "Team Leader",
+            "icon": "icon-people"
+        },
+        {
+            "TECHDISER_ID": "7",
+            "name": "Project Manager",
+            "icon": "icon-people"
+        }
+    ]
+}

@@ -1,0 +1,122 @@
+<md-dialog class="common-dialog poselector-dialog" aria-label="Dialog">
+    <form name="opSelector" class="md-inline-form" novalidate>
+        <md-toolbar class="md-accent">
+            <div class="md-toolbar-tools" layout="row" layout-align="space-between center">
+                <div>
+                    <label>Select {{vm.column.title}} </label>
+                </div>
+
+                <md-button class="md-icon-button" ng-click="vm.closeDialog()" aria-label="Close Dialog">
+                    <md-icon md-font-icon="icon-close"></md-icon>
+                </md-button>
+
+
+            </div>
+        </md-toolbar>
+
+        <md-dialog-content>
+            <div layout="row" flex="100">
+
+                <div flex="{{vm.singleSelection ? 100: 60}}" class="left-side p-5">
+
+                    <div layout="row">
+                        <div class="search-input-wrapper" layout="row" layout-align="start center">
+                            <label for="search">
+                                <md-icon md-font-icon="icon-magnify"></md-icon>
+                            </label>
+                            <md-input-container md-no-float class="m-0">
+                                <input id="search" placeholder="Search for {{vm.column.title}}" type="text" ng-model="vm.search">
+                            </md-input-container>
+                        </div>
+                    </div>
+
+                    <div ms-scroll>
+                        <div class="border mb-5 p-5 grey-200-bg cursor-pointer" ng-repeat="item in vm.items" ng-click="vm.onItemClick(item)" layout="row" layout-align="space-between center">
+                            <div layout="row" layout-align="start center">
+
+                                <div class="ml-5 mr-10" ng-if="vm.getImageColumn()">
+                                    <img ng-src="{{item[vm.getImageColumn()]}}" style=" max-height: 100px;" />
+                                </div>
+
+
+                                <div layout="column" layout-align="start top" class="p-10">
+
+                                    <div layout="row" layout-align="start center" layout-wrap>
+                                        <div class="mr-25" ng-if="col.type !== 'iconPicture'" ng-repeat="col in vm.select.listColumns">
+                                            <span>{{col.label}}:</span>
+                                            <span class="ml-5 text-bold"">
+                                           {{item[col.key]}}</span>
+
+                                       </div>
+                                    </div>
+
+                              </div> 
+                          </div>
+                          <div>
+
+                                <md-icon ng-if=" item.selected" md-font-icon="icon-checkbox-marked-outline" class="md-accent">
+
+                                                </md-icon>
+
+                                                <md-icon ng-if="!item.selected" md-font-icon="icon-checkbox-blank-outline">
+
+                                                </md-icon>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+                            <div flex="40" ng-if="!vm.singleSelection" class="grey-300-bg right-side p-5">
+                                <div class="h4 mb-15">
+                                    <u>Selected {{vm.column.title}}: </u>
+                                </div>
+                                <div ms-scroll>
+                                    <div class="border mb-5 p-5 grey-200-bg" ng-repeat="item in vm.getSelected()" layout="row" layout-align="space-between center">
+                                        <div layout="row" layout-align="start center">
+
+                                            <div class="ml-5 mr-10" ng-if="vm.getImageColumn()">
+                                                <img ng-src="{{item[vm.getImageColumn()]}}" style=" max-height: 120px;" />
+                                            </div>
+
+
+                                            <div layout="column" layout-align="start top" class="p-10">
+
+                                                <div layout="row" layout-align="start center" layout-wrap>
+                                                    <div class="mr-25" ng-if="col.type !== 'iconPicture'" ng-repeat="col in vm.select.listColumns">
+                                                        <span>{{col.label}}:</span>
+                                                        <span class="ml-5 text-bold">{{item[col.key]}}</span>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="cursor-pointer border" ng-click="item.selected = !item.selected">
+                                            <md-icon md-font-icon="icon-close" style="color: red;">
+                                            </md-icon>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+        </md-dialog-content>
+
+
+
+    </form>
+
+    <md-dialog-actions layout="row" layout-align="space-between center">
+
+        <md-button ng-click="vm.OK()" class="send-button md-accent md-raised" aria-label="SAVE">
+            <span>OK</span>
+        </md-button>
+
+        <md-button ng-click="vm.closeDialog()" class="send-button md-raised" aria-label="SAVE">
+            <span>Close</span>
+        </md-button>
+
+    </md-dialog-actions>
+</md-dialog>

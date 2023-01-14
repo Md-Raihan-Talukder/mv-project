@@ -1,0 +1,326 @@
+md-dialog {
+  &.task-card-dialog {
+    width: 90%;
+    max-width: 800px;
+    overflow: hidden;
+
+    md-toolbar {
+      .md-toolbar-tools {
+        padding-left: 0;
+
+        > .md-menu {
+          display: flex;
+          align-items: center;
+          height: 100%;
+
+          .md-button {
+          }
+        }
+
+        .due-date {
+          .moment-picker {
+            .moment-picker-container {
+              font-size: 13px;
+            }
+          }
+        }
+      }
+    }
+
+    md-dialog-content {
+      position: relative;
+      background-color: #f5f5f5;
+
+      md-input-container {
+        margin: 10px 0;
+      }
+
+      .card-breadcrumb {
+        font-weight: 500;
+        font-size: 14px;
+        margin-bottom: 12px;
+      }
+
+      .card-subscribe {
+        margin-right: 8px;
+        color: rgba(0, 0, 0, 0.6);
+      }
+
+      .card-name {
+        width: 100%;
+        font-size: 24px;
+
+        .editable-input {
+          font-size: 24px;
+        }
+      }
+
+      .description {
+        padding-bottom: 16px;
+      }
+
+      .taskCardForm {
+        font-size: 13px;
+      }
+
+      .task-status {
+        border-radius: 6px;
+        padding: 0 5px;
+      }
+
+      .sections {
+        .section {
+          font-size: 13px;
+
+          md-input-container.md-default-theme .md-input,
+          md-input-container .md-input {
+            color: rgba(0, 0, 0, 0.87) !important;
+          }
+
+          .md-input-has-value label {
+            color: rgba(0, 0, 0, 0.87) !important;
+            font-weight: bold;
+            font-size: 1.25em;
+          }
+
+          .section-header {
+            font-size: 16px;
+
+            i {
+              margin-right: 8px;
+              color: rgba(0, 0, 0, 0.6);
+            }
+
+            .section-title {
+              font-weight: 500;
+            }
+          }
+
+          .po-section-content {
+            margin-bottom: 0 !important;
+            padding-bottom: 0 !important;
+          }
+
+          .labels {
+            .section-content {
+              padding: 8px 0 32px 0;
+            }
+
+            .label-chips {
+              .md-chips {
+                box-shadow: none;
+                padding: 0;
+
+                md-chip {
+                  background: transparent;
+                  padding-right: 0 !important;
+                  padding-left: 0 !important;
+
+                  .label-chip {
+                    padding: 0 32px 0 12px;
+                    border-radius: 16px;
+                    display: block;
+                    height: 20px;
+                    line-height: 20px;
+                    font-size: 10px;
+                  }
+
+                  ._md-chip-remove-container {
+                    right: 12px;
+                    line-height: 20px;
+                  }
+                }
+              }
+            }
+          }
+
+          .members {
+            .section-content {
+              padding: 8px 0 32px 0;
+            }
+
+            .member-chips {
+              .md-chips {
+                box-shadow: none;
+                padding: 0;
+
+                md-chip {
+                  padding-left: 0;
+
+                  .member-chip {
+                    .member-chip-avatar {
+                      width: 32px;
+                      border-radius: 50%;
+                    }
+                  }
+
+                  ._md-chip-remove-container {
+                    right: 6px;
+                    line-height: 30px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.labels-menu-content md-tabs-wrapper {
+  height: 0;
+  overflow: hidden;
+}
+
+.edit-label-buttons {
+  position: absolute;
+  top: 3px;
+  right: 3px;
+}
+.icon-has-tag {
+  position: absolute;
+  right: 10px;
+}
+
+.checklist-menu-content {
+  padding: 8px 16px 16px 16px;
+
+  md-input-container {
+    width: 100%;
+    margin: 8px 0 8px 0;
+  }
+
+  .md-button {
+    margin: 8px 0 0 0;
+  }
+}
+
+.labels-menu-content {
+  position: relative;
+  padding: 4px 0;
+  max-height: 400px;
+
+  md-tabs-wrapper {
+    height: 0;
+    overflow: hidden;
+  }
+
+  md-tabs-content-wrapper {
+    top: 0;
+  }
+
+  md-input-container {
+    input {
+      font-size: 16px;
+    }
+  }
+
+  .label {
+    padding: 4px 16px;
+
+    .label-toggle-button {
+      font-size: 13px;
+    }
+
+    .label-edit-button {
+      margin: 0 0 0 8px;
+      padding: 0;
+
+      md-icon {
+        margin: 0 auto;
+      }
+    }
+  }
+
+  md-menu-divider {
+    display: block;
+  }
+
+  .add-label-tab-content,
+  .edit-label-tab-content {
+    .header {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+    }
+
+    .content {
+      padding: 0 16px 8px 16px;
+
+      .label-color-picker {
+        width: 240px;
+        margin: 0 -4px 0 2px;
+
+        .color {
+          width: 24px;
+          height: 24px;
+          margin: 0 6px 6px 0;
+          cursor: pointer;
+        }
+      }
+
+      .create-button {
+        margin: 16px 0 8px 0;
+      }
+    }
+  }
+}
+
+.members-menu-content {
+  position: relative;
+  padding: 4px 0;
+  max-height: 400px;
+
+  md-input-container {
+    input {
+      font-size: 16px;
+    }
+  }
+
+  .member {
+    .md-button {
+      .avatar {
+        margin-right: 16px;
+        width: 32px;
+        height: 32px;
+        min-width: 32px;
+      }
+
+      .member-name {
+        font-size: 13px;
+      }
+    }
+  }
+}
+
+.new-label-form {
+  .editable-text {
+    width: 100%;
+
+    .editable-controls {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      padding-left: 8px;
+
+      .editable-input {
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        padding: 4px 2px;
+        margin-bottom: 8px;
+        font-size: 13px;
+        width: 100%;
+      }
+
+      .editable-buttons {
+        .md-button {
+          margin: 0;
+          margin: 0;
+          padding: 0;
+          height: 32px;
+          min-height: 32px;
+          line-height: 32px;
+          width: 32px;
+        }
+      }
+    }
+  }
+}

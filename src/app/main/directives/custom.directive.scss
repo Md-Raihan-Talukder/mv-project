@@ -1,0 +1,358 @@
+.custom-directive-container {
+  padding: 10px 10px 10px 0;
+  width: 100%;
+  .btn-expand-colupse {
+    margin-left: -10px;
+  }
+
+  .section {
+    .btn-advance-policy {
+      margin: 0 0 20px 0;
+      padding: 0;
+    }
+
+    .section-header {
+      font-size: 16px;
+
+      i {
+        margin-right: 8px;
+        color: rgba(0, 0, 0, 0.6);
+      }
+
+      .section-title {
+        font-weight: 500;
+      }
+    }
+
+    .section-content {
+    }
+
+    .checklist {
+      .checklist-progress {
+        margin-bottom: 16px;
+
+        .checklist-progress-value {
+          margin-right: 12px;
+          font-weight: 500;
+          white-space: nowrap;
+          font-size: 14px;
+        }
+
+        .checklist-progressbar {
+        }
+      }
+
+      .editable-wrap {
+        flex: 1;
+      }
+
+      .check-items {
+        .check-item {
+          md-checkbox {
+            margin-bottom: 0;
+
+            .md-label {
+              font-size: 14px;
+            }
+
+            &.md-checked {
+              .md-label {
+                text-decoration: line-through;
+                color: rgba(0, 0, 0, 0.6);
+              }
+            }
+          }
+        }
+      }
+
+      .new-check-item-form {
+        padding-top: 16px;
+
+        md-input-container {
+          margin: 0;
+        }
+
+        .md-button {
+          margin: 0 0 0 16px;
+        }
+      }
+    }
+
+    .reminders {
+      .reminder-item-title {
+        font-size: 13px;
+      }
+
+      .members {
+        .section-content {
+          padding: 8px 0 32px 0;
+        }
+
+        .member-chips {
+          margin-top: -17px;
+
+          .md-chips {
+            box-shadow: none;
+            padding: 0;
+
+            md-chip {
+              padding-left: 0;
+
+              .member-chip {
+                .member-chip-avatar {
+                  width: 32px;
+                  border-radius: 50%;
+                }
+              }
+
+              ._md-chip-remove-container {
+                right: 6px;
+                line-height: 30px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .comments {
+      .comment {
+        /* margin-bottom: 16px;*/
+
+        .comment-member-avatar {
+          width: 32px;
+          height: 32px;
+          border-radius: 50%;
+          margin-right: 16px;
+        }
+
+        .comment-member-name {
+          font-size: 14px;
+          font-weight: 500;
+        }
+
+        .comment-time {
+          font-size: 12px;
+        }
+
+        .comment-bubble {
+          position: relative;
+          padding: 8px;
+          background-color: white;
+          border: 1px solid rgb(220, 223, 225);
+          font-size: 14px;
+          margin: 4px 0;
+
+          &:after,
+          &:before {
+            content: " ";
+            position: absolute;
+            width: 0;
+            height: 0;
+          }
+
+          &:after {
+            left: -7px;
+            right: auto;
+            top: 0px;
+            bottom: auto;
+            border: 11px solid;
+            border-color: white transparent transparent transparent;
+          }
+
+          &:before {
+            left: -9px;
+            right: auto;
+            top: -1px;
+            bottom: auto;
+            border: 8px solid;
+            border-color: rgb(220, 223, 225) transparent transparent transparent;
+          }
+        }
+
+        &.new-comment {
+          md-input-container {
+            margin: 0;
+          }
+        }
+      }
+    }
+
+    .activities {
+      .activity {
+        margin-bottom: 12px;
+
+        .activity-member-avatar {
+          width: 24px;
+          height: 24px;
+          border-radius: 50%;
+          margin-right: 16px;
+        }
+
+        .activity-member-name {
+          font-size: 14px;
+          font-weight: 500;
+          margin-right: 8px;
+        }
+
+        .activity-message {
+          font-size: 14px;
+          margin-right: 8px;
+        }
+
+        .activity-time {
+          font-size: 12px;
+        }
+      }
+    }
+
+    .recuring-directive {
+      md-select {
+        margin: 0;
+      }
+    }
+
+    .time-duration-chk {
+      margin-left: 15px !important;
+      margin-top: 30px !important;
+    }
+
+    .repeat-status,
+    .task-status {
+      border-radius: 6px;
+      padding: 0 5px;
+    }
+
+    .repeat-status {
+      font-size: 0.8em;
+      padding: 5px 8px;
+    }
+
+    .due-policy {
+      margin-top: -20px;
+    }
+
+    .attachment-list {
+      font-size: 13px;
+      width: 100%;
+
+      .attachment {
+        background-color: rgba(0, 0, 0, 0.08);
+        border: 1px solid rgba(0, 0, 0, 0.12);
+        padding-left: 16px;
+        margin-top: 8px;
+        border-radius: 2px;
+
+        .filename {
+          font-weight: 500;
+        }
+
+        .size {
+        }
+
+        .md-button {
+          margin: 0;
+        }
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    .reminder-list {
+      .title {
+        font-size: 16px;
+      }
+      .icon {
+        font-size: 16px;
+        color: rgb(3, 155, 229);
+      }
+
+      ol {
+        list-style-type: none;
+        counter-reset: item;
+        margin: 0;
+        padding: 0;
+      }
+
+      ol > li {
+        display: table;
+        counter-increment: item;
+        margin-bottom: 0.6em;
+      }
+
+      ol > li:before {
+        content: counters(item, ".") ". ";
+        display: table-cell;
+        padding-right: 0.6em;
+      }
+
+      li ol > li:before {
+        content: counters(item, ".") " ";
+      }
+    }
+  }
+
+  .checklist-menu-content {
+    padding: 8px 16px 16px 16px;
+
+    md-input-container {
+      width: 100%;
+      margin: 8px 0 8px 0;
+    }
+
+    .md-button {
+      margin: 8px 0 0 0;
+    }
+  }
+  .btn-comment-remove {
+    height: 30px;
+    margin-top: -12px;
+    .icon {
+      color: rgb(244, 67, 54) !important;
+    }
+  }
+
+  .editable-wrap {
+    display: block;
+    position: relative;
+
+    .editable-controls {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      width: 100%;
+
+      .editable-input {
+        width: inherit;
+        background-color: white;
+        padding: 8px;
+        border: 1px solid rgba(0, 0, 0, 0.12);
+      }
+
+      .editable-buttons {
+        display: inherit;
+
+        .md-button {
+          margin: 0;
+
+          &:first-of-type {
+            padding-right: 0;
+          }
+
+          .icon-cancel {
+            color: rgba(0, 0, 0, 0.32);
+          }
+        }
+      }
+    }
+  }
+}
+
+.days-distribution {
+  table.dataTable tbody td,
+  table.dataTable thead th {
+    border: 1px solid rgba(0, 0, 0, 0.12) !important;
+  }
+}

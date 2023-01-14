@@ -1,0 +1,79 @@
+<div id="activate-invitation" class="flex-scrollable" layout="column" ms-scroll>
+    <div id="activate-invitation-form-wrapper" layout="column" layout-align="center center">
+        <div id="activate-invitation-form" class="md-whiteframe-8dp">
+
+            <div class="md-headline">Please Activate Your Invitation
+
+            </div>
+            <md-divider></md-divider><br />
+
+            <div class="user-info">
+                <div layout="row">
+                    <div flex=30 class="left-info">
+                        <h3>
+                            <md-icon md-font-icon="icon-account"></md-icon> <b>Username</b>
+                        </h3>
+                        <h3>
+                            <md-icon md-font-icon="icon-email"></md-icon> <b>Email</b>
+                        </h3>
+                        <h3>
+                            <md-icon md-font-icon="icon-account-box-outline"></md-icon> <b>Designation</b>
+                        </h3>
+                        <h3>
+                            <md-icon md-font-icon="icon-phone"></md-icon> <b>Phone</b>
+                        </h3>
+                    </div>
+                    <div flex class="mt-5">
+                        <h3>: {{vm.user.name}}</h3>
+                        <h3>: {{vm.user.email}}</h3>
+                        <h3>: {{vm.user.designation}}</h3>
+                        <h3>: {{vm.user.phoneNumber}}</h3>
+                    </div>
+                </div>
+
+            </div>
+            <md-divider></md-divider><br />
+
+            <form name="invitationPasswordForm" novalidate>
+                <md-input-container class="md-block" md-no-float>
+                    <label>Alternate Email</label>
+                    <input type="text" name="alternateEmail" ng-model="vm.invitation.alternateEmail">
+                </md-input-container>
+                <md-input-container class="md-block" md-no-float>
+                    <label>Alternate Phone</label>
+                    <input type="text" name="alternatePhone" ng-model="vm.invitation.alternatePhone">
+                </md-input-container>
+                <md-input-container class="md-block" md-no-float>
+                    <label>Password</label>
+                    <input type="password" name="password" ng-model="vm.invitation.password" required>
+                    <div ng-messages="invitationPasswordForm.password.$error" role="alert">
+                        <div ng-message="required">
+                            <span>Password field is required</span>
+                        </div>
+                    </div>
+                </md-input-container>
+
+                <md-input-container class="md-block" md-no-float>
+                    <label>Password (Confirm)</label>
+                    <input type="password" name="passwordConfirm" ng-model="vm.invitation.passwordConfirm" compare-to="vm.invitation.password" required>
+                    <div ng-messages="invitationPasswordForm.passwordConfirm.$error" role="alert" md-auto-hide="false">
+                        <div ng-message="required" ng-if='invitationPasswordForm.passwordConfirm.$touched'>
+                            <span>Password (Confirm) field is required</span>
+                        </div>
+
+                        <div ng-message="compareTo" ng-if='invitationPasswordForm.passwordConfirm.$touched'>
+                            <span>These passwords don't match. Try again?</span>
+                        </div>
+
+                    </div>
+                </md-input-container><br />
+
+                <md-button class="md-raised md-accent submit-button" ng-click="vm.acceptInvitation()" ng-disabled="invitationPasswordForm.$invalid || invitationPasswordForm.$pristine">
+                    ACCEPT INVITATION
+                </md-button>
+            </form>
+
+
+        </div>
+    </div>
+</div>

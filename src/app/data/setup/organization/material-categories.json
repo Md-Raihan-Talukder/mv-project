@@ -1,0 +1,19 @@
+{
+    "data": [
+        {
+            "TECHDISER_ID": "materialCat1234",
+            "title": "Fabrics",
+            "code": "Fabrics"
+        },
+        {
+            "TECHDISER_ID": "materialCat3456",
+            "title": "Button",
+            "code": "Button"
+        },
+        {
+            "TECHDISER_ID": "materialCat6789",
+            "title": "Cotrast",
+            "code": "Cotrast"
+        }
+    ]
+}

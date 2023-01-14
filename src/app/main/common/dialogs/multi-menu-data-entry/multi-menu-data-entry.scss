@@ -1,0 +1,49 @@
+md-dialog {
+  &.multi-menu-data-entry-dialog {
+    width: 70%;
+    height: 600px;
+    max-width: 100%;
+    max-height: 100%;
+    overflow: hidden;
+
+    md-dialog-content {
+      position: relative;
+      background-color: #f5f5f5;
+      max-height: 100%;
+      height: calc(100% - 105px);
+
+      .ms-widget .ms-widget-front {
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+      }
+
+      .main-content {
+        background-color: #ffffff;
+      }
+
+      .menu-content {
+        padding: 0;
+        .common-detail-menus {
+          padding: 0;
+
+          &.navigation-simple {
+            .selected {
+              background-color: rgb(3, 155, 229);
+              color: white;
+            }
+            .item {
+              line-height: 30px;
+              max-height: 30px;
+              height: 30px;
+              padding: 0 10px;
+            }
+            .subheader {
+              margin-top: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}

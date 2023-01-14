@@ -1,0 +1,28 @@
+{
+    "data": [
+        {
+            "TECHDISER_ID": "Defect_Type_1",
+            "TECHDISER_SERIAL_NO": 1,
+            "title": "Defect Type 1",
+            "description": "Defect Type 1 Des"
+        },
+        {
+            "TECHDISER_ID": "Defect_Type_2",
+            "TECHDISER_SERIAL_NO": 2,
+            "title": "Defect Type 2",
+            "description": "Defect Type 2 Des"
+        },
+        {
+            "TECHDISER_ID": "Defect_Type_3",
+            "TECHDISER_SERIAL_NO": 3,
+            "title": "Defect Type 3",
+            "description": "Defect Type 3 Des"
+        },
+        {
+            "TECHDISER_ID": "Defect_Type_4",
+            "TECHDISER_SERIAL_NO": 4,
+            "title": "Defect Type 4",
+            "description": "Defect Type 4 Des"
+        }
+    ]
+}

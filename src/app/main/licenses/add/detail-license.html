@@ -1,0 +1,89 @@
+<div id="license" class="item-detail register-definition page-layout simple tabbed" layout="column">
+    <div class="header md-accent-bg" layout="row" layout-align="start center">
+        <div layout="row" layout-align="start center" flex>
+
+            <div layout="row" layout-align="start center">
+                <div class="white-fg" layout="column" layout-align="start start">
+                    <div class="organization-title">
+                        <span>{{vm.license.organizationInfo.name}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <md-button class="md-raised md-background" ng-click="vm.backToList($event)">
+            <span>Back</span>
+        </md-button>
+    </div>
+
+    <div class="content ">
+        <md-tabs md-dynamic-height class="tabs ">
+            <!-- ORGANIZATION INFO TAB -->
+            <md-tab label="Basic Info">
+                <div class="pl-20 pr-20">
+                    <h3><b>Organization Information</b></h3>
+                    <h4><b>Organization Name: </b>{{vm.license.organizationInfo.name}}</h4>
+                    <h4><b>Number Of Users: </b>{{vm.license.organizationInfo.numberOfUsers}}</h4>
+
+                </div><br />
+                <md-divider></md-divider>
+                <div class="pl-20 pr-20">
+                    <h3><b>License Information</b></h3>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    <h3><b>License Type</b></h3>
+                    {{vm.license.licenseInfo.licenseType}}
+                    <h3><b>Activation Date</b></h3>
+                    {{vm.license.licenseInfo.activationDate}}
+                    <h3><b>Tenure</b></h3>
+                    {{vm.license.licenseInfo.tenure}}
+                    <h3><b>Validity Date</b></h3>
+                    {{vm.license.licenseInfo.validityDate}}
+                    <h3><b>Remaining</b></h3>
+
+                </div><br />
+            </md-tab>
+            <!-- MODULES TAB -->
+            <md-tab label="Modules" class="tab-content">
+                <!-- <label class="title">Modules</label> -->
+                <div class="widget-group" layout="row" flex="100" layout-wrap>
+
+                    <ms-widget ng-repeat="module in vm.license.modules" class="buyer-card  mt-20" flippable="false" layout="column">
+                        <ms-widget-front class="white-bg h-400 w-300">
+                            <div class="border-bottom border-top h-45 grey-100-bg " layout="row" layout-align="start center">
+                                <div class="mr-15 ml-10" ng-model="vm.license.modules.active">
+                                    <md-icon ng-if="module.active" md-font-icon="icon-checkbox-marked-outline" aria-label="checked" class="icon md-accent">
+                                    </md-icon>
+                                    <md-icon ng-if="!module.active" md-font-icon="icon-checkbox-blank-outline" aria-label="checked" class="icon">
+                                    </md-icon>
+                                </div>
+                                <div class="buyer-name md-subhead">{{module.moduleName}}</div>
+                            </div>
+
+                            <div class="ml-20 mr-20" ms-scroll class="content" layout="column" layout-align="start start">
+                                <b class="mt-10">Description</b>
+                                <p>
+                                    {{module.description}}
+                                </p>
+                                <b>Features</b>
+                                <ul style="list-style-type:none;">
+                                    <li ng-repeat="feature in vm.license.modules[$index].features" ng-click="feature.active = !feature.active" ng-model="vm.license.modules.features.active">
+                                        <span>
+                                            <md-icon ng-if="!feature.active" md-font-icon="icon-checkbox-blank-outline" aria-label="checked" class="icon"></md-icon>
+                                            <md-icon ng-if="feature.active" md-font-icon="icon-checkbox-marked-outline" aria-label="checked" class="icon md-accent">
+                                            </md-icon>
+                                        </span>
+                                        <span>{{feature.title}}</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="border-top h-30 grey-50-bg" layout="row" layout-align="space-between center">
+                            </div>
+                        </ms-widget-front>
+                    </ms-widget>
+
+                </div>
+            </md-tab>
+
+        </md-tabs>
+    </div>
+
+</div>

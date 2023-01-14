@@ -1,0 +1,74 @@
+<div layout="row" layout-align="start center" style="min-height: 100%; height:100%; overflow:hidden; ">
+
+    <div class="right border" flex style="min-height: 100%; height:100%; max-height: 100%; " layout="column" layout-align="start top">
+
+        <ms-widget layout="column" style="padding: 0; min-height: 100%; height:100%; width: 100% " layout-align="start top">
+
+            <ms-widget-front style="min-height: 100%; height:100%; width: 100%;" class="pl-15 pr-15" layout="column" layout-align="start top">
+                <div class="h-50" layout="row" layout-align="start center">
+                    <h3 class="mr-20">Garment Quantity : <b>{{vm.sizeWiseQty | number}} pcs</b></h3>
+                    <h3 class="mr-20">Assort Quantity : <b>{{vm.getCalculatedQty()}} pcs</b></h3>
+                    <h3 ng-if="vm.less">Less Quantity : <b>{{vm.lessQty}} pcs</b></h3>{{vm.getLessNExtraQty()}}
+                    <h3 ng-if="vm.extra">Extra Quantity : <b>{{vm.extraQty}} pcs</b></h3>
+                </div>
+
+                <div style="min-height: 100%; height:100%; width: 100%;" ms-scroll>
+
+                    <div class="mb-100">
+
+                        <div class="h-30 p-5 mb-10 grey-100-bg" layout="row" layout-align="start center">
+                            <u style="font-size: 14px;"> Size Wise Quantity
+                            </u>
+                        </div>
+                        <td-quantity-def on-change="vm.onChange()" size-def="vm.sizeDef" combo-def="vm.comboDef" quantity-def="vm.quantityDef">
+
+                        </td-quantity-def>
+
+                        <div class="h-30 mt-10 p-5 mb-10 grey-100-bg" layout="row" layout-align="start center">
+                            <u style="font-size: 14px;"> Quantity Ratio
+                            </u>
+                        </div>
+
+
+                        <td-quantity-def on-change="vm.onChange()" size-def="vm.sizeDef" combo-def="vm.comboDef" quantity-def="vm.quantityRatio">
+
+                        </td-quantity-def>
+
+                        <div class="h-30 p-5 mt-10 mb-10 grey-100-bg" layout="row" layout-align="start center">
+                            <u style="font-size: 14px;">
+                                Assorts
+                            </u>
+
+                        </div>
+
+                        <div ng-repeat="assort in vm.assortments">
+
+                            <div class="h-30 p-5 mt-10 mb-10 grey-100-bg" layout="row" layout-align="start center">
+
+                                <div class="">
+                                    {{assort.description}}
+                                </div>
+
+                            </div>
+
+
+                            <td-quantity-def ng-if="assort.quantityDef.length" size-def="vm.sizeDef" combo-def="vm.comboDef" on-change="vm.onChange()" quantity-def="assort.quantityDef">
+
+                            </td-quantity-def>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </ms-widget-front>
+
+        </ms-widget>
+
+
+
+    </div>
+
+</div>

@@ -1,0 +1,47 @@
+<div style="width: 100%; height: 100%" layout="row" layout-align="start center">
+
+    <msb-image-viewer-table ng-if="columnType === 'image'" item-mode="stripColumn.itemMode" item="stripObject[stripColumn.propertyCode]" helper-items="[stripObject , stripColumn]" on-remove="vm.imageRemoved(info)" on-upload="vm.imageUploaded(info)">
+    </msb-image-viewer-table>
+
+    <div ng-if="columnType === 'keyVal'" layout="row">
+        <span class="secondary-text">{{listColumn.label}}</span>
+        <span class="secondary-text mr-5" ng-if="listColumn.label.length">:</span>
+        <span ng-if="!vm.isArray(stripObject[stripColumn.propertyCode])">
+            <span ng-if="listColumn.isNumeric">{{stripObject[stripColumn.propertyCode] | number}}</span>
+            <span ng-if="listColumn.isBoolean">
+                <span ng-if="stripObject[stripColumn.propertyCode]">Yes</span>
+                <span ng-if="!stripObject[stripColumn.propertyCode]">No</span>
+            </span>
+            <span ng-if="!listColumn.isNumeric && !listColumn.isBoolean">{{stripObject[stripColumn.propertyCode]}}</span>
+        </span>
+        <div layout="row" ng-if="vm.isArray(stripObject[stripColumn.propertyCode])" layout-wrap>
+            <div ng-repeat="coin in stripObject[stripColumn.propertyCode]">
+                <span ng-if="$index > 0 && $index < stripObject[stripColumn.propertyCode].length"> , &nbsp; </span>
+                {{coin}}
+            </div>
+        </div>
+    </div>
+
+    <div ng-if="columnType === 'tag'" layout="row">
+        <div class="border mr-5" ng-if="!vm.isArray(stripObject[stripColumn.propertyCode])" style="padding: 1px 4px; border-radius: 3px; background-color: rgba(0, 0, 0, 0.08)">
+            <span class="secondary-text">{{listColumn.label}}</span>
+            <span class="secondary-text mr-5" ng-if="listColumn.label.length">:</span>
+            <span ng-if="listColumn.isNumeric">{{stripObject[stripColumn.propertyCode] | number}}</span>
+            <span ng-if="listColumn.isBoolean">
+                <span ng-if="stripObject[stripColumn.propertyCode]">Yes</span>
+                <span ng-if="!stripObject[stripColumn.propertyCode]">No</span>
+            </span>
+            <span ng-if="!listColumn.isNumeric && !listColumn.isBoolean">{{stripObject[stripColumn.propertyCode]}}</span>
+        </div>
+
+        <div ng-if="vm.isArray(stripObject[stripColumn.propertyCode])">
+            <span class="secondary-text">{{listColumn.label}}</span>
+            <span class="secondary-text mr-5" ng-if="listColumn.label.length">:</span>
+            <span class="border mr-5" style="padding: 1px 4px; border-radius: 3px; background-color: rgba(0, 0, 0, 0.08)" ng-repeat="coin in stripObject[stripColumn.propertyCode]">
+                {{coin}}
+            </span>
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,109 @@
+<md-dialog id="panel-position-dialog" aria-label="Garment Part Dialog" data-drag="1" data-jqyoui-options jqyoui-draggable="{animate:true}">
+    <form>
+        <md-toolbar class="md-accent" style="cursor:pointer;">
+            <div class="md-toolbar-tools">
+                <div>
+                    <label>{{vm.title}}</label>
+                </div>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="vm.closeDialog()" aria-label="Close Dialog">
+                    <md-icon md-font-icon="icon-close"></md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+        <div layout="row" flex="100">
+            <div layout="column" ms-scroll>
+                <md-dialog-content ms-scroll style="min-height: 250px; min-width: 700px;">
+                    <form name="addGarmentPartForm" novalidate>
+                        <div layout="column">
+                            <div class="h-40 grey-50-bg p-10 mt-10 border-left border-right border-top border-bottom" layout="row" layout-align="space-between center">
+                                <div class="pl-10 font-size-16"> Combo Wise Thread Consumption </div>
+                            </div>
+                            <div class="quantity-def-table m-10 font-size-12">
+                                <div class="quantity-def-table-head" layout="row" layout-align="start center">
+
+                                    <div class="w-150 border-left border-top grey-100-bg  border-bottom quantity-def-table-head-column" style="height: 40px;" layout="column" layout-align="center center">
+                                        <span> Thread </span>
+                                    </div>
+
+                                    <div class="w-200 border-left border-top grey-100-bg  border-bottom quantity-def-table-head-column" style="height: 40px;" layout="column" layout-align="center center">
+                                        <span> Description </span>
+                                    </div>
+
+                                    <div class="w-150 border-left border-top grey-100-bg  border-bottom quantity-def-table-head-column" style="height: 40px;" layout="column" layout-align="center center">
+                                        <span> Color </span>
+                                    </div>
+
+                                    <div class="w-150 border-left border-top grey-100-bg  border-bottom quantity-def-table-head-column" style="height: 40px;" layout="row" layout-align="center center">
+                                        <span> Count </span>
+                                    </div>
+
+                                    <div class="w-200 border-left border-right border-top grey-100-bg border-bottom quantity-def-table-head-column" style="height: 40px;" layout="column" layout-align="center center">
+                                        <span> Total Consumption </span>
+                                    </div>
+
+                                    <div class="w-200 border-left border-right border-top grey-100-bg border-bottom quantity-def-table-head-column" style="height: 40px;" layout="column" layout-align="center center">
+                                        <span> Unit </span>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="quantity-def-table-head" layout="column" layout-align="center start" ng-if="vm.comboDefinition" ng-repeat="comboDef in vm.comboDefinition">
+
+                                    <div class="" layout="row" layout-align="start center">
+                                        <div class="border-left w-500 border-bottom grey-100-bg quantity-def-table-head-column" style="height: 42px;" layout="row" layout-align="start center">
+                                            <div class="ml-15"> {{comboDef.baseColor}} / {{comboDef.contrastColor}} </div>
+                                        </div>
+                                        <div class="border-bottom w-300 grey-100-bg quantity-def-table-head-column" style="height: 42px;" layout="row" layout-align="start center">
+                                        </div>
+                                        <div class="border-right border-bottom w-250 grey-100-bg quantity-def-table-head-column" style="height: 42px;" layout="row" layout-align="start center">
+                                        </div>
+                                    </div>
+
+                                    <div class="quantity-def-table-body" ng-if="vm.comboThreadCons" layout="row" layout-align="start center" ng-repeat="threadCons in vm.getComboConsumption(comboDef)">
+
+                                        <div class="w-150 h-30 border-left border-bottom quantity-def-table-body-column" layout="column" layout-align="center center">
+                                            <span> {{threadCons.title}}</span>
+                                        </div>
+
+                                        <div class="w-200 h-30 border-left border-bottom quantity-def-table-body-column" layout="column" layout-align="center center">
+                                            <span> {{threadCons.description}} </span>
+                                        </div>
+
+                                        <div class="w-150 h-30 border-left border-bottom quantity-def-table-head-column" style="height: 40px;" layout="row" layout-align="center center">
+                                            <span> {{threadCons.color}} </span>
+                                        </div>
+
+                                        <div class="w-150 h-30 border-left border-bottom quantity-def-table-head-column" style="height: 40px;" layout="row" layout-align="center center">
+                                            <span> {{threadCons.matSize}} </span>
+                                        </div>
+
+                                        <div class="w-200 h-30 border-left border-right border-bottom quantity-def-table-head-column" layout="column" layout-align="center center">
+                                            <span> {{ threadCons.consumption }} </span>
+                                        </div>
+
+                                        <div class="w-200 h-30 border-left border-right border-bottom quantity-def-table-head-column" layout="column" layout-align="center center">
+                                            <span> {{ threadCons.TKDR_MEASUREMENT_UNIT }} </span>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </form>
+                </md-dialog-content>
+            </div>
+        </div>
+    </form>
+    <md-dialog-actions layout="row" layout-align="end center" class="h-50">
+        <div layout="row" layout-align="start center">
+            <md-button ng-click="vm.ok()" class="send-button md-accent md-raised" ng-disabled="addGarmentPartForm.$invalid" aria-label="SAVE">
+                <span>Ok</span>
+            </md-button>
+        </div>
+    </md-dialog-actions>
+</md-dialog>

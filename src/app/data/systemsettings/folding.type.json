@@ -1,0 +1,33 @@
+{
+    "data": [
+        {
+            "TECHDISER_ID": "foldmattype1",
+            "TECHDISER_SERIAL_NO": 1,
+            "typeId": "SupplyDefinitionMaterialType42",
+            "materials": [
+                {
+                    "TECHDISER_ID": "mat1",
+                    "materialId": "SupplyDefinitionMaterialCategory16",
+                    "consumptionValue": 2
+                },
+                {
+                    "TECHDISER_ID": "mat2",
+                    "materialId": "SupplyDefinitionMaterialCategory15",
+                    "consumptionValue": 1
+                }
+            ]
+        },
+        {
+            "TECHDISER_ID": "foldmattype2",
+            "TECHDISER_SERIAL_NO": 2,
+            "typeId": "SupplyDefinitionMaterialType43",
+            "materials": [
+                {
+                    "TECHDISER_ID": "mat3",
+                    "materialId": "SupplyDefinitionMaterialCategory15",
+                    "consumptionValue": 2
+                }
+            ]
+        }
+    ]
+}

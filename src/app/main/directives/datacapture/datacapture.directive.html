@@ -1,0 +1,101 @@
+<div class="page-layout simple fullwidth data-capture">
+
+    <div class="header md-accent-bg" layout="row" layout-align="start center">
+        <div layout="row" layout-align="start center" flex>
+            <md-button class="goto-products-button md-icon-button white-fg" aria-label="Go to products" ng-click="vm.backToRegister()">
+                <md-icon md-font-icon="icon-arrow-left"></md-icon>
+            </md-button>
+
+            <div layout="row" layout-align="start center">
+                <div class="white-fg" layout="column" layout-align="start start">
+                    <div class="md-title secondary-text">
+                        <span>Item Detail</span>
+                    </div>
+                </div>
+                <md-button class="md-icon-button ml-20" aria-label="More" ng-click="vm.viewReport()" ng-if="!vm.isNew">
+                    <md-icon md-font-icon="icon-printer"></md-icon>
+                </md-button>
+            </div>
+        </div>
+
+        <div>
+            <md-button class="md-raised md-background" ng-click="vm.saveItem()">
+                <span>SAVE</span>
+            </md-button>
+            <md-button ng-if="!vm.isNew" class="md-raised md-background" ng-click="vm.deleteItem($event)">
+                <span>DELETE</span>
+            </md-button>
+        </div>
+    </div>
+
+
+    <div class="content md-background-bg" style="min-height: 1000px; padding: 0;" ng-if="vm.showTemplate">
+        <div ng-if="template.layoutType === 'flat'" style="padding: 10px;">
+            <td-data-capture-layout-renderer item="item" columns="columns" rows="vm.rows" on-add-inner-item="vm.addInnerItem(innerItem, isNew)">
+            </td-data-capture-layout-renderer>
+        </div>
+
+        <div ng-if="template.layoutType !== 'flat'">
+            <div class="page-layout simple left-sidenav inner-sidenav">
+
+                <div style="min-height: 75px; border-bottom: 1px solid #ddd; padding: 10px;" ng-if="template.header.length > 0">
+
+                    <td-item-viewer item="item" columns="columns" rows="template.header">
+                    </td-item-viewer>
+
+                </div>
+
+
+                <div class="content" md-background-bg layout="row" ms-scroll style="padding: 0; min-height: 1000px;">
+
+                    <md-sidenav class="sidenav" md-is-locked-open="$mdMedia('gt-md')" md-component-id="sidenav" ms-scroll ms-sidenav-helper ng-if="template.leftMenus.length > 0" style="border-right: 1px solid #ddd; margin-right: 0px; padding: 5px;">
+
+                        <md-content class="content">
+
+                            <div class="md-raised md-button md-ink-ripple" aria-label="lm" ng-class="{'layout-menu-selected': lMenu.id === vm.selectedLeftMenu.id }" style="width: 100%; padding: 0; 
+                                             margin: 5px 0;" ng-repeat="lMenu in template.leftMenus" ng-click="vm.selectMenu($event, lMenu, 'left-menu')">
+
+                                <span class="title">{{lMenu.title}}</span>
+
+
+                            </div>
+
+
+                        </md-content>
+
+
+                    </md-sidenav>
+
+                    <div flex>
+                        <div layout="column" layout-align="start start">
+
+                            <div layout="row" layout-align="start center" flex="100" ng-if="vm.topMenus.length > 0" style="width: 100%; padding: 10px 5px; min-height: 50px;
+                                    border-bottom: 1px solid #ddd;">
+
+                                <div class="md-raised md-button md-ink-ripple" aria-label="lm" style="padding: 0 50px; margin: 0;" ng-repeat="tMenu in vm.topMenus" ng-class="{'layout-menu-selected': tMenu.id === vm.selectedTopMenu.id }" ng-click="vm.selectMenu($event, tMenu, 'top-menu')">
+
+                                    <span class="title">{{tMenu.title}}</span>
+                                </div>
+                            </div>
+
+                            <div style="width: 100%; padding: 15px;">
+                                <td-data-capture-layout-renderer item="item" columns="columns" rows="vm.rows" on-add-inner-item="vm.addInnerItem(innerItem, isNew)">
+                                </td-data-capture-layout-renderer>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+        </div>
+        <!-- / left-menu -->
+
+    </div>
+
+</div>

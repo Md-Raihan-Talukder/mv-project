@@ -1,0 +1,27 @@
+<div class="image-uploader" layout="row" layout-align="start center" layout-wrap flex>
+    <div class="btn-file md-button md-accent md-raised" aria-label="Choose Image">
+        <span>Choose Image</span>
+        <input type='file' ng-model-instant onchange="angular.element(this).scope().imageUpload(this)" />
+    </div>
+    <!-- <span ng-repeat="name in vm.fileNames" class="image-name">{{name}}
+	     	  <button class="md-primary" ng-click="vm.removeImage(name)">
+                <md-icon md-font-icon="icon-close btn-remove-image" class="s18"></md-icon>
+            </button>
+	     </span> -->
+
+
+
+    <ms-widget flippable="true" ng-repeat="item in itemList">
+
+        <ms-widget-front class="white-bg">
+
+            <md-icon md-font-icon="icon-close-circle" class="icon btn-remove-image" ng-click="vm.removeImage(item)"></md-icon>
+
+            <img class="h-90 w-100" ng-src="{{item.data}}" />
+
+        </ms-widget-front>
+
+    </ms-widget>
+
+
+</div>

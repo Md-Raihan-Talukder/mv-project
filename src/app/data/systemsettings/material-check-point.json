@@ -1,0 +1,189 @@
+{
+    "data": [
+        {
+            "TECHDISER_ID": "Material_CheckPoint_Defect_1",
+            "TECHDISER_SERIAL_NO": 1,
+            "categoryId": "SupplyDefinitionMaterialCategory1",
+            "typeId": "SupplyDefinitionMaterialType1",
+            "isTypeSpecific": 1,
+            "defectId": "SupplyDefinitionMaterialDefect1",
+            "inspection": {
+                "isPreProduction": 0,
+                "isPreShipmentInspection": 0,
+                "duproInspections": [
+                    {
+                        "TECHDISER_ID": "7578.8cff0170280e7.bd40507bc18f5.99de9a99b9b4a.140423b730984.671188ff92967.00b9daa41",
+                        "duproInspectionId": "Dupro_Inspection_1",
+                        "$$hashKey": "object:2701"
+                    },
+                    {
+                        "TECHDISER_ID": "e712.4e98c4756dd0a.f43ac52c1b6fa.a374eb6f3baa6.e3341b9693917.7a6f77ad94841.75575a76f",
+                        "duproInspectionId": "Dupro_Inspection_2",
+                        "$$hashKey": "object:2702"
+                    },
+                    {
+                        "TECHDISER_ID": "41e0.9e64ac313820d.44edf526ff519.449a58bd95e96.03e18b6da8c63.004879a9905ef.1893e5f4f",
+                        "duproInspectionId": "Dupro_Inspection_3",
+                        "$$hashKey": "object:2703"
+                    }
+                ]
+            },
+            "qualityControls": [
+                {
+                    "TECHDISER_ID": "db7b.3a4a0ba6f90f3.2168039c4a29a.8463e22e36d23.fcaa890884db0.a32ccb1cd1901.e87930d94",
+                    "duproQcId": "Dupro_QC_1",
+                    "$$hashKey": "object:2710"
+                },
+                {
+                    "TECHDISER_ID": "f9b0.6114bc58d011d.5fb9b760a781c.331203d426e36.93ed0a84a60a5.4f2c07e663872.0878dae06",
+                    "duproQcId": "Dupro_QC_2",
+                    "$$hashKey": "object:2711"
+                },
+                {
+                    "TECHDISER_ID": "ffc6.8b4d49b2a6993.8cbec02264f75.3a593c117cf5c.e5eea6e734e00.49adcc45820f1.4b504cafe",
+                    "duproQcId": "Dupro_QC_3",
+                    "$$hashKey": "object:2712"
+                }
+            ],
+            "approvals": [
+                {
+                    "TECHDISER_ID": "fda7.aabcc549fd0ad.67766690b7c7f.47b59dfe1f7dc.db787a4c1354d.c87c3b376a9b7.64eab8389",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "materialApprovalId": "fab_app_def_1",
+                    "isSelected": 1,
+                    "$$hashKey": "object:2719"
+                },
+                {
+                    "TECHDISER_ID": "426a.fb1f1f38640b.51847e676932d.c6d66a3aa5752.b06f9e7d3c894.c92ece578a758.9f5e2fa8e",
+                    "TECHDISER_SERIAL_NO": 2,
+                    "materialApprovalId": "fab_app_def_2",
+                    "isSelected": 0,
+                    "$$hashKey": "object:2720"
+                }
+            ],
+            "$$hashKey": "object:2755"
+        },
+        {
+            "TECHDISER_ID": "Material_CheckPoint_Defect_2",
+            "TECHDISER_SERIAL_NO": 2,
+            "categoryId": "SupplyDefinitionMaterialCategory1",
+            "typeId": "SupplyDefinitionMaterialType1",
+            "isTypeSpecific": 1,
+            "defectId": "SupplyDefinitionMaterialDefect3",
+            "inspection": {
+                "isPreProduction": 0,
+                "isPreShipmentInspection": 0,
+                "duproInspections": [
+                    {
+                        "TECHDISER_ID": "d0df.693db8df599c6.0e8bab7613cf5.3f223ae8fd11e.c2ad262ef8cdf.ee01da3290def.fa93ccd0e",
+                        "duproInspectionId": "Dupro_Inspection_1",
+                        "$$hashKey": "object:2653"
+                    },
+                    {
+                        "TECHDISER_ID": "7417.2fd1f3555c43a.bf3efbb6de708.ddcf35bbb7a54.c5a821b3e0915.311310f9d987b.d3a25e60f",
+                        "duproInspectionId": "Dupro_Inspection_4",
+                        "$$hashKey": "object:2654"
+                    }
+                ]
+            },
+            "qualityControls": [
+                {
+                    "TECHDISER_ID": "b99a.5423e4e6cc05b.ddaed018370d.eba09e6fdbcf5.108c28d71b45c.6fe9128bf72d8.74503368d",
+                    "duproQcId": "Dupro_QC_2",
+                    "$$hashKey": "object:2659"
+                },
+                {
+                    "TECHDISER_ID": "d503.f3b0ab58c0637.a10af584f94ac.f2d08dc3c3c7f.e6285dff43ed3.b0d964cee0cf8.33dbc8db5",
+                    "duproQcId": "Dupro_QC_4",
+                    "$$hashKey": "object:2660"
+                }
+            ],
+            "approvals": [
+                {
+                    "TECHDISER_ID": "e9e7.6c8d40be4fde5.ca7760b923820.9bb94c21983ab.628e1027bbf15.1decf9babb8e8.3f242475d",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "materialApprovalId": "fab_app_def_1",
+                    "isSelected": 0,
+                    "$$hashKey": "object:2665"
+                },
+                {
+                    "TECHDISER_ID": "eef3.2735b1bb65e0.aa68fdf5dc5df.ba5ed8559eebc.8ed4eeeabe3b3.b6480857cdccf.b7ab22bfc",
+                    "TECHDISER_SERIAL_NO": 2,
+                    "materialApprovalId": "fab_app_def_2",
+                    "isSelected": 1,
+                    "$$hashKey": "object:2666"
+                }
+            ],
+            "$$hashKey": "object:2696"
+        },
+        {
+            "TECHDISER_ID": "Material_CheckPoint_Defect_3",
+            "TECHDISER_SERIAL_NO": 3,
+            "categoryId": "SupplyDefinitionMaterialCategory1",
+            "typeId": "SupplyDefinitionMaterialType1",
+            "isTypeSpecific": 1,
+            "defectId": "SupplyDefinitionMaterialDefect2",
+            "inspection": {
+                "isPreProduction": 0,
+                "isPreShipmentInspection": 0,
+                "duproInspections": [
+                    {
+                        "TECHDISER_ID": "d657.674dcad8d30e0.b6a633513edc9.0fac706dc34ab.4cedd6f3a5926.0b9511fca1bc5.abdc06309",
+                        "duproInspectionId": "Dupro_Inspection_3",
+                        "$$hashKey": "object:2596"
+                    },
+                    {
+                        "TECHDISER_ID": "17df.2da749b8d716e.50cfcce754c0f.4bd4617d37fe8.21398ffd39d53.172d0b08ee4a1.aa11a877a",
+                        "duproInspectionId": "Dupro_Inspection_1",
+                        "$$hashKey": "object:2597"
+                    }
+                ]
+            },
+            "qualityControls": [
+                {
+                    "TECHDISER_ID": "0530.f6959ac47b087.272eeb574b43a.dc31a3253b47.12aafc275c1ee.c87780dd5afd3.c9911dbf3",
+                    "duproQcId": "Dupro_QC_1",
+                    "$$hashKey": "object:2602"
+                },
+                {
+                    "TECHDISER_ID": "bb8a.59208f485a196.9aab52074da47.280aec40b1927.f1c39e05a416f.abfbb34e179a0.8535d7a73",
+                    "duproQcId": "Dupro_QC_3",
+                    "$$hashKey": "object:2603"
+                }
+            ],
+            "approvals": [
+                {
+                    "TECHDISER_ID": "ce1d.6bb0fee31cc3c.3190f617aa7bc.722bbcb7c12cc.3473c456722ea.4e5e463d79bfc.c0f063d83",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "materialApprovalId": "fab_app_def_1",
+                    "isSelected": 1,
+                    "$$hashKey": "object:2608"
+                },
+                {
+                    "TECHDISER_ID": "5efb.b0bf3d1d4ea50.965358c9558fe.2d8846bf4e171.26d4b0c1f55c.af95132e36949.5554177c3",
+                    "TECHDISER_SERIAL_NO": 2,
+                    "materialApprovalId": "fab_app_def_2",
+                    "isSelected": 1,
+                    "$$hashKey": "object:2609"
+                }
+            ],
+            "$$hashKey": "object:2648"
+        },
+        {
+            "TECHDISER_ID": "Material_CheckPoint_Defect_4",
+            "TECHDISER_SERIAL_NO": 4,
+            "categoryId": "",
+            "typeId": "",
+            "isTypeSpecific": 0,
+            "defectId": ""
+        },
+        {
+            "TECHDISER_ID": "Material_CheckPoint_Defect_5",
+            "TECHDISER_SERIAL_NO": 5,
+            "categoryId": "",
+            "typeId": "",
+            "isTypeSpecific": 1,
+            "defectId": ""
+        }
+    ]
+}

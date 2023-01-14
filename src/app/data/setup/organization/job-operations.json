@@ -1,0 +1,109 @@
+{
+    "data": [
+        {
+            "TECHDISER_ID": "Job_Op_1",
+            "TECHDISER_SERIAL_NO": 1,
+            "catalogId": "Catalog_Woven",
+            "title": "Laying",
+            "jobGroup": "Cut"
+        },
+        {
+            "TECHDISER_ID": "Job_Op_2",
+            "TECHDISER_SERIAL_NO": 2,
+            "catalogId": "Catalog_Woven",
+            "title": "Marking",
+            "jobGroup": "Cut"
+        },
+        {
+            "TECHDISER_ID": "Job_Op_3",
+            "TECHDISER_SERIAL_NO": 3,
+            "catalogId": "Catalog_Woven",
+            "title": "Cutting",
+            "jobGroup": "Cut"
+        },
+        {
+            "TECHDISER_ID": "Job_Op_4",
+            "TECHDISER_SERIAL_NO": 4,
+            "catalogId": "Catalog_Woven",
+            "title": "Making",
+            "jobGroup": "Sew"
+        },
+        {
+            "TECHDISER_ID": "Job_Op_5",
+            "TECHDISER_SERIAL_NO": 5,
+            "catalogId": "Catalog_Woven",
+            "title": "Assembling",
+            "jobGroup": "Sew"
+        },
+        {
+            "TECHDISER_ID": "Job_Op_6",
+            "TECHDISER_SERIAL_NO": 6,
+            "catalogId": "Catalog_Woven",
+            "title": "Thread Cut",
+            "jobGroup": "Finishing"
+        },
+        {
+            "TECHDISER_ID": "Job_Op_7",
+            "TECHDISER_SERIAL_NO": 7,
+            "catalogId": "Catalog_Woven",
+            "title": "Button",
+            "jobGroup": "Finishing"
+        },
+        {
+            "TECHDISER_ID": "Job_Op_8",
+            "TECHDISER_SERIAL_NO": 8,
+            "catalogId": "Catalog_Woven",
+            "title": "Checking",
+            "jobGroup": "Finishing"
+        },
+        {
+            "TECHDISER_ID": "Job_Op_9",
+            "TECHDISER_SERIAL_NO": 9,
+            "catalogId": "Catalog_Woven",
+            "title": "Vaccume Cleaning",
+            "jobGroup": "Finishing"
+        },
+        {
+            "TECHDISER_ID": "Job_Op_10",
+            "TECHDISER_SERIAL_NO": 10,
+            "catalogId": "Catalog_Woven",
+            "title": "Iron",
+            "jobGroup": "Finishing"
+        },
+        {
+            "TECHDISER_ID": "Job_Op_11",
+            "TECHDISER_SERIAL_NO": 11,
+            "catalogId": "Catalog_Woven",
+            "title": "Folding",
+            "jobGroup": "Finishing"
+        },
+        {
+            "TECHDISER_ID": "Job_Op_12",
+            "TECHDISER_SERIAL_NO": 12,
+            "catalogId": "Catalog_Woven",
+            "title": "Niddle Checking",
+            "jobGroup": "Finishing"
+        },
+        {
+            "TECHDISER_ID": "Job_Op_13",
+            "TECHDISER_SERIAL_NO": 13,
+            "catalogId": "Catalog_Woven",
+            "title": "Tag Labeling",
+            "jobGroup": "Packing"
+        },
+        {
+            "TECHDISER_ID": "Job_Op_14",
+            "TECHDISER_SERIAL_NO": 14,
+            "catalogId": "Catalog_Woven",
+            "title": "Hanger",
+            "jobGroup": "Packing"
+        },
+        {
+            "TECHDISER_ID": "Job_Op_15",
+            "TECHDISER_SERIAL_NO": 15,
+            "catalogId": "Catalog_Woven",
+            "title": "Polybag",
+            "jobGroup": "Packing"
+        }
+    ]
+}

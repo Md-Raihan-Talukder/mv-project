@@ -1,0 +1,52 @@
+<div layout="row" id="permission-view" flex="100">
+    <div layout="column" class="grey-200-bg box-shadow" flex="25" style="min-height:800px;max-height:800px;">
+        <div class="grey-100-bg h-30 p-5 font-size-16 pl-20">
+            Modules
+        </div>
+        <div class="navigation-simple" layout="column">
+            <md-button ng-repeat="module in vm.allModules" class="item h-40" ng-class="{'selected': vm.selectedModule.TECHDISER_ID==module.TECHDISER_ID}" ng-click="vm.selectedModule=module">
+                <md-icon md-font-icon="icon-tag-multiple" class="s16"></md-icon>
+                <span class="title">{{module.title}}</span>
+                <span ng-if="$index==0" ng-init="vm.selectedModule=module"></span>
+            </md-button>
+        </div>
+    </div>
+    <div flex ms-scroll style="max-height:800px;">
+        <div>
+            <div class="pt-5" ng-repeat="feature in vm.selectedModule.features">
+                <div flex class="h-30 green-100-bg p-5">
+                    <span>{{feature.title}}</span>
+                </div>
+                <div class="m-10">
+                    <span ng-repeat="functionality in feature.functionalities">
+                        <div flex class="h-30 green-50-bg p-5 pl-20">
+                            <span class="pr-10 cursor-pointer" ng-if="type=='functionalities'">
+                                <md-icon ng-if="vm.checkSelected(functionality.TECHDISER_ID, 'functionId')" md-font-icon="icon-checkbox-marked-outline" class="s20 md-accent" ng-click="vm.selectFun(vm.selectedModule.TECHDISER_ID, feature.TECHDISER_ID, functionality); $event.stopPropagation();">
+                                </md-icon>
+                                <md-icon ng-if="!vm.checkSelected(functionality.TECHDISER_ID, 'functionId')" md-font-icon="icon-checkbox-blank-outline" class="s20" ng-click="vm.selectFun(vm.selectedModule.TECHDISER_ID, feature.TECHDISER_ID, functionality); $event.stopPropagation();">
+                                </md-icon>
+                            </span>
+                            <span>{{functionality.title}}</span>
+                        </div>
+
+                        <div>
+                            <div class="activity" ng-repeat="activity in functionality.activities" ng-class="{'active-activity': vm.selectedActivityId==activity.TECHDISER_ID}">
+                                <div class="m-10 p-5" layout="row">
+
+                                    <span class="pr-10 pl-30 cursor-pointer" ng-if="type=='activities'">
+                                        <md-icon ng-if="vm.checkSelected(activity.TECHDISER_ID, 'activityId')" md-font-icon="icon-checkbox-marked-outline" class="s20 md-accent" ng-click="vm.selectActivity(vm.selectedModule.TECHDISER_ID, feature.TECHDISER_ID, functionality.TECHDISER_ID, activity); $event.stopPropagation();">
+                                        </md-icon>
+                                        <md-icon ng-if="!vm.checkSelected(activity.TECHDISER_ID, 'activityId')" md-font-icon="icon-checkbox-blank-outline" class="s20" ng-click="vm.selectActivity(vm.selectedModule.TECHDISER_ID, feature.TECHDISER_ID, functionality.TECHDISER_ID, activity); $event.stopPropagation();">
+                                        </md-icon>
+                                    </span>
+                                    <span ng-class="{'pl-20':type=='functionalities'}">{{activity.title}}</span>
+
+                                </div>
+                            </div>
+                        </div>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

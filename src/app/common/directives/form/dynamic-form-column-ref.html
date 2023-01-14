@@ -1,0 +1,38 @@
+<div class="border mb-5 p-5 grey-200-bg cursor-pointer" ng-repeat="listItem in vm.data" ng-click="vm.onItemClick(col, item, listItem)" layout="row" layout-align="space-between center">
+
+    <div layout="row" layout-align="start center">
+
+        <div class="ml-5 mr-10" ng-if="vm.getImageColumn(col)">
+            <img ng-src="{{listItem[vm.getImageColumn(col)]}}" style=" max-height: 100px;" />
+        </div>
+
+
+        <div layout="column" layout-align="start top" class="p-10">
+
+            <div layout="row" layout-align="start center" layout-wrap>
+                <div class="mr-25" ng-if="refCol.type !== 'iconPicture'
+                        && refCol.type !== 'refference'" ng-repeat="refCol in col.refferenceColumns">
+
+                    <span>{{refCol.label}}:</span>
+                    <span class="ml-5 text-bold">
+                        {{listItem[refCol.key]}}</span>
+
+                </div>
+                <div class="mr-25" flex="100" ng-if="refCol.type !== 'iconPicture'
+                         && refCol.type === 'refference'" ng-repeat="refCol in col.refferenceColumns">
+
+                    <span>{{refCol.label}}:</span>
+                    <msb-form-column-child-ref-renderer item="listItem[refCol.key]" col="refCol" multi-select="false">
+                    </msb-form-column-child-ref-renderer>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="cursor-pointer border" ng-click="vm.removeItem(item, col, listItem)">
+        <md-icon md-font-icon="icon-close" style="color: red;">
+        </md-icon>
+    </div>
+
+</div>

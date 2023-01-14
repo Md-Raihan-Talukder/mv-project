@@ -1,0 +1,30 @@
+<md-dialog class="page-setup-dialog" aria-label="Tearms and conditions">
+    <form class="md-inline-form">
+        <md-toolbar class="md-accent md-hue-2">
+            <div class="md-toolbar-tools" layout="row" layout-align="space-between center">
+                <span class="title">{{vm.title}}</span>
+                <md-button class="md-icon-button" ng-click="vm.closeDialog()" aria-label="Close dialog">
+                    <md-icon md-font-icon="icon-close"></md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+
+        <md-dialog-content ms-scroll>
+            <div class="content fullpage-datatable border-left border-right inner-grid" layout="column" flex>
+                <td-data-table ng-if="vm.data && vm.columns" table-data="vm.data" table-columns="vm.columns">
+                </td-data-table>
+
+            </div>
+
+        </md-dialog-content>
+
+        <md-dialog-actions layout-gt-sm="row" layout-align-gt-sm="start center" layout="column" layout-align="start start">
+            <div></div>
+
+            <md-button ng-click="vm.closeDialog()" class="close-button md-accent md-raised" aria-label="Close">
+                CLOSE
+            </md-button>
+
+        </md-dialog-actions>
+    </form>
+</md-dialog>

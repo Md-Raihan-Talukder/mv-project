@@ -1,0 +1,43 @@
+<div class="header md-accent-bg" layout="column" layout-align="space-between start">
+
+    <div ng-if="!vm.subMenus.length" class="logo mt-5" layout="row" layout-align="start center">
+        <span class="logo-icon">
+            <md-icon md-font-icon="icon-filter" class="icon s20"></md-icon>
+        </span>
+        <span class="header-title text-truncate">Quick Filters</span>
+    </div>
+
+    <div ng-if="vm.subMenus.length" class="logo mt-5" layout="row" layout-align="start center">
+        <span class="logo-icon">
+            <md-icon md-font-icon="icon-menu" class="icon s20"></md-icon>
+        </span>
+        <span class="header-title text-truncate">Menus</span>
+    </div>
+
+</div>
+
+<div class="content">
+    <div class="common-detail-menus navigation-simple" ng-if="vm.subMenus.length" style="min-height: 300px;" layout="column">
+
+        <md-button class="item h-30" aria-label="inbox" ng-repeat="menu in vm.subMenus" ng-click="vm.selectSubMenu(menu)" ng-class="{'blue-100-bg': menu.id === vm.selectedMenuId}">
+            <div class="context" layout="row" layout-align="start center">
+                <md-icon md-font-icon="icon-view-headline" class="s16"></md-icon>
+                <div class="title">{{menu.title}}</div>
+            </div>
+        </md-button>
+
+    </div>
+
+    <div ng-if="vm.subMenus.length" class="header mt-10 border-top grey-200-bg" layout="row" layout-align="space-between start">
+        <div class="logo mt-5" layout="row" layout-align="start center">
+            <span class="logo-icon">
+                <md-icon md-font-icon="icon-filter" class="icon s20"></md-icon>
+            </span>
+            <span class="header-title text-truncate">Quick Filters</span>
+        </div>
+    </div>
+
+    <msb-quick-filters filters="vm.leftSlider.filters" selected-filters="vm.leftSlider.selectedFilters">
+
+    </msb-quick-filters>
+</div>

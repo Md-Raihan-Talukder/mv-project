@@ -1,0 +1,12 @@
+#tree-view {
+  .node li {
+    padding-left: 10px;
+  }
+  .selected-role {
+    background-color: rgb(179, 255, 221);
+  }
+  .selected-node {
+    // background-color: #f7fffa !important;
+    border: 2px solid rgb(115, 171, 255);
+  }
+}

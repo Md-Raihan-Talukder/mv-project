@@ -1,0 +1,215 @@
+<div class="custom-directive-container user-access-directive">
+
+    <div class="section-header" layout="row" layout-align="start center" ng-if="!viewMode">
+        <button class="btn-expand-colupse md-icon-button md-accent md-button md-default-theme md-ink-ripple" type="button" aria-label="reminder" ng-click="vm.expand = !vm.expand">
+
+            <md-icon ng-if="!vm.expand" md-font-icon="icon-plus-box" class="icon"></md-icon>
+            <md-icon ng-if="vm.expand" md-font-icon="icon-minus-box" class="icon"></md-icon>
+        </button>
+        <span class="section-title">Add new permission</span>
+    </div>
+
+    <div ng-if="vm.expand">
+
+        <div layout="row" layout-align="start center" flex>
+            <md-input-container class="md-block" flex>
+                <label>Access permission to user groups</label>
+
+                <md-select name="userGroup" ng-model="vm.selectedUserGroups" aria-label="select" multiple>
+                    <md-option ng-repeat="item in groups" value="{{item.id}}">{{item.name}}</md-option>
+                </md-select>
+
+            </md-input-container>
+
+        </div>
+
+        <div layout="row" layout-align="start center" flex>
+            <div flex class="members">
+                <div class="section-header" layout="row" layout-align="start center">
+                    <i class="icon-account-check s18"></i>
+                    <span class="section-title ml-10">Access permission to users</span>
+                </div>
+                <div class="section-content" ng-if="users">
+                    <md-chips class="member-chips" ng-model="vm.permittedUsers" md-autocomplete-snap md-require-match="true" md-transform-chip="$chip">
+                        <md-autocomplete md-selected-item="vm.permittedUser" md-search-text="vm.searchText" md-items="member in vm.memberQuerySearch(vm.searchText)" md-item-text="member.name" placeholder="Search for a user">
+
+                            <md-item-template>
+                                <div class="po-autocomplete-template" layout="row" layout-align="start start">
+                                    <div class="title">
+                                        <div class="avatar-wrapper">
+                                            <img md-menu-align-target class="avatar" ng-src="{{member.avatar}}" />
+                                        </div>
+                                    </div>
+                                    <div layout="column" layout-align="start start">
+                                        <div class="po-row"> {{member.name}} </div>
+                                        <div class="po-row"> {{member.jobTitle}} </div>
+
+                                    </div>
+                                </div>
+                            </md-item-template>
+
+
+                        </md-autocomplete>
+                        <md-chip-template class="member-chip">
+                            <img class="member-chip-avatar" ng-src="{{$chip.avatar}}">
+                            <md-tooltip>{{$chip.name}}</md-tooltip>
+                        </md-chip-template>
+                        <button md-chip-remove class="md-primary">
+                            <md-icon md-font-icon="icon-close" class="s18"></md-icon>
+                        </button>
+                    </md-chips>
+                </div>
+            </div>
+
+
+
+            <div flex class="members">
+                <div class="section-header" layout="row" layout-align="start center">
+                    <i class="icon-account-remove s18"></i>
+                    <span class="section-title ml-10">Deny permission to users</span>
+                </div>
+                <div class="section-content" ng-if="users">
+                    <md-chips class="member-chips" ng-model="vm.deniedUsers" md-autocomplete-snap md-require-match="true" md-transform-chip="$chip">
+                        <md-autocomplete md-selected-item="vm.deniedUser" md-search-text="vm.deniedUserText" md-items="member in vm.memberQuerySearch(vm.deniedUserText)" md-item-text="member.name" placeholder="Search for a user">
+
+                            <md-item-template>
+                                <div class="po-autocomplete-template" layout="row" layout-align="start start">
+                                    <div class="title">
+                                        <div class="avatar-wrapper">
+                                            <img md-menu-align-target class="avatar" ng-src="{{member.avatar}}" />
+                                        </div>
+                                    </div>
+                                    <div layout="column" layout-align="start start">
+                                        <div class="po-row"> {{member.name}} </div>
+                                        <div class="po-row"> {{member.jobTitle}} </div>
+
+                                    </div>
+                                </div>
+                            </md-item-template>
+
+
+                        </md-autocomplete>
+                        <md-chip-template class="member-chip">
+                            <img class="member-chip-avatar" ng-src="{{$chip.avatar}}">
+                            <md-tooltip>{{$chip.name}}</md-tooltip>
+                        </md-chip-template>
+                        <button md-chip-remove class="md-primary">
+                            <md-icon md-font-icon="icon-close" class="s18"></md-icon>
+                        </button>
+                    </md-chips>
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <div layout="row" layout-align="start center" flex class="mb-15">
+            <span class="section-title">Access types:</span>
+        </div>
+
+
+        <div layout="row" layout-align="start center" flex>
+            <div ng-repeat="item in vm.accessTypes" flex>
+                <md-checkbox ng-checked="vm.typeExists(item, vm.selectedTypes)" ng-click="vm.toggleType(item, vm.selectedTypes)">
+                    {{ item }}
+                </md-checkbox>
+            </div>
+
+            <div flex="50">
+
+                <md-button ng-click="vm.addNewPermission($event)" class="send-button md-accent md-raised" aria-label="SAVE">
+                    Add new permission
+                </md-button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <md-divider class="mt-20"></md-divider>
+
+    <div class="todo-item" md-ink-ripple layout="row" layout-align="start center" ng-repeat="permission in permissions | filter: vm.itemFilter" style="padding-left: 0;">
+        <div layout="row" layout-align="start center" flex>
+
+            <div class="info" flex>
+                <div class="tags" layout="row" layout-align="start center" layout-wrap>
+
+                    <div class="title">
+                        {{$index + 1}}.
+                    </div>
+
+                    <div class="tag" layout="row" layout-align="start center" data-ng-repeat="type in permission.types">
+                        <div class="tag-label">{{type}}</div>
+                    </div>
+
+                    <md-menu md-offset="0 0" class="members" ng-if="permission.groupIds.length > 0">
+                        <md-button class="md-icon-button" aria-label="Members" ng-click="$mdOpenMenu($event)">
+                            <md-icon md-menu-origin md-font-icon="icon-account-multiple"></md-icon>
+                        </md-button>
+
+                        <md-menu-content ng-mouseleave="vm.closeMenu()" class="members-menu-content" width="4" ms-scroll>
+
+                            <md-menu-item class="member" ng-repeat="groupId in 
+                                    permission.groupIds">
+                                <md-button aria-label="toggle member">
+                                    <span>{{vm.getGroupName(groupId)}}</span>
+                                </md-button>
+                            </md-menu-item>
+                        </md-menu-content>
+                    </md-menu>
+
+                    <md-menu md-offset="0 0" class="members" ng-if="permission.userIds.length > 0">
+                        <md-button class="md-icon-button" aria-label="Members" ng-click="$mdOpenMenu($event)">
+                            <md-icon md-menu-origin md-font-icon="icon-account-check"></md-icon>
+                        </md-button>
+
+                        <md-menu-content ng-mouseleave="vm.closeMenu()" class="members-menu-content" width="4" ms-scroll>
+
+                            <md-menu-item class="member" ng-repeat="userId in permission.userIds">
+                                <md-button aria-label="toggle member">
+                                    <div layout="row" layout-align="space-between center" flex>
+                                        <div layout="row" layout-align="start center">
+                                            <img alt="{{ vm.getUser(userId).name }}" ng-src="{{ vm.getUser(userId).avatar }}" class="avatar" />
+                                            <p class="member-name">{{ vm.getUser(userId).name }}</p>
+                                        </div>
+                                    </div>
+                                </md-button>
+                            </md-menu-item>
+                        </md-menu-content>
+                    </md-menu>
+
+                    <md-menu md-offset="0 0" class="members" ng-if="permission.deniedUserIds.length > 0">
+                        <md-button class="md-icon-button" aria-label="Members" ng-click="$mdOpenMenu($event)">
+                            <md-icon md-menu-origin md-font-icon="icon-account-remove"></md-icon>
+                        </md-button>
+
+                        <md-menu-content ng-mouseleave="vm.closeMenu()" class="members-menu-content" width="4" ms-scroll>
+
+                            <md-menu-item class="member" ng-repeat="userId in permission.deniedUserIds">
+                                <md-button aria-label="toggle member">
+                                    <div layout="row" layout-align="space-between center" flex>
+                                        <div layout="row" layout-align="start center">
+                                            <img alt="{{ vm.getUser(userId).name }}" ng-src="{{ vm.getUser(userId).avatar }}" class="avatar" />
+                                            <p class="member-name">{{ vm.getUser(userId).name }}</p>
+                                        </div>
+                                    </div>
+                                </md-button>
+                            </md-menu-item>
+                        </md-menu-content>
+                    </md-menu>
+
+                </div>
+            </div>
+            <md-button ng-if="!viewMode" class="md-warn md-icon-button " ng-click="vm.removePermission(permission, $event)" aria-label="add task">
+                <md-icon md-font-icon="icon-close-circle"></md-icon>
+            </md-button>
+
+
+        </div>
+
+    </div>
+
+</div>

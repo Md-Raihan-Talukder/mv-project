@@ -1,0 +1,15 @@
+<div class="grey-300-bg h-35 font-size-14 p-10" layout="row" layout-align="space-between center">
+    <div class="">
+        WBS Time Setup
+    </div>
+    <div class="mr-20">
+        <div ng-click="vm.save()" class="cursor-pointer b brad-5 p-5 pl-10 pr-10 grey-300-bg" style="border-color: #009999;">
+            save
+        </div>
+    </div>
+</div>
+<div>
+    <wbs-time-setup ng-if="vm.catalogs && vm.wbsWorkGrpDef && vm.wbsLifeCycleEvents && vm.wbsTimeDef" catalogs="vm.catalogs" wbs-work-grp-def="vm.wbsWorkGrpDef" wbs-life-cycle-events="vm.wbsLifeCycleEvents" wbs-time-def="vm.wbsTimeDef" wbs-lead-times="vm.wbsLeadTimes" on-update="vm.onUpdate(item)">
+
+    </wbs-time-setup>
+</div>

@@ -1,0 +1,19 @@
+{
+    "data": [
+        {
+            "TECHDISER_ID": "1",
+            "TECHDISER_SERIAL_NO": "1",
+            "title": "Development Sample"
+        },
+        {
+            "TECHDISER_ID": "2",
+            "TECHDISER_SERIAL_NO": "2",
+            "title": "Salesman Sample"
+        },
+        {
+            "TECHDISER_ID": "3",
+            "TECHDISER_SERIAL_NO": "3",
+            "title": "Price"
+        }
+    ]
+}

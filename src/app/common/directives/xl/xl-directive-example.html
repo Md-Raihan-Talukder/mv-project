@@ -1,0 +1,12 @@
+<hot-table settings="vm.settings" datarows="vm.dataObject">
+
+    <hot-column data="id" title="'ID'"></hot-column>
+    <hot-column data="flag" title="'Flag'" type="'text'" read-only="false"></hot-column>
+    <hot-column data="currencyCode" title="'Currency'" read-only></hot-column>
+    <hot-column data="level" title="'Level'" type="'numeric'" width="80" format="'$ 0,0.0000'"></hot-column>
+    <hot-column data="units" title="'Unit'" type="'autocomplete'" source="vm.options" strict="true" allow-invalid="false">
+
+    </hot-column>
+    <hot-column data="asOf" title="'Date'" type="'date'" width="180" format="'MM/DD/YYYY'"></hot-column>
+    <hot-column data="isActive" title="'Is active'" type="'checkbox'" checked-template="'Yes'" unchecked-template="'No'"></hot-column>
+</hot-table>

@@ -1,0 +1,44 @@
+﻿Approaches
+
+
+Understanding Approach:
+
+step 1. Understand business,
+
+step 2. Understand views,
+
+step 3. Analyze business and views,
+
+step 4. Find odds and confusion,
+
+step 5. If no odds or confusion, go for requirement approach
+
+	  else clear odds or confusion and go for requirement approach
+
+
+Requirement Approach (Express):
+
+step 1. Draw out data flow according to view,
+
+step 2. Draw out external dependencies.
+
+step 3. Draw out events and operations.
+
+step 4. Express business problems in Data space (problem-to-data).
+
+step 5. Enlist contender functions to solve the problem from data space to problem space (data-to-problem).
+
+
+Coding Approach:
+
+step 1. Study understandings and requirements.
+
+step 2. Align with what the coding approach should be.
+
+step 3. Make algorithms for difficult operations.
+
+step 4. Start coding.
+
+step 5. If problem, discuss with colleagues and find solution.
+
+Step 6. note down the problem and solutions.

@@ -1,0 +1,222 @@
+<td-common-detail-prev-next un-save-state="unSaveState" on-save="vm.save(callBack)">
+</td-common-detail-prev-next>
+<div id="packing-label" layout="row" layout-align="start center" style="min-height: 100%; height:100%; overflow:hidden; ">
+
+
+    <div class="left w-250 border-right" style="min-height: 100%; height:100%; max-height: 100%;" layout="column" layout-align="start top">
+        <ms-widget layout="column" style="padding: 0; min-height: 100%; height:100%; width: 100% " layout-align="start top">
+
+            <ms-widget-front style="min-height: 100%; height:100%; width: 100%;" layout="column" layout-align="start top">
+                <div layout="column">
+                    <div class=" pl-5 grey-200-bg md-subhead h-40 b" layout-align="start center" flex="100" layout="row">
+                        <div class="p-10 mt-10 ">Buyer</div>
+                    </div>
+                    <div style="min-height: 100%; height:100%; width: 100%;" ms-scroll>
+
+                        <div layout="column" layout-align="start">
+                            <div ng-repeat="buyer in vm.buyers" ng-if="buyer.title" class="p-10 h-40 cursor-pointer" ng-class="{'blue-100-bg': buyer.TECHDISER_ID == vm.selectedBuyer[vm.primaryColumnName]}" layout="row" layout-align="start center" ng-click="vm.selectBuyer(buyer)">
+                                <span>{{buyer.title}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class=" pl-5 grey-200-bg md-subhead h-40 b" layout-align="start center" flex="100" layout="row">
+            <div class="p-10 mt-10 ">Product</div>
+          </div>
+          <div style="min-height: 100%; height:100%; width: 100%;" ms-scroll>
+
+            <div layout="column" layout-align="start">
+              <div ng-repeat="product in vm.products" ng-if="product.refStyle.buyerId == vm.selectedBuyer[vm.primaryColumnName]" class="p-10 h-40 cursor-pointer" ng-class="{'blue-100-bg': product == vm.selectedProduct}" layout="row" layout-align="start center" ng-click="vm.selectProduct(product)">
+                <span>{{product.title}}</span>
+              </div>
+            </div>
+          </div> -->
+                </div>
+            </ms-widget-front>
+        </ms-widget>
+    </div>
+
+    <div class="left w-250 border-right" style="min-height: 100%; height:100%; max-height: 100%;" layout="column" layout-align="start top">
+        <ms-widget layout="column" style="padding: 0; min-height: 100%; height:100%; width: 100% " layout-align="start top">
+
+            <ms-widget-front style="min-height: 100%; height:100%; width: 100%;" layout="column" layout-align="start top">
+                <div layout="column">
+                    <!-- <div class=" pl-5 grey-200-bg md-subhead h-40 b" layout-align="start center" flex="100" layout="row">
+            <div class="p-10 mt-10 ">Buyer</div>
+          </div>
+          <div style="min-height: 100%; height:100%; width: 100%;" ms-scroll>
+
+            <div layout="column" layout-align="start">
+              <div ng-repeat="buyer in vm.buyers" ng-if="buyer.title" class="p-10 h-40 cursor-pointer" ng-class="{'blue-100-bg': buyer.TECHDISER_ID == vm.selectedBuyer[vm.primaryColumnName]}" layout="row" layout-align="start center" ng-click="vm.selectBuyer(buyer)">
+                <span>{{buyer.title}}</span>
+              </div>
+            </div>
+          </div> -->
+                    <div class=" pl-5 grey-200-bg md-subhead h-40 b" layout-align="start center" flex="100" layout="row">
+                        <div class="p-10 mt-10 ">Product</div>
+                    </div>
+                    <div style="min-height: 100%; height:100%; width: 100%;" ms-scroll>
+
+                        <div layout="column" layout-align="start">
+                            <div ng-repeat="product in vm.products" ng-if="product.refStyle.buyerId == vm.selectedBuyer[vm.primaryColumnName]" class="p-10 h-40 cursor-pointer" ng-class="{'blue-100-bg': product == vm.selectedProduct}" layout="row" layout-align="start center" ng-click="vm.selectProduct(product)">
+                                <span>{{product.title}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ms-widget-front>
+        </ms-widget>
+    </div>
+
+    <div class="right border" flex style="min-height: 100%; height:100%; max-height: 100%; width: 100%;" layout="column" layout-align="start top">
+
+        <ms-widget layout="column" style="padding: 0; min-height: 100%; height:100%; width: 100% " layout-align="start top">
+
+            <ms-widget-front style="min-height: 100%; height:100%; width: 100%;" layout="column" layout-align="start top">
+                <div class=" pl-5 grey-200-bg md-subhead h-40 b mb-10" flex="100" layout="row" layout-align="space-between center">
+                    <div>
+                        <span>{{vm.selectedBuyer.title}} / {{vm.selectedProduct.title}}</span>
+                    </div>
+                    <div class="mr-20">
+                        <md-button ng-click="vm.save()" class="b grey-300-bg" style="border-color: #009999;">
+                            save
+                        </md-button>
+                    </div>
+                </div>
+                <div style="min-height: 100%; height:100%; width: 100%;" ms-scroll>
+                    <div layout="row" flex="100">
+
+                        <div class="mr-5 border-right" style="min-height: 900px;" flex="40">
+                            <div class="h-45 grey-200-bg font-size-16 b" layout="row" layout-align="start center ">
+                                <div class="ml-10 w-245 mr-10">
+                                    Bar Code
+                                </div>
+                                <div class="ml-50">
+                                    <md-button ng-click="vm.addBarcode('barcode')" class="b grey-300-bg" style="border-color: #009999;">Add Barcode</md-button>
+                                </div>
+                            </div>
+                            <div layout="row" layout-align="start" flex="100">
+                                <div flex layout="row">
+                                    <div class="p-5" layout="row" layout-align="start center" layout-wrap>
+                                        <div ng-repeat="barcode in vm.getBarcodes()" class="box-shadow h-180 w-210 ml-5 mt-5" layout="column" layout-align="start">
+                                            <div class="border-bottom p-10 teal-50-bg" layout="row" layout-align="space-between">
+                                                <div>
+                                                    <b>{{barcode.title}}</b>
+                                                </div>
+                                                <div class="mr-5">
+                                                    <md-icon ng-click="vm.removeBarcode(barcode)" md-font-icon="icon-close-circle">
+                                                        <md-tooltip>Delete Bar Code</md-tooltip>
+                                                    </md-icon>
+                                                </div>
+                                            </div>
+                                            <div class="p-5 mt-10" layout="row" layout-align="center">
+
+                                                <img style="border-radius:0px;" ng-src="{{barcode.imageData}}" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="min-height: 100%" flex="60">
+                            <div class="h-45 grey-200-bg font-size-16 b" layout="row" layout-align="start center">
+                                <div class="ml-10 w-645 mr-10" style="width: 645px;">
+                                    Label
+                                </div>
+                                <div class="ml-50">
+                                    <md-button ng-click="vm.addLabel()" class="b grey-300-bg" style="border-color: #009999;">Add Label</md-button>
+                                </div>
+                            </div>
+                            <div layout="row" layout-align="start" flex="100">
+                                <div flex layout="row">
+                                    <div class="p-5" layout="row" layout-wrap>
+                                        <div ng-repeat="label in vm.getLabel()" class="box-shadow mt-5 ml-5 h-250 w-325">
+                                            <div class="border-bottom p-10 teal-50-bg" layout="row" layout-align="space-between">
+                                                <div>
+                                                    <md-input-container style="margin: 0px; padding: 0px;" md-no-float class="md-block w-200">
+                                                        <input ng-model="label.title" placeholder="Title">
+                                                    </md-input-container>
+                                                </div>
+                                                <div layout="row">
+                                                    <!-- <md-icon class="mr-15" ng-click="vm.viewLabel(label)" md-font-icon="icon-view-carousel">
+                                                        <md-tooltip>View Label</md-tooltip>
+                                                    </md-icon> -->
+                                                    <md-icon class="mr-5" ng-click="vm.createTemplete(label)" md-font-icon="icon-view-quilt">
+                                                        <md-tooltip>Define Template</md-tooltip>
+                                                    </md-icon>
+                                                </div>
+                                                <div class="" style="" layout="row">
+                                                    <!-- <md-icon class="mr-10" ng-click="vm.editLabel(label, 'edit')" md-font-icon="icon-table-edit">
+                                                        <md-tooltip>Edit Label</md-tooltip>
+                                                    </md-icon> -->
+                                                    <md-icon class="mr-5" ng-click="vm.deleteLabel(label)" md-font-icon="icon-close-circle">
+                                                        <md-tooltip>Delete Label</md-tooltip>
+                                                    </md-icon>
+                                                </div>
+                                            </div>
+                                            <div class="h-180" ms-scroll>
+                                                <msb-strip-form strip-columns="label.labelColumns" strips="vm.strips" row-height="vm.rowHeight" strip-object="label.stripObject" strip-def="label.stripDef" on-change="vm.onChangeValue(column, strip, isAuto)">
+                                                </msb-strip-form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mb-10" ng-repeat="level in garmentPackaging.uperLevel">
+
+                                <div class="h-55 grey-200-bg font-size-16 b" layout="row" layout-align="start center">
+                                    <div class="ml-10 w-645 mr-10" style="width: 645px;">
+                                        Level-{{$index + 1}}
+                                    </div>
+                                    <div class="ml-50">
+                                        <md-button ng-click="vm.addAssortLabel('level', level)" class="b grey-300-bg" style="border-color: #009999;">Add Label</md-button>
+                                    </div>
+                                </div>
+                                <div layout="row" layout-align="start" flex="100">
+                                    <div flex layout="row">
+                                        <div class="p-10" layout="row" layout-wrap>
+                                            <div ng-repeat="label in level.labels" class="box-shadow mt-10 mb-10 ml-10 h-280 w-370 mr-10">
+                                                <div class="border-bottom p-10 teal-50-bg" layout="row" layout-align="space-between">
+                                                    <div>
+                                                        <b>{{label.title}}</b>
+                                                    </div>
+                                                </div>
+                                                <div class="p-10 border-bottom" layout="row" layout-align="start center">
+                                                    <div class="mr-5" layout="row" layout-align="space-between center">
+                                                        <div layout="row">
+                                                            <md-icon class="mr-15" ng-click="vm.viewLabel(label)" md-font-icon="icon-view-carousel">
+                                                                <md-tooltip>View Label</md-tooltip>
+                                                            </md-icon>
+                                                            <md-icon class="mr-10" ng-click="vm.createTemplete(label)" md-font-icon="icon-view-quilt">
+                                                                <md-tooltip>Define Template</md-tooltip>
+                                                            </md-icon>
+                                                        </div>
+                                                        <div class="ml-255" style="margin-left: 215px;" layout="row">
+                                                            <md-icon class="mr-10" ng-click="vm.editLabel(label, 'edit')" md-font-icon="icon-table-edit">
+                                                                <md-tooltip>Edit Label</md-tooltip>
+                                                            </md-icon>
+                                                            <md-icon class="mr-5" ng-click="vm.deleteLabel(label)" md-font-icon="icon-close-circle">
+                                                                <md-tooltip>Delete Label</md-tooltip>
+                                                            </md-icon>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="h-180" ms-scroll>
+                                                    <div class="p-10" ng-repeat="attribute in label.attributes" layout="row" layout-align="start center">
+                                                        {{attribute.label}}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </ms-widget-front>
+        </ms-widget>
+    </div>
+</div>

@@ -1,0 +1,84 @@
+<md-dialog class=" " aria-label="Add a License">
+
+    <md-toolbar class="md-accent">
+
+        <div class="md-toolbar-tools">
+            <label ng-if="vm.isNew">Add a License</label>
+            <label ng-if="!vm.isNew">Update License</label>
+
+            <md-menu md-offset="0 48px" class="options">
+                <md-button class="md-icon-button" ng-click="$mdOpenMenu($event)" aria-label="Options">
+                    <md-icon md-menu-origin md-font-icon="icon-dots-horizontal"></md-icon>
+                </md-button>
+                <md-menu-content ms-scroll class="options-menu-content" width="4">
+
+                    <md-menu-item>
+                        <md-button ng-click="vm.organization.important = !vm.organization.important" aria-label="Toggle important">
+                            <md-icon ng-class="vm.organization.important === false ? 'grey-fg' : 'red-600-fg'" md-font-icon="icon-alert-circle" class="s18"></md-icon>
+                            <span ng-show="!vm.organization.important"> Mark as
+                                important</span>
+                            <span ng-show="vm.organization.important">Remove
+                                important</span>
+                        </md-button>
+                    </md-menu-item>
+
+                    <md-menu-item>
+                        <md-button ng-click="vm.organization.starred = !vm.organization.starred" aria-label="Toggle star">
+                            <md-icon ng-class="vm.organization.starred === false ? 'grey-fg' : 'amber-600-fg'" md-font-icon="icon-star" class="s18"></md-icon>
+                            <span ng-show="!vm.organization.starred">Add star</span>
+                            <span ng-show="vm.organization.starred">Remove star</span>
+                        </md-button>
+                    </md-menu-item>
+
+                </md-menu-content>
+            </md-menu>
+
+            <span flex></span>
+
+
+            <md-button class="md-icon-button" ng-click="vm.closeDialog()" aria-label="Close Dialog">
+                <md-icon md-font-icon="icon-close"></md-icon>
+            </md-button>
+
+        </div>
+    </md-toolbar>
+    <md-dialog-content style="max-width:1200px;">
+        <md-tabs md-dynamic-height md-border-bottom>
+            <md-tab label="Organization Info">
+                <md-content class="md-padding">
+                    <h1 class="md-display-2">Organization Info</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue. Phasellus volutpat neque ac dui mattis vulputate. Etiam consequat aliquam cursus. In sodales pretium ultrices. Maecenas lectus est, sollicitudin consectetur felis nec, feugiat ultricies mi.</p>
+                </md-content>
+            </md-tab>
+            <md-tab label="two">
+                <md-content class="md-padding">
+
+                    <p>Integer turpis erat, porttitor vitae mi faucibus, laoreet interdum tellus. Curabitur posuere molestie dictum. Morbi eget congue risus, quis rhoncus quam. Suspendisse vitae hendrerit erat, at posuere mi. Cras eu fermentum nunc. Sed id ante eu orci commodo volutpat non ac est. Praesent ligula diam, congue eu enim scelerisque, finibus commodo lectus.</p>
+                </md-content>
+            </md-tab>
+            <md-tab label="Modules">
+                <md-content class="md-padding">
+                    <h1 class="md-display-2">Modules</h1>
+                    <p>Integer turpis erat, porttitor vitae mi faucibus, laoreet interdum tellus. Curabitur posuere molestie dictum. Morbi eget congue risus, quis rhoncus quam. Suspendisse vitae hendrerit erat, at posuere mi. Cras eu fermentum nunc. Sed id ante eu orci commodo volutpat non ac est. Praesent ligula diam, congue eu enim scelerisque, finibus commodo lectus.</p>
+                </md-content>
+            </md-tab>
+        </md-tabs>
+    </md-dialog-content>
+
+    <md-dialog-actions layout="row" layout-align="space-between center">
+        <div layout="row" layout-align="start center">
+            <md-button ng-click="vm.addOrganizations()" class="send-button md-accent md-raised" ng-disabled="moduleForm.$invalid" aria-label="SAVE">
+                <span ng-if="vm.isNew">ADD</span>
+                <span ng-if="!vm.isNew">UPDATE</span>
+            </md-button>
+        </div>
+
+        <div layout="row">
+            <md-button class="md-icon-button" ng-click="vm.deleteOrganization($event)" aria-label="Delete" ng-disabled="vm.isNew">
+                <md-icon md-font-icon="icon-delete"></md-icon>
+                <md-tooltip><span>DELETE</span></md-tooltip>
+            </md-button>
+        </div>
+    </md-dialog-actions>
+
+</md-dialog>

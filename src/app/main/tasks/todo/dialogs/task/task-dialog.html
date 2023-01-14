@@ -1,0 +1,526 @@
+<!-- CARD DIALOG  -->
+<md-dialog class="task-card-dialog" aria-label="Card Card Dialog">
+
+    <!-- DIALOG TOOLBAR -->
+    <md-toolbar class="md-accent">
+        <div class="md-toolbar-tools">
+            <!-- LABELS -->
+            <md-menu md-offset="0 48" class="labels">
+                <md-button class="md-icon-button" aria-label="Label" ng-click="vm.labelTabIndex = 0;$mdOpenMenu($event)">
+                    <md-icon md-menu-origin md-font-icon="icon-label-outline"></md-icon>
+                </md-button>
+
+                <md-menu-content ng-mouseleave="vm.closeMenu()" class="labels-menu-content" width="4" ms-scroll>
+
+                    <md-tabs md-selected="vm.labelTabIndex" md-dynamic-height>
+
+                        <!-- SELECT LABEL -->
+                        <md-tab>
+                            <md-tab-body>
+
+                                <md-menu-item>
+                                    <md-input-container class="no-errors-spacer" md-no-float>
+                                        <input placeholder="Search labels..." type="text" ng-model="vm.labelSearchText" autocomplete="off">
+                                    </md-input-container>
+                                </md-menu-item>
+
+
+                                <md-menu-item class="label" ng-repeat="label in vm.tags | filter: vm.filterLabel">
+                                    <md-button class="label-toggle-button" md-prevent-menu-close ng-class="label.color" ng-click="vm.toggleTag(label)" aria-label="Toggle Label">
+                                        <div layout="row" layout-align="space-between center">
+                                            <span>{{label.name}}</span>
+
+                                            <i ng-show="vm.hasTag(label)" class="icon-has-tag icon-check s16"></i>
+
+                                        </div>
+                                    </md-button>
+
+                                </md-menu-item>
+
+                            </md-tab-body>
+                        </md-tab>
+                    </md-tabs>
+
+                </md-menu-content>
+            </md-menu>
+            <!-- / LABELS -->
+
+            <!-- MEMBERS -->
+            <md-menu md-offset="0 48" class="members" ng-if="vm.taskType !== 'troubleshooting'">
+                <md-button class="md-icon-button" aria-label="Members" ng-click="$mdOpenMenu($event)">
+                    <md-icon md-menu-origin md-font-icon="icon-account-multiple"></md-icon>
+                </md-button>
+
+                <md-menu-content ng-mouseleave="vm.closeMenu()" class="members-menu-content" width="4" ms-scroll>
+                    <md-menu-item>
+                        <md-input-container class="no-errors-spacer" md-no-float>
+                            <input placeholder="Search members..." autocomplete="off" type="text" ng-model="vm.memberSearchText">
+                        </md-input-container>
+                    </md-menu-item>
+
+                    <md-menu-item class="member" ng-repeat="member in vm.members  | filter: vm.filterMember">
+                        <md-button ng-click="vm.toggleMember(member)" md-prevent-menu-close aria-label="toggle member">
+                            <div layout="row" layout-align="space-between center" flex>
+                                <div layout="row" layout-align="start center">
+                                    <img alt="{{ member.name }}" ng-src="{{ member.avatar }}" class="avatar" />
+                                    <p class="member-name">{{ member.name }}</p>
+                                </div>
+                                <i class="icon-check s16" ng-if="vm.hasMember(member)">
+
+                                </i>
+                            </div>
+                        </md-button>
+                    </md-menu-item>
+                </md-menu-content>
+            </md-menu>
+            <!-- / MEMBERS -->
+
+            <!-- CHECKLIST -->
+            <md-menu md-offset="0 48px" class="checklist">
+                <md-button class="md-icon-button" ng-click="$mdOpenMenu($event)" aria-label="checklist">
+                    <md-icon md-menu-origin md-font-icon="icon-checkbox-marked"></md-icon>
+                </md-button>
+
+                <md-menu-content ng-mouseleave="vm.closeMenu()" class="checklist-menu-content" width="4">
+                    <form ng-submit="vm.createCheckList(vm.newCheckListTitle)" layout="column" layout-align="start end">
+                        <md-input-container class="no-errors-spacer" md-no-float>
+                            <input placeholder="Checklist Title" autocomplete="off" type="text" ng-model="vm.newCheckListTitle" translate>
+                        </md-input-container>
+
+                        <md-button type="submit" class="md-raised md-accent" aria-label="Add Checklist">
+                            <span>Add Checklist</span>
+                        </md-button>
+                    </form>
+                </md-menu-content>
+            </md-menu>
+            <!-- / CHECKLIST -->
+
+            <!-- SUBSCRIBE -->
+            <md-menu md-offset="0 48px" class="subscribe">
+                <md-button class="md-icon-button" ng-click="$mdOpenMenu($event)" aria-label="Subscribe">
+                    <md-icon md-menu-origin ng-if="vm.task.schedule.timeRequired" md-font-icon="icon-clock"></md-icon>
+                    <md-icon md-menu-origin ng-if="!vm.task.schedule.timeRequired" md-font-icon="icon-timer-off"></md-icon>
+                </md-button>
+
+                <md-menu-content ng-mouseleave="vm.closeMenu()" class="subscribe-menu-content" width="4">
+                    <md-menu-item>
+                        <md-button ng-click="vm.task.schedule.timeRequired = !vm.task.schedule.timeRequired" aria-label="Subscribed">
+                            <span ng-if="!vm.task.schedule.timeRequired">Add time</span>
+                            <span ng-if="vm.task.schedule.timeRequired">Remove time</span>
+                        </md-button>
+                    </md-menu-item>
+                </md-menu-content>
+            </md-menu>
+            <!-- / SUBSCRIBE -->
+
+            <!-- OPTIONS -->
+            <md-menu md-offset="0 48px" class="options">
+                <md-button class="md-icon-button" ng-click="$mdOpenMenu($event)" aria-label="Options">
+                    <md-icon md-menu-origin md-font-icon="icon-dots-horizontal"></md-icon>
+                </md-button>
+                <md-menu-content ms-scroll class="options-menu-content" width="4">
+
+                    <md-menu-item>
+                        <md-button ng-click="vm.task.important = !vm.task.important" aria-label="Toggle important">
+                            <md-icon ng-class="vm.task.important === false ? 'grey-fg' : 'red-600-fg'" md-font-icon="icon-alert-circle" class="s18"></md-icon>
+                            <span ng-show="!vm.task.important"> Mark as
+                                important</span>
+                            <span ng-show="vm.task.important">Remove
+                                important</span>
+                        </md-button>
+                    </md-menu-item>
+
+                    <md-menu-item>
+                        <md-button ng-click="vm.task.starred = !vm.task.starred" aria-label="Toggle star">
+                            <md-icon ng-class="vm.task.starred === false ? 'grey-fg' : 'amber-600-fg'" md-font-icon="icon-star" class="s18"></md-icon>
+                            <span ng-show="!vm.task.starred">Add star</span>
+                            <span ng-show="vm.task.starred">Remove star</span>
+                        </md-button>
+                    </md-menu-item>
+
+                    <md-menu-divider ng-if="vm.showOptions.status"></md-menu-divider>
+
+                    <md-menu-item ng-if="vm.showOptions.status">
+                        <md-menu>
+                            <md-menu-item>
+                                <md-button ng-click="$mdOpenMenu()" class="status" aria-label="Toggle star">
+                                    <span>Select Status</span>
+                                </md-button>
+                            </md-menu-item>
+                            <md-menu-content width="2">
+                                <md-menu-item class="status md-indent" ng-repeat="status in vm.statuses">
+                                    <md-button ng-click="vm.setTaskStatus(status)">
+                                        {{status.name}}
+                                    </md-button>
+                                </md-menu-item>
+                            </md-menu-content>
+                        </md-menu>
+
+                    </md-menu-item>
+
+
+
+                </md-menu-content>
+            </md-menu>
+            <!-- / OPTIONS -->
+
+            <span flex></span>
+
+            <!-- CLOSE DIALOG BUTTON -->
+            <md-button class="md-icon-button" ng-click="vm.closeDialog()" aria-label="Close Dialog">
+                <md-icon md-font-icon="icon-close"></md-icon>
+            </md-button>
+            <!-- / CLOSE DIALOG BUTTON -->
+
+        </div>
+    </md-toolbar>
+    <!-- / DIALOG TOOLBAR -->
+
+    <!-- DIALOG CONTENT -->
+    <md-dialog-content ms-scroll>
+        <!-- SECTIONS -->
+        <div class="sections" flex>
+
+            <form name="taskCardForm" class="md-inline-form taskCardForm" novalidate>
+
+                <div layout-gt-sm="row" layout="column" flex="100" layout-wrap layout-align="space-between start">
+                    <div flex class="description">
+                        <md-input-container class="md-block">
+                            <label>Title</label>
+                            <input class="md-title" name="taskTitle" ng-model="vm.task.title" required>
+                            <div ng-messages="taskCardForm.taskTitle.$error" role="alert">
+                                <div ng-message="required">
+                                    <span>Title field is required</span>
+                                </div>
+                            </div>
+                        </md-input-container>
+                    </div>
+
+
+                    <div flex layout="row" layout-align="end center">
+
+                        <div class="buttons" layout="row" layout-align="start center">
+
+
+                            <div ng-if="vm.showOptions.status" class="task-status mr-10 black-fg" ng-class="vm.task.status.color">
+                                {{vm.task.status.name}}
+                            </div>
+                            <div ng-if="vm.showOptions.location" flex class="description">
+                                <md-input-container class="md-block">
+                                    <label>Location</label>
+                                    <input class="w-150" name="taskLocation" ng-model="vm.task.location">
+                                </md-input-container>
+                            </div>
+
+                            <md-icon ng-show="vm.task.important" md-font-icon="icon-alert-circle" class="is-important red-600-fg"></md-icon>
+
+                            <md-icon ng-show="vm.task.starred" md-font-icon="icon-star" class="is-starred amber-600-fg"></md-icon>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div layout-gt-sm="row" layout="column" flex="100" layout-wrap layout-align="space-between start">
+
+                    <div flex="70" class="description">
+                        <md-input-container class="md-block">
+                            <label>Description</label>
+                            <textarea ng-model="vm.task.description" columns="1" md-maxlength="250" max-rows="4"></textarea>
+                        </md-input-container>
+                    </div>
+
+                    <div flex="30" layout="row" layout-align="end start" ng-if="vm.showOptions.category || vm.showOptions.attendees">
+
+                        <div ng-if="vm.showOptions.category">
+                            <md-input-container>
+                                <label>Category</label>
+                                <md-select name="type" class="w-150" ng-model="vm.task.category" ng-model-options="{trackBy: '$value.id'}" aria-label="reminder">
+                                    <md-option ng-repeat="cat in vm.categories" ng-value="cat">
+                                        {{cat.name}}
+                                    </md-option>
+                                </md-select>
+                            </md-input-container>
+                        </div>
+
+                        <div flex>
+
+                            <md-menu ng-if="vm.showOptions.attendees" class="members">
+                                <md-button class="md-icon-button w-120" aria-label="Members" ng-click="$mdOpenMenu($event)">
+                                    <div flex layout="row" layout-align="start start">
+                                        <md-icon md-menu-origin md-font-icon="icon-account-multiple"></md-icon>
+                                        <span style="text-transform: capitalize; margin-left:5px;">Attendees</span>
+                                    </div>
+                                </md-button>
+
+                                <md-menu-content ng-mouseleave="vm.closeMenu()" class="members-menu-content" width="4" ms-scroll>
+
+                                    <md-menu-item class="member" ng-repeat="member in vm.task.members">
+                                        <md-button ng-click="vm.toggleAttendees(member)" md-prevent-menu-close aria-label="toggle member">
+                                            <div layout="row" layout-align="space-between center" flex>
+                                                <div layout="row" layout-align="start center">
+                                                    <img alt="{{ member.name }}" ng-src="{{ member.avatar }}" class="avatar" />
+                                                    <p class="member-name">{{ member.name }}</p>
+                                                </div>
+                                                <i class="icon-check s16" ng-if="vm.hasAttendees(member)">
+
+                                                </i>
+                                            </div>
+                                        </md-button>
+                                    </md-menu-item>
+                                </md-menu-content>
+                            </md-menu>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+                <div ng-if="vm.showOptions.reason" layout-gt-sm="row" layout="column" flex="100" layout-wrap layout-align="space-between start">
+                    <div flex="70" class="description">
+                        <md-input-container class="md-block">
+                            <label>Reason</label>
+                            <textarea ng-model="vm.task.reason" columns="1" max-rows="4"></textarea>
+                        </md-input-container>
+                    </div>
+                </div>
+
+                <div ng-if="vm.showOptions.resolutionplan" layout-gt-sm="row" layout="column" flex="100" layout-wrap layout-align="space-between start">
+                    <div flex="70" class="description">
+                        <md-input-container class="md-block">
+                            <label>Resolution plan</label>
+                            <textarea ng-model="vm.task.resolutionplan" columns="1" max-rows="4"></textarea>
+                        </md-input-container>
+                    </div>
+                </div>
+
+            </form>
+
+            <div ng-if="vm.showOptions.tasks" layout-gt-sm="row" layout="column" flex="100" layout-wrap layout-align="space-between start">
+                <div flex="70" class="description">
+                    <td-sub-tasks item-list="vm.task.tasks" on-add-item="vm.subTaskDirective.onAddItem(item)" on-remove-item="vm.subTaskDirective.onRemoveItem(item)">
+                    </td-sub-tasks>
+                </div>
+            </div>
+
+
+
+            <div ng-if="vm.taskType !== 'troubleshooting'" class="section mt-10 mb-10 border-bottom" layout-gt-sm="row" layout="column" flex="100" layout-wrap>
+                <!-- Members SECTION -->
+                <div flex class="members">
+                    <div class="section-header" layout="row" layout-align="start center">
+                        <i class="icon-account-multiple s18"></i>
+                        <span class="section-title">{{vm.getMeberTitle()}}</span>
+                    </div>
+                    <div class="section-content">
+                        <md-chips class="member-chips" ng-model="vm.task.members" md-autocomplete-snap md-require-match="true" md-transform-chip="$chip">
+                            <md-autocomplete md-selected-item="vm.selectedMember" md-search-text="vm.searchText" md-items="member in vm.memberQuerySearch(vm.searchText)" md-item-text="member.name" placeholder="Search for a member">
+                                <!-- <span md-highlight-text="vm.searchText">{{member.name}}</span> -->
+                                <md-item-template>
+                                    <div class="po-autocomplete-template" layout="row" layout-align="start start">
+                                        <div class="title">
+                                            <div class="avatar-wrapper">
+                                                <img md-menu-align-target class="avatar" ng-src="{{member.avatar}}">
+                                            </div>
+                                        </div>
+                                        <div layout="column" layout-align="start start">
+                                            <div class="po-row"> {{member.name}} </div>
+                                            <div class="po-row"> {{member.jobTitle}} </div>
+
+                                        </div>
+                                    </div>
+                                </md-item-template>
+
+
+                            </md-autocomplete>
+                            <md-chip-template class="member-chip">
+                                <img class="member-chip-avatar" ng-src="{{$chip.avatar}}">
+                                <md-tooltip>{{$chip.name}}</md-tooltip>
+                            </md-chip-template>
+                            <button md-chip-remove class="md-primary">
+                                <md-icon md-font-icon="icon-close" class="s18"></md-icon>
+                            </button>
+                        </md-chips>
+                    </div>
+                </div>
+
+                <!-- / Members SECTION -->
+
+            </div>
+
+            <div ng-if="vm.taskType !== 'troubleshooting'">
+                <td-task-schedule schedule="vm.task.schedule" show-all-day="vm.showOptions.allDaySchedue" show-repeat="vm.showOptions.showRepeat" show-due-policy="vm.showOptions.showDuePolicy">
+                </td-task-schedule>
+            </div>
+
+            <!-- PO SECTION -->
+            <div class="section border-bottom mb-10" layout-gt-sm="row" layout="column" flex="100" layout-wrap>
+                <div flex class="labels">
+                    <div class="section-header" layout="row" layout-align="start center">
+                        <i class="icon-label-outline s18"></i>
+                        <span class="section-title">PO</span>
+                    </div>
+                    <div class="section-content po-section-content" layout="row" layout-align="start center" layout-wrap>
+                        <md-input-container class="md-icon-float md-icon-right md-block">
+                            <!-- <strong>PO No</strong>    -->
+
+                            <md-autocomplete md-selected-item="vm.task.po" md-search-text="vm.posearchText" md-items="item in vm.poQuerySearch(vm.posearchText)" md-item-text="item.poNo" md-floating-label="PO No">
+                                <!-- <span md-highlight-text="vm.searchText">{{member.name}}</span> -->
+                                <md-item-template>
+                                    <div class="po-autocomplete-template" layout="column" layout-align="start start">
+                                        <div>
+                                            <strong>Buyer:</strong> {{item.buyer}}
+                                        </div>
+                                        <div layout="row" layout-align="start start">
+                                            <div> <strong>PO:</strong> {{item.poNo}} </div>
+                                            <div class="ml-5"><strong>Style:</strong> {{item.styleNo}} </div>
+
+                                        </div>
+                                    </div>
+                                </md-item-template>
+
+
+                            </md-autocomplete>
+                        </md-input-container>
+                        <!-- </div>
+
+                    <div class="section-content"> -->
+                        <md-input-container class="md-icon-float md-icon-right md-block">
+
+
+                            <md-autocomplete md-selected-item="vm.task.style" md-search-text="vm.stylesearchText" md-items="item in vm.styleQuerySearch(vm.stylesearchText)" md-item-text="item.styleNo" md-floating-label="Style No">
+
+                                <md-item-template>
+                                    <div class="po-autocomplete-template" layout="column" layout-align="start start">
+                                        <div>
+                                            <strong>Buyer:</strong> {{item.buyer}}
+                                        </div>
+                                        <div layout="row" layout-align="start start">
+                                            <div><strong>Style:</strong> {{item.styleNo}} </div>
+
+                                        </div>
+                                    </div>
+                                </md-item-template>
+
+
+                            </md-autocomplete>
+                        </md-input-container>
+
+                        <md-input-container class="md-icon-float md-icon-right md-block">
+
+
+                            <md-autocomplete md-selected-item="vm.task.buyer" md-search-text="vm.buyersearchText" md-items="item in vm.buyerQuerySearch(vm.buyersearchText)" md-item-text="item.name" md-floating-label="Buyer">
+
+                                <md-item-template>
+                                    <div class="po-autocomplete-template" layout="row" layout-align="start start">
+                                        <div class="title">
+                                            <div class="avatar-wrapper">
+                                                <img md-menu-align-target class="avatar" ng-src="{{item.avatar}}">
+                                            </div>
+                                        </div>
+                                        <div layout="column" layout-align="start start">
+                                            <div class="po-row"> {{item.name}} </div>
+                                            <div class="po-row"> {{item.jobTitle}} </div>
+
+                                        </div>
+                                    </div>
+                                </md-item-template>
+
+
+                            </md-autocomplete>
+                        </md-input-container>
+
+                    </div>
+
+                </div>
+            </div>
+            <!-- /PO SECTION -->
+
+            <td-check-list item-list="vm.task.checklist" on-add-item="vm.checkListDirective.onAddItem(item)" on-remove-item="vm.checkListDirective.onRemoveItem(item)" on-remove-check-list="vm.checkListDirective.onRemoveCheckList(item)">
+            </td-check-list>
+
+
+            <!-- LABELS SECTION -->
+
+            <div class="section border-bottom mb-10" layout-gt-sm="row" layout="column" flex="100" layout-wrap>
+
+
+                <div flex class="labels">
+                    <div class="section-header" layout="row" layout-align="start center">
+                        <i class="icon-label-outline s18"></i>
+                        <span class="section-title">Tags</span>
+                    </div>
+                    <div class="section-content">
+
+                        <md-chips class="label-chips" ng-model="vm.task.tags" md-autocomplete-snap md-require-match="true" md-transform-chip="$chip">
+                            <md-autocomplete md-selected-item="vm.selectedLabel" md-search-text="vm.searchLabelText" md-items="label in vm.labelQuerySearch(vm.searchLabelText)" md-item-text="label.name" placeholder="Search for a tag" md-menu-class="autocomplete-custom-template">
+
+                                <md-item-template>
+                                    <div>
+                                        <div class="title p-10">
+                                            {{label.label}}
+                                        </div>
+                                    </div>
+                                </md-item-template>
+
+
+
+                            </md-autocomplete>
+                            <md-chip-template class="label-chip" ng-class="$chip.color">
+                                <span>{{$chip.label}}</span>
+                            </md-chip-template>
+                            <button md-chip-remove class="md-primary pb-5">
+                                <md-icon md-font-icon="icon-close" class="s14"></md-icon>
+                            </button>
+                        </md-chips>
+
+                    </div>
+                </div>
+
+            </div>
+            <!-- / LABELS SECTION -->
+            <div ng-if="vm.taskType !== 'troubleshooting'">
+                <td-remiders item-list="vm.task.reminders" on-add-item="vm.remindersDirective.onAddItem(item)" on-remove-item="vm.remindersDirective.onRemoveItem(item)">
+                </td-remiders>
+            </div>
+
+            <td-attachments item-list="vm.task.attachments" type="attachment" on-add-item="vm.attachmentsDirective.onAddItem(item)" on-remove-item="vm.attachmentsDirective.onRemoveItem(item)">
+            </td-attachments>
+
+            <td-comments item-list="vm.task.notes" type="note" on-add-item="vm.notesDirective.onAddItem(item)" on-remove-item="vm.notesDirective.onRemoveItem(item)">
+            </td-comments>
+
+            <td-comments item-list="vm.task.comments" type="comment" on-add-item="vm.commentsDirective.onAddItem(item)" on-remove-item="vm.commentsDirective.onRemoveItem(item)">
+            </td-comments>
+
+            <td-comments item-list="vm.task.activities" type="activity" on-add-item="vm.activityDirective.onAddItem(item)" on-remove-item="vm.activityDirective.onRemoveItem(item)">
+            </td-comments>
+
+        </div>
+
+        <!-- / SECTIONS -->
+
+    </md-dialog-content>
+    <!-- / DIALOG CONTENT -->
+
+    <md-dialog-actions layout="row" layout-align="space-between center">
+        <div layout="row" layout-align="start center">
+            <md-button type="submit" ng-click="vm.saveTask()" class="send-button md-accent md-raised" ng-disabled="taskCardForm.$invalid" aria-label="SAVE">
+                SAVE
+            </md-button>
+
+        </div>
+
+        <div layout="row">
+            <md-button class="md-icon-button" ng-click="vm.deleteTask($event)" aria-label="Delete">
+                <md-icon md-font-icon="icon-delete"></md-icon>
+                <md-tooltip><span>DELETE</span></md-tooltip>
+            </md-button>
+        </div>
+    </md-dialog-actions>
+
+
+
+</md-dialog>
+<!--  CARD DIALOG -->

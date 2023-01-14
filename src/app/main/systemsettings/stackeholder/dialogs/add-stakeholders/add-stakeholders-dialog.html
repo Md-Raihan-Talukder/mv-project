@@ -1,0 +1,87 @@
+<md-dialog id="import-inco" class="shipment-dialog  w-450 h-auto" aria-label="Type Document Dialog" data-drag="1" data-jqyoui-options jqyoui-draggable="{animate:true}">
+    <form>
+        <md-toolbar class="md-accent" style="cursor:pointer;">
+            <div class="md-toolbar-tools">
+                <div>
+                    <label>{{vm.title}}</label>
+                </div>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="vm.closeDialog()" aria-label="Close Dialog">
+                    <md-icon md-font-icon="icon-close"></md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+        <div layout="row" flex="100">
+            <div layout="column" flex="100" ms-scroll>
+                <md-dialog-content ms-scroll>
+                    <form name="addStakeholderForm" novalidate>
+                        <div layout="column">
+                            <div class="mb-10">
+                                <div flex class="description" layout="column" layout-align="start start">
+                                    <div layout="row" layout-align="start center">
+                                        <span class="secondary-text w-120"> Title </span>
+                                        <md-input-container class="md-block">
+                                            <label>
+                                                <span>Title</span>
+                                            </label>
+                                            <input class="md-subhead" name="Description" ng-model="vm.stakeholder.title" required autocomplete="off">
+                                            <div ng-messages="addStakeholderForm.title.$error" role="alert">
+                                                <div ng-message="required">
+                                                    <span>Title is required</span>
+                                                </div>
+                                            </div>
+                                        </md-input-container>
+                                    </div>
+
+                                </div>
+                                <!-- <div flex class="description" layout="column" layout-align="start start">
+                  <div layout="row" layout-align="start center">
+                    <span class="secondary-text w-120"> Issued By </span>
+                    <md-input-container class="md-block">
+                      <label>
+                                              <span>Issued By</span>
+                                           </label>
+                      <input class="md-subhead" name="Issued" ng-model="vm.stakeholder.issuedBy" autocomplete="off">
+                    </md-input-container>
+                  </div>
+
+                </div>
+                <div flex class="description" layout="column" layout-align="start start">
+                  <div layout="row" layout-align="start center">
+                    <span class="secondary-text w-120"> Prepared By </span>
+                    <md-input-container class="md-block">
+                      <label>
+                                              <span>Prepared By</span>
+                                           </label>
+                      <input class="md-subhead" name="Prepared" ng-model="vm.stakeholder.preparedBy" autocomplete="off">
+                    </md-input-container>
+                  </div>
+
+                </div> -->
+                                <div flex class="description" layout="column" layout-align="start start">
+                                    <div layout="row" layout-align="start center">
+                                        <span class="secondary-text w-120"> Description </span>
+                                        <md-input-container class="md-block">
+                                            <label>
+                                                <span>Description</span>
+                                            </label>
+                                            <input class="md-subhead" name="Description" ng-model="vm.stakeholder.description" autocomplete="off">
+                                        </md-input-container>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </md-dialog-content>
+            </div>
+        </div>
+    </form>
+    <md-dialog-actions layout="row" layout-align="end center" class="h-50">
+        <div layout="row" layout-align="start center">
+            <md-button ng-disabled="!vm.stakeholder.title" ng-click="vm.addStakeholderDetail(vm.stakeholder)" class="send-button md-accent md-raised" ng-disabled="addStakeholderForm.$invalid" aria-label="SAVE">
+                <span ng-if="vm.isNew">Add</span><span ng-if="!vm.isNew">Update</span>
+            </md-button>
+        </div>
+    </md-dialog-actions>
+</md-dialog>

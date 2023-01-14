@@ -1,0 +1,175 @@
+<div layout="row" layout-align="start start" style="min-height: 100%; height:100%; overflow:hidden;">
+
+    <div class="left" flex style="min-height: 100%; height:100%; max-height: 100%; width: 100%;" layout="column" layout-align="start top">
+
+        <ms-widget layout="column" style="padding: 0; min-height: 100%; height:100%; width: 100%" layout-align="start top">
+
+            <ms-widget-front style="min-height: 100%; height:100%; width: 100%;" layout="column" layout-align="start top">
+
+                <div style="height: calc(100% - 50px);
+                             max-height: calc(100% - 50px);
+                             min-height: calc(100% - 50px);
+                             width: 100%;" ms-scroll>
+
+                    <!-- Start -->
+                    <div layout="column" flex="100">
+
+                        <div>
+
+                            <div class="md-subhead bb mt-5 ml-20 h-30 grey-200-bg" layout="row" layout-align="start center" flex>
+                                <div class="p-10" layout="row" layout-align="start center">
+                                    <div>
+                                        Declared Factory Overhead
+                                    </div>
+                                </div>
+                            </div>
+                            <div layout="row" flex="100">
+                                <div flex="60" class="p-20">
+                                    <div class="mt-5" layout="row" layout-align="start center" flex>
+
+                                        <div class="ml-40 pl-10" flex="50">
+                                            Management Overhead
+                                        </div>
+                                        <div flex="30">
+                                            <div class="md-block">
+                                                <div>
+                                                    {{vm.declareOverHead.managementOverHeadManual}}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mt-5" layout="row" layout-align="start center" flex>
+
+                                        <div class="ml-10 mr-5 cursor-pointer">
+                                            <md-icon ng-if="!vm.declareOverHead.isCalculatedFactoryOverHead" md-font-icon="icon-checkbox-blank-outline" class="icon">
+                                            </md-icon>
+                                            <md-icon ng-if="vm.declareOverHead.isCalculatedFactoryOverHead" md-font-icon="icon-checkbox-marked-outline" class="icon md-accent">
+                                            </md-icon>
+                                        </div>
+                                        <div class="pl-10" flex="50">
+                                            Calculated Factory Overhead
+                                        </div>
+                                        <div flex="30">
+                                            <div class="md-block">
+                                                <span>{{vm.declareOverHead.factoryOverHeadCalculated}}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mt-5" layout="row" layout-align="start center" flex>
+
+                                        <div class="ml-10 mr-5 cursor-pointer">
+                                            <md-icon ng-if="vm.declareOverHead.isCalculatedFactoryOverHead" md-font-icon="icon-checkbox-blank-outline" class="icon">
+                                            </md-icon>
+                                            <md-icon ng-if="!vm.declareOverHead.isCalculatedFactoryOverHead" md-font-icon="icon-checkbox-marked-outline" class="icon md-accent">
+                                            </md-icon>
+                                        </div>
+                                        <div class="pl-10" flex="50">
+                                            Custom Factory Overhead
+                                        </div>
+                                        <div flex="30">
+                                            <div class="md-block">
+                                                <div>
+                                                    {{vm.declareOverHead.factoryOverHeadManual}}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-30" layout="row" layout-align="start start">
+                                    <div layout="row" layout-align="start center" class="mr-20">
+                                        <div class="pl-10">
+                                            Pick :
+                                        </div>
+                                        <div class="ml-20">
+                                            <div class="md-block">
+                                                <div>
+                                                    {{vm.declareOverHead.pick}} Month
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div layout="row" layout-align="start center" class="mr-20">
+                                        <div class="pl-10">
+                                            Mode :
+                                        </div>
+                                        <div class="ml-20">
+                                            <div class="md-block">
+                                                <div>
+                                                    {{vm.declareOverHead.mode}}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pl-20 pr-20 pb-20">
+                            <div layout="row" layout-align="start center">
+                                <div class="quantity-def-table ml-10">
+                                    <div class="quantity-def-table-head" layout="row" layout-align="end center">
+
+                                    </div>
+                                    <div class="quantity-def-table-head" layout="row" layout-align="start center">
+
+                                        <div class="w-150 border-left border-top grey-100-bg  border-bottom quantity-def-table-head-column" style="height: 40px;" layout="column" layout-align="center center">
+                                            <span> Year </span>
+                                        </div>
+
+                                        <div class="w-150 border-left border-top grey-100-bg  border-bottom quantity-def-table-head-column" style="height: 40px;" layout="column" layout-align="center center">
+                                            <span> Month </span>
+                                        </div>
+
+                                        <div class="w-200 border-left border-top grey-100-bg  border-bottom quantity-def-table-head-column" style="height: 40px;" layout="row" layout-align="center center">
+                                            <span> Management Overhead </span>
+                                        </div>
+
+                                        <div class="w-200 border-left border-right border-top grey-100-bg border-bottom quantity-def-table-head-column" style="height: 40px;" layout="column" layout-align="center center">
+                                            <span> Factory Overhead </span>
+                                        </div>
+
+                                    </div>
+                                    <div ng-repeat="monthYearOH in vm.showOverheadSummary ">
+                                        <div class="quantity-def-table-body" layout="row" layout-align="start center">
+
+                                            <div class="w-150 h-35 border-left border-bottom quantity-def-table-body-column" layout="column" layout-align="center center">
+                                                <span> {{monthYearOH.year}} </span>
+                                            </div>
+
+                                            <div class="w-150 h-35 border-left border-bottom quantity-def-table-body-column" layout="column" layout-align="center center">
+                                                <span> {{monthYearOH.month}} </span>
+                                            </div>
+
+                                            <div class="w-200 h-35 border-left border-bottom quantity-def-table-body-column" style="height: 40px;" layout="row" layout-align="center center">
+                                                <div> {{monthYearOH.managementOverHeadManual}} </div>
+                                            </div>
+
+                                            <div class="w-200 h-35 border-left border-right border-bottom quantity-def-table-body-column" layout="column" layout-align="center center">
+                                                <div ng-if="monthYearOH.isCalculatedFactoryOverHead"> {{monthYearOH.factoryOverHeadCalculated}} ({{"Calculated"}})</div>
+                                                <div ng-if="!monthYearOH.isCalculatedFactoryOverHead"> {{monthYearOH.factoryOverHeadManual}} ({{"Manual"}})</div>
+                                            </div>
+
+                                        </div>
+
+
+                                    </div>
+
+
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+
+    </div>
+    </ms-widget-front>
+    </ms-widget>
+</div>
+
+</div>

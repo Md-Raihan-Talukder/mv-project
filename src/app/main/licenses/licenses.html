@@ -1,0 +1,81 @@
+<div id="organizations" class="page-layout simple right-sidenav" layout="row">
+
+    <md-sidenav class="main-sidenav" md-component-id="main-sidenav" md-is-locked-open="$mdMedia('gt-md') && vm.leftNavPined" ng-include="'app/main/licenses/sidenavs/main/main-sidenav.html'" ms-scroll ms-sidenav-helper>
+    </md-sidenav>
+
+    <div class="center" layout="column" flex>
+
+        <div class="header md-accent-bg">
+
+            <div class="header-content" layout="column" layout-align="space-between">
+
+                <div class="toolbar" layout="row" layout-align="space-between">
+
+                    <div layout="row" layout-align="start center">
+                        <md-button class="md-icon-button main-sidenav-toggle" ng-click="vm.toggleSidenav('main-sidenav')" aria-label="Toggle Main Sidenav">
+                            <md-icon md-font-icon="icon-backburger" class="icon" ng-class="{'transform-180' : !vm.leftNavPined}"></md-icon>
+                        </md-button>
+
+                        <div class="breadcrumb text-truncate" layout="row" layout-align="start center">
+                            <span>Licenses
+                                <md-icon md-font-icon="icon-chevron-right" class="icon separator"></md-icon>
+                            </span>
+
+                        </div>
+                    </div>
+                    <div class="right-side" layout="row">
+                        <a ui-sref="app.licenses.add()">
+                            <md-button class="md-raised md-background">
+                                <span>Add New License</span>
+                            </md-button>
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <md-content class="content" flex ms-scroll>
+
+
+            <div class="todo-item" ng-repeat="license in vm.licenses | filter:vm.filerByOrg">
+                <div layout="row" layout-align="start center" flex>
+                    <div class="info" flex>
+
+                        <div class="tags" layout="row" layout-align="start center" layout-wrap>
+                            <div class="mr-10 mt-20">
+                                <span class="title"><b>Organization Name:</b> {{license.organizationInfo.name}}</span>
+                                <span class="tag"><b>Licenses Type:</b> {{license.licenseInfo.licenseType}}</span>
+                                <span ng-if="license.active" style="color:#fff;" class="tag md-green-400-bg"><b>Active</b></span>
+                                <span ng-if="!license.active" style="color:#fff;" class="tag md-red-300-bg"><b>Inactive</b></span>
+                                <p><span class="tag"><b>Licenses Duration:</b> {{license.licenseInfo.tenure}} months</span>
+                                    <span class="tag"><b>Activation Date:</b> {{license.licenseInfo.activationDate | date:'longDate'}}</span>
+                                    <span class="tag"><b>Validity Date:</b> {{license.licenseInfo.validityDate | date:'longDate'}}</span>
+                                    <!-- <span class="tag" ><b>Remaining:</b> {{(license.licenseInfo.remainingInDay - vm.todayInDays) | number:2}} days</span> -->
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <a ui-sref="app.licenses.detail({id:license.organizationId})">
+                        <md-button class="md-icon-button " aria-label="Details">
+                            <md-icon md-font-icon="icon-details"></md-icon>
+                            <md-tooltip><span>View Details</span></md-tooltip>
+                        </md-button>
+                    </a>
+                    <a ui-sref="app.licenses.add({id:license.organizationId})">
+                        <md-button class="md-icon-button " aria-label="Details">
+                            <md-icon md-font-icon="icon-pencil"></md-icon>
+                            <md-tooltip><span>Edit</span></md-tooltip>
+                        </md-button>
+                    </a>
+                </div>
+            </div>
+        </md-content>
+
+
+    </div>
+
+</div>

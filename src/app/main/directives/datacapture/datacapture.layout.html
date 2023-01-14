@@ -1,0 +1,27 @@
+<div layout="column" layout-align="start start">
+
+    <div flex ng-repeat="row in rows" style="width: 100%;" layout="row" layout-wrap layout-align="start start">
+        <div flex="100/row.columns.length" ng-repeat="col in row.columns" layout="column" layout-align="start start">
+
+            <div ng-repeat="hSegment in col.hSegments" style="width: 100%;" layout="row" layout-align="start start" flex>
+
+                <div ng-repeat="vSegment in hSegment.vSegments" layout="row" layout-align="start start" flex="100/hSegment.vSegments.length">
+
+                    <div ng-if="!vSegment.column">Column not defined</div>
+
+                    <div ng-if="vSegment.column" ng-init="col=vSegment.column" flex style="width: 100%;">
+
+                        <td-data-capture-column-renderer item="item" col="vSegment.column" columns="columns" is-read-only="vSegment.isReadOnly" on-add-inner-item="vm.addInnerItem(innerItem, isNew)">
+                        </td-data-capture-column-renderer>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+</div>

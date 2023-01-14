@@ -1,0 +1,217 @@
+<div id="add-new-license" class="item-detail register-definition page-layout simple tabbed" layout="column">
+    <div class="header md-accent-bg" layout="row" layout-align="start center">
+        <div layout="row" layout-align="start center" flex>
+
+            <div layout="row" layout-align="start center">
+                <div class="white-fg" layout="column" layout-align="start start">
+                    <div class="md-title organization-title secondary-text">
+                        <span>{{vm.license.organizationInfo.name}}</span>
+                        <span ng-if="!vm.license.organizationId">Add New User</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- <md-button ng-disabled="licenseForm.$invalid" ng-click="vm.licenseActivation(); vm.license.active=!vm.license.active" class="md-raised md-background" aria-label="save">
+            <span ng-if="vm.license.active" >Deactivate License</span>
+            <span ng-if="!vm.license.active" >Activate License</span>
+        </md-button> -->
+        <md-button ng-disabled="userForm.$invalid" ng-click="vm.saveUser(vm.user,vm.isNew)" class="md-raised md-background" aria-label="save">
+            <span ng-if="unSaveState" style="color: red;">SAVE</span>
+            <span ng-if="!unSaveState">SAVE</span>
+        </md-button>
+        <md-button class="md-raised md-background" ng-click="vm.backToList($event)">
+            <span>Back</span>
+        </md-button>
+    </div>
+
+
+    <div class="content">
+
+        <md-tabs md-dynamic-height class="tabs">
+            <!-- Organization Info TAB -->
+            <md-tab label="Basic Info">
+
+
+
+                <form class="m-30" name="userForm" novalidate>
+                    <div layout="row" flex="100">
+                        <div layout="column" flex="70">
+                            <div layout="row" flex="100">
+                                <div layout="column" flex="33">
+                                    <div flex class="description mr-20">
+                                        <md-input-container class="md-block">
+                                            <label>Name</label>
+                                            <input class="md-title" name="name" ng-model="vm.user.name" ng-change="vm.formChanged()" required autocomplete="off">
+                                            <div ng-messages="moduleForm.name.$error" role="alert">
+                                                <div ng-message="required">
+                                                    <span>Name is required</span>
+                                                </div>
+                                            </div>
+                                        </md-input-container>
+                                    </div>
+                                </div>
+                                <div layout="column" flex="33">
+                                    <div flex class="description mr-20">
+                                        <md-input-container class="md-block">
+                                            <label>Email</label>
+                                            <input class="md-title" name="email" ng-model="vm.user.email" ng-change="vm.formChanged()" required autocomplete="off">
+                                            <div ng-messages="moduleForm.email.$error" role="alert">
+                                                <div ng-message="required">
+                                                    <span>Email is required</span>
+                                                </div>
+                                            </div>
+                                        </md-input-container>
+                                    </div>
+                                </div>
+                                <div layout="column" flex="33">
+                                    <div flex class="description mr-20">
+                                        <md-input-container class="md-block">
+                                            <label>Phonenumber</label>
+                                            <input type="tel" class="md-title" name="phoneNumber" ng-model="vm.user.phoneNumber" ng-change="vm.formChanged()" required autocomplete="off" ng-intl-tel-input>
+                                            <div ng-messages="moduleForm.phoneNumber.$error" role="alert">
+                                                <div ng-message="required">
+                                                    <span>Phonenumber is required</span>
+                                                </div>
+                                            </div>
+                                        </md-input-container>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div layout="row" flex="100">
+                                <div layout="column" flex="33">
+                                    <div flex class="description mr-20">
+                                        <md-input-container class="md-block">
+                                            <label>Employee ID</label>
+                                            <input class="md-title" name="email" ng-model="vm.user.employeeId" ng-change="vm.formChanged()" required autocomplete="off">
+                                            <div ng-messages="moduleForm.employeeId.$error" role="alert">
+                                                <div ng-message="required">
+                                                    <span>Email is required</span>
+                                                </div>
+                                            </div>
+                                        </md-input-container>
+                                    </div>
+                                </div>
+                                <div layout="column" flex="33">
+                                    <div flex class="description mr-20">
+                                        <md-input-container class="md-block">
+                                            <label>Designation</label>
+                                            <input class="md-title" name="designation" ng-model="vm.user.designation" ng-change="vm.formChanged()" required autocomplete="off">
+                                            <div ng-messages="moduleForm.designation.$error" role="alert">
+                                                <div ng-message="required">
+                                                    <span>Designation is required</span>
+                                                </div>
+                                            </div>
+                                        </md-input-container>
+                                    </div>
+                                </div>
+                                <div layout="column" flex="33">
+                                    <div flex class="description mr-20">
+                                        <md-input-container class="md-block">
+                                            <label>Department</label>
+                                            <input class="md-title" name="department" ng-model="vm.user.department" ng-change="vm.formChanged()" required autocomplete="off">
+                                            <div ng-messages="moduleForm.department.$error" role="alert">
+                                                <div ng-message="required">
+                                                    <span>Designation is required</span>
+                                                </div>
+                                            </div>
+                                        </md-input-container>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div layout="row" flex="100">
+                                <div layout="column" flex="33">
+                                    <div flex class="description mr-20">
+                                        <md-input-container class="md-block pt-10">
+                                            <label>Role</label>
+                                            <md-select name="select" ng-model="vm.user.role" ng-change="vm.formChanged()">
+                                                <md-option ng-value="'No Role'">No Role</md-option>
+                                                <md-option ng-repeat="role in vm.organization.roles" ng-value="role.title">
+                                                    <span>{{role.title}}</span>
+                                                </md-option>
+
+                                            </md-select>
+                                            <div ng-messages="userForm.select.$error" role="alert">
+                                                <div ng-message="required">
+                                                    <span>This field is required</span>
+                                                </div>
+                                            </div>
+                                        </md-input-container>
+                                    </div>
+                                </div>
+                                <div layout="column" flex="33">
+                                    <div flex class="description mr-20">
+                                        <md-input-container class="md-block pt-10">
+                                            <label>Additional Roles</label>
+                                            <md-select ng-model="vm.user.additionalRoles" ng-change="vm.formChanged()" ng-model-options="{trackBy: '$value.TECHDISER_ID'}" multiple="">
+                                                <md-optgroup label="additionalRoles">
+                                                    <md-option ng-value="additionalRoles" ng-repeat="additionalRoles in vm.organization.roles">{{additionalRoles.title}}</md-option>
+                                                </md-optgroup>
+                                            </md-select>
+                                            <div ng-messages="userForm.select.$error" role="alert">
+                                                <div ng-message="required">
+                                                    <span>This field is required</span>
+                                                </div>
+                                            </div>
+                                        </md-input-container>
+                                    </div>
+                                </div>
+                                <div layout="column" flex="33">
+                                    <div flex class="description mr-20">
+                                        <md-input-container>
+                                            <label>Groups</label>
+                                            <md-select ng-model="vm.user.groups" ng-change="vm.formChanged()" ng-model-options="{trackBy: '$value.TECHDISER_ID'}" multiple="">
+                                                <md-optgroup label="groups">
+                                                    <md-option ng-value="group" ng-repeat="group in vm.groups">{{group.name}}</md-option>
+                                                </md-optgroup>
+                                            </md-select>
+                                        </md-input-container>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div layout="column" flex="30">
+                            <div layout="row">
+                                <div flex class="description  mt-20">
+                                    Profile Picture
+                                    <td-image-loader type="single" selection-type="'single'" image-object="vm.user.proPic" max-size="5" item-list="[]" on-upload="vm.onUpload(info)">
+                                    </td-image-loader>
+
+                                </div>
+                            </div>
+                            <div layout="row">
+                                <img ng-if="vm.user.proPic" class="h-180 w-180" style="border-radius:0px;" ng-src="{{vm.user.proPic.data}}" />
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </form>
+            </md-tab>
+            <!-- License info TAB -->
+            <md-tab label="Special Permissions">
+                <div>
+                    <td-permissions mode="vm.permissionDirectiveModes.specialPermissions" permissions="vm.user.userPermission"></td-permissions>
+                </div>
+            </md-tab>
+            <!-- License info TAB -->
+            <md-tab label="Deny Permissions">
+                <div>
+                    <td-permissions mode="vm.permissionDirectiveModes.denyPermissions" permissions="vm.user.denyPermissions"></td-permissions>
+                </div>
+            </md-tab>
+            <!-- License info TAB -->
+            <md-tab label="Permission Set" ng-click="vm.getPermissionSet()">
+                <div>
+                    <td-permissions mode="vm.permissionDirectiveModes.permissionSet" permissions="vm.user.permissionSet"></td-permissions>
+                </div>
+            </md-tab>
+
+
+        </md-tabs>
+
+    </div>
+</div>

@@ -1,0 +1,22 @@
+.list-strip {
+  .list-strip-items {
+    .list-strip-item {
+      &.selected-row {
+        background: #e3f2fd;
+      }
+
+      position: relative;
+      padding: 0;
+      text-transform: none;
+      cursor: pointer;
+
+      .list-strip-item-image {
+      }
+
+      .list-strip-item-lines {
+        .list-strip-item-line1 {
+        }
+      }
+    }
+  }
+}

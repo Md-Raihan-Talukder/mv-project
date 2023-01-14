@@ -1,0 +1,3027 @@
+{
+    "data": [
+        {
+            "TECHDISER_ID": "consignmentpo1",
+            "poId": "po1",
+            "sendForPlanning": [],
+            "planning": [],
+            "demandConfirmation": [],
+            "booking": [],
+            "consignmentCreate": [],
+            "order": []
+        },
+        {
+            "TECHDISER_ID": "consignmentpo12",
+            "poId": "po2",
+            "planning": [],
+            "demandConfirmation": [],
+            "booking": [],
+            "consignmentCreate": [],
+            "order": []
+        },
+        {
+            "TECHDISER_ID": "consignmentpo3",
+            "poId": "po3",
+            "planning": [],
+            "demandConfirmation": [],
+            "booking": [],
+            "consignmentCreate": [],
+            "order": []
+        }
+    ],
+    "routes": [
+        {
+            "TECHDISER_ID": "seaportChittagongportSingaporeportIstambulportNewYork",
+            "mode": "sea",
+            "sailingPort": "Chittagong",
+            "sailingPortCode": "Chittagong",
+            "sailingPortId": "portChittagong",
+            "destinationPort": "NewYork",
+            "destinationPortCode": "NewYork",
+            "destinationPortId": "portNewYork",
+            "transitPorts": [
+                {
+                    "TECHDISER_ID": "transitSingapore",
+                    "portId": "portSingapore",
+                    "port": "Singapore",
+                    "portCode": "Singapore"
+                },
+                {
+                    "TECHDISER_ID": "transitIstambul",
+                    "portId": "portIstambul",
+                    "port": "Istambul",
+                    "portCode": "Istambul"
+                }
+            ],
+            "weeklyDeportDays": [
+                "Sunday",
+                "Thusday"
+            ]
+        },
+        {
+            "TECHDISER_ID": "seaportChittagongportSingaporeportGermanyportNewYork",
+            "mode": "sea",
+            "sailingPort": "Chittagong",
+            "sailingPortCode": "Chittagong",
+            "sailingPortId": "portChittagong",
+            "destinationPort": "NewYork",
+            "destinationPortCode": "NewYork",
+            "destinationPortId": "portNewYork",
+            "transitPorts": [
+                {
+                    "TECHDISER_ID": "transitSingapore",
+                    "portId": "portSingapore",
+                    "port": "Singapore",
+                    "portCode": "Singapore"
+                },
+                {
+                    "TECHDISER_ID": "transitHigenburg",
+                    "portId": "portGermany",
+                    "port": "portGermany",
+                    "portCode": "portGermany"
+                }
+            ],
+            "weeklyDeportDays": [
+                "Sunday",
+                "Thusday"
+            ]
+        },
+        {
+            "TECHDISER_ID": "seaportChittagongportSingaporeportBritainportNewYork",
+            "mode": "sea",
+            "sailingPort": "Chittagong",
+            "sailingPortCode": "Chittagong",
+            "sailingPortId": "portChittagong",
+            "destinationPort": "NewYork",
+            "destinationPortCode": "NewYork",
+            "destinationPortId": "portNewYork",
+            "transitPorts": [
+                {
+                    "TECHDISER_ID": "transitSingapore",
+                    "portId": "portSingapore",
+                    "port": "Singapore",
+                    "portCode": "Singapore"
+                },
+                {
+                    "TECHDISER_ID": "transitBritain",
+                    "portId": "portBritain",
+                    "port": "Britain",
+                    "portCode": "Britain"
+                }
+            ],
+            "weeklyDeportDays": [
+                "Sunday",
+                "Thusday"
+            ]
+        }
+    ],
+    "etds": [
+        {
+            "TECHDISER_ID": "PO1ETD1",
+            "poId": "PO1",
+            "etd": "2020.01.01",
+            "sailingDt": "2020.01.07",
+            "sailingPortId": "portChittagong",
+            "destinationPortId": "portSingapore",
+            "quantity": "10000",
+            "inco": "FOB",
+            "shipmentMode": "sea",
+            "packaging": {
+                "packagingTypeId": "packagingTypeId1",
+                "space": "2x2x1.5",
+                "prefix": "",
+                "unit": "feet"
+            },
+            "projectInfo": [
+                {
+                    "projectId": "project1",
+                    "quantity": "10000",
+                    "numberOfPackets": "50"
+                },
+                {
+                    "projectId": "project2",
+                    "quantity": "20000",
+                    "numberOfPackets": "100"
+                }
+            ]
+        },
+        {
+            "TECHDISER_ID": "PO1ETD2",
+            "poId": "PO1",
+            "etd": "2020.01.02",
+            "sailingDt": "2020.01.08",
+            "sailingPortId": "portChittagong",
+            "destinationPortId": "portSingapore",
+            "quantity": "20000",
+            "inco": "FOB",
+            "shipmentMode": "sea",
+            "packaging": {
+                "packagingTypeId": "packagingTypeId1",
+                "space": "2x2x1.5",
+                "prefix": "",
+                "unit": "feet"
+            },
+            "projectInfo": [
+                {
+                    "projectId": "project1",
+                    "quantity": "10000",
+                    "numberOfPackets": "50"
+                },
+                {
+                    "projectId": "project2",
+                    "quantity": "20000",
+                    "numberOfPackets": "100"
+                }
+            ]
+        },
+        {
+            "TECHDISER_ID": "PO1ETD3",
+            "poId": "PO1",
+            "etd": "2020.01.03",
+            "sailingDt": "2020.01.09",
+            "sailingPortId": "portChittagong",
+            "destinationPortId": "portSingapore",
+            "quantity": "30000",
+            "inco": "FOB",
+            "shipmentMode": "sea",
+            "packaging": {
+                "packagingTypeId": "packagingTypeId1",
+                "space": "2x2x1.5",
+                "prefix": "",
+                "unit": "feet"
+            },
+            "projectInfo": [
+                {
+                    "projectId": "project1",
+                    "quantity": "10000",
+                    "numberOfPackets": "50"
+                },
+                {
+                    "projectId": "project2",
+                    "quantity": "20000",
+                    "numberOfPackets": "100"
+                }
+            ]
+        },
+        {
+            "TECHDISER_ID": "PO1ETD4",
+            "poId": "PO1",
+            "etd": "2020.02.02",
+            "sailingDt": "2020.02.08",
+            "sailingPortId": "portChittagong",
+            "destinationPortId": "portIstambul",
+            "quantity": "30000",
+            "inco": "FOB",
+            "shipmentMode": "sea",
+            "packaging": {
+                "packagingTypeId": "packagingTypeId1",
+                "space": "2x2x1.5",
+                "prefix": "",
+                "unit": "feet"
+            },
+            "projectInfo": [
+                {
+                    "projectId": "project1",
+                    "quantity": "10000",
+                    "numberOfPackets": "50"
+                },
+                {
+                    "projectId": "project2",
+                    "quantity": "20000",
+                    "numberOfPackets": "100"
+                }
+            ]
+        },
+        {
+            "TECHDISER_ID": "PO1ETD5",
+            "poId": "PO1",
+            "etd": "2020.02.03",
+            "sailingDt": "2020.02.09",
+            "sailingPortId": "portChittagong",
+            "destinationPortId": "portIstambul",
+            "quantity": "30000",
+            "inco": "FOB",
+            "shipmentMode": "sea",
+            "packaging": {
+                "packagingTypeId": "packagingTypeId1",
+                "space": "2x2x1.5",
+                "prefix": "",
+                "unit": "feet"
+            },
+            "projectInfo": [
+                {
+                    "projectId": "project1",
+                    "quantity": "10000",
+                    "numberOfPackets": "50"
+                },
+                {
+                    "projectId": "project2",
+                    "quantity": "20000",
+                    "numberOfPackets": "100"
+                }
+            ]
+        },
+        {
+            "TECHDISER_ID": "PO1ETD6",
+            "poId": "PO1",
+            "etd": "2020.02.04",
+            "sailingDt": "2020.02.10",
+            "sailingPortId": "portChittagong",
+            "destinationPortId": "portIstambul",
+            "quantity": "30000",
+            "inco": "FOB",
+            "shipmentMode": "sea",
+            "packaging": {
+                "packagingTypeId": "packagingTypeId1",
+                "space": "2x2x1.5",
+                "prefix": "",
+                "unit": "feet"
+            },
+            "projectInfo": [
+                {
+                    "projectId": "project1",
+                    "quantity": "10000",
+                    "numberOfPackets": "50"
+                },
+                {
+                    "projectId": "project2",
+                    "quantity": "20000",
+                    "numberOfPackets": "100"
+                }
+            ]
+        },
+        {
+            "TECHDISER_ID": "PO1ETD7",
+            "poId": "PO1",
+            "etd": "2020.03.03",
+            "sailingDt": "2020.03.11",
+            "sailingPortId": "portChittagong",
+            "destinationPortId": "portGermany",
+            "quantity": "20000",
+            "inco": "FOB",
+            "shipmentMode": "sea",
+            "packaging": {
+                "packagingTypeId": "packagingTypeId1",
+                "space": "2x2x1.5",
+                "prefix": "",
+                "unit": "feet"
+            },
+            "projectInfo": [
+                {
+                    "projectId": "project1",
+                    "quantity": "10000",
+                    "numberOfPackets": "50"
+                },
+                {
+                    "projectId": "project2",
+                    "quantity": "20000",
+                    "numberOfPackets": "100"
+                }
+            ]
+        },
+        {
+            "TECHDISER_ID": "PO1ETD8",
+            "poId": "PO1",
+            "etd": "2020.03.04",
+            "sailingDt": "2020.03.12",
+            "sailingPortId": "portChittagong",
+            "destinationPortId": "portGermany",
+            "quantity": "30000",
+            "inco": "FOB",
+            "shipmentMode": "sea",
+            "packaging": {
+                "packagingTypeId": "packagingTypeId1",
+                "space": "2x2x1.5",
+                "prefix": "",
+                "unit": "feet"
+            },
+            "projectInfo": [
+                {
+                    "projectId": "project1",
+                    "quantity": "10000",
+                    "numberOfPackets": "50"
+                },
+                {
+                    "projectId": "project2",
+                    "quantity": "20000",
+                    "numberOfPackets": "100"
+                }
+            ]
+        },
+        {
+            "TECHDISER_ID": "PO1ETD9",
+            "poId": "PO1",
+            "etd": "2020.03.04",
+            "sailingDt": "2020.03.12",
+            "sailingPortId": "portChittagong",
+            "destinationPortId": "portGermany",
+            "quantity": "40000",
+            "inco": "FOB",
+            "shipmentMode": "sea",
+            "packaging": {
+                "packagingTypeId": "packagingTypeId1",
+                "space": "2x2x1.5",
+                "prefix": "",
+                "unit": "feet"
+            },
+            "projectInfo": [
+                {
+                    "projectId": "project1",
+                    "quantity": "10000",
+                    "numberOfPackets": "50"
+                },
+                {
+                    "projectId": "project2",
+                    "quantity": "20000",
+                    "numberOfPackets": "100"
+                }
+            ]
+        },
+        {
+            "TECHDISER_ID": "PO1ETD10",
+            "poId": "PO1",
+            "etd": "2020.04.04",
+            "sailingDt": "2020.04.12",
+            "sailingPortId": "portChittagong",
+            "destinationPortId": "portBritain",
+            "quantity": "40000",
+            "inco": "FOB",
+            "shipmentMode": "sea",
+            "packaging": {
+                "packagingTypeId": "packagingTypeId1",
+                "space": "2x2x1.5",
+                "prefix": "",
+                "unit": "feet"
+            },
+            "projectInfo": [
+                {
+                    "projectId": "project1",
+                    "quantity": "10000",
+                    "numberOfPackets": "50"
+                },
+                {
+                    "projectId": "project2",
+                    "quantity": "20000",
+                    "numberOfPackets": "100"
+                }
+            ]
+        },
+        {
+            "TECHDISER_ID": "PO1ETD11",
+            "poId": "PO1",
+            "etd": "2020.04.04",
+            "sailingDt": "2020.04.12",
+            "sailingPortId": "portChittagong",
+            "destinationPortId": "portBritain",
+            "quantity": "40000",
+            "inco": "FOB",
+            "shipmentMode": "sea",
+            "packaging": {
+                "packagingTypeId": "packagingTypeId1",
+                "space": "2x2x1.5",
+                "prefix": "",
+                "unit": "feet"
+            },
+            "projectInfo": [
+                {
+                    "projectId": "project1",
+                    "quantity": "10000",
+                    "numberOfPackets": "50"
+                },
+                {
+                    "projectId": "project2",
+                    "quantity": "20000",
+                    "numberOfPackets": "100"
+                }
+            ]
+        },
+        {
+            "TECHDISER_ID": "PO1ETD12",
+            "poId": "PO1",
+            "etd": "2020.04.05",
+            "sailingDt": "2020.04.13",
+            "sailingPortId": "portChittagong",
+            "destinationPortId": "portBritain",
+            "quantity": "50000",
+            "inco": "FOB",
+            "shipmentMode": "sea",
+            "packaging": {
+                "packagingTypeId": "packagingTypeId1",
+                "space": "2x2x1.5",
+                "prefix": "",
+                "unit": "feet"
+            },
+            "projectInfo": [
+                {
+                    "projectId": "project1",
+                    "quantity": "10000",
+                    "numberOfPackets": "50"
+                },
+                {
+                    "projectId": "project2",
+                    "quantity": "20000",
+                    "numberOfPackets": "100"
+                }
+            ]
+        },
+        {
+            "TECHDISER_ID": "PO1ETD13",
+            "poId": "PO1",
+            "etd": "2020.05.05",
+            "sailingDt": "2020.05.12",
+            "sailingPortId": "portChittagong",
+            "destinationPortId": "portNewYork",
+            "quantity": "50000",
+            "inco": "FOB",
+            "shipmentMode": "sea",
+            "packaging": {
+                "packagingTypeId": "packagingTypeId1",
+                "space": "2x2x1.5",
+                "prefix": "",
+                "unit": "feet"
+            },
+            "projectInfo": [
+                {
+                    "projectId": "project1",
+                    "quantity": "10000",
+                    "numberOfPackets": "50"
+                },
+                {
+                    "projectId": "project2",
+                    "quantity": "20000",
+                    "numberOfPackets": "100"
+                }
+            ]
+        },
+        {
+            "TECHDISER_ID": "PO1ETD14",
+            "poId": "PO1",
+            "etd": "2020.05.06",
+            "sailingDt": "2020.05.13",
+            "sailingPortId": "portChittagong",
+            "destinationPortId": "portNewYork",
+            "quantity": "60000",
+            "inco": "FOB",
+            "shipmentMode": "sea",
+            "packaging": {
+                "packagingTypeId": "packagingTypeId1",
+                "space": "2x2x1.5",
+                "prefix": "",
+                "unit": "feet"
+            },
+            "projectInfo": [
+                {
+                    "projectId": "project1",
+                    "quantity": "10000",
+                    "numberOfPackets": "50"
+                },
+                {
+                    "projectId": "project2",
+                    "quantity": "20000",
+                    "numberOfPackets": "100"
+                }
+            ]
+        },
+        {
+            "TECHDISER_ID": "PO1ETD15",
+            "poId": "PO1",
+            "etd": "2020.05.07",
+            "sailingDt": "2020.05.17",
+            "sailingPortId": "portChittagong",
+            "destinationPortId": "portNewYork",
+            "quantity": "70000",
+            "inco": "FOB",
+            "shipmentMode": "sea",
+            "packaging": {
+                "packagingTypeId": "packagingTypeId1",
+                "space": "2x2x1.5",
+                "prefix": "",
+                "unit": "feet"
+            },
+            "projectInfo": [
+                {
+                    "projectId": "project1",
+                    "quantity": "10000",
+                    "numberOfPackets": "50"
+                },
+                {
+                    "projectId": "project2",
+                    "quantity": "20000",
+                    "numberOfPackets": "100"
+                }
+            ]
+        }
+    ],
+    "routeWiseEtds": [
+        {
+            "TECHDISER_ID": "po1route1",
+            "routeId": "route1seaChittagongNewYork",
+            "route": "route1",
+            "sailingDt": "02.01.2020",
+            "etds": [
+                {
+                    "TECHDISER_ID": "po1route1demand1bookable1etd1",
+                    "itemId": "PO1ETD1",
+                    "poId": "PO1",
+                    "etd": "01.01.2020",
+                    "sailingDt": "02.01.2020",
+                    "sailingPortId": "portChittagong",
+                    "destinationPortId": "portIdNewYork",
+                    "quantity": "20000",
+                    "inco": "FOB",
+                    "shipmentMode": "sea",
+                    "demand": "demand1",
+                    "bookable": "bookable1"
+                },
+                {
+                    "TECHDISER_ID": "po1route1demand1bookable1etd2",
+                    "itemId": "PO1ETD4",
+                    "poId": "PO1",
+                    "etd": "20.01.2020",
+                    "sailingDt": "02.01.2020",
+                    "sailingPortId": "portChittagong",
+                    "destinationPortId": "portIdNewYork",
+                    "quantity": "25000",
+                    "inco": "FOB",
+                    "shipmentMode": "sea"
+                },
+                {
+                    "TECHDISER_ID": "po1route1demand1bookable1etd3",
+                    "itemId": "PO1ETD3",
+                    "poId": "PO1",
+                    "etd": "01.01.2020",
+                    "sailingDt": "02.01.2020",
+                    "sailingPortId": "portChittagong",
+                    "destinationPortId": "portIdSingapore",
+                    "quantity": "20000",
+                    "inco": "FOB",
+                    "shipmentMode": "sea"
+                },
+                {
+                    "TECHDISER_ID": "po1route1demand1bookable1etd4",
+                    "itemId": "PO1ETD6",
+                    "poId": "PO1",
+                    "etd": "20.01.2020",
+                    "sailingDt": "02.01.2020",
+                    "sailingPortId": "portChittagong",
+                    "destinationPortId": "portIdSingapore",
+                    "quantity": "20500",
+                    "inco": "FOB",
+                    "shipmentMode": "sea"
+                },
+                {
+                    "TECHDISER_ID": "po1route1demand1bookable1etd5",
+                    "itemId": "PO1ETD9",
+                    "poId": "PO1",
+                    "etd": "27.01.2020",
+                    "sailingDt": "02.01.2020",
+                    "sailingPortId": "portChittagong",
+                    "destinationPortId": "portIdSingapore",
+                    "quantity": "27000",
+                    "inco": "FOB",
+                    "shipmentMode": "sea"
+                },
+                {
+                    "TECHDISER_ID": "po1route1demand1bookable2etd3",
+                    "itemId": "PO1ETD8",
+                    "poId": "PO1",
+                    "etd": "27.01.2020",
+                    "sailingDt": "02.01.2020",
+                    "sailingPortId": "portChittagong",
+                    "destinationPortId": "portIdNewYork",
+                    "quantity": "40000",
+                    "inco": "FOB",
+                    "shipmentMode": "sea"
+                }
+            ]
+        }
+    ],
+    "demands": [
+        {
+            "TECHDISER_ID": "po1route1",
+            "routeId": "route1seaChittagongNewYork",
+            "sailingDt": "02.01.2020",
+            "demands": [
+                {
+                    "TECHDISER_ID": "po1route1demand1bookable1",
+                    "demand": "demand1",
+                    "demandId": "demand1",
+                    "bookable": "bookable1",
+                    "bookableId": "bookable1",
+                    "etds": [
+                        {
+                            "TECHDISER_ID": "po1route1demand1bookable1etd1",
+                            "itemId": "PO1ETD1",
+                            "poId": "PO1",
+                            "etd": "01.01.2020",
+                            "sailingDt": "02.01.2020",
+                            "sailingPortId": "portChittagong",
+                            "destinationPortId": "portIdNewYork",
+                            "quantity": "20000",
+                            "inco": "FOB",
+                            "shipmentMode": "sea",
+                            "demand": "demand1",
+                            "bookable": "bookable1"
+                        },
+                        {
+                            "TECHDISER_ID": "po1route1demand1bookable1etd2",
+                            "itemId": "PO1ETD4",
+                            "poId": "PO1",
+                            "etd": "20.01.2020",
+                            "sailingDt": "02.01.2020",
+                            "sailingPortId": "portChittagong",
+                            "destinationPortId": "portIdNewYork",
+                            "quantity": "25000",
+                            "inco": "FOB",
+                            "shipmentMode": "sea"
+                        },
+                        {
+                            "TECHDISER_ID": "po1route1demand1bookable1etd3",
+                            "itemId": "PO1ETD3",
+                            "poId": "PO1",
+                            "etd": "01.01.2020",
+                            "sailingDt": "02.01.2020",
+                            "sailingPortId": "portChittagong",
+                            "destinationPortId": "portIdSingapore",
+                            "quantity": "20000",
+                            "inco": "FOB",
+                            "shipmentMode": "sea"
+                        },
+                        {
+                            "TECHDISER_ID": "po1route1demand1bookable1etd4",
+                            "itemId": "PO1ETD6",
+                            "poId": "PO1",
+                            "etd": "20.01.2020",
+                            "sailingDt": "02.01.2020",
+                            "sailingPortId": "portChittagong",
+                            "destinationPortId": "portIdSingapore",
+                            "quantity": "20500",
+                            "inco": "FOB",
+                            "shipmentMode": "sea"
+                        },
+                        {
+                            "TECHDISER_ID": "po1route1demand1bookable1etd5",
+                            "itemId": "PO1ETD9",
+                            "poId": "PO1",
+                            "etd": "27.01.2020",
+                            "sailingDt": "02.01.2020",
+                            "sailingPortId": "portChittagong",
+                            "destinationPortId": "portIdSingapore",
+                            "quantity": "27000",
+                            "inco": "FOB",
+                            "shipmentMode": "sea"
+                        }
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "po1route1demand1bookable2",
+                    "demand": "demand1",
+                    "demandId": "demand1",
+                    "bookable": "bookable1",
+                    "bookableId": "bookable2",
+                    "etds": [
+                        {
+                            "TECHDISER_ID": "po1route1demand1bookable2etd3",
+                            "itemId": "PO1ETD8",
+                            "poId": "PO1",
+                            "etd": "27.01.2020",
+                            "sailingDt": "02.01.2020",
+                            "sailingPortId": "portChittagong",
+                            "destinationPortId": "portIdNewYork",
+                            "quantity": "40000",
+                            "inco": "FOB",
+                            "shipmentMode": "sea"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "TECHDISER_ID": "po1route1",
+            "routeId": "route1seaChittagongTokyo",
+            "sailingDt": "02.01.2020",
+            "demands": [
+                {
+                    "TECHDISER_ID": "po1route1demand1bookable1",
+                    "demand": "demand1",
+                    "demandId": "demand1",
+                    "bookable": "bookable1",
+                    "bookableId": "bookable1",
+                    "etds": [
+                        {
+                            "TECHDISER_ID": "po1route1demand1bookable1etd1",
+                            "itemId": "PO1ETD1",
+                            "poId": "PO1",
+                            "etd": "01.01.2020",
+                            "sailingDt": "02.01.2020",
+                            "sailingPortId": "portChittagong",
+                            "destinationPortId": "portIdNewYork",
+                            "quantity": "20000",
+                            "inco": "FOB",
+                            "shipmentMode": "sea",
+                            "demand": "demand1",
+                            "bookable": "bookable1"
+                        },
+                        {
+                            "TECHDISER_ID": "po1route1demand1bookable1etd2",
+                            "itemId": "PO1ETD4",
+                            "poId": "PO1",
+                            "etd": "20.01.2020",
+                            "sailingDt": "02.01.2020",
+                            "sailingPortId": "portChittagong",
+                            "destinationPortId": "portIdNewYork",
+                            "quantity": "25000",
+                            "inco": "FOB",
+                            "shipmentMode": "sea"
+                        }
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "po1route1demand1bookable2",
+                    "demand": "demand1",
+                    "demandId": "demand1",
+                    "bookable": "bookable1",
+                    "bookableId": "bookable2",
+                    "etds": [
+                        {
+                            "TECHDISER_ID": "po1route1demand1bookable2etd3",
+                            "itemId": "PO1ETD8",
+                            "poId": "PO1",
+                            "etd": "27.01.2020",
+                            "sailingDt": "02.01.2020",
+                            "sailingPortId": "portChittagong",
+                            "destinationPortId": "portIdNewYork",
+                            "quantity": "40000",
+                            "inco": "FOB",
+                            "shipmentMode": "sea"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "TECHDISER_ID": "po1route1",
+            "routeId": "route1seaChittagongMelbone",
+            "sailingDt": "02.01.2020",
+            "demands": [
+                {
+                    "TECHDISER_ID": "po1route1demand1bookable1",
+                    "demand": "demand1",
+                    "demandId": "demand1",
+                    "bookable": "bookable1",
+                    "bookableId": "bookable1",
+                    "etds": [
+                        {
+                            "TECHDISER_ID": "po1route1demand1bookable1etd1",
+                            "itemId": "PO1ETD1",
+                            "poId": "PO1",
+                            "etd": "01.01.2020",
+                            "sailingDt": "02.01.2020",
+                            "sailingPortId": "portChittagong",
+                            "destinationPortId": "portIdNewYork",
+                            "quantity": "20000",
+                            "inco": "FOB",
+                            "shipmentMode": "sea",
+                            "demand": "demand1",
+                            "bookable": "bookable1"
+                        },
+                        {
+                            "TECHDISER_ID": "po1route1demand1bookable1etd2",
+                            "itemId": "PO1ETD4",
+                            "poId": "PO1",
+                            "etd": "20.01.2020",
+                            "sailingDt": "02.01.2020",
+                            "sailingPortId": "portChittagong",
+                            "destinationPortId": "portIdNewYork",
+                            "quantity": "25000",
+                            "inco": "FOB",
+                            "shipmentMode": "sea"
+                        }
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "po1route1demand1bookable2",
+                    "demand": "demand1",
+                    "demandId": "demand1",
+                    "bookable": "bookable1",
+                    "bookableId": "bookable2",
+                    "etds": [
+                        {
+                            "TECHDISER_ID": "po1route1demand1bookable2etd3",
+                            "itemId": "PO1ETD8",
+                            "poId": "PO1",
+                            "etd": "27.01.2020",
+                            "sailingDt": "02.01.2020",
+                            "sailingPortId": "portChittagong",
+                            "destinationPortId": "portIdNewYork",
+                            "quantity": "40000",
+                            "inco": "FOB",
+                            "shipmentMode": "sea"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "planning": [
+        {
+            "TECHDISER_ID": "date1",
+            "date": "01.01.2020",
+            "totalDemand": "05",
+            "planned": "2",
+            "remaining": "3",
+            "demands": [
+                {
+                    "demand": "demand1",
+                    "demandId": "demand1",
+                    "bookable": "bookable1",
+                    "bookableId": "bookable1",
+                    "po": "po1",
+                    "quantity": "2000",
+                    "routeId": "route1seaChittagongNewYork",
+                    "routingCode": "routingCode1",
+                    "etds": [],
+                    "details": [
+                        {
+                            "demand": "demand1",
+                            "demandId": "demand1",
+                            "bookable": "bookable1",
+                            "bookableId": "bookable1",
+                            "po": "po1",
+                            "quantity": "2000",
+                            "routeId": "route1seaChittagongNewYork",
+                            "routingCode": "routingCode1",
+                            "etds": [
+                                {},
+                                {}
+                            ],
+                            "shippingLines": [
+                                {},
+                                {}
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "demand": "demand1",
+                    "demandId": "demand1",
+                    "bookable": "bookable2",
+                    "bookableId": "bookable2",
+                    "po": "po2",
+                    "quantity": "2000",
+                    "routeId": "route1seaChittagongMelbone",
+                    "routingCode": "routingCode2",
+                    "etds": [],
+                    "details": [
+                        {
+                            "demand": "demand1",
+                            "bookable": "bookable2",
+                            "po": "po1",
+                            "routingCode": "routingCode2",
+                            "routeId": "route1seaChittagongMelbone",
+                            "route": "",
+                            "etds": [
+                                {},
+                                {}
+                            ],
+                            "shippingLines": [
+                                {},
+                                {}
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "shippingLines": [
+                {},
+                {}
+            ],
+            "containers": [
+                {},
+                {}
+            ],
+            "demandPos": [
+                {},
+                {}
+            ]
+        },
+        {
+            "TECHDISER_ID": "date2",
+            "date": "01.01.2020",
+            "totalDemand": "05",
+            "planned": "2",
+            "remaining": "3",
+            "demands": [
+                {
+                    "demand": "demand1",
+                    "bookable": "bookable1",
+                    "po": "po1",
+                    "quantity": "2000",
+                    "routingCode": "routingCode1",
+                    "details": [
+                        {
+                            "demand": "demand1",
+                            "bookable": "bookable1",
+                            "po": "po1",
+                            "routingCode": "routingCode1",
+                            "route": "route1",
+                            "etds": [
+                                {},
+                                {}
+                            ],
+                            "shippingLines": [
+                                {},
+                                {}
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "demand": "demand1",
+                    "bookable": "bookable2",
+                    "po": "po1",
+                    "quantity": "2000",
+                    "routingCode": "routingCode1",
+                    "details": [
+                        {
+                            "demand": "demand1",
+                            "bookable": "bookable1",
+                            "po": "po1",
+                            "routingCode": "routingCode1",
+                            "route": "route1",
+                            "etds": [
+                                {},
+                                {}
+                            ],
+                            "shippingLines": [
+                                {},
+                                {}
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "shippingLines": [
+                {},
+                {}
+            ],
+            "containers": [
+                {},
+                {}
+            ],
+            "demandPos": [
+                {},
+                {}
+            ]
+        }
+    ],
+    "routeWiseShippingLineMock": [
+        {
+            "TECHDISER_ID": "route1seaChittagongNewYork",
+            "shippingLines": [
+                {
+                    "TECHDISER_ID": "shippingLine1",
+                    "shippingLineTitle": "shippingLineTitle1",
+                    "routeId": "route1seaChittagongNewYork",
+                    "ships": [
+                        {
+                            "TECHDISER_ID": "ship1",
+                            "shipTitle": "Ship 1"
+                        },
+                        {
+                            "TECHDISER_ID": "ship2",
+                            "shipTitle": "Ship 2"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "shippingLines": [
+        {
+            "TECHDISER_ID": "",
+            "route": "route1",
+            "routeId": "route1seaChittagongMelbone",
+            "routeCode": "routeCode1",
+            "shippingLines": [
+                {
+                    "TECHDISER_ID": "shippingLine1",
+                    "shippingLineTitle": "shippingLineTitle1",
+                    "shippingLineId": "shippingLineId1",
+                    "routeId": "route1seaChittagongMelbone",
+                    "routeCode": "routeCode2",
+                    "route": "route2",
+                    "ships": [
+                        {
+                            "TECHDISER_ID": "ship1",
+                            "shipTitle": "ship1",
+                            "shipId": "shipId1",
+                            "demands": [
+                                {
+                                    "TECHDISER_ID": "",
+                                    "demand": "demand1",
+                                    "demandId": "demandId1",
+                                    "bookable": "bookable1",
+                                    "bookableId": "bookableId1"
+                                },
+                                {
+                                    "TECHDISER_ID": "",
+                                    "demand": "demand1",
+                                    "demandId": "demandId1",
+                                    "bookable": "bookable2",
+                                    "bookableId": "bookableId2"
+                                }
+                            ]
+                        },
+                        {
+                            "TECHDISER_ID": "ship2",
+                            "shipTitle": "ship2",
+                            "shipId": "shipId2",
+                            "demands": [
+                                {
+                                    "TECHDISER_ID": "",
+                                    "demand": "demand1",
+                                    "demandId": "demandId1",
+                                    "bookable": "bookable1",
+                                    "bookableId": "bookableId1"
+                                },
+                                {
+                                    "TECHDISER_ID": "",
+                                    "demand": "demand1",
+                                    "demandId": "demandId1",
+                                    "bookable": "bookable2",
+                                    "bookableId": "bookableId2"
+                                }
+                            ]
+                        }
+                    ],
+                    "demandPositioning": [
+                        {
+                            "TECHDISER_ID": "",
+                            "routeCode": "routeCode1",
+                            "routeId": "route1seaChittagongMelbone",
+                            "route": "route1",
+                            "demands": [
+                                {
+                                    "TECHDISER_ID": "",
+                                    "demand": "demand1",
+                                    "demandId": "demandId1",
+                                    "bookable": "bookable1",
+                                    "bookableId": "bookableId1",
+                                    "quantity": "333",
+                                    "routeId": "route1seaChittagongMelbone"
+                                },
+                                {
+                                    "TECHDISER_ID": "",
+                                    "demand": "demand1",
+                                    "demandId": "demandId1",
+                                    "bookable": "bookable2",
+                                    "bookableId": "bookableId2",
+                                    "quantity": "333",
+                                    "routeId": "route1seaChittagongMelbone"
+                                }
+                            ]
+                        }
+                    ],
+                    "allDemand": [
+                        {
+                            "TECHDISER_ID": "",
+                            "demand": "demand1",
+                            "demandId": "demandId1",
+                            "bookable": "bookable1",
+                            "bookableId": "bookableId1"
+                        },
+                        {
+                            "TECHDISER_ID": "",
+                            "demand": "demand1",
+                            "demandId": "demandId1",
+                            "bookable": "bookable2",
+                            "bookableId": "bookableId2"
+                        }
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "shippingLine2",
+                    "shippingLineTitle": "shippingLineTitle2",
+                    "shippingLineId": "shippingLineId2",
+                    "routeId": "route1seaChittagongMelbone",
+                    "routeCode": "routeCode2",
+                    "route": "route2",
+                    "ships": [
+                        {
+                            "TECHDISER_ID": "ship1",
+                            "shipTitle": "ship1",
+                            "shipId": "shipId1"
+                        },
+                        {
+                            "TECHDISER_ID": "ship2",
+                            "shipTitle": "ship2",
+                            "shipId": "shipId2"
+                        }
+                    ],
+                    "demandPositioning": [
+                        {
+                            "TECHDISER_ID": "",
+                            "routeCode": "routeCode1",
+                            "route": "route1",
+                            "demands": [
+                                {
+                                    "TECHDISER_ID": "",
+                                    "demand": "demand1",
+                                    "bookable": "bookable1",
+                                    "quantity": "333",
+                                    "shipId": "ship1"
+                                },
+                                {
+                                    "TECHDISER_ID": "",
+                                    "demand": "demand1",
+                                    "bookable": "bookable2",
+                                    "quantity": "333",
+                                    "shipId": "ship2"
+                                }
+                            ]
+                        }
+                    ],
+                    "splitDemand": [
+                        {
+                            "doesNotNeed": "thisStructureIsObsoleteNow",
+                            "TECHDISER_ID": "",
+                            "demand": "demand1",
+                            "bookable": "bookable1",
+                            "etds": [
+                                {
+                                    "TECHDISER_ID": "",
+                                    "po": "po1",
+                                    "etd": "01.01.2020",
+                                    "sailingDt": "02.01.2020",
+                                    "sailingPort": "Chittagong",
+                                    "destinationPort": "NewYork"
+                                },
+                                {
+                                    "TECHDISER_ID": "",
+                                    "etd": "10.01.2020",
+                                    "sailingDt": "02.01.2020",
+                                    "sailingPort": "Chittagong",
+                                    "destinationPort": "NewYork"
+                                }
+                            ]
+                        }
+                    ],
+                    "allDemand": [
+                        {
+                            "TECHDISER_ID": "",
+                            "demand": "demand1",
+                            "bookable": "bookable1",
+                            "quantity": "6888",
+                            "shipId": "ship1"
+                        },
+                        {
+                            "TECHDISER_ID": "",
+                            "demand": "demand1",
+                            "bookable": "bookable2",
+                            "quantity": "6888",
+                            "shipId": "ship1"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "TECHDISER_ID": "",
+            "sailingDate": "01.01.2020",
+            "route": "route1",
+            "routeId": "route1seaChittagongNewYork",
+            "routeCode": "routeCode1",
+            "shippingLines": [
+                {
+                    "TECHDISER_ID": "shippingLine1",
+                    "shippingLineTitle": "shippingLineTitle1",
+                    "shippingLineId": "shippingLineId1",
+                    "routeId": "route1seaChittagongNewYork",
+                    "routeCode": "routeCode2",
+                    "route": "route2",
+                    "ships": [
+                        {
+                            "TECHDISER_ID": "ship1",
+                            "shipTitle": "ship1",
+                            "shipId": "shipId1"
+                        },
+                        {
+                            "TECHDISER_ID": "ship2",
+                            "shipTitle": "ship2",
+                            "shipId": "shipId2"
+                        }
+                    ],
+                    "demandPositioning": [
+                        {
+                            "TECHDISER_ID": "",
+                            "routeCode": "routeCode1",
+                            "route": "route1",
+                            "demands": [
+                                {
+                                    "TECHDISER_ID": "",
+                                    "demand": "demand1",
+                                    "bookable": "bookable1",
+                                    "quantity": "333",
+                                    "shipId": "ship1"
+                                },
+                                {
+                                    "TECHDISER_ID": "",
+                                    "demand": "demand1",
+                                    "bookable": "bookable2",
+                                    "quantity": "333",
+                                    "shipId": "ship2"
+                                }
+                            ]
+                        }
+                    ],
+                    "splitDemand": [
+                        {
+                            "doesNotNeed": "thisStructureIsObsoleteNow",
+                            "TECHDISER_ID": "",
+                            "demand": "demand1",
+                            "bookable": "bookable1",
+                            "etds": [
+                                {
+                                    "TECHDISER_ID": "",
+                                    "po": "po1",
+                                    "etd": "01.01.2020",
+                                    "sailingDt": "02.01.2020",
+                                    "sailingPort": "Chittagong",
+                                    "destinationPort": "NewYork"
+                                },
+                                {
+                                    "TECHDISER_ID": "",
+                                    "etd": "10.01.2020",
+                                    "sailingDt": "02.01.2020",
+                                    "sailingPort": "Chittagong",
+                                    "destinationPort": "NewYork"
+                                }
+                            ]
+                        }
+                    ],
+                    "allDemand": [
+                        {
+                            "TECHDISER_ID": "",
+                            "demand": "demand1",
+                            "bookable": "bookable1",
+                            "quantity": "6888",
+                            "shipId": "ship1"
+                        },
+                        {
+                            "TECHDISER_ID": "",
+                            "demand": "demand1",
+                            "bookable": "bookable2",
+                            "quantity": "6888",
+                            "shipId": "ship1"
+                        }
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "shippingLine2",
+                    "shippingLineTitle": "shippingLineTitle2",
+                    "shippingLineId": "shippingLineId2",
+                    "routeId": "route1seaChittagongMelbone",
+                    "routeCode": "routeCode2",
+                    "route": "route2",
+                    "ships": [
+                        {
+                            "TECHDISER_ID": "ship1",
+                            "shipTitle": "ship1",
+                            "shipId": "shipId1"
+                        },
+                        {
+                            "TECHDISER_ID": "ship2",
+                            "shipTitle": "ship2",
+                            "shipId": "shipId2"
+                        }
+                    ],
+                    "demandPositioning": [
+                        {
+                            "TECHDISER_ID": "",
+                            "routeCode": "routeCode1",
+                            "route": "route1",
+                            "demands": [
+                                {
+                                    "TECHDISER_ID": "",
+                                    "demand": "demand1",
+                                    "bookable": "bookable1",
+                                    "quantity": "333",
+                                    "shipId": "ship1"
+                                },
+                                {
+                                    "TECHDISER_ID": "",
+                                    "demand": "demand1",
+                                    "bookable": "bookable2",
+                                    "quantity": "333",
+                                    "shipId": "ship2"
+                                }
+                            ]
+                        }
+                    ],
+                    "splitDemand": [
+                        {
+                            "doesNotNeed": "thisStructureIsObsoleteNow",
+                            "TECHDISER_ID": "",
+                            "demand": "demand1",
+                            "bookable": "bookable1",
+                            "etds": [
+                                {
+                                    "TECHDISER_ID": "",
+                                    "po": "po1",
+                                    "etd": "01.01.2020",
+                                    "sailingDt": "02.01.2020",
+                                    "sailingPort": "Chittagong",
+                                    "destinationPort": "NewYork"
+                                },
+                                {
+                                    "TECHDISER_ID": "",
+                                    "etd": "10.01.2020",
+                                    "sailingDt": "02.01.2020",
+                                    "sailingPort": "Chittagong",
+                                    "destinationPort": "NewYork"
+                                }
+                            ]
+                        }
+                    ],
+                    "allDemand": [
+                        {
+                            "TECHDISER_ID": "",
+                            "demand": "demand1",
+                            "bookable": "bookable1",
+                            "quantity": "6888",
+                            "shipId": "ship1"
+                        },
+                        {
+                            "TECHDISER_ID": "",
+                            "demand": "demand1",
+                            "bookable": "bookable2",
+                            "quantity": "6888",
+                            "shipId": "ship1"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "containers": [
+        {
+            "TECHDISER_ID": "",
+            "route": "route1",
+            "routeId": "route1seaChittagongMelbone",
+            "routeCode": "routeCode1",
+            "shippingLines": [
+                {
+                    "TECHDISER_ID": "shippingLine1",
+                    "shippingLineTitle": "shippingLineTitle1",
+                    "shippingLineTitleId": "shippingLineTitleId1",
+                    "ships": [
+                        {
+                            "TECHDISER_ID": "",
+                            "shipTitle": "ship1",
+                            "shipId": "shipId1"
+                        },
+                        {
+                            "TECHDISER_ID": "",
+                            "shipTitle": "ship2",
+                            "shipId": "shipId2"
+                        }
+                    ],
+                    "containers": [
+                        {
+                            "TECHDISER_ID": "",
+                            "containerType": "60ft",
+                            "containerTypeId": ""
+                        },
+                        {
+                            "TECHDISER_ID": "",
+                            "containerType": "60ft",
+                            "containerTypeId": ""
+                        },
+                        {
+                            "TECHDISER_ID": "",
+                            "containerType": "20ft",
+                            "containerTypeId": ""
+                        }
+                    ],
+                    "shipWiseContainerTypeCount": [
+                        {
+                            "TECHDISER_ID": "",
+                            "shipId": "ship1",
+                            "containerTypeId": "60ft",
+                            "fcl": "2",
+                            "lcl": "0"
+                        },
+                        {
+                            "TECHDISER_ID": "",
+                            "shipId": "ship1",
+                            "containerTypeId": "40ft",
+                            "fcl": "2",
+                            "lcl": "0"
+                        },
+                        {
+                            "TECHDISER_ID": "",
+                            "shipId": "ship2",
+                            "containerTypeId": "60ft",
+                            "fcl": "2",
+                            "lcl": "0"
+                        }
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "shippingLine2",
+                    "shippingLineTitle": "shippingLineTitle2",
+                    "ships": [
+                        {
+                            "TECHDISER_ID": "",
+                            "shipTitle": "ship1"
+                        },
+                        {
+                            "TECHDISER_ID": "",
+                            "shipTitle": "ship2"
+                        }
+                    ],
+                    "containers": [
+                        {
+                            "TECHDISER_ID": "",
+                            "containerType": "60ft"
+                        },
+                        {
+                            "TECHDISER_ID": "",
+                            "containerType": "40ft"
+                        },
+                        {
+                            "TECHDISER_ID": "",
+                            "containerType": "20ft"
+                        }
+                    ],
+                    "shipWiseContainerTypeCount": [
+                        {
+                            "TECHDISER_ID": "",
+                            "shipId": "ship1",
+                            "containerTypeId": "60ft",
+                            "fcl": "2",
+                            "lcl": "0"
+                        },
+                        {
+                            "TECHDISER_ID": "",
+                            "shipId": "ship1",
+                            "containerTypeId": "40ft",
+                            "fcl": "2",
+                            "lcl": "0"
+                        },
+                        {
+                            "TECHDISER_ID": "",
+                            "shipId": "ship2",
+                            "containerTypeId": "60ft",
+                            "fcl": "2",
+                            "lcl": "0"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "TECHDISER_ID": "",
+            "routeCode": "routeCode2",
+            "route": "route2",
+            "shippingLines": [
+                {
+                    "TECHDISER_ID": "shippingLine1",
+                    "shippingLineTitle": "shippingLineTitle1",
+                    "ships": [
+                        {
+                            "TECHDISER_ID": "",
+                            "shipTitle": "ship1"
+                        },
+                        {
+                            "TECHDISER_ID": "",
+                            "shipTitle": "ship2"
+                        }
+                    ],
+                    "containers": [
+                        {
+                            "TECHDISER_ID": "",
+                            "containerType": "60ft"
+                        },
+                        {
+                            "TECHDISER_ID": "",
+                            "containerType": "40ft"
+                        },
+                        {
+                            "TECHDISER_ID": "",
+                            "containerType": "20ft"
+                        }
+                    ],
+                    "shipWiseContainerTypeCount": [
+                        {
+                            "TECHDISER_ID": "",
+                            "shipId": "ship1",
+                            "containerTypeId": "60ft",
+                            "fcl": "2",
+                            "lcl": "0"
+                        },
+                        {
+                            "TECHDISER_ID": "",
+                            "shipId": "ship1",
+                            "containerTypeId": "40ft",
+                            "fcl": "2",
+                            "lcl": "0"
+                        },
+                        {
+                            "TECHDISER_ID": "",
+                            "shipId": "ship2",
+                            "containerTypeId": "60ft",
+                            "fcl": "2",
+                            "lcl": "0"
+                        }
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "shippingLine2",
+                    "shippingLineTitle": "shippingLineTitle2",
+                    "ships": [
+                        {
+                            "TECHDISER_ID": "",
+                            "shipTitle": "ship1"
+                        },
+                        {
+                            "TECHDISER_ID": "",
+                            "shipTitle": "ship2"
+                        }
+                    ],
+                    "containers": [
+                        {
+                            "TECHDISER_ID": "",
+                            "containerType": "60ft"
+                        },
+                        {
+                            "TECHDISER_ID": "",
+                            "containerType": "40ft"
+                        },
+                        {
+                            "TECHDISER_ID": "",
+                            "containerType": "20ft"
+                        }
+                    ],
+                    "shipWiseContainerTypeCount": [
+                        {
+                            "TECHDISER_ID": "",
+                            "shipId": "ship1",
+                            "containerTypeId": "60ft",
+                            "fcl": "2",
+                            "lcl": "0"
+                        },
+                        {
+                            "TECHDISER_ID": "",
+                            "shipId": "ship1",
+                            "containerTypeId": "40ft",
+                            "fcl": "2",
+                            "lcl": "0"
+                        },
+                        {
+                            "TECHDISER_ID": "",
+                            "shipId": "ship2",
+                            "containerTypeId": "60ft",
+                            "fcl": "2",
+                            "lcl": "0"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "demandPos": [
+        {
+            "fcl": [
+                {
+                    "TECHDISER_ID": "",
+                    "route": "route1",
+                    "routeId": "route1seaChittagongMelbone",
+                    "routeCode": "routeCode1",
+                    "shippingLines": [
+                        {
+                            "TECHDISER_ID": "shippingLine1",
+                            "shippingLineTitle": "shippingLineTitle1",
+                            "shippingLineId": "shippingLineId1",
+                            "routeId": "route1seaChittagongMelbone",
+                            "routeCode": "routeCode2",
+                            "route": "route2",
+                            "ships": [
+                                {
+                                    "TECHDISER_ID": "",
+                                    "shipTitle": "ship1",
+                                    "shipId": "shipId1",
+                                    "demands": [
+                                        {
+                                            "TECHDISER_ID": "",
+                                            "demand": "demand1",
+                                            "demandId": "demandId1",
+                                            "bookable": "bookable1",
+                                            "bookableId": "bookableId1",
+                                            "quantity": "2000",
+                                            "containers": [
+                                                {
+                                                    "TECHDISER_ID": "",
+                                                    "containerType": "60ft",
+                                                    "containerTypeId": ""
+                                                },
+                                                {
+                                                    "TECHDISER_ID": "",
+                                                    "containerType": "60ft",
+                                                    "containerTypeId": ""
+                                                },
+                                                {
+                                                    "TECHDISER_ID": "",
+                                                    "containerType": "20ft",
+                                                    "containerTypeId": ""
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "TECHDISER_ID": "",
+                                            "demand": "demand1",
+                                            "bookable": "bookable2",
+                                            "containers": [
+                                                {
+                                                    "TECHDISER_ID": "",
+                                                    "containerType": "60ft",
+                                                    "containerTypeId": ""
+                                                },
+                                                {
+                                                    "TECHDISER_ID": "",
+                                                    "containerType": "60ft",
+                                                    "containerTypeId": ""
+                                                },
+                                                {
+                                                    "TECHDISER_ID": "",
+                                                    "containerType": "20ft",
+                                                    "containerTypeId": ""
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "TECHDISER_ID": "",
+                                    "shipTitle": "ship2",
+                                    "demands": [
+                                        {
+                                            "TECHDISER_ID": "",
+                                            "demand": "demand1",
+                                            "bookable": "bookable1",
+                                            "containers": [
+                                                {
+                                                    "TECHDISER_ID": "",
+                                                    "containerType": "60ft",
+                                                    "containerTypeId": ""
+                                                },
+                                                {
+                                                    "TECHDISER_ID": "",
+                                                    "containerType": "60ft",
+                                                    "containerTypeId": ""
+                                                },
+                                                {
+                                                    "TECHDISER_ID": "",
+                                                    "containerType": "20ft",
+                                                    "containerTypeId": ""
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "TECHDISER_ID": "",
+                                            "demand": "demand1",
+                                            "bookable": "bookable2",
+                                            "containers": [
+                                                {
+                                                    "TECHDISER_ID": "",
+                                                    "containerType": "60ft",
+                                                    "containerTypeId": ""
+                                                },
+                                                {
+                                                    "TECHDISER_ID": "",
+                                                    "containerType": "60ft",
+                                                    "containerTypeId": ""
+                                                },
+                                                {
+                                                    "TECHDISER_ID": "",
+                                                    "containerType": "20ft",
+                                                    "containerTypeId": ""
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "TECHDISER_ID": "shippingLine2",
+                            "shippingLineTitle": "shippingLineTitle2",
+                            "ships": [
+                                {
+                                    "TECHDISER_ID": "",
+                                    "shipTitle": "ship1",
+                                    "demands": [
+                                        {
+                                            "TECHDISER_ID": "",
+                                            "demand": "demand1",
+                                            "bookable": "bookable1",
+                                            "containers": [
+                                                {
+                                                    "TECHDISER_ID": "",
+                                                    "containerType": "60ft",
+                                                    "containerTypeId": ""
+                                                },
+                                                {
+                                                    "TECHDISER_ID": "",
+                                                    "containerType": "60ft",
+                                                    "containerTypeId": ""
+                                                },
+                                                {
+                                                    "TECHDISER_ID": "",
+                                                    "containerType": "20ft",
+                                                    "containerTypeId": ""
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "TECHDISER_ID": "",
+                                            "demand": "demand1",
+                                            "bookable": "bookable2",
+                                            "containers": [
+                                                {
+                                                    "TECHDISER_ID": "",
+                                                    "containerType": "60ft",
+                                                    "containerTypeId": ""
+                                                },
+                                                {
+                                                    "TECHDISER_ID": "",
+                                                    "containerType": "60ft",
+                                                    "containerTypeId": ""
+                                                },
+                                                {
+                                                    "TECHDISER_ID": "",
+                                                    "containerType": "20ft",
+                                                    "containerTypeId": ""
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "TECHDISER_ID": "",
+                                    "shipTitle": "ship2",
+                                    "demands": [
+                                        {
+                                            "TECHDISER_ID": "",
+                                            "demand": "demand1",
+                                            "bookable": "bookable1",
+                                            "containers": [
+                                                {
+                                                    "TECHDISER_ID": "",
+                                                    "containerType": "60ft",
+                                                    "containerTypeId": ""
+                                                },
+                                                {
+                                                    "TECHDISER_ID": "",
+                                                    "containerType": "60ft",
+                                                    "containerTypeId": ""
+                                                },
+                                                {
+                                                    "TECHDISER_ID": "",
+                                                    "containerType": "20ft",
+                                                    "containerTypeId": ""
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "TECHDISER_ID": "",
+                                            "demand": "demand1",
+                                            "bookable": "bookable2",
+                                            "containers": [
+                                                {
+                                                    "TECHDISER_ID": "",
+                                                    "containerType": "60ft",
+                                                    "containerTypeId": ""
+                                                },
+                                                {
+                                                    "TECHDISER_ID": "",
+                                                    "containerType": "60ft",
+                                                    "containerTypeId": ""
+                                                },
+                                                {
+                                                    "TECHDISER_ID": "",
+                                                    "containerType": "20ft",
+                                                    "containerTypeId": ""
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "",
+                    "sailingDt": "02.01.2020",
+                    "routeCode": "routeCode2",
+                    "route": "route2",
+                    "shippingLines": [
+                        {
+                            "TECHDISER_ID": "shippingLine1",
+                            "shippingLineTitle": "shippingLineTitle1",
+                            "ships": [
+                                {
+                                    "TECHDISER_ID": "",
+                                    "shipTitle": "ship1",
+                                    "demands": [
+                                        {
+                                            "TECHDISER_ID": "",
+                                            "demand": "demand1",
+                                            "bookable": "bookable1",
+                                            "containers": [
+                                                {
+                                                    "TECHDISER_ID": "",
+                                                    "containerType": "60ft",
+                                                    "containerTypeId": ""
+                                                },
+                                                {
+                                                    "TECHDISER_ID": "",
+                                                    "containerType": "60ft",
+                                                    "containerTypeId": ""
+                                                },
+                                                {
+                                                    "TECHDISER_ID": "",
+                                                    "containerType": "20ft",
+                                                    "containerTypeId": ""
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "TECHDISER_ID": "",
+                                            "demand": "demand1",
+                                            "bookable": "bookable2",
+                                            "containers": [
+                                                {
+                                                    "TECHDISER_ID": "",
+                                                    "containerType": "60ft",
+                                                    "containerTypeId": ""
+                                                },
+                                                {
+                                                    "TECHDISER_ID": "",
+                                                    "containerType": "60ft",
+                                                    "containerTypeId": ""
+                                                },
+                                                {
+                                                    "TECHDISER_ID": "",
+                                                    "containerType": "20ft",
+                                                    "containerTypeId": ""
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "TECHDISER_ID": "",
+                                    "shipTitle": "ship2",
+                                    "demands": [
+                                        {
+                                            "TECHDISER_ID": "",
+                                            "demand": "demand1",
+                                            "bookable": "bookable1",
+                                            "containers": [
+                                                {
+                                                    "TECHDISER_ID": "",
+                                                    "containerType": "60ft",
+                                                    "containerTypeId": ""
+                                                },
+                                                {
+                                                    "TECHDISER_ID": "",
+                                                    "containerType": "60ft",
+                                                    "containerTypeId": ""
+                                                },
+                                                {
+                                                    "TECHDISER_ID": "",
+                                                    "containerType": "20ft",
+                                                    "containerTypeId": ""
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "TECHDISER_ID": "",
+                                            "demand": "demand1",
+                                            "bookable": "bookable2",
+                                            "containers": [
+                                                {
+                                                    "TECHDISER_ID": "",
+                                                    "containerType": "60ft",
+                                                    "containerTypeId": ""
+                                                },
+                                                {
+                                                    "TECHDISER_ID": "",
+                                                    "containerType": "60ft",
+                                                    "containerTypeId": ""
+                                                },
+                                                {
+                                                    "TECHDISER_ID": "",
+                                                    "containerType": "20ft",
+                                                    "containerTypeId": ""
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "TECHDISER_ID": "shippingLine2",
+                            "shippingLineTitle": "shippingLineTitle2",
+                            "ships": [
+                                {
+                                    "TECHDISER_ID": "",
+                                    "shipTitle": "ship1",
+                                    "demands": [
+                                        {
+                                            "TECHDISER_ID": "",
+                                            "demand": "demand1",
+                                            "bookable": "bookable1",
+                                            "containers": [
+                                                {
+                                                    "TECHDISER_ID": "",
+                                                    "containerType": "60ft",
+                                                    "containerTypeId": ""
+                                                },
+                                                {
+                                                    "TECHDISER_ID": "",
+                                                    "containerType": "60ft",
+                                                    "containerTypeId": ""
+                                                },
+                                                {
+                                                    "TECHDISER_ID": "",
+                                                    "containerType": "20ft",
+                                                    "containerTypeId": ""
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "TECHDISER_ID": "",
+                                            "demand": "demand1",
+                                            "bookable": "bookable2",
+                                            "containers": [
+                                                {
+                                                    "TECHDISER_ID": "",
+                                                    "containerType": "60ft",
+                                                    "containerTypeId": ""
+                                                },
+                                                {
+                                                    "TECHDISER_ID": "",
+                                                    "containerType": "60ft",
+                                                    "containerTypeId": ""
+                                                },
+                                                {
+                                                    "TECHDISER_ID": "",
+                                                    "containerType": "20ft",
+                                                    "containerTypeId": ""
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "TECHDISER_ID": "",
+                                    "shipTitle": "ship2",
+                                    "demands": [
+                                        {
+                                            "TECHDISER_ID": "",
+                                            "demand": "demand1",
+                                            "bookable": "bookable1",
+                                            "containers": [
+                                                {
+                                                    "TECHDISER_ID": "",
+                                                    "containerType": "60ft",
+                                                    "containerTypeId": ""
+                                                },
+                                                {
+                                                    "TECHDISER_ID": "",
+                                                    "containerType": "60ft",
+                                                    "containerTypeId": ""
+                                                },
+                                                {
+                                                    "TECHDISER_ID": "",
+                                                    "containerType": "20ft",
+                                                    "containerTypeId": ""
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "TECHDISER_ID": "",
+                                            "demand": "demand1",
+                                            "bookable": "bookable2",
+                                            "containers": [
+                                                {
+                                                    "TECHDISER_ID": "",
+                                                    "containerType": "60ft",
+                                                    "containerTypeId": ""
+                                                },
+                                                {
+                                                    "TECHDISER_ID": "",
+                                                    "containerType": "60ft",
+                                                    "containerTypeId": ""
+                                                },
+                                                {
+                                                    "TECHDISER_ID": "",
+                                                    "containerType": "20ft",
+                                                    "containerTypeId": ""
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "lcl": [
+                {
+                    "TECHDISER_ID": "",
+                    "route": "route2",
+                    "routeId": "route1seaChittagongMelbone",
+                    "routeCode": "routeCode2",
+                    "shippingLines": [
+                        {
+                            "TECHDISER_ID": "shippingLine1",
+                            "shippingLineTitle": "shippingLineTitle1",
+                            "shippingLineId": "shippingLineId1",
+                            "routeId": "route1seaChittagongMelbone",
+                            "routeCode": "routeCode2",
+                            "route": "route2",
+                            "ships": [
+                                {
+                                    "TECHDISER_ID": "",
+                                    "shipTitle": "ship1",
+                                    "shipId": "shipId1",
+                                    "booking": [
+                                        {
+                                            "TECHDISER_ID": "",
+                                            "demand": "demand1",
+                                            "demandId": "demandId1",
+                                            "bookable": "bookable1",
+                                            "bookableId": "bookableId1",
+                                            "quantity": "2000"
+                                        },
+                                        {
+                                            "TECHDISER_ID": "",
+                                            "demand": "demand1",
+                                            "demandId": "demandId1",
+                                            "bookable": "bookable2",
+                                            "bookableId": "bookableId2",
+                                            "quantity": "3000"
+                                        }
+                                    ],
+                                    "containers": [
+                                        {
+                                            "TECHDISER_ID": "",
+                                            "container": "",
+                                            "containerId": "container1",
+                                            "space": "60ft"
+                                        },
+                                        {
+                                            "TECHDISER_ID": "",
+                                            "container": "",
+                                            "containerId": "container2",
+                                            "space": "40ft"
+                                        },
+                                        {
+                                            "TECHDISER_ID": "",
+                                            "container": "",
+                                            "containerId": "container3",
+                                            "space": "20ft"
+                                        }
+                                    ],
+                                    "bookingContainerPositioning": [
+                                        {
+                                            "TECHDISER_ID": "",
+                                            "bookable": "bookable1",
+                                            "bookableId": "bookableId1",
+                                            "containerId": "container1",
+                                            "asignQuantity": "40"
+                                        },
+                                        {
+                                            "TECHDISER_ID": "",
+                                            "bookable": "bookable1",
+                                            "bookableId": "bookableId1",
+                                            "containerId": "container2",
+                                            "asignQuantity": "20"
+                                        },
+                                        {
+                                            "TECHDISER_ID": "",
+                                            "bookable": "bookable1",
+                                            "bookableId": "bookableId1",
+                                            "containerId": "container3",
+                                            "asignQuantity": "10"
+                                        },
+                                        {
+                                            "TECHDISER_ID": "",
+                                            "bookable": "bookable2",
+                                            "bookableId": "bookableId1",
+                                            "containerId": "container1",
+                                            "asignQuantity": "20"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "demandConfirmation": [
+        {
+            "demand": "demand1",
+            "demandId": "demand1",
+            "bookable": "bookable1",
+            "bookableId": "bookable1",
+            "po": "po1",
+            "quantity": "2000",
+            "routeId": "route1seaChittagongNewYork",
+            "routingCode": "routingCode1",
+            "shippingLine": "",
+            "etds": [
+                {},
+                {}
+            ]
+        }
+    ],
+    "projects": [
+        {
+            "TECHDISER_ID": "project1",
+            "etdIds": [
+                "etd1",
+                "etd2",
+                "etd3"
+            ]
+        },
+        {
+            "TECHDISER_ID": "project1",
+            "etdIds": [
+                "etd4",
+                "etd5",
+                "etd6"
+            ]
+        }
+    ],
+    "preferedRoutesMock": [
+        {
+            "TECHDISER_ID": "route1seaChittagongTokyo",
+            "mode": "sea",
+            "sailingPortId": "portChittagong",
+            "destinationPortId": "portIdNewYork"
+        }
+    ],
+    "routeMenu": [
+        {
+            "TECHDISER_ID": "seaportChittagongportSingaporeportIstambulportNewYork",
+            "etds": [
+                {
+                    "TECHDISER_ID": "PO1ETD1",
+                    "poId": "PO1",
+                    "etd": "2020.01.01",
+                    "sailingDt": "2020.01.07",
+                    "sailingPortId": "portChittagong",
+                    "destinationPortId": "portSingapore",
+                    "quantity": "10000",
+                    "inco": "FOB",
+                    "shipmentMode": "sea",
+                    "packaging": {
+                        "packagingTypeId": "packagingTypeId1",
+                        "space": "2x2x1.5",
+                        "prefix": "",
+                        "unit": "feet"
+                    },
+                    "projectInfo": [
+                        {
+                            "projectId": "project1",
+                            "quantity": "10000",
+                            "numberOfPackets": "50"
+                        },
+                        {
+                            "projectId": "project2",
+                            "quantity": "20000",
+                            "numberOfPackets": "100"
+                        }
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "PO1ETD2",
+                    "poId": "PO1",
+                    "etd": "2020.01.02",
+                    "sailingDt": "2020.01.08",
+                    "sailingPortId": "portChittagong",
+                    "destinationPortId": "portSingapore",
+                    "quantity": "20000",
+                    "inco": "FOB",
+                    "shipmentMode": "sea",
+                    "packaging": {
+                        "packagingTypeId": "packagingTypeId1",
+                        "space": "2x2x1.5",
+                        "prefix": "",
+                        "unit": "feet"
+                    },
+                    "projectInfo": [
+                        {
+                            "projectId": "project1",
+                            "quantity": "10000",
+                            "numberOfPackets": "50"
+                        },
+                        {
+                            "projectId": "project2",
+                            "quantity": "20000",
+                            "numberOfPackets": "100"
+                        }
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "PO1ETD3",
+                    "poId": "PO1",
+                    "etd": "2020.01.03",
+                    "sailingDt": "2020.01.09",
+                    "sailingPortId": "portChittagong",
+                    "destinationPortId": "portSingapore",
+                    "quantity": "30000",
+                    "inco": "FOB",
+                    "shipmentMode": "sea",
+                    "packaging": {
+                        "packagingTypeId": "packagingTypeId1",
+                        "space": "2x2x1.5",
+                        "prefix": "",
+                        "unit": "feet"
+                    },
+                    "projectInfo": [
+                        {
+                            "projectId": "project1",
+                            "quantity": "10000",
+                            "numberOfPackets": "50"
+                        },
+                        {
+                            "projectId": "project2",
+                            "quantity": "20000",
+                            "numberOfPackets": "100"
+                        }
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "PO1ETD4",
+                    "poId": "PO1",
+                    "etd": "2020.02.02",
+                    "sailingDt": "2020.02.08",
+                    "sailingPortId": "portChittagong",
+                    "destinationPortId": "portIstambul",
+                    "quantity": "30000",
+                    "inco": "FOB",
+                    "shipmentMode": "sea",
+                    "packaging": {
+                        "packagingTypeId": "packagingTypeId1",
+                        "space": "2x2x1.5",
+                        "prefix": "",
+                        "unit": "feet"
+                    },
+                    "projectInfo": [
+                        {
+                            "projectId": "project1",
+                            "quantity": "10000",
+                            "numberOfPackets": "50"
+                        },
+                        {
+                            "projectId": "project2",
+                            "quantity": "20000",
+                            "numberOfPackets": "100"
+                        }
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "PO1ETD5",
+                    "poId": "PO1",
+                    "etd": "2020.02.03",
+                    "sailingDt": "2020.02.09",
+                    "sailingPortId": "portChittagong",
+                    "destinationPortId": "portIstambul",
+                    "quantity": "30000",
+                    "inco": "FOB",
+                    "shipmentMode": "sea",
+                    "packaging": {
+                        "packagingTypeId": "packagingTypeId1",
+                        "space": "2x2x1.5",
+                        "prefix": "",
+                        "unit": "feet"
+                    },
+                    "projectInfo": [
+                        {
+                            "projectId": "project1",
+                            "quantity": "10000",
+                            "numberOfPackets": "50"
+                        },
+                        {
+                            "projectId": "project2",
+                            "quantity": "20000",
+                            "numberOfPackets": "100"
+                        }
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "PO1ETD6",
+                    "poId": "PO1",
+                    "etd": "2020.02.04",
+                    "sailingDt": "2020.02.10",
+                    "sailingPortId": "portChittagong",
+                    "destinationPortId": "portIstambul",
+                    "quantity": "30000",
+                    "inco": "FOB",
+                    "shipmentMode": "sea",
+                    "packaging": {
+                        "packagingTypeId": "packagingTypeId1",
+                        "space": "2x2x1.5",
+                        "prefix": "",
+                        "unit": "feet"
+                    },
+                    "projectInfo": [
+                        {
+                            "projectId": "project1",
+                            "quantity": "10000",
+                            "numberOfPackets": "50"
+                        },
+                        {
+                            "projectId": "project2",
+                            "quantity": "20000",
+                            "numberOfPackets": "100"
+                        }
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "PO1ETD13",
+                    "poId": "PO1",
+                    "etd": "2020.05.05",
+                    "sailingDt": "2020.05.12",
+                    "sailingPortId": "portChittagong",
+                    "destinationPortId": "portNewYork",
+                    "quantity": "50000",
+                    "inco": "FOB",
+                    "shipmentMode": "sea",
+                    "packaging": {
+                        "packagingTypeId": "packagingTypeId1",
+                        "space": "2x2x1.5",
+                        "prefix": "",
+                        "unit": "feet"
+                    },
+                    "projectInfo": [
+                        {
+                            "projectId": "project1",
+                            "quantity": "10000",
+                            "numberOfPackets": "50"
+                        },
+                        {
+                            "projectId": "project2",
+                            "quantity": "20000",
+                            "numberOfPackets": "100"
+                        }
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "PO1ETD14",
+                    "poId": "PO1",
+                    "etd": "2020.05.06",
+                    "sailingDt": "2020.05.13",
+                    "sailingPortId": "portChittagong",
+                    "destinationPortId": "portNewYork",
+                    "quantity": "60000",
+                    "inco": "FOB",
+                    "shipmentMode": "sea",
+                    "packaging": {
+                        "packagingTypeId": "packagingTypeId1",
+                        "space": "2x2x1.5",
+                        "prefix": "",
+                        "unit": "feet"
+                    },
+                    "projectInfo": [
+                        {
+                            "projectId": "project1",
+                            "quantity": "10000",
+                            "numberOfPackets": "50"
+                        },
+                        {
+                            "projectId": "project2",
+                            "quantity": "20000",
+                            "numberOfPackets": "100"
+                        }
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "PO1ETD15",
+                    "poId": "PO1",
+                    "etd": "2020.05.07",
+                    "sailingDt": "2020.05.17",
+                    "sailingPortId": "portChittagong",
+                    "destinationPortId": "portNewYork",
+                    "quantity": "70000",
+                    "inco": "FOB",
+                    "shipmentMode": "sea",
+                    "packaging": {
+                        "packagingTypeId": "packagingTypeId1",
+                        "space": "2x2x1.5",
+                        "prefix": "",
+                        "unit": "feet"
+                    },
+                    "projectInfo": [
+                        {
+                            "projectId": "project1",
+                            "quantity": "10000",
+                            "numberOfPackets": "50"
+                        },
+                        {
+                            "projectId": "project2",
+                            "quantity": "20000",
+                            "numberOfPackets": "100"
+                        }
+                    ]
+                }
+            ],
+            "demands": [
+                {}
+            ]
+        },
+        {
+            "TECHDISER_ID": "seaportChittagongportSingaporeportGermanyportNewYork",
+            "etds": [
+                {
+                    "TECHDISER_ID": "PO1ETD1",
+                    "poId": "PO1",
+                    "etd": "2020.01.01",
+                    "sailingDt": "2020.01.07",
+                    "sailingPortId": "portChittagong",
+                    "destinationPortId": "portSingapore",
+                    "quantity": "10000",
+                    "inco": "FOB",
+                    "shipmentMode": "sea",
+                    "packaging": {
+                        "packagingTypeId": "packagingTypeId1",
+                        "space": "2x2x1.5",
+                        "prefix": "",
+                        "unit": "feet"
+                    },
+                    "projectInfo": [
+                        {
+                            "projectId": "project1",
+                            "quantity": "10000",
+                            "numberOfPackets": "50"
+                        },
+                        {
+                            "projectId": "project2",
+                            "quantity": "20000",
+                            "numberOfPackets": "100"
+                        }
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "PO1ETD2",
+                    "poId": "PO1",
+                    "etd": "2020.01.02",
+                    "sailingDt": "2020.01.08",
+                    "sailingPortId": "portChittagong",
+                    "destinationPortId": "portSingapore",
+                    "quantity": "20000",
+                    "inco": "FOB",
+                    "shipmentMode": "sea",
+                    "packaging": {
+                        "packagingTypeId": "packagingTypeId1",
+                        "space": "2x2x1.5",
+                        "prefix": "",
+                        "unit": "feet"
+                    },
+                    "projectInfo": [
+                        {
+                            "projectId": "project1",
+                            "quantity": "10000",
+                            "numberOfPackets": "50"
+                        },
+                        {
+                            "projectId": "project2",
+                            "quantity": "20000",
+                            "numberOfPackets": "100"
+                        }
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "PO1ETD3",
+                    "poId": "PO1",
+                    "etd": "2020.01.03",
+                    "sailingDt": "2020.01.09",
+                    "sailingPortId": "portChittagong",
+                    "destinationPortId": "portSingapore",
+                    "quantity": "30000",
+                    "inco": "FOB",
+                    "shipmentMode": "sea",
+                    "packaging": {
+                        "packagingTypeId": "packagingTypeId1",
+                        "space": "2x2x1.5",
+                        "prefix": "",
+                        "unit": "feet"
+                    },
+                    "projectInfo": [
+                        {
+                            "projectId": "project1",
+                            "quantity": "10000",
+                            "numberOfPackets": "50"
+                        },
+                        {
+                            "projectId": "project2",
+                            "quantity": "20000",
+                            "numberOfPackets": "100"
+                        }
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "PO1ETD7",
+                    "poId": "PO1",
+                    "etd": "2020.03.03",
+                    "sailingDt": "2020.03.11",
+                    "sailingPortId": "portChittagong",
+                    "destinationPortId": "portGermany",
+                    "quantity": "20000",
+                    "inco": "FOB",
+                    "shipmentMode": "sea",
+                    "packaging": {
+                        "packagingTypeId": "packagingTypeId1",
+                        "space": "2x2x1.5",
+                        "prefix": "",
+                        "unit": "feet"
+                    },
+                    "projectInfo": [
+                        {
+                            "projectId": "project1",
+                            "quantity": "10000",
+                            "numberOfPackets": "50"
+                        },
+                        {
+                            "projectId": "project2",
+                            "quantity": "20000",
+                            "numberOfPackets": "100"
+                        }
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "PO1ETD8",
+                    "poId": "PO1",
+                    "etd": "2020.03.04",
+                    "sailingDt": "2020.03.12",
+                    "sailingPortId": "portChittagong",
+                    "destinationPortId": "portGermany",
+                    "quantity": "30000",
+                    "inco": "FOB",
+                    "shipmentMode": "sea",
+                    "packaging": {
+                        "packagingTypeId": "packagingTypeId1",
+                        "space": "2x2x1.5",
+                        "prefix": "",
+                        "unit": "feet"
+                    },
+                    "projectInfo": [
+                        {
+                            "projectId": "project1",
+                            "quantity": "10000",
+                            "numberOfPackets": "50"
+                        },
+                        {
+                            "projectId": "project2",
+                            "quantity": "20000",
+                            "numberOfPackets": "100"
+                        }
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "PO1ETD9",
+                    "poId": "PO1",
+                    "etd": "2020.03.04",
+                    "sailingDt": "2020.03.12",
+                    "sailingPortId": "portChittagong",
+                    "destinationPortId": "portGermany",
+                    "quantity": "40000",
+                    "inco": "FOB",
+                    "shipmentMode": "sea",
+                    "packaging": {
+                        "packagingTypeId": "packagingTypeId1",
+                        "space": "2x2x1.5",
+                        "prefix": "",
+                        "unit": "feet"
+                    },
+                    "projectInfo": [
+                        {
+                            "projectId": "project1",
+                            "quantity": "10000",
+                            "numberOfPackets": "50"
+                        },
+                        {
+                            "projectId": "project2",
+                            "quantity": "20000",
+                            "numberOfPackets": "100"
+                        }
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "PO1ETD13",
+                    "poId": "PO1",
+                    "etd": "2020.05.05",
+                    "sailingDt": "2020.05.12",
+                    "sailingPortId": "portChittagong",
+                    "destinationPortId": "portNewYork",
+                    "quantity": "50000",
+                    "inco": "FOB",
+                    "shipmentMode": "sea",
+                    "packaging": {
+                        "packagingTypeId": "packagingTypeId1",
+                        "space": "2x2x1.5",
+                        "prefix": "",
+                        "unit": "feet"
+                    },
+                    "projectInfo": [
+                        {
+                            "projectId": "project1",
+                            "quantity": "10000",
+                            "numberOfPackets": "50"
+                        },
+                        {
+                            "projectId": "project2",
+                            "quantity": "20000",
+                            "numberOfPackets": "100"
+                        }
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "PO1ETD14",
+                    "poId": "PO1",
+                    "etd": "2020.05.06",
+                    "sailingDt": "2020.05.13",
+                    "sailingPortId": "portChittagong",
+                    "destinationPortId": "portNewYork",
+                    "quantity": "60000",
+                    "inco": "FOB",
+                    "shipmentMode": "sea",
+                    "packaging": {
+                        "packagingTypeId": "packagingTypeId1",
+                        "space": "2x2x1.5",
+                        "prefix": "",
+                        "unit": "feet"
+                    },
+                    "projectInfo": [
+                        {
+                            "projectId": "project1",
+                            "quantity": "10000",
+                            "numberOfPackets": "50"
+                        },
+                        {
+                            "projectId": "project2",
+                            "quantity": "20000",
+                            "numberOfPackets": "100"
+                        }
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "PO1ETD15",
+                    "poId": "PO1",
+                    "etd": "2020.05.07",
+                    "sailingDt": "2020.05.17",
+                    "sailingPortId": "portChittagong",
+                    "destinationPortId": "portNewYork",
+                    "quantity": "70000",
+                    "inco": "FOB",
+                    "shipmentMode": "sea",
+                    "packaging": {
+                        "packagingTypeId": "packagingTypeId1",
+                        "space": "2x2x1.5",
+                        "prefix": "",
+                        "unit": "feet"
+                    },
+                    "projectInfo": [
+                        {
+                            "projectId": "project1",
+                            "quantity": "10000",
+                            "numberOfPackets": "50"
+                        },
+                        {
+                            "projectId": "project2",
+                            "quantity": "20000",
+                            "numberOfPackets": "100"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "TECHDISER_ID": "seaportChittagongportSingaporeportBritainportNewYork",
+            "etds": [
+                {
+                    "TECHDISER_ID": "PO1ETD1",
+                    "poId": "PO1",
+                    "etd": "2020.01.01",
+                    "sailingDt": "2020.01.07",
+                    "sailingPortId": "portChittagong",
+                    "destinationPortId": "portSingapore",
+                    "quantity": "10000",
+                    "inco": "FOB",
+                    "shipmentMode": "sea",
+                    "packaging": {
+                        "packagingTypeId": "packagingTypeId1",
+                        "space": "2x2x1.5",
+                        "prefix": "",
+                        "unit": "feet"
+                    },
+                    "projectInfo": [
+                        {
+                            "projectId": "project1",
+                            "quantity": "10000",
+                            "numberOfPackets": "50"
+                        },
+                        {
+                            "projectId": "project2",
+                            "quantity": "20000",
+                            "numberOfPackets": "100"
+                        }
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "PO1ETD2",
+                    "poId": "PO1",
+                    "etd": "2020.01.02",
+                    "sailingDt": "2020.01.08",
+                    "sailingPortId": "portChittagong",
+                    "destinationPortId": "portSingapore",
+                    "quantity": "20000",
+                    "inco": "FOB",
+                    "shipmentMode": "sea",
+                    "packaging": {
+                        "packagingTypeId": "packagingTypeId1",
+                        "space": "2x2x1.5",
+                        "prefix": "",
+                        "unit": "feet"
+                    },
+                    "projectInfo": [
+                        {
+                            "projectId": "project1",
+                            "quantity": "10000",
+                            "numberOfPackets": "50"
+                        },
+                        {
+                            "projectId": "project2",
+                            "quantity": "20000",
+                            "numberOfPackets": "100"
+                        }
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "PO1ETD3",
+                    "poId": "PO1",
+                    "etd": "2020.01.03",
+                    "sailingDt": "2020.01.09",
+                    "sailingPortId": "portChittagong",
+                    "destinationPortId": "portSingapore",
+                    "quantity": "30000",
+                    "inco": "FOB",
+                    "shipmentMode": "sea",
+                    "packaging": {
+                        "packagingTypeId": "packagingTypeId1",
+                        "space": "2x2x1.5",
+                        "prefix": "",
+                        "unit": "feet"
+                    },
+                    "projectInfo": [
+                        {
+                            "projectId": "project1",
+                            "quantity": "10000",
+                            "numberOfPackets": "50"
+                        },
+                        {
+                            "projectId": "project2",
+                            "quantity": "20000",
+                            "numberOfPackets": "100"
+                        }
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "PO1ETD10",
+                    "poId": "PO1",
+                    "etd": "2020.04.04",
+                    "sailingDt": "2020.04.12",
+                    "sailingPortId": "portChittagong",
+                    "destinationPortId": "portBritain",
+                    "quantity": "40000",
+                    "inco": "FOB",
+                    "shipmentMode": "sea",
+                    "packaging": {
+                        "packagingTypeId": "packagingTypeId1",
+                        "space": "2x2x1.5",
+                        "prefix": "",
+                        "unit": "feet"
+                    },
+                    "projectInfo": [
+                        {
+                            "projectId": "project1",
+                            "quantity": "10000",
+                            "numberOfPackets": "50"
+                        },
+                        {
+                            "projectId": "project2",
+                            "quantity": "20000",
+                            "numberOfPackets": "100"
+                        }
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "PO1ETD11",
+                    "poId": "PO1",
+                    "etd": "2020.04.04",
+                    "sailingDt": "2020.04.12",
+                    "sailingPortId": "portChittagong",
+                    "destinationPortId": "portBritain",
+                    "quantity": "40000",
+                    "inco": "FOB",
+                    "shipmentMode": "sea",
+                    "packaging": {
+                        "packagingTypeId": "packagingTypeId1",
+                        "space": "2x2x1.5",
+                        "prefix": "",
+                        "unit": "feet"
+                    },
+                    "projectInfo": [
+                        {
+                            "projectId": "project1",
+                            "quantity": "10000",
+                            "numberOfPackets": "50"
+                        },
+                        {
+                            "projectId": "project2",
+                            "quantity": "20000",
+                            "numberOfPackets": "100"
+                        }
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "PO1ETD12",
+                    "poId": "PO1",
+                    "etd": "2020.04.05",
+                    "sailingDt": "2020.04.13",
+                    "sailingPortId": "portChittagong",
+                    "destinationPortId": "portBritain",
+                    "quantity": "50000",
+                    "inco": "FOB",
+                    "shipmentMode": "sea",
+                    "packaging": {
+                        "packagingTypeId": "packagingTypeId1",
+                        "space": "2x2x1.5",
+                        "prefix": "",
+                        "unit": "feet"
+                    },
+                    "projectInfo": [
+                        {
+                            "projectId": "project1",
+                            "quantity": "10000",
+                            "numberOfPackets": "50"
+                        },
+                        {
+                            "projectId": "project2",
+                            "quantity": "20000",
+                            "numberOfPackets": "100"
+                        }
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "PO1ETD13",
+                    "poId": "PO1",
+                    "etd": "2020.05.05",
+                    "sailingDt": "2020.05.12",
+                    "sailingPortId": "portChittagong",
+                    "destinationPortId": "portNewYork",
+                    "quantity": "50000",
+                    "inco": "FOB",
+                    "shipmentMode": "sea",
+                    "packaging": {
+                        "packagingTypeId": "packagingTypeId1",
+                        "space": "2x2x1.5",
+                        "prefix": "",
+                        "unit": "feet"
+                    },
+                    "projectInfo": [
+                        {
+                            "projectId": "project1",
+                            "quantity": "10000",
+                            "numberOfPackets": "50"
+                        },
+                        {
+                            "projectId": "project2",
+                            "quantity": "20000",
+                            "numberOfPackets": "100"
+                        }
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "PO1ETD14",
+                    "poId": "PO1",
+                    "etd": "2020.05.06",
+                    "sailingDt": "2020.05.13",
+                    "sailingPortId": "portChittagong",
+                    "destinationPortId": "portNewYork",
+                    "quantity": "60000",
+                    "inco": "FOB",
+                    "shipmentMode": "sea",
+                    "packaging": {
+                        "packagingTypeId": "packagingTypeId1",
+                        "space": "2x2x1.5",
+                        "prefix": "",
+                        "unit": "feet"
+                    },
+                    "projectInfo": [
+                        {
+                            "projectId": "project1",
+                            "quantity": "10000",
+                            "numberOfPackets": "50"
+                        },
+                        {
+                            "projectId": "project2",
+                            "quantity": "20000",
+                            "numberOfPackets": "100"
+                        }
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "PO1ETD15",
+                    "poId": "PO1",
+                    "etd": "2020.05.07",
+                    "sailingDt": "2020.05.17",
+                    "sailingPortId": "portChittagong",
+                    "destinationPortId": "portNewYork",
+                    "quantity": "70000",
+                    "inco": "FOB",
+                    "shipmentMode": "sea",
+                    "packaging": {
+                        "packagingTypeId": "packagingTypeId1",
+                        "space": "2x2x1.5",
+                        "prefix": "",
+                        "unit": "feet"
+                    },
+                    "projectInfo": [
+                        {
+                            "projectId": "project1",
+                            "quantity": "10000",
+                            "numberOfPackets": "50"
+                        },
+                        {
+                            "projectId": "project2",
+                            "quantity": "20000",
+                            "numberOfPackets": "100"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

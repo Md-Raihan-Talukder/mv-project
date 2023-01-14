@@ -1,0 +1,102 @@
+{
+    "data": [
+        {
+            "TECHDISER_ID": "1",
+            "title": "Denim",
+            "code": "D22",
+            "supplyCategoryId": "1",
+            "deleted": false
+        },
+        {
+            "TECHDISER_ID": "2",
+            "title": "Non-Denim",
+            "code": "ND22",
+            "supplyCategoryId": "1",
+            "deleted": false
+        },
+        {
+            "TECHDISER_ID": "3",
+            "title": "Non-Woven",
+            "code": "NW22",
+            "supplyCategoryId": "1",
+            "deleted": false
+        },
+        {
+            "TECHDISER_ID": "4",
+            "title": "Regular",
+            "code": "R22",
+            "supplyCategoryId": "2",
+            "deleted": false
+        },
+        {
+            "TECHDISER_ID": "5",
+            "title": "Fancy",
+            "code": "F22",
+            "supplyCategoryId": "2",
+            "deleted": false
+        },
+        {
+            "TECHDISER_ID": "6",
+            "title": "Woven",
+            "code": "W22",
+            "supplyCategoryId": "3",
+            "deleted": false
+        },
+        {
+            "TECHDISER_ID": "7",
+            "title": "Print",
+            "code": "P22",
+            "supplyCategoryId": "3",
+            "deleted": false
+        },
+        {
+            "TECHDISER_ID": "8",
+            "title": "Ambushed",
+            "code": "A22",
+            "supplyCategoryId": "3",
+            "deleted": false
+        },
+        {
+            "TECHDISER_ID": "9",
+            "title": "Organic",
+            "code": "O22",
+            "supplyCategoryId": "4",
+            "deleted": false
+        },
+        {
+            "TECHDISER_ID": "10",
+            "title": "Synthetic",
+            "code": "S22",
+            "supplyCategoryId": "4",
+            "deleted": false
+        },
+        {
+            "TECHDISER_ID": "11",
+            "title": "Foil",
+            "code": "F22",
+            "supplyCategoryId": "4",
+            "deleted": false
+        },
+        {
+            "TECHDISER_ID": "12",
+            "title": "Rinse",
+            "code": "R22",
+            "supplyCategoryId": "5",
+            "deleted": false
+        },
+        {
+            "TECHDISER_ID": "13",
+            "title": "Acid",
+            "code": "A22",
+            "supplyCategoryId": "5",
+            "deleted": false
+        },
+        {
+            "TECHDISER_ID": "14",
+            "title": "Enzyme",
+            "code": "E22",
+            "supplyCategoryId": "5",
+            "deleted": false
+        }
+    ]
+}

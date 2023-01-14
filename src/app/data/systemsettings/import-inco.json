@@ -1,0 +1,818 @@
+{
+    "data": [
+        {
+            "TECHDISER_ID": "ShipmentSetupObj1",
+            "TECHDISER_SERIAL_NO": 1,
+            "documentDefinition": [
+                {
+                    "TECHDISER_ID": "ShipmentTypeDocument1",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "title": "Document 1",
+                    "purpose": "Document 1 Purpose",
+                    "templates": []
+                },
+                {
+                    "TECHDISER_ID": "ShipmentTypeDocument2",
+                    "TECHDISER_SERIAL_NO": 2,
+                    "title": "Document 2",
+                    "purpose": "Document 2 Purpose",
+                    "templates": []
+                },
+                {
+                    "TECHDISER_ID": "ShipmentTypeDocument3",
+                    "TECHDISER_SERIAL_NO": 3,
+                    "title": "Document 3",
+                    "purpose": "Document 3 Purpose",
+                    "templates": []
+                },
+                {
+                    "TECHDISER_ID": "ShipmentTypeDocument4",
+                    "TECHDISER_SERIAL_NO": 4,
+                    "title": "Document 4",
+                    "purpose": "Document 4 Purpose",
+                    "templates": []
+                },
+                {
+                    "TECHDISER_ID": "ShipmentTypeDocument5",
+                    "TECHDISER_SERIAL_NO": 5,
+                    "title": "Document 5",
+                    "purpose": "Document 5 Purpose",
+                    "templates": []
+                }
+            ],
+            "stakeholderDefinition": [
+                {
+                    "TECHDISER_ID": "Stakeholder_CNF",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "type": "inland",
+                    "title": "CNF",
+                    "description": "CNF Description",
+                    "dataSheets": [
+                        {
+                            "TECHDISER_ID": "StakeholderDataSheet1",
+                            "title": "Data Value 1"
+                        },
+                        {
+                            "TECHDISER_ID": "StakeholderDataSheet2",
+                            "title": "Data Value 2"
+                        },
+                        {
+                            "TECHDISER_ID": "StakeholderDataSheet3",
+                            "title": "Data Value 3"
+                        }
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "Stakeholder_Inland_Transport",
+                    "TECHDISER_SERIAL_NO": 2,
+                    "type": "inland",
+                    "title": "Inland Transport",
+                    "description": "Inland Transport Description",
+                    "dataSheets": [
+                        {
+                            "TECHDISER_ID": "StakeholderDataSheet4",
+                            "title": "Data Value 4"
+                        },
+                        {
+                            "TECHDISER_ID": "StakeholderDataSheet5",
+                            "title": "Data Value 5"
+                        },
+                        {
+                            "TECHDISER_ID": "StakeholderDataSheet6",
+                            "title": "Data Value 6"
+                        }
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "Stakeholder_Insurance",
+                    "TECHDISER_SERIAL_NO": 3,
+                    "type": "inland",
+                    "title": "Insurance",
+                    "description": "Insurance Description",
+                    "dataSheets": [
+                        {
+                            "TECHDISER_ID": "StakeholderDataSheet7",
+                            "title": "Data Value 7"
+                        },
+                        {
+                            "TECHDISER_ID": "StakeholderDataSheet8",
+                            "title": "Data Value 8"
+                        },
+                        {
+                            "TECHDISER_ID": "StakeholderDataSheet9",
+                            "title": "Data Value 9"
+                        }
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "Stakeholder_PSI",
+                    "TECHDISER_SERIAL_NO": 3,
+                    "type": "inland",
+                    "title": "Pre Shipment Inspection",
+                    "description": "Pre Shipment Inspection Description",
+                    "dataSheets": [
+                        {
+                            "TECHDISER_ID": "StakeholderDataSheet10",
+                            "title": "PSI Data Value 1"
+                        },
+                        {
+                            "TECHDISER_ID": "StakeholderDataSheet11",
+                            "title": "PSI Data Value 2"
+                        },
+                        {
+                            "TECHDISER_ID": "StakeholderDataSheet12",
+                            "title": "PSI Data Value 3"
+                        }
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "X_Stakeholder_CNF",
+                    "TECHDISER_SERIAL_NO": 5,
+                    "type": "xland",
+                    "title": "X CNF",
+                    "description": "X CNF Description",
+                    "dataSheets": [
+                        {
+                            "TECHDISER_ID": "X_StakeholderDataSheet1",
+                            "title": "Data Value 1"
+                        },
+                        {
+                            "TECHDISER_ID": "X_StakeholderDataSheet2",
+                            "title": "Data Value 2"
+                        },
+                        {
+                            "TECHDISER_ID": "X_StakeholderDataSheet3",
+                            "title": "Data Value 3"
+                        }
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "X_Stakeholder_Inland_Transport",
+                    "TECHDISER_SERIAL_NO": 6,
+                    "type": "xland",
+                    "title": "X Inland Transport",
+                    "description": "X Inland Transport Description",
+                    "dataSheets": [
+                        {
+                            "TECHDISER_ID": "X_StakeholderDataSheet4",
+                            "title": "Data Value 4"
+                        },
+                        {
+                            "TECHDISER_ID": "X_StakeholderDataSheet5",
+                            "title": "Data Value 5"
+                        },
+                        {
+                            "TECHDISER_ID": "X_StakeholderDataSheet6",
+                            "title": "Data Value 6"
+                        }
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "X_Stakeholder_Insurance",
+                    "TECHDISER_SERIAL_NO": 7,
+                    "type": "xland",
+                    "title": "X Insurance",
+                    "description": "X Insurance Description",
+                    "dataSheets": [
+                        {
+                            "TECHDISER_ID": "X_StakeholderDataSheet7",
+                            "title": "Data Value 7"
+                        },
+                        {
+                            "TECHDISER_ID": "X_StakeholderDataSheet8",
+                            "title": "Data Value 8"
+                        },
+                        {
+                            "TECHDISER_ID": "X_StakeholderDataSheet9",
+                            "title": "Data Value 9"
+                        }
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "X_Stakeholder_PSI",
+                    "TECHDISER_SERIAL_NO": 8,
+                    "type": "xland",
+                    "title": "X Pre Shipment Inspection",
+                    "description": "X Pre Shipment Inspection Description",
+                    "dataSheets": [
+                        {
+                            "TECHDISER_ID": "X_StakeholderDataSheet10",
+                            "title": "PSI Data Value 1"
+                        },
+                        {
+                            "TECHDISER_ID": "X_StakeholderDataSheet11",
+                            "title": "PSI Data Value 2"
+                        },
+                        {
+                            "TECHDISER_ID": "X_StakeholderDataSheet12",
+                            "title": "PSI Data Value 3"
+                        }
+                    ]
+                }
+            ],
+            "stepDefinition": [
+                {
+                    "TECHDISER_ID": "ShipmentStep1",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "title": "Step 1",
+                    "code": "Step 1 Code",
+                    "description": "Step 1 Description"
+                },
+                {
+                    "TECHDISER_ID": "ShipmentStep2",
+                    "TECHDISER_SERIAL_NO": 2,
+                    "title": "Step 2",
+                    "code": "Step 2 Code",
+                    "description": "Step 2 Description"
+                },
+                {
+                    "TECHDISER_ID": "ShipmentStep3",
+                    "TECHDISER_SERIAL_NO": 3,
+                    "title": "Step 3",
+                    "code": "Step 3 Code",
+                    "description": "Step 3 Description"
+                },
+                {
+                    "TECHDISER_ID": "ShipmentStep4",
+                    "TECHDISER_SERIAL_NO": 4,
+                    "title": "Step 4",
+                    "code": "Step 4 Code",
+                    "description": "Step 4 Description"
+                },
+                {
+                    "TECHDISER_ID": "ShipmentStep5",
+                    "TECHDISER_SERIAL_NO": 5,
+                    "title": "Step 5",
+                    "code": "Step 5 Code",
+                    "description": "Step 5 Description"
+                },
+                {
+                    "TECHDISER_ID": "ShipmentStep6",
+                    "TECHDISER_SERIAL_NO": 6,
+                    "title": "Step 6",
+                    "code": "Step 6 Code",
+                    "description": "Step 6 Description"
+                }
+            ],
+            "typeDefinition": [
+                {
+                    "TECHDISER_ID": "ShipmentType1",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "title": "X Factory",
+                    "description": "X Factory Description",
+                    "isPortToPortTransport": true,
+                    "isDestinationPort": 0,
+                    "isSailingPort": 0,
+                    "isDeliveryPoint": 0,
+                    "importers": [
+                        {
+                            "TECHDISER_ID": "ShipmentType1_Importer1",
+                            "stakeholderId": "Stakeholder_CNF",
+                            "bills": [
+                                {
+                                    "TECHDISER_ID": "ShipmentType1_Importer1_Bill1",
+                                    "title": "Bill 1",
+                                    "stepIds": [
+                                        "ShipmentStep1"
+                                    ],
+                                    "policy": "seaCNF",
+                                    "TD_IS_DELETED": 0
+                                },
+                                {
+                                    "TECHDISER_ID": "ShipmentType1_Importer1_Bill2",
+                                    "title": "Bill 2",
+                                    "stepIds": [
+                                        "ShipmentStep3"
+                                    ],
+                                    "policy": "airCNF",
+                                    "TD_IS_DELETED": 0
+                                }
+                            ]
+                        },
+                        {
+                            "TECHDISER_ID": "ed78.637dbb169352d.bbfa81814a9f2.5050be32289ed.b74d11ffa0280.5df6c357a7c58.7c138cfa2",
+                            "stakeholderId": "Stakeholder_Inland_Transport",
+                            "bills": [
+                                {
+                                    "TECHDISER_ID": "0278.00e681e93eb7c.6828adeed3961.ac9d2ada868f6.7bc530c7a47c0.05cc6391af8bf.9a371976d",
+                                    "title": "Bill ILT XFac Imp",
+                                    "stepIds": [
+                                        "ShipmentStep5"
+                                    ],
+                                    "policy": "seaCNF",
+                                    "TD_IS_DELETED": 0
+                                }
+                            ]
+                        },
+                        {
+                            "TECHDISER_ID": "eea2.830cc645a1697.4ce87a093753a.6cde5250c1f5e.5a88aadaf4aa9.c34349df14ac0.14c1b94c1",
+                            "stakeholderId": "Stakeholder_Insurance",
+                            "bills": []
+                        },
+                        {
+                            "TECHDISER_ID": "a087.d5c6713a3aeb6.2acf418a3831b.5d643d645d5c0.e607acec558fc.87ef4b6058d96.4412a6d14",
+                            "stakeholderId": "Stakeholder_PSI",
+                            "bills": []
+                        }
+                    ],
+                    "exporters": [
+                        {
+                            "TECHDISER_ID": "ShipmentType1_Exporter1",
+                            "stakeholderId": "Stakeholder_Inland_Transport",
+                            "bills": []
+                        },
+                        {
+                            "TECHDISER_ID": "ShipmentType1_Exporter2",
+                            "stakeholderId": "Stakeholder_Insurance",
+                            "bills": [
+                                {
+                                    "TECHDISER_ID": "XFactory_Export_Bill_1",
+                                    "title": "Bill Ins Xfac Exp",
+                                    "stepIds": [
+                                        "ShipmentStep4",
+                                        "ShipmentStep2"
+                                    ],
+                                    "policy": "airCNF",
+                                    "TD_IS_DELETED": 0
+                                }
+                            ]
+                        },
+                        {
+                            "TECHDISER_ID": "158d.904269f0bc2fd.0b7cac538a6c4.2fe8c29bf52a2.c8d574cbcf057.2fa40ada18b50.99e1850a4",
+                            "stakeholderId": "Stakeholder_CNF",
+                            "bills": [
+                                {
+                                    "TECHDISER_ID": "6d28.df402a08c67a3.45dbcdfb9983e.1d44493fad1cb.1b4a56a8327d9.85dec7e61978d.cb7435723",
+                                    "title": "Bill Cnf Xfac Exp",
+                                    "stepIds": [
+                                        "ShipmentStep6"
+                                    ],
+                                    "policy": "seaCNF",
+                                    "TD_IS_DELETED": 0
+                                }
+                            ]
+                        },
+                        {
+                            "TECHDISER_ID": "1d05.66f6e7af47430.fac6406ae001b.ef72d5dea55bc.346901c161a36.2a7ce2c234f70.7b5bc99ad",
+                            "stakeholderId": "Stakeholder_PSI",
+                            "bills": []
+                        }
+                    ],
+                    "steps": [
+                        {
+                            "TECHDISER_ID": "ShipmentTypeStep1",
+                            "TECHDISER_SERIAL_NO": 1,
+                            "stepId": "ShipmentStep1",
+                            "isImportPayment": true,
+                            "isExportPayment": false,
+                            "stakeholderId": "Stakeholder_CNF",
+                            "isSelected": true,
+                            "documentId": [
+                                "ShipmentTypeDocument1",
+                                "ShipmentTypeDocument3",
+                                "ShipmentTypeDocument5"
+                            ]
+                        },
+                        {
+                            "TECHDISER_ID": "ShipmentTypeStep2",
+                            "TECHDISER_SERIAL_NO": 2,
+                            "stepId": "ShipmentStep2",
+                            "isImportPayment": false,
+                            "isExportPayment": true,
+                            "stakeholderId": "Stakeholder_Insurance",
+                            "isSelected": true,
+                            "documentId": [
+                                "ShipmentTypeDocument2",
+                                "ShipmentTypeDocument3",
+                                "ShipmentTypeDocument4"
+                            ]
+                        },
+                        {
+                            "TECHDISER_ID": "ShipmentTypeStep3",
+                            "TECHDISER_SERIAL_NO": 3,
+                            "stepId": "ShipmentStep3",
+                            "isImportPayment": true,
+                            "isExportPayment": false,
+                            "stakeholderId": "Stakeholder_CNF",
+                            "isSelected": true,
+                            "documentId": [
+                                "ShipmentTypeDocument2",
+                                "ShipmentTypeDocument3",
+                                "ShipmentTypeDocument5"
+                            ]
+                        },
+                        {
+                            "TECHDISER_ID": "ShipmentTypeStep4",
+                            "TECHDISER_SERIAL_NO": 4,
+                            "stepId": "ShipmentStep4",
+                            "isImportPayment": false,
+                            "isExportPayment": true,
+                            "stakeholderId": "Stakeholder_Insurance",
+                            "isSelected": true,
+                            "documentId": [
+                                "ShipmentTypeDocument1",
+                                "ShipmentTypeDocument3",
+                                "ShipmentTypeDocument4"
+                            ]
+                        },
+                        {
+                            "TECHDISER_ID": "ShipmentTypeStep5",
+                            "TECHDISER_SERIAL_NO": 5,
+                            "stepId": "ShipmentStep5",
+                            "isImportPayment": true,
+                            "isExportPayment": false,
+                            "stakeholderId": "Stakeholder_Inland_Transport",
+                            "isSelected": true,
+                            "documentId": [
+                                "ShipmentTypeDocument2",
+                                "ShipmentTypeDocument4",
+                                "ShipmentTypeDocument5"
+                            ]
+                        },
+                        {
+                            "TECHDISER_ID": "ShipmentTypeStep6",
+                            "TECHDISER_SERIAL_NO": 6,
+                            "stepId": "ShipmentStep6",
+                            "isImportPayment": false,
+                            "isExportPayment": true,
+                            "stakeholderId": "Stakeholder_CNF",
+                            "isSelected": true,
+                            "documentId": [
+                                "ShipmentTypeDocument2",
+                                "ShipmentTypeDocument3",
+                                "ShipmentTypeDocument4"
+                            ]
+                        }
+                    ],
+                    "isDestinationRequired": 0
+                },
+                {
+                    "TECHDISER_ID": "ShipmentType2",
+                    "TECHDISER_SERIAL_NO": 2,
+                    "title": "CnF",
+                    "isDestinationRequired": 1,
+                    "description": "CnF Description",
+                    "isPortToPortTransport": true,
+                    "isDestinationPort": 0,
+                    "isSailingPort": 0,
+                    "isDeliveryPoint": 0,
+                    "importers": [
+                        {
+                            "TECHDISER_ID": "b469.4085f5ed31aae.74f3777851942.749926fb18a5b.7111557bf4d1d.fc3f11f414a39.56f1f638d",
+                            "stakeholderId": "Stakeholder_CNF",
+                            "bills": [
+                                {
+                                    "TECHDISER_ID": "8a90.40a0bcc3b5d9a.eb15b9f561d9a.de8eaf69c0ff.6bf66e59b07cd.9b342eee9b14.26946a5f7",
+                                    "title": "Bill Cnf CNF Imp",
+                                    "stepIds": [
+                                        "ShipmentStep4"
+                                    ],
+                                    "policy": "seaCNF",
+                                    "TD_IS_DELETED": 0
+                                }
+                            ]
+                        },
+                        {
+                            "TECHDISER_ID": "babf.697ec042ef85f.70f8ccd74a4ee.bd502b5f8f4d2.80ec366ff67e8.f1cd359ec29ec.886ad8a79",
+                            "stakeholderId": "Stakeholder_Inland_Transport",
+                            "bills": [
+                                {
+                                    "TECHDISER_ID": "b18d.1e3a27645af64.1442b33cf1a65.718adcf4a4c58.81c1be00a6437.e69e276ab0202.94b24679e",
+                                    "title": "Bill ILT CNF Imp",
+                                    "stepIds": [
+                                        "ShipmentStep6",
+                                        "ShipmentStep3"
+                                    ],
+                                    "policy": "inlandTransport",
+                                    "TD_IS_DELETED": 0
+                                }
+                            ]
+                        },
+                        {
+                            "TECHDISER_ID": "c9ff.e3b124474cabd.c8696b0c72cd3.f862d4f5b7475.65cd8d8a2e9a7.fa2293af4b015.dbb5ccfe4",
+                            "stakeholderId": "Stakeholder_Insurance",
+                            "bills": []
+                        },
+                        {
+                            "TECHDISER_ID": "c135.edfcf598de8c1.e6a9bd4c74c4d.e1674901fa206.1480ec635fcbd.f536183f130df.21b478969",
+                            "stakeholderId": "Stakeholder_PSI",
+                            "bills": []
+                        }
+                    ],
+                    "exporters": [
+                        {
+                            "TECHDISER_ID": "066e.8ca99f468ff2e.abd6d95c64129.736bd5a6215bc.6954cd1c869c0.d28c7c9bb9b39.d84e98f6",
+                            "stakeholderId": "Stakeholder_CNF",
+                            "bills": [
+                                {
+                                    "TECHDISER_ID": "fe89.af126a93ffb3d.056e9f66eaba.d21b1581691ce.7171151ba77fe.925e2174d1437.459f53b3a",
+                                    "title": "Bill cnf CNF Emp",
+                                    "stepIds": [
+                                        "ShipmentStep1",
+                                        "ShipmentStep2"
+                                    ],
+                                    "policy": "seaCNF",
+                                    "TD_IS_DELETED": 0
+                                }
+                            ]
+                        },
+                        {
+                            "TECHDISER_ID": "b81c.dd04db4c51da1.a0039e54fcb1c.de87f9cef55c5.6145e229627d8.8b2e038bb1824.d2949c5fc",
+                            "stakeholderId": "Stakeholder_Inland_Transport",
+                            "bills": []
+                        },
+                        {
+                            "TECHDISER_ID": "ba02.cbe7a73928c92.7c2e092e4018c.475ed9b93011b.66e9f5c77a281.28bb9d411b9f4.75cdf8368",
+                            "stakeholderId": "Stakeholder_Insurance",
+                            "bills": [
+                                {
+                                    "TECHDISER_ID": "9875.8b7f73a84eda5.5eda557e673ed.d044ceadbc944.8f8e2416b6d39.3e4c712da9ac4.6410ce441",
+                                    "title": "Bill Insu CNF Emp",
+                                    "stepIds": [
+                                        "ShipmentStep5"
+                                    ],
+                                    "policy": "seaCNF",
+                                    "TD_IS_DELETED": 0
+                                }
+                            ]
+                        },
+                        {
+                            "TECHDISER_ID": "7fc1.a4d5909914ea2.94e90e1e9a3a6.5e9037052c966.612ea13b34e1f.8cda1bbcabbec.64af7f97e",
+                            "stakeholderId": "Stakeholder_PSI",
+                            "bills": []
+                        }
+                    ],
+                    "steps": [
+                        {
+                            "TECHDISER_ID": "ShipmentTypeStep7",
+                            "TECHDISER_SERIAL_NO": 1,
+                            "stepId": "ShipmentStep2",
+                            "isImportPayment": false,
+                            "isExportPayment": true,
+                            "stakeholderId": "Stakeholder_CNF",
+                            "isSelected": true,
+                            "documentId": [
+                                "ShipmentTypeDocument1",
+                                "ShipmentTypeDocument2",
+                                "ShipmentTypeDocument4"
+                            ]
+                        },
+                        {
+                            "TECHDISER_ID": "ShipmentTypeStep8",
+                            "TECHDISER_SERIAL_NO": 2,
+                            "stepId": "ShipmentStep3",
+                            "isImportPayment": true,
+                            "isExportPayment": false,
+                            "stakeholderId": "Stakeholder_Inland_Transport",
+                            "isSelected": true,
+                            "documentId": [
+                                "ShipmentTypeDocument2",
+                                "ShipmentTypeDocument3",
+                                "ShipmentTypeDocument4"
+                            ]
+                        },
+                        {
+                            "TECHDISER_ID": "ShipmentTypeStep9",
+                            "TECHDISER_SERIAL_NO": 3,
+                            "stepId": "ShipmentStep4",
+                            "isImportPayment": true,
+                            "isExportPayment": false,
+                            "stakeholderId": "Stakeholder_CNF",
+                            "isSelected": true,
+                            "documentId": [
+                                "ShipmentTypeDocument1",
+                                "ShipmentTypeDocument3",
+                                "ShipmentTypeDocument4"
+                            ]
+                        },
+                        {
+                            "TECHDISER_ID": "ShipmentTypeStep10",
+                            "TECHDISER_SERIAL_NO": 4,
+                            "stepId": "ShipmentStep5",
+                            "isImportPayment": false,
+                            "isExportPayment": true,
+                            "stakeholderId": "Stakeholder_Insurance",
+                            "isSelected": true,
+                            "documentId": [
+                                "ShipmentTypeDocument2",
+                                "ShipmentTypeDocument3",
+                                "ShipmentTypeDocument4"
+                            ]
+                        },
+                        {
+                            "TECHDISER_ID": "ShipmentTypeStep11",
+                            "TECHDISER_SERIAL_NO": 5,
+                            "stepId": "ShipmentStep6",
+                            "isImportPayment": true,
+                            "isExportPayment": false,
+                            "stakeholderId": "Stakeholder_Inland_Transport",
+                            "isSelected": true,
+                            "documentId": [
+                                "ShipmentTypeDocument2",
+                                "ShipmentTypeDocument3",
+                                "ShipmentTypeDocument4"
+                            ]
+                        },
+                        {
+                            "TECHDISER_ID": "936c.314fbde2ce5a4.0649de4299dcf.819b6211d228e.a322dc03569b7.4c0eb62652257.843697c78",
+                            "TECHDISER_SERIAL_NO": 6,
+                            "stepId": "ShipmentStep1",
+                            "isImportPayment": false,
+                            "isExportPayment": true,
+                            "stakeholderId": "Stakeholder_CNF",
+                            "isSelected": true,
+                            "documentId": [
+                                "ShipmentTypeDocument2",
+                                "ShipmentTypeDocument3",
+                                "ShipmentTypeDocument4"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "ShipmentType3",
+                    "TECHDISER_SERIAL_NO": 3,
+                    "title": "FOB",
+                    "isDestinationRequired": 0,
+                    "description": "FOB Description",
+                    "isPortToPortTransport": false,
+                    "isDestinationPort": 0,
+                    "isSailingPort": 1,
+                    "isDeliveryPoint": 0,
+                    "importers": [
+                        {
+                            "TECHDISER_ID": "9096.0ec3a8b5f0fb1.da959b33d3b3.c79f7e10f3aae.7cc9b8ddc15e4.496107def5e3e.7506a9cda",
+                            "stakeholderId": "Stakeholder_CNF",
+                            "bills": [
+                                {
+                                    "TECHDISER_ID": "7974.e2abd13b40dc8.4ba847cf756d9.867715ed308ac.21836e11fd774.f0558692461b3.53623ec8c",
+                                    "title": "Bill cnf Type 3 Imp",
+                                    "stepIds": [
+                                        "ShipmentStep2",
+                                        "ShipmentStep3"
+                                    ],
+                                    "policy": "seaCNF",
+                                    "TD_IS_DELETED": 0
+                                }
+                            ]
+                        },
+                        {
+                            "TECHDISER_ID": "02fa.a89329635989.028cce55f41b.e3299e2f9c2e0.15acec51874c1.e6b15146f1744.f6c3288ef",
+                            "stakeholderId": "Stakeholder_Inland_Transport",
+                            "bills": []
+                        },
+                        {
+                            "TECHDISER_ID": "5987.c2f2047d18d2d.ea9bd76b87a3.3596949a7526.7b73e008f656c.631e32dc1f0f5.920ee0a03",
+                            "stakeholderId": "Stakeholder_Insurance",
+                            "bills": [
+                                {
+                                    "TECHDISER_ID": "d247.c2fafaead8ac.6f9d22186d70a.0f977d774aab.888e2d2c657d6.64567044c1310.8414c6ddd",
+                                    "title": "Bill Insu Type3 Imp",
+                                    "stepIds": [
+                                        "ShipmentStep5"
+                                    ],
+                                    "policy": "airCNF",
+                                    "TD_IS_DELETED": 0
+                                }
+                            ]
+                        },
+                        {
+                            "TECHDISER_ID": "a036.6229617d7ebb3.5e8d0381e4b5f.53f5d44d4fc8c.4bac36a3a3dba.eacc1fcd47b9e.e26be068b",
+                            "stakeholderId": "Stakeholder_PSI",
+                            "bills": []
+                        }
+                    ],
+                    "exporters": [
+                        {
+                            "TECHDISER_ID": "0b7b.765272473309e.4541d5e20aee.73f89176a221c.5ebc5ec9f55ae.528c7fecac9cb.f33dc8a9d",
+                            "stakeholderId": "Stakeholder_CNF",
+                            "bills": []
+                        },
+                        {
+                            "TECHDISER_ID": "cf94.854bc2e126271.654cc487415d3.6101959ea1248.90b938552c7f0.b1a609f2d9400.3bc56dd89",
+                            "stakeholderId": "Stakeholder_Inland_Transport",
+                            "bills": [
+                                {
+                                    "TECHDISER_ID": "0ddd.369bd6465dea6.df0121a51b285.01b41255dc963.c7ef0d8d8c2fa.505cc8197ee33.5fe9e4e26",
+                                    "title": "Bill ILT type3 Exp",
+                                    "stepIds": [
+                                        "ShipmentStep6",
+                                        "ShipmentStep4"
+                                    ],
+                                    "policy": "seaCNF",
+                                    "TD_IS_DELETED": 0
+                                }
+                            ]
+                        },
+                        {
+                            "TECHDISER_ID": "4ca1.8504096ada37e.95f0ad20dbd2e.16ae9d63d0385.0359b809ba4f9.4b5d28fe807b.dfbfdd777",
+                            "stakeholderId": "Stakeholder_Insurance",
+                            "bills": []
+                        },
+                        {
+                            "TECHDISER_ID": "ee64.6fd17df98a3cf.fddddc8814406.c4631163d913d.a01ba7ab2d742.3cf1057834070.4fef2d25b",
+                            "stakeholderId": "Stakeholder_PSI",
+                            "bills": [
+                                {
+                                    "TECHDISER_ID": "1ad8.176cd0c78e62d.37e34d4750dbb.b64df87bcbd52.2485c1177eac7.9b8ca4aa78501.40b7f379e",
+                                    "title": "Bill PSI type3 Exp",
+                                    "stepIds": [
+                                        "ShipmentStep1"
+                                    ],
+                                    "policy": "seaCNF",
+                                    "TD_IS_DELETED": 0
+                                }
+                            ]
+                        }
+                    ],
+                    "steps": [
+                        {
+                            "TECHDISER_ID": "ShipmentTypeStep12",
+                            "TECHDISER_SERIAL_NO": 1,
+                            "stepId": "ShipmentStep3",
+                            "isImportPayment": true,
+                            "isExportPayment": false,
+                            "stakeholderId": "Stakeholder_CNF",
+                            "isSelected": true,
+                            "documentId": [
+                                "ShipmentTypeDocument1",
+                                "ShipmentTypeDocument2",
+                                "ShipmentTypeDocument5"
+                            ]
+                        },
+                        {
+                            "TECHDISER_ID": "ShipmentTypeStep13",
+                            "TECHDISER_SERIAL_NO": 2,
+                            "stepId": "ShipmentStep4",
+                            "isImportPayment": false,
+                            "isExportPayment": true,
+                            "stakeholderId": "Stakeholder_Inland_Transport",
+                            "isSelected": true,
+                            "documentId": [
+                                "ShipmentTypeDocument1",
+                                "ShipmentTypeDocument2",
+                                "ShipmentTypeDocument5"
+                            ]
+                        },
+                        {
+                            "TECHDISER_ID": "ShipmentTypeStep14",
+                            "TECHDISER_SERIAL_NO": 3,
+                            "stepId": "ShipmentStep5",
+                            "isImportPayment": true,
+                            "isExportPayment": false,
+                            "stakeholderId": "Stakeholder_Insurance",
+                            "isSelected": true,
+                            "documentId": [
+                                "ShipmentTypeDocument1",
+                                "ShipmentTypeDocument2",
+                                "ShipmentTypeDocument5"
+                            ]
+                        },
+                        {
+                            "TECHDISER_ID": "ShipmentTypeStep15",
+                            "TECHDISER_SERIAL_NO": 4,
+                            "stepId": "ShipmentStep6",
+                            "isImportPayment": false,
+                            "isExportPayment": true,
+                            "stakeholderId": "Stakeholder_Inland_Transport",
+                            "isSelected": true,
+                            "documentId": [
+                                "ShipmentTypeDocument1",
+                                "ShipmentTypeDocument2",
+                                "ShipmentTypeDocument5"
+                            ]
+                        },
+                        {
+                            "TECHDISER_ID": "ShipmentTypeStep16",
+                            "TECHDISER_SERIAL_NO": 5,
+                            "stepId": "ShipmentStep2",
+                            "isImportPayment": true,
+                            "isExportPayment": false,
+                            "stakeholderId": "Stakeholder_CNF",
+                            "isSelected": true,
+                            "documentId": [
+                                "ShipmentTypeDocument1",
+                                "ShipmentTypeDocument2",
+                                "ShipmentTypeDocument5"
+                            ]
+                        },
+                        {
+                            "TECHDISER_ID": "746a.58bf093d91e3d.ae7b9ca45b7bf.93e51c003c9aa.dfa13efde4d6d.a8744b8623f8c.af701e08b",
+                            "TECHDISER_SERIAL_NO": 6,
+                            "stepId": "ShipmentStep1",
+                            "isImportPayment": false,
+                            "isExportPayment": true,
+                            "stakeholderId": "Stakeholder_PSI",
+                            "isSelected": true,
+                            "documentId": [
+                                "ShipmentTypeDocument3",
+                                "ShipmentTypeDocument4",
+                                "ShipmentTypeDocument5"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

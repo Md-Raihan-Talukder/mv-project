@@ -1,0 +1,31 @@
+#systemsettings {
+  .selectedIssueType,
+  .selectedIssue {
+    background-color: rgba(47, 183, 255, 0.46);
+  }
+  .main-sidenav {
+    min-height: fill-available !important;
+    //min-height: -moz-fill-available !important;
+    width: 300px;
+    min-width: 300px;
+    max-width: 300px;
+    z-index: 51;
+    //box-shadow: $whiteframe-shadow-8dp;
+
+    .header {
+      height: 45px;
+      min-height: 45px;
+      max-height: 45px;
+      padding: 5px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+    }
+
+    .content {
+      padding: 20px 0px;
+      font-size: 16px;
+    }
+    .todo-item {
+      padding: 10px;
+    }
+  }
+}

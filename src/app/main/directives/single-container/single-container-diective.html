@@ -1,0 +1,272 @@
+<div layout="row" layout-align="start" style="min-height: 100%; height:100%; overflow:hidden;">
+    <div class="left w-230 border-right" style="min-height: 100%; height:100%; max-height: 100%;">
+        <ms-widget layout="column" style="padding: 0; min-height: 100%; height:100%; width: 100% " layout-align="start top">
+
+            <ms-widget-front style="min-height: 100%; height:100%; width: 100%;" layout="column" layout-align="start top">
+                <div class="p-10 b h-40 grey-200-bg font-size-16" layout="row" layout-align="start center">
+                    Packing Policy
+                </div>
+                <div class="white-bg" style="min-height: 100%; height:100%; width: 100%;" ms-scroll>
+                    <div style="min-height: 2000px;">
+
+                        <div class="p-10 border-bottom">
+                            <div layout="row" layout-align="start center">
+                                <span class="secondary-text w-95 mr-5">Receivable QTY</span>
+                                <span class="mr-5 secondary-text">:</span>
+                                <md-input-container md-no-float class="md-block m-0 p-0" aria-label="startingNo">
+                                    <input ng-change="vm.isChange = 1; vm.onUpdate()" ng-model="vm.packingpolicy.quantity" type="number" aria-label="startingNo">
+                                </md-input-container>
+                            </div>
+                            <div class="mt-10" layout="row" layout-align="space-between">
+                                <div layout="row" layout-align="start center">
+                                    <md-button ng-click="vm.addAssort()" class="md-accent md-primary b">Assort</md-button>
+                                </div>
+                                <div layout="row" layout-align="start center">
+                                    <md-button ng-click="vm.generateSingleContainerCommInvoice(true); vm.isChange = 1" class="md-accent md-primary b">Generate</md-button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="p-10 b h-40 grey-200-bg font-size-16" layout="row" layout-align="start center">
+                            Packing Type
+                        </div>
+                        <div ng-repeat="packingType in vm.packingTypes">
+                            <div ng-click="vm.selectPackingType(packingType)" class="p-10 h-90 border-bottom cursor-pointer" ng-class="{'blue-100-bg': vm.selectedPackingType == packingType}">
+                                <div layout="row" layout-align="start center">
+                                    <span class="secondary-text w-75 mr-5">Color</span>
+                                    <span class="mr-5 secondary-text">:</span>
+                                    <span ng-if="packingType.colorId">{{vm.getColorById(packingType.colorId)}}</span>
+                                    <span ng-if="packingType.colorIds">All Color</span>
+                                </div>
+                                <div layout="row" layout-align="start center">
+                                    <span class="secondary-text w-75 mr-5">Size</span>
+                                    <span class="mr-5 secondary-text">:</span>
+                                    <span ng-if="packingType.sizeId">{{vm.getSizeById(packingType.sizeId)}}</span>
+                                    <span ng-if="packingType.sizeIds">All Size</span>
+                                </div>
+                                <div layout="row" layout-align="start center">
+                                    <span class="secondary-text w-75 mr-5">Amount</span>
+                                    <span class="mr-5 secondary-text">:</span>
+                                    <span>{{packingType.amount}}</span>
+                                </div>
+                                <div layout="row" layout-align="start center">
+                                    <span class="secondary-text w-75 mr-5">No of Packet</span>
+                                    <span class="mr-5 secondary-text">:</span>
+                                    <span>{{packingType.noOfPacket}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ms-widget-front>
+        </ms-widget>
+    </div>
+    <div class="right border" flex style="min-height: 100%; height:100%; max-height: 100%; width: 100%;" layout="column" layout-align="start top">
+
+        <ms-widget layout="column" style="padding: 0; min-height: 100%; height:100%; width: 100% " layout-align="start top">
+
+            <ms-widget-front style="min-height: 100%; height:100%; width: 100%;" layout="column" layout-align="start top">
+                <div class="h-40 p-10 grey-200-bg b  font-size-16" layout="row" layout-align="start center">
+                    <div layout="row" layout-align="start center">
+                        <span class="secondary-text mr-5">Color: </span>
+                        <span class="mr-10" ng-if="vm.selectedPackingType.colorId">{{vm.selectedPackingType.colorId}}</span>
+                        <span class="mr-10" ng-if="vm.selectedPackingType.colorIds">All Color</span>
+                        <span class="secondary-text mr-5">Size: </span>
+                        <span class="mr-10" ng-if="vm.selectedPackingType.sizeId">{{vm.selectedPackingType.sizeId}}</span>
+                        <span class="mr-10" ng-if="vm.selectedPackingType.sizeIds">All Size</span>
+                        <span class="secondary-text mr-5">Amount: </span>
+                        <span class="mr-10">{{vm.selectedPackingType.amount}}</span>
+                        <span class="secondary-text mr-5">No of Packet: </span>
+                        <span class="mr-10">{{vm.selectedPackingType.noOfPacket}}</span>
+                    </div>
+                </div>
+                <div class="white-bg" style="min-height: 100%; height:100%; width: 100%;" ms-scroll>
+
+                    <div style="min-height: 2000px;">
+                        <div class="p-10 borde-bottom mb-10 font-size-16" layout="row" layout-align="start center" flex="100">
+                            <div layout="column" flex="35">
+                                <div layout="row" layout-align="start center">
+                                    <span class="secondary-text w-150">Receiveable Amount</span>
+                                    <span class="secondary-text mr-5">:</span>
+                                    <span class="mr-20">{{vm.selectedPackingType.amount}}</span>
+                                </div>
+                                <div layout="row" layout-align="start center">
+                                    <span class="secondary-text w-150">Invoice Amount</span>
+                                    <span class="mr-5">:</span>
+                                    <span class="mr-20">{{vm.selectedPackingType.amount}}</span>
+                                </div>
+                                <div layout="row" layout-align="start center">
+                                    <span class="secondary-text w-150">Box Range</span>
+                                    <span class="mr-5">:</span>
+                                    <span class="mr-20">100 / Group</span>
+                                </div>
+                            </div>
+                            <div layout="column" flex="35">
+                                <div layout="row" layout-align="start center">
+                                    <span class="secondary-text w-130">Lot No.</span>
+                                    <span class="secondary-text mr-5">:</span>
+                                    <md-input-container md-no-float class="md-block m-0 p-0" aria-label="startingNo">
+                                        <input ng-change="vm.isChange = 1; vm.setLotNo(vm.packingpolicy.startingLot); vm.updateChangedPacks('lot', vm.packingpolicy.startingLot); vm.onUpdate()" ng-model="vm.packingpolicy.startingLot" aria-label="lotNo">
+                                    </md-input-container>
+                                </div>
+                                <div layout="row" layout-align="start center">
+                                    <span class="secondary-text w-130">Starting Box No.</span>
+                                    <span class="secondary-text mr-5">:</span>
+                                    <md-input-container md-no-float class="md-block m-0 p-0" aria-label="startingNo">
+                                        <input ng-change="vm.isChange = 1; vm.changeContainerGroup(vm.packingpolicy.startingBoxNo); vm.onUpdate()" ng-model="vm.packingpolicy.startingBoxNo" type="number" aria-label="startingNo">
+                                        <!-- <input ng-change="vm.changeContainerGroup(vm.selectedPackingType, vm.startingBoxNo)" ng-model="vm.startingBoxNo" type="number" aria-label="startingNo"> -->
+                                    </md-input-container>
+                                </div>
+                                <div layout="row" layout-align="start center">
+                                    <span class="secondary-text w-130">Amount per Box</span>
+                                    <span class="mr-5">:</span>
+                                    <span class="mr-20">{{vm.selectedPackingType.quantity}}</span>
+                                </div>
+                                <div layout="row" layout-align="start center">
+                                    <span class="secondary-text w-190">Item / Merchandise Pack </span>
+                                    <span class="mr-5">:</span>
+                                    <md-input-container md-no-float class="md-block m-0 p-0 w-70">
+                                        <input ng-change="vm.isChange = 1; vm.onUpdate()" ng-model="vm.packingpolicy.itemPerMerchandisePack" aria-label="startingNo" type="number">
+                                    </md-input-container>
+                                    <!-- <span class="mr-20">{{vm.packingpolicy.itemPerMerchandisePack}}</span> -->
+                                </div>
+                            </div>
+                            <div layout="column" flex="30">
+                                <div layout="row" layout-align="start center">
+                                    <span class="secondary-text w-130">Net Weight</span>
+                                    <span class="secondary-text mr-5">:</span>
+                                    <md-input-container md-no-float class="md-block m-0 p-0" aria-label="startingNo">
+                                        <input ng-change="vm.isChange = 1; vm.setNetWeight(vm.packingpolicy.nw); vm.updateChangedPacks('nw', vm.packingpolicy.nw);  vm.onUpdate()" type="number" style="text-align: center" ng-model="vm.packingpolicy.nw" aria-label="startingNo">
+                                        <!-- <input ng-change="vm.setNetWeight(vm.nw)" style="text-align: center" ng-model="vm.nw" aria-label="startingNo"> -->
+                                    </md-input-container>
+                                    <span class="secondary-text">kgs</span>
+                                </div>
+                                <div layout="row" layout-align="start center">
+                                    <span class="secondary-text w-130">Gross Weight</span>
+                                    <span class="secondary-text mr-5">:</span>
+                                    <md-input-container md-no-float class="md-block m-0 p-0" aria-label="startingNo">
+                                        <input ng-change="vm.isChange = 1; vm.setGrossWeight(vm.packingpolicy.gw); vm.updateChangedPacks('gw', vm.packingpolicy.gw); vm.onUpdate()" type="number" style="text-align: center" ng-model="vm.packingpolicy.gw" aria-label="startingNo">
+                                        <!-- <input ng-change="vm.setGrossWeight(vm.gw)" style="text-align: center" ng-model="vm.gw"  aria-label="startingNo"> -->
+                                    </md-input-container>
+                                    <span class="secondary-text">kgs</span>
+                                </div>
+                                <div layout="row" layout-align="start center">
+                                    <span class="secondary-text w-130">Measurement</span>
+                                    <span class="mr-5">:</span>
+                                    <md-input-container md-no-float class="md-block m-0 p-0" aria-label="startingNo">
+                                        <input ng-change="vm.isChange = 1; vm.setLength(vm.packingpolicy.measurement.measLength); vm.updateChangedPacks('measLength', vm.packingpolicy.measLength); vm.onUpdate()" type="number" style="text-align: center" ng-model="vm.packingpolicy.measurement.measLength" placeholder="L" aria-label="startingNo">
+                                        <!-- <input ng-change="vm.setLength(vm.measLength)" style="text-align: center" ng-model="vm.measLength" placeholder="L"  aria-label="startingNo"> -->
+                                    </md-input-container>
+                                    <md-icon class="grey-500-fg s14" md-font-icon="icon-close"></md-icon>
+                                    <md-input-container md-no-float class="md-block m-0 p-0" aria-label="startingNo">
+                                        <input ng-change="vm.isChange = 1; vm.setWidth(vm.packingpolicy.measurement.measWidth); vm.updateChangedPacks('measWidth', vm.packingpolicy.measWidth); vm.onUpdate()" type="number" style="text-align: center" ng-model="vm.packingpolicy.measurement.measWidth" placeholder="W" aria-label="startingNo">
+                                        <!-- <input ng-change="vm.setWidth(vm.measWidth)" style="text-align: center" ng-model="vm.measWidth" placeholder="W"  aria-label="startingNo"> -->
+                                    </md-input-container>
+                                    <md-icon class="grey-500-fg s14" md-font-icon="icon-close"></md-icon>
+                                    <md-input-container md-no-float class="md-block m-0 p-0" aria-label="startingNo">
+                                        <input ng-change="vm.isChange = 1; vm.setHeight(vm.packingpolicy.measurement.measHeight); vm.updateChangedPacks('measHeight', vm.packingpolicy.measHeight); vm.onUpdate()" type="number" style="text-align: center" ng-model="vm.packingpolicy.measurement.measHeight" placeholder="H" aria-label="startingNo">
+                                        <!-- <input ng-change="vm.setHeight(vm.measHeight)" style="text-align: center" ng-model="vm.measHeight" placeholder="H" aria-label="startingNo"> -->
+                                    </md-input-container>
+                                    <span class="secondary-text">cms</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="border-top" layout="row" flex="100">
+                            <div ng-if="vm.thousandRanges.length > 0" class="w-130 border-right mr-10" layout="column" flex="15">
+                                <div class="h-30 grey-200-bg b p-10" layout="row" layout-align="start center">
+                                    Range
+                                </div>
+                                <div class="grey-100-bg" ng-repeat="thousandRange in vm.thousandRanges" layout="column">
+                                    <div ng-click="vm.selectThousandRange(thousandRange)" class="p-5 border-bottom cursor-pointer" ng-class="{'blue-100-bg': vm.selectedThousandRange == thousandRange}" layout="column" layout-align="start">
+                                        <div layout="row" layout-align="start center">
+                                            <span class="mr-5">{{thousandRange.startNo}}</span>
+                                            <span class="mr-5">-</span>
+                                            <span class="">{{thousandRange.endNo}}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-130 border-right mr-10" layout="column" flex="15">
+                                <div class="h-30 grey-200-bg b p-10" layout="row" layout-align="start center">
+                                    Range
+                                </div>
+                                <div class="grey-100-bg" ng-repeat="containerGroup in vm.selectedPackingType.containerGroups" layout="column" ng-if="vm.selectedThousandRange == undefined || (vm.selectedThousandRange.startNo <= containerGroup.startNo && vm.selectedThousandRange.endNo >= containerGroup.endNo)">
+                                    <div ng-click="vm.selectContainerGroup(containerGroup)" class="p-5 border-bottom cursor-pointer" ng-class="{'blue-100-bg': vm.selectedContainerGroup == containerGroup}" layout="column" layout-align="start">
+                                        <div layout="row" layout-align="start center">
+                                            <span class="mr-5">{{containerGroup.startNo}}</span>
+                                            <span class="mr-5">-</span>
+                                            <span class="">{{containerGroup.endNo}}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div flex class="mr-10">
+                                <table style="width: 100%; border-color: #0000001f" border="1" cellpadding="5" cellspacing="0">
+                                    <tr align="center" class="grey-200-bg">
+                                        <td>
+                                            Box No
+                                        </td>
+                                        <td>
+                                            Amount per Box
+                                        </td>
+                                        <td>
+                                            Lot No
+                                        </td>
+                                        <td>
+                                            N.W (KGS)
+                                        </td>
+                                        <td>
+                                            G.W (KGS)
+                                        </td>
+                                        <td>
+                                            MEAS (CMS)
+                                        </td>
+                                    </tr>
+                                    <tr ng-repeat="shippingPacket in vm.selectedContainerGroup.shippingPackets" align="center" ng-click="vm.selectShippingPacket(shippingPacket)" ng-class="{'blue-100-bg': vm.selectedShippingPacket == shippingPacket}">
+                                        <td>
+                                            {{shippingPacket.packNo}}
+                                        </td>
+                                        <td>
+                                            {{shippingPacket.roll}}
+                                        </td>
+                                        <td>
+                                            <md-input-container md-no-float class="md-block m-0 p-0" aria-label="startingNo">
+                                                <input ng-model="shippingPacket.lot" ng-change="vm.isChange = 1; vm.addToChangedPacks(shippingPacket); vm.setLotNoForAssortPack(shippingPacket.lot, shippingPacket.packNo); vm.onUpdate()" style="text-align: center" placeholder="" aria-label="startingNo">
+                                            </md-input-container>
+                                        </td>
+                                        <td>
+                                            <md-input-container md-no-float class="md-block m-0 p-0" aria-label="startingNo">
+                                                <input ng-model="shippingPacket.nw" ng-change="vm.isChange = 1; vm.addToChangedPacks(shippingPacket); vm.onUpdate()" type="number" style="text-align: center" placeholder="" aria-label="startingNo">
+                                            </md-input-container>
+                                        </td>
+                                        <td>
+                                            <md-input-container md-no-float class="md-block m-0 p-0" aria-label="startingNo">
+                                                <input ng-model="shippingPacket.gw" ng-change="vm.isChange = 1; vm.addToChangedPacks(shippingPacket); vm.onUpdate()" type="number" style="text-align: center" placeholder="" aria-label="startingNo">
+                                            </md-input-container>
+                                        </td>
+                                        <td>
+                                            <div layout="row" layout-align="start center">
+                                                <md-input-container md-no-float class="md-block m-0 p-0 w-60" aria-label="startingNo">
+                                                    <input ng-model="shippingPacket.measLength" ng-change="vm.isChange = 1; vm.addToChangedPacks(shippingPacket); vm.onUpdate()" type="number" style="text-align: center" placeholder="L">
+                                                </md-input-container>
+                                                <md-icon class="grey-500-fg s14" md-font-icon="icon-close"></md-icon>
+                                                <md-input-container md-no-float class="md-block m-0 p-0 w-60" aria-label="startingNo">
+                                                    <input ng-model="shippingPacket.measWidth" ng-change="vm.isChange = 1; vm.addToChangedPacks(shippingPacket); vm.onUpdate()" type="number" style="text-align: center" placeholder="W">
+                                                </md-input-container>
+                                                <md-icon class="grey-500-fg s14" md-font-icon="icon-close"></md-icon>
+                                                <md-input-container md-no-float class="md-block m-0 p-0 w-60" aria-label="startingNo">
+                                                    <input ng-model="shippingPacket.measHeight" ng-change="vm.isChange = 1; vm.addToChangedPacks(shippingPacket); vm.onUpdate()" type="number" style="text-align: center" placeholder="H">
+                                                </md-input-container>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ms-widget-front>
+        </ms-widget>
+    </div>
+
+</div>

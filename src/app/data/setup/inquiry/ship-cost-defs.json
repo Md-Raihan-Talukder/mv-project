@@ -1,0 +1,20 @@
+{
+    "data": [
+        {
+            "TECHDISER_ID": "ship_cost_defs_1",
+            "title": "Container Calculation"
+        },
+        {
+            "TECHDISER_ID": "ship_cost_defs_2",
+            "title": "X-Land Costing"
+        },
+        {
+            "TECHDISER_ID": "ship_cost_defs_3",
+            "title": "Freight Costing"
+        },
+        {
+            "TECHDISER_ID": "ship_cost_defs_4",
+            "title": "Inland Costing"
+        }
+    ]
+}

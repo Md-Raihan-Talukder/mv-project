@@ -1,0 +1,120 @@
+#consumption {
+  .delete-button-visible {
+    display: none;
+  }
+
+  .visible-item:hover .delete-button-visible {
+    display: block;
+  }
+  .quantity-def-table {
+    .quantity-def-table-head {
+      .quantity-def-table-head-column {
+        input {
+          height: 100%;
+          width: 100%;
+          border: 0;
+          text-align: center;
+        }
+
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+          margin: 0;
+        }
+      }
+    }
+
+    .quantity-def-table-body {
+      .quantity-def-table-body-column {
+        input {
+          height: 100%;
+          width: 100%;
+          border: 0;
+          text-align: center;
+        }
+
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+          margin: 0;
+        }
+      }
+    }
+  }
+  .button-color .md-button {
+    background-color: #007fa7 !important;
+    color: white;
+  }
+  .button-color .md-button[disabled] {
+    background-color: #cccccc !important;
+    background-color: transparent;
+    color: rgb(0, 0, 0);
+    cursor: not-allowed;
+  }
+  .header-color {
+    background-color: #dfdfdf !important;
+  }
+  .content-color {
+    background-color: #f5f5f5 !important;
+  }
+  .handle {
+    display: block;
+  }
+  .handle1 {
+    display: none;
+    position: absolute;
+    height: 100%;
+    width: 48px;
+    top: 0;
+    left: 0;
+    cursor: move;
+    text-align: center;
+
+    md-icon {
+      display: block;
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+  .consumption-dialog {
+    width: 800px !important;
+    min-width: 800px !important;
+    max-width: 800px !important;
+    height: 700px !important;
+    min-height: 700px !important;
+    max-height: 700px !important;
+  }
+
+  .content-bg {
+    background-color: #ffffff !important;
+  }
+  .side-menu {
+    height: 700px;
+    min-height: 700px !important;
+    max-height: 700px !important;
+    -webkit-box-shadow: 5px 3px 6px -6px black;
+    -moz-box-shadow: 5px 3px 6px -6px black;
+    box-shadow: 5px 3px 6px -6px black;
+  }
+  .pcm-dialog {
+    width: 1000px !important;
+    min-width: 1000px !important;
+    max-width: 1000px !important;
+    height: 800px !important;
+    min-height: 800px !important;
+    max-height: 800px !important;
+    background-color: #ffffff !important;
+  }
+  .dot-underline {
+    border-bottom: 1px dotted #000;
+    text-decoration: none;
+  }
+  .md-tab {
+    text-transform: none;
+  }
+}

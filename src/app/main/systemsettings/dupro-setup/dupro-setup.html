@@ -1,0 +1,178 @@
+<div id="dupro-setup" layout="row" layout-align="start top" style="min-height: 100%; height:100%; overflow:hidden; ">
+
+
+    <div class="left" flex style="min-height: 100%; height:100%; max-height: 100%; width: 100%;" layout="column" layout-align="start top">
+
+        <ms-widget layout="column" style="padding: 0; min-height: 100%; height:100%; width: 100%" layout-align="start top">
+
+            <ms-widget-front style="min-height: 100%; height:100%; width: 100%;" layout="column" layout-align="start top">
+
+                <!-- <div class="h-35 font-size-16 pl-5 grey-200-bg border-bottom" layout="row" layout-align="space-between center">
+            <div class="ml-10" layout="row">
+              <span> Title </span>
+            </div>
+            <div class="mr-20">
+              <md-button ng-click="vm.save()" class="cool-btn-md"> Save </md-button>
+            </div>
+          </div> -->
+
+                <div style="height: calc(100% - 50px);
+              max-height: calc(100% - 50px);
+              min-height: calc(100% - 50px);
+              width: 100%;" ms-scroll>
+
+                    <div class="" layout="row">
+                        <div class="left" flex style="min-height: 100%; height:100%; max-height: 100%; width: 100%;" layout="column" layout-align="start top">
+
+                            <ms-widget layout="column" style="padding: 0; min-height: 100%; height:100%; width: 100%" layout-align="start top">
+
+                                <ms-widget-front style="min-height: 100%; height:100%; width: 100%;" layout="column" layout-align="start top">
+
+                                    <div class="" layout="column">
+                                        <!--  -->
+                                        <div class="content">
+                                            <md-tabs md-dynamic-height class="tabs" md-selected="0">
+                                                <md-tab label="Inspection">
+                                                    <div layout="column" flex>
+                                                        <!-- Inspection start -->
+                                                        <div class="border-top">
+
+                                                            <div class="h-35 pl-5 border-bottom" layout="row" layout-align="space-between center">
+                                                                <div layout="row" layout-align="start center">
+                                                                    <div class="font-size-16 pl-5 mr-50">
+                                                                        DUPRO Inspection
+                                                                    </div>
+                                                                    <div>
+                                                                        <md-button ng-click="vm.addDuproInspection()" class="cool-btn-md">Add</md-button>
+                                                                    </div>
+                                                                </div>
+                                                                <div layout="column" layout-align="center center" class="mr-10">
+                                                                    <md-button ng-click="vm.saveDuproInspection()" class="cool-btn-md">Save</md-button>
+                                                                </div>
+                                                            </div>
+                                                            <div layout="column" layout-align="start start">
+
+                                                                <div ng-repeat="duproInspection in vm.duproInspections" layout="row" layout-align="start top">
+                                                                    <div layout="row" flex="100" class="p-5 m-5 b row-hover">
+                                                                        <div flex>
+                                                                            <div layout="row" layout-wrap>
+                                                                                <div class="p-5 pr-5">
+                                                                                    <span class="pr-5 grey-600-fg">Title : </span> {{duproInspection.title}}
+                                                                                </div>
+                                                                                <div class="p-5 pr-5">
+                                                                                    <span class="pr-5 grey-600-fg">Code : </span> {{duproInspection.code}}
+                                                                                </div>
+                                                                                <div class="p-5 pr-5">
+                                                                                    <span class="pr-5 grey-600-fg">Description : </span> {{duproInspection.description}}
+                                                                                </div>
+                                                                                <div class="p-5 pr-5">
+                                                                                    <span class="pr-5 grey-600-fg">Category : </span> {{vm.getCatalogTitle(duproInspection.catalogId)}}
+                                                                                </div>
+                                                                                <div class="p-5 pr-5">
+                                                                                    <span class="pr-5 grey-600-fg">Job : </span> {{vm.getJobProcessTitle(duproInspection, 'job')}}
+                                                                                </div>
+                                                                                <div ng-if="duproInspection.isOnlyJob == 0" class="p-5 pr-5">
+                                                                                    <span class="pr-5 grey-600-fg">Process : </span> {{vm.getJobProcessTitle(duproInspection, 'process')}}
+                                                                                </div>
+                                                                                <div class="p-5 pr-5">
+                                                                                    <span class="pr-5 grey-600-fg">Hourly Frequency : </span> {{duproInspection.hourlyFrequency}}
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div layout="column" layout-align="center center" class="p-5">
+                                                                            <md-button ng-click="vm.addDuproInspection(duproInspection)" class="cool-btn-sm">Edit</md-button>
+                                                                        </div>
+                                                                        <div layout="column" layout-align="center center" class="p-5">
+                                                                            <md-icon ng-click="vm.removeDuproInspection(duproInspection)" md-font-icon="icon-close" class="icon s20 b cursor-pointer red-500-fg"></md-icon>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                        <!-- Inspection end -->
+                                                    </div>
+                                                </md-tab>
+                                                <md-tab label="QC">
+                                                    <div layout="column" flex>
+
+                                                        <!-- QC start -->
+                                                        <div class="border-top">
+
+                                                            <div class="h-35 pl-5 border-bottom" layout="row" layout-align="space-between center">
+                                                                <div layout="row" layout-align="start center">
+                                                                    <div class="font-size-16 pl-5 mr-50">
+                                                                        DUPRO QC
+                                                                    </div>
+                                                                    <div>
+                                                                        <md-button ng-click="vm.addDeproQc()" class="cool-btn-md">Add</md-button>
+                                                                    </div>
+                                                                </div>
+                                                                <div layout="column" layout-align="center center" class="mr-10">
+                                                                    <md-button ng-click="vm.saveDuproQc()" class="cool-btn-md">Save</md-button>
+                                                                </div>
+                                                            </div>
+                                                            <div layout="column" layout-align="start start">
+
+                                                                <div ng-repeat="duproQc in vm.duproQcs" layout="row" layout-align="start top">
+                                                                    <div layout="row" flex="100" class="p-5 m-5 b row-hover">
+                                                                        <div flex>
+                                                                            <div layout="row" layout-wrap>
+                                                                                <div class="p-5 pr-5">
+                                                                                    <span class="pr-5 grey-600-fg">Title : </span> {{duproQc.title}}
+                                                                                </div>
+                                                                                <div class="p-5 pr-5">
+                                                                                    <span class="pr-5 grey-600-fg">Code : </span> {{duproQc.code}}
+                                                                                </div>
+                                                                                <div class="p-5 pr-5">
+                                                                                    <span class="pr-5 grey-600-fg">Description : </span> {{duproQc.description}}
+                                                                                </div>
+                                                                                <div class="p-5 pr-5">
+                                                                                    <span class="pr-5 grey-600-fg">Category : </span> {{vm.getCatalogTitle(duproQc.catalogId)}}
+                                                                                </div>
+                                                                                <div class="p-5 pr-5">
+                                                                                    <span class="pr-5 grey-600-fg">Job : </span> {{vm.getJobProcessTitle(duproQc, 'job')}}
+                                                                                </div>
+                                                                                <div ng-if="duproQc.isOnlyJob == 0" class="p-5 pr-5">
+                                                                                    <span class="pr-5 grey-600-fg">Process : </span> {{vm.getJobProcessTitle(duproQc, 'process')}}
+                                                                                </div>
+                                                                                <div class="p-5 pr-5">
+                                                                                    <span class="pr-5 grey-600-fg">Hourly Frequency : </span> {{duproQc.hourlyFrequency}}
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div layout="column" layout-align="center center" class="p-5">
+                                                                            <md-button ng-click="vm.addDeproQc(duproQc)" class="cool-btn-sm">Edit</md-button>
+                                                                        </div>
+                                                                        <div layout="column" layout-align="center center" class="p-5">
+                                                                            <md-icon ng-click="vm.removeDuproQc(duproQc)" md-font-icon="icon-close" class="icon s20 b cursor-pointer red-500-fg"></md-icon>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                        <!-- QC end -->
+                                                    </div>
+                                                </md-tab>
+                                            </md-tabs>
+
+                                        </div>
+                                        <!--  -->
+
+                                    </div>
+
+                                </ms-widget-front>
+                            </ms-widget>
+                        </div>
+                    </div>
+
+                </div>
+            </ms-widget-front>
+        </ms-widget>
+    </div>
+
+
+</div>

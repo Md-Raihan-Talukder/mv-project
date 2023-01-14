@@ -1,0 +1,173 @@
+<div id="systemsettings" class="item-detail register-definition page-layout simple tabbed" layout="column">
+
+    <div class="header md-accent-bg" layout="row" layout-align="space-between center">
+        <div layout="row" layout-align="center center" flex>
+            <div class="white-fg" layout="column" layout-align="start start">
+                <div class="md-title secondary-text">Stitch Setup</div>
+            </div>
+        </div>
+    </div>
+
+    <div layout="row" class="center" flex>
+        <div layout="column" flex="70">
+            <div layout="row" layout-align="start center" flex="70" class="md-grey-300-bg h-40">
+                <div flex="25" class="description ml-20 mr-20 intext"><strong>Stitches</strong>
+                </div>
+                <div class="button-color" layout="row" flex="75" layout-align="end center">
+                    <md-button ng-click="vm.addStitch(); vm.isNewStitch=true; vm.selectedStitch={}" class="font-size-12 text-bold w-auto h-30">Add Stitch
+                        <md-tooltip><span>Add Stitch</span></md-tooltip>
+                    </md-button>
+                </div>
+                <div class="">
+                    <md-button ng-click="vm.saveStitchDef()" class="cool-btn-md">Save</md-button>
+                </div>
+            </div>
+            <div class="pl-40 border p-10 h-35 md-grey-100-bg font-size-12" layout="row" layout-align="start center" flex="100">
+                <div class="handle w-40"></div>
+                <div flex="20"><strong>Thread Position</strong></div>
+                <div class="mr-10" flex="20"><strong>Required Thread</strong></div>
+                <div class="mr-10" flex="20"><strong>for Stitch Length</strong></div>
+                <div flex><strong>Description</strong></div>
+            </div>
+            <div ng-if="vm.loadViewComponents" layout="column">
+                <div class="border mb-5" style="background-color: #ffffff;" ng-repeat="stitch in vm.stitches">
+                    <div layout="row" flex layout-wrap layout-align="start center" ng-click="vm.selectStitch(stitch)" class="common-info">
+                        <!-- <div class="mr-25">
+                            <img ng-if="stitch.stitchImage[0].data" class="h-75 w-75" style="border-radius:0px;"
+                              ng-src="{{stitch.stitchImage[0].data}}"/>
+                              <img ng-if="!stitch.stitchImage[0].data" src="http://www.logimine.com/wp-content/themes/linstar/assets/images/default.jpg"
+                                     class="h-75 w-75" style="border-radius:0px;"/>
+                       </div> -->
+                        <div flex="25" class="mr-25">
+                            <span class="ml-5">Stitch: </span>
+                            <span class="ml-5 text-bold">{{stitch.title}}</span>
+                        </div>
+                        <div flex class="mr-15">
+                            <span class="ml-5">Description: </span>
+                            <span class="ml-5 ">{{stitch.description}}</span>
+                        </div>
+                        <div class="mr-20" layout="row">
+                            <md-button class="md-icon-button" aria-label="Add" ng-click="vm.addThread(stitch); $event.stopPropagation();">
+                                <md-icon md-font-icon="icon-plus-box"></md-icon>
+                                <md-tooltip><span>Add Thread</span></md-tooltip>
+                            </md-button>
+                            <!-- <md-button class="md-icon-button" aria-label="Delete"
+                               ng-click="vm.deleteStitch(stitch); $event.stopPropagation();">
+                               <md-icon md-font-icon="icon-delete"></md-icon>
+                               <md-tooltip><span>Delete Stitch</span></md-tooltip>
+                           </md-button> -->
+                        </div>
+                    </div>
+                    <md-divider></md-divider>
+                    <!-- <div class="ml-30 border p-10 h-35 md-grey-100-bg font-size-12" layout="row" layout-align="start center" flex="100">
+                      <div class="handle w-40"></div>
+                      <div flex="20"><strong>Thread Position</strong></div>
+                      <div class="mr-10" flex="20"><strong>Per Meter Consumption</strong></div>
+                      <div flex><strong>Description</strong></div>
+                  </div> -->
+                    <!-- consumptionPerMeter -->
+                    <div class="todo-items" ng-class="{'sortable': vm.taskOrder === ''}" ng-sortable="vm.sortableOptions" ng-model="vm.thread">
+                        <div class="ml-30 border p-10 h-30 font-size-12" layout="row" layout-align="start center" flex="100" ng-repeat="thread in stitch.threads">
+                            <div class="handle w-40">
+                                <md-icon md-font-icon="icon-drag-vertical" class="icon"></md-icon>
+                            </div>
+                            <div class="mb-10" flex="20"><input class="font-size-12" ng-model="thread.position"></div>
+                            <div class="mr-10 mb-10" flex="20" layout="row">
+                                <div>
+                                    <input class="font-size-12 w-50" ng-model="thread.consumption" value="{{vm.setConsumptionFromConsPerMeter(thread)}}">
+                                </div>
+                                <div class="ml-10">
+                                    <md-select class="m-0 p-0 w-80" ng-model="thread.selectedQtyUnit" ng-change="vm.setThreadQtyUnit(thread)">
+                                        <md-option ng-repeat="qtyDef in thread.qtyUnits" ng-value="qtyDef">
+                                            {{qtyDef.title}}
+                                        </md-option>
+                                    </md-select>
+                                </div>
+                            </div>
+                            <div class="mr-10 mb-10" flex="20" layout="row">
+                                <div>
+                                    <input class="font-size-12 w-50" ng-model="thread.stichLength" value="{{vm.setHostQtyFromConsPerMeter(thread)}}">
+                                </div>
+                                <div class="ml-10">
+                                    <md-select class="m-0 p-0 w-80" ng-model="thread.selectedHostUnit" ng-change="vm.setThreadHostUnit(thread)">
+                                        <md-option ng-repeat="hostDef in thread.hostUnits" ng-value="hostDef">
+                                            {{hostDef.title}}
+                                        </md-option>
+                                    </md-select>
+                                </div>
+                            </div>
+                            <div class="mr-10" flex><input class="font-size-12 w-300" ng-model="thread.description"></div>
+                            <div class="mr-10" layout="row" layout-align="start center">
+                                <!-- <md-button class="md-icon-button" aria-label="Details"
+                                ng-click="vm.saveGarmentPart(gmtPart)">
+                                <md-icon  md-font-icon="icon-clipboard-check"></md-icon>
+                                <md-tooltip><span >Save</span></md-tooltip>
+                            </md-button> -->
+                                <md-button class="md-icon-button" aria-label="Delete" ng-click="vm.deleteThread(stitch, thread)">
+                                    <md-icon md-font-icon="icon-delete"></md-icon>
+                                    <md-tooltip><span>DELETE</span></md-tooltip>
+                                </md-button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div layout="column" flex="30">
+            <div layout="column">
+                <div class="m-15 h-24">
+                    <span class="md-subhead">Stitch Details</span>
+                </div>
+                <md-divider></md-divider>
+
+                <!-- <form name="stitchForm" novalidate> -->
+                <div ng-if="vm.isNewStitch || vm.selectedStitch">
+                    <div flex class="description mt-10 ml-10 intext">
+                        <md-input-container class="md-block">
+                            <label>Stitch Name</label>
+                            <input style="color:#000000;" class="md-title font-size-12" ng-model="vm.selectedStitch.title" required autocomplete="off">
+                            <div ng-messages="stitchForm.title.$error" role="alert">
+                                <div ng-message="required">
+                                    <span>Stitch Name Required</span>
+                                </div>
+                            </div>
+                        </md-input-container>
+                    </div>
+                    <div flex class="description ml-10 intext">
+                        <md-input-container class="md-block">
+                            <label>Stitch Description</label>
+                            <input style="color:#000000;" class="md-title font-size-12" ng-model="vm.selectedStitch.description" autocomplete="off">
+                        </md-input-container>
+                    </div>
+                    <div class="ml-10">
+                        Stitch Pictures<br />
+                        <md-divider></md-divider>
+                        <td-image-loader type="inform" selection-type="'inform'" image-object="" max-size="5" item-list="vm.selectedStitch.stitchImage" on-upload="vm.onUpload(info)">
+                        </td-image-loader>
+                    </div>
+                    <md-content class="content" ms-scroll style="max-height:360px;">
+                        <div ng-repeat="img in vm.selectedStitch.stitchImage">
+                            <p align="center">
+                                <img ng-if="vm.selectedStitch.stitchImage" class="h-150 w-auto" style="border-radius:0px;" ng-src="{{img.data}}" />
+                            </p>
+                        </div>
+                    </md-content>
+                    <div class="btn-row">
+                        <span style="position:relative;top:-10px;left:200px; right:20px;">
+                            <md-button ng-disabled="stitchForm.$invalid" ng-if="!vm.isNewStitch" ng-click="vm.saveStitch(vm.selectedStitch,false); vm.selectedStitch={}" class="w-auto h-30 font-size-10 text-bold md-raised sabtn">
+                                Update Stitch
+                            </md-button>
+                            <md-button ng-if="vm.isNewStitch" ng-click="vm.saveStitch(vm.selectedStitch,true);
+                            vm.selectedStitch={}" class="w-auto h-30 font-size-10 text-bold md-raised sabtn">
+                                Add Stitch
+                            </md-button>
+                        </span>
+                    </div>
+                </div>
+                <!-- </form> -->
+            </div>
+
+
+        </div>
+    </div>
+</div>

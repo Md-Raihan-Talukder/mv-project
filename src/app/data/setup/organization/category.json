@@ -1,0 +1,117 @@
+{
+    "data": [
+        {
+            "TECHDISER_ID": "Fabric",
+            "title": "Fabric",
+            "code": "Fabric",
+            "materialTypes": [
+                {
+                    "TECHDISER_ID": "Cotton",
+                    "title": "Cotton"
+                },
+                {
+                    "TECHDISER_ID": "Polister",
+                    "title": "Polister"
+                },
+                {
+                    "TECHDISER_ID": "Mixed",
+                    "title": "Mixed"
+                }
+            ]
+        },
+        {
+            "TECHDISER_ID": "Print",
+            "title": "Print",
+            "code": "Print",
+            "materialTypes": [
+                {
+                    "TECHDISER_ID": "Rubber",
+                    "title": "Rubber"
+                },
+                {
+                    "TECHDISER_ID": "Skin",
+                    "title": "Skin"
+                }
+            ]
+        },
+        {
+            "TECHDISER_ID": "Wash",
+            "title": "Wash",
+            "code": "Wash",
+            "materialTypes": [
+                {
+                    "TECHDISER_ID": "Ringe",
+                    "title": "Ringe"
+                },
+                {
+                    "TECHDISER_ID": "SiliconBlast",
+                    "title": "Silicon Blast"
+                }
+            ]
+        },
+        {
+            "TECHDISER_ID": "Thread",
+            "title": "Thread",
+            "code": "Thread",
+            "materialTypes": [
+                {
+                    "TECHDISER_ID": "ThreadCotton",
+                    "title": "Cotton"
+                },
+                {
+                    "TECHDISER_ID": "ThreadSilk",
+                    "title": "Silk"
+                }
+            ]
+        },
+        {
+            "TECHDISER_ID": "Button",
+            "title": "Button",
+            "code": "Button",
+            "materialTypes": [
+                {
+                    "TECHDISER_ID": "Horn",
+                    "title": "Horn"
+                },
+                {
+                    "TECHDISER_ID": "Plastic",
+                    "title": "Plastic"
+                },
+                {
+                    "TECHDISER_ID": "Metal",
+                    "title": "Metal"
+                }
+            ]
+        },
+        {
+            "TECHDISER_ID": "Label",
+            "code": "Label",
+            "title": "Label",
+            "materialTypes": [
+                {
+                    "TECHDISER_ID": "CareLabel",
+                    "title": "Care Label"
+                },
+                {
+                    "TECHDISER_ID": "SizeLabel",
+                    "title": "Size Label"
+                }
+            ]
+        },
+        {
+            "TECHDISER_ID": "Tag",
+            "code": "Tag",
+            "title": "Tag",
+            "materialTypes": [
+                {
+                    "TECHDISER_ID": "HandTag",
+                    "title": "Hand Tag"
+                },
+                {
+                    "TECHDISER_ID": "WashTag",
+                    "title": "Wash Tag"
+                }
+            ]
+        }
+    ]
+}

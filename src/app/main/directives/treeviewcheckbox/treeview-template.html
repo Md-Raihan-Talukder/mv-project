@@ -1,0 +1,39 @@
+<div ui-tree-handle data-nodrags layout="row" layout-align="start start" flex class="border td-tree-node">
+    <div data-nodrag ng-click="vm.toggle(this)" ng-if="node.nodes && node.nodes.length > 0">
+        <md-icon ng-if="collapsed" md-font-icon="icon-chevron-right" class="icon"></md-icon>
+        <md-icon ng-if="!collapsed" md-font-icon="icon-chevron-down" class="icon"></md-icon>
+    </div>
+
+    <span data-nodrag class="ml-15 mr-15" flex>
+        <span ng-if="vm.options.showCheckbox">
+            <md-icon ng-if="node.itemChecked" ng-click="vm.selectItem(node, this, $event);node.itemChecked=!node.itemChecked" md-font-icon="icon-checkbox-marked-outline" aria-label="checked" class="icon md-accent"></md-icon>
+            <md-icon ng-if="!node.itemChecked" ng-click="vm.selectItem(node, this, $event);node.itemChecked=!node.itemChecked" md-font-icon="icon-checkbox-blank-outline" class="icon "></md-icon>
+
+        </span>
+        <span ng-if="node.proPic" class="mr-10">
+            <img class="h-30 w-30" style="border-radius:150px;" ng-src="{{node.proPic.data}}" />
+        </span>
+        {{node.title}}
+    </span>
+
+    <!-- <span data-nodrag class="ml-15 mr-15" flex="50">{{node.selected}}</span>	 -->
+
+    <div layout="row" layout-align="start start">
+        <!-- <md-icon ng-if="node.selected" md-font-icon="icon-check" class="icon" data-nodrag >
+		</md-icon> -->
+        <md-icon ng-if="vm.options.showUserBtn" md-font-icon="icon-account-multiple-plus" class="icon mr-15" ng-click="vm.addUserAccess(node, this, $event)" data-nodrag>
+        </md-icon>
+
+        <md-icon ng-if="vm.options.showAddBtn && node.level < vm.options.maxLevel" md-font-icon="icon-plus-circle" class="icon" ng-click="vm.addItem(node, this, $event)" data-nodrag>
+        </md-icon>
+        <md-icon md-font-icon="icon-close-circle" class="icon" ng-if="vm.options.showRemoveBtn" ng-click="vm.removeItem(node, this, $event)" data-nodrag>
+        </md-icon>
+    </div>
+
+</div>
+
+
+<ol ui-tree-nodes ng-class="{hidden: collapsed}" data-nodrag ng-model="node.nodes" style="width: 100%;">
+    <li ng-repeat="node in node.nodes" ui-tree-node data-nodrag style="width: 100%;" ng-include="'app/main/directives/treeviewcheckbox/treeview-template.html'">
+    </li>
+</ol>

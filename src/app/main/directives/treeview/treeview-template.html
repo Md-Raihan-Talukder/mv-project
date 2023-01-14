@@ -1,0 +1,43 @@
+<div ui-tree-handle data-nodrags layout="row" layout-align="start start" flex ng-click="vm.selectRow(node.TECHDISER_ID)" class="border td-tree-node md-grey-50-bg" ng-class="{'selected-tree-node': vm.selectedRowId==node.TECHDISER_ID}">
+    <div data-nodrag ng-click="vm.toggle(this)" ng-if="node.nodes && node.nodes.length > 0">
+        <md-icon ng-if="collapsed" md-font-icon="icon-chevron-right" class="icon green-50-fg brad-3 md-green-300-bg" ng-class="{'md-green-400-bg': vm.selectedRowId==node.TECHDISER_ID}"></md-icon>
+        <md-icon ng-if="!collapsed" md-font-icon="icon-chevron-down" class="icon green-50-fg brad-3 md-green-300-bg" ng-class="{'md-green-400-bg': vm.selectedRowId==node.TECHDISER_ID}"></md-icon>
+    </div>
+
+    <span data-nodrag class="ml-15 mr-15" flex ng-click="vm.selectItem(node, this, $event)">
+        <span>
+            <img ng-if="node.proPic" class="h-30 w-30" style="border-radius:150px;" ng-src="{{node.proPic.data}}" />
+        </span>
+        {{node.title}}
+        <span ng-if="vm.options.showRightCheck && node.isRole" style="float:right;">
+            <md-icon ng-if="vm.selectedTreeNode.TECHDISER_ID == node.TECHDISER_ID" ng-click="vm.checkTreeNode(node);" md-font-icon="icon-checkbox-marked-outline" aria-label="checked" class="icon md-accent"></md-icon>
+            <md-icon ng-if="vm.selectedTreeNode.TECHDISER_ID != node.TECHDISER_ID" ng-click="vm.checkTreeNode(node);" md-font-icon="icon-checkbox-blank-outline" class="icon "></md-icon>
+
+        </span>
+        <span ng-if="vm.options.showRightCheck" style="float:right;">
+            <md-icon ng-if="vm.selectedTreeNode.TECHDISER_ID == node.TECHDISER_ID" ng-click="vm.checkTreeNode(node);" md-font-icon="icon-checkbox-marked-outline" aria-label="checked" class="icon md-accent"></md-icon>
+            <md-icon ng-if="vm.selectedTreeNode.TECHDISER_ID != node.TECHDISER_ID" ng-click="vm.checkTreeNode(node);" md-font-icon="icon-checkbox-blank-outline" class="icon "></md-icon>
+
+        </span>
+    </span>
+    <!-- <span data-nodrag class="ml-15 mr-15" flex="50">{{node.selected}}</span>	 -->
+
+    <div ng-if="vm.selectedRowId==node.TECHDISER_ID" layout="row" layout-align="start start">
+        <!-- <md-icon ng-if="node.selected" md-font-icon="icon-check" class="icon" data-nodrag >
+		</md-icon> -->
+        <md-icon ng-if="vm.options.showUserBtn" md-font-icon="icon-account-multiple-plus" class="icon mr-15" ng-click="vm.addUserAccess(node, this, $event)" data-nodrag>
+        </md-icon>
+
+        <md-icon ng-if="vm.options.showAddBtn && node.level < vm.options.maxLevel" md-font-icon="icon-plus-circle" class="icon blue-500-fg" ng-click="vm.addItem(node, this, $event)" data-nodrag>
+        </md-icon>
+        <md-icon md-font-icon="icon-close-circle" class="icon red-300-fg" ng-if="vm.options.showRemoveBtn" ng-click="vm.removeItem(node, this, $event)" data-nodrag>
+        </md-icon>
+    </div>
+
+</div>
+
+
+<ol ui-tree-nodes ng-class="{hidden: collapsed}" data-nodrag ng-model="node.nodes" style="width: 100%;">
+    <li ng-repeat="node in node.nodes" ui-tree-node data-nodrag data-collapsed="false" style="width: 100%;" ng-include="'app/main/directives/treeview/treeview-template.html'">
+    </li>
+</ol>

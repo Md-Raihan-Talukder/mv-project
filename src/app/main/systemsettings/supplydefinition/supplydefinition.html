@@ -1,0 +1,102 @@
+<div id="systemsettings" class="item-detail register-definition page-layout simple tabbed" layout="column">
+
+    <div class="header md-accent-bg" layout="row" layout-align="space-between center">
+        <div layout="row" layout-align="center center" flex>
+            <div class="white-fg" layout="column" layout-align="start start">
+                <div class="md-title secondary-text">Supplier Management</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="page-layout simple right-sidenav" flex layout="row">
+
+            <div class="left-side">
+                <md-sidenav class="sidenav md-sidenav-left main-sidenav" md-is-locked-open="true" md-component-id="job-sidenav" ng-include="'app/main/systemsettings/supplydefinition/sidenavs/main/main-sidenav.html'" ms-scroll ms-sidenav-helper>
+                </md-sidenav>
+            </div>
+
+            <div class="content border center" flex style="padding: 20px">
+                <div ng-repeat="supplyType in vm.supplyTypesBySupplyCategoryId">
+                    <div layout="row">
+                        <div ng-model="expand" ng-click="expand=!expand">
+                            <md-icon ng-if="!expand" md-font-icon="icon-plus-circle" class="icon md-accent"></md-icon>
+                            <md-icon ng-if="expand" md-font-icon="icon-minus-circle-outline" class="icon md-accent"></md-icon>
+                        </div>
+                        <div class="h5" ng-click="vm.selectSupplyType(supplyType)" ng-class="{'selectedSupplyType' : vm.selectedSupplyType === supplyType}">{{supplyType.title}}</div>
+                    </div>
+
+                    <div layout="column" class="ml-30">
+                        <div class="h5" ng-if="expand" ng-repeat="supply in vm.findSuppliesWhere(supplyType.TECHDISER_ID)" ng-click="vm.selectSupply(supply)" ng-class="{'selectedSupply' : vm.selectedSupply === supply}">
+                            <md-icon md-font-icon="icon-menu-right"></md-icon>
+                            {{supply.title}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="right-side">
+                <md-tabs md-dynamic-height md-selected="vm.selectedTabIndex">
+                    <md-tab label="Supply Type">
+                        <div layout="column" layout-align="end end" class="pr-20">
+                            <md-button ng-if="!vm.isNewSupplyType" ng-click="vm.clearAll()" class="h-25 font-size-10 text-bold md-raised md-accent" style="line-height: 2;text-transform: capitalize;">New Supply Type</md-button>
+                        </div>
+                        <div class="p-20">
+                            <div layout="column">
+                                <md-input-container>
+                                    <label>Supply Type</label>
+                                    <input ng-model="vm.supplyType.title" autocomplete="off">
+                                </md-input-container>
+                                <md-input-container>
+                                    <label>Code</label>
+                                    <input ng-model="vm.supplyType.code" autocomplete="off">
+                                </md-input-container>
+                                <md-input-container>
+                                    <label>Supply Category</label>
+                                    <md-select ng-model="vm.supplyType.supplyCategoryId">
+                                        <md-option><em>None</em></md-option>
+                                        <md-option ng-repeat="supplyCategory in vm.supplycategories | filter: {'deleted': false}" ng-value="supplyCategory.TECHDISER_ID">
+                                            {{supplyCategory.title}}
+                                        </md-option>
+                                    </md-select>
+                                </md-input-container>
+                                <md-button ng-if="vm.isNewSupplyType" class="md-raised md-accent" style="line-height: 2;text-transform: capitalize;" ng-click="vm.addSupplyType(vm.supplyType)">Add Supply Type</md-button>
+                                <md-button ng-if="!vm.isNewSupplyType" class="md-raised md-warn" style="line-height: 2;text-transform: capitalize;" ng-click="vm.addSupplyType(vm.supplyType)">Update Supply Type</md-button>
+                                <md-button ng-if="!vm.isNewSupplyType && !vm.findSuppliesWhere(vm.supplyType.TECHDISER_ID).length" class="md-raised md-accent" style="line-height: 2;text-transform: capitalize;" ng-click="vm.deleteSupplyType(vm.supplyType)">Delete Supply Type</md-button>
+                            </div>
+                        </div>
+                    </md-tab>
+                    <md-tab ng-if="vm.supplies.length" label="Supply">
+                        <div layout="column" layout-align="end end" class="pr-20">
+                            <md-button ng-if="!vm.isNewSupply" ng-click="vm.clearAll(1)" class="h-25 font-size-10 text-bold md-raised md-accent" style="line-height: 2;text-transform: capitalize;">New Supply</md-button>
+                        </div>
+                        <div class="p-20">
+                            <div layout="column">
+                                <md-input-container>
+                                    <label>Supply</label>
+                                    <input ng-model="vm.supply.title" autocomplete="off">
+                                </md-input-container>
+                                <md-input-container>
+                                    <label>Code</label>
+                                    <input ng-model="vm.supply.code" autocomplete="off">
+                                </md-input-container>
+                                <md-input-container>
+                                    <label>Supply Type</label>
+                                    <md-select ng-model="vm.supply.supplyTypeId">
+                                        <md-option><em>None</em></md-option>
+                                        <md-option ng-repeat="supplyType in vm.supplytypes | filter: {'deleted': false}" ng-value="supplyType.TECHDISER_ID">
+                                            {{supplyType.title}}
+                                        </md-option>
+                                    </md-select>
+                                </md-input-container>
+                                <md-button ng-if="vm.isNewSupply" class="md-raised md-accent" style="line-height: 2;text-transform: capitalize;" ng-click="vm.addSupply(vm.supply)">Add Supply</md-button>
+                                <md-button ng-if="!vm.isNewSupply" class="md-raised md-warn" style="line-height: 2;text-transform: capitalize;" ng-click="vm.addSupply(vm.supply)">Update Supply</md-button>
+                                <md-button ng-if="!vm.isNewSupply" class="md-raised md-accent" style="line-height: 2;text-transform: capitalize;" ng-click="vm.deleteSupply(vm.supply)">Delete Supply</md-button>
+                            </div>
+                        </div>
+                    </md-tab>
+                </md-tabs>
+            </div>
+        </div>
+    </div>
+</div>

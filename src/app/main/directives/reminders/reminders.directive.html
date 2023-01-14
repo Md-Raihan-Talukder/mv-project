@@ -1,0 +1,96 @@
+<div class="custom-directive-container">
+
+
+    <!-- COMMENTS SECTION -->
+    <div class="section border-bottom p-10 box-shadow">
+        <div class="comments reminders">
+
+            <div class="section-header bb" layout="row" layout-align="start center">
+                <button class="btn-expand-colupse md-icon-button md-accent md-button md-default-theme md-ink-ripple" type="button" aria-label="reminder" ng-click="vm.showHideForm()">
+
+                    <md-icon ng-if="!vm.reminder.expand" md-font-icon="icon-plus-box" class="icon"></md-icon>
+                    <md-icon ng-if="vm.reminder.expand" md-font-icon="icon-minus-box" class="icon"></md-icon>
+                </button>
+                <span class="section-title">{{vm.reminder.title}}</span>
+            </div>
+
+            <div class="section-content">
+                <form ng-show="vm.reminder.expand" name="cardCommentForm" class="comment new-comment" layout="column" layout-align="start" no-validate>
+
+                    <div layout="column" flex="100" layout-wrap layout-align="start start" class="mt-20">
+                        <span class="font-bold reminder-item-title">Mode</span>
+                        <div layout="row" class="mr-10 pt-10 reminder-item-title" layout-align="start start">
+
+                            <md-checkbox ng-change="vm.dataChanged()" class="remember-me" name="reminder" ng-model="vm.reminder.notifyByMail" ng-required="vm.checkReminderType()" aria-label="reminder">
+                                <!-- <md-icon md-font-icon="icon-email" class="icon"></md-icon> -->
+                                <span>Mail</span>
+                            </md-checkbox>
+
+                            <md-checkbox ng-change="vm.dataChanged()" class="remember-me" name="reminder" ng-model="vm.reminder.notifyBySms" ng-required="vm.checkReminderType()" aria-label="reminder">
+                                <span>SMS</span>
+
+                            </md-checkbox>
+                            <md-checkbox ng-change="vm.dataChanged()" class="remember-me" ng-model="vm.reminder.notifyByNoti" ng-required="vm.checkReminderType()" aria-label="reminder">
+                                <span>Notification</span>
+                            </md-checkbox>
+
+                        </div>
+
+                        <div layout-gt-sm="row" layout="column" flex layout-wrap layout-align="start start">
+                            <md-checkbox ng-change="vm.dataChanged()" class="remember-me" name="reminder" ng-model="vm.reminder.notifyToAsssignee" ng-required="vm.checkReminderType()" aria-label="reminder">
+                                <!-- <md-icon md-font-icon="icon-email" class="icon"></md-icon> -->
+                                <span>Notify to Assignee</span>
+                            </md-checkbox>
+                        </div>
+
+                        <span class="font-bold reminder-item-title">Notify Others</span>
+
+                        <div layout-gt-sm="row" layout="column" flex layout-wrap layout-align="start start">
+                            <div class="mr-30" flex="50">
+                                <md-checkbox ng-change="vm.dataChanged()" class="remember-me" name="reminder" ng-model="vm.reminder.notifyToRoles" ng-required="vm.checkReminderType()" aria-label="reminder">
+                                    <!-- <md-icon md-font-icon="icon-email" class="icon"></md-icon> -->
+                                    <span>Roles</span>
+
+                                </md-checkbox>
+                                <span class="pl-20 pr-10" ng-click="vm.selectRoleUser(100); $event.stopPropagation();" ng-if="vm.reminder.notifyToRoles">
+                                    <i class="font-size-12 cursor-pointer">
+                                        <u>Select Roles</u>
+                                    </i>
+                                </span>
+                                <div class="">
+                                    <span class="bb font-size-12">Selected Roles</span>
+                                </div>
+                                <div class="box-shadow mb-10" ng-repeat="role in vm.reminder.roleIds track by $index">
+                                    <td-role-position-card role-id="role"></td-role-position-card>
+                                </div>
+                            </div>
+                            <div>
+                                <md-checkbox ng-change="vm.dataChanged()" class="remember-me" name="reminder" ng-model="vm.reminder.notifyToIndividual" ng-required="vm.checkReminderType()" aria-label="reminder">
+                                    <!-- <md-icon md-font-icon="icon-email" class="icon"></md-icon> -->
+                                    <span>Users</span>
+
+                                </md-checkbox>
+                                <span class="pl-20 pr-10" ng-click="vm.selectRoleUser(111); $event.stopPropagation();" ng-if="vm.reminder.notifyToIndividual">
+                                    <i class="font-size-12 cursor-pointer">
+                                        <u>Select Users</u>
+                                    </i>
+                                </span>
+                                <div class="">
+                                    <span class="bb font-size-12">Selected User</span>
+                                </div>
+                                <div class="box-shadow mb-10" ng-repeat="user in vm.reminder.individualIds track by $index">
+                                    <td-user-info-card user-id="user"></td-user-info-card>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- / COMMENTS SECTION -->
+
+</div>

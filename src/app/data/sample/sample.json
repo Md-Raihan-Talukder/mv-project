@@ -1,0 +1,113 @@
+{
+    "data": {
+        "helloText": "Hello, I'm a sample page!",
+        "cm": {
+            "id": "cm",
+            "title": "CM",
+            "value": 0,
+            "formulaText": "(Monthly Cost + Total Machin) / 100 + Vat and Tax",
+            "formula": "(vm.cm.variables[0].value *1 + vm.cm.variables[1].value *1)/100 + vm.cm.variables[2].value",
+            "variables": [
+                {
+                    "id": "mc",
+                    "title": "Monthly Cost",
+                    "value": 0,
+                    "formulaText": "Monthly Salary + Other Cost",
+                    "formula": "(vm.cm.variables[0].variables[0].value *1 + vm.cm.variables[0].variables[1].value *1)",
+                    "variables": [
+                        {
+                            "id": "ms",
+                            "title": "Monthly Salary",
+                            "value": 0
+                        },
+                        {
+                            "id": "oc",
+                            "title": "Other Cost",
+                            "value": 0,
+                            "formulaText": "Current Bill + Over Time",
+                            "formula": "vm.cm.variables[0].variables[1].variables[0].value *1 + vm.cm.variables[0].variables[1].variables[1].value *1",
+                            "variables": [
+                                {
+                                    "id": "cb",
+                                    "title": "Current Bill",
+                                    "value": 0
+                                },
+                                {
+                                    "id": "ot",
+                                    "title": "Over Time",
+                                    "value": 0,
+                                    "formulaText": "Regular OT + Night Shift + 100",
+                                    "formula": "vm.cm.variables[0].variables[1].variables[1].variables[0].value *1 +vm.cm.variables[0].variables[1].variables[1].variables[1].value *1 +100",
+                                    "variables": [
+                                        {
+                                            "id": "rot",
+                                            "title": "Regular OT",
+                                            "value": 0,
+                                            "formulaText": "More than 4 hr + Less than 4 hr",
+                                            "formula": "vm.cm.variables[0].variables[1].variables[1].variables[0].variables[0].value * 1 + vm.cm.variables[0].variables[1].variables[1].variables[0].variables[1].value * 1 ",
+                                            "variables": [
+                                                {
+                                                    "id": "m4",
+                                                    "title": "More than 4 hr",
+                                                    "value": 0
+                                                },
+                                                {
+                                                    "id": "l4",
+                                                    "title": "less than 4 hr",
+                                                    "value": 0
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "id": "nst",
+                                            "title": "Night Shift",
+                                            "value": 0,
+                                            "formulaText": "Before Mid night  + After Mid night",
+                                            "formula": "vm.cm.variables[0].variables[1].variables[1].variables[1].variables[0].value * 1 + vm.cm.variables[0].variables[1].variables[1].variables[1].variables[1].value * 1 ",
+                                            "variables": [
+                                                {
+                                                    "id": "bm",
+                                                    "title": "Before Mid night",
+                                                    "value": 0
+                                                },
+                                                {
+                                                    "id": "am",
+                                                    "title": "After Mid night",
+                                                    "value": 0
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "tm",
+                    "title": "Total Machin",
+                    "value": 0
+                },
+                {
+                    "id": "vattax",
+                    "title": "Vat And Tax",
+                    "value": 0,
+                    "formulaText": "Vat  + Tax",
+                    "formula": "vm.cm.variables[2].variables[0].value *1 + vm.cm.variables[2].variables[1].value *1",
+                    "variables": [
+                        {
+                            "id": "vat",
+                            "title": "Vat",
+                            "value": 0
+                        },
+                        {
+                            "id": "tax",
+                            "title": "Tax",
+                            "value": 0
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

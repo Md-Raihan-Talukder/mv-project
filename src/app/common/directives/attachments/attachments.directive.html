@@ -1,0 +1,33 @@
+<div class="border-bottom pr-15 pv-15 image-uploader">
+    <md-icon md-font-icon="icon-paperclip" class="icon btn-file md-accent">
+        <input type='file' ng-model-instant onchange="angular.element(this).scope().fileUpload(this)" />
+    </md-icon>
+    <span class="section-title">Attachments</span>
+</div>
+
+<div class="attachment-list" flex ng-repeat="attachment in itemList">
+    <div class="attachment" layout="row" layout-align="space-between center">
+        <div>
+            <span class="filename">{{attachment.fileName}}</span>
+            <span class="size">({{attachment.size}})</span>
+            <div>
+                <span class="subtitle secondary-text">
+                    <strong class="mr-5">Uploaded:</strong> {{attachment.uploaded}}
+                </span>
+                <span class="subtitle secondary-text">
+                    <strong class="mr-5">Last Modified:</strong>
+                    {{attachment.modified}}
+                </span>
+            </div>
+        </div>
+        <div layout="row" layout-align="start center">
+            <md-button class="md-icon-button" ng-click="vm.downLoadFile(attachment)">
+                <md-icon md-font-icon="icon-cloud-download" aria-label="delete attachment" class="s16"></md-icon>
+            </md-button>
+            <md-button class="md-icon-button" ng-click="vm.removeFile(attachment);">
+                <md-icon md-font-icon="icon-close" aria-label="delete attachment" class="s16"></md-icon>
+            </md-button>
+        </div>
+    </div>
+
+</div>

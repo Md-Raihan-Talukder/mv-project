@@ -1,0 +1,84 @@
+{
+    "data": [
+        {
+            "TECHDISER_ID": "97d6.73f3013da9800.a27f1c59d3a49.a06b3eec59b1c.b272abc29c192.66c18e48adf51.010bbff19",
+            "containerId": "SupplyDefinitionMaterialCategory17",
+            "materialId": "SupplyDefinitionMaterialCategory12",
+            "catMatId": "SupplyDefinitionMaterialCategory17SupplyDefinitionMaterialCategory12",
+            "sizeInfo": [
+                {
+                    "TECHDISER_ID": "8799.3332b4b757967.44435eb476cc7.a524735a69955.0319ebd16398a.8d9830a29fc2b.0eb9e9a0b",
+                    "containerDimensionInfo": "volume:inch:inch:inch",
+                    "containerSize": "18 X 9 X 12",
+                    "containerSizeInfo": "volume:inch:inch:inch18 X 9 X 12",
+                    "matDimensionInfo": "length:inch",
+                    "matQty": "18",
+                    "forContainers": "4",
+                    "isDefault": 1
+                },
+                {
+                    "TECHDISER_ID": "84dc.3282fba69de1e.9d4dd33a5cf71.392b67776ea37.15f6b172283d0.0f4d2c621b83d.fda3b5a79",
+                    "containerDimensionInfo": "volume:inch:inch:inch",
+                    "containerSize": "18 X 9 X 14",
+                    "containerSizeInfo": "volume:inch X inch X inch18 X 9 X 14",
+                    "matDimensionInfo": "length:inch",
+                    "matQty": "20",
+                    "forContainers": "4",
+                    "isDefault": 0
+                },
+                {
+                    "TECHDISER_ID": "84dc.3282fba69de1e.9d4dd33a5cf71.392b67776ea37.15f6b172283d0.added.fda3b5a50",
+                    "containerDimensionInfo": "volume:inch:inch:inch",
+                    "containerSize": "18 X 9 X 16",
+                    "containerSizeInfo": "volume:inch X inch X inch18 X 9 X 16",
+                    "matDimensionInfo": "length:inch",
+                    "matQty": "20",
+                    "forContainers": "4",
+                    "isDefault": 0
+                }
+            ]
+        },
+        {
+            "TECHDISER_ID": "23d7.acacbc3cfbb24.e36e430c6f784.62deeec2990a4.3bb80938c7d89.2435529dcfccc.9e23c3ee4",
+            "containerId": "SupplyDefinitionMaterialCategory18",
+            "materialId": "SupplyDefinitionMaterialCategory9",
+            "catMatId": "SupplyDefinitionMaterialCategory18SupplyDefinitionMaterialCategory9",
+            "matSizeDimension": "length:inch",
+            "sizeInfo": [
+                {
+                    "TECHDISER_ID": "3875.330687b4a44ad.d298adffa09fb.78ea474e1bbd6.4ded018268c2a.cc7c0f408e5de.f1a444d7d",
+                    "containerDimensionInfo": "area:inch:inch",
+                    "containerSize": "18 X 9",
+                    "containerSizeInfo": "area:inch:inch18 X 9",
+                    "matDimensionInfo": "count:pieces",
+                    "matQty": "5",
+                    "forContainers": "1",
+                    "isDefault": 1,
+                    "$$hashKey": "object:3539"
+                },
+                {
+                    "TECHDISER_ID": "4cbb.1a4a9e26a13fe.377537107ebde.796936f7e4d56.436aece2bfb6f.bebbcfafd18d0.4b5dd3db5",
+                    "containerDimensionInfo": "area:inch:inch",
+                    "containerSize": "18 X 12",
+                    "containerSizeInfo": "area:inch:inch18 X 12",
+                    "matDimensionInfo": "count:pieces",
+                    "matQty": "4",
+                    "forContainers": "1",
+                    "isDefault": 0,
+                    "$$hashKey": "object:3540"
+                },
+                {
+                    "TECHDISER_ID": "941e.f8ef42f9a58e8.07a84de4b287b.1dc91b09cbba8.ff9677bb60713.4b2981c168585.06727dd92",
+                    "containerDimensionInfo": "area:inch:inch",
+                    "containerSize": "12 X 9",
+                    "containerSizeInfo": "area:inch:inch12 X 9",
+                    "matDimensionInfo": "count:pieces",
+                    "matQty": "2",
+                    "forContainers": "1",
+                    "isDefault": 0,
+                    "$$hashKey": "object:3541"
+                }
+            ]
+        }
+    ]
+}

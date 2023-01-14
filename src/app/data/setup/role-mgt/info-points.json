@@ -1,0 +1,53 @@
+{
+    "data": [
+        {
+            "TECHDISER_ID": "point_1",
+            "groupId": "Info_Group_1",
+            "title": "Info Point 1",
+            "code": "InfoPoint1",
+            "description": "Info Point 1"
+        },
+        {
+            "TECHDISER_ID": "point_2",
+            "groupId": "Info_Group_1",
+            "title": "Info Point 2",
+            "code": "InfoPoint2",
+            "description": "Info Point 2"
+        },
+        {
+            "TECHDISER_ID": "point_3",
+            "groupId": "Info_Group_1",
+            "title": "Info Point 3",
+            "code": "InfoPoint3",
+            "description": "Info Point 3"
+        },
+        {
+            "TECHDISER_ID": "point_4",
+            "groupId": "Info_Group_2",
+            "title": "Info Point 4",
+            "code": "InfoPoint4",
+            "description": "Info Point 4"
+        },
+        {
+            "TECHDISER_ID": "point_5",
+            "groupId": "Info_Group_2",
+            "title": "Info Point 5",
+            "code": "InfoPoint5",
+            "description": "Info Point 5"
+        },
+        {
+            "TECHDISER_ID": "point_6",
+            "groupId": "Info_Group_3",
+            "title": "Info Point 6",
+            "code": "InfoPoint6",
+            "description": "Info Point 6"
+        },
+        {
+            "TECHDISER_ID": "point_7",
+            "groupId": "Info_Group_4",
+            "title": "Info Point 7",
+            "code": "InfoPoint7",
+            "description": "Info Point 7"
+        }
+    ]
+}

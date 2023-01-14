@@ -1,0 +1,100 @@
+{
+    "data": [
+        {
+            "TECHDISER_ID": "1",
+            "title": "Light Weight Denim",
+            "code": "LWD22",
+            "supplyTypeId": "1",
+            "supplyCategoryId": "1",
+            "deleted": false
+        },
+        {
+            "TECHDISER_ID": "2",
+            "title": "Chambray",
+            "code": "C22",
+            "supplyTypeId": "2",
+            "supplyCategoryId": "1",
+            "deleted": false
+        },
+        {
+            "TECHDISER_ID": "3",
+            "title": "Oxford",
+            "code": "O22",
+            "supplyTypeId": "3",
+            "supplyCategoryId": "1",
+            "deleted": false
+        },
+        {
+            "TECHDISER_ID": "4",
+            "title": "Light Weight Twill",
+            "code": "LWT22",
+            "supplyTypeId": "3",
+            "supplyCategoryId": "1",
+            "deleted": false
+        },
+        {
+            "TECHDISER_ID": "5",
+            "title": "Tencel Denim",
+            "code": "TD22",
+            "supplyTypeId": "3",
+            "supplyCategoryId": "1",
+            "deleted": false
+        },
+        {
+            "TECHDISER_ID": "6",
+            "title": "Metal",
+            "code": "M22",
+            "supplyTypeId": "4",
+            "supplyCategoryId": "2",
+            "deleted": false
+        },
+        {
+            "TECHDISER_ID": "7",
+            "title": "Plastic",
+            "code": "P22",
+            "supplyTypeId": "5",
+            "supplyCategoryId": "2",
+            "deleted": false
+        },
+        {
+            "TECHDISER_ID": "8",
+            "title": "Horn",
+            "code": "H22",
+            "supplyTypeId": "5",
+            "supplyCategoryId": "2",
+            "deleted": false
+        },
+        {
+            "TECHDISER_ID": "9",
+            "title": "Glass",
+            "code": "G22",
+            "supplyTypeId": "5",
+            "supplyCategoryId": "2",
+            "deleted": false
+        },
+        {
+            "TECHDISER_ID": "10",
+            "title": "Main Label",
+            "code": "ML22",
+            "supplyTypeId": "6",
+            "supplyCategoryId": "3",
+            "deleted": false
+        },
+        {
+            "TECHDISER_ID": "11",
+            "title": "Care Label",
+            "code": "CL22",
+            "supplyTypeId": "7",
+            "supplyCategoryId": "3",
+            "deleted": false
+        },
+        {
+            "TECHDISER_ID": "12",
+            "title": "Size Label",
+            "code": "SL22",
+            "supplyTypeId": "8",
+            "supplyCategoryId": "3",
+            "deleted": false
+        }
+    ]
+}

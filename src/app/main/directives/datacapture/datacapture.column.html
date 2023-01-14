@@ -1,0 +1,134 @@
+<div ng-if="col.type === 'group'">
+    <td-group-column item="item" col="col" columns="columns">
+    </td-group-column>
+</div>
+
+<md-input-container class="md-block  mr-20" ng-if="vm.getCategory(col) === 'text'">
+    <label>{{col.title}}</label>
+
+    <input ng-if="col.type === 'text'" name="{{col.data}}" ng-model="item[col.data]" type="text" aria-label="input" ng-readonly="isReadOnly">
+
+    <input ng-if="col.type === 'numeric'" name="{{col.data}}" ng-model="item[col.data]" type="text" ng-readonly="isReadOnly || col.formula" ng-keypress="vm.isNumberKey($event, item[col.data]);" aria-label="input">
+
+    <input ng-if="col.type === 'link'" name="{{col.data}}" ng-model="item[col.data]" type="url" aria-label="input">
+
+    <textarea ng-if="col.type === 'multilineText'" name="{{col.data}}" ng-model="item[col.data]" aria-label="input" columns="1" max-rows="4"></textarea>
+
+</md-input-container>
+
+<div class="md-block  mr-20" ng-if="vm.getCategory(col) === 'select' 
+	    &&  !col.refferenceAsDropdown">
+
+    <div ng-if="col.refferenceMultiple">
+
+        <md-chips class="label-chips" ng-model="item[col.data]" md-autocomplete-snap md-require-match="true" md-transform-chip="$chip">
+            <md-autocomplete md-selected-item="vm.selectedRef" md-search-text="vm.searchRefText" md-items="label in vm.labelQuerySearch(col, vm.searchRefText)" md-item-text="label.name" placeholder="Search for {{col.title}}" md-menu-class="autocomplete-custom-template">
+
+                <md-item-template>
+                    <div>
+                        <div class="title p-10">
+                            {{label.name}}
+                        </div>
+                    </div>
+                </md-item-template>
+
+            </md-autocomplete>
+
+            <md-chip-template class="label-chip">
+                <span>{{$chip.name}}</span>
+            </md-chip-template>
+            <button md-chip-remove class="md-primary pb-5">
+                <md-icon md-font-icon="icon-close" class="s14"></md-icon>
+            </button>
+        </md-chips>
+
+    </div>
+
+    <div ng-if="!col.refferenceMultiple">
+        <label>{{col.title}}</label>
+        <md-autocomplete md-selected-item="item[col.data]" md-search-text="searchRefText" md-items="item in vm.labelQuerySearch(col, vm.searchRefText)" md-item-text="item.name" md-min-length="0" placeholder="Search for {{col.title}}">
+            <md-item-template>
+                <span md-highlight-text="vm.searchRefText" md-highlight-flags="^i">{{item.name}}</span>
+            </md-item-template>
+
+        </md-autocomplete>
+    </div>
+
+</div>
+
+<md-input-container class="md-block  mr-20" ng-if="vm.getCategory(col) === 'select'
+	   &&  col.refferenceAsDropdown">
+    <label>{{col.title}}</label>
+
+    <md-select ng-if="col.refferenceMultiple" name="{{col.data}}" ng-model="item[col.data]" aria-label="select" multiple>
+        <md-option value="">None</md-option>
+        <md-option ng-repeat="item in vm.referenceGroups[col.refference]" value="{{item.id}}">{{item.name}}</md-option>
+    </md-select>
+
+    <md-select ng-if="!col.refferenceMultiple" name="{{col.data}}" ng-model="item[col.data]" aria-label="select" ng-change="vm.clearEmpty()">
+        <md-option value="">None</md-option>
+        <md-option ng-repeat="item in vm.referenceGroups[col.refference]" value="{{item.id}}">{{item.name}}</md-option>
+    </md-select>
+
+</md-input-container>
+
+<md-checkbox ng-if="vm.getCategory(col) === 'checkbox'" flex class="chk-filterable" name="checkbox" ng-model="item[col.data]" aria-label="checkbox">
+    <span>{{col.title}}</span>
+</md-checkbox>
+
+<td-date-time-picker date-time="item[col.data]" ng-if="col.type === 'date'" date-time-text="vm.getDatePickerTitle(col.title)" is-date='true' picker-class="''">
+</td-date-time-picker>
+
+<td-date-time-picker date-time="item[col.data]" ng-if="col.type === 'dateTime'" date-time-text="vm.getDatePickerTitle(col.title)" is-time='true' is-date='true' picker-class="''" no-width="true">
+</td-date-time-picker>
+
+<div layout="column" ng-if="col.type === 'html'">
+    <div>
+        <span class="md-subhead">{{col.title}} :</span>
+        <md-icon ng-click="vm.updateColumnMode(col)" ng-if="!col.editMode" md-font-icon="icon-pencil" class="icon">
+        </md-icon>
+        <md-icon ng-click="vm.updateColumnMode(col)" ng-if="col.editMode" md-font-icon="icon-close" class="icon">
+        </md-icon>
+    </div>
+
+    <text-angular ng-if="col.editMode" ta-toolbar="vm.taToolbar" ng-model="item[col.data]">
+
+    </text-angular>
+
+    <span ng-if="!col.editMode" ng-bind-html="item[col.data] | unsafeHtml">
+    </span>
+
+
+</div>
+
+<div ng-if="!isInnerRegister && col.type === 'register'" class="mb-20">
+    <span ng-if="!item[col.data]">
+        Register "{{col.title}}" not defined
+    </span>
+
+    <td-inner-grid ng-if="item[col.data]" register="item[col.data]" row-id="item[vm.primaryColumnName]" column="col" on-add-item="vm.onAddInnerItem(innerItem, isNew)">
+    </td-inner-grid>
+
+</div>
+
+<div ng-if="isInnerRegister && col.type === 'register'" layoutm="row" layout-wrap layout-align="start start">
+    <span ng-if="!item[col.data]">
+        Register "{{col.title}}" not defined
+    </span>
+
+    <td-inner-form-grid ng-if="item[col.data] &&
+                   item[vm.primaryColumnName]" register="item[col.data]" row-id="item[vm.primaryColumnName]" col-name="col.title" column="col" on-add-item="vm.onAddInnerItem(innerItem, isNew)">
+    </td-inner-form-grid>
+</div>
+
+<!--  <span class="link-div" ng-if="col.type === 'link'">
+	        <a ng-if="vm.item[col.data]" href="{{vm.item[col.data].url}}" target="_blank">{{vm.item[col.data].title}}</a>  
+	        <md-button ng-if="!vm.item[col.data]" ng-click="vm.openlinkDialog($event,col)" class="send-button md-accent md-raised" aria-label="add reg" > Add {{col.title}} link
+	      </md-button>
+	    </span>  -->
+
+<td-attachments ng-if="col.type === 'attachment'" item-list="item[col.data]" self="true">
+</td-attachments>
+
+<td-image-loader ng-if="col.type === 'image'" type="inform" item-list="item[col.data]" image-title="col.title">
+</td-image-loader>

@@ -1,0 +1,39 @@
+{
+    "data": [
+        {
+            "TECHDISER_ID": "Sailing_Country_1",
+            "TECHDISER_SERIAL_NO": 1,
+            "country": "Bangladesh",
+            "ports": [
+                {
+                    "TECHDISER_ID": "Sailing_Port_1",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "port": "Chittagong",
+                    "code": "CtgCode",
+                    "modeId": "ShipmentMode1"
+                },
+                {
+                    "TECHDISER_ID": "Sailing_Port_2",
+                    "TECHDISER_SERIAL_NO": 2,
+                    "port": "Mongla",
+                    "code": "MonglaCode",
+                    "modeId": "ShipmentMode1"
+                },
+                {
+                    "TECHDISER_ID": "Sailing_Port_3",
+                    "TECHDISER_SERIAL_NO": 3,
+                    "port": "Chalna",
+                    "code": "CtgCode",
+                    "modeId": "ShipmentMode1"
+                },
+                {
+                    "TECHDISER_ID": "Sailing_Port_4",
+                    "TECHDISER_SERIAL_NO": 4,
+                    "port": "Dhaka",
+                    "code": "DhakaCode",
+                    "modeId": "ShipmentMode1"
+                }
+            ]
+        }
+    ]
+}

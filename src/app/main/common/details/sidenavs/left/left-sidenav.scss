@@ -1,0 +1,57 @@
+#common-detail {
+  .left-sidenav {
+    width: 180px;
+    min-width: 180px;
+    max-width: 180px;
+    z-index: 51;
+    box-shadow: $whiteframe-shadow-8dp;
+
+    .header {
+      height: 40px;
+      min-height: 40px;
+      max-height: 40px;
+      padding: 2px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+
+      .logo {
+        .logo-icon {
+          margin: 0 16px 0 0;
+        }
+
+        .header-title {
+          font-size: 18px;
+          padding-left: 5px;
+        }
+      }
+
+      .account {
+        .account-selection {
+          margin: 0;
+        }
+      }
+    }
+
+    .content {
+      padding: 0;
+      .common-detail-menus {
+        padding: 0;
+
+        &.navigation-simple {
+          .selected {
+            background-color: rgb(3, 155, 229);
+            color: white;
+          }
+          .item {
+            line-height: 30px;
+            max-height: 30px;
+            height: 30px;
+            padding: 0 10px;
+          }
+          .subheader {
+            margin-top: 0;
+          }
+        }
+      }
+    }
+  }
+}

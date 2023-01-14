@@ -1,0 +1,27 @@
+<div ng-if="userId" layout="row" class="box-shadow p-5">
+    <div layout="column">
+        <img ng-if="!vm.user.proPic[0]" class="h-70 w-70" ng-src="{{vm.personImgHolder}}" />
+        <img ng-if="vm.user.proPic[0]" class="h-70 w-70" ng-src="{{vm.user.proPic[0].data}}" />
+    </div>
+    <div layout="column" class="pl-5 font-size-12" flex>
+        <div>
+            {{vm.user.name}}
+        </div>
+        <div>
+            {{vm.user.email}}
+        </div>
+        <div>
+            {{vm.user.phoneNumber}}
+        </div>
+    </div>
+    <div>
+        <span class="cursor-pointer" ng-if="isChackable">
+            <md-icon ng-if="userId != inChargeId" ng-click="vm.selectInCharge(userId)" md-font-icon="icon-checkbox-blank-outline" class="icon">
+                <md-tooltip>Select as a Leader</md-tooltip>
+            </md-icon>
+            <md-icon ng-if="userId == inChargeId" ng-click="vm.selectInCharge(null)" md-font-icon="icon-checkbox-marked-outline" class="icon md-accent">
+                <md-tooltip>Remove as a Leader</md-tooltip>
+            </md-icon>
+        </span>
+    </div>
+</div>

@@ -1,0 +1,54 @@
+<div class="list-header grey-300-bg h-30 ph-10" flex layout="row" layout-align="space-between center">
+    <span class="secondary-text text-bold" style="font-size: 1.2em;">{{vm.listTitle}}</span>
+    <div class="font-weight-800 pl-5" layout="row" layout-align="start center" ng-if="vm.pageDefinition.mainList.type === 'strip'">
+        <span>Total :</span> <span class="ml-5">{{vm.strips[vm.mainListStripDef.id].length}}</span>
+    </div>
+    <div class="font-weight-800 pl-5" layout="row" layout-align="start center" ng-if="vm.pageDefinition.mainList.type === 'list'">
+        <span>Total :</span> <span class="ml-5">{{vm.strips[vm.mainListDef.id].length}}</span>
+    </div>
+</div>
+<div class="list-header-2 grey-100-bg h-30 pl-5" flex layout="row" layout-align="start center">
+    <div flex>
+        <div class="search-input-wrapper" layout="row" layout-align="start center">
+            <label for="search">
+                <md-icon md-font-icon="icon-magnify"></md-icon>
+            </label>
+            <md-input-container md-no-float class="m-0">
+                <input id="search" placeholder="Search..." type="text" ng-model="vm.search">
+            </md-input-container>
+        </div>
+    </div>
+    <div layout="row" layout-align="end end" ng-if="vm.mainListStripDef.addButton">
+        <md-button ng-click="vm.addNewStripFunctions[vm.mainListStripDef.id](vm.mainListStripDef.addservice, vm.mainListStripDef.addFunction)" class="landing-list-add-button md-accent md-raised" aria-label="SAVE">
+            Add New
+        </md-button>
+    </div>
+    <div layout="row" layout-align="end end" ng-if="vm.mainListDef.addButton">
+        <md-button ng-click="vm.addNewListItem()" class="landing-list-add-button md-accent md-raised" aria-label="SAVE">
+            Add New
+        </md-button>
+    </div>
+    <div layout="row" layout-align="end end" ng-if="vm.mainListDef.otherCreateButton">
+        <md-button ng-click="vm.otherCreateButtonClick()" class="landing-list-add-button md-accent md-raised" aria-label="SAVE">
+            {{vm.mainListDef.otherCreateButton.title}}
+        </md-button>
+    </div>
+</div>
+
+<ms-widget layout="column" flex="100" style="padding: 0;">
+    <ms-widget-front class="white-bg" ms-scroll>
+        <div ng-if="vm.pageDefinition.mainList.type === 'strip' && vm.mainListStripDef">
+
+            <msb-strip selected-filters="vm.leftSlider.selectedFilters" children="vm.mainListStripDef.children" strip-type="vm.mainListStripDef.type" row-height="vm.mainListStripDef.rowHeight" strip-def-code="vm.mainListStripDef.stripCode" selectable="vm.mainListStripDef.selectable" single-selection="vm.mainListStripDef.singleSelection" strip-title="vm.mainListStripDef.title" add-option="vm.mainListStripDef.addOption" strip-task-id="vm.mainListStripDef.taskId" strip-parameters="vm.mainListStripDef.parameters" strip-objects="vm.mainListStripDef.stripsObjects" item-selected="vm.stripSelected(strip, helperItems)" helper-items="vm.mainListStripDef.id" set-external-fns="vm.setExternalFns(addFn, helperItems)" on-load-complete="vm.stripLoadComplete(stripCode, strips, helperItems, allStrips)">
+            </msb-strip>
+
+        </div>
+
+        <div ng-if="vm.pageDefinition.mainList.type === 'list' && vm.mainListDef" class="list-strip">
+
+            <msb-list selected-filters="vm.leftSlider.selectedFilters" load-id="vm.reloadIds[vm.mainListDef.id]" list-type="vm.mainListDef.listType" selected-id="vm.mainListDef.selectedId" group-by="vm.mainListDef.groupBy" selectable="vm.mainListDef.selectable" single-selection="vm.mainListDef.singleSelection" helper-items="vm.mainListDef.id" parameters="vm.mainListDef.parameters" service-def="vm.mainListDef.serviceDef" columns="vm.mainListDef.colums" template="vm.mainListDef.template" row-clicked="vm.listItemClicked(item, helperItems)" list-button-clicked="vm.listButtonClicked(button, item, helperItems)" on-load-complete="vm.listLoadComplete(items, helperItems)">
+            </msb-list>
+
+        </div>
+    </ms-widget-front>
+</ms-widget>

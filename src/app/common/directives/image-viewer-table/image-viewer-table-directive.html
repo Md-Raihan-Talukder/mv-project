@@ -1,0 +1,23 @@
+<div class="msb-image-viewer-table" flex="100" layout="row" ng-mouseover="vm.showHandle = true;" ng-mouseleave="vm.showHandle = false;">
+
+    <div style="position:absolute; top:0; right:0; " class="m-5  image-buttons" layout="row" ng-if="vm.showHandle" layout-wrap>
+
+
+        <div class="btn-file grey-100-bg border" aria-label="Choose Image" ng-if="itemMode === 'create'">
+            <md-icon md-font-icon="icon-plus" class="icon"></md-icon>
+            <input type='file' ng-model-instant onchange="angular.element(this).scope().imageUpload(this)" />
+        </div>
+        <div class="grey-100-bg border ml-5" ng-click="vm.expandImage(); $event.stopPropagation();">
+            <md-icon md-font-icon="icon-arrow-expand" class="icon"></md-icon>
+        </div>
+        <div class="grey-100-bg border ml-5" ng-if="itemMode === 'create'" ng-click="vm.removeImage(); $event.stopPropagation();">
+            <md-icon md-font-icon="icon-close"></md-icon>
+        </div>
+
+
+    </div>
+
+    <img ng-class="{'avatar': isRound}" ng-src="{{vm.imageItem.data}}" ng-if="vm.imageItem && vm.imageItem.data">
+    <img ng-class="{'avatar': isRound}" ng-src="{{vm.emptyImage.data}}" ng-if="!vm.imageItem || !vm.imageItem.data">
+
+</div>

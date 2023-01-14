@@ -1,0 +1,51 @@
+<!-- SIDENAV HEADER -->
+<div class="header md-padding" layout="row" layout-align="start center">
+
+    <md-autocomplete ng-disabled="vm.sideNaveAutoComplete.isDisabled" md-no-cache="vm.sideNaveAutoComplete.noCache" md-selected-item="vm.sideNaveAutoComplete.selectedItem" md-search-text-change="vm.sideNaveAutoComplete.searchTextChange(vm.sideNaveAutoComplete.searchText)" md-search-text="vm.sideNaveAutoComplete.searchText" md-selected-item-change="vm.sideNaveAutoComplete.selectedItemChange(item)" md-items="item in vm.sideNaveAutoComplete.querySearch(vm.sideNaveAutoComplete.searchText)" md-item-text="item.poNo" md-min-length="0" placeholder="Search for POs" md-menu-class="autocomplete-custom-template">
+
+        <md-item-template>
+            <div class="po-autocomplete-template" layout="column" layout-align="start start">
+                <div>
+                    <strong>Buyer:</strong> {{item.name}}
+                </div>
+                <div layout="row" layout-align="start start">
+                    <div> <strong>PO:</strong> {{item.poNo}} </div>
+                    <div class="ml-5"><strong>Style:</strong> {{item.styleNo}} </div>
+
+                </div>
+            </div>
+        </md-item-template>
+
+    </md-autocomplete>
+
+
+</div>
+<!-- / SIDENAV HEADER -->
+
+<md-divider></md-divider>
+
+<!-- SIDENAV CONTENT -->
+<div ms-scroll class="content">
+
+    <md-list>
+
+        <md-subheader class="md-no-sticky">Open Purchase Orders</md-subheader>
+        <md-divider></md-divider>
+        <md-list-item ng-if="vm.pos" ng-repeat="po in vm.pos" ng-click="vm.selectPo(po)" ng-class="{'selected':vm.listType.name === po.name}">
+
+            <div class="" layout="column" layout-align="start start">
+                <div class="po-row" style="margin-bottom: -10px;">
+                    <strong>Buyer:</strong> {{po.name}}
+                </div>
+                <div layout="row" layout-align="start start">
+                    <div class="po-row"> <strong>PO:</strong> {{po.poNo}} </div>
+                    <div class="po-row"><strong>Style:</strong> {{po.styleNo}} </div>
+
+                </div>
+            </div>
+        </md-list-item>
+
+    </md-list>
+
+</div>
+<!-- / SIDENAV CONTENT -->

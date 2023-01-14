@@ -1,0 +1,24 @@
+{
+    "data": [
+        {
+            "TECHDISER_ID": "WbsLeadTime1",
+            "TECHDISER_SERIAL_NO": 1,
+            "leadTime": 60
+        },
+        {
+            "TECHDISER_ID": "WbsLeadTime2",
+            "TECHDISER_SERIAL_NO": 2,
+            "leadTime": 120
+        },
+        {
+            "TECHDISER_ID": "WbsLeadTime3",
+            "TECHDISER_SERIAL_NO": 3,
+            "leadTime": 80
+        },
+        {
+            "TECHDISER_ID": "WbsLeadTime4",
+            "TECHDISER_SERIAL_NO": 4,
+            "leadTime": 45
+        }
+    ]
+}

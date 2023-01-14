@@ -1,0 +1,37 @@
+<md-dialog class="common-dialog" aria-label="Card Card Dialog">
+    <md-toolbar class="md-accent">
+        <div class="md-toolbar-tools">
+            <span>Are you sure?</span>
+            <span flex></span>
+            <md-button class="md-icon-button" ng-click="vm.closeDialog()" aria-label="Close Dialog">
+                <md-icon md-font-icon="icon-close"></md-icon>
+            </md-button>
+        </div>
+    </md-toolbar>
+
+    <md-dialog-content ms-scroll>
+        <div class="sections" flex>
+            <div class="content border center" flex style="padding: 20px;">
+                <span>Following {{vm.selectedItems.length}} {{vm.itemType}} will be deleted</span>
+                <ol>
+                    <li ng-repeat="item in vm.selectedItems">{{item.title}}</li>
+                </ol>
+            </div>
+        </div>
+
+    </md-dialog-content>
+
+    <md-dialog-actions layout="row" layout-align="space-between center">
+        <div layout="row">
+            <md-button ng-click="vm.deleteAllItems()" class="send-button md-accent md-raised" ng-disabled="moduleForm.$invalid" aria-label="DELETE">
+                <span>DELETE</span>
+            </md-button>
+        </div>
+        <div layout="row">
+            <md-button ng-click="vm.closeDialog()" class="send-button md-accent md-raised" ng-disabled="moduleForm.$invalid" aria-label="CANCEL">
+                <span>CANCEL</span>
+            </md-button>
+        </div>
+    </md-dialog-actions>
+
+</md-dialog>

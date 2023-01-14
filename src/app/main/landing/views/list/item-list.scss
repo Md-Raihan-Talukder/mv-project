@@ -1,0 +1,54 @@
+#techdiser-landing {
+  .list-header-2,
+  .component-item-header,
+  .list-header {
+    .search-input-wrapper {
+      position: relative;
+      margin-right: 100px;
+      width: 100%;
+
+      label {
+        padding-right: 4px;
+        cursor: pointer;
+
+        md-icon {
+        }
+      }
+
+      md-input-container {
+        padding: 0 !important;
+
+        .md-errors-spacer {
+          display: none;
+        }
+
+        width: 100%;
+
+        input {
+          border-bottom: 0px solid black;
+          color: black;
+          width: 90%;
+          padding: 0 !important;
+          line-height: 15px !important;
+          height: 15px !important;
+
+          &::placeholder {
+            color: black;
+          }
+
+          &:focus {
+            border-bottom: 1px solid black;
+            color: black;
+          }
+        }
+      }
+    }
+
+    .md-button.landing-list-add-button {
+      line-height: 20px !important;
+      min-height: 20px !important;
+      font-size: 12px;
+      padding: 0 6px;
+    }
+  }
+}

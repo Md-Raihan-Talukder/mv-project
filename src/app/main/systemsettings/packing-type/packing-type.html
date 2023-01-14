@@ -1,0 +1,193 @@
+<div layout="row" layout-align="start center" class="white-bg" style="min-height: 100%; height:100%; overflow:hidden; ">
+    <div class="right border" flex style="min-height: 100%; height:100%; max-height: 100%; width: 100%;" layout="column" layout-align="start top">
+
+        <ms-widget layout="column" style="padding: 0; min-height: 100%; height:100%; width: 100% " layout-align="start top">
+
+            <ms-widget-front style="min-height: 100%; height:100%; width: 100%;" layout="column" layout-align="start top">
+                <div class="h-50 p-15" layout="row" layout-align="space-between center">
+                    <h3 class="w-225">Packing Consumption</h3>
+                    <md-button ng-click="vm.savePackingType()" class="md-raised">Save</md-button>
+                </div>
+
+                <div layout="row" class="m-10" style="min-height: 100%; height:100%; width: 100%;">
+
+                    <div layout="column" layout-align="start top" class="w-200 mr-20" ms-scroll>
+                        <h3 class="pl-10 grey-700-fg ">Packaging</h3>
+                        <div layout="column" class="border-bottom" ng-repeat="materialType in vm.materialTypes">
+                            <md-button class="pl-20 h-50" ng-click="vm.initSelecctedItems(materialType);" style="text-align:left"> {{vm.getCategoryTitle(materialType.categoryId)}} </md-button>
+                        </div>
+                    </div>
+
+                    <div layout="column" layout-align="start top" class="w-200 mr-20 border-left" ms-scroll>
+                        <div layout="row" layout-align="space-between center">
+                            <h3 class="pl-10 grey-700-fg ">{{vm.getCategoryTitle(vm.selectedPackage.categoryId)}}</h3>
+                            <md-button ng-click="vm.selectMaterialCategoryDialog(vm.selectedPackage)" class="ml-20 grey-100-bg" style="border-color: #009999; height: 35px;">
+                                Add Material
+                            </md-button>
+                        </div>
+                        <div layout="column" class="border-bottom" ng-repeat="material in vm.selectedPackage.materials">
+                            <md-button class="pl-20 h-50" ng-click="vm.loadSizeCards(material)" style="text-align:left"> {{vm.getMaterialTitle(material.materialId)}} </md-button>
+                        </div>
+                    </div>
+
+                    <div layout="column" ng-if="vm.selectedPackage && vm.selectedMaterial" layout-align="start top" style="width: 100%; min-height: 100%; height:100%;" class="border-left" ms-scroll>
+                        <div layout="row" layout-align="space-between center" class="green-50-bg h-40" style="width: 100%;">
+                            <div layout="row" layout-align="start center" class="w-600">
+                                <h4 class="ml-10">Container :</h4>
+                                <b class="ml-10">{{vm.getCategoryTitle(vm.selectedPackage.categoryId)}}</b>
+                                <h4 class="ml-30">Material :</h4>
+                                <b class="ml-10">{{vm.getMaterialTitle(vm.selectedMaterial.materialId)}}</b>
+                            </div>
+                            <!-- <div layout="row" layout-align="start center" class="w-500">
+                                    in between
+                                </div> -->
+
+                        </div>
+                        <div layout="row" layout-align="start top">
+                            <div layout="column" ng-repeat="sizeItem in vm.consCards">
+                                <div layout="row" class="ml-20 h-30">
+                                    <div ng-if="vm.obsoleteSizes.indexOf(sizeItem.containerSizeInfo) < 0" ng-click="vm.showSizeInfo(sizeItem, 'new');" class="ml-10">
+                                        <h4 ng-class="{'green-100-bg': sizeItem.infoType=='new'}">New</h4>
+                                    </div>
+                                    <div ng-if="vm.obsoleteSizes.indexOf(sizeItem.containerSizeInfo) >= 0" ng-click="vm.showSizeInfo(sizeItem, 'new');" class="ml-10">
+                                        <md-button ng-click="vm.consCards.splice($index,1)" class="ml-20 grey-100-bg" style="border-color: #009999; height: 25px;">
+                                            Remove Obsolete
+                                        </md-button>
+                                    </div>
+                                    <div ng-if="sizeItem.existingInfo" ng-click="vm.showSizeInfo(sizeItem, 'existing');" class="ml-10">
+                                        <h4 ng-class="{'green-100-bg': sizeItem.infoType=='existing'}">Existing</h4>
+                                    </div>
+                                </div>
+                                <md-card ng-if="!sizeItem.infoType || sizeItem.infoType=='new'" class="p-20 w-350 h-280">
+                                    <md-description>
+                                        <div>
+                                            <h4>Package Size : {{sizeItem.containerSize}} </h4>
+                                        </div>
+                                        <div class="border-below">
+                                            <h4>Package Dimension : {{sizeItem.containerDimensionInfo}} </h4>
+                                        </div>
+                                        <div>
+                                            <h4>Material Dimension : {{sizeItem.matDimensionInfo}} </h4>
+                                        </div>
+                                        <div class="border-below">
+                                            <h4 class="p-0 m-0"> Material Consumption </h4>
+                                        </div>
+                                        <div layout="row" layout-align="start center" class="pt-10">
+                                            <md-input-container class="p-0 m-0">
+                                                <input type="text" aria-label="matQty" class="w-60" ng-model="sizeItem.matQty">
+                                            </md-input-container>
+                                            <div class="ml-10">{{sizeItem.matDimensionInfo.substring(sizeItem.matDimensionInfo.indexOf(":")+1)}}</div>
+                                            <div class="ml-10">for</div>
+                                            <div class="ml-10">
+                                                <md-input-container class="p-0 m-0">
+                                                    <input type="text" aria-label="matForItems" class="w-60" ng-model="sizeItem.forContainers">
+                                                </md-input-container>
+                                            </div>
+                                            <div>packets</div>
+                                        </div>
+                                        <div ng-class="mt-10">
+                                            <md-checkbox ng-change="vm.updateDefaultStatus(sizeItem)" ng-model="sizeItem.setAsDefault" aria-label="isDefault" class="mt-15">
+                                                <label>Set as Default for All Sizes</label>
+                                            </md-checkbox>
+                                        </div>
+
+                                    </md-description>
+                                </md-card>
+                                <md-card ng-if="sizeItem.infoType=='existing'" class="p-20 w-350 h-280">
+                                    <md-description>
+                                        <div>
+                                            <h4>Package Size : {{sizeItem.existingInfo.containerSize}} </h4>
+                                        </div>
+                                        <div class="border-below">
+                                            <h4>Package Dimension : {{sizeItem.existingInfo.containerDimensionInfo}} </h4>
+                                        </div>
+                                        <div>
+                                            <h4>Material Dimension : {{sizeItem.existingInfo.matDimensionInfo}} </h4>
+                                        </div>
+                                        <div class="border-below">
+                                            <h4 class="p-0 m-0"> Material Consumption </h4>
+                                        </div>
+                                        <div layout="row" layout-align="start center" class="pt-10">
+                                            <md-input-container class="p-0 m-0">
+                                                <input type="text" readonly aria-label="matQty" class="w-60" ng-model="sizeItem.existingInfo.matQty">
+                                            </md-input-container>
+                                            <div class="ml-10">{{sizeItem.existingInfo.matDimensionInfo.substring(sizeItem.existingInfo.matDimensionInfo.indexOf(":")+1)}}</div>
+                                            <div class="ml-10">for</div>
+                                            <div class="ml-10">
+                                                <md-input-container class="p-0 m-0">
+                                                    <input type="text" readonly aria-label="matForItems" class="w-60" ng-model="sizeItem.existingInfo.forContainers">
+                                                </md-input-container>
+                                            </div>
+                                            <div>packets</div>
+                                        </div>
+                                        <div ng-class="mt-10">
+                                            <md-checkbox ng-change="vm.updateDefaultStatus(sizeItem)" ng-model="sizeItem.setAsDefault" aria-label="isDefault" class="mt-15">
+                                                <label>Set as Default for All Sizes</label>
+                                            </md-checkbox>
+                                        </div>
+
+                                    </md-description>
+                                </md-card>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <!--   
+
+                    <div style="min-height: 100%; height:100%; width: 100%;"  ms-scroll>
+                        <div ng-repeat="materialType in vm.materialTypes" class="p-10">
+                            <div class="h-40 grey-200-bg p-10" layout="row" layout-align="start center">
+                                <div class="mr-10 w-205">
+                                    {{vm.getCategoryTitle(materialType.categoryId)}}
+                                </div>
+                                <div class="mr-30">
+                                    <span>Dimension: </span>
+                                    <span class="text-bold grey-700-fg">{{vm.getDimensionTitle(materialType.categoryId)}}</span>
+                                </div>
+                                <div class="mr-30">
+                                    <span>Measurement Unit: </span>
+                                    <span class="mr-5 text-bold grey-700-fg">{{vm.getSqQu(materialType.categoryId)}}</span>
+                                    <span class="text-bold grey-700-fg">{{vm.getUnitTitle(materialType.categoryId)}}</span>
+                                </div>
+                                <div>
+                                    <md-button ng-click="vm.selectMaterialCategoryDialog(materialType)" class="b grey-100-bg" style="border-color: #009999; height: 35px;">
+                                        Add Material
+                                    </md-button>
+                                </div>
+                            </div>
+                            <div class="p-5 mt-5 h-35 b" ng-repeat="material in materialType.materials">
+                                <div  layout="row" layout-align="start center">
+                                    <div class="mr-20 w-200">
+                                        {{vm.getMaterialTitle(material.materialId)}}
+                                    </div>
+                                    <div layout="row" class="mr-20" layout-align="start center">
+                                        <span class="mr-5">Consumption </span>
+                                        <input ng-model="material.matConsumption" type="number" ng-model-options="{debounce : 500}" ng-change="vm.updateQty(materialType)"
+                                         class="ng-pristine ng-untouched ng-valid ng-not-empty w-60 mr-5" aria-invalid="false">
+                                         <span class="mr-5">{{vm.getSqQu(material.materialId)}}</span>
+                                         <span class="mr-5">{{vm.getUnitTitle(material.materialId)}}</span>
+                                         <span class="mr-5"> / </span>
+                                         <input ng-model="material.containerMatConsumption" type="number" ng-model-options="{debounce : 500}" ng-change="vm.updateQty(materialType)"
+                                          class="ng-pristine ng-untouched ng-valid ng-not-empty w-60 mr-5" aria-invalid="false">
+                                         <span class="mr-5">{{vm.getSqQu(materialType.categoryId)}}</span>
+                                         <span class="mr-5">{{vm.getUnitTitle(materialType.categoryId)}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                -->
+
+            </ms-widget-front>
+
+        </ms-widget>
+
+
+
+    </div>
+
+</div>

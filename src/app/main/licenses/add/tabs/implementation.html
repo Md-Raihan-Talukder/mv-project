@@ -1,0 +1,16 @@
+<div class="ml-20" layout="row">
+    <form name="checkListForm" ng-submit="vm.createCheckList(vm.newCheckListTitle)" layout-align="start start" novalidate>
+        <md-input-container class="no-errors-spacer" md-no-float>
+            <input placeholder="Checklist Title" autocomplete="off" type="text" name="listTitle" ng-model="vm.newCheckListTitle" translate required>
+        </md-input-container>
+
+        <md-button ng-disabled="checkListForm.$invalid" type="submit" class="md-raised md-accent" aria-label="Add Checklist">
+            <span>Add Checklist</span>
+        </md-button>
+    </form><br />
+
+</div>
+<div class="m-30">
+    <td-check-list item-list="vm.license.checklist" on-add-item="vm.checkListDirective.onAddItem(item)" on-remove-item="vm.checkListDirective.onRemoveItem(item)" on-remove-check-list="vm.checkListDirective.onRemoveCheckList(item)">
+    </td-check-list>
+</div>

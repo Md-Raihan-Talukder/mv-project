@@ -1,0 +1,45 @@
+<div class="header" layout="column" layout-align="space-between start">
+    <div layout="row">
+        <md-icon md-font-icon="icon-weather-sunset-up" class="s26 mr-20"></md-icon>
+        <span flex class="md-title ml-10 h3">Rating Issues</span>
+        <md-button ng-click="vm.openIssueDialog()" class="h-25 w-60 font-size-10 text-bold text-center md-raised md-primary" style="line-height: 2;text-transform: capitalize;">Add New</md-button>
+        <md-button ng-click="vm.openDeptWeightDialog(vm.selectedRatingType)" class="h-25 font-size-10 text-bold text-center md-raised md-primary" style="line-height: 2;text-transform: capitalize;">Departments Weight</md-button>
+    </div>
+</div>
+
+<div class="content" ms-scroll>
+    <div ng-if="vm.toggleIssue && vm.checkedIssues.length" class="selected-bar animate-slide-down" layout="row" layout-align="start center">
+        <md-icon md-font-icon="icon-arrow-left" class="ml-30 s18 icon md-primary" ng-click="vm.clearCheckedIssues()">
+            <md-tooltip>Undo Selected</md-tooltip>
+        </md-icon>
+        <div layout="row" layout-align="center center">
+            <span class="mr-90">{{vm.checkedIssues.length}} selected
+                <md-menu class="select-menu">
+                    <md-icon md-font-icon="icon-menu-down" ng-click="$mdOpenMenu($event)"></md-icon>
+                    <md-menu-content width="1">
+                        <md-menu-item>
+                            <md-button ng-click="vm.checkedAllIssues()">Select All</md-button>
+                        </md-menu-item>
+                        <md-menu-item>
+                            <md-button ng-click="vm.clearCheckedIssues()">Select None</md-button>
+                        </md-menu-item>
+                    </md-menu-content>
+                </md-menu>
+            </span>
+            <md-icon class="mr-5 s18 icon md-primary" md-font-icon="icon-delete" ng-click="vm.deleteCheckedIssues($event, vm.checkedIssues)" aria-label="delete selected">
+                <md-tooltip ng-if="vm.checkedIssues.length > 1">Delete Selected Issues</md-tooltip>
+                <md-tooltip ng-if="vm.checkedIssues.length === 1">Delete Selected Issue</md-tooltip>
+            </md-icon>
+        </div>
+    </div>
+
+    <div class="todo-item" ng-repeat="issue in vm.issues | filter: {'deleted': false}" ng-click="vm.selectIssue(issue)" ng-class="{'selectedIssue' : vm.selectedIssue === issue}">
+        <div layout="row">
+            {{issue.title}}
+            <span flex></span>
+            <md-icon ng-if="!vm.exists({id: issue.TECHDISER_ID, title: issue.title}, vm.checkedIssues)" md-font-icon="icon-pencil" class="s22" ng-click="vm.openIssueDialog(issue)">
+                <md-tooltip>Update Issue</md-tooltip>
+            </md-icon>
+        </div>
+    </div>
+</div>

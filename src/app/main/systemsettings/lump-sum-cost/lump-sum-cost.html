@@ -1,0 +1,209 @@
+<div id="shipment-time" layout="row" layout-align="start center" class="white-bg" style="min-height: 100%; height:100%; overflow:hidden; ">
+    <div class="right border" flex style="min-height: 100%; height:100%; max-height: 100%; width: 100%;" layout="column" layout-align="start top">
+
+        <ms-widget layout="column" style="padding: 0; min-height: 100%; height:100%; width: 100% " layout-align="start top">
+
+            <ms-widget-front style="min-height: 100%; height:100%; width: 100%;" layout="column" layout-align="start top">
+                <div class="md-subhead bb h-50 p-15 grey-200-bg" layout="row" layout-align="start center" flex>
+                    <div class="p-10" layout="row" layout-align="start center" flex>
+                        <div flex="10">
+                            Lump Sum Cost
+                        </div>
+                    </div>
+                    <md-button ng-click="vm.saveLumpSumCost()" class="md-raised">Save</md-button>
+                </div>
+
+                <div style="min-height: 100%; height:100%; width: 100%;" ms-scroll>
+
+                    <div layout="row" layout-align="start start" flex>
+                        <div class="pr-10 mb-10" style="height:100%; border-right: 1px solid Gray;" flex="15">
+
+                            <td-tree-view ng-if="vm.supplies" flex="60" class="mr-10" items="vm.supplies" options="vm.categoryTreeOptions" on-select-item="vm.selectCategory(item, event, callBack)">
+                            </td-tree-view>
+
+                        </div>
+                        <!-- Start Material Table -->
+                        <div layout="column" layout-align="start start" class="mt-20">
+                            <div class="ml-10">
+                                <div ng-if="vm.isSelectedCategory" ng-click="vm.isExapndLumpSumCost=true; vm.isNewLumpSumCost=true;
+                                       vm.updateLumpSumCost=false; vm.prepareNewMaterial();" aria-label="Select Measurement" class="h-30 border p-5" style="border-radius: 5px; text-align: center;">
+                                    New Material
+                                    <md-tooltip><span>New Material</span></md-tooltip>
+                                </div>
+                            </div>
+                            <!-- newBox ng-if="vm.isExapndLumpSumCost"-->
+                            <div class="pr-10 mb-20">
+
+                                <div ng-if="vm.isExapndLumpSumCost" layout="column" layout-align="start start" class="pr-10 mb-20 pl-5 box-shadow m-10 h-180 w-auto" flex style="position: relative">
+
+                                    <div layout="row" layout-align="end center" style="position: absolute; top: 5px; right: 5px;">
+                                        <div flex>
+                                            <md-icon ng-click="vm.isExapndLumpSumCost=false" style="color: red;" md-font-icon="icon-close" class="icon md-accent b mt-5">
+                                                <md-tooltip><span>Close Tree</span></md-tooltip>
+                                            </md-icon>
+                                        </div>
+                                    </div>
+
+                                    <div layout="row" layout-align="start start" class="m-10">
+                                        <div class="mt-10 mr-5">
+                                            <div class="font-weight-900">
+                                                Type
+                                            </div>
+                                            <md-input-container class="md-block" style="padding: 0; margin: 0; ">
+                                                <md-select class="w-170 " aria-label="Material Type" ng-change="vm.updateIsSave()" ng-model="vm.material.materialTypeId">
+                                                    <md-option ng-repeat="type in vm.materialTypes" value="{{type.TECHDISER_ID}}">
+                                                        {{type.title}}
+                                                    </md-option>
+                                                </md-select>
+                                            </md-input-container>
+                                        </div>
+
+                                        <div ng-if="vm.isSelectedCategory || vm.selectedMaterial" class="mt-10 mb-10 mr-10" ng-repeat="spec in vm.materialSpecs" layout="column" layout-align="start start">
+
+                                            <div class="font-weight-900">
+                                                {{spec}}
+                                            </div>
+                                            <div class="mt-10">
+                                                <input ng-model="vm.material[vm.replaceSpaces(spec)]" class="w-170" ng-change="vm.updateIsSave()" aria-label="input" style="border: 0; border-bottom: 1px solid #ddd;">
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                    <div ng-if="vm.isSelectedCategory || vm.selectedMaterial" class="quantity-def-table m-10">
+                                        <div class="quantity-def-table-head" layout="row" layout-align="start center">
+
+                                            <div ng-repeat="shipmentCountry in vm.shipments">
+                                                <div class="w-120 border-left border-right border-top grey-100-bg border-bottom quantity-def-table-head-column" style="height: 30px;" layout="column" layout-align="center center">
+                                                    <span> {{shipmentCountry.title}} </span>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+
+                                        <div class="quantity-def-table-body cursor-pointer show-item-button" layout="row" layout-align="start center">
+                                            <div ng-repeat="shipmentZone in vm.shipments">
+                                                <div ng-repeat="countryCost in vm.material.countryWiseUnitCost">
+                                                    <div class="w-120 h-30 border-left border-right border-bottom quantity-def-table-body-column" layout="column" layout-align="center center" ng-if="countryCost.shipmentCountryId === shipmentZone[vm.primaryColumnName]">
+
+                                                        <input class="md-title font-size-12" type="number" ng-model="countryCost.unitCost" ng-model-options="{debounce : 500}" ng-change="vm.updateIsSave(); " placeholder="Unit Cost">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+
+
+                                </div>
+
+                                <div layout="row" layout-align="end center">
+                                    <div ng-if="vm.isExapndLumpSumCost">
+                                        <md-button ng-click="vm.addLumpSumCost(vm.category, vm.material, vm.isNewLumpSumCost); vm.material={}" class="md-raised md-light-blue-200-bg font-size-10 text-bold h-25 w-60" style="line-height: 0px" aria-label="save">
+                                            <span ng-if="vm.isNewLumpSumCost">Add</span><span ng-if="vm.updateLumpSumCost">Update</span>
+                                        </md-button>
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+                            <!-- newBox -->
+                            <div class="quantity-def-table ml-10">
+                                <div class="quantity-def-table-head" layout="row" layout-align="start center">
+
+                                    <div class="w-150 border-left border-top grey-100-bg  border-bottom quantity-def-table-head-column" style="height: 40px;" layout="column" layout-align="center center">
+                                        <span> Material </span>
+                                    </div>
+
+                                    <div class="w-150 border-left border-top grey-100-bg  border-bottom quantity-def-table-head-column" style="height: 40px;" layout="column" layout-align="center center">
+                                        <span> Type </span>
+                                    </div>
+
+                                    <div class="w-200 border-left border-right border-top grey-100-bg  border-bottom quantity-def-table-head-column" style="height: 40px;" layout="row" layout-align="center center">
+                                        <!-- <span ng-repeat="spec in vm.specs">{{spec}}<span ng-if="!($index == vm.specs.length-1)" >,&nbsp;</span>
+                                          </span> -->
+                                        Spec Definition
+                                    </div>
+
+                                    <div class="w-100 border-right border-top grey-100-bg  border-bottom quantity-def-table-head-column" style="height: 40px;" layout="row" layout-align="center center">
+                                        Last Updated
+                                    </div>
+
+                                    <div ng-repeat="shipmentCountry in vm.shipments">
+                                        <div class="w-120 border-right border-top grey-100-bg border-bottom quantity-def-table-head-column" style="height: 40px;" layout="column" layout-align="center center">
+                                            <span> {{shipmentCountry.title}} </span>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+
+                                <div class="quantity-def-table-body cursor-pointer show-item-button" layout="row" layout-align="start center" ng-repeat="material in vm.lscMaterials" ng-click="vm.selectMaterial(material)">
+
+                                    <div class="w-150 h-30 border-left border-bottom quantity-def-table-body-column" layout="column" layout-align="center center" ng-class="{'selected':vm.selectedMaterial === material}">
+                                        <span> {{vm.getMaterialTitle(material.materialCategoryId)}} </span>
+                                    </div>
+
+                                    <div class="w-150 h-30 border-left border-bottom quantity-def-table-body-column" layout="column" layout-align="center center" ng-class="{'selected':vm.selectedMaterial === material}">
+                                        <span> {{vm.getMaterialType(material)}} </span>
+                                    </div>
+
+                                    <div class="w-200 h-30 border-left border-right border-bottom quantity-def-table-head-column" style="height: 40px;" layout="row" layout-align="center center" ng-class="{'selected':vm.selectedMaterial === material}">
+                                        <span ng-repeat="spec in vm.specs">{{vm.getThisSpecValue(spec, material)}}<span ng-if="!($index == vm.specs.length-1)">,&nbsp;</span>
+                                        </span>
+                                    </div>
+
+                                    <div class="w-100 h-30 border-right border-bottom quantity-def-table-head-column" style="height: 40px;" layout="row" layout-align="center center" ng-class="{'selected':vm.selectedMaterial === material}">
+                                        <span>{{material.lastUpdatedData}}</span>
+                                    </div>
+
+                                    <div ng-repeat="shipmentZone in vm.shipments">
+                                        <div ng-repeat="countryCost in material.countryWiseUnitCost">
+                                            <div class="w-120 h-30 border-right border-bottom quantity-def-table-body-column" layout="column" layout-align="center center" ng-class="{'selected':vm.selectedMaterial === material}" ng-if="countryCost.shipmentCountryId === shipmentZone[vm.primaryColumnName]">
+
+                                                {{countryCost.unitCost}}
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="w-50 h-30 border-top border-right border-bottom quantity-def-table-head-column delete-item" style="height: 40px;" layout="row" layout-align="start center">
+                                        <!-- <span style="float:right;"> -->
+                                        <md-icon ng-click="vm.updateMaterial()" md-font-icon="icon-pencil" class="s16 pl-5" style="color:#9c9c9c;">
+                                        </md-icon>
+                                        <!-- </span> -->
+                                        <md-icon ng-click="vm.deleteMaterial(material, vm.lscMaterials)" md-font-icon="icon-close" style="color: red;" class="icon md-accent pl-5">
+                                        </md-icon>
+                                    </div>
+
+
+
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <!-- End Material Table -->
+
+                    </div>
+
+
+
+                </div>
+
+
+            </ms-widget-front>
+
+        </ms-widget>
+
+
+
+
+    </div>
+
+</div>

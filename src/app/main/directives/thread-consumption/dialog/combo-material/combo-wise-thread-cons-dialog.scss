@@ -1,0 +1,27 @@
+#panel-position-dialog {
+  .msb-label-chip {
+    padding: 0 10px 0 10px;
+    margin-right: 5px;
+    border-radius: 11px;
+    display: block;
+    height: 25px;
+    line-height: 25px;
+    font-size: 12px;
+    background-color: rgb(238, 238, 238);
+  }
+
+  .selected-tag {
+    background-color: #b4f1e1 !important;
+  }
+
+  .tag-delete-button {
+    display: none;
+    position: relative;
+    border-radius: 100px;
+    left: 25px;
+    top: -35px;
+  }
+  .msb-label-chip:hover .tag-delete-button {
+    display: block;
+  }
+}

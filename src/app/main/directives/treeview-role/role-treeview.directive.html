@@ -1,0 +1,42 @@
+<div layout="row">
+    <div layout="column" flex class="br pr-5" ms-scroll style="max-height:800px;">
+        <div id="tree-view" ng-if="vm.items" ui-tree="vm.treeOptions" style="width: 100%; clear: both;">
+            <ol ui-tree-nodes ng-class="{hidden: collapsed}" style="width: 100%;" ng-model="vm.items" data-nodrag class="node">
+                <li data-nodrag ng-repeat="node in vm.items" ui-tree-node flex="100" style="width: 100%;" ng-include="'app/main/directives/treeview-role/role-treeview-template.html'"></li>
+            </ol>
+
+        </div>
+    </div>
+    <div ng-if="vm.options.showSelected" flex="30" layout="column" class="ml-20" ms-scroll style="max-height:500px;">
+        <span class="md-subhead bb">Selected Role</span>
+        <md-divider></md-divider>
+        <div layout="row" class="b p-5 mr-20" ng-if="vm.treeType=='role' || vm.treeType=='additionalRoles'">
+            <div layout="column" flex="40">
+                <img ng-if="!role.inChargeInfo.proPic[0]" class="h-50 w-50" ng-src="{{vm.personImgHolder}}" />
+                <img ng-if="role.inChargeInfo.proPic[0]" class="h-50 w-50" ng-src="{{role.inChargeInfo.proPic.data}}" />
+            </div>
+            <div>
+                <div>
+                    {{vm.item.name}}
+                </div>
+                <div>
+                    {{vm.item.email}}
+                </div>
+                <div>
+                    {{vm.item.phoneNumber}}
+                </div>
+            </div>
+        </div>
+        <div ng-if="vm.selectedNodes" ng-repeat="roleId in vm.selectedNodes">
+            <div layout="row" flex="100" class="b p-5 mr-20">
+                <div layout="column" flex>
+                    <td-role-position-card role-id="roleId"></td-role-position-card>
+                </div>
+                <div layout="column" flex="5">
+                    <md-icon ng-click="vm.checkTreeNode(roleId)" md-font-icon="icon-close" class="icon red-800-fg">
+                    </md-icon>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

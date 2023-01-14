@@ -1,0 +1,14 @@
+<div layout="row" class="w-1400" layout-align="left center">
+    <div ng-repeat="infrmtn in accordion.titleDirective.info track by infrmtn.label">
+        <div class="w-{{infrmtn.width}}" layout="column" layout-align="left center">
+            <div ng-if='accordion.showlabels' layout-align="center center" ng-bind-html="infrmtn.label">
+            </div>
+            <div layout-align="center center">
+                <div class="w-{{infrmtn.width-5}}" ng-if='infrmtn.type=="label"' ng-bind-html="infrmtn.data"></div>
+                <input ng-model='infrmtn.data' ng-if='infrmtn.type=="text"' ng-focus="updateValue(accordion.id,accordion.parentId,infrmtn.data)" ng-blur="dataChange(accordion.id,accordion.parentId, infrmtn.id,infrmtn.data)" class="w-{{infrmtn.width-10}}" type='text' value='{{infrmtn.data}}' />
+                <input ng-model='infrmtn.data' ng-if='infrmtn.type=="date"' ng-focus="updateValue(accordion.id,accordion.parentId,infrmtn.data)" ng-blur="dataChange(accordion.id,accordion.parentId, infrmtn.id,infrmtn.data)" class="w-{{infrmtn.width-10}}" type='text' value='{{infrmtn.data}}' />
+            </div>
+        </div>
+    </div>
+
+</div>

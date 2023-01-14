@@ -1,0 +1,77 @@
+<div class="header" layout="column" layout-align="space-between start">
+
+    <div class="logo" layout="row" layout-align="start center">
+        <span class="logo-icon">
+            <md-icon md-font-icon="icon-folder" class="icon s24"></md-icon>
+        </span>
+        <span class="logo-text">User Manager</span>
+    </div>
+
+    <div class="account">
+        <div class="title">Billy Bowden</div>
+    </div>
+
+</div>
+
+<div class="content">
+
+    <div class="navigation-simple" layout="column">
+        <md-button class="item" aria-label="inbox" ng-click="vm.resetFilters()">
+            <div class="context" layout="row" layout-align="start center">
+                <md-icon md-font-icon="icon-account-check" class="s16"></md-icon>
+                <div class="title">All Users</div>
+            </div>
+        </md-button>
+
+        <md-button class="item" aria-label="starred" ng-click="vm.toggleFilterWithEmpty('starred')" ng-class="{'selected':vm.usersFilters.starred}">
+            <div class="context" layout="row" layout-align="start center">
+                <md-icon md-font-icon="icon-star" class="s16"></md-icon>
+                <div class="title">Starred</div>
+            </div>
+        </md-button>
+
+        <md-button class="item" aria-label="important" ng-click="vm.toggleFilterWithEmpty('important')" ng-class="{'selected':vm.usersFilters.important}">
+            <div class="context" layout="row" layout-align="start center">
+                <md-icon md-font-icon="icon-alert-circle" class="s16"></md-icon>
+                <div class="title">Important</div>
+            </div>
+        </md-button>
+    </div>
+
+</div>
+
+<div class="header">
+    <div class="logo" layout="row" layout-align="start center">
+        <span class="logo-icon">
+            <md-icon md-font-icon="icon-group" class="icon s24"></md-icon>
+        </span>
+        <span class="logo-text">Groups</span>
+    </div>
+</div>
+
+<div class="content">
+    <div class="navigation-simple" layout="column">
+        <md-button class="item" aria-label="groups" ng-repeat="group in vm.groups" ng-click="vm.showGroupMembers(group.TECHDISER_ID)" ng-class="{'selected': vm.selectedGroupId === group.TECHDISER_ID}">
+            <md-icon md-font-icon="{{group.icon}}" class="s16"></md-icon>
+            <span class="title">{{group.name}}</span>
+        </md-button>
+    </div>
+</div>
+
+<div class="header">
+    <div class="logo" layout="row" layout-align="start center">
+        <span class="logo-icon">
+            <md-icon md-font-icon="icon-monitor" class="icon s24"></md-icon>
+        </span>
+        <span class="logo-text">Roles</span>
+    </div>
+</div>
+
+<div class="content">
+    <div class="navigation-simple" layout="column">
+        <md-button class="item" aria-label="roles" ng-repeat="role in vm.roles" ng-click="vm.showRoleMembers(role.TECHDISER_ID)" ng-class="{'selected': vm.selectedRoleId === role.TECHDISER_ID}">
+            <md-icon md-font-icon="{{role.icon}}" class="s16"></md-icon>
+            <span class="title">{{role.name}}</span>
+        </md-button>
+    </div>
+</div>

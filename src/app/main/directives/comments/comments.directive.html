@@ -1,0 +1,58 @@
+<div class="custom-directive-container">
+
+
+    <!-- COMMENTS SECTION -->
+    <div class="section border-bottom pb-10">
+        <div class="comments">
+
+            <div class="section-header" layout="row" layout-align="start center">
+                <button class="btn-expand-colupse md-icon-button md-accent md-button md-default-theme md-ink-ripple" type="button" aria-label="reminder" ng-click="vm.shoHideForm('comments')">
+
+                    <md-icon ng-if="!vm.comments.expand" md-font-icon="icon-plus-box" class="icon"></md-icon>
+                    <md-icon ng-if="vm.comments.expand" md-font-icon="icon-minus-box" class="icon"></md-icon>
+                </button>
+                <span class="section-title">Comments</span>
+            </div>
+
+            <div class="section-content" ng-if="vm.comments.expand">
+                <form name="cardCommentForm" ng-submit="vm.addNewComment(vm.newCommentText); vm.newCommentText =''" class="comment new-comment" layout="column" layout-align="start" no-validate>
+
+                    <div layout="row">
+                        <img class="comment-member-avatar" src="assets/images/avatars/profile.jpg">
+                        <md-input-container flex md-no-float>
+                            <textarea placeholder="Write a comment.." ng-model="vm.newCommentText" required max-rows="4">
+                                              </textarea>
+                        </md-input-container>
+                    </div>
+
+                    <div layout="row" layout-align="start center">
+                        <md-button type="submit" class="md-raised md-accent" ng-disabled="cardCommentForm.$invalid || cardCommentForm.$pristine" aria-label="Add">
+                            <span>Add</span>
+                        </md-button>
+                    </div>
+                </form>
+            </div>
+
+            <div ng-mouseover="vm.checkUser(comment);" ng-mouseleave="comment.showDelete = false" class="comment" layout="row" ng-repeat="comment in itemList">
+                <img class="comment-member-avatar" ng-src="{{comment.person.avatar}}">
+
+                <div layout="column">
+                    <div layout="row" layout-align="start top">
+                        <div class="comment-member-name">
+                            {{comment.person.name}}
+                        </div>
+                        <div class="comment-time secondary-text ml-10">{{comment.time}}</div>
+                        <md-button ng-show="comment.showDelete" class="md-icon-button btn-comment-remove" ng-click="vm.removeComment(comment);" aria-label="Close dialog">
+                            <md-icon md-font-icon="icon-close-circle" class="icon"></md-icon>
+                        </md-button>
+                    </div>
+                    <div class="comment-bubble">{{comment.message}}</div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- / COMMENTS SECTION -->
+
+</div>

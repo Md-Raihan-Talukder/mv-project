@@ -1,0 +1,16 @@
+{
+    "data": [
+        {
+            "TECHDISER_ID": "userratings1",
+            "TECHDISER_SERIAL_NO": 1,
+            "ratingTypeId": "Supplier",
+            "userId": "USER1",
+            "divisionId": "card4",
+            "issueTypeId": "1",
+            "issueId": "ratingissue1",
+            "issueClassId": "",
+            "ratingScale": null,
+            "rating": null
+        }
+    ]
+}

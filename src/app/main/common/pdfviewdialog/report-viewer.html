@@ -1,0 +1,19 @@
+<md-dialog class="report-viewer-dialog" aria-label="Card Card Dialog">
+    <md-toolbar class="md-accent" style="min-height:20px !important;">
+        <div class="md-toolbar-tools">
+            <span class="ml-10">View Report</span>
+
+            <span flex></span>
+            <md-button class="md-icon-button" ng-click="vm.closeDialog()" aria-label="Close Dialog">
+                <md-icon md-font-icon="icon-close"></md-icon>
+            </md-button>
+        </div>
+    </md-toolbar>
+
+    <md-dialog-content ms-scroll style="padding-top: 0;">
+        <div layout-gt-sm="row" layout="column" layout-wrap layout-align="start start">
+            <iframe id="reportV" frameborder="0" scrolling="yes" seamless="seamless" style="display:block; width:100%; height:100vh;"></iframe>
+        </div>
+    </md-dialog-content>
+
+</md-dialog>

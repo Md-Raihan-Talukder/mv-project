@@ -1,0 +1,91 @@
+<div id="shipment-time" layout="row" layout-align="start center" class="white-bg" style="min-height: 100%; height:100%; overflow:hidden; ">
+    <div class="right border" flex style="min-height: 100%; height:100%; max-height: 100%; width: 100%;" layout="column" layout-align="start top">
+
+        <ms-widget layout="column" style="padding: 0; min-height: 100%; height:100%; width: 100% " layout-align="start top">
+
+            <ms-widget-front style="min-height: 100%; height:100%; width: 100%;" layout="column" layout-align="start top">
+                <div class="md-subhead bb h-50 p-15 grey-200-bg" layout="row" layout-align="start center" flex>
+                    <div class="p-10" layout="row" layout-align="start center" flex>
+                        <div flex="10">
+                            Shipment Time
+                        </div>
+                    </div>
+                    <md-button ng-click="vm.saveShipmentTime()" class="md-raised">Save</md-button>
+                </div>
+
+                <div style="min-height: 100%; height:100%; width: 100%;" ms-scroll>
+                    <div class="h-35 md-cyan-50-bg" layout="row" layout-align="start center" flex>
+                        <div layout="row" layout-align="start center" class="ml-20" flex="20">
+                            <span class="mr-50">Country / Zone</span>
+                            <div>
+                                <md-icon ng-click="vm.addShipmentCountryZone({}, true);" class="md-accent" md-font-icon="icon-plus-box">
+                                    <md-tooltip><span>Add Shipment Country / Zone</span></md-tooltip>
+                                </md-icon>
+                            </div>
+                        </div>
+                        <span ng-if="vm.shipmentModes.length <= 0" flex></span>
+                        <div layout="row" layout-align="start center" ng-repeat="mode in vm.shipmentModes" flex>
+                            <div class="cursor-pointer mode-item" style="position: relative;">
+                                <div class=" ml-50 pl-10 pr-10 h-25 b" style="border-radius: 5px; text-align: center; padding-top: 3px; min-width:60px;">
+                                    {{mode.shipmentMode}}
+                                </div>
+                                <div layout="row" layout-align="start center">
+                                    <div class="mode-delete-button" style="top: 0px; right: -20px;">
+                                        <md-icon ng-click="vm.addShipmentMode(mode, false);" md-font-icon="icon-pencil" class="s16 mr-5" style="border-radius:100px;color:#9c9c9c;">
+                                            <md-tooltip><span>Update Mode</span></md-tooltip>
+                                        </md-icon>
+                                    </div>
+                                    <div class="cursor-pointer mode-delete-button" style="top: 0px; right: -40px;">
+                                        <md-icon style="color: red;" ng-click="vm.deleteShipmentMode(mode, vm.shipmentModes)" md-font-icon="icon-close" class="icon md-accent">
+                                            <md-tooltip><span>Delete Mode</span></md-tooltip>
+                                        </md-icon>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mr-15">
+                            <md-button ng-click="vm.addShipmentMode(mode, true);" style="text-align: center;" class="md-raised h-30">Add Mode</md-button>
+                        </div>
+                    </div>
+                    <div class="widget-group" flex="100" layout-wrap>
+                        <ms-widget ng-repeat="shipmentCountry in vm.shipments" ng-click="vm.selectShipmentCountry(shipmentCountry)" ng-class="{'selected': vm.selectedShipmentCountry === shipmentCountry}" class="fade-item country-padding transport-item cursor-pointer" flippable="false" layout="column">
+                            <ms-widget-front class="md-grey-50-bg p-5 h-50">
+                                <div layout="row" flex="100">
+                                    <div layout="row" layout-align="start center" class="ml-20" flex="20">
+                                        <span class="line-height-small">{{shipmentCountry.title}}</span>
+                                    </div>
+                                    <div ng-repeat="shipmentMode in vm.shipmentModes" flex>
+                                        <div ng-repeat="transportMode in shipmentCountry.transportModes" style="height: 100%" ng-if="transportMode.shipmentModeId === shipmentMode[vm.primaryColumnName]" class="time-input" layout="row" layout-align="start center">
+                                            <div>
+                                                <input class="md-title font-size-12" type="number" ng-model="transportMode.shipmentTime" ng-model-options="{debounce : 500}" ng-change="vm.updateIsSave();" placeholder="day">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <span ng-if="vm.shipmentModes.length < 1" flex></span>
+                                    <div layout="row" layout-align="start center" flex="5">
+                                        <span class="show-action-button">
+                                            <md-icon ng-click="vm.addShipmentCountryZone(shipmentCountry, false); $event.stopPropagation();" md-font-icon="icon-pencil" class="s16 mr-15" style="border-radius:100px;color:#9c9c9c;">
+                                                <md-tooltip><span>Update Country / Zone</span></md-tooltip>
+                                            </md-icon>
+                                        </span>
+                                        <div layout="column" class="cursor-pointer show-action-button">
+                                            <md-icon style="color: red;" ng-click="vm.deleteShipmentCountryZone(shipmentCountry, vm.shipments)" md-font-icon="icon-close" class="icon md-accent">
+                                                <md-tooltip><span>Delete Country / Zone</span></md-tooltip>
+                                            </md-icon>
+                                        </div>
+                                    </div>
+                                </div>
+                            </ms-widget-front>
+                        </ms-widget>
+                    </div>
+                </div>
+
+            </ms-widget-front>
+
+        </ms-widget>
+
+
+
+    </div>
+
+</div>

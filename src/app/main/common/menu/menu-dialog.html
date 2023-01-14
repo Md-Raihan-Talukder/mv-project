@@ -1,0 +1,126 @@
+<md-dialog class="register-menu-dialog common-dialog" aria-label="Dialog">
+
+
+    <md-toolbar class="md-accent">
+        <div class="md-toolbar-tools" layout="row" layout-align="space-between center">
+            <span ng-if="vm.isNew" class="title">Add new menu</span>
+            <span ng-if="!vm.isNew" class="title">Update menu: {{vm.menu.title}}</span>
+            <md-button class="md-icon-button" ng-click="vm.closeDialog()">
+                <md-icon md-font-icon="icon-close" aria-label="Close dialog"></md-icon>
+            </md-button>
+        </div>
+    </md-toolbar>
+
+
+
+    <md-dialog-content ms-scroll>
+
+        <form name="registerReportForm" class="md-inline-form registerColumnForm" novalidate>
+
+            <div layout-gt-sm="row" layout="column" flex="100" layout-wrap layout-align="space-between start">
+                <div flex class="description">
+                    <md-input-container class="md-block">
+                        <label>Title</label>
+                        <input class="md-title" name="taskTitle" ng-model="vm.menu.title" required autocomplete="off">
+                        <div ng-messages="registerReportForm.taskTitle.$error" role="alert">
+                            <div ng-message="required">
+                                <span>Title field is required</span>
+                            </div>
+                        </div>
+                    </md-input-container>
+                </div>
+                <div flex class="description ml-10 mr-10" layout="row" layout-align="start center">
+                    <md-input-container class="md-block" flex="70" style="margin-top: -7px;">
+                        <label>Type</label>
+                        <md-select name="report" ng-model="vm.menu.type" aria-label="select">
+                            <md-option value="state">State</md-option>
+                            <md-option value="register">Register</md-option>
+                        </md-select>
+                    </md-input-container>
+                    <md-input-container flex="30" class="w-100">
+                        <label>Weight</label>
+                        <input class="" ng-model="vm.menu.weight" type="number" step="1" aria-label="w">
+                    </md-input-container>
+                </div>
+            </div>
+
+            <div layout="row" layout-align="start center" flex ng-if="vm.menu.type ==='state'">
+                <md-input-container class="md-block" flex>
+                    <label>State</label>
+                    <input class="md-title" name="state" ng-model="vm.menu.state" autocomplete="off">
+                </md-input-container>
+
+                <md-input-container class="md-block" flex>
+                    <label>State Params</label>
+                    <input class="md-title" name="stateParams" ng-model="vm.menu.stateParams" autocomplete="off">
+                </md-input-container>
+
+            </div>
+
+            <div layout="row" layout-align="start center" flex ng-if="vm.menu.type ==='register'">
+                <md-input-container class="md-block" flex>
+                    <label>Landing view</label>
+                    <md-select name="report" ng-model="vm.menu.landingViewId" aria-label="select">
+                        <md-option value="">None</md-option>
+                        <md-option ng-repeat="item in vm.landingViews" value="{{item[vm.primaryColumnName]}}">{{item.title}}</md-option>
+                    </md-select>
+                </md-input-container>
+
+                <md-input-container class="md-block" flex>
+                    <label>Data capture</label>
+                    <md-select name="dataentry" ng-model="vm.menu.formId" aria-label="select">
+                        <md-option value="">None</md-option>
+                        <md-option ng-repeat="item in vm.forms" value="{{item[vm.primaryColumnName]}}">{{item.title}}</md-option>
+                    </md-select>
+                </md-input-container>
+
+            </div>
+
+            <div layout="row" layout-align="start center" flex ng-if="vm.menu.type ==='register'">
+
+                <md-input-container class="md-block" flex>
+                    <label>Report</label>
+                    <md-select name="report" ng-model="vm.menu.reportId" aria-label="select">
+                        <md-option value="">None</md-option>
+                        <md-option ng-repeat="item in vm.reports" value="{{item[vm.primaryColumnName]}}">{{item.title}}</md-option>
+                    </md-select>
+                </md-input-container>
+
+            </div>
+
+            <div layout="row" layout-align="start center" flex>
+                <md-input-container class="md-block" flex>
+                    <label>Icon</label>
+                    <input class="md-title" name="icon" ng-model="vm.menu.icon" autocomplete="off">
+                </md-input-container>
+
+                <md-input-container class="md-block" flex>
+                    <label>Class</label>
+                    <input class="md-title" name="cssClass" ng-model="vm.menu.cssClass" autocomplete="off">
+                </md-input-container>
+
+            </div>
+
+
+        </form>
+
+
+    </md-dialog-content>
+
+
+    <md-dialog-actions layout="row" layout-align="space-between center">
+        <div layout="row" layout-align="start center">
+            <md-button ng-click="vm.saveMenu()" class="send-button md-accent md-raised" ng-disabled="registerReportForm.$invalid || vm.viewMode" aria-label="SAVE">
+                SAVE
+            </md-button>
+        </div>
+        <div layout="row" layout-align="start center">
+            <md-button ng-click="vm.closeDialog()" class="send-button md-raised" aria-label="SAVE">
+                CLOSE
+            </md-button>
+        </div>
+
+    </md-dialog-actions>
+
+
+</md-dialog>

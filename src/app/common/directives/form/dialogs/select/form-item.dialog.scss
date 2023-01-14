@@ -1,0 +1,10 @@
+md-dialog {
+  &.item-select-dialog {
+    width: 70%;
+    max-width: 70%;
+    overflow: hidden;
+
+    md-dialog-content {
+    }
+  }
+}

@@ -1,0 +1,212 @@
+<md-dialog id="systemsettings" class="common-dialog" aria-label="Card Card Dialog" ng-init="tabPosition=1">
+    <md-toolbar class="md-accent">
+        <div class="md-toolbar-tools">
+            <span><span ng-if="vm.isNewIssue">Add </span><span ng-if="!vm.isNewIssue">Update </span>Issue</span>
+            <span flex></span>
+            <md-button class="md-icon-button" ng-click="vm.closeDialog()" aria-label="Close Dialog">
+                <md-icon md-font-icon="icon-close"></md-icon>
+            </md-button>
+        </div>
+    </md-toolbar>
+
+    <md-dialog-content ms-scroll class="font-size-16" style="min-height:500px;padding:0px;">
+        <md-tabs md-dynamic-height md-border-bottom class="tabs" md-selected="tabPosition">
+            <md-tab label="Issue Type">
+                <div ng-if="vm.checkedIssueTypes.length" class="orange-50-bg h-50 mb-20 pr-30 selected-bar animate-slide-down b font-size-18" layout="row" layout-align="start center">
+                    <md-icon md-font-icon="icon-arrow-left" class="ml-30 s18 icon md-primary" ng-click="vm.clearCheckedIssueTypes()">
+                        <md-tooltip>Undo Selected</md-tooltip>
+                    </md-icon>
+                    <div layout="row" layout-align="center center">
+                        <span class="mr-90">{{vm.checkedIssueTypes.length}} selected
+                            <md-menu class="select-menu">
+                                <md-icon md-font-icon="icon-menu-down" ng-click="$mdOpenMenu($event)"></md-icon>
+                                <md-menu-content width="1">
+                                    <md-menu-item>
+                                        <md-button ng-click="vm.checkedAllIssueTypes()">Select All</md-button>
+                                    </md-menu-item>
+                                    <md-menu-item>
+                                        <md-button ng-click="vm.clearCheckedIssueTypes()">Select None</md-button>
+                                    </md-menu-item>
+                                </md-menu-content>
+                            </md-menu>
+                        </span>
+                        <md-icon class="mr-5 s18 icon md-primary" md-font-icon="icon-delete" ng-click="vm.deleteCheckedIssueTypes($event, vm.checkedIssueTypes)" aria-label="delete selected">
+                            <md-tooltip ng-if="vm.checkedIssueTypes.length > 1">Delete Selected Issue Types</md-tooltip>
+                            <md-tooltip ng-if="vm.checkedIssueTypes.length === 1">Delete Selected Issue Type</md-tooltip>
+                        </md-icon>
+                    </div>
+                </div>
+                <div layout="row" flex="100" class="p-10">
+                    <div class="pr-10">
+                        <div layout="row" layout-wrap layout-align="space-between start">
+                            <md-input-container class="w-250">
+                                <label>Title</label>
+                                <input ng-model="vm.issueType.title" autocomplete="off">
+                            </md-input-container>
+                            <md-input-container class="ml-5 w-250">
+                                <label>Code</label>
+                                <input ng-model="vm.issueType.code" autocomplete="off">
+                            </md-input-container>
+                            <md-button ng-if="vm.isNewIssueType" ng-click="vm.addIssueType(vm.issueType)" class="mt-35 h-25 w-50 font-size-10 text-bold md-raised md-primary" style="line-height: 2;text-transform: capitalize">Add</md-button>
+                            <md-button ng-if="!vm.isNewIssueType" ng-click="vm.addIssueType(vm.issueType)" class="mt-35 h-25 w-50 font-size-10 text-bold md-raised md-primary" style="line-height: 2;text-transform: capitalize">Update</md-button>
+                        </div>
+                    </div>
+
+                </div>
+                <div layout="column">
+                    <span class="md-subhead ml-20 text-bold"><u>Issue Types</u></span>
+                    <table class="simple list-view">
+                        <thead>
+                            <tr>
+                                <th>Title</th>
+                                <th>Code</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr ng-repeat="issueType in vm.issuetypes | filter: {'deleted': false}" ng-click="vm.select(org)" ng-class="{'selected' : vm.selected === org}">
+                                <td class="name">{{issueType.title}}</td>
+
+                                <td class="country" hide show-gt-md>{{issueType.code}}</td>
+
+                                <td class="edit-delete">
+                                    <md-icon md-font-icon="icon-pencil" class="icon mr-5" ng-click="vm.issueType=issueType;vm.isNewIssueType=false;">
+                                        <md-tooltip>Edit</md-tooltip>
+                                    </md-icon>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+
+                </div>
+            </md-tab>
+            <md-tab label="Issue">
+                <div ng-if="vm.checkedIssues.length" class="orange-50-bg h-50 mb-20 pr-30 selected-bar animate-slide-down b font-size-18" layout="row" layout-align="start center">
+                    <md-icon md-font-icon="icon-arrow-left" class="ml-30 s22 icon md-primary" ng-click="vm.clearCheckedIssues()">
+                        <md-tooltip>Undo Selected</md-tooltip>
+                    </md-icon>
+                    <div layout="row" layout-align="center center">
+                        <span class="mr-90">{{vm.checkedIssues.length}} selected
+                            <md-menu class="select-menu">
+                                <md-icon md-font-icon="icon-menu-down" ng-click="$mdOpenMenu($event)"></md-icon>
+                                <md-menu-content width="1">
+                                    <md-menu-item>
+                                        <md-button ng-click="vm.checkedAllIssues()">Select All</md-button>
+                                    </md-menu-item>
+                                    <md-menu-item>
+                                        <md-button ng-click="vm.clearCheckedIssues()">Select None</md-button>
+                                    </md-menu-item>
+                                </md-menu-content>
+                            </md-menu>
+                        </span>
+                        <md-icon class="mr-5 s22 icon md-primary" md-font-icon="icon-delete" ng-click="vm.deleteCheckedIssues($event, vm.checkedIssues)" aria-label="delete selected">
+                            <md-tooltip ng-if="vm.checkedIssues.length > 1">Delete Selected Issues</md-tooltip>
+                            <md-tooltip ng-if="vm.checkedIssues.length === 1">Delete Selected Issue</md-tooltip>
+                        </md-icon>
+                    </div>
+                </div>
+                <div layout="row" flex="100" class="p-10">
+                    <div flex="100" class="ml-10">
+                        <div layout="row" layout-wrap>
+                            <div layout="row" layout-wrap layout-align="space-between start">
+                                <div layout="column" flex="30">
+                                    <md-input-container>
+                                        <label>Title</label>
+                                        <input ng-model="vm.issue.title" autocomplete="off">
+                                    </md-input-container>
+                                </div>
+                                <div layout="column" flex="30">
+                                    <md-input-container>
+                                        <label>Code</label>
+                                        <input ng-model="vm.issue.code" autocomplete="off">
+                                    </md-input-container>
+                                </div>
+                                <div layout="column" flex="30">
+                                    <md-input-container>
+                                        <label>Issue Type</label>
+                                        <md-select ng-model="vm.issue.issueTypeId">
+                                            <md-option>
+                                                <em>None</em>
+                                            </md-option>
+                                            <md-option ng-repeat="issuetype in vm.issuetypes | filter: {'deleted': false}" ng-value="issuetype.TECHDISER_ID">
+                                                {{issuetype.title}}
+                                            </md-option>
+                                        </md-select>
+                                    </md-input-container>
+
+                                </div>
+                                <div flex="5">
+                                    <md-icon ng-click="tabPosition=0" md-font-icon="icon-plus-box" class="icon s22 mt-30">
+                                        <md-tooltip>Add New Issue Type</md-tooltip>
+                                    </md-icon>
+                                </div>
+                            </div>
+                            <div layout="row">
+                                <div layout="column" flex="30">
+                                    <md-input-container>
+                                        <label>Scale</label>
+                                        <input ng-model="vm.issue.scale" ng-keypress="vm.isNumberKey($event)" autocomplete="off">
+                                    </md-input-container>
+                                </div>
+                                <div layout="column" flex="30">
+                                    <md-input-container>
+                                        <label>Number Of Concerns</label>
+                                        <input ng-model="vm.issue.numberOfConcerns" ng-keypress="vm.isNumberKey($event)" autocomplete="off">
+                                    </md-input-container>
+                                </div>
+                                <div layout="column" flex="30">
+                                    <md-input-container>
+                                        <label>Class Title</label>
+                                        <input ng-model="vm.issue.classTitle" autocomplete="off">
+                                    </md-input-container>
+                                </div>
+                            </div>
+                            <div layout="row" class="description ml-5 mt-5">
+                                <span style="color:#A3A5AA; margin-top:20px;margin-right:10px;">Comparison Type:</span>
+                                <md-input-container>
+                                    <md-radio-group class="md-primary" ng-model="vm.issue.comparisonType">
+                                        <md-radio-button style="display:inline; color:#272727" value="RANGE">Range</md-radio-button>
+                                        <md-radio-button style="display:inline; color:#272727" value="BOOLEAN">Boolean</md-radio-button>
+                                        <md-radio-button style="display:inline; color:#272727" value="DIRECT">Direct</md-radio-button>
+                                        <md-radio-button style="display:inline; color:#272727" value="EQUAL">Equal</md-radio-button>
+                                    </md-radio-group>
+                                </md-input-container>
+                            </div>
+                        </div>
+                        <span flex></span>
+                    </div>
+                </div>
+                <div layout="row" class="ml-20">
+                    <div class="column">
+                        <span class="md-title">Applicable Divisions</span>
+                        <md-divider></md-divider>
+                        <span ng-repeat="div in vm.departments | filter:{'level':2}">
+                            <md-checkbox style="margin-bottom:0px;margin-right:20px;" ng-checked="vm.checkDeptExist(vm.issue, div.TECHDISER_ID)" ng-click="vm.selectApplicableDepts(vm.issue, div.TECHDISER_ID)">
+                                {{div.title}}
+                            </md-checkbox>
+                        </span>
+                    </div>
+                </div>
+            </md-tab>
+        </md-tabs>
+
+    </md-dialog-content>
+
+    <md-dialog-actions layout="row" layout-align="space-between center">
+        <div layout="row">
+            <md-button ng-if="vm.isNewIssue" ng-click="vm.saveIssueAndType('A')" class="send-button md-accent md-raised" ng-disabled="moduleForm.$invalid" aria-label="DELETE">
+                <span>ADD</span>
+            </md-button>
+            <md-button ng-if="!vm.isNewIssue" ng-click="vm.saveIssueAndType('U')" class="send-button md-accent md-raised" ng-disabled="moduleForm.$invalid" aria-label="DELETE">
+                <span>Update</span>
+            </md-button>
+        </div>
+        <div layout="row">
+            <md-button ng-click="vm.closeDialog()" class="send-button md-accent md-raised" ng-disabled="moduleForm.$invalid" aria-label="CANCEL">
+                <span>CANCEL</span>
+            </md-button>
+        </div>
+    </md-dialog-actions>
+
+</md-dialog>

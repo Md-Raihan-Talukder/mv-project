@@ -1,0 +1,182 @@
+{
+    "data": [
+        {
+            "TECHDISER_ID": "test_basic_info",
+            "TECHDISER_TAG_CODE": "test_basic_info",
+            "addNew": true,
+            "parameters": [],
+            "infoDefinition": [
+                {
+                    "service": "MATERIAL_BOOKING",
+                    "task": "basic",
+                    "path": "/[TECHDISER_ID=$bookingId]",
+                    "pick": [
+                        {
+                            "data": "/",
+                            "as": "bookingList"
+                        }
+                    ]
+                }
+            ],
+            "genPoint": {
+                "key": "bookingList",
+                "path": ""
+            },
+            "stripDefinition": [
+                {
+                    "genPathAppend": "/[TECHDISER_ID=$TECHDISER_ID]",
+                    "dataPoint": {
+                        "service": "MATERIAL_BOOKING",
+                        "task": "basic"
+                    },
+                    "items": [
+                        {
+                            "label": "Booking Id",
+                            "itemMode": "view",
+                            "visibility": "hidden",
+                            "propertyCode": "TECHDISER_ID",
+                            "isJsonAttribute": true,
+                            "type": "TECHDISER_ID"
+                        },
+                        {
+                            "label": "Booking No",
+                            "itemMode": "create",
+                            "visibility": "show",
+                            "propertyCode": "bookingNo",
+                            "isJsonAttribute": true,
+                            "type": "keyVal",
+                            "controlType": "text",
+                            "uiDataSource": {
+                                "serviceName": "materialBookingService",
+                                "functionName": "getBookingNo",
+                                "asynchronous": true
+                            },
+                            "flex": 100
+                        },
+                        {
+                            "label": "Booking Date",
+                            "itemMode": "create",
+                            "visibility": "show",
+                            "propertyCode": "bookingDate",
+                            "isJsonAttribute": true,
+                            "type": "keyVal",
+                            "controlType": "text",
+                            "flex": 100
+                        },
+                        {
+                            "label": "Select Buyer",
+                            "itemMode": "create",
+                            "visibility": "hidden",
+                            "propertyCode": "selectPo",
+                            "isJsonAttribute": false,
+                            "inSummary": true,
+                            "controlType": "select",
+                            "singleSelection": true,
+                            "refPropertyCode": "buyerId",
+                            "keyProperty": "TECHDISER_ID",
+                            "valueProperty": "TECHDISER_ID",
+                            "dependentColumns": [
+                                "buyerId"
+                            ],
+                            "type": "group",
+                            "uiDataSource": {
+                                "service": "BUYER",
+                                "task": "clientUrl",
+                                "path": "/"
+                            }
+                        },
+                        {
+                            "label": "Buyer",
+                            "itemMode": "view",
+                            "visibility": "show",
+                            "propertyCode": "buyerId",
+                            "isJsonAttribute": true,
+                            "type": "strip",
+                            "controlType": "strip",
+                            "flex": 100,
+                            "stripDef": {
+                                "title": "Buyer",
+                                "type": "list",
+                                "rowHeight": 50,
+                                "stripCode": "buyer_list",
+                                "taskId": "buyer-list",
+                                "selectable": false,
+                                "stripParameters": [
+                                    {
+                                        "key": "buyerId",
+                                        "valueKey": "buyerId"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ],
+            "formTemplate": {
+                "layoutType": "flat",
+                "rows": [
+                    {
+                        "id": "1",
+                        "style": "",
+                        "columns": [
+                            {
+                                "id": "11",
+                                "style": "",
+                                "hSegments": [
+                                    {
+                                        "id": "11",
+                                        "style": "",
+                                        "vSegments": [
+                                            {
+                                                "id": "111",
+                                                "style": "",
+                                                "type": "column",
+                                                "colPropertyCode": "bookingNo"
+                                            },
+                                            {
+                                                "id": "112",
+                                                "style": "",
+                                                "type": "column",
+                                                "colPropertyCode": "bookingDate"
+                                            },
+                                            {
+                                                "id": "112",
+                                                "style": "",
+                                                "type": "column",
+                                                "colPropertyCode": "selectPo"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "id": "1",
+                        "style": "",
+                        "columns": [
+                            {
+                                "id": "11",
+                                "style": "",
+                                "hSegments": [
+                                    {
+                                        "id": "11",
+                                        "style": "",
+                                        "vSegments": [
+                                            {
+                                                "id": "111",
+                                                "style": "",
+                                                "type": "column",
+                                                "colPropertyCode": "buyerId"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    ]
+}

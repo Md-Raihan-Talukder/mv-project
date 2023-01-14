@@ -1,0 +1,40 @@
+<md-dialog class="data-entry-dialog" aria-label="Dialog" data-drag="true" jqyoui-draggable="{animate:true}" data-jqyoui-options="{ handle: '.drag-handle'}">
+
+    <md-toolbar class="md-accent drag-handle">
+        <div class="md-toolbar-tools" layout="row" layout-align="space-between center">
+            <span ng-if="vm.isNew" class="title">Add new {{vm.type}}</span>
+            <span ng-if="!vm.isNew" class="title">Update {{vm.type}}</span>
+
+            <md-button class="md-icon-button" ng-click="vm.closeDialog()">
+                <md-icon md-font-icon="icon-close" aria-label="Close dialog"></md-icon>
+            </md-button>
+        </div>
+    </md-toolbar>
+
+
+    <md-dialog-content ms-scroll>
+
+        <form name="dataEntryForm" class="md-inline-form" novalidate>
+
+            <msb-form form-id="vm.formId" object-property="vm.item">
+            </msb-form>
+
+        </form>
+
+    </md-dialog-content>
+
+
+    <md-dialog-actions layout="row" layout-align="space-between center">
+
+        <md-button ng-click="vm.onOk()" class="md-accent md-raised" ng-disabled="dataEntryForm.$invalid" aria-label="SAVE">
+            OK
+        </md-button>
+
+        <md-button ng-click="vm.closeDialog()" class="md-raised" ng-disabled="dataEntryForm.$invalid" aria-label="Close">
+            Close
+        </md-button>
+
+    </md-dialog-actions>
+
+
+</md-dialog>

@@ -1,0 +1,761 @@
+{
+    "data": [
+        {
+            "TECHDISER_ID": "style_material_basic",
+            "stripType": "card",
+            "addNew": true,
+            "parameters": [
+                {
+                    "key": "category"
+                },
+                {
+                    "key": "styleID"
+                }
+            ],
+            "infoDefinition": [
+                {
+                    "service": "MATERIALS_CATEGORY",
+                    "task": "clientUrl",
+                    "path": "/",
+                    "pick": [
+                        {
+                            "data": "/",
+                            "as": "categories"
+                        }
+                    ]
+                },
+                {
+                    "fromParam": "category",
+                    "pick": [
+                        {
+                            "data": "/TECHDISER_ID",
+                            "as": "catID"
+                        }
+                    ]
+                },
+                {
+                    "service": "STYLE_MANAGEMENT",
+                    "task": "clientUrl",
+                    "path": "/[TECHDISER_ID=$styleID]",
+                    "pick": [
+                        {
+                            "data": "/basicInfo",
+                            "as": "styleBasicInfo"
+                        },
+                        {
+                            "data": "/materialDefinition",
+                            "as": "materials"
+                        }
+                    ]
+                }
+            ],
+            "genPoint": {
+                "key": "materials",
+                "path": ""
+            },
+            "stripDefinition": [
+                {
+                    "genPathAppend": "/[TECHDISER_ID=$TECHDISER_ID]",
+                    "dataPoint": {
+                        "service": "STYLE_MANAGEMENT",
+                        "task": "clientUrl",
+                        "TECHDISER_ID": "$styleID",
+                        "objectName": "materialDefinition",
+                        "path": "/materialDefinition"
+                    },
+                    "items": [
+                        {
+                            "label": "Material ID",
+                            "itemMode": "view",
+                            "visibility": "hidden",
+                            "propertyCode": "TECHDISER_ID",
+                            "isJsonAttribute": true,
+                            "inSummary": true,
+                            "type": "TECHDISER_ID"
+                        },
+                        {
+                            "label": "Material Image",
+                            "itemMode": "create",
+                            "visibility": "show",
+                            "propertyCode": "materialImage",
+                            "isJsonAttribute": true,
+                            "inSummary": true,
+                            "type": "keyValue",
+                            "controlType": "image",
+                            "width": 120
+                        },
+                        {
+                            "label": "Material Info",
+                            "itemMode": "view",
+                            "visibility": "show",
+                            "propertyCode": "MaterialInfo",
+                            "isJsonAttribute": false,
+                            "inSummary": true,
+                            "type": "multiColumn",
+                            "columnRefs": [
+                                "title",
+                                "materialTypeDis"
+                            ],
+                            "controlType": "multiColumn"
+                        },
+                        {
+                            "label": "Material Title",
+                            "itemMode": "create",
+                            "visibility": "show",
+                            "propertyCode": "title",
+                            "isJsonAttribute": true,
+                            "inSummary": true,
+                            "type": "keyValue",
+                            "controlType": "text"
+                        },
+                        {
+                            "label": "Material Category ID",
+                            "itemMode": "view",
+                            "visibility": "hidden",
+                            "propertyCode": "materialCatagoryID",
+                            "isJsonAttribute": true,
+                            "inSummary": true,
+                            "type": "ref",
+                            "dataSource": {
+                                "key": "category",
+                                "dataPath": "/[TECHDISER_ID=$materialCatagoryID]",
+                                "containers": [
+                                    {
+                                        "attr": "title",
+                                        "item": "materialCategoryDis"
+                                    }
+                                ]
+                            },
+                            "newStrip": {
+                                "key": "category",
+                                "dataPath": "/",
+                                "containers": [
+                                    {
+                                        "attr": "TECHDISER_ID",
+                                        "item": "materialCatagoryID"
+                                    },
+                                    {
+                                        "attr": "title",
+                                        "item": "materialCategoryDis"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "label": "Material Category",
+                            "itemMode": "view",
+                            "visibility": "show",
+                            "propertyCode": "materialCategoryDis",
+                            "isJsonAttribute": false,
+                            "inSummary": true,
+                            "type": "view",
+                            "controlType": "label"
+                        },
+                        {
+                            "label": "Material Type ID",
+                            "itemMode": "view",
+                            "visibility": "hidden",
+                            "propertyCode": "materialTypeID",
+                            "isJsonAttribute": true,
+                            "inSummary": true,
+                            "type": "ref",
+                            "dataSource": {
+                                "key": "categories",
+                                "dataPath": "/[TECHDISER_ID=$materialCatagoryID]/materialTypes[TECHDISER_ID=$materialTypeID]",
+                                "containers": [
+                                    {
+                                        "attr": "",
+                                        "item": "materialTypeDis"
+                                    }
+                                ]
+                            },
+                            "newStrip": {
+                                "key": "categories",
+                                "dataPath": "/[TECHDISER_ID=$materialCatagoryID]/materialTypes",
+                                "containers": [
+                                    {
+                                        "attr": "",
+                                        "item": "materialTypeDis"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "label": "Material Type",
+                            "itemMode": "create",
+                            "visibility": "show",
+                            "propertyCode": "materialTypeDis",
+                            "isJsonAttribute": false,
+                            "inSummary": true,
+                            "type": "group",
+                            "controlType": "dropDown",
+                            "refPropertyCode": "materialTypeID",
+                            "keyProperty": "TECHDISER_ID",
+                            "valueProperty": "title"
+                        },
+                        {
+                            "label": "Material Description",
+                            "itemMode": "create",
+                            "visibility": "show",
+                            "propertyCode": "description",
+                            "inSummary": true,
+                            "isJsonAttribute": true,
+                            "type": "keyValue",
+                            "controlType": "multilineText"
+                        },
+                        {
+                            "label": "Material Color",
+                            "itemMode": "create",
+                            "visibility": "show",
+                            "propertyCode": "color",
+                            "isJsonAttribute": true,
+                            "inSummary": true,
+                            "type": "keyValue",
+                            "controlType": "text"
+                        },
+                        {
+                            "label": "Material Width",
+                            "itemMode": "create",
+                            "visibility": "show",
+                            "propertyCode": "width",
+                            "inSummary": true,
+                            "isJsonAttribute": true,
+                            "type": "keyValue",
+                            "controlType": "numeric"
+                        }
+                    ]
+                }
+            ],
+            "commandDefinition": [
+                {
+                    "visibility": "show",
+                    "type": "removeButton",
+                    "controlType": "removeButton",
+                    "width": 50
+                },
+                {
+                    "visibility": "show",
+                    "type": "editButton",
+                    "controlType": "editButton",
+                    "width": 50
+                },
+                {
+                    "visibility": "show",
+                    "type": "layoutButton",
+                    "controlType": "layoutButton",
+                    "width": 50
+                }
+            ]
+        },
+        {
+            "TECHDISER_ID": "style_material_basic",
+            "TECHDISER_TAG_CODE": "style_material_basic",
+            "visibility": "show",
+            "stripType": "card",
+            "addNew": true,
+            "parameters": [
+                {
+                    "key": "category"
+                },
+                {
+                    "key": "styleID"
+                }
+            ],
+            "infoDefinition": [
+                {
+                    "service": "MATERIALS_CATEGORY",
+                    "task": "clientUrl",
+                    "path": "/",
+                    "pick": [
+                        {
+                            "data": "/",
+                            "as": "categories"
+                        }
+                    ]
+                },
+                {
+                    "fromParam": "category",
+                    "pick": [
+                        {
+                            "data": "/TECHDISER_ID",
+                            "as": "catID"
+                        }
+                    ]
+                },
+                {
+                    "service": "STYLE_MANAGEMENT",
+                    "task": "clientUrl",
+                    "path": "/[TECHDISER_ID=$styleID]",
+                    "pick": [
+                        {
+                            "data": "/basicInfo",
+                            "as": "styleBasicInfo"
+                        },
+                        {
+                            "data": "/materialDefinition",
+                            "as": "materials"
+                        }
+                    ]
+                }
+            ],
+            "genPoint": {
+                "key": "materials",
+                "path": ""
+            },
+            "dataDestination": {
+                "key": "styleInfo",
+                "path": "/materialDefinition/materials"
+            },
+            "stripDefinition": [
+                {
+                    "genPathAppend": "/[TECHDISER_ID=$TECHDISER_ID]",
+                    "dataPoint": {
+                        "service": "STYLE_MANAGEMENT",
+                        "task": "clientUrl",
+                        "TECHDISER_ID": "$styleID",
+                        "objectName": "materialDefinition",
+                        "path": "/materialDefinition"
+                    },
+                    "items": [
+                        {
+                            "label": "Material ID",
+                            "itemMode": "view",
+                            "visibility": "hidden",
+                            "propertyCode": "TECHDISER_ID",
+                            "isJsonAttribute": true,
+                            "inSummary": true,
+                            "type": "TECHDISER_ID"
+                        },
+                        {
+                            "label": "Material Image",
+                            "itemMode": "create",
+                            "visibility": "show",
+                            "propertyCode": "materialImage",
+                            "isJsonAttribute": true,
+                            "inSummary": true,
+                            "type": "keyValue",
+                            "controlType": "image",
+                            "width": 120
+                        },
+                        {
+                            "label": "Material Info",
+                            "itemMode": "view",
+                            "visibility": "show",
+                            "propertyCode": "MaterialInfo",
+                            "isJsonAttribute": false,
+                            "inSummary": true,
+                            "type": "multiColumn",
+                            "columnRefs": [
+                                "title",
+                                "materialTypeDis"
+                            ],
+                            "controlType": "multiColumn"
+                        },
+                        {
+                            "label": "Material Title",
+                            "itemMode": "create",
+                            "visibility": "show",
+                            "propertyCode": "title",
+                            "isJsonAttribute": true,
+                            "inSummary": true,
+                            "type": "keyValue",
+                            "controlType": "text"
+                        },
+                        {
+                            "label": "Material Category ID",
+                            "itemMode": "view",
+                            "visibility": "hidden",
+                            "propertyCode": "materialCatagoryID",
+                            "isJsonAttribute": true,
+                            "inSummary": true,
+                            "type": "ref",
+                            "dataSource": {
+                                "key": "category",
+                                "dataPath": "/[TECHDISER_ID=$materialCatagoryID]",
+                                "containers": [
+                                    {
+                                        "attr": "title",
+                                        "item": "materialCategoryDis"
+                                    }
+                                ]
+                            },
+                            "newStrip": {
+                                "key": "category",
+                                "dataPath": "/",
+                                "containers": [
+                                    {
+                                        "attr": "TECHDISER_ID",
+                                        "item": "materialCatagoryID"
+                                    },
+                                    {
+                                        "attr": "title",
+                                        "item": "materialCategoryDis"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "label": "Material Category",
+                            "itemMode": "view",
+                            "visibility": "show",
+                            "propertyCode": "materialCategoryDis",
+                            "isJsonAttribute": false,
+                            "inSummary": true,
+                            "type": "view",
+                            "controlType": "label"
+                        },
+                        {
+                            "label": "Material Type ID",
+                            "itemMode": "view",
+                            "visibility": "hidden",
+                            "propertyCode": "materialTypeID",
+                            "isJsonAttribute": true,
+                            "inSummary": true,
+                            "type": "ref",
+                            "dataSource": {
+                                "key": "categories",
+                                "dataPath": "/[TECHDISER_ID=$materialCatagoryID]/materialTypes[TECHDISER_ID=$materialTypeID]",
+                                "containers": [
+                                    {
+                                        "attr": "",
+                                        "item": "materialTypeDis"
+                                    }
+                                ]
+                            },
+                            "newStrip": {
+                                "key": "categories",
+                                "dataPath": "/[TECHDISER_ID=$materialCatagoryID]/materialTypes",
+                                "containers": [
+                                    {
+                                        "attr": "",
+                                        "item": "materialTypeDis"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "label": "Material Type",
+                            "itemMode": "create",
+                            "visibility": "show",
+                            "propertyCode": "materialTypeDis",
+                            "isJsonAttribute": false,
+                            "inSummary": true,
+                            "type": "group",
+                            "controlType": "dropDown",
+                            "refPropertyCode": "materialTypeID",
+                            "keyProperty": "TECHDISER_ID",
+                            "valueProperty": "title"
+                        },
+                        {
+                            "label": "Material Description",
+                            "itemMode": "create",
+                            "visibility": "show",
+                            "propertyCode": "description",
+                            "inSummary": true,
+                            "isJsonAttribute": true,
+                            "type": "keyValue",
+                            "controlType": "multilineText"
+                        },
+                        {
+                            "label": "Material Color",
+                            "itemMode": "create",
+                            "visibility": "show",
+                            "propertyCode": "color",
+                            "isJsonAttribute": true,
+                            "inSummary": true,
+                            "type": "keyValue",
+                            "controlType": "text"
+                        },
+                        {
+                            "label": "Material Width",
+                            "itemMode": "create",
+                            "visibility": "show",
+                            "propertyCode": "width",
+                            "inSummary": true,
+                            "isJsonAttribute": true,
+                            "type": "keyValue",
+                            "controlType": "numeric"
+                        }
+                    ]
+                }
+            ],
+            "commandDefinition": [
+                {
+                    "visibility": "show",
+                    "type": "removeButton",
+                    "controlType": "removeButton",
+                    "width": 50
+                },
+                {
+                    "visibility": "show",
+                    "type": "editButton",
+                    "controlType": "editButton",
+                    "width": 50
+                },
+                {
+                    "visibility": "show",
+                    "type": "layoutButton",
+                    "controlType": "layoutButton",
+                    "width": 50
+                }
+            ]
+        },
+        {
+            "TECHDISER_ID": "style_POM",
+            "TECHDISER_TAG_CODE": "style_POM",
+            "visibility": "show",
+            "stripType": "card",
+            "parameters": [
+                {
+                    "key": "styleID"
+                }
+            ],
+            "infoDefinition": [
+                {
+                    "infoExtendFrom": "style_material_basic",
+                    "addPicks": [
+                        {
+                            "service": "STYLE_MANAGEMENT",
+                            "pick": [
+                                {
+                                    "data": "/basicInfo/inqId",
+                                    "as": "inqId"
+                                }
+                            ]
+                        }
+                    ],
+                    "info": {
+                        "service": "INQUIRY_MANAGEMENT",
+                        "task": "clientUrl",
+                        "path": "/[TECHDISER_ID=$inqId]",
+                        "pick": [
+                            {
+                                "data": "/sizeDefinition",
+                                "as": "size"
+                            }
+                        ]
+                    }
+                }
+            ],
+            "genPoint": {
+                "key": "materials",
+                "path": ""
+            },
+            "dataDestination": {
+                "key": "styleInfo",
+                "path": "/materialDefinition/materials/[TECHDISER_ID=$TECHDISER_ID]"
+            },
+            "stripDefinition": [
+                {
+                    "itemsExtendFrom": {
+                        "strip": "style_material_basic",
+                        "mode": "details"
+                    }
+                },
+                {
+                    "genPathAppend": "/[TECHDISER_ID=$TECHDISER_ID]",
+                    "dataPoint": {
+                        "service": "INQUIRY_MANAGEMENT",
+                        "task": "clientUrl",
+                        "TECHDISER_ID": "$inqId",
+                        "objectName": "pomDefinition",
+                        "path": "/pomDefinition"
+                    },
+                    "items": [
+                        {
+                            "label": "Material ID",
+                            "itemMode": "view",
+                            "visibility": "hidden",
+                            "propertyCode": "TECHDISER_ID",
+                            "isJsonAttribute": true,
+                            "inSummary": true,
+                            "type": "TECHDISER_ID"
+                        },
+                        {
+                            "label": "POM Image",
+                            "itemMode": "create",
+                            "visibility": "show",
+                            "propertyCode": "pomImage",
+                            "isJsonAttribute": true,
+                            "inSummary": true,
+                            "type": "keyValue",
+                            "controlType": "image"
+                        },
+                        {
+                            "label": "POM",
+                            "itemMode": "create",
+                            "visibility": "show",
+                            "propertyCode": "pom",
+                            "isJsonAttribute": true,
+                            "inSummary": true,
+                            "type": "keyValue",
+                            "controlType": "text"
+                        },
+                        {
+                            "label": "Code",
+                            "itemMode": "create",
+                            "visibility": "show",
+                            "propertyCode": "code",
+                            "isJsonAttribute": true,
+                            "inSummary": true,
+                            "type": "keyValue",
+                            "controlType": "text"
+                        },
+                        {
+                            "label": "description",
+                            "itemMode": "create",
+                            "visibility": "show",
+                            "propertyCode": "description",
+                            "isJsonAttribute": true,
+                            "inSummary": true,
+                            "type": "keyValue",
+                            "controlType": "text"
+                        },
+                        {
+                            "label": "Size",
+                            "itemMode": "create",
+                            "visibility": "show",
+                            "propertyCode": "size",
+                            "isJsonAttribute": true,
+                            "inSummary": true,
+                            "type": "keyValue",
+                            "controlType": "text",
+                            "genPoint": {
+                                "key": "size",
+                                "path": "/"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "TECHDISER_ID": "style_material_quantity_Ratio",
+            "TECHDISER_TAG_CODE": "style_material_quantity_Ratio",
+            "visibility": "show",
+            "stripType": "card",
+            "parameters": [
+                {
+                    "key": "category"
+                },
+                {
+                    "key": "styleID"
+                }
+            ],
+            "infoDefinition": [
+                {
+                    "infoExtendFrom": "style_material_basic",
+                    "addPicks": [
+                        {
+                            "service": "STYLE_MANAGEMENT",
+                            "pick": [
+                                {
+                                    "data": "/basicInfo/inqId",
+                                    "as": "inqId"
+                                }
+                            ]
+                        }
+                    ],
+                    "info": {
+                        "service": "INQUIRY_MANAGEMENT",
+                        "task": "clientUrl",
+                        "path": "/[TECHDISER_ID=$inqId]",
+                        "pick": [
+                            {
+                                "data": "/comboDefinition",
+                                "as": "comboDefinition"
+                            },
+                            {
+                                "data": "/quantityRatio/data",
+                                "as": "quantityRatio"
+                            }
+                        ]
+                    }
+                }
+            ],
+            "genPoint": {
+                "key": "materials",
+                "path": ""
+            },
+            "dataDestination": {
+                "key": "styleInfo",
+                "path": "/materialDefinition/materials/[TECHDISER_ID=$TECHDISER_ID]"
+            },
+            "stripDefinition": [
+                {
+                    "itemsExtendFrom": {
+                        "strip": "style_material_basic",
+                        "mode": "details"
+                    }
+                },
+                {
+                    "genPathAppend": "/[TECHDISER_ID=$TECHDISER_ID]",
+                    "dataPoint": {
+                        "service": "INQUIRY_MANAGEMENT",
+                        "task": "clientUrl",
+                        "TECHDISER_ID": "$inqId",
+                        "objectName": "quantityRatio",
+                        "path": "/quantityRatio/data"
+                    },
+                    "items": [
+                        {
+                            "label": "Material ID",
+                            "itemMode": "view",
+                            "visibility": "hidden",
+                            "propertyCode": "TECHDISER_ID",
+                            "isJsonAttribute": true,
+                            "inSummary": true,
+                            "type": "TECHDISER_ID"
+                        },
+                        {
+                            "label": "Material Unit Ratio",
+                            "itemMode": "view",
+                            "visibility": "hide",
+                            "propertyCode": "comboQuantity",
+                            "isJsonAttribute": true,
+                            "type": "ref",
+                            "functionRef": {
+                                "functionName": "calComboControl",
+                                "containers": [
+                                    {
+                                        "attr": "",
+                                        "item": "materialcomboDis"
+                                    }
+                                ]
+                            },
+                            "functionRefNewStrip": {
+                                "functionName": "calNewComboControl",
+                                "containers": [
+                                    {
+                                        "attr": "",
+                                        "item": "materialcomboDis"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "label": "Quantity Definition",
+                            "itemMode": "create",
+                            "visibility": "show",
+                            "propertyCode": "materialcomboDis",
+                            "isJsonAttribute": false,
+                            "type": "group",
+                            "controlType": "multiDropDown",
+                            "refPropertyCode": "comboQuantity"
+                        },
+                        {
+                            "label": "Material Combo Unit",
+                            "itemMode": "create",
+                            "visibility": "show",
+                            "propertyCode": "materialcomboUnit",
+                            "isJsonAttribute": false,
+                            "type": "view",
+                            "controlType": "label",
+                            "functionName": "calComboTotal"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

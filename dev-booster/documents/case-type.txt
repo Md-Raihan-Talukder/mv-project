@@ -1,0 +1,7 @@
+    flatcase
+    camelCase
+    PascalCase  (CapitalCamelCase)
+    kebab-case  (spinal-case, caterpillar-case, dash-case, hyphen-case, lisp-case and css-case)
+    snake_case  (c_case)
+    MACRO_CASE  (UPPER_CASE)
+    COBOL-CASE  (TRAIN-CASE)

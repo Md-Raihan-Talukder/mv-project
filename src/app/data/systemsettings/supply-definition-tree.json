@@ -1,0 +1,4224 @@
+{
+    "data": [
+        {
+            "TECHDISER_ID": "SupplyDefinitionMaterialLabel1",
+            "TECHDISER_SERIAL_NO": 1,
+            "level": 1,
+            "title": "Garment Material",
+            "materialType": "Material",
+            "cuttable": false,
+            "countable": false,
+            "thread": false,
+            "isSizeDependent": false,
+            "isColorDependent": false,
+            "isUnitType": false,
+            "isContainerType": false,
+            "typeId": "garmentMaterialsGroup",
+            "sourcingTypeId": null,
+            "dimensionId": null,
+            "measurementUnitId": null,
+            "preCautionMarks": [],
+            "types": [],
+            "containers": []
+        },
+        {
+            "TECHDISER_ID": "SupplyDefinitionPresentationlavel",
+            "TECHDISER_SERIAL_NO": 2,
+            "level": 2,
+            "title": "Presentation",
+            "materialType": "Presentation",
+            "cuttable": false,
+            "countable": false,
+            "thread": false,
+            "isSizeDependent": false,
+            "isColorDependent": false,
+            "isUnitType": false,
+            "isContainerType": false,
+            "typeId": "presentationGroup",
+            "sourcingTypeId": null,
+            "dimensionId": null,
+            "measurementUnitId": null,
+            "preCautionMarks": [],
+            "types": [],
+            "containers": []
+        },
+        {
+            "TECHDISER_ID": "SupplyDefinitionPackingMateriallavel",
+            "TECHDISER_SERIAL_NO": 3,
+            "level": 1,
+            "title": "Packing Materials",
+            "materialType": "Materials",
+            "cuttable": false,
+            "countable": false,
+            "thread": false,
+            "isSizeDependent": false,
+            "isColorDependent": false,
+            "isUnitType": false,
+            "isContainerType": false,
+            "typeId": "packingMaterialsGroup",
+            "sourcingTypeId": null,
+            "preCautionMarks": [
+                {
+                    "TECHDISER_ID": "PreCautionMarks1",
+                    "title": "Temperature Sensitive",
+                    "image": [],
+                    "materialTypeIds": [
+                        "SupplyDefinitionMaterialType11",
+                        "SupplyDefinitionMaterialType12"
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "PreCautionMarks2",
+                    "title": "Keep Dry",
+                    "image": [],
+                    "materialTypeIds": [
+                        "SupplyDefinitionMaterialType11",
+                        "SupplyDefinitionMaterialType12"
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "PreCautionMarks3",
+                    "title": "Fragile",
+                    "image": [],
+                    "materialTypeIds": [
+                        "SupplyDefinitionMaterialType11"
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "PreCautionMarks4",
+                    "title": "This Way Up",
+                    "image": [],
+                    "materialTypeIds": [
+                        "SupplyDefinitionMaterialType12"
+                    ]
+                }
+            ],
+            "types": [
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialType11",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "title": "Metal",
+                    "description": "Metal description",
+                    "wastage": 0
+                },
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialType12",
+                    "TECHDISER_SERIAL_NO": 2,
+                    "title": "Molded Plastic",
+                    "description": "Molded Plastic description",
+                    "wastage": 0
+                }
+            ]
+        },
+        {
+            "TECHDISER_ID": "SupplyDefinitionFoldingMateriallavel",
+            "TECHDISER_SERIAL_NO": 4,
+            "level": 1,
+            "title": "Folding Materials",
+            "materialType": "Materials",
+            "cuttable": false,
+            "countable": false,
+            "thread": false,
+            "typeId": "foldingMaterialsGroup",
+            "sourcingTypeId": null,
+            "dimensionId": null,
+            "measurementUnitId": null,
+            "preCautionMarks": [
+                {
+                    "TECHDISER_ID": "PreCautionMarks5",
+                    "title": "Centre Of Gravity",
+                    "image": [],
+                    "materialTypeIds": [
+                        "SupplyDefinitionMaterialType42",
+                        "SupplyDefinitionMaterialType43"
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "PreCautionMarks6",
+                    "title": "Use No Hooks",
+                    "image": [],
+                    "materialTypeIds": [
+                        "SupplyDefinitionMaterialType42",
+                        "SupplyDefinitionMaterialType43"
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "PreCautionMarks7",
+                    "title": "Do Not Stack",
+                    "image": [],
+                    "materialTypeIds": [
+                        "SupplyDefinitionMaterialType42"
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "PreCautionMarks8",
+                    "title": "Photographic Materials",
+                    "image": [],
+                    "materialTypeIds": [
+                        "SupplyDefinitionMaterialType43"
+                    ]
+                }
+            ],
+            "types": [
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialType42",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "title": "Folding Type 1",
+                    "description": "Folding Type 1 description",
+                    "wastage": 0
+                },
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialType43",
+                    "TECHDISER_SERIAL_NO": 2,
+                    "title": "Folding Type 2",
+                    "description": "Folding Type 2 description",
+                    "wastage": 0
+                }
+            ],
+            "containers": []
+        },
+        {
+            "TECHDISER_ID": "SupplyDefinitionPackagingContainerLavel",
+            "TECHDISER_SERIAL_NO": 5,
+            "level": 1,
+            "title": "Packaging",
+            "materialType": "Container",
+            "cuttable": false,
+            "countable": false,
+            "thread": false,
+            "typeId": "packContainerGroup",
+            "sourcingTypeId": null,
+            "dimensionId": null,
+            "measurementUnitId": null,
+            "preCautionMarks": [],
+            "types": [],
+            "containers": []
+        },
+        {
+            "TECHDISER_ID": "SupplyDefinitionMaterialLabel2",
+            "TECHDISER_SERIAL_NO": 6,
+            "level": 1,
+            "title": "Assayer",
+            "materialType": "Assayer",
+            "cuttable": false,
+            "countable": false,
+            "thread": false,
+            "typeId": "otherGroup",
+            "sourcingTypeId": null,
+            "dimensionId": null,
+            "measurementUnitId": null,
+            "preCautionMarks": [],
+            "types": [],
+            "containers": []
+        },
+        {
+            "TECHDISER_ID": "SupplyDefinitionMaterialLabel3",
+            "TECHDISER_SERIAL_NO": 7,
+            "level": 1,
+            "title": "Courier",
+            "materialType": "Courier",
+            "cuttable": false,
+            "countable": false,
+            "thread": false,
+            "typeId": "otherGroup",
+            "sourcingTypeId": null,
+            "dimensionId": null,
+            "measurementUnitId": null,
+            "preCautionMarks": [],
+            "types": [],
+            "containers": []
+        },
+        {
+            "TECHDISER_ID": "SupplyDefinitionMaterialCategory1",
+            "TECHDISER_SERIAL_NO": 8,
+            "level": 2,
+            "parentId": "SupplyDefinitionMaterialLabel1",
+            "materialUniqueId": "supplier1ReferenceNo1",
+            "inspectionTool": "MajorMinor",
+            "category": "Fabrics",
+            "title": "Fabrics",
+            "materialType": "fabrics",
+            "cuttable": true,
+            "countable": false,
+            "thread": false,
+            "isSizeDependent": false,
+            "isColorDependent": false,
+            "isUnitType": false,
+            "isContainerType": false,
+            "typeId": "garmentMaterials",
+            "sourcingTypeId": "fabrics",
+            "dimensionId": "width",
+            "measurementUnitId": "centimeter",
+            "sizeDef": {
+                "TECHDISER_ID": "setupSizeDefSupplyDefinitionMaterialCategory1",
+                "dimentionType": "length:inch",
+                "measurementUnitId": "inch",
+                "sizeInfo": [
+                    "45",
+                    "60"
+                ]
+            },
+            "costingHeadId": "CostingHeads1",
+            "bomHeadId": "matgroup1",
+            "productionTimes": [
+                {
+                    "TECHDISER_ID": "ProductionTime1",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "quantity": 1000,
+                    "timeDays": 7,
+                    "materialTypeIds": [
+                        "SupplyDefinitionMaterialType1",
+                        "SupplyDefinitionMaterialType2"
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "ProductionTime2",
+                    "TECHDISER_SERIAL_NO": 2,
+                    "quantity": 2000,
+                    "timeDays": 10,
+                    "materialTypeIds": [
+                        "SupplyDefinitionMaterialType2",
+                        "SupplyDefinitionMaterialType3"
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "ProductionTime3",
+                    "TECHDISER_SERIAL_NO": 3,
+                    "quantity": 3000,
+                    "timeDays": 15,
+                    "materialTypeIds": [
+                        "SupplyDefinitionMaterialType1",
+                        "SupplyDefinitionMaterialType3"
+                    ]
+                }
+            ],
+            "dataSheet": [
+                "weight",
+                "count",
+                "fibreContent",
+                "usage",
+                "fabricType",
+                "structure",
+                "ornaments"
+            ],
+            "positions": [
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialCategoryPosition1",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "title": "Shell"
+                },
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialCategoryPosition2",
+                    "TECHDISER_SERIAL_NO": 2,
+                    "title": "Contrast"
+                },
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialCategoryPosition3",
+                    "TECHDISER_SERIAL_NO": 3,
+                    "title": "Pocketing"
+                }
+            ],
+            "genericDefectIds": [
+                "SupplyDefinitionMaterialDefect1",
+                "SupplyDefinitionMaterialDefect2"
+            ],
+            "defectDef": [
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialDefect1",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "title": "Defect 1",
+                    "description": "Defect 1 description",
+                    "defectTypeId": "Defect_Type_1",
+                    "materialTypeIds": [
+                        "SupplyDefinitionMaterialType1",
+                        "SupplyDefinitionMaterialType2"
+                    ],
+                    "isRecoverable": "0",
+                    "code": "Def1",
+                    "isGenericDefect": 1,
+                    "$$hashKey": "object:2919"
+                },
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialDefect2",
+                    "TECHDISER_SERIAL_NO": 2,
+                    "title": "Defect 2",
+                    "description": "Defect 2 description",
+                    "defectTypeId": "Defect_Type_2",
+                    "materialTypeIds": [
+                        "SupplyDefinitionMaterialType2",
+                        "SupplyDefinitionMaterialType3"
+                    ],
+                    "code": "Def2",
+                    "isRecoverable": "1",
+                    "guideLine": "Guide line for defect 2",
+                    "requireTime": "2 hour",
+                    "isGenericDefect": 1,
+                    "$$hashKey": "object:2968"
+                },
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialDefect3",
+                    "TECHDISER_SERIAL_NO": 3,
+                    "title": "Defect 3",
+                    "description": "Defect 3 description",
+                    "defectTypeId": "Defect_Type_1",
+                    "materialTypeIds": [
+                        "SupplyDefinitionMaterialType1",
+                        "SupplyDefinitionMaterialType3"
+                    ],
+                    "code": "Def3",
+                    "isRecoverable": "0",
+                    "isGenericDefect": 0,
+                    "$$hashKey": "object:3017"
+                },
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialDefect4",
+                    "TECHDISER_SERIAL_NO": 4,
+                    "title": "Defect 4",
+                    "description": "Defect 4 description",
+                    "defectTypeId": "Defect_Type_3",
+                    "materialTypeIds": [
+                        "SupplyDefinitionMaterialType2",
+                        "SupplyDefinitionMaterialType3"
+                    ],
+                    "code": "Def4",
+                    "isRecoverable": "1",
+                    "guideLine": "Guideline for defect 4",
+                    "requireTime": "1 hour",
+                    "isGenericDefect": 0,
+                    "$$hashKey": "object:3058"
+                }
+            ],
+            "tests": [
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialTest1",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "testId": "LabTest1",
+                    "materialTypes": [
+                        {
+                            "TECHDISER_ID": "MaterialTypes1",
+                            "materialTypeId": "SupplyDefinitionMaterialType1",
+                            "isSelectedType": true,
+                            "methodIds": [
+                                "Test_Method1",
+                                "Test_Method2"
+                            ],
+                            "attributes": [
+                                {
+                                    "TECHDISER_ID": "Attribute1",
+                                    "attributeId": "Test_Attribute1",
+                                    "testUnitId": "mediumShades",
+                                    "minRange": 5,
+                                    "maxRange": 50
+                                },
+                                {
+                                    "TECHDISER_ID": "Attribute2",
+                                    "attributeId": "Test_Attribute2",
+                                    "testUnitId": "mediumShades",
+                                    "minRange": 20,
+                                    "maxRange": 30
+                                },
+                                {
+                                    "TECHDISER_ID": "Attribute3",
+                                    "attributeId": "Test_Attribute3",
+                                    "testUnitId": "mediumShades",
+                                    "minRange": 15,
+                                    "maxRange": 25
+                                }
+                            ]
+                        }
+                    ],
+                    "deleted": false
+                },
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialTest2",
+                    "TECHDISER_SERIAL_NO": 2,
+                    "testId": "LabTest2",
+                    "materialTypes": [],
+                    "deleted": false
+                },
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialTest3",
+                    "TECHDISER_SERIAL_NO": 3,
+                    "testId": "LabTest3",
+                    "materialTypes": [],
+                    "deleted": false
+                }
+            ],
+            "preCautionMarks": [
+                {
+                    "TECHDISER_ID": "PreCautionMarks9",
+                    "title": "Handle With Care",
+                    "image": [],
+                    "materialTypeIds": [
+                        "SupplyDefinitionMaterialType1",
+                        "SupplyDefinitionMaterialType2"
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "PreCautionMarks10",
+                    "title": "Protect From Heat",
+                    "image": [],
+                    "materialTypeIds": [
+                        "SupplyDefinitionMaterialType1",
+                        "SupplyDefinitionMaterialType3"
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "PreCautionMarks11",
+                    "title": "Food",
+                    "image": [],
+                    "materialTypeIds": [
+                        "SupplyDefinitionMaterialType1",
+                        "SupplyDefinitionMaterialType4"
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "PreCautionMarks12",
+                    "title": "Centre Of Gravity",
+                    "image": [],
+                    "materialTypeIds": [
+                        "SupplyDefinitionMaterialType1",
+                        "SupplyDefinitionMaterialType5"
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "PreCautionMarks13",
+                    "title": "This Way Up",
+                    "image": [],
+                    "materialTypeIds": [
+                        "SupplyDefinitionMaterialType3",
+                        "SupplyDefinitionMaterialType4"
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "PreCautionMarks17",
+                    "title": "Fragile",
+                    "image": [],
+                    "materialTypeIds": [
+                        "SupplyDefinitionMaterialType4",
+                        "SupplyDefinitionMaterialType5"
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "PreCautionMarks18",
+                    "title": "Keep Dry",
+                    "image": [],
+                    "materialTypeIds": [
+                        "SupplyDefinitionMaterialType1",
+                        "SupplyDefinitionMaterialType4"
+                    ]
+                }
+            ],
+            "types": [
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialType1",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "title": "Cotton",
+                    "description": "Cotton description",
+                    "wastage": 2,
+                    "structure": "Woven",
+                    "fabricType": "Denim",
+                    "profileSummaryId": "6210.2df4517b55db7.fa239ee7409a1.a7ebd3bb51045.37475944c4bf5.71af457a4b4e8.1aff16e0d",
+                    "$$hashKey": "object:2768"
+                },
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialType2",
+                    "TECHDISER_SERIAL_NO": 2,
+                    "title": "Silk",
+                    "description": "Silk description",
+                    "wastage": 3,
+                    "structure": "Woven",
+                    "fabricType": "Burlap",
+                    "profileSummaryId": "3e7f.eb60530968164.b60ee2f880ff0.8ef786a6a476.fcf2d79de99a1.d7f26b1ffb945.4a79b3854",
+                    "$$hashKey": "object:2852"
+                },
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialType3",
+                    "TECHDISER_SERIAL_NO": 3,
+                    "title": "Linen",
+                    "description": "Linen description",
+                    "wastage": 1,
+                    "structure": "Woven",
+                    "fabricType": "Cambric",
+                    "profileSummaryId": "8a53.fd12a01aaf5fd.e84f8bb8d92ad.ff8126f4257ba.fc638d044332.90fe4b0239603.919b66aa1",
+                    "$$hashKey": "object:2936"
+                },
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialType4",
+                    "TECHDISER_SERIAL_NO": 4,
+                    "title": "Wool",
+                    "description": "Wool description",
+                    "wastage": 2,
+                    "structure": "Woven",
+                    "fabricType": "Canvas",
+                    "profileSummaryId": "6f71.0e2a7f58604b6.e9b372277cc8e.bd8f426e23a7c.5b2014e849683.cccd54fe358fb.23fae628d",
+                    "$$hashKey": "object:2988"
+                },
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialType5",
+                    "TECHDISER_SERIAL_NO": 5,
+                    "title": "Ramie",
+                    "description": "Ramie description",
+                    "wastage": 1,
+                    "structure": "Woven",
+                    "fabricType": "Chambray",
+                    "profileSummaryId": "9d5e.d9d32d1f54a95.1dedf9b015b63.8d9d683b86a3f.152dddce731a7.e240567ea2441.a890e5445",
+                    "$$hashKey": "object:3072"
+                }
+            ],
+            "containers": [
+                {
+                    "TECHDISER_ID": "Container1",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "containerId": "SupplyDefinitionMaterialCategory23",
+                    "sizes": [
+                        {
+                            "TECHDISER_ID": "ContainerTypes007",
+                            "unitSize": "5",
+                            "noOfUnits": 1,
+                            "dimentionInfo": "length:meter",
+                            "dimensionId": "length",
+                            "measurementUnitId": "meter"
+                        },
+                        {
+                            "TECHDISER_ID": "ContainerTypes008",
+                            "unitSize": "2",
+                            "noOfUnits": 1,
+                            "dimentionInfo": "length:meter",
+                            "dimensionId": "length",
+                            "measurementUnitId": "meter"
+                        }
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "Container4",
+                    "TECHDISER_SERIAL_NO": 2,
+                    "containerId": "SupplyDefinitionMaterialCategory24",
+                    "sizes": [
+                        {
+                            "TECHDISER_ID": "ContainerTypes009",
+                            "unitSize": "5",
+                            "noOfUnits": 1,
+                            "dimentionInfo": "length:meter",
+                            "dimensionId": "length",
+                            "measurementUnitId": "meter"
+                        },
+                        {
+                            "TECHDISER_ID": "ContainerTypes0010",
+                            "unitSize": "2",
+                            "noOfUnits": 1,
+                            "dimentionInfo": "length:meter",
+                            "dimensionId": "length",
+                            "measurementUnitId": "meter"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "TECHDISER_ID": "SupplyDefinitionTrimslavel",
+            "TECHDISER_SERIAL_NO": 9,
+            "level": 2,
+            "parentId": "SupplyDefinitionMaterialLabel1",
+            "title": "Trims",
+            "materialType": "trims",
+            "cuttable": false,
+            "countable": false,
+            "thread": false,
+            "isSizeDependent": false,
+            "isColorDependent": false,
+            "isUnitType": false,
+            "isContainerType": false,
+            "typeId": "",
+            "sourcingTypeId": null,
+            "productionTimes": [],
+            "preCautionMarks": [],
+            "types": [],
+            "containers": []
+        },
+        {
+            "TECHDISER_ID": "SupplyDefinitionMaterialCategory2",
+            "TECHDISER_SERIAL_NO": 10,
+            "level": 3,
+            "parentId": "SupplyDefinitionTrimslavel",
+            "title": "Button",
+            "materialType": "button",
+            "cuttable": false,
+            "countable": true,
+            "thread": false,
+            "isSizeDependent": false,
+            "isColorDependent": false,
+            "isUnitType": false,
+            "isContainerType": false,
+            "typeId": "garmentMaterials",
+            "sourcingTypeId": "trims",
+            "dimensionId": "count",
+            "measurementUnitId": "pieces",
+            "costingHeadId": "CostingHeads2",
+            "bomHeadId": "matgroup2",
+            "dataSheet": [
+                "shape",
+                "metalType",
+                "material",
+                "buttonType"
+            ],
+            "productionTimes": [
+                {
+                    "TECHDISER_ID": "ProductionTime4",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "quantity": 1000,
+                    "timeDays": 1,
+                    "materialTypeIds": [
+                        "SupplyDefinitionMaterialType6",
+                        "SupplyDefinitionMaterialType7"
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "ProductionTime5",
+                    "TECHDISER_SERIAL_NO": 2,
+                    "quantity": 2000,
+                    "timeDays": 2,
+                    "materialTypeIds": [
+                        "SupplyDefinitionMaterialType7",
+                        "SupplyDefinitionMaterialType9"
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "ProductionTime6",
+                    "TECHDISER_SERIAL_NO": 3,
+                    "quantity": 3000,
+                    "timeDays": 3,
+                    "materialTypeIds": [
+                        "SupplyDefinitionMaterialType6",
+                        "SupplyDefinitionMaterialType8"
+                    ]
+                }
+            ],
+            "positions": [
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialCategoryPosition6",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "title": "Button"
+                }
+            ],
+            "genericDefectIds": [
+                "SupplyDefinitionMaterialDefect5",
+                "SupplyDefinitionMaterialDefect6"
+            ],
+            "defectDef": [
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialDefect5",
+                    "TECHDISER_SERIAL_NO": "1",
+                    "title": "Defect 5",
+                    "description": "Defect 5 description",
+                    "defectTypeId": "Defect_Type_2",
+                    "materialTypeIds": [
+                        "SupplyDefinitionMaterialType9",
+                        "SupplyDefinitionMaterialType10"
+                    ],
+                    "code": "Def5",
+                    "isRecoverable": "1",
+                    "guideLine": "Guideline for defect 5",
+                    "requireTime": "1 hour",
+                    "isGenericDefect": 1
+                },
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialDefect6",
+                    "TECHDISER_SERIAL_NO": "2",
+                    "title": "Defect 6",
+                    "description": "Defect 6 description",
+                    "defectTypeId": "Defect_Type_1",
+                    "materialTypeIds": [
+                        "SupplyDefinitionMaterialType8",
+                        "SupplyDefinitionMaterialType9"
+                    ],
+                    "code": "Def6",
+                    "isRecoverable": "1",
+                    "guideLine": "Guideline for defect 6",
+                    "requireTime": "1 hour",
+                    "isGenericDefect": 0
+                },
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialDefect7",
+                    "TECHDISER_SERIAL_NO": "3",
+                    "title": "Defect 7",
+                    "description": "Defect 7 description",
+                    "defectTypeId": "Defect_Type_1",
+                    "materialTypeIds": [
+                        "SupplyDefinitionMaterialType7",
+                        "SupplyDefinitionMaterialType8"
+                    ],
+                    "code": "Def7",
+                    "isRecoverable": "1",
+                    "guideLine": "Guideline for defect 7",
+                    "requireTime": "1 hour",
+                    "isGenericDefect": 0
+                },
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialDefect8",
+                    "TECHDISER_SERIAL_NO": "4",
+                    "title": "Defect 8",
+                    "description": "Defect 8 description",
+                    "defectTypeId": "Defect_Type_2",
+                    "materialTypeIds": [
+                        "SupplyDefinitionMaterialType6",
+                        "SupplyDefinitionMaterialType7"
+                    ],
+                    "code": "Def8",
+                    "isRecoverable": "1",
+                    "guideLine": "Guideline for defect 8",
+                    "requireTime": "1 hour",
+                    "isGenericDefect": 0
+                }
+            ],
+            "tests": [
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialTest4",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "testId": "LabTest2",
+                    "materialTypes": [],
+                    "deleted": false
+                },
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialTest5",
+                    "TECHDISER_SERIAL_NO": 2,
+                    "testId": "LabTest2",
+                    "materialTypes": [],
+                    "deleted": false
+                },
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialTest6",
+                    "TECHDISER_SERIAL_NO": 3,
+                    "testId": "LabTest2",
+                    "materialTypes": [],
+                    "deleted": false
+                }
+            ],
+            "preCautionMarks": [
+                {
+                    "TECHDISER_ID": "PreCautionMarks19",
+                    "title": "Fragile",
+                    "image": [],
+                    "materialTypeIds": [
+                        "SupplyDefinitionMaterialType6",
+                        "SupplyDefinitionMaterialType7"
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "PreCautionMarks20",
+                    "title": "Keep Dry",
+                    "image": [],
+                    "materialTypeIds": [
+                        "SupplyDefinitionMaterialType7",
+                        "SupplyDefinitionMaterialType9"
+                    ]
+                }
+            ],
+            "types": [
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialType6",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "title": "Plastic",
+                    "description": "Plastic description",
+                    "wastage": 1,
+                    "shape": [
+                        "Oval",
+                        "Round"
+                    ],
+                    "material": "Plastic",
+                    "buttonType": "4 Holes Button",
+                    "composition": [
+                        "Brass",
+                        "Nickel",
+                        "Stainless Steel"
+                    ],
+                    "technique": "Plating",
+                    "buttonStyle": "Flatback",
+                    "profileSummaryId": "d36c.02acd90d4070c.fddd5cfa5ea98.fa8b9e4f6d12e.324adff9247b0.e5b734d4b4137.3e54b7bf6",
+                    "$$hashKey": "object:2748"
+                },
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialType7",
+                    "TECHDISER_SERIAL_NO": 2,
+                    "title": "Metal",
+                    "description": "Metal description",
+                    "wastage": 2,
+                    "shape": [
+                        "Oval",
+                        "Squre"
+                    ],
+                    "buttonType": "2 Holes Button",
+                    "material": "Resin",
+                    "composition": [
+                        "Brass",
+                        "Nickel"
+                    ],
+                    "technique": "Pearl",
+                    "buttonStyle": "Shank",
+                    "profileSummaryId": "3cd5.1886d45356928.121ac957471fc.cd88ebba7f4db.d234ea262fba7.211226048bd3e.0cae0169e",
+                    "$$hashKey": "object:2872"
+                },
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialType9",
+                    "TECHDISER_SERIAL_NO": 4,
+                    "title": "Horn",
+                    "description": "Horn description",
+                    "wastage": 2,
+                    "shape": [
+                        "Diamond",
+                        "Round",
+                        "Squre"
+                    ],
+                    "buttonType": "Jeans",
+                    "material": "Resin",
+                    "composition": [
+                        "Zink Alloy"
+                    ],
+                    "technique": "Covered",
+                    "buttonStyle": "Shank",
+                    "profileSummaryId": "981b.9d61af31d2e5f.1d9abd6265ce.a4dfa8e589d32.fac6efedc84ad.a18e9f6769fb6.fc92a7a93",
+                    "$$hashKey": "object:2952"
+                }
+            ],
+            "containers": [
+                {
+                    "TECHDISER_ID": "Container7",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "containerId": "SupplyDefinitionMaterialCategory19",
+                    "sizes": [
+                        {
+                            "TECHDISER_ID": "ContainerTypes13",
+                            "unitSize": "4",
+                            "noOfUnits": 1,
+                            "dimentionInfo": "count:dozen",
+                            "dimensionId": "count",
+                            "measurementUnitId": "dozen"
+                        },
+                        {
+                            "TECHDISER_ID": "ContainerTypes14",
+                            "unitSize": "6",
+                            "noOfUnits": 1,
+                            "dimentionInfo": "count:thousand",
+                            "dimensionId": "count",
+                            "measurementUnitId": "thousand"
+                        }
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "Container8",
+                    "TECHDISER_SERIAL_NO": 2,
+                    "containerId": "SupplyDefinitionMaterialCategory20",
+                    "sizes": [
+                        {
+                            "TECHDISER_ID": "ContainerTypes15",
+                            "unitSize": "1",
+                            "noOfUnits": 1,
+                            "dimensionId": "count",
+                            "dimentionInfo": "count:thousand",
+                            "measurementUnitId": "thousand"
+                        },
+                        {
+                            "TECHDISER_ID": "ContainerTypes16",
+                            "unitSize": "2",
+                            "noOfUnits": 1,
+                            "dimentionInfo": "count:hundred",
+                            "dimensionId": "count",
+                            "measurementUnitId": "hundred"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "TECHDISER_ID": "SupplyDefinitionMaterialCategory3",
+            "TECHDISER_SERIAL_NO": 11,
+            "level": 3,
+            "parentId": "SupplyDefinitionTrimslavel",
+            "title": "Zipper",
+            "materialType": "zipper",
+            "cuttable": false,
+            "countable": true,
+            "thread": false,
+            "isSizeDependent": false,
+            "isColorDependent": false,
+            "isUnitType": false,
+            "isContainerType": false,
+            "typeId": "garmentMaterials",
+            "sourcingTypeId": "trims",
+            "dimensionId": "length",
+            "measurementUnitId": "inch",
+            "costingHeadId": "CostingHeads2",
+            "bomHeadId": "matgroup2",
+            "dataSheet": [
+                "composition",
+                "materialType",
+                "size",
+                "usage",
+                "feature",
+                "sliderStyle"
+            ],
+            "productionTimes": [
+                {
+                    "TECHDISER_ID": "ProductionTime7",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "quantity": 1000,
+                    "timeDays": 2,
+                    "materialTypeIds": [
+                        "SupplyDefinitionMaterialType11",
+                        "SupplyDefinitionMaterialType12"
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "ProductionTime8",
+                    "TECHDISER_SERIAL_NO": 2,
+                    "quantity": 2000,
+                    "timeDays": 3,
+                    "materialTypeIds": [
+                        "SupplyDefinitionMaterialType13",
+                        "SupplyDefinitionMaterialType14"
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "ProductionTime9",
+                    "TECHDISER_SERIAL_NO": 3,
+                    "quantity": 3000,
+                    "timeDays": 4,
+                    "materialTypeIds": [
+                        "SupplyDefinitionMaterialType12",
+                        "SupplyDefinitionMaterialType14"
+                    ]
+                }
+            ],
+            "positions": [
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialCategoryPosition10",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "title": "Zipper"
+                }
+            ],
+            "genericDefectIds": [
+                "SupplyDefinitionMaterialDefect9",
+                "SupplyDefinitionMaterialDefect10"
+            ],
+            "defectDef": [
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialDefect9",
+                    "TECHDISER_SERIAL_NO": "1",
+                    "title": "Defect 9",
+                    "description": "Defect 9 description",
+                    "defectTypeId": "Defect_Type_2",
+                    "materialTypeIds": [
+                        "SupplyDefinitionMaterialType14",
+                        "SupplyDefinitionMaterialType15"
+                    ],
+                    "code": "Def9",
+                    "isRecoverable": "1",
+                    "guideLine": "Guideline for defect 9",
+                    "requireTime": "1 hour",
+                    "isGenericDefect": 1
+                },
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialDefect10",
+                    "TECHDISER_SERIAL_NO": "2",
+                    "title": "Defect 10",
+                    "description": "Defect 10 description",
+                    "defectTypeId": "Defect_Type_1",
+                    "materialTypeIds": [
+                        "SupplyDefinitionMaterialType13",
+                        "SupplyDefinitionMaterialType14"
+                    ],
+                    "code": "Def10",
+                    "isRecoverable": "1",
+                    "guideLine": "Guideline for defect 10",
+                    "requireTime": "1 hour",
+                    "isGenericDefect": 1
+                },
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialDefect11",
+                    "TECHDISER_SERIAL_NO": "3",
+                    "title": "Defect 11",
+                    "description": "Defect 11 description",
+                    "defectTypeId": "Defect_Type_1",
+                    "materialTypeIds": [
+                        "SupplyDefinitionMaterialType12",
+                        "SupplyDefinitionMaterialType13"
+                    ],
+                    "code": "Def11",
+                    "isRecoverable": "1",
+                    "guideLine": "Guideline for defect 11",
+                    "requireTime": "1 hour",
+                    "isGenericDefect": 1
+                },
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialDefect12",
+                    "TECHDISER_SERIAL_NO": "4",
+                    "title": "Defect 12",
+                    "description": "Defect 12 description",
+                    "defectTypeId": "Defect_Type_1",
+                    "materialTypeIds": [
+                        "SupplyDefinitionMaterialType11",
+                        "SupplyDefinitionMaterialType12"
+                    ],
+                    "code": "Def12",
+                    "isRecoverable": "1",
+                    "guideLine": "Guideline for defect 12",
+                    "requireTime": "1 hour",
+                    "isGenericDefect": 1
+                }
+            ],
+            "tests": [
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialTest7",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "testId": "LabTest2",
+                    "materialTypes": [],
+                    "deleted": false
+                },
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialTest8",
+                    "TECHDISER_SERIAL_NO": 2,
+                    "testId": "LabTest2",
+                    "materialTypes": [],
+                    "deleted": false
+                },
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialTest9",
+                    "TECHDISER_SERIAL_NO": 3,
+                    "testId": "LabTest2",
+                    "materialTypes": [],
+                    "deleted": false
+                }
+            ],
+            "preCautionMarks": [
+                {
+                    "TECHDISER_ID": "PreCautionMarks21",
+                    "title": "Fragile",
+                    "image": [],
+                    "materialTypeIds": [
+                        "SupplyDefinitionMaterialType11",
+                        "SupplyDefinitionMaterialType12"
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "PreCautionMarks22",
+                    "title": "Keep Dry",
+                    "image": [],
+                    "materialTypeIds": [
+                        "SupplyDefinitionMaterialType13",
+                        "SupplyDefinitionMaterialType14"
+                    ]
+                }
+            ],
+            "types": [
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialType11",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "title": "Metal",
+                    "description": "Metal description",
+                    "wastage": 1,
+                    "type": "Close-End",
+                    "materialType": "Metal",
+                    "composition": [
+                        "Nickel",
+                        "Zink Alloy"
+                    ],
+                    "usage": "Garments",
+                    "sliderStyle": "Non Lock",
+                    "profileSummaryId": "1eed.2bc2e795a138d.8d86e1df476c4.06f9e45811fee.3d7fd8fbe9d12.8e8fb9565f71c.a18296aa3",
+                    "$$hashKey": "object:2780"
+                },
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialType12",
+                    "TECHDISER_SERIAL_NO": 2,
+                    "title": "Molded Plastic",
+                    "description": "Molded Plastic description",
+                    "wastage": 2,
+                    "type": "Close-End",
+                    "materialType": "Metal",
+                    "composition": [
+                        "Brass",
+                        "Nickel"
+                    ],
+                    "sliderStyle": "Auto Lock",
+                    "usage": "Garments",
+                    "profileSummaryId": "b1b5.7aaaafb2bfeb2.bd7133d8dc8d6.9e8b9fe3af478.1d77dcc5ee045.62eb2d83ce023.2e176a9ee",
+                    "$$hashKey": "object:2896"
+                },
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialType13",
+                    "TECHDISER_SERIAL_NO": 3,
+                    "title": "Invisible Zipper",
+                    "description": "Invisible Zipper description",
+                    "wastage": 3,
+                    "type": "Close-End",
+                    "materialType": "Resin",
+                    "composition": [
+                        "Aluminum"
+                    ],
+                    "sliderStyle": "Semi Autolock",
+                    "usage": "Garments",
+                    "profileSummaryId": "4fc8.6ede7a68217e8.51710825b8d38.aa9d2e2d7c086.e1308ecda49e2.fdca17a720928.3706b015e",
+                    "$$hashKey": "object:3010"
+                },
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialType14",
+                    "TECHDISER_SERIAL_NO": 4,
+                    "title": "Close-end Zipper",
+                    "description": "Close-end description",
+                    "wastage": 3,
+                    "type": "Open-End",
+                    "materialType": "Plastic",
+                    "composition": [
+                        "Stainless Steel"
+                    ],
+                    "usage": "Garments",
+                    "sliderStyle": "Auto Lock",
+                    "profileSummaryId": "6320.4b462628bbca9.04c170f9254e9.dff604bed7562.1793b6643b10c.c9182e5cf08e3.f5ab76d91",
+                    "$$hashKey": "object:3126"
+                },
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialType15",
+                    "TECHDISER_SERIAL_NO": 5,
+                    "title": "Open-end Zipper",
+                    "description": "Open-end description",
+                    "wastage": 2,
+                    "type": "Close-End",
+                    "materialType": "Metal",
+                    "composition": [
+                        "Brass"
+                    ],
+                    "sliderStyle": "Auto Lock",
+                    "usage": "Home Textiles",
+                    "profileSummaryId": "de53.32fc4b343553.7ab6d2d96e649.dd20e97ff83ef.32e0214fdcc4.f77a1df7b4952.6596d440a",
+                    "$$hashKey": "object:3240"
+                }
+            ],
+            "containers": [
+                {
+                    "TECHDISER_ID": "Container5",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "containerId": "SupplyDefinitionMaterialCategory20",
+                    "sizes": [
+                        {
+                            "TECHDISER_ID": "ContainerTypes9",
+                            "unitSize": "5",
+                            "noOfUnits": 1,
+                            "dimentionInfo": "count:dozen",
+                            "dimensionId": "count",
+                            "measurementUnitId": "dozen"
+                        },
+                        {
+                            "TECHDISER_ID": "ContainerTypes10",
+                            "unitSize": "2",
+                            "noOfUnits": 1,
+                            "dimentionInfo": "count:hundred",
+                            "dimensionId": "count",
+                            "measurementUnitId": "hundred"
+                        }
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "Container6",
+                    "TECHDISER_SERIAL_NO": 2,
+                    "containerId": "SupplyDefinitionMaterialCategory17",
+                    "sizes": [
+                        {
+                            "TECHDISER_ID": "ContainerTypes11",
+                            "unitSize": "6",
+                            "noOfUnits": 1,
+                            "dimentionInfo": "count:dozen",
+                            "dimensionId": "count",
+                            "measurementUnitId": "dozen"
+                        },
+                        {
+                            "TECHDISER_ID": "ContainerTypes12",
+                            "unitSize": "3",
+                            "noOfUnits": 1,
+                            "dimentionInfo": "count:hundred",
+                            "dimensionId": "count",
+                            "measurementUnitId": "hundred"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "TECHDISER_ID": "SupplyDefinitionMaterialCategory5",
+            "TECHDISER_SERIAL_NO": 13,
+            "level": 3,
+            "parentId": "SupplyDefinitionTrimslavel",
+            "title": "Labels & Tags",
+            "materialType": "labels",
+            "cuttable": false,
+            "countable": true,
+            "thread": false,
+            "typeId": "garmentMaterials",
+            "sourcingTypeId": "trims",
+            "dimensionId": "count",
+            "measurementUnitId": "pieces",
+            "costingHeadId": "",
+            "bomHeadId": "matgroup2",
+            "productionTimes": [
+                {
+                    "TECHDISER_ID": "ProductionTime13",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "quantity": 10000,
+                    "timeDays": 3,
+                    "materialTypeIds": [
+                        "SupplyDefinitionMaterialType18",
+                        "SupplyDefinitionMaterialType20"
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "ProductionTime14",
+                    "TECHDISER_SERIAL_NO": 2,
+                    "quantity": 12000,
+                    "timeDays": 4,
+                    "materialTypeIds": [
+                        "SupplyDefinitionMaterialType21",
+                        "SupplyDefinitionMaterialType22"
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "ProductionTime15",
+                    "TECHDISER_SERIAL_NO": 3,
+                    "quantity": 23000,
+                    "timeDays": 7,
+                    "materialTypeIds": [
+                        "SupplyDefinitionMaterialType19",
+                        "SupplyDefinitionMaterialType21"
+                    ]
+                }
+            ],
+            "dataSheet": [
+                "Color",
+                "Strip",
+                "Length"
+            ],
+            "positions": [
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialCategoryPosition13",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "title": "Main Label"
+                },
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialCategoryPosition14",
+                    "TECHDISER_SERIAL_NO": 2,
+                    "title": "Care Label"
+                },
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialCategoryPosition15",
+                    "TECHDISER_SERIAL_NO": 3,
+                    "title": "Size Label"
+                }
+            ],
+            "genericDefectIds": [
+                "SupplyDefinitionMaterialDefect17"
+            ],
+            "defectDef": [
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialDefect17",
+                    "TECHDISER_SERIAL_NO": "1",
+                    "title": "Defect 17",
+                    "description": "Defect 17 description",
+                    "defectTypeId": "Defect_Type_3",
+                    "materialTypeIds": [
+                        "SupplyDefinitionMaterialType21",
+                        "SupplyDefinitionMaterialType22"
+                    ],
+                    "code": "Def17",
+                    "isRecoverable": "1",
+                    "guideLine": "Guideline for defect 17",
+                    "requireTime": "1 hour",
+                    "isGenericDefect": 1
+                },
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialDefect18",
+                    "TECHDISER_SERIAL_NO": "2",
+                    "title": "Defect 18",
+                    "description": "Defect 18 description",
+                    "defectTypeId": "Defect_Type_1",
+                    "materialTypeIds": [
+                        "SupplyDefinitionMaterialType20",
+                        "SupplyDefinitionMaterialType21"
+                    ],
+                    "code": "Def18",
+                    "isRecoverable": "1",
+                    "guideLine": "Guideline for defect 18",
+                    "requireTime": "1 hour",
+                    "isGenericDefect": 0
+                },
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialDefect19",
+                    "TECHDISER_SERIAL_NO": "3",
+                    "title": "Defect 19",
+                    "description": "Defect 19 description",
+                    "defectTypeId": "Defect_Type_1",
+                    "materialTypeIds": [
+                        "SupplyDefinitionMaterialType19",
+                        "SupplyDefinitionMaterialType20"
+                    ],
+                    "code": "Def19",
+                    "isRecoverable": "1",
+                    "guideLine": "Guideline for defect 19",
+                    "requireTime": "1 hour",
+                    "isGenericDefect": 0
+                },
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialDefect20",
+                    "TECHDISER_SERIAL_NO": "4",
+                    "title": "Defect 20",
+                    "description": "Defect 20 description",
+                    "defectTypeId": "Defect_Type_1",
+                    "materialTypeIds": [
+                        "SupplyDefinitionMaterialType18",
+                        "SupplyDefinitionMaterialType19"
+                    ],
+                    "code": "Def20",
+                    "isRecoverable": "1",
+                    "guideLine": "Guideline for defect 20",
+                    "requireTime": "1 hour",
+                    "isGenericDefect": 0
+                }
+            ],
+            "tests": [
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialTest13",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "testId": "LabTest2",
+                    "materialTypes": [],
+                    "deleted": false
+                },
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialTest14",
+                    "TECHDISER_SERIAL_NO": 2,
+                    "testId": "LabTest2",
+                    "materialTypes": [],
+                    "deleted": false
+                },
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialTest15",
+                    "TECHDISER_SERIAL_NO": 3,
+                    "testId": "LabTest2",
+                    "materialTypes": [],
+                    "deleted": false
+                }
+            ],
+            "preCautionMarks": [
+                {
+                    "TECHDISER_ID": "PreCautionMarks25",
+                    "title": "Fragile",
+                    "image": [],
+                    "materialTypeIds": [
+                        "SupplyDefinitionMaterialType18",
+                        "SupplyDefinitionMaterialType20"
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "PreCautionMarks26",
+                    "title": "Keep Dry",
+                    "image": [],
+                    "materialTypeIds": [
+                        "SupplyDefinitionMaterialType21",
+                        "SupplyDefinitionMaterialType22"
+                    ]
+                }
+            ],
+            "types": [
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialType18",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "title": "Care Label",
+                    "description": "Care description",
+                    "wastage": 0,
+                    "material": [
+                        "Cloth",
+                        "Nilon"
+                    ],
+                    "type": "Care Labels",
+                    "usage": "Garments",
+                    "profileSummaryId": "5559.e4e7b9291760b.d87df2904382d.95b9bb123358e.4aef42c3afee3.a5fcc4303afd5.f42c1dc6c",
+                    "$$hashKey": "object:2822"
+                },
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialType19",
+                    "TECHDISER_SERIAL_NO": 2,
+                    "title": "Size Label",
+                    "description": "Size description",
+                    "wastage": 0,
+                    "material": [
+                        "Satin"
+                    ],
+                    "type": "Main Labels",
+                    "usage": "Garments",
+                    "profileSummaryId": "ec13.217e07b58e444.eb78adb1305d8.3435e84457d1b.d21fb452cc746.b3aa06f79c97f.3b0207f8f",
+                    "$$hashKey": "object:2881"
+                },
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialType20",
+                    "TECHDISER_SERIAL_NO": 3,
+                    "title": "Price Label",
+                    "description": "Price description",
+                    "wastage": 0,
+                    "material": [
+                        "Silk"
+                    ],
+                    "type": "Hang Tag",
+                    "usage": "Garments",
+                    "profileSummaryId": "9132.f59dc67310bd.5891259875298.c7d143233a269.74c1b3a13fff6.1f9e396df08d7.ba9baacd8",
+                    "$$hashKey": "object:2940"
+                },
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialType21",
+                    "TECHDISER_SERIAL_NO": 4,
+                    "title": "Composition Label",
+                    "description": "Composition description",
+                    "wastage": 0,
+                    "material": [
+                        "Cloth"
+                    ],
+                    "type": "Price Tag",
+                    "usage": "Garments",
+                    "profileSummaryId": "b152.52338506ee2c8.e67e82435edb5.cc74b42c65294.9772524a97c84.1c113b276699.427d8aac5",
+                    "$$hashKey": "object:3037"
+                },
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialType22",
+                    "TECHDISER_SERIAL_NO": 5,
+                    "title": "Flag Label",
+                    "description": "Flag description",
+                    "wastage": 0,
+                    "material": [
+                        "Ployster"
+                    ],
+                    "type": "Hang Tag",
+                    "usage": "Garments",
+                    "profileSummaryId": "2e1e.bc7bc5531bc7d.7357c4f66dc.396fbbfc3d60.0b624fd7538d4.fa485e8021b19.f7b5f5cf3",
+                    "$$hashKey": "object:3131"
+                }
+            ],
+            "containers": []
+        },
+        {
+            "TECHDISER_ID": "SupplyDefinitionMaterialCategory14",
+            "TECHDISER_SERIAL_NO": 14,
+            "level": 3,
+            "parentId": "SupplyDefinitionTrimslavel",
+            "title": "Thread",
+            "materialType": "thread",
+            "cuttable": false,
+            "countable": false,
+            "thread": true,
+            "isSizeDependent": false,
+            "isColorDependent": false,
+            "isUnitType": false,
+            "isContainerType": false,
+            "typeId": "garmentMaterials",
+            "sourcingTypeId": "trims",
+            "dimensionId": "weight",
+            "measurementUnitId": "kilogram",
+            "costingHeadId": "",
+            "bomHeadId": "matgroup2",
+            "productionTimes": [
+                {
+                    "TECHDISER_ID": "ProductionTime16",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "quantity": 10000,
+                    "timeDays": 3,
+                    "materialTypeIds": [
+                        "SupplyDefinitionMaterialType37",
+                        "SupplyDefinitionMaterialType39"
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "ProductionTime17",
+                    "TECHDISER_SERIAL_NO": 2,
+                    "quantity": 12000,
+                    "timeDays": 4,
+                    "materialTypeIds": [
+                        "SupplyDefinitionMaterialType38",
+                        "SupplyDefinitionMaterialType40"
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "ProductionTime18",
+                    "TECHDISER_SERIAL_NO": 3,
+                    "quantity": 23000,
+                    "timeDays": 7,
+                    "materialTypeIds": [
+                        "SupplyDefinitionMaterialType38",
+                        "SupplyDefinitionMaterialType41"
+                    ]
+                }
+            ],
+            "dataSheet": [
+                "Count",
+                "Ply Description"
+            ],
+            "genericDefectIds": [
+                "SupplyDefinitionMaterialDefect33"
+            ],
+            "defectDef": [
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialDefect33",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "title": "Defect 33",
+                    "description": "Defect 33 description",
+                    "defectTypeId": "Defect_Type_3",
+                    "materialTypeIds": [
+                        "SupplyDefinitionMaterialType39",
+                        "SupplyDefinitionMaterialType40"
+                    ],
+                    "code": "Def33",
+                    "isRecoverable": "1",
+                    "guideLine": "Guideline for defect 33",
+                    "requireTime": "1 hour",
+                    "isGenericDefect": 1
+                },
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialDefect34",
+                    "TECHDISER_SERIAL_NO": 2,
+                    "title": "Defect 34",
+                    "description": "Defect 34 description",
+                    "defectTypeId": "Defect_Type_1",
+                    "materialTypeIds": [
+                        "SupplyDefinitionMaterialType37",
+                        "SupplyDefinitionMaterialType38"
+                    ],
+                    "code": "Def34",
+                    "isRecoverable": "1",
+                    "guideLine": "Guideline for defect 34",
+                    "requireTime": "1 hour",
+                    "isGenericDefect": 0
+                }
+            ],
+            "tests": [
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialTest25",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "testId": "LabTest2",
+                    "materialTypes": [],
+                    "deleted": false
+                },
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialTest26",
+                    "TECHDISER_SERIAL_NO": 2,
+                    "testId": "LabTest2",
+                    "materialTypes": [],
+                    "deleted": false
+                }
+            ],
+            "positions": [],
+            "preCautionMarks": [
+                {
+                    "TECHDISER_ID": "PreCautionMarks27",
+                    "title": "Fragile",
+                    "image": [],
+                    "materialTypeIds": [
+                        "SupplyDefinitionMaterialType37",
+                        "SupplyDefinitionMaterialType39"
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "PreCautionMarks28",
+                    "title": "Keep Dry",
+                    "image": [],
+                    "materialTypeIds": [
+                        "SupplyDefinitionMaterialType38",
+                        "SupplyDefinitionMaterialType40"
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "PreCautionMarks14",
+                    "title": "Use No Hooks",
+                    "image": [],
+                    "materialTypeIds": [
+                        "SupplyDefinitionMaterialType38",
+                        "SupplyDefinitionMaterialType41"
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "PreCautionMarks15",
+                    "title": "Photographic Materials",
+                    "image": [],
+                    "materialTypeIds": [
+                        "SupplyDefinitionMaterialType38",
+                        "SupplyDefinitionMaterialType39"
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "PreCautionMarks16",
+                    "title": "Lift Box Here",
+                    "image": [],
+                    "materialTypeIds": [
+                        "SupplyDefinitionMaterialType37",
+                        "SupplyDefinitionMaterialType40"
+                    ]
+                }
+            ],
+            "types": [
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialType37",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "title": "Linen thread",
+                    "description": "Linen thread description",
+                    "wastage": 1,
+                    "yarnType": [
+                        "Spun"
+                    ],
+                    "material": "100% Polyester",
+                    "usage": "Embrodery",
+                    "profileSummaryId": "119d.79e9f68e69780.e893573b6802c.3bac9d039fa49.b9da2902f7ec9.5a11d1cb3dc8.1e97900f8",
+                    "$$hashKey": "object:2742"
+                },
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialType38",
+                    "TECHDISER_SERIAL_NO": 2,
+                    "title": "Silk thread",
+                    "description": "Silk thread description",
+                    "wastage": 2,
+                    "yarnType": [
+                        "Filament"
+                    ],
+                    "material": "100% Rayon",
+                    "usage": "Cross Stitch",
+                    "profileSummaryId": "2ce1.e81ead972af24.2c72caf0b4683.999d1082e0db7.b1a2097a92a02.02c298ad41924.c7eb1274d",
+                    "$$hashKey": "object:2801"
+                },
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialType39",
+                    "TECHDISER_SERIAL_NO": 3,
+                    "title": "Soft cotton",
+                    "description": "Soft cotton description",
+                    "wastage": 3,
+                    "yarnType": [
+                        "Spun"
+                    ],
+                    "material": "100% Cotton",
+                    "usage": "Embrodery",
+                    "profileSummaryId": "ef30.83fc47aba4286.3ee46ccfb6c6d.d8b9cf3c86770.4b89630511386.23b60491d8402.3bd1e014a",
+                    "$$hashKey": "object:2861"
+                },
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialType40",
+                    "TECHDISER_SERIAL_NO": 4,
+                    "title": "Polyester thread",
+                    "description": "Polyester thread description",
+                    "wastage": 2,
+                    "yarnType": [
+                        "Spun"
+                    ],
+                    "material": "100% Cotton",
+                    "usage": "Cross Stitch",
+                    "profileSummaryId": "5344.b23e5ba55ffdf.9059586df6259.808e26c5724c2.6a87f435e5c9e.adc0cd618d90f.c740db6c2",
+                    "$$hashKey": "object:2920"
+                },
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialType41",
+                    "TECHDISER_SERIAL_NO": 5,
+                    "title": "Nylon thread",
+                    "description": "Nylon thread description",
+                    "wastage": 3,
+                    "yarnType": [
+                        "Spun"
+                    ],
+                    "material": "100% Nylon",
+                    "usage": "Sewing",
+                    "profileSummaryId": "4e93.1e1eabd32dd91.6f51f8b9acad5.9e7cbb044cab3.5879cf5210b88.901aac3330321.b086f802f",
+                    "$$hashKey": "object:3042"
+                }
+            ],
+            "containers": [
+                {
+                    "TECHDISER_ID": "Container2",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "containerId": "SupplyDefinitionMaterialCategory21",
+                    "sizes": [
+                        {
+                            "TECHDISER_ID": "ContainerTypes1",
+                            "unitSize": "6",
+                            "noOfUnits": 1,
+                            "dimentionInfo": "length:meter",
+                            "dimensionId": "length",
+                            "measurementUnitId": "meter"
+                        },
+                        {
+                            "TECHDISER_ID": "ContainerTypes2",
+                            "unitSize": "4",
+                            "noOfUnits": 1,
+                            "dimentionInfo": "length:meter",
+                            "dimensionId": "length",
+                            "measurementUnitId": "meter"
+                        },
+                        {
+                            "TECHDISER_ID": "ContainerTypes3",
+                            "title": "Small",
+                            "unitSize": "2",
+                            "noOfUnits": 1,
+                            "dimentionInfo": "length:meter",
+                            "dimensionId": "length",
+                            "measurementUnitId": "meter"
+                        }
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "Container3",
+                    "TECHDISER_SERIAL_NO": 2,
+                    "containerId": "SupplyDefinitionMaterialCategory22",
+                    "sizes": [
+                        {
+                            "TECHDISER_ID": "ContainerTypes4",
+                            "unitSize": "7",
+                            "noOfUnits": 1,
+                            "dimentionInfo": "length:meter",
+                            "dimensionId": "length",
+                            "measurementUnitId": "meter"
+                        },
+                        {
+                            "TECHDISER_ID": "ContainerTypes5",
+                            "title": "Medium",
+                            "unitSize": "5",
+                            "noOfUnits": 1,
+                            "dimentionInfo": "length:meter",
+                            "dimensionId": "length",
+                            "measurementUnitId": "meter"
+                        },
+                        {
+                            "TECHDISER_ID": "ContainerTypes6",
+                            "title": "Small",
+                            "unitSize": "3",
+                            "noOfUnits": 1,
+                            "dimentionInfo": "length:meter",
+                            "dimensionId": "length",
+                            "measurementUnitId": "meter"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "TECHDISER_ID": "SupplyDefinitionMaterialCategory6",
+            "TECHDISER_SERIAL_NO": 15,
+            "level": 3,
+            "parentId": "SupplyDefinitionPresentationlavel",
+            "title": "Print",
+            "materialType": "print",
+            "cuttable": false,
+            "countable": true,
+            "thread": false,
+            "isSizeDependent": false,
+            "isColorDependent": false,
+            "isUnitType": false,
+            "isContainerType": false,
+            "typeId": "presentation",
+            "sourcingTypeId": "Print",
+            "dimensionId": "count",
+            "measurementUnitId": "pieces",
+            "costingHeadId": "",
+            "productionTimes": [
+                {
+                    "TECHDISER_ID": "ProductionTime19",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "quantity": 10000,
+                    "timeDays": 3,
+                    "materialTypeIds": [
+                        "SupplyDefinitionMaterialType23",
+                        "SupplyDefinitionMaterialType24"
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "ProductionTime20",
+                    "TECHDISER_SERIAL_NO": 2,
+                    "quantity": 12000,
+                    "timeDays": 4,
+                    "materialTypeIds": [
+                        "SupplyDefinitionMaterialType25",
+                        "SupplyDefinitionMaterialType26"
+                    ]
+                }
+            ],
+            "dataSheet": [
+                "style",
+                "type"
+            ],
+            "positions": [],
+            "genericDefectIds": [
+                "SupplyDefinitionMaterialDefect21",
+                "SupplyDefinitionMaterialDefect22"
+            ],
+            "defectDef": [
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialDefect21",
+                    "TECHDISER_SERIAL_NO": "1",
+                    "title": "Defect 21",
+                    "description": "Defect 21 description",
+                    "defectTypeId": "Defect_Type_3",
+                    "materialTypeIds": [
+                        "SupplyDefinitionMaterialType23",
+                        "SupplyDefinitionMaterialType24"
+                    ],
+                    "code": "Def4",
+                    "isRecoverable": "1",
+                    "guideLine": "Guideline for defect 4",
+                    "requireTime": "1 hour",
+                    "isGenericDefect": 1
+                },
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialDefect22",
+                    "TECHDISER_SERIAL_NO": "2",
+                    "title": "Defect 22",
+                    "description": "Defect 22 description",
+                    "defectTypeId": "Defect_Type_1",
+                    "materialTypeIds": [
+                        "SupplyDefinitionMaterialType25",
+                        "SupplyDefinitionMaterialType26"
+                    ],
+                    "code": "Def22",
+                    "isRecoverable": "1",
+                    "guideLine": "Guideline for defect 22",
+                    "requireTime": "1 hour",
+                    "isGenericDefect": 1
+                },
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialDefect23",
+                    "TECHDISER_SERIAL_NO": "3",
+                    "title": "Defect 23",
+                    "description": "Defect 23 description",
+                    "defectTypeId": "Defect_Type_1",
+                    "materialTypeIds": [
+                        "SupplyDefinitionMaterialType24",
+                        "SupplyDefinitionMaterialType25"
+                    ],
+                    "code": "Def23",
+                    "isRecoverable": "1",
+                    "guideLine": "Guideline for defect 23",
+                    "requireTime": "1 hour",
+                    "isGenericDefect": 0
+                },
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialDefect24",
+                    "TECHDISER_SERIAL_NO": "4",
+                    "title": "Defect 24",
+                    "description": "Defect 24 description",
+                    "defectTypeId": "Defect_Type_3",
+                    "materialTypeIds": [
+                        "SupplyDefinitionMaterialType23",
+                        "SupplyDefinitionMaterialType24"
+                    ],
+                    "code": "Def24",
+                    "isRecoverable": "1",
+                    "guideLine": "Guideline for defect 24",
+                    "requireTime": "1 hour",
+                    "isGenericDefect": 0
+                }
+            ],
+            "tests": [
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialTest16",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "testId": "LabTest2",
+                    "materialTypes": [],
+                    "deleted": false
+                },
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialTest17",
+                    "TECHDISER_SERIAL_NO": 2,
+                    "testId": "LabTest2",
+                    "materialTypes": [],
+                    "deleted": false
+                },
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialTest18",
+                    "TECHDISER_SERIAL_NO": 3,
+                    "testId": "LabTest2",
+                    "materialTypes": [],
+                    "deleted": false
+                }
+            ],
+            "preCautionMarks": [
+                {
+                    "TECHDISER_ID": "PreCautionMarks29",
+                    "title": "Fragile",
+                    "image": [],
+                    "materialTypeIds": [
+                        "SupplyDefinitionMaterialType23",
+                        "SupplyDefinitionMaterialType24"
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "PreCautionMarks30",
+                    "title": "Keep Dry",
+                    "image": [],
+                    "materialTypeIds": [
+                        "SupplyDefinitionMaterialType25",
+                        "SupplyDefinitionMaterialType26"
+                    ]
+                }
+            ],
+            "types": [
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialType23",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "title": "Automatic Flat Screen",
+                    "description": "Automatic description",
+                    "wastage": 0
+                },
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialType24",
+                    "TECHDISER_SERIAL_NO": 2,
+                    "title": "Rotary Screen",
+                    "description": "Rotary description",
+                    "wastage": 0
+                },
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialType25",
+                    "TECHDISER_SERIAL_NO": 3,
+                    "title": "Engraved Roller Printing",
+                    "description": "Engraved Roller description",
+                    "wastage": 0
+                },
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialType26",
+                    "TECHDISER_SERIAL_NO": 4,
+                    "title": "Heat Transfer",
+                    "description": "Heat Transfer description",
+                    "wastage": 0
+                }
+            ],
+            "containers": []
+        },
+        {
+            "TECHDISER_ID": "SupplyDefinitionMaterialCategory7",
+            "TECHDISER_SERIAL_NO": 16,
+            "level": 3,
+            "parentId": "SupplyDefinitionPresentationlavel",
+            "title": "Embroidery",
+            "materialType": "embroidery",
+            "cuttable": false,
+            "countable": true,
+            "thread": false,
+            "isSizeDependent": false,
+            "isColorDependent": false,
+            "isUnitType": false,
+            "isContainerType": false,
+            "typeId": "presentation",
+            "sourcingTypeId": "Embroidery",
+            "dimensionId": "count",
+            "measurementUnitId": "pieces",
+            "costingHeadId": "",
+            "productionTimes": [
+                {
+                    "TECHDISER_ID": "ProductionTime21",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "quantity": 10000,
+                    "timeDays": 3,
+                    "materialTypeIds": [
+                        "SupplyDefinitionMaterialType28",
+                        "SupplyDefinitionMaterialType29"
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "ProductionTime22",
+                    "TECHDISER_SERIAL_NO": 2,
+                    "quantity": 12000,
+                    "timeDays": 4,
+                    "materialTypeIds": [
+                        "SupplyDefinitionMaterialType27",
+                        "SupplyDefinitionMaterialType30"
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "ProductionTime23",
+                    "TECHDISER_SERIAL_NO": 3,
+                    "quantity": 23000,
+                    "timeDays": 7,
+                    "materialTypeIds": [
+                        "SupplyDefinitionMaterialType27",
+                        "SupplyDefinitionMaterialType29"
+                    ]
+                }
+            ],
+            "dataSheet": [
+                "stitches",
+                "materials"
+            ],
+            "positions": [],
+            "genericDefectIds": [
+                "SupplyDefinitionMaterialDefect25"
+            ],
+            "defectDef": [
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialDefect25",
+                    "TECHDISER_SERIAL_NO": "1",
+                    "title": "Defect 25",
+                    "description": "Defect 25 description",
+                    "defectTypeId": "Defect_Type_1",
+                    "materialTypeIds": [
+                        "SupplyDefinitionMaterialType30",
+                        "SupplyDefinitionMaterialType31"
+                    ],
+                    "code": "Def25",
+                    "isRecoverable": "1",
+                    "guideLine": "Guideline for defect 25",
+                    "requireTime": "1 hour",
+                    "isGenericDefect": 1
+                },
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialDefect26",
+                    "TECHDISER_SERIAL_NO": "2",
+                    "title": "Defect 26",
+                    "description": "Defect 26 description",
+                    "defectTypeId": "Defect_Type_1",
+                    "materialTypeIds": [
+                        "SupplyDefinitionMaterialType29",
+                        "SupplyDefinitionMaterialType30"
+                    ],
+                    "code": "Def26",
+                    "isRecoverable": "1",
+                    "guideLine": "Guideline for defect 26",
+                    "requireTime": "1 hour",
+                    "isGenericDefect": 0
+                },
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialDefect27",
+                    "TECHDISER_SERIAL_NO": "3",
+                    "title": "Defect 27",
+                    "description": "Defect 27 description",
+                    "defectTypeId": "Defect_Type_",
+                    "materialTypeIds": [
+                        "SupplyDefinitionMaterialType28",
+                        "SupplyDefinitionMaterialType29"
+                    ],
+                    "code": "Def27",
+                    "isRecoverable": "1",
+                    "guideLine": "Guideline for defect 27",
+                    "requireTime": "1 hour",
+                    "isGenericDefect": 0
+                },
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialDefect28",
+                    "TECHDISER_SERIAL_NO": "4",
+                    "title": "Defect 28",
+                    "description": "Defect 28 description",
+                    "defectTypeId": "Defect_Type_2",
+                    "materialTypeIds": [
+                        "SupplyDefinitionMaterialType27",
+                        "SupplyDefinitionMaterialType28"
+                    ],
+                    "code": "Def28",
+                    "isRecoverable": "1",
+                    "guideLine": "Guideline for defect 28",
+                    "requireTime": "1 hour",
+                    "isGenericDefect": 0
+                }
+            ],
+            "tests": [
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialTest19",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "testId": "LabTest2",
+                    "materialTypes": [],
+                    "deleted": false
+                },
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialTest20",
+                    "TECHDISER_SERIAL_NO": 2,
+                    "testId": "LabTest2",
+                    "materialTypes": [],
+                    "deleted": false
+                },
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialTest21",
+                    "TECHDISER_SERIAL_NO": 3,
+                    "testId": "LabTest2",
+                    "materialTypes": [],
+                    "deleted": false
+                }
+            ],
+            "preCautionMarks": [
+                {
+                    "TECHDISER_ID": "PreCautionMarks31",
+                    "title": "Fragile",
+                    "image": [],
+                    "materialTypeIds": [
+                        "SupplyDefinitionMaterialType28",
+                        "SupplyDefinitionMaterialType29"
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "PreCautionMarks32",
+                    "title": "Keep Dry",
+                    "image": [],
+                    "materialTypeIds": [
+                        "SupplyDefinitionMaterialType27",
+                        "SupplyDefinitionMaterialType30"
+                    ]
+                }
+            ],
+            "types": [
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialType27",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "title": "Whitework",
+                    "description": "Whitework description",
+                    "wastage": 0
+                },
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialType28",
+                    "TECHDISER_SERIAL_NO": 2,
+                    "title": "Candlewick",
+                    "description": "Candlewick description",
+                    "wastage": 0
+                },
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialType29",
+                    "TECHDISER_SERIAL_NO": 3,
+                    "title": "Cross Stitch",
+                    "description": "Cross Stitch description",
+                    "wastage": 0
+                },
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialType30",
+                    "TECHDISER_SERIAL_NO": 4,
+                    "title": "Pulled Thread",
+                    "description": "Pulled Thread description",
+                    "wastage": 0
+                },
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialType31",
+                    "TECHDISER_SERIAL_NO": 5,
+                    "title": "Surface",
+                    "description": "Surface description",
+                    "wastage": 0
+                }
+            ],
+            "containers": []
+        },
+        {
+            "TECHDISER_ID": "SupplyDefinitionMaterialCategory8",
+            "TECHDISER_SERIAL_NO": 17,
+            "level": 3,
+            "parentId": "SupplyDefinitionPresentationlavel",
+            "title": "Wash",
+            "materialType": "wash",
+            "cuttable": false,
+            "countable": false,
+            "thread": false,
+            "isSizeDependent": false,
+            "isColorDependent": false,
+            "isUnitType": false,
+            "isContainerType": false,
+            "typeId": "wash",
+            "sourcingTypeId": "Wash",
+            "dimensionId": "count",
+            "measurementUnitId": "pieces",
+            "costingHeadId": "",
+            "productionTimes": [],
+            "dataSheet": [
+                "Dry",
+                "Silica",
+                "Color"
+            ],
+            "positions": [],
+            "genericDefectIds": [
+                "SupplyDefinitionMaterialDefect29",
+                "SupplyDefinitionMaterialDefect30"
+            ],
+            "defectDef": [
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialDefect29",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "title": "Defect 29",
+                    "description": "Defect 29 description",
+                    "defectTypeId": "Defect_Type_1",
+                    "materialTypeIds": [
+                        "SupplyDefinitionMaterialType35",
+                        "SupplyDefinitionMaterialType36"
+                    ],
+                    "code": "Def29",
+                    "isRecoverable": "1",
+                    "guideLine": "Guideline for defect 29",
+                    "requireTime": "1 hour",
+                    "isGenericDefect": 1
+                },
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialDefect30",
+                    "TECHDISER_SERIAL_NO": 2,
+                    "title": "Defect 30",
+                    "description": "Defect 30 description",
+                    "defectTypeId": "Defect_Type_1",
+                    "materialTypeIds": [
+                        "SupplyDefinitionMaterialType34",
+                        "SupplyDefinitionMaterialType35"
+                    ],
+                    "code": "Def30",
+                    "isRecoverable": "1",
+                    "guideLine": "Guideline for defect 30",
+                    "requireTime": "1 hour",
+                    "isGenericDefect": 1
+                },
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialDefect31",
+                    "TECHDISER_SERIAL_NO": 3,
+                    "title": "Defect 31",
+                    "description": "Defect 31 description",
+                    "defectTypeId": "Defect_Type_2",
+                    "materialTypeIds": [
+                        "SupplyDefinitionMaterialType33",
+                        "SupplyDefinitionMaterialType34"
+                    ],
+                    "code": "Def31",
+                    "isRecoverable": "1",
+                    "guideLine": "Guideline for defect 31",
+                    "requireTime": "1 hour",
+                    "isGenericDefect": 0
+                },
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialDefect32",
+                    "TECHDISER_SERIAL_NO": 4,
+                    "title": "Defect  32",
+                    "description": "Defect  32 description",
+                    "defectTypeId": "Defect_Type_2",
+                    "materialTypeIds": [
+                        "SupplyDefinitionMaterialType32",
+                        "SupplyDefinitionMaterialType33"
+                    ],
+                    "code": "Def32",
+                    "isRecoverable": "1",
+                    "guideLine": "Guideline for defect 32",
+                    "requireTime": "1 hour",
+                    "isGenericDefect": 0
+                }
+            ],
+            "tests": [
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialTest22",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "testId": "LabTest2",
+                    "materialTypes": [],
+                    "deleted": false
+                },
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialTest23",
+                    "TECHDISER_SERIAL_NO": 2,
+                    "testId": "LabTest2",
+                    "materialTypes": [],
+                    "deleted": false
+                },
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialTest24",
+                    "TECHDISER_SERIAL_NO": 3,
+                    "testId": "LabTest2",
+                    "materialTypes": [],
+                    "deleted": false
+                }
+            ],
+            "preCautionMarks": [
+                {
+                    "TECHDISER_ID": "PreCautionMarks33",
+                    "title": "Fragile",
+                    "image": [],
+                    "materialTypeIds": [
+                        "SupplyDefinitionMaterialType32",
+                        "SupplyDefinitionMaterialType33"
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "PreCautionMarks34",
+                    "title": "Keep Dry",
+                    "image": [],
+                    "materialTypeIds": [
+                        "SupplyDefinitionMaterialType34",
+                        "SupplyDefinitionMaterialType35"
+                    ]
+                }
+            ],
+            "types": [
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialType32",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "title": "Enzyme",
+                    "description": "Enzyme description",
+                    "wastage": 0
+                },
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialType33",
+                    "TECHDISER_SERIAL_NO": 2,
+                    "title": "Stone",
+                    "description": "Stone description",
+                    "wastage": 0
+                },
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialType34",
+                    "TECHDISER_SERIAL_NO": 3,
+                    "title": "Softener Silicon",
+                    "description": "Softener Silicon description",
+                    "wastage": 0
+                },
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialType35",
+                    "TECHDISER_SERIAL_NO": 4,
+                    "title": "Hot Wash",
+                    "description": "Hot Wash description",
+                    "wastage": 0
+                },
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialType36",
+                    "TECHDISER_SERIAL_NO": 5,
+                    "title": "P.P Spray",
+                    "description": "P.P Spray description",
+                    "wastage": 0
+                }
+            ],
+            "containers": []
+        },
+        {
+            "TECHDISER_ID": "SupplyDefinitionMaterialCategory9",
+            "TECHDISER_SERIAL_NO": 18,
+            "level": 2,
+            "parentId": "SupplyDefinitionPackingMateriallavel",
+            "title": "Printed Polybag",
+            "materialType": "bag",
+            "cuttable": false,
+            "countable": true,
+            "thread": false,
+            "isSizeDependent": true,
+            "isColorDependent": true,
+            "isUnitType": false,
+            "isContainerType": false,
+            "typeId": "packingMaterials",
+            "sourcingTypeId": "PackingMaterials",
+            "costingHeadId": "",
+            "productionTimes": [
+                {
+                    "TECHDISER_ID": "ProductionTime24",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "quantity": 10000,
+                    "timeDays": 3,
+                    "materialTypeIds": []
+                },
+                {
+                    "TECHDISER_ID": "ProductionTime25",
+                    "TECHDISER_SERIAL_NO": 2,
+                    "quantity": 12000,
+                    "timeDays": 4,
+                    "materialTypeIds": []
+                },
+                {
+                    "TECHDISER_ID": "ProductionTime26",
+                    "TECHDISER_SERIAL_NO": 3,
+                    "quantity": 23000,
+                    "timeDays": 7,
+                    "materialTypeIds": []
+                }
+            ],
+            "dataSheet": [
+                "Height",
+                "Width",
+                "Length"
+            ],
+            "positions": [],
+            "genericDefectIds": [],
+            "defectDef": [],
+            "tests": [],
+            "preCautionMarks": [],
+            "types": [
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialType11",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "title": "Metal",
+                    "description": "Metal description",
+                    "wastage": 0
+                },
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialType12",
+                    "TECHDISER_SERIAL_NO": 2,
+                    "title": "Molded Plastic",
+                    "description": "Molded Plastic description",
+                    "wastage": 0
+                }
+            ],
+            "containers": [
+                {
+                    "TECHDISER_ID": "Container9",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "containerId": "SupplyDefinitionMaterialCategory19",
+                    "sizes": [
+                        {
+                            "TECHDISER_ID": "ContainerTypes17",
+                            "unitSize": "4",
+                            "noOfUnits": 1,
+                            "dimentionInfo": "count:dozen",
+                            "dimensionId": "count",
+                            "measurementUnitId": "dozen"
+                        },
+                        {
+                            "TECHDISER_ID": "ContainerTypes18",
+                            "unitSize": "6",
+                            "noOfUnits": 1,
+                            "dimentionInfo": "count:thousand",
+                            "dimensionId": "count",
+                            "measurementUnitId": "thousand"
+                        }
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "Container10",
+                    "TECHDISER_SERIAL_NO": 2,
+                    "containerId": "SupplyDefinitionMaterialCategory20",
+                    "sizes": [
+                        {
+                            "TECHDISER_ID": "ContainerTypes19",
+                            "unitSize": "1",
+                            "noOfUnits": 1,
+                            "dimentionInfo": "count:thousand",
+                            "dimensionId": "count",
+                            "measurementUnitId": "thousand"
+                        },
+                        {
+                            "TECHDISER_ID": "ContainerTypes20",
+                            "unitSize": "2",
+                            "noOfUnits": 1,
+                            "dimentionInfo": "count:hundred",
+                            "dimensionId": "count",
+                            "measurementUnitId": "hundred"
+                        }
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "Container11",
+                    "TECHDISER_SERIAL_NO": 2,
+                    "containerId": "SupplyDefinitionMaterialCategory17",
+                    "sizes": [
+                        {
+                            "TECHDISER_ID": "ContainerTypes21",
+                            "unitSize": "6",
+                            "noOfUnits": 1,
+                            "dimentionInfo": "count:dozen",
+                            "dimensionId": "count",
+                            "measurementUnitId": "dozen"
+                        },
+                        {
+                            "TECHDISER_ID": "ContainerTypes22",
+                            "unitSize": "3",
+                            "noOfUnits": 1,
+                            "dimentionInfo": "count:hundred",
+                            "dimensionId": "count",
+                            "measurementUnitId": "hundred"
+                        }
+                    ]
+                }
+            ],
+            "dimensionId": "area",
+            "measurementUnitId": "inch",
+            "measurementMatricInfo": [
+                {
+                    "TECHDISER_ID": "setupMeasurementMatricInfoSupplyDefinitionMaterialCategory9otherssetupitempackingConscountpieces",
+                    "matricPolicy": "others",
+                    "matricApplication": "setup",
+                    "handleUnit": "item",
+                    "matricCase": "packingCons",
+                    "matricDimension": "count:pieces",
+                    "measurementUnitId": "pieces",
+                    "idPrefix": "setupMeasurementMatricInfoSupplyDefinitionMaterialCategory9otherssetupitempackingCons"
+                },
+                {
+                    "TECHDISER_ID": "setupMeasurementMatricInfoSupplyDefinitionMaterialCategory9othersconsumptionitemquantitycountpieces",
+                    "matricPolicy": "others",
+                    "matricApplication": "consumption",
+                    "handleUnit": "item",
+                    "matricCase": "quantity",
+                    "matricDimension": "count:pieces",
+                    "measurementUnitId": "pieces",
+                    "idPrefix": "setupMeasurementMatricInfoSupplyDefinitionMaterialCategory9othersconsumptionitemquantity"
+                },
+                {
+                    "TECHDISER_ID": "setupMeasurementMatricInfoSupplyDefinitionMaterialCategory9othersorderitemquantitycountpieces",
+                    "matricPolicy": "others",
+                    "matricApplication": "order",
+                    "handleUnit": "item",
+                    "matricCase": "quantity",
+                    "matricDimension": "count:pieces",
+                    "measurementUnitId": "pieces",
+                    "idPrefix": "setupMeasurementMatricInfoSupplyDefinitionMaterialCategory9othersorderitemquantity"
+                }
+            ]
+        },
+        {
+            "TECHDISER_ID": "SupplyDefinitionMaterialCategory10",
+            "TECHDISER_SERIAL_NO": 19,
+            "level": 2,
+            "parentId": "SupplyDefinitionPackingMateriallavel",
+            "title": "Clothes Hangers",
+            "materialType": "hangers",
+            "cuttable": false,
+            "countable": true,
+            "thread": false,
+            "isSizeDependent": true,
+            "isColorDependent": false,
+            "isUnitType": false,
+            "isContainerType": false,
+            "typeId": "packingMaterials",
+            "sourcingTypeId": "PackingMaterials",
+            "costingHeadId": "",
+            "productionTimes": [],
+            "dataSheet": [
+                "Height",
+                "Width",
+                "Weight"
+            ],
+            "positions": [],
+            "genericDefectIds": [],
+            "defectDef": [],
+            "tests": [],
+            "preCautionMarks": [],
+            "types": [
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialType11",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "title": "Metal",
+                    "description": "Metal description",
+                    "wastage": 0
+                },
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialType12",
+                    "TECHDISER_SERIAL_NO": 2,
+                    "title": "Molded Plastic",
+                    "description": "Molded Plastic description",
+                    "wastage": 0
+                }
+            ],
+            "containers": [
+                {
+                    "TECHDISER_ID": "Container12",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "containerId": "SupplyDefinitionMaterialCategory19",
+                    "sizes": [
+                        {
+                            "TECHDISER_ID": "ContainerTypes23",
+                            "unitSize": "4",
+                            "noOfUnits": 1,
+                            "dimentionInfo": "count:dozen",
+                            "dimensionId": "count",
+                            "measurementUnitId": "dozen"
+                        },
+                        {
+                            "TECHDISER_ID": "ContainerTypes24",
+                            "unitSize": "6",
+                            "noOfUnits": 1,
+                            "dimentionInfo": "count:thousand",
+                            "dimensionId": "count",
+                            "measurementUnitId": "thousand"
+                        }
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "Container13",
+                    "TECHDISER_SERIAL_NO": 2,
+                    "containerId": "SupplyDefinitionMaterialCategory20",
+                    "sizes": [
+                        {
+                            "TECHDISER_ID": "ContainerTypes25",
+                            "unitSize": "1",
+                            "noOfUnits": 1,
+                            "dimentionInfo": "count:thousand",
+                            "dimensionId": "count",
+                            "measurementUnitId": "thousand"
+                        },
+                        {
+                            "TECHDISER_ID": "ContainerTypes26",
+                            "unitSize": "2",
+                            "noOfUnits": 1,
+                            "dimentionInfo": "count:hundred",
+                            "dimensionId": "count",
+                            "measurementUnitId": "hundred"
+                        }
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "Container14",
+                    "TECHDISER_SERIAL_NO": 2,
+                    "containerId": "SupplyDefinitionMaterialCategory17",
+                    "sizes": [
+                        {
+                            "TECHDISER_ID": "ContainerTypes27",
+                            "unitSize": "6",
+                            "noOfUnits": 1,
+                            "dimentionInfo": "count:dozen",
+                            "dimensionId": "count",
+                            "measurementUnitId": "dozen"
+                        },
+                        {
+                            "TECHDISER_ID": "ContainerTypes28",
+                            "unitSize": "3",
+                            "noOfUnits": 1,
+                            "dimentionInfo": "count:hundred",
+                            "dimensionId": "count",
+                            "measurementUnitId": "hundred"
+                        }
+                    ]
+                }
+            ],
+            "dimensionId": "count",
+            "measurementUnitId": "pieces"
+        },
+        {
+            "TECHDISER_ID": "SupplyDefinitionMaterialCategory11",
+            "TECHDISER_SERIAL_NO": 20,
+            "level": 2,
+            "parentId": "SupplyDefinitionPackingMateriallavel",
+            "title": "Paper Board",
+            "materialType": "Pins",
+            "cuttable": false,
+            "countable": true,
+            "thread": false,
+            "isSizeDependent": true,
+            "isColorDependent": false,
+            "isUnitType": false,
+            "isContainerType": false,
+            "typeId": "packingMaterials",
+            "sourcingTypeId": "PackingMaterials",
+            "costingHeadId": "",
+            "productionTimes": [],
+            "dataSheet": [
+                "Height",
+                "Width",
+                "Length"
+            ],
+            "positions": [],
+            "genericDefectIds": [],
+            "defectDef": [],
+            "tests": [],
+            "preCautionMarks": [],
+            "types": [
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialType11",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "title": "Metal",
+                    "description": "Metal description",
+                    "wastage": 0
+                },
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialType12",
+                    "TECHDISER_SERIAL_NO": 2,
+                    "title": "Molded Plastic",
+                    "description": "Molded Plastic description",
+                    "wastage": 0
+                }
+            ],
+            "containers": [
+                {
+                    "TECHDISER_ID": "Container15",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "containerId": "SupplyDefinitionMaterialCategory19",
+                    "sizes": [
+                        {
+                            "TECHDISER_ID": "ContainerTypes29",
+                            "unitSize": "4",
+                            "noOfUnits": 1,
+                            "dimentionInfo": "count:dozen",
+                            "dimensionId": "count",
+                            "measurementUnitId": "dozen"
+                        },
+                        {
+                            "TECHDISER_ID": "ContainerTypes30",
+                            "unitSize": "6",
+                            "noOfUnits": 1,
+                            "dimentionInfo": "count:thousand",
+                            "dimensionId": "count",
+                            "measurementUnitId": "thousand"
+                        }
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "Container16",
+                    "TECHDISER_SERIAL_NO": 2,
+                    "containerId": "SupplyDefinitionMaterialCategory20",
+                    "sizes": [
+                        {
+                            "TECHDISER_ID": "ContainerTypes31",
+                            "unitSize": "1",
+                            "noOfUnits": 1,
+                            "dimentionInfo": "count:thousand",
+                            "dimensionId": "count",
+                            "measurementUnitId": "thousand"
+                        },
+                        {
+                            "TECHDISER_ID": "ContainerTypes32",
+                            "unitSize": "2",
+                            "noOfUnits": 1,
+                            "dimentionInfo": "count:hundred",
+                            "dimensionId": "count",
+                            "measurementUnitId": "hundred"
+                        }
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "Container17",
+                    "TECHDISER_SERIAL_NO": 2,
+                    "containerId": "SupplyDefinitionMaterialCategory17",
+                    "sizes": [
+                        {
+                            "TECHDISER_ID": "ContainerTypes33",
+                            "unitSize": "6",
+                            "noOfUnits": 1,
+                            "dimentionInfo": "count:dozen",
+                            "dimensionId": "count",
+                            "measurementUnitId": "dozen"
+                        },
+                        {
+                            "TECHDISER_ID": "ContainerTypes34",
+                            "unitSize": "3",
+                            "noOfUnits": 1,
+                            "dimentionInfo": "count:hundred",
+                            "dimensionId": "count",
+                            "measurementUnitId": "hundred"
+                        }
+                    ]
+                }
+            ],
+            "dimensionId": "area",
+            "measurementUnitId": "inch"
+        },
+        {
+            "TECHDISER_ID": "SupplyDefinitionMaterialCategory12",
+            "TECHDISER_SERIAL_NO": 21,
+            "level": 2,
+            "parentId": "SupplyDefinitionPackingMateriallavel",
+            "title": "Packaging Tapes",
+            "materialType": "Tapes",
+            "cuttable": false,
+            "countable": true,
+            "thread": false,
+            "isSizeDependent": true,
+            "isColorDependent": false,
+            "isUnitType": false,
+            "isContainerType": false,
+            "typeId": "packingMaterials",
+            "sourcingTypeId": "PackingMaterials",
+            "costingHeadId": "",
+            "productionTimes": [],
+            "dataSheet": [
+                "Height",
+                "Width",
+                "Length"
+            ],
+            "positions": [],
+            "genericDefectIds": [],
+            "defectDef": [],
+            "tests": [],
+            "preCautionMarks": [],
+            "types": [
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialType11",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "title": "Metal",
+                    "description": "Metal description",
+                    "wastage": 0
+                },
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialType12",
+                    "TECHDISER_SERIAL_NO": 2,
+                    "title": "Molded Plastic",
+                    "description": "Molded Plastic description",
+                    "wastage": 0
+                }
+            ],
+            "containers": [
+                {
+                    "TECHDISER_ID": "Container18",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "containerId": "SupplyDefinitionMaterialCategory19",
+                    "sizes": [
+                        {
+                            "TECHDISER_ID": "ContainerTypes35",
+                            "unitSize": "4",
+                            "noOfUnits": 1,
+                            "dimentionInfo": "count:dozen",
+                            "dimensionId": "count",
+                            "measurementUnitId": "dozen"
+                        },
+                        {
+                            "TECHDISER_ID": "ContainerTypes36",
+                            "unitSize": "6",
+                            "noOfUnits": 1,
+                            "dimentionInfo": "count:thousand",
+                            "dimensionId": "count",
+                            "measurementUnitId": "thousand"
+                        }
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "Container19",
+                    "TECHDISER_SERIAL_NO": 2,
+                    "containerId": "SupplyDefinitionMaterialCategory20",
+                    "sizes": [
+                        {
+                            "TECHDISER_ID": "ContainerTypes37",
+                            "unitSize": "1",
+                            "noOfUnits": 1,
+                            "dimentionInfo": "count:thousand",
+                            "dimensionId": "count",
+                            "measurementUnitId": "thousand"
+                        },
+                        {
+                            "TECHDISER_ID": "ContainerTypes38",
+                            "unitSize": "2",
+                            "noOfUnits": 1,
+                            "dimentionInfo": "count:hundred",
+                            "dimensionId": "count",
+                            "measurementUnitId": "hundred"
+                        }
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "Container20",
+                    "TECHDISER_SERIAL_NO": 2,
+                    "containerId": "SupplyDefinitionMaterialCategory17",
+                    "sizes": [
+                        {
+                            "TECHDISER_ID": "ContainerTypes39",
+                            "unitSize": "6",
+                            "noOfUnits": 1,
+                            "dimentionInfo": "count:dozen",
+                            "dimensionId": "count",
+                            "measurementUnitId": "dozen"
+                        },
+                        {
+                            "TECHDISER_ID": "ContainerTypes40",
+                            "unitSize": "3",
+                            "noOfUnits": 1,
+                            "dimentionInfo": "count:hundred",
+                            "dimensionId": "count",
+                            "measurementUnitId": "hundred"
+                        }
+                    ]
+                }
+            ],
+            "dimensionId": "length",
+            "measurementUnitId": "foot",
+            "measurementMatricInfo": [
+                {
+                    "TECHDISER_ID": "setupMeasurementMatricInfoSupplyDefinitionMaterialCategory12otherssetupitempackingConslengthmeter",
+                    "matricPolicy": "others",
+                    "matricApplication": "setup",
+                    "handleUnit": "item",
+                    "matricCase": "packingCons",
+                    "matricDimension": "length:meter",
+                    "measurementUnitId": "meter",
+                    "idPrefix": "setupMeasurementMatricInfoSupplyDefinitionMaterialCategory12otherssetupitempackingCons"
+                },
+                {
+                    "TECHDISER_ID": "setupMeasurementMatricInfoSupplyDefinitionMaterialCategory12othersconsumptionitemquantitylengthmeter",
+                    "matricPolicy": "others",
+                    "matricApplication": "consumption",
+                    "handleUnit": "item",
+                    "matricCase": "quantity",
+                    "matricDimension": "length:meter",
+                    "measurementUnitId": "meter",
+                    "idPrefix": "setupMeasurementMatricInfoSupplyDefinitionMaterialCategory12othersconsumptionitemquantity"
+                },
+                {
+                    "TECHDISER_ID": "setupMeasurementMatricInfoSupplyDefinitionMaterialCategory12othersorderitemquantitylengthmeter",
+                    "matricPolicy": "others",
+                    "matricApplication": "order",
+                    "handleUnit": "item",
+                    "matricCase": "quantity",
+                    "matricDimension": "length:meter",
+                    "measurementUnitId": "meter",
+                    "idPrefix": "setupMeasurementMatricInfoSupplyDefinitionMaterialCategory12othersorderitemquantity"
+                }
+            ]
+        },
+        {
+            "TECHDISER_ID": "SupplyDefinitionMaterialCategory13",
+            "TECHDISER_SERIAL_NO": 22,
+            "level": 2,
+            "parentId": "SupplyDefinitionPackingMateriallavel",
+            "title": "Silica Gel",
+            "materialType": "Gel",
+            "cuttable": false,
+            "countable": true,
+            "thread": false,
+            "isSizeDependent": false,
+            "isColorDependent": false,
+            "isUnitType": false,
+            "isContainerType": false,
+            "typeId": "packingMaterials",
+            "sourcingTypeId": "PackingMaterials",
+            "dimensionId": "count",
+            "measurementUnitId": "pieces",
+            "costingHeadId": "",
+            "productionTimes": [],
+            "dataSheet": [
+                "Height",
+                "Width",
+                "Length"
+            ],
+            "positions": [],
+            "genericDefectIds": [],
+            "defectDef": [],
+            "tests": [],
+            "preCautionMarks": [],
+            "types": [
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialType11",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "title": "Metal",
+                    "description": "Metal description",
+                    "wastage": 0
+                },
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialType12",
+                    "TECHDISER_SERIAL_NO": 2,
+                    "title": "Molded Plastic",
+                    "description": "Molded Plastic description",
+                    "wastage": 0
+                }
+            ],
+            "containers": [
+                {
+                    "TECHDISER_ID": "Container21",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "containerId": "SupplyDefinitionMaterialCategory19",
+                    "sizes": [
+                        {
+                            "TECHDISER_ID": "ContainerTypes41",
+                            "unitSize": "4",
+                            "noOfUnits": 1,
+                            "dimentionInfo": "count:dozen",
+                            "dimensionId": "count",
+                            "measurementUnitId": "dozen"
+                        },
+                        {
+                            "TECHDISER_ID": "ContainerTypes42",
+                            "unitSize": "6",
+                            "noOfUnits": 1,
+                            "dimentionInfo": "count:dozen",
+                            "dimensionId": "count",
+                            "measurementUnitId": "dozen"
+                        }
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "Container22",
+                    "TECHDISER_SERIAL_NO": 2,
+                    "containerId": "SupplyDefinitionMaterialCategory20",
+                    "sizes": [
+                        {
+                            "TECHDISER_ID": "ContainerTypes43",
+                            "unitSize": "1",
+                            "noOfUnits": 1,
+                            "dimentionInfo": "count:dozen",
+                            "dimensionId": "count",
+                            "measurementUnitId": "dozen"
+                        },
+                        {
+                            "TECHDISER_ID": "ContainerTypes44",
+                            "unitSize": "2",
+                            "noOfUnits": 1,
+                            "dimentionInfo": "count:dozen",
+                            "dimensionId": "count",
+                            "measurementUnitId": "dozen"
+                        }
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "Container23",
+                    "TECHDISER_SERIAL_NO": 2,
+                    "containerId": "SupplyDefinitionMaterialCategory17",
+                    "sizes": [
+                        {
+                            "TECHDISER_ID": "ContainerTypes45",
+                            "unitSize": "6",
+                            "noOfUnits": 1,
+                            "dimentionInfo": "count:dozen",
+                            "dimensionId": "count",
+                            "measurementUnitId": "dozen"
+                        },
+                        {
+                            "TECHDISER_ID": "ContainerTypes46",
+                            "unitSize": "3",
+                            "noOfUnits": 1,
+                            "dimentionInfo": "count:dozen",
+                            "dimensionId": "count",
+                            "measurementUnitId": "dozen"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "TECHDISER_ID": "SupplyDefinitionMaterialCategory15",
+            "TECHDISER_SERIAL_NO": 23,
+            "level": 2,
+            "parentId": "SupplyDefinitionFoldingMateriallavel",
+            "title": "Clip",
+            "materialType": "1",
+            "cuttable": false,
+            "countable": true,
+            "thread": false,
+            "isSizeDependent": false,
+            "isColorDependent": false,
+            "isUnitType": false,
+            "isContainerType": false,
+            "typeId": "foldingMaterials",
+            "sourcingTypeId": "FoldingMaterials",
+            "dimensionId": "count",
+            "measurementUnitId": "pieces",
+            "costingHeadId": "",
+            "productionTimes": [],
+            "dataSheet": [
+                "Sticky",
+                "Floating",
+                "Fluid"
+            ],
+            "positions": [],
+            "genericDefectIds": [],
+            "defectDef": [],
+            "tests": [],
+            "preCautionMarks": [],
+            "types": [
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialType57",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "title": "Material type 1",
+                    "description": "",
+                    "wastage": 0
+                },
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialType58",
+                    "TECHDISER_SERIAL_NO": 2,
+                    "title": "Material type 2",
+                    "description": "",
+                    "wastage": 0
+                },
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialType59",
+                    "TECHDISER_SERIAL_NO": 3,
+                    "title": "Material type 3",
+                    "description": "",
+                    "wastage": 0
+                }
+            ],
+            "containers": [
+                {
+                    "TECHDISER_ID": "Container1004",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "containerId": "SupplyDefinitionMaterialCategory18",
+                    "sizes": [
+                        {
+                            "TECHDISER_ID": "ContainerTypes2006",
+                            "unitSize": "5",
+                            "noOfUnits": 1,
+                            "dimentionInfo": "length:meter",
+                            "dimensionId": "length",
+                            "measurementUnitId": "meter"
+                        },
+                        {
+                            "TECHDISER_ID": "ContainerTypes2007",
+                            "unitSize": "2",
+                            "noOfUnits": 1,
+                            "dimentionInfo": "length:meter",
+                            "dimensionId": "length",
+                            "measurementUnitId": "meter"
+                        }
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "Container1005",
+                    "TECHDISER_SERIAL_NO": 2,
+                    "containerId": "SupplyDefinitionMaterialCategory17",
+                    "sizes": [
+                        {
+                            "TECHDISER_ID": "ContainerTypes2008",
+                            "unitSize": "6",
+                            "noOfUnits": 1,
+                            "dimentionInfo": "length:meter",
+                            "dimensionId": "length",
+                            "measurementUnitId": "meter"
+                        },
+                        {
+                            "TECHDISER_ID": "ContainerTypes2009",
+                            "unitSize": "3",
+                            "noOfUnits": 1,
+                            "dimentionInfo": "length:meter",
+                            "dimensionId": "length",
+                            "measurementUnitId": "meter"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "TECHDISER_ID": "SupplyDefinitionMaterialCategory15Pins",
+            "TECHDISER_SERIAL_NO": 23,
+            "level": 2,
+            "parentId": "SupplyDefinitionFoldingMateriallavel",
+            "title": "Pin",
+            "materialType": "1",
+            "cuttable": false,
+            "countable": true,
+            "thread": false,
+            "isSizeDependent": false,
+            "isColorDependent": false,
+            "isUnitType": false,
+            "isContainerType": false,
+            "typeId": "foldingMaterials",
+            "sourcingTypeId": "FoldingMaterials",
+            "dimensionId": "count",
+            "measurementUnitId": "pieces",
+            "costingHeadId": "",
+            "productionTimes": [],
+            "dataSheet": [
+                "Sticky",
+                "Floating",
+                "Fluid"
+            ],
+            "positions": [],
+            "genericDefectIds": [],
+            "defectDef": [],
+            "tests": [],
+            "preCautionMarks": [],
+            "types": [
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialType57",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "title": "Material type 1",
+                    "description": "",
+                    "wastage": 0
+                },
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialType58",
+                    "TECHDISER_SERIAL_NO": 2,
+                    "title": "Material type 2",
+                    "description": "",
+                    "wastage": 0
+                },
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialType59",
+                    "TECHDISER_SERIAL_NO": 3,
+                    "title": "Material type 3",
+                    "description": "",
+                    "wastage": 0
+                }
+            ],
+            "containers": [
+                {
+                    "TECHDISER_ID": "Container1004",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "containerId": "SupplyDefinitionMaterialCategory18",
+                    "sizes": [
+                        {
+                            "TECHDISER_ID": "ContainerTypes2006",
+                            "unitSize": "5",
+                            "noOfUnits": 1,
+                            "dimentionInfo": "length:meter",
+                            "dimensionId": "length",
+                            "measurementUnitId": "meter"
+                        },
+                        {
+                            "TECHDISER_ID": "ContainerTypes2007",
+                            "unitSize": "2",
+                            "noOfUnits": 1,
+                            "dimentionInfo": "length:meter",
+                            "dimensionId": "length",
+                            "measurementUnitId": "meter"
+                        }
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "Container1005",
+                    "TECHDISER_SERIAL_NO": 2,
+                    "containerId": "SupplyDefinitionMaterialCategory17",
+                    "sizes": [
+                        {
+                            "TECHDISER_ID": "ContainerTypes2008",
+                            "unitSize": "6",
+                            "noOfUnits": 1,
+                            "dimentionInfo": "length:meter",
+                            "dimensionId": "length",
+                            "measurementUnitId": "meter"
+                        },
+                        {
+                            "TECHDISER_ID": "ContainerTypes2009",
+                            "unitSize": "3",
+                            "noOfUnits": 1,
+                            "dimentionInfo": "length:meter",
+                            "dimensionId": "length",
+                            "measurementUnitId": "meter"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "TECHDISER_ID": "SupplyDefinitionMaterialCategory16",
+            "TECHDISER_SERIAL_NO": 24,
+            "level": 2,
+            "parentId": "SupplyDefinitionFoldingMateriallavel",
+            "title": "Plastic collar",
+            "materialType": "2",
+            "cuttable": false,
+            "countable": true,
+            "thread": false,
+            "isSizeDependent": false,
+            "isColorDependent": false,
+            "isUnitType": false,
+            "isContainerType": false,
+            "typeId": "foldingMaterials",
+            "sourcingTypeId": "FoldingMaterials",
+            "dimensionId": null,
+            "measurementUnitId": null,
+            "costingHeadId": "",
+            "productionTimes": [],
+            "dataSheet": [
+                "Sticky",
+                "Floating",
+                "Fluid"
+            ],
+            "positions": [],
+            "genericDefectIds": [],
+            "defectDef": [],
+            "tests": [],
+            "preCautionMarks": [],
+            "types": [
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialType60",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "title": "Material type 4",
+                    "description": "",
+                    "wastage": 0
+                },
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialType61",
+                    "TECHDISER_SERIAL_NO": 2,
+                    "title": "Material type 5",
+                    "description": "",
+                    "wastage": 0
+                },
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialType62",
+                    "TECHDISER_SERIAL_NO": 3,
+                    "title": "Material type 6",
+                    "description": "",
+                    "wastage": 0
+                }
+            ],
+            "containers": [
+                {
+                    "TECHDISER_ID": "Container1001",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "containerId": "SupplyDefinitionMaterialCategory18",
+                    "sizes": [
+                        {
+                            "TECHDISER_ID": "ContainerTypes2001",
+                            "unitSize": "5",
+                            "noOfUnits": 1,
+                            "dimentionInfo": "length:meter",
+                            "dimensionId": "length",
+                            "measurementUnitId": "meter"
+                        },
+                        {
+                            "TECHDISER_ID": "ContainerTypes2002",
+                            "unitSize": "2",
+                            "noOfUnits": 1,
+                            "dimentionInfo": "length:meter",
+                            "dimensionId": "length",
+                            "measurementUnitId": "meter"
+                        }
+                    ]
+                },
+                {
+                    "TECHDISER_ID": "Container1002",
+                    "TECHDISER_SERIAL_NO": 2,
+                    "containerId": "SupplyDefinitionMaterialCategory17",
+                    "sizes": [
+                        {
+                            "TECHDISER_ID": "ContainerTypes2003",
+                            "unitSize": "6",
+                            "noOfUnits": 1,
+                            "dimentionInfo": "length:meter",
+                            "dimensionId": "length",
+                            "measurementUnitId": "meter"
+                        },
+                        {
+                            "TECHDISER_ID": "ContainerTypes2004",
+                            "unitSize": "3",
+                            "noOfUnits": 1,
+                            "dimentionInfo": "length:meter",
+                            "dimensionId": "length",
+                            "measurementUnitId": "meter"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "TECHDISER_ID": "SupplyDefinitionMaterialCategory17",
+            "TECHDISER_SERIAL_NO": 25,
+            "level": 2,
+            "parentId": "SupplyDefinitionPackagingContainerLavel",
+            "title": "Carton",
+            "materialType": "Carton",
+            "cuttable": false,
+            "countable": true,
+            "thread": false,
+            "isSizeDependent": false,
+            "isColorDependent": false,
+            "isUnitType": true,
+            "isContainerType": true,
+            "typeId": "packContainer",
+            "sourcingTypeId": "PackagingContainer",
+            "costingHeadId": "",
+            "productionTimes": [
+                {
+                    "TECHDISER_ID": "ProductionTime24",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "quantity": 10000,
+                    "timeDays": 3,
+                    "materialTypeIds": []
+                },
+                {
+                    "TECHDISER_ID": "ProductionTime25",
+                    "TECHDISER_SERIAL_NO": 2,
+                    "quantity": 12000,
+                    "timeDays": 4,
+                    "materialTypeIds": []
+                },
+                {
+                    "TECHDISER_ID": "ProductionTime26",
+                    "TECHDISER_SERIAL_NO": 3,
+                    "quantity": 23000,
+                    "timeDays": 7,
+                    "materialTypeIds": []
+                }
+            ],
+            "dataSheet": [
+                "Height",
+                "Width",
+                "Length"
+            ],
+            "positions": [],
+            "genericDefectIds": [
+                "ca57.8961067f4c35a.7c0fac479a9b4.1c9dbf5674e5e.14921e41e5dd8.51545eb776d86.d5cb0bdec",
+                "8838.5bf9bffd38005.331663b692c83.e79447403d185.5d0e3274af4b0.d79da97fea21d.9bca64d0c"
+            ],
+            "defectDef": [
+                {
+                    "TECHDISER_ID": "ca57.8961067f4c35a.7c0fac479a9b4.1c9dbf5674e5e.14921e41e5dd8.51545eb776d86.d5cb0bdec",
+                    "TECHDISER_SERIAL_NO": 2,
+                    "title": "Carton Defect 2",
+                    "description": "Carton Defect 2 Des",
+                    "defectTypeId": "Defect_Type_1",
+                    "materialTypeIds": [
+                        "SupplyDefinitionMaterialType50",
+                        "SupplyDefinitionMaterialType53"
+                    ],
+                    "code": "DefCarton2",
+                    "isRecoverable": "1",
+                    "guideLine": "Guideline for defect Carton2",
+                    "requireTime": "1 hour",
+                    "isGenericDefect": 1
+                },
+                {
+                    "TECHDISER_ID": "8838.5bf9bffd38005.331663b692c83.e79447403d185.5d0e3274af4b0.d79da97fea21d.9bca64d0c",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "title": "Carton Defect 1",
+                    "description": "Carton Defect 1",
+                    "defectTypeId": "Defect_Type_1",
+                    "materialTypeIds": [
+                        "SupplyDefinitionMaterialType50",
+                        "SupplyDefinitionMaterialType51"
+                    ],
+                    "code": "DefCarton1",
+                    "isRecoverable": "1",
+                    "guideLine": "Guideline for defect DefCarton1",
+                    "requireTime": "1 hour",
+                    "isGenericDefect": 1
+                }
+            ],
+            "tests": [],
+            "preCautionMarks": [],
+            "types": [
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialType50",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "title": "Folding Carton",
+                    "description": "Folding Carton description",
+                    "wastage": 0
+                },
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialType51",
+                    "TECHDISER_SERIAL_NO": 2,
+                    "title": "Rigid Boxes",
+                    "description": "Rigid Boxes description",
+                    "wastage": 0
+                },
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialType53",
+                    "TECHDISER_SERIAL_NO": 3,
+                    "title": "Corrugated Boxes",
+                    "description": "Corrugated Boxes description",
+                    "wastage": 0
+                }
+            ],
+            "containers": [
+                {
+                    "TECHDISER_ID": "Container24",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "containerId": "SupplyDefinitionMaterialCategory25",
+                    "sizes": [
+                        {
+                            "TECHDISER_ID": "ContainerTypes47",
+                            "unitSize": "12",
+                            "noOfUnits": 1,
+                            "dimentionInfo": "count:pieces",
+                            "dimensionId": "count",
+                            "measurementUnitId": "pieces"
+                        },
+                        {
+                            "TECHDISER_ID": "ContainerTypes48",
+                            "unitSize": "100",
+                            "noOfUnits": 1,
+                            "dimentionInfo": "count:pieces",
+                            "dimensionId": "count",
+                            "measurementUnitId": "pieces"
+                        }
+                    ]
+                }
+            ],
+            "dimensionId": "volume",
+            "measurementUnitId": "inch",
+            "sizeDef": {
+                "TECHDISER_ID": "setupSizeDefSupplyDefinitionMaterialCategory17",
+                "dimentionType": "volume:inch:inch:inch",
+                "measurementUnitId": "inch",
+                "sizeInfo": [
+                    "18 X 9 X 12",
+                    "18 X 9 X 24"
+                ]
+            },
+            "measurementMatricInfo": [
+                {
+                    "TECHDISER_ID": "setupMeasurementMatricInfoSupplyDefinitionMaterialCategory17countsetupitemsizeDefvolumeinchinchinch",
+                    "matricPolicy": "count",
+                    "matricApplication": "setup",
+                    "handleUnit": "item",
+                    "matricCase": "sizeDef",
+                    "matricDimension": "volume:inch:inch:inch",
+                    "measurementUnitId": "inch",
+                    "idPrefix": "setupMeasurementMatricInfoSupplyDefinitionMaterialCategory17countsetupitemsizeDef"
+                }
+            ]
+        },
+        {
+            "TECHDISER_ID": "SupplyDefinitionMaterialCategory18",
+            "TECHDISER_SERIAL_NO": 26,
+            "level": 2,
+            "parentId": "SupplyDefinitionPackagingContainerLavel",
+            "title": "Poly Bag",
+            "cuttable": false,
+            "countable": true,
+            "thread": false,
+            "isSizeDependent": false,
+            "isColorDependent": false,
+            "isUnitType": true,
+            "isContainerType": true,
+            "typeId": "packContainer",
+            "sourcingTypeId": "PackagingContainer",
+            "costingHeadId": "",
+            "productionTimes": [
+                {
+                    "TECHDISER_ID": "ProductionTime24",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "quantity": 10000,
+                    "timeDays": 3,
+                    "materialTypeIds": []
+                },
+                {
+                    "TECHDISER_ID": "ProductionTime25",
+                    "TECHDISER_SERIAL_NO": 2,
+                    "quantity": 12000,
+                    "timeDays": 4,
+                    "materialTypeIds": []
+                },
+                {
+                    "TECHDISER_ID": "ProductionTime26",
+                    "TECHDISER_SERIAL_NO": 3,
+                    "quantity": 23000,
+                    "timeDays": 7,
+                    "materialTypeIds": []
+                }
+            ],
+            "dataSheet": [
+                "Height",
+                "Width",
+                "Length"
+            ],
+            "positions": [],
+            "genericDefectIds": [
+                "a0ab.5607e15b6ea.14d42bb61f5b1.0d402a5c91440.adcfe4c2bd4a.56ccea90382ab.f55164cc5"
+            ],
+            "defectDef": [
+                {
+                    "TECHDISER_ID": "a0ab.5607e15b6ea.14d42bb61f5b1.0d402a5c91440.adcfe4c2bd4a.56ccea90382ab.f55164cc5",
+                    "TECHDISER_SERIAL_NO": 2,
+                    "title": "Poly Bag Defect 2",
+                    "description": "Poly Bag Defect 2 Des",
+                    "defectTypeId": "Defect_Type_1",
+                    "materialTypeIds": [
+                        "SupplyDefinitionMaterialType54"
+                    ],
+                    "code": "DefPoly2",
+                    "isRecoverable": "1",
+                    "guideLine": "Guideline for defect DefPoly2",
+                    "requireTime": "1 hour",
+                    "isGenericDefect": 1
+                },
+                {
+                    "TECHDISER_ID": "ac00.5279c45effcde.294b9046d1e4c.509701749a303.cd08e82992afc.ab4716f99b9f1.4c64452f4",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "title": "Poly Bag Defect 1",
+                    "description": "Poly Bag Defect 1 Des",
+                    "defectTypeId": "Defect_Type_1",
+                    "materialTypeIds": [
+                        "SupplyDefinitionMaterialType54",
+                        "SupplyDefinitionMaterialType55"
+                    ],
+                    "code": "DefPloy1",
+                    "isRecoverable": "1",
+                    "guideLine": "Guideline for defect DefPloy1",
+                    "requireTime": "1 hour",
+                    "isGenericDefect": 0
+                }
+            ],
+            "tests": [],
+            "preCautionMarks": [],
+            "types": [
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialType54",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "title": "Seal Top",
+                    "description": "Seal Top description",
+                    "wastage": 0
+                },
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialType55",
+                    "TECHDISER_SERIAL_NO": 2,
+                    "title": "Covers & Tarps",
+                    "description": "Covers & Tarps description",
+                    "wastage": 0
+                },
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialType56",
+                    "TECHDISER_SERIAL_NO": 3,
+                    "title": "Utility Bags on Rolls",
+                    "description": "Utility Bags on Rolls description",
+                    "wastage": 0
+                }
+            ],
+            "containers": [
+                {
+                    "TECHDISER_ID": "Container25",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "containerId": "SupplyDefinitionMaterialCategory25",
+                    "sizes": [
+                        {
+                            "TECHDISER_ID": "ContainerTypes49",
+                            "unitSize": "12",
+                            "noOfUnits": 1,
+                            "dimentionInfo": "count:pieces",
+                            "dimensionId": "count",
+                            "measurementUnitId": "pieces"
+                        },
+                        {
+                            "TECHDISER_ID": "ContainerTypes50",
+                            "unitSize": "100",
+                            "noOfUnits": 1,
+                            "dimentionInfo": "count:pieces",
+                            "dimensionId": "count",
+                            "measurementUnitId": "pieces"
+                        }
+                    ]
+                }
+            ],
+            "dimensionId": "area",
+            "measurementUnitId": "inch",
+            "sizeDef": {
+                "TECHDISER_ID": "setupSizeDefSupplyDefinitionMaterialCategory18",
+                "dimentionType": "area:inch:inch",
+                "measurementUnitId": "inch",
+                "sizeInfo": [
+                    "18 X 9",
+                    "18 X 12",
+                    "12 X 9"
+                ]
+            },
+            "measurementMatricInfo": [
+                {
+                    "TECHDISER_ID": "setupMeasurementMatricInfoSupplyDefinitionMaterialCategory18countsetupitemsizeDefareainchinch",
+                    "matricPolicy": "count",
+                    "matricApplication": "setup",
+                    "handleUnit": "item",
+                    "matricCase": "sizeDef",
+                    "matricDimension": "area:inch:inch",
+                    "measurementUnitId": "inch",
+                    "idPrefix": "setupMeasurementMatricInfoSupplyDefinitionMaterialCategory18countsetupitemsizeDef"
+                }
+            ]
+        },
+        {
+            "TECHDISER_ID": "SupplyDefinitionMaterialCategory19",
+            "TECHDISER_SERIAL_NO": 27,
+            "level": 2,
+            "parentId": "SupplyDefinitionPackagingContainerLavel",
+            "title": "Packet",
+            "cuttable": false,
+            "countable": true,
+            "thread": false,
+            "isSizeDependent": false,
+            "isColorDependent": false,
+            "isUnitType": true,
+            "isContainerType": true,
+            "typeId": "packContainer",
+            "sourcingTypeId": "PackagingContainer",
+            "costingHeadId": "",
+            "productionTimes": [],
+            "dataSheet": [
+                "Height",
+                "Width",
+                "Length"
+            ],
+            "positions": [],
+            "genericDefectIds": [
+                "671c.fc8fa62ed716c.1832dc106cb1d.a08206affc1f9.e115fae4b6566.a3346ed9db259.e85e33169",
+                "e760.adbce40087db5.2fdf2e991e3e5.8356554240cca.2526d31b48ce4.f537784d10425.4300417"
+            ],
+            "defectDef": [
+                {
+                    "TECHDISER_ID": "671c.fc8fa62ed716c.1832dc106cb1d.a08206affc1f9.e115fae4b6566.a3346ed9db259.e85e33169",
+                    "TECHDISER_SERIAL_NO": 2,
+                    "title": "Packet Defect 2",
+                    "description": "Packet Defect 2 Des",
+                    "defectTypeId": "Defect_Type_1",
+                    "materialTypeIds": [
+                        "SupplyDefinitionMaterialType54",
+                        "SupplyDefinitionMaterialType55"
+                    ],
+                    "code": "DefPacket2",
+                    "isRecoverable": "1",
+                    "guideLine": "Guideline for defect DefPacket2",
+                    "requireTime": "1 hour",
+                    "isGenericDefect": 1
+                },
+                {
+                    "TECHDISER_ID": "e760.adbce40087db5.2fdf2e991e3e5.8356554240cca.2526d31b48ce4.f537784d10425.4300417",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "title": "Packet Defect 1",
+                    "description": "Packet Defect 1 des",
+                    "defectTypeId": "Defect_Type_4",
+                    "materialTypeIds": [
+                        "SupplyDefinitionMaterialType56",
+                        "SupplyDefinitionMaterialType54"
+                    ],
+                    "code": "DefPacket1",
+                    "isRecoverable": "1",
+                    "guideLine": "Guideline for defect DefPacket1",
+                    "requireTime": "1 hour",
+                    "isGenericDefect": 1
+                }
+            ],
+            "tests": [],
+            "preCautionMarks": [],
+            "types": [
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialType54",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "title": "Seal Top",
+                    "description": "Seal Top description",
+                    "wastage": 0
+                },
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialType55",
+                    "TECHDISER_SERIAL_NO": 2,
+                    "title": "Covers & Tarps",
+                    "description": "Covers & Tarps description",
+                    "wastage": 0
+                },
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialType56",
+                    "TECHDISER_SERIAL_NO": 3,
+                    "title": "Utility Bags on Rolls",
+                    "description": "Utility Bags on Rolls description",
+                    "wastage": 0
+                }
+            ],
+            "containers": [
+                {
+                    "TECHDISER_ID": "Container26",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "containerId": "SupplyDefinitionMaterialCategory25",
+                    "sizes": [
+                        {
+                            "TECHDISER_ID": "ContainerTypes51",
+                            "unitSize": "12",
+                            "noOfUnits": 1,
+                            "dimentionInfo": "count:pieces",
+                            "dimensionId": "count",
+                            "measurementUnitId": "pieces"
+                        },
+                        {
+                            "TECHDISER_ID": "ContainerTypes52",
+                            "unitSize": "100",
+                            "noOfUnits": 1,
+                            "dimentionInfo": "count:pieces",
+                            "dimensionId": "count",
+                            "measurementUnitId": "pieces"
+                        }
+                    ]
+                }
+            ],
+            "dimensionId": "area",
+            "measurementUnitId": "meter"
+        },
+        {
+            "TECHDISER_ID": "SupplyDefinitionMaterialCategory20",
+            "TECHDISER_SERIAL_NO": 28,
+            "level": 2,
+            "parentId": "SupplyDefinitionPackagingContainerLavel",
+            "title": "Box",
+            "materialType": "Box",
+            "cuttable": false,
+            "countable": true,
+            "thread": false,
+            "isSizeDependent": false,
+            "isColorDependent": false,
+            "isUnitType": true,
+            "isContainerType": true,
+            "typeId": "packContainer",
+            "sourcingTypeId": "PackagingContainer",
+            "costingHeadId": "",
+            "productionTimes": [],
+            "dataSheet": [
+                "Height",
+                "Width",
+                "Length"
+            ],
+            "positions": [],
+            "genericDefectIds": [
+                "a88c.34582237e96e6.58be9e381e370.b4a6f6a6a50f4.79e803e5701bb.e09c9f10e51ea.12b95a226"
+            ],
+            "defectDef": [
+                {
+                    "TECHDISER_ID": "a88c.34582237e96e6.58be9e381e370.b4a6f6a6a50f4.79e803e5701bb.e09c9f10e51ea.12b95a226",
+                    "TECHDISER_SERIAL_NO": 2,
+                    "title": "Box Defect 2",
+                    "description": "Box Defect 2 Des",
+                    "defectTypeId": "Defect_Type_1",
+                    "materialTypeIds": [
+                        "SupplyDefinitionMaterialType55",
+                        "SupplyDefinitionMaterialType56"
+                    ],
+                    "code": "DefBox2",
+                    "isRecoverable": "1",
+                    "guideLine": "Guideline for defect DefBox2",
+                    "requireTime": "1 hour",
+                    "isGenericDefect": 1
+                },
+                {
+                    "TECHDISER_ID": "5628.2ff59f38a0625.a2ea689b37365.be7c905127aed.fc1e7f84b6cdb.21444628764b2.42dfe91b",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "title": "Box Defect 1",
+                    "description": "Box Defect 1 Des",
+                    "defectTypeId": "Defect_Type_1",
+                    "materialTypeIds": [
+                        "SupplyDefinitionMaterialType54",
+                        "SupplyDefinitionMaterialType56"
+                    ],
+                    "code": "DefBox1",
+                    "isRecoverable": "1",
+                    "guideLine": "Guideline for defect DefBox1",
+                    "requireTime": "1 hour",
+                    "isGenericDefect": 0
+                }
+            ],
+            "tests": [],
+            "preCautionMarks": [],
+            "types": [
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialType54",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "title": "Seal Top",
+                    "description": "Seal Top description",
+                    "wastage": 0
+                },
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialType55",
+                    "TECHDISER_SERIAL_NO": 2,
+                    "title": "Covers & Tarps",
+                    "description": "Covers & Tarps description",
+                    "wastage": 0
+                },
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialType56",
+                    "TECHDISER_SERIAL_NO": 3,
+                    "title": "Utility Bags on Rolls",
+                    "description": "Utility Bags on Rolls description",
+                    "wastage": 0
+                }
+            ],
+            "containers": [
+                {
+                    "TECHDISER_ID": "Container27",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "containerId": "SupplyDefinitionMaterialCategory25",
+                    "sizes": [
+                        {
+                            "TECHDISER_ID": "ContainerTypes53",
+                            "unitSize": "12",
+                            "noOfUnits": 1,
+                            "dimentionInfo": "count:pieces",
+                            "dimensionId": "count",
+                            "measurementUnitId": "pieces"
+                        },
+                        {
+                            "TECHDISER_ID": "ContainerTypes54",
+                            "unitSize": "100",
+                            "noOfUnits": 1,
+                            "dimentionInfo": "count:pieces",
+                            "dimensionId": "count",
+                            "measurementUnitId": "pieces"
+                        }
+                    ]
+                }
+            ],
+            "dimensionId": "area",
+            "measurementUnitId": "meter"
+        },
+        {
+            "TECHDISER_ID": "SupplyDefinitionMaterialCategory21",
+            "TECHDISER_SERIAL_NO": 29,
+            "level": 2,
+            "parentId": "SupplyDefinitionPackagingContainerLavel",
+            "title": "Cone",
+            "cuttable": false,
+            "countable": true,
+            "thread": false,
+            "isSizeDependent": false,
+            "isColorDependent": false,
+            "isUnitType": true,
+            "isContainerType": true,
+            "typeId": "packContainer",
+            "sourcingTypeId": "PackagingContainer",
+            "costingHeadId": "",
+            "productionTimes": [],
+            "dataSheet": [
+                "Height",
+                "Width",
+                "Length"
+            ],
+            "positions": [],
+            "genericDefectIds": [
+                "9e79.55ba42f1bd7a0.8c289f58885c8.6e945f91b6ab8.aa7b0e169640a.94eaf9cd483be.aaf9ee5b1",
+                "0a61.519a2eb995091.4151123b98a91.0676b857adff1.5085038dfce13.4991a94d635ad.30759d125"
+            ],
+            "defectDef": [
+                {
+                    "TECHDISER_ID": "9e79.55ba42f1bd7a0.8c289f58885c8.6e945f91b6ab8.aa7b0e169640a.94eaf9cd483be.aaf9ee5b1",
+                    "TECHDISER_SERIAL_NO": 2,
+                    "title": "Cone Defect 2",
+                    "description": "Cone Defect 2 Des",
+                    "defectTypeId": "Defect_Type_2",
+                    "materialTypeIds": [
+                        "SupplyDefinitionMaterialType55",
+                        "SupplyDefinitionMaterialType56"
+                    ],
+                    "code": "DefCone2",
+                    "isRecoverable": "1",
+                    "guideLine": "Guideline for defect DefCone2",
+                    "requireTime": "1 hour",
+                    "isGenericDefect": 1
+                },
+                {
+                    "TECHDISER_ID": "0a61.519a2eb995091.4151123b98a91.0676b857adff1.5085038dfce13.4991a94d635ad.30759d125",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "title": "Cone Defect 1",
+                    "description": "Cone Defect 1 Des",
+                    "defectTypeId": "Defect_Type_2",
+                    "materialTypeIds": [
+                        "SupplyDefinitionMaterialType54",
+                        "SupplyDefinitionMaterialType55"
+                    ],
+                    "code": "DefCone1",
+                    "isRecoverable": "1",
+                    "guideLine": "Guideline for defect DefCone1",
+                    "requireTime": "1 hour",
+                    "isGenericDefect": 1
+                }
+            ],
+            "tests": [],
+            "preCautionMarks": [],
+            "types": [
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialType54",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "title": "Seal Top",
+                    "description": "Seal Top description",
+                    "wastage": 0
+                },
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialType55",
+                    "TECHDISER_SERIAL_NO": 2,
+                    "title": "Covers & Tarps",
+                    "description": "Covers & Tarps description",
+                    "wastage": 0
+                },
+                {
+                    "TECHDISER_ID": "SupplyDefinitionMaterialType56",
+                    "TECHDISER_SERIAL_NO": 3,
+                    "title": "Utility Bags on Rolls",
+                    "description": "Utility Bags on Rolls description",
+                    "wastage": 0
+                }
+            ],
+            "containers": [
+                {
+                    "TECHDISER_ID": "Container28",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "containerId": "SupplyDefinitionMaterialCategory25",
+                    "sizes": [
+                        {
+                            "TECHDISER_ID": "ContainerTypes55",
+                            "unitSize": "12",
+                            "noOfUnits": 1,
+                            "dimentionInfo": "count:pieces",
+                            "dimensionId": "count",
+                            "measurementUnitId": "pieces"
+                        },
+                        {
+                            "TECHDISER_ID": "ContainerTypes56",
+                            "unitSize": "100",
+                            "noOfUnits": 1,
+                            "dimentionInfo": "count:pieces",
+                            "dimensionId": "count",
+                            "measurementUnitId": "pieces"
+                        }
+                    ]
+                }
+            ],
+            "dimensionId": "area",
+            "measurementUnitId": "meter"
+        },
+        {
+            "TECHDISER_ID": "SupplyDefinitionMaterialCategory22",
+            "TECHDISER_SERIAL_NO": 30,
+            "level": 2,
+            "parentId": "SupplyDefinitionPackagingContainerLavel",
+            "title": "Tube",
+            "materialType": "Tube",
+            "cuttable": false,
+            "countable": true,
+            "thread": false,
+            "isSizeDependent": false,
+            "isColorDependent": false,
+            "isUnitType": true,
+            "isContainerType": true,
+            "typeId": "packContainer",
+            "sourcingTypeId": "PackagingContainer",
+            "costingHeadId": "",
+            "productionTimes": [],
+            "dataSheet": [
+                "Height",
+                "Width",
+                "Length"
+            ],
+            "positions": [],
+            "genericDefectIds": [
+                "04ae.a66b8ed2b775f.bb44e75a5dc6c.155705b9f8db0.dc350509bc5dd.e792e2b90a62.5d5cdbdfe",
+                "f2e8.e9a2a37d4ff49.f224f8a9e9ee1.f4cb401c39852.f18e5abfaf135.fbf3ff47aef78.e71130552"
+            ],
+            "defectDef": [
+                {
+                    "TECHDISER_ID": "04ae.a66b8ed2b775f.bb44e75a5dc6c.155705b9f8db0.dc350509bc5dd.e792e2b90a62.5d5cdbdfe",
+                    "TECHDISER_SERIAL_NO": 2,
+                    "title": "Tube Defect 2",
+                    "description": "Tube Defect 2 Des",
+                    "defectTypeId": "Defect_Type_1",
+                    "materialTypeIds": [],
+                    "code": "DefTube2",
+                    "isRecoverable": "1",
+                    "guideLine": "Guideline for defect DefTube2",
+                    "requireTime": "1 hour",
+                    "isGenericDefect": 1
+                },
+                {
+                    "TECHDISER_ID": "f2e8.e9a2a37d4ff49.f224f8a9e9ee1.f4cb401c39852.f18e5abfaf135.fbf3ff47aef78.e71130552",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "title": "Tube Defect 1",
+                    "description": "Tube Defect 1 Des",
+                    "defectTypeId": "Defect_Type_2",
+                    "materialTypeIds": [],
+                    "code": "DefTube1",
+                    "isRecoverable": "1",
+                    "guideLine": "Guideline for defect DefTube1",
+                    "requireTime": "1 hour",
+                    "isGenericDefect": 1
+                }
+            ],
+            "tests": [],
+            "preCautionMarks": [],
+            "types": [],
+            "containers": [
+                {
+                    "TECHDISER_ID": "Container29",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "containerId": "SupplyDefinitionMaterialCategory25",
+                    "sizes": [
+                        {
+                            "TECHDISER_ID": "ContainerTypes57",
+                            "unitSize": "12",
+                            "noOfUnits": 1,
+                            "dimentionInfo": "count:pieces",
+                            "dimensionId": "count",
+                            "measurementUnitId": "pieces"
+                        },
+                        {
+                            "TECHDISER_ID": "ContainerTypes58",
+                            "unitSize": "100",
+                            "noOfUnits": 1,
+                            "dimentionInfo": "count:pieces",
+                            "dimensionId": "count",
+                            "measurementUnitId": "pieces"
+                        }
+                    ]
+                }
+            ],
+            "dimensionId": "area",
+            "measurementUnitId": "meter"
+        },
+        {
+            "TECHDISER_ID": "SupplyDefinitionMaterialCategory23",
+            "TECHDISER_SERIAL_NO": 31,
+            "level": 2,
+            "parentId": "SupplyDefinitionPackagingContainerLavel",
+            "title": "Roll",
+            "materialType": "Roll",
+            "cuttable": false,
+            "countable": true,
+            "thread": false,
+            "isSizeDependent": false,
+            "isColorDependent": false,
+            "isUnitType": true,
+            "isContainerType": true,
+            "typeId": "packContainer",
+            "sourcingTypeId": "PackagingContainer",
+            "costingHeadId": "",
+            "productionTimes": [],
+            "dataSheet": [
+                "Height",
+                "Width",
+                "Length"
+            ],
+            "positions": [],
+            "genericDefectIds": [],
+            "defectDef": [],
+            "tests": [],
+            "preCautionMarks": [],
+            "types": [],
+            "containers": [
+                {
+                    "TECHDISER_ID": "Container30",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "containerId": "SupplyDefinitionMaterialCategory25",
+                    "sizes": [
+                        {
+                            "TECHDISER_ID": "ContainerTypes59",
+                            "unitSize": "12",
+                            "noOfUnits": 1,
+                            "dimentionInfo": "count:pieces",
+                            "dimensionId": "count",
+                            "measurementUnitId": "pieces"
+                        },
+                        {
+                            "TECHDISER_ID": "ContainerTypes60",
+                            "unitSize": "100",
+                            "noOfUnits": 1,
+                            "dimentionInfo": "count:pieces",
+                            "dimensionId": "count",
+                            "measurementUnitId": "pieces"
+                        }
+                    ]
+                }
+            ],
+            "dimensionId": "area",
+            "measurementUnitId": "meter"
+        },
+        {
+            "TECHDISER_ID": "SupplyDefinitionMaterialCategory24",
+            "TECHDISER_SERIAL_NO": 31,
+            "level": 2,
+            "parentId": "SupplyDefinitionPackagingContainerLavel",
+            "title": "Ball",
+            "materialType": "Ball",
+            "cuttable": false,
+            "countable": true,
+            "thread": false,
+            "isSizeDependent": false,
+            "isColorDependent": false,
+            "isUnitType": true,
+            "isContainerType": true,
+            "typeId": "packContainer",
+            "sourcingTypeId": "PackagingContainer",
+            "costingHeadId": "",
+            "productionTimes": [],
+            "dataSheet": [
+                "Height",
+                "Width",
+                "Length"
+            ],
+            "positions": [],
+            "genericDefectIds": [],
+            "defectDef": [],
+            "tests": [],
+            "preCautionMarks": [],
+            "types": [],
+            "containers": [],
+            "dimensionId": "area",
+            "measurementUnitId": "meter"
+        },
+        {
+            "TECHDISER_ID": "SupplyDefinitionMaterialCategory25",
+            "TECHDISER_SERIAL_NO": 32,
+            "level": 2,
+            "parentId": "SupplyDefinitionPackagingContainerLavel",
+            "title": "Bundle",
+            "materialType": "Bundle",
+            "cuttable": false,
+            "countable": true,
+            "thread": false,
+            "isSizeDependent": false,
+            "isColorDependent": false,
+            "isUnitType": true,
+            "isContainerType": true,
+            "typeId": "packContainer",
+            "sourcingTypeId": "PackagingContainer",
+            "costingHeadId": "",
+            "productionTimes": [],
+            "dataSheet": [
+                "Height",
+                "Width",
+                "Length"
+            ],
+            "positions": [],
+            "genericDefectIds": [],
+            "defectDef": [],
+            "tests": [],
+            "preCautionMarks": [],
+            "types": [],
+            "containers": [],
+            "dimensionId": "area",
+            "measurementUnitId": "meter"
+        }
+    ]
+}

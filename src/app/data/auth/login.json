@@ -1,0 +1,240 @@
+{
+    "user": {
+        "TECHDISER_ID": "5725a6806acf030f9341e9215",
+        "TECHDISER_SERIAL_NO": 2,
+        "name": "Bulbul Ahmed",
+        "firstName": "Bulbul",
+        "avatar": "assets/images/avatars/Odessa.jpg",
+        "modules": [
+            {
+                "TECHDISER_ID": "admin",
+                "TECHDISER_SERIAL_NO": 1,
+                "title": "Admin",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                "isDefault": true,
+                "homeState": "app.dashboards_project",
+                "homeStateParams": null,
+                "mainMenus": [
+                    {
+                        "TECHDISER_ID": "system-settings",
+                        "TECHDISER_SERIAL_NO": 1,
+                        "weight": 1,
+                        "parentId": null,
+                        "title": "System Settings",
+                        "navTitle": "system-settings",
+                        "icon": "icon-cog",
+                        "cssClass": "navigation-dashboards"
+                    },
+                    {
+                        "TECHDISER_ID": "modules",
+                        "TECHDISER_SERIAL_NO": 2,
+                        "type": "state",
+                        "weight": 1,
+                        "parentId": "system-settings",
+                        "title": "Modules",
+                        "navTitle": "system-settings.modules",
+                        "icon": "icon-dice",
+                        "cssClass": "navigation-dashboards",
+                        "state": "app.modulebuilder",
+                        "stateParams": {},
+                        "registerId": "",
+                        "formId": "",
+                        "landingViewId": "",
+                        "reportId": ""
+                    },
+                    {
+                        "TECHDISER_ID": "registers",
+                        "TECHDISER_SERIAL_NO": 3,
+                        "type": "state",
+                        "weight": 2,
+                        "parentId": "system-settings",
+                        "title": "Registers",
+                        "navTitle": "system-settings.registers",
+                        "icon": "icon-table-large",
+                        "cssClass": "navigation-dashboards",
+                        "state": "app.registerbuilder"
+                    },
+                    {
+                        "TECHDISER_ID": "organizations",
+                        "TECHDISER_SERIAL_NO": 4,
+                        "weight": 2,
+                        "parentId": null,
+                        "title": "Organizations",
+                        "navTitle": "organizations",
+                        "icon": "icon-bank",
+                        "cssClass": "navigation-dashboards"
+                    },
+                    {
+                        "TECHDISER_ID": "user-management",
+                        "TECHDISER_SERIAL_NO": 5,
+                        "weight": 3,
+                        "parentId": null,
+                        "title": "User Management",
+                        "navTitle": "user-management",
+                        "icon": "icon-account-multiple-plus",
+                        "cssClass": "navigation-dashboards"
+                    },
+                    {
+                        "TECHDISER_ID": "user-groups",
+                        "TECHDISER_SERIAL_NO": 6,
+                        "type": "state",
+                        "weight": 1,
+                        "parentId": "user-groups",
+                        "title": "User Groups",
+                        "navTitle": "user-management.user-groups",
+                        "icon": "icon-human-male-female",
+                        "cssClass": "navigation-dashboards",
+                        "state": "app.factory.companyprofile",
+                        "stateParams": {
+                            "type": "troubleshooting"
+                        },
+                        "badge": {
+                            "content": "",
+                            "color": ""
+                        },
+                        "registerId": "",
+                        "formId": "",
+                        "landingViewId": "",
+                        "reportId": ""
+                    },
+                    {
+                        "TECHDISER_ID": "users",
+                        "TECHDISER_SERIAL_NO": 7,
+                        "type": "state",
+                        "weight": 2,
+                        "parentId": "user-management",
+                        "title": "Users",
+                        "navTitle": "user-management.users",
+                        "icon": "icon-account-multiple",
+                        "cssClass": "navigation-dashboards",
+                        "state": "app.factory.companyprofile",
+                        "stateParams": {
+                            "type": "troubleshooting"
+                        }
+                    },
+                    {
+                        "TECHDISER_ID": "user-access",
+                        "TECHDISER_SERIAL_NO": 8,
+                        "type": "state",
+                        "weight": 3,
+                        "parentId": "user-management",
+                        "title": "User Permissions",
+                        "navTitle": "user-management.user-access",
+                        "icon": "icon-key-change",
+                        "cssClass": "navigation-dashboards",
+                        "state": "app.factory.companyprofile",
+                        "stateParams": {
+                            "type": "troubleshooting"
+                        }
+                    },
+                    {
+                        "TECHDISER_ID": "activity-monitoring",
+                        "TECHDISER_SERIAL_NO": 9,
+                        "weight": 4,
+                        "parentId": null,
+                        "title": "Activity Monitoring",
+                        "navTitle": "activity-monitoring",
+                        "icon": "icon-monitor-multiple",
+                        "cssClass": "navigation-dashboards"
+                    }
+                ],
+                "poMenus": [
+                    {
+                        "TECHDISER_ID": "styles",
+                        "TECHDISER_SERIAL_NO": 1,
+                        "weight": 1,
+                        "parentId": "",
+                        "title": "Styles",
+                        "navTitle": "styles",
+                        "icon": "icon-tile-four",
+                        "state": "app.factory.companyprofile",
+                        "stateParams": {
+                            "type": "troubleshooting"
+                        },
+                        "registerId": "",
+                        "formId": "",
+                        "landingViewId": "",
+                        "reportId": ""
+                    },
+                    {
+                        "TECHDISER_ID": "styles1",
+                        "TECHDISER_SERIAL_NO": 11,
+                        "weight": 2,
+                        "parentId": "",
+                        "title": "Styles1",
+                        "navTitle": "styles1",
+                        "icon": "icon-tile-four",
+                        "state": "app.factory.companyprofile",
+                        "stateParams": {
+                            "type": "troubleshooting"
+                        },
+                        "registerId": "",
+                        "formId": "",
+                        "landingViewId": "",
+                        "reportId": ""
+                    }
+                ]
+            },
+            {
+                "TECHDISER_ID": "merchandising",
+                "TECHDISER_SERIAL_NO": 2,
+                "title": "Merchandising",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                "homeState": "app.dashboards_project",
+                "homeStateParams": null,
+                "mainMenus": [
+                    {
+                        "TECHDISER_ID": "purchase-orders",
+                        "TECHDISER_SERIAL_NO": 1,
+                        "type": "state",
+                        "weight": 1,
+                        "title": "Purchase Orders",
+                        "navTitle": "purchase-orders",
+                        "icon": "icon-checkbox-multiple-marked",
+                        "state": "app.purchase-orders",
+                        "registerId": "",
+                        "formId": "",
+                        "landingViewId": "",
+                        "reportId": ""
+                    }
+                ],
+                "poMenus": [
+                    {
+                        "TECHDISER_ID": "styles",
+                        "TECHDISER_SERIAL_NO": 1,
+                        "weight": 1,
+                        "parentId": "",
+                        "title": "Styles",
+                        "navTitle": "styles",
+                        "icon": "icon-tile-four",
+                        "state": "app.factory.companyprofile",
+                        "stateParams": {
+                            "type": "troubleshooting"
+                        },
+                        "registerId": "",
+                        "formId": "",
+                        "landingViewId": "",
+                        "reportId": ""
+                    },
+                    {
+                        "TECHDISER_ID": "styles1",
+                        "TECHDISER_SERIAL_NO": 11,
+                        "weight": 2,
+                        "parentId": "",
+                        "title": "Styles1",
+                        "navTitle": "styles1",
+                        "icon": "icon-tile-four",
+                        "state": "app.factory.companyprofile",
+                        "stateParams": {
+                            "type": "troubleshooting"
+                        },
+                        "registerId": "",
+                        "formId": "",
+                        "landingViewId": "",
+                        "reportId": ""
+                    }
+                ]
+            }
+        ]
+    }
+}

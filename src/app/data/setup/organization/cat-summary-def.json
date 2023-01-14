@@ -1,0 +1,107 @@
+{
+    "data": [
+        {
+            "TECHDISER_ID": "Job_Op_1",
+            "TECHDISER_SERIAL_NO": 1,
+            "catalogId": "Catalog_Woven",
+            "headId": "instructions",
+            "headTitle": "Instructions",
+            "items": [
+                {
+                    "TECHDISER_ID": "Cat_Item_1",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "itemId": "sew",
+                    "itemTitle": "Sew"
+                },
+                {
+                    "TECHDISER_ID": "Cat_Item_2",
+                    "TECHDISER_SERIAL_NO": 2,
+                    "itemId": "print",
+                    "itemTitle": "Print"
+                },
+                {
+                    "TECHDISER_ID": "Cat_Item_3",
+                    "TECHDISER_SERIAL_NO": 3,
+                    "itemId": "wash",
+                    "itemTitle": "Wash"
+                }
+            ]
+        },
+        {
+            "TECHDISER_ID": "Woven_Cat_Summary_Def_2",
+            "TECHDISER_SERIAL_NO": 2,
+            "catalogId": "Catalog_Woven",
+            "headId": "materials",
+            "headTitle": "Materials",
+            "items": [
+                {
+                    "TECHDISER_ID": "Cat_Item_4",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "itemId": "fabric",
+                    "itemTitle": "Fabric"
+                },
+                {
+                    "TECHDISER_ID": "Cat_Item_5",
+                    "TECHDISER_SERIAL_NO": 2,
+                    "itemId": "button",
+                    "itemTitle": "Button"
+                },
+                {
+                    "TECHDISER_ID": "Cat_Item_6",
+                    "TECHDISER_SERIAL_NO": 3,
+                    "itemId": "zipper",
+                    "itemTitle": "Zipper"
+                }
+            ]
+        },
+        {
+            "TECHDISER_ID": "Woven_Cat_Summary_Def_3",
+            "TECHDISER_SERIAL_NO": 3,
+            "catalogId": "Catalog_Woven",
+            "headId": "partsPanels",
+            "headTitle": "Parts & Panels",
+            "items": [
+                {
+                    "TECHDISER_ID": "Cat_Item_7",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "itemId": "cuff",
+                    "itemTitle": "Cuff"
+                },
+                {
+                    "TECHDISER_ID": "Cat_Item_8",
+                    "TECHDISER_SERIAL_NO": 2,
+                    "itemId": "collar",
+                    "itemTitle": "Collar"
+                },
+                {
+                    "TECHDISER_ID": "Cat_Item_9",
+                    "TECHDISER_SERIAL_NO": 3,
+                    "itemId": "frontPart",
+                    "itemTitle": "Front Part"
+                },
+                {
+                    "TECHDISER_ID": "Cat_Item_10",
+                    "TECHDISER_SERIAL_NO": 4,
+                    "itemId": "backPart",
+                    "itemTitle": "Back Part"
+                }
+            ]
+        },
+        {
+            "TECHDISER_ID": "Woven_Cat_Summary_Def_4",
+            "TECHDISER_SERIAL_NO": 4,
+            "catalogId": "Catalog_Woven",
+            "headId": "measurement",
+            "headTitle": "Measurement",
+            "items": []
+        },
+        {
+            "TECHDISER_ID": "Woven_Cat_Summary_Def_5",
+            "TECHDISER_SERIAL_NO": 5,
+            "catalogId": "Catalog_Woven",
+            "headId": "Presentation",
+            "headTitle": "Presentation",
+            "items": []
+        }
+    ]
+}

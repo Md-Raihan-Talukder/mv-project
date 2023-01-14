@@ -1,0 +1,66 @@
+{
+    "data": [
+        {
+            "TECHDISER_ID": "onelevel1",
+            "TECHDISER_SERIAL_NO": 1,
+            "level": 1,
+            "title": "Rack",
+            "code": "Rack 1",
+            "sourcingTypes": [
+                {
+                    "key": "Fabrics",
+                    "value": "Fabrics"
+                },
+                {
+                    "key": "Trims",
+                    "value": "Trims"
+                }
+            ]
+        },
+        {
+            "TECHDISER_ID": "onelevel2",
+            "TECHDISER_SERIAL_NO": 2,
+            "level": 1,
+            "title": "Pallet",
+            "code": "Pallet 1",
+            "sourcingTypes": [
+                {
+                    "key": "Accessories",
+                    "value": "Accessories"
+                }
+            ]
+        },
+        {
+            "TECHDISER_ID": "twolevel1",
+            "TECHDISER_SERIAL_NO": 3,
+            "level": 2,
+            "parentId": "onelevel1",
+            "title": "Shelf",
+            "code": "Shelf 1",
+            "sourcingTypes": [
+                {
+                    "key": "Fabrics",
+                    "value": "Fabrics"
+                },
+                {
+                    "key": "Trims",
+                    "value": "Trims"
+                }
+            ]
+        },
+        {
+            "TECHDISER_ID": "threelevel1",
+            "TECHDISER_SERIAL_NO": 4,
+            "level": 3,
+            "parentId": "twolevel1",
+            "title": "Cubicle",
+            "code": "Cubicle 1",
+            "sourcingTypes": [
+                {
+                    "key": "Fabrics",
+                    "value": "Fabrics"
+                }
+            ]
+        }
+    ]
+}

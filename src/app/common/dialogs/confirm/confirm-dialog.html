@@ -1,0 +1,39 @@
+<md-dialog class="confirm-dialog" aria-label="Dialog" data-drag="true" jqyoui-draggable="{animate:true}" data-jqyoui-options="{ handle: '.drag-handle'}">
+
+    <md-toolbar class="md-accent drag-handle">
+        <div class="md-toolbar-tools" layout="row" layout-align="space-between center">
+            <span class="title">Confirm delete</span>
+
+            <md-button class="md-icon-button" ng-click="vm.closeDialog()">
+                <md-icon md-font-icon="icon-close" aria-label="Close dialog"></md-icon>
+            </md-button>
+        </div>
+    </md-toolbar>
+
+
+    <md-dialog-content ms-scroll>
+        <h3>Following {{vm.items.length}} {{vm.type}} will be deleted.</h3>
+
+        <ul>
+            <li ng-repeat="item in vm.displayItems">{{item}}</li>
+        </ul>
+
+        <h4>Are you sure to delete?</h4>
+
+    </md-dialog-content>
+
+
+    <md-dialog-actions layout="row" layout-align="space-between center">
+
+        <md-button ng-click="vm.onOk()" class="md-accent md-raised" aria-label="SAVE">
+            YES
+        </md-button>
+
+        <md-button ng-click="vm.closeDialog()" class="md-raised" aria-label="Close">
+            NO
+        </md-button>
+
+    </md-dialog-actions>
+
+
+</md-dialog>

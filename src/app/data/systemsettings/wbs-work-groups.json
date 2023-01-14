@@ -1,0 +1,158 @@
+{
+    "data": [
+        {
+            "TECHDISER_ID": "WbsWorkGrp1",
+            "TECHDISER_SERIAL_NO": 1,
+            "type": "material",
+            "title": "Definition",
+            "workUnitCode": "materialDefinition"
+        },
+        {
+            "TECHDISER_ID": "WbsWorkGrp2",
+            "TECHDISER_SERIAL_NO": 2,
+            "type": "material",
+            "title": "Supplier Nomination",
+            "workUnitCode": "supplierNomination"
+        },
+        {
+            "TECHDISER_ID": "WbsWorkGrp3",
+            "TECHDISER_SERIAL_NO": 3,
+            "type": "material",
+            "title": "Price Confirmation",
+            "workUnitCode": "priceConfirmation"
+        },
+        {
+            "TECHDISER_ID": "WbsWorkGrp4",
+            "TECHDISER_SERIAL_NO": 4,
+            "type": "material",
+            "title": "Booking",
+            "workUnitCode": "materialBooking"
+        },
+        {
+            "TECHDISER_ID": "WbsWorkGrp5",
+            "TECHDISER_SERIAL_NO": 5,
+            "type": "material",
+            "title": "Development",
+            "workUnitCode": "materialDevelopment"
+        },
+        {
+            "TECHDISER_ID": "WbsWorkGrp6",
+            "TECHDISER_SERIAL_NO": 6,
+            "type": "material",
+            "title": "Material Approval",
+            "workUnitCode": "materialApproval"
+        },
+        {
+            "TECHDISER_ID": "WbsWorkGrp7",
+            "TECHDISER_SERIAL_NO": 7,
+            "type": "material",
+            "title": "Material Production",
+            "workUnitCode": "production"
+        },
+        {
+            "TECHDISER_ID": "WbsWorkGrp8",
+            "TECHDISER_SERIAL_NO": 8,
+            "type": "material",
+            "title": "Shipment",
+            "workUnitCode": "shipment"
+        },
+        {
+            "TECHDISER_ID": "WbsWorkGrp9",
+            "TECHDISER_SERIAL_NO": 9,
+            "type": "material",
+            "title": "Inhouse",
+            "workUnitCode": "materialInhouse"
+        },
+        {
+            "TECHDISER_ID": "WbsWorkGrp10",
+            "TECHDISER_SERIAL_NO": 10,
+            "type": "material",
+            "title": "Bulk Approval",
+            "workUnitCode": "bulkApproval"
+        },
+        {
+            "TECHDISER_ID": "WbsWorkGrp11",
+            "TECHDISER_SERIAL_NO": 11,
+            "type": "garment",
+            "title": "Style Definition"
+        },
+        {
+            "TECHDISER_ID": "WbsWorkGrp12",
+            "TECHDISER_SERIAL_NO": 12,
+            "type": "garment",
+            "title": "Sampling"
+        },
+        {
+            "TECHDISER_ID": "WbsWorkGrp13",
+            "TECHDISER_SERIAL_NO": 13,
+            "type": "garment",
+            "title": "Production"
+        },
+        {
+            "TECHDISER_ID": "WbsWorkGrp14",
+            "TECHDISER_SERIAL_NO": 14,
+            "type": "garment",
+            "title": "Shipment"
+        },
+        {
+            "TECHDISER_ID": "WbsWorkGrp15",
+            "TECHDISER_SERIAL_NO": 15,
+            "type": "garment",
+            "title": "Inspection"
+        },
+        {
+            "TECHDISER_ID": "WbsWorkGrp16",
+            "TECHDISER_SERIAL_NO": 16,
+            "type": "garment",
+            "title": "Test"
+        },
+        {
+            "TECHDISER_ID": "WbsWorkGrp17",
+            "TECHDISER_SERIAL_NO": 17,
+            "type": "garment",
+            "title": "Approval"
+        },
+        {
+            "TECHDISER_ID": "WbsWorkGrp18",
+            "TECHDISER_SERIAL_NO": 18,
+            "type": "garment",
+            "title": "Submission"
+        },
+        {
+            "TECHDISER_ID": "WbsWorkGrp19",
+            "TECHDISER_SERIAL_NO": 19,
+            "type": "process",
+            "title": "Definition"
+        },
+        {
+            "TECHDISER_ID": "WbsWorkGrp20",
+            "TECHDISER_SERIAL_NO": 20,
+            "type": "process",
+            "title": "Supplier Nomination"
+        },
+        {
+            "TECHDISER_ID": "WbsWorkGrp21",
+            "TECHDISER_SERIAL_NO": 21,
+            "type": "process",
+            "title": "Price Confirmation"
+        },
+        {
+            "TECHDISER_ID": "WbsWorkGrp22",
+            "TECHDISER_SERIAL_NO": 22,
+            "type": "process",
+            "title": "Booking"
+        },
+        {
+            "TECHDISER_ID": "WbsWorkGrp23",
+            "TECHDISER_SERIAL_NO": 23,
+            "type": "process",
+            "title": "Development"
+        },
+        {
+            "TECHDISER_ID": "WbsWorkGrp24",
+            "TECHDISER_SERIAL_NO": 24,
+            "type": "process",
+            "title": "Material Approval"
+        }
+    ]
+}

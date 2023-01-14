@@ -1,0 +1,157 @@
+<md-dialog class="multi-menu-data-entry-dialog" aria-label="Dialog" data-drag="true" jqyoui-draggable="{animate:true}" data-jqyoui-options="{ handle: '.drag-handle'}" ng-style="{'width': vm.width + vm.widthType, 'height': vm.height + vm.heightType}">
+
+    <md-toolbar class="md-accent drag-handle" style="min-height: 40px !important;">
+        <div class="md-toolbar-tools" style="max-height: 40px !important;" layout="row" layout-align="space-between center">
+            <div class="header-title " layout="row" layout-align="start center" flex>
+
+                <div class="mr-25" layout="row" layout-align="start center" ng-if="vm.headerTitle">
+
+                    <span>{{vm.headerTitle}}</span>
+
+                </div>
+
+                <div class="mr-25" layout="row" layout-align="start center" ng-if="keyVal.show" ng-repeat="keyVal in vm.keyValues">
+                    <span>{{keyVal.label}}</span>
+                    <span ng-if="keyVal.label.length">:</span>
+                    <span class="ml-5 " ng-class="{'font-weight-900': keyVal.label.length}">{{keyVal.value}}</span>
+
+                </div>
+
+            </div>
+
+            <md-button class="md-icon-button" ng-click="vm.closeDialog()">
+                <md-icon md-font-icon="icon-close" aria-label="Close dialog"></md-icon>
+            </md-button>
+        </div>
+    </md-toolbar>
+
+
+    <md-dialog-content style="padding: 0; overflow:hidden;">
+        <div layout="row" layout-align="start center" style="min-height: 100% ; height: 100%; max-height: 100%; width: 100%; ">
+
+
+            <div class="left border-right" style="min-height: 100%; height:100%; max-height: 100%;" layout="column" layout-align="start top" ng-class="{'w-180' : vm.showMenu, 'w-35' : !vm.showMenu}" ng-if="vm.menus.length > 1">
+                <ms-widget layout="column" style="padding: 0 !important; min-height: 100%; height:100%; width: 100% " layout-align="start top">
+
+                    <ms-widget-front style="min-height: 100%; height:100%; width: 100%; " layout="column" layout-align="start top" ms-scroll>
+
+
+
+                        <div class="menu-content" ms-scroll>
+                            <div class="common-detail-menus navigation-simple" layout="column">
+
+                                <md-button class="item" aria-label="inbox" ng-repeat="menu in vm.menus" ng-click="vm.selectMenu(menu)" ng-class="{'blue-100-bg': (menu.state === vm.selectedMenu.state)}">
+                                    <div class="context" layout="row" layout-align="start center">
+                                        <md-icon md-font-icon="icon-view-headline" class="s16"></md-icon>
+                                        <div class="title">{{menu.title}}</div>
+                                    </div>
+                                </md-button>
+
+
+                            </div>
+
+                        </div>
+
+                        <div class="cursor-pointer" style="position: absolute; bottom: 5px; right: 5px;" ng-click="vm.showMenu = !vm.showMenu">
+                            <md-icon md-font-icon="icon-backburger" class="icon" ng-class="{'transform-180' : !vm.showMenu}">
+                                <md-tooltip ng-if="vm.showMenu">Hide Menu</md-tooltip>
+                                <md-tooltip ng-if="!vm.showMenu">Show Menu</md-tooltip>
+                            </md-icon>
+                        </div>
+
+
+
+                    </ms-widget-front>
+
+                </ms-widget>
+
+
+            </div>
+
+            <div class="right" flex style="min-height: 100%; height:100%; max-height: 100%; width: 100%;" layout="column" layout-align="start top">
+
+                <ms-widget layout="column" style="padding: 0 !important; min-height: 100%; height:100%; width: 100% " layout-align="start top">
+
+                    <ms-widget-front class="main-content" style="min-height: 100%; height:100%; width: 100%;" layout="column" layout-align="start top">
+                        <div ng-if="vm.selectedMenu.header && vm.selectedMenu.header.type !== 'service'" class="h-30 grey-100-bg p-5 border-bottom">
+                            {{ vm.menuheader }}
+                        </div>
+                        <div ng-if="vm.selectedMenu.header.type === 'service'" class="h-30 grey-100-bg p-5 border-bottom" layout="row" layout-align="start center">
+
+                            <div class="mr-25" layout="row" layout-align="start center" ng-repeat="keyVal in vm.menuheader">
+                                <span class="secondary-text">{{keyVal.label}}</span>
+                                <span ng-if="keyVal.label.length">:</span>
+                                <span class="ml-5" ng-if="keyVal.filter">{{keyVal.value | picker: keyVal.filter}}</span>
+                                <span class="ml-5" ng-if="!keyVal.filter">{{keyVal.value }}</span>
+
+                            </div>
+                        </div>
+
+                        <div ng-if="vm.selectedMenu.header" style="min-height: calc(100% - 30px); height: calc(100% - 30px); max-height: calc(100% - 30px); width: 100%; ">
+
+                            <div style="min-height: 100% ; height: 100%; max-height: 100% ; width: 100%; overflow: hidden;" ng-if="vm.directiveInfo">
+                                <msb-dynamic-directive info="vm.directiveInfo">
+
+                                </msb-dynamic-directive>
+                            </div>
+
+                            <div style="width:100%;  min-height:650px;" layout="column" layout-align="center center" ng-if="!vm.directiveInfo">
+                                <md-progress-circular class="md-accent" md-mode="indeterminate" md-diameter="32">
+                                </md-progress-circular>
+                            </div>
+                        </div>
+
+                        <div ng-if="!vm.selectedMenu.header" style="min-height: 100%; height: 100%; max-height: 100%; width: 100%; ">
+
+                            <div style="min-height: 100% ; height: 100%; max-height: 100% ; width: 100%; overflow: hidden;" ng-if="vm.directiveInfo">
+                                <msb-dynamic-directive info="vm.directiveInfo">
+
+                                </msb-dynamic-directive>
+                            </div>
+
+                            <div style="width:100%;  min-height:650px;" layout="column" layout-align="center center" ng-if="!vm.directiveInfo">
+                                <md-progress-circular class="md-accent" md-mode="indeterminate" md-diameter="32">
+                                </md-progress-circular>
+                            </div>
+                        </div>
+
+                    </ms-widget-front>
+
+                </ms-widget>
+
+
+
+            </div>
+
+
+        </div>
+
+    </md-dialog-content>
+
+
+    <md-dialog-actions layout="row" layout-align="space-between center">
+        <div layout="row" layout-align="start center">
+            <md-button ng-click="vm.closeDialog()" class="md-raised" ng-disabled="stripDataEntryForm.$invalid" aria-label="Close">
+                Cancel
+            </md-button>
+
+        </div>
+
+        <div>
+            <!-- <md-checkbox style="margin: 0 0 0 25px; font-weight: 600;"  name="" ng-model="vm.addAnother" aria-label="Add another" ><span>Add another </span></md-checkbox>                     -->
+
+            <md-button ng-click="vm.onOk()" ng-if="!vm.isViewMode" class="md-accent md-raised" ng-disabled="false" aria-label="SAVE">
+                Save
+            </md-button>
+
+
+
+            <md-button ng-click="vm.closeDialog()" ng-if="vm.isViewMode" class="md-accent md-raised" aria-label="Close">
+                OK
+            </md-button>
+        </div>
+
+    </md-dialog-actions>
+
+
+</md-dialog>

@@ -1,0 +1,35 @@
+.module-context-container {
+  position: absolute;
+  top: 0;
+  left: 35%;
+
+  .user-module-container,
+  .po-context-container {
+    display: block;
+    line-height: 24px;
+    border-radius: 3px;
+    border: 1px solid #3a87ad;
+    background-color: #3a87ad;
+    font-weight: bold;
+    color: #fff;
+    margin: 1px;
+    padding: 2px 6px;
+    font-size: 14px;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+
+  .user-module-container {
+  }
+
+  .po-context-container {
+    span {
+    }
+  }
+}
+
+md-dialog {
+  &.modules-dialog {
+    max-width: 1030px;
+  }
+}

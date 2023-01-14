@@ -1,0 +1,193 @@
+<div ui-tree-handle data-nodrags layout="row" layout-align="start start" flex ng-click="vm.selectRow(node.TECHDISER_ID);" class="border td-tree-node md-grey-100-bg" ng-class="{'selected-node': vm.selectedRoleId==node.nid}">
+    <div data-nodrag ng-click="vm.toggle(this)" ng-if="node.nodes && node.nodes.length > 0">
+        <md-icon ng-if="collapsed" md-font-icon="icon-chevron-right" class="icon green-50-fg brad-3 md-green-400-bg"></md-icon>
+        <md-icon ng-if="!collapsed" md-font-icon="icon-chevron-down" class="icon green-50-fg brad-3 md-green-400-bg"></md-icon>
+    </div>
+    <div flex>
+        <msb-expand-collapse>
+            <div class="msb-collapse-header cursor-pointer" ng-click="showUser=!showUser;vm.selectItem(node, this, $event)">
+                <span data-nodrag class="ml-15 mr-15" flex ng-click="">
+                    <span>
+                        <img ng-if="node.proPic" class="h-30 w-30" style="border-radius:150px;" ng-src="{{node.proPic.data}}" />
+                    </span>
+                    {{node.title}}
+
+                </span>
+            </div>
+            <div class="msb-collapse-content p-15" style="display:none;">
+                <div class="font-size-14 grey-500-fg" ng-if="node.level==1 || node.level==2">
+                    No Control Hierarchy
+                </div>
+                <div>
+                    <div ng-if="!(vm.treeType == 'role' || vm.treeType == 'additionalRoles')">
+                        <msb-expand-collapse class="mb-10" ng-if="node.level==3 || node.level==4">
+                            <div class="msb-collapse-header cursor-pointer b p-5">
+                                Control Hierarchy
+                            </div>
+                            <div class="msb-collapse-content">
+                                <div ng-repeat="level in vm.selectedNodeData.cHLevels">
+                                    <div layout="row" class="p-5">
+                                        <div layout="column" flex style="font-weight:100;">
+                                            <label class="bb pb-10"><em>{{level.title}}</em></label>
+                                            <div ng-repeat="post in level.posts" class=" box-shadow mb-5 p-5">
+                                                <span ng-click="vm.selectPostTeamUnit(post); $event.stopPropagation();" ng-class="{'selected-role': vm.selectedRoleId==post.TECHDISER_ID}">{{post.title}}</span>
+                                                <div ng-if="vm.options.showRightCheck" style="float:right;">
+                                                    <md-icon ng-if="vm.checkNodeExist(post.TECHDISER_ID)" ng-click="vm.checkTreeNode(post);" md-font-icon="icon-checkbox-marked-outline" aria-label="checked" class="icon md-accent"></md-icon>
+                                                    <md-icon ng-if="!vm.checkNodeExist(post.TECHDISER_ID)" ng-click="vm.checkTreeNode(post.TECHDISER_ID);" md-font-icon="icon-checkbox-blank-outline" class="icon "></md-icon>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div layout="column">
+                                            <!-- <md-icon ng-if="vm.checkNodeExist(level.TECHDISER_ID)"  ng-click="vm.checkTreeNode(node, group);" md-font-icon="icon-checkbox-marked-outline" aria-label="checked" class="icon md-accent"></md-icon> -->
+                                            <!-- <md-icon ng-if="!vm.checkNodeExist(level.TECHDISER_ID)"  ng-click="vm.checkTreeNode(node, group);" md-font-icon="icon-checkbox-blank-outline" class="icon "></md-icon> -->
+                                        </div>
+                                    </div>
+                                    <div ng-if="!(vm.treeType == 'role' || vm.treeType == 'additionalRoles')">
+                                        <!-- <td-role-user-info ng-if="showUser" items="node"> -->
+                                        <!-- </td-role-user-info> -->
+                                    </div>
+
+                                </div>
+                            </div>
+                        </msb-expand-collapse>
+                        <msb-expand-collapse class="mb-10" ng-if="node.level==3 || node.level==4">
+                            <div class="msb-collapse-header cursor-pointer  b p-5">
+                                Teams
+                            </div>
+                            <div class="msb-collapse-content">
+                                <div ng-repeat="team in vm.selectedNodeData.teams">
+                                    <div layout="row" class="p-5  box-shadow mb-5">
+                                        <div layout="column" flex>
+                                            <span ng-click="vm.selectPostTeamUnit(team); $event.stopPropagation();" class="md-subhead" ng-class="{'selected-role': vm.selectedRoleId==post.TECHDISER_ID}">{{team.title}} (Team Lead)</span>
+
+                                        </div>
+                                        <div ng-if="vm.options.showRightCheck">
+                                            <md-icon ng-if="vm.checkNodeExist(team.TECHDISER_ID)" ng-click="vm.checkTreeNode(team.TECHDISER_ID);" md-font-icon="icon-checkbox-marked-outline" aria-label="checked" class="icon md-accent"></md-icon>
+                                            <md-icon ng-if="!vm.checkNodeExist(team.TECHDISER_ID)" ng-click="vm.checkTreeNode(team.TECHDISER_ID);" md-font-icon="icon-checkbox-blank-outline" class="icon "></md-icon>
+                                        </div>
+                                    </div>
+                                    <div layout="row" class="p-5 box-shadow mb-5">
+                                        <div layout="column" flex>
+                                            <span ng-click="vm.selectPostTeamUnit(team, true); $event.stopPropagation();" class="md-subhead" ng-class="{'selected-role': vm.selectedRoleId==post.TECHDISER_ID}">{{team.title}}</span>
+
+                                        </div>
+                                        <div ng-if="vm.options.showRightCheck">
+                                            <md-icon ng-if="vm.checkNodeExist(team.TECHDISER_ID, true)" ng-click="vm.checkTreeNode(team.TECHDISER_ID, true);" md-font-icon="icon-checkbox-marked-outline" aria-label="checked" class="icon md-accent"></md-icon>
+                                            <md-icon ng-if="!vm.checkNodeExist(team.TECHDISER_ID, true)" ng-click="vm.checkTreeNode(team.TECHDISER_ID, true);" md-font-icon="icon-checkbox-blank-outline" class="icon "></md-icon>
+                                        </div>
+                                    </div>
+                                    <div ng-if="!(vm.treeType == 'role' || vm.treeType == 'additionalRoles')">
+                                        <!-- <td-role-user-info ng-if="showUser" items="node"> -->
+                                        <!-- </td-role-user-info> -->
+                                    </div>
+
+                                </div>
+                            </div>
+                        </msb-expand-collapse>
+                        <msb-expand-collapse class="mb-10" ng-if="node.level==3 || node.level==4 || node.level==5">
+                            <div class="msb-collapse-header cursor-pointer  b p-5">
+                                Units
+                            </div>
+                            <div class="msb-collapse-content">
+                                <div ng-repeat="unit in vm.selectedNodeData.units">
+                                    <div layout="row" class="p-5 box-shadow mb-5">
+                                        <div layout="column" flex>
+                                            <label ng-click="vm.selectPostTeamUnit(unit); $event.stopPropagation();" class="md-subhead" ng-class="{'selected-role': vm.selectedRoleId==post.TECHDISER_ID}">{{unit.title}} (Unit Lead)</label>
+
+                                        </div>
+                                        <div ng-if="vm.options.showRightCheck">
+                                            <md-icon ng-if="vm.checkNodeExist(unit.TECHDISER_ID)" ng-click="vm.checkTreeNode(unit.TECHDISER_ID);" md-font-icon="icon-checkbox-marked-outline" aria-label="checked" class="icon md-accent"></md-icon>
+                                            <md-icon ng-if="!vm.checkNodeExist(unit.TECHDISER_ID)" ng-click="vm.checkTreeNode(unit.TECHDISER_ID);" md-font-icon="icon-checkbox-blank-outline" class="icon "></md-icon>
+                                        </div>
+                                    </div>
+                                    <div layout="row" class="p-5 box-shadow mb-5">
+                                        <div layout="column" flex>
+                                            <label ng-click="vm.selectPostTeamUnit(unit, true); $event.stopPropagation();" class="md-subhead" ng-class="{'selected-role': vm.selectedRoleId==post.TECHDISER_ID}">{{unit.title}}</label>
+
+                                        </div>
+                                        <div ng-if="vm.options.showRightCheck">
+                                            <md-icon ng-if="vm.checkNodeExist(unit.TECHDISER_ID, true)" ng-click="vm.checkTreeNode(unit.TECHDISER_ID, true);" md-font-icon="icon-checkbox-marked-outline" aria-label="checked" class="icon md-accent"></md-icon>
+                                            <md-icon ng-if="!vm.checkNodeExist(unit.TECHDISER_ID, true)" ng-click="vm.checkTreeNode(unit.TECHDISER_ID, true);" md-font-icon="icon-checkbox-blank-outline" class="icon "></md-icon>
+                                        </div>
+                                    </div>
+                                    <div ng-if="!(vm.treeType == 'role' || vm.treeType == 'additionalRoles')">
+                                        <!-- <td-role-user-info ng-if="showUser" items="node"> -->
+                                        <!-- </td-role-user-info> -->
+                                    </div>
+
+                                </div>
+                            </div>
+                        </msb-expand-collapse>
+                    </div>
+                </div>
+                <div ng-if="node.level==2 || node.level==3 || node.level==4">
+                    <div ng-if="!(vm.treeType == 'role' || vm.treeType == 'additionalRoles')">
+                        <!-- <td-role-user-info ng-if="showUser" items="node">
+                        </td-role-user-info> -->
+                    </div>
+                </div>
+                <div ng-if="node.level==5 && node.isTeam">
+                    <!-- <td-role-user-info ng-if="showUser" items="node"> -->
+                    <!-- </td-role-user-info> -->
+                    <div ng-repeat="group in vm.selectedNodeData.groups">
+                        <div layout="row" class="b p-5">
+                            <div layout="column" flex>
+                                <label class="md-subhead font-size-14">{{group.title}} (In-Charge)</label>
+                            </div>
+                            <div layout="column">
+                                <md-icon ng-if="vm.checkNodeExist(group.TECHDISER_ID)" ng-click="vm.checkTreeNode(node, group);" md-font-icon="icon-checkbox-marked-outline" aria-label="checked" class="icon md-accent"></md-icon>
+                                <md-icon ng-if="!vm.checkNodeExist(group.TECHDISER_ID)" ng-click="vm.checkTreeNode(node, group);" md-font-icon="icon-checkbox-blank-outline" class="icon "></md-icon>
+                            </div>
+                        </div>
+                        <div ng-if="!(vm.treeType == 'role' || vm.treeType == 'additionalRoles')">
+                            <!-- <td-role-user-info ng-if="showUser" items="node"> -->
+                            <!-- </td-role-user-info> -->
+                        </div>
+
+                    </div>
+                </div>
+                <div ng-if="node.level==5 && !node.isTeam">
+                    <div ng-repeat="post in vm.selectedNodeData.posts">
+                        <div layout="row" class="b p-5">
+                            <div layout="column" flex>
+                                <label class="md-subhead font-size-14">{{post.title}} (In-Charge)</label>
+                                <div ng-if="vm.options.showRightCheck" style="float:right;">
+                                    <md-icon ng-if="vm.checkNodeExist(node.TECHDISER_ID)" ng-click="vm.checkTreeNode(node.TECHDISER_ID);" md-font-icon="icon-checkbox-marked-outline" aria-label="checked" class="icon md-accent"></md-icon>
+                                    <md-icon ng-if="!vm.checkNodeExist(node.TECHDISER_ID)" ng-click="vm.checkTreeNode(node.TECHDISER_ID);" md-font-icon="icon-checkbox-blank-outline" class="icon "></md-icon>
+                                </div>
+                            </div>
+                            <div layout="column">
+                                <md-icon ng-if="vm.checkNodeExist(post.TECHDISER_ID)" ng-click="vm.checkTreeNode(node.TECHDISER_ID, post);" md-font-icon="icon-checkbox-marked-outline" aria-label="checked" class="icon md-accent"></md-icon>
+                                <md-icon ng-if="!vm.checkNodeExist(post.TECHDISER_ID)" ng-click="vm.checkTreeNode(node.TECHDISER_ID, post);" md-font-icon="icon-checkbox-blank-outline" class="icon "></md-icon>
+                            </div>
+                        </div>
+                        <div ng-if="!(vm.treeType == 'role' || vm.treeType == 'additionalRoles')">
+                            <td-role-user-info ng-if="showUser" items="node">
+                            </td-role-user-info>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </msb-expand-collapse>
+    </div>
+    <div ng-if="vm.options.showRightCheck && node.isRole" style="float:right;">
+        <md-icon ng-if="vm.checkNodeExist(node.TECHDISER_ID)" ng-click="vm.checkTreeNode(node.TECHDISER_ID);" md-font-icon="icon-checkbox-marked-outline" aria-label="checked" class="icon md-accent"></md-icon>
+        <md-icon ng-if="!vm.checkNodeExist(node.TECHDISER_ID)" ng-click="vm.checkTreeNode(node.TECHDISER_ID);" md-font-icon="icon-checkbox-blank-outline" class="icon "></md-icon>
+    </div>
+    <div layout="row" layout-align="start start">
+        <md-icon ng-if="vm.options.showUserBtn" md-font-icon="icon-account-multiple-plus" class="icon mr-15" ng-click="vm.addUserAccess(node, this, $event)" data-nodrag>
+        </md-icon>
+
+        <md-icon ng-if="vm.options.showAddBtn && node.level < vm.options.maxLevel" md-font-icon="icon-plus-circle" class="icon" ng-click="vm.addItem(node, this, $event)" data-nodrag>
+        </md-icon>
+        <md-icon md-font-icon="icon-close-circle" class="icon" ng-if="vm.options.showRemoveBtn" ng-click="vm.removeItem(node, this, $event)" data-nodrag>
+        </md-icon>
+    </div>
+
+</div>
+
+
+<ol ui-tree-nodes ng-class="{hidden: collapsed}" data-nodrag ng-model="node.nodes" style="width: 100%;">
+    <li ng-repeat="node in node.nodes" ui-tree-node data-nodrag data-collapsed="false" style="width: 100%;" ng-include="'app/main/directives/treeview-role/role-treeview-template.html'">
+    </li>
+</ol>

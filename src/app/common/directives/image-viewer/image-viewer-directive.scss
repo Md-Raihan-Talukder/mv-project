@@ -1,0 +1,33 @@
+.msb-image-viewer {
+  position: relative;
+
+  .image-viwer-carousel {
+    min-height: 100px;
+    min-width: 100px;
+  }
+
+  div.image-viwer-carousel-indicator {
+    span.active {
+      color: red !important;
+    }
+  }
+
+  .close-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: red !important;
+  }
+
+  .expand-button {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: rgb(3, 155, 229) !important;
+  }
+
+  .image-buttons md-icon[md-font-icon] {
+    cursor: pointer;
+    position: absolute;
+  }
+}

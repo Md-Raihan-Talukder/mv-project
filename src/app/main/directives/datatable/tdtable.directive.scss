@@ -1,0 +1,61 @@
+.tdGrid {
+  font-size: 0.9em !important;
+
+  .dataTables_wrapper .bottom {
+    min-height: 40px;
+    padding: 0;
+  }
+
+  .dataTables_wrapper .dataTables_paginate .paginate_button {
+    padding: 6px 8px;
+  }
+
+  tr {
+    cursor: pointer;
+  }
+
+  table.dataTable tbody td,
+  table.dataTable thead th {
+    padding: 5px;
+  }
+
+  table.dataTable tbody td.type-register,
+  table.dataTable thead th.type-register {
+    padding: 0;
+    width: 300px;
+  }
+
+  table.dataTable thead th.type-register {
+    text-align: center;
+  }
+
+  .dataTable td {
+    word-break: break-all;
+  }
+
+  table.dataTable tfoot th,
+  table.dataTable tfoot td {
+    padding: 10px 18px 6px 18px;
+    border: 0px solid #ddd;
+    border-top: 1px solid #ddd;
+  }
+
+  .increase-buttons md-icon[md-font-icon] {
+    font-size: 13px;
+    width: 13px;
+    height: 13px;
+    min-width: 13px;
+    min-height: 13px;
+    line-height: 13px;
+  }
+
+  #add-grid-item-button {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    padding: 0;
+    z-index: 22;
+    height: 40px;
+    width: 40px;
+  }
+}

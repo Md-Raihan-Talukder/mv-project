@@ -1,0 +1,25 @@
+#systemsettings {
+  .left-side,
+  .right-side {
+    padding-top: 2px;
+    box-shadow: $whiteframe-shadow-8dp;
+  }
+
+  .left-side {
+    width: 400px;
+    min-width: 400px;
+    max-width: 400px;
+    min-height: 800px;
+  }
+
+  .center {
+    position: relative;
+  }
+
+  .right-side {
+    width: 400px;
+    min-width: 400px;
+    max-width: 400px;
+    min-height: 800px;
+  }
+}

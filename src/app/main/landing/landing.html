@@ -1,0 +1,160 @@
+<div id="techdiser-landing" class="page-layout simple right-sidenav" layout="row" ng-if="vm.isReady">
+
+    <md-sidenav class="left-sidenav" md-component-id="left-sidenav" ng-if="vm.leftSlider" md-is-locked-open="$mdMedia('gt-md') && vm.leftNavPined " ng-include="'app/main/landing/sidenavs/left/left-sidenav.html'" ms-scroll ms-sidenav-helper>
+    </md-sidenav>
+
+
+    <div class="center" layout="column" flex>
+
+        <div class="header md-accent-bg">
+
+            <div class="header-content" layout="column" layout-align="space-between">
+
+                <div class="toolbar" layout="row" layout-align="space-between">
+
+                    <div layout="row" layout-align="start center">
+                        <md-button ng-if="vm.leftSlider" class="md-icon-button main-sidenav-toggle" ng-click="vm.toggleSidenav('left-sidenav')" aria-label="Toggle Main Sidenav">
+                            <md-icon md-font-icon="icon-backburger" class="icon" ng-class="{'transform-180' : !vm.leftNavPined}"></md-icon>
+                        </md-button>
+
+                        <div class="header-title text-truncate" layout="row" layout-align="start center">
+                            {{vm.pageTitle}}
+                        </div>
+                    </div>
+
+
+                    <div class="right-side" layout="row">
+
+
+                        <md-button class="md-icon-button main-sidenav-toggle" ng-click="vm.toggleSidenav('right-sidenav')" aria-label="Toggle Main Sidenav">
+                            <md-icon md-font-icon="icon-tile-four" class="icon"></md-icon>
+                        </md-button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+        <md-content class="content" flex style="overflow: hidden;">
+
+            <div layout="row" layout-align="start center" style="min-height: 100%; height:100%; overflow:hidden;">
+                <div class="common-list-pane" flex layout="column" ng-include="'app/main/landing/views/list/item-list.html'" style="min-height: 100%; height:100%;" ng-style="{'min-width': vm.listMinWidth }">
+                </div>
+
+                <ms-widget layout="column" style="padding: 0; min-height: 100%; height:100%;" ng-style="{'width': vm.componentsWidth + 'px'}">
+                    <ms-widget-front style="min-height: 100%; height:100%; width: 100%;">
+
+                        <div class="component-header grey-300-bg h-30" flex>
+
+                            <md-nav-bar md-selected-nav-item="vm.selectedTab" nav-bar-aria-label="navigation links" flex>
+
+                                <md-nav-item ng-repeat="componentTab in vm.pageDefinition.componentTabs" md-nav-click="vm.tabClick(componentTab)" name="{{componentTab.title}}">
+                                    {{componentTab.title}}
+                                </md-nav-item>
+
+                            </md-nav-bar>
+
+                        </div>
+
+                        <div layout="row" layout-align="start center" style="min-height: 100%; height:100%;" ms-scroll="{suppressScrollY: true}">
+
+                            <div ng-class="vm.getComponentWidth(component, $index)" flex="vm.getComponentFlex(component, $index)" ng-repeat="component in vm.components" style="min-height: 100%; height:100%;">
+
+                                <ms-widget layout="column" flex="100" style="padding: 0; border: 0;   height: calc(100% - 30px);">
+                                    <ms-widget-front class="white-bg " style="position: relative; border: 0; ">
+
+                                        <div ng-if="component.filter" class="component-filter-bar white-bg w-220" style="position:absolute; top: 0; left: 10; min-height: 100%; height:100%;">
+                                            <div class="header1 border-bottom drag-handle h-30" layout="row" layout-align="space-between start">
+
+                                                <div class="logo mt-5" layout="row" layout-align="start center">
+                                                    <span class="logo-icon">
+                                                        <md-icon md-font-icon="icon-filter" class="icon s20"></md-icon>
+                                                    </span>
+                                                    <span class="logo-text">Quick Filters</span>
+                                                </div>
+
+                                                <md-button class="md-icon-button main-sidenav-toggle" ng-click="component.filter = false;" aria-label="Toggle Main Sidenav">
+                                                    <md-icon md-font-icon="icon-close-circle" class="icon"></md-icon>
+                                                </md-button>
+
+                                            </div>
+                                            <div class="content" ng-if="component.filters">
+                                                <msb-quick-filters filters="component.filters" selected-filters="component.selectedFilters">
+
+                                                </msb-quick-filters>
+                                            </div>
+                                        </div>
+
+                                        <div class="grey-100-bg h-30 component-item-header  pl-5 pr-5" flex layout="row" layout-align="space-between center">
+                                            <div flex layout="row" layout-align="start center">
+                                                <div class="cursor-pointer mr-10" ng-if="component.allowFilter" ng-click="component.filter = !component.filter">
+                                                    <md-icon md-font-icon="icon-filter s20"></md-icon>
+                                                </div>
+                                                <div class="search-input-wrapper" flex ng-if="component.allowSearch" layout="row" layout-align="start center">
+                                                    <label for="search">
+                                                        <md-icon md-font-icon="icon-magnify"></md-icon>
+                                                    </label>
+                                                    <md-input-container md-no-float class="m-0">
+                                                        <input id="search" placeholder="Search..." type="text" ng-model="vm.search">
+                                                    </md-input-container>
+                                                </div>
+                                                <div class="secondary-text text-bold" style="font-size: 1.2em;">
+                                                    {{component.title}}
+                                                </div>
+                                            </div>
+
+                                            <div layout="row" layout-align="end end" ng-if="component.stripDef.addButton">
+                                                <md-button ng-click="vm.addNewStripFunctions[component.stripDef.id](component.stripDef.addservice, component.stripDef.addFunction)" class="landing-list-add-button md-accent md-raised" aria-label="SAVE">
+                                                    Add New
+                                                </md-button>
+                                            </div>
+
+                                        </div>
+
+                                        <div ms-scroll>
+                                            <div style="min-height: 100% ; height: 100%; max-height: 100% ; width: 100%; overflow: hidden;" ng-if="component.type === 'directive' && vm.directiveInfo[component.directiveDef.id].ready">
+
+                                                <msb-dynamic-directive info="vm.directiveInfo[component.directiveDef.id].info">
+
+                                                </msb-dynamic-directive>
+
+                                            </div>
+
+                                            <msb-strip ng-if="component.type === 'strip' && component.stripDef" selected-filters="component.selectedFilters" strip-type="component.stripDef.type" row-height="component.stripDef.rowHeight" strip-def-code="component.stripDef.stripCode" selectable="component.stripDef.selectable" strip-title="component.stripDef.title" add-option="component.stripDef.addOption" strip-task-id="component.stripDef.taskId" strip-parameters="component.stripDef.parameters" strip-objects="component.stripDef.stripsObjects" item-selected="vm.stripSelected(strip, helperItems)" helper-items="component.stripDef.id" set-external-fns="vm.setExternalFns(addFn, helperItems)" on-load-complete="vm.stripLoadComplete(stripCode, strips, helperItems, allStrips)">
+                                            </msb-strip>
+                                            <msb-list ng-if="component.type === 'list' && component.listDef" selected-filters="component.selectedFilters" load-id="vm.reloadIds[component.listDef.id]" selected-id="component.selectedId" helper-items="component.listDef.id" selectable="component.listDef.selectable" single-selection="component.listDef.singleSelection" parameters="component.listDef.parameters" service-def="component.listDef.serviceDef" columns="component.listDef.colums" template="component.listDef.template" row-clicked="vm.listItemClicked(item, helperItems)" list-button-clicked="vm.listButtonClicked(button, item, helperItems)" on-load-complete="vm.listLoadComplete(items, helperItems)">
+                                            </msb-list>
+                                        </div>
+
+                                    </ms-widget-front>
+                                </ms-widget>
+                            </div>
+
+
+                        </div>
+                    </ms-widget-front>
+                </ms-widget>
+
+
+            </div>
+
+
+        </md-content>
+
+
+    </div>
+
+    <md-sidenav class="right-sidenav md-sidenav-right" md-component-id="right-sidenav" ng-include="'app/main/landing/sidenavs/right/right-sidenav.html'" ms-scroll ms-sidenav-helper>
+    </md-sidenav>
+
+
+</div>
+
+<div style="width:100%; min-height:600px;" layout="column" layout-align="center center" ng-if="!vm.isReady">
+    <md-progress-circular class="md-accent" md-mode="indeterminate" md-diameter="32">
+    </md-progress-circular>
+</div>

@@ -1,0 +1,30 @@
+.barcode-generator {
+  .barcode-gen-text textarea {
+    resize: none;
+  }
+
+  .selected-sep {
+    background-color: #43a047 !important;
+    color: white !important;
+  }
+}
+
+md-dialog {
+  &.barcode-selector-dialog {
+    width: 800px;
+    max-width: 70%;
+    overflow: hidden;
+
+    md-dialog-content {
+      min-height: 600px;
+      max-height: 600px;
+      position: relative;
+      background-color: #f5f5f5;
+
+      .selected-barcode {
+        background-color: #43a047 !important;
+        color: white !important;
+      }
+    }
+  }
+}

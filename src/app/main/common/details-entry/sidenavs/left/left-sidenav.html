@@ -1,0 +1,42 @@
+<div class="header md-accent-bg" layout="column" layout-align="space-between start">
+
+    <div class="logo mt-5" layout="row" layout-align="start center">
+        <span class="header-title text-truncate"> Menus</span>
+    </div>
+
+</div>
+
+<div class="content" ms-scroll>
+    <div class="common-detail-entry-menus navigation-simple" layout="column">
+
+        <div layout="column" ng-repeat="family in vm.menus">
+            <msb-expand-collapse ng-if="family.type==='family'">
+                <div class="msb-collapse-header cursor-pointer">
+                    <md-button class="item orange-50-bg bb" aria-label="important" ng-click="vm.goToPage(family.state, family.url)">
+                        <div layout="row">
+                            <md-icon md-font-icon="icon-view-list" class="s16 md-accent pt-5"></md-icon>
+                            <div class="w-100">{{family.title}}</div>
+                            <md-icon md-font-icon="icon-chevron-down" class="s16 md-accent pt-5 pl-10"></md-icon>
+                        </div>
+                    </md-button>
+                </div>
+                <div class="msb-collapse-content white-bg" style="display:none">
+                    <md-button ng-repeat="menu in family.members" class="item" aria-label="important" style="width:-webkit-fill-available;width:-moz-available;" ng-click="vm.goToPage(menu.state, menu.url);$event.stopPropagation()" ng-class="{'blue-100-bg': vm.isSelected(menu.state, menu.url)}">
+                        <div class="contextc pl-15" layout="row" layout-align="star start">
+                            <md-icon md-font-icon="icon-apps" class="s16"></md-icon>
+                            <div class="title">{{menu.title}}</div>
+                        </div>
+                    </md-button>
+                </div>
+            </msb-expand-collapse>
+            <md-button ng-if="family.type==='alone'" class="item" aria-label="important" style="width:-webkit-fill-available;width:-moz-available;" ng-click="vm.selectMenu(family)" ng-class="{'blue-100-bg': (family.state === vm.selectedMenu.state)}">
+                <div class="context" layout="row" layout-align="start center">
+                    <md-icon md-font-icon="icon-apps" class="s16"></md-icon>
+                    <div class="title">{{family.title}}</div>
+                </div>
+            </md-button>
+        </div>
+
+    </div>
+
+</div>

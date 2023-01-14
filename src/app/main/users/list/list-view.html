@@ -1,0 +1,42 @@
+<table class="simple list-view">
+    <thead>
+        <tr>
+            <th></th>
+            <th>Name</th>
+            <th hide show-gt-sm>Email</th>
+            <th hide-xs>Phone Number</th>
+            <th hide-xs>Designation</th>
+            <th style="width:50px;"></th>
+            <th hide-gt-md></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr ng-repeat="user in vm.users | filter: {'deleted': false}  | filter:{'important': vm.usersFilters.important} | filter:{'starred':vm.usersFilters.starred} | filter:vm.usersFilters.search track by $index" ng-click="vm.select(user)" ng-class="{'selected' : vm.selected === user}">
+            <td class="file-icon">
+                <img md-menu-align-target="" class="avatar" ng-src="{{user.proPic.data}}">
+            </td>
+            <td class="name">{{user.name}}</td>
+            <td class="email" hide show-gt-sm>{{user.email}}</td>
+            <td class="phonenumber" hide-xs>{{user.phoneNumber}}</td>
+            <td class="designation" hide-xs>{{user.designation}}</td>
+            <td>
+                <md-icon md-font-icon="icon-alert-circle" class="is-important red-600-fg" ng-if="user.important"></md-icon>
+                <md-icon md-font-icon="icon-star" class="is-starred amber-600-fg" ng-if="user.starred"></md-icon>
+            </td>
+            <td class="edit-delete">
+                <a ui-sref="app.users.update({id:user.TECHDISER_ID})">
+                    <md-button class="md-icon-button " aria-label="Details">
+                        <md-icon md-font-icon="icon-details"></md-icon>
+                        <md-tooltip><span>Update User</span></md-tooltip>
+                    </md-button>
+                </a>
+            </td>
+            <td class="show-details" hide-gt-md>
+                <md-button class="md-icon-button sidenav-toggle" ng-click="vm.toggleDetails(user)" aria-label="Toggle details sidenav">
+                    <md-icon md-font-icon="icon-information-outline"></md-icon>
+                </md-button>
+            </td>
+        </tr>
+    </tbody>
+</table>

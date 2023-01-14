@@ -1,0 +1,16 @@
+md-dialog {
+  &.data-entry-dialog {
+    width: 70%;
+    max-width: 70%;
+    overflow: hidden;
+
+    md-dialog-content {
+      .md-inline-form {
+        min-height: 500px;
+      }
+
+      position: relative;
+      background-color: #f5f5f5;
+    }
+  }
+}

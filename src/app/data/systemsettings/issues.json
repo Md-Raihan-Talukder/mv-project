@@ -1,0 +1,177 @@
+{
+    "data": [
+        {
+            "TECHDISER_ID": "ratingissue1",
+            "TECHDISER_SERIAL_NO": 1,
+            "ratingTypeId": "Supplier",
+            "title": "Work Experience",
+            "code": "WE7",
+            "issueTypeId": "ratingissuetype1",
+            "scale": 10,
+            "numberOfConcerns": 1,
+            "classTitle": "Year",
+            "comparisonType": "RANGE",
+            "classes": [
+                {
+                    "TECHDISER_ID": "1",
+                    "value": 3,
+                    "impact": "P",
+                    "rating": 4
+                },
+                {
+                    "TECHDISER_ID": "2",
+                    "value": 5,
+                    "impact": "N",
+                    "rating": 7
+                },
+                {
+                    "TECHDISER_ID": "3",
+                    "value": 10,
+                    "impact": "P",
+                    "rating": 10
+                }
+            ],
+            "deleted": false
+        },
+        {
+            "TECHDISER_ID": "ratingissue2",
+            "TECHDISER_SERIAL_NO": 2,
+            "ratingTypeId": "Supplier",
+            "title": "Lead Time Rating",
+            "code": "LTR7",
+            "issueTypeId": "ratingissuetype3",
+            "scale": 10,
+            "numberOfConcerns": 1,
+            "classTitle": "India",
+            "comparisonType": "RANGE",
+            "classes": [
+                {
+                    "TECHDISER_ID": "1",
+                    "value": 10,
+                    "impact": "P",
+                    "rating": 5
+                },
+                {
+                    "TECHDISER_ID": "2",
+                    "value": 15,
+                    "impact": "N",
+                    "rating": 7
+                },
+                {
+                    "TECHDISER_ID": "3",
+                    "value": 20,
+                    "impact": "P",
+                    "rating": 10
+                }
+            ],
+            "deleted": false
+        },
+        {
+            "TECHDISER_ID": "ratingissue3",
+            "TECHDISER_SERIAL_NO": 3,
+            "ratingTypeId": "Supplier",
+            "title": "Payment Definition Rating",
+            "code": "PDR7",
+            "issueTypeId": "ratingissuetype2",
+            "scale": 20,
+            "numberOfConcerns": 1,
+            "classTitle": "Instrument of Payment",
+            "comparisonType": "EQUAL",
+            "classes": [
+                {
+                    "TECHDISER_ID": "1",
+                    "value": "LC",
+                    "impact": "P",
+                    "rating": 10
+                },
+                {
+                    "TECHDISER_ID": "2",
+                    "value": "Cheaque",
+                    "impact": "N",
+                    "rating": 5
+                },
+                {
+                    "TECHDISER_ID": "3",
+                    "value": "Cash",
+                    "impact": "P",
+                    "rating": 3
+                }
+            ],
+            "deleted": false
+        },
+        {
+            "TECHDISER_ID": "ratingissue4",
+            "TECHDISER_SERIAL_NO": 4,
+            "ratingTypeId": "Supplier",
+            "title": "Experience with as a Supplier",
+            "code": "ES7",
+            "issueTypeId": "ratingissuetype1",
+            "scale": 10,
+            "numberOfConcerns": 1,
+            "classTitle": "Year",
+            "comparisonType": "RANGE",
+            "classes": [
+                {
+                    "TECHDISER_ID": "1",
+                    "value": 3,
+                    "impact": "P",
+                    "rating": 2
+                },
+                {
+                    "TECHDISER_ID": "2",
+                    "value": 5,
+                    "impact": "N",
+                    "rating": 7
+                },
+                {
+                    "TECHDISER_ID": "3",
+                    "value": 10,
+                    "impact": "P",
+                    "rating": 10
+                }
+            ],
+            "deleted": false
+        },
+        {
+            "TECHDISER_ID": "ratingissue5",
+            "TECHDISER_SERIAL_NO": 5,
+            "ratingTypeId": "Supplier",
+            "title": "Mode of Payment",
+            "code": "MP7",
+            "issueTypeId": "ratingissuetype2",
+            "scale": 20,
+            "numberOfConcerns": 1,
+            "classTitle": "Deferred",
+            "comparisonType": "DIRECT",
+            "classes": [],
+            "deleted": false
+        },
+        {
+            "TECHDISER_ID": "ratingissue6",
+            "TECHDISER_SERIAL_NO": 6,
+            "ratingTypeId": "Supplier",
+            "title": "Payment Requirements",
+            "code": "PR7",
+            "issueTypeId": "ratingissuetype3",
+            "scale": 30,
+            "numberOfConcerns": 1,
+            "classTitle": "Requirements",
+            "comparisonType": "BOOLEAN",
+            "classes": [
+                {
+                    "TECHDISER_ID": "1",
+                    "value": "Deferred",
+                    "ratingForTrue": 2,
+                    "ratingForFalse": 4
+                },
+                {
+                    "TECHDISER_ID": "2",
+                    "value": "At Sight",
+                    "ratingForTrue": 3,
+                    "ratingForFalse": 6
+                }
+            ],
+            "deleted": false
+        }
+    ]
+}

@@ -1,0 +1,30 @@
+<div class="scrollable" layout="row" style="height: 100%" ms-scroll>
+    <div layout="column">
+        <div layout="row" class="h-60">
+            <md-button class="cool-btn-md" ng-click="vm.openVideo()">
+                Play
+            </md-button>
+
+            <md-button class="cool-btn-md" ng-click="vm.fullScreen()">
+                Full Screen
+            </md-button>
+        </div>
+        <video class="" id="movie" controls autoplay>
+            <source style="height: 700px;"
+                src="http://192.168.68.109:8010/Minions.The.Rise.Of.Gru.2022.1080p.WEBRip.x264.AAC5.1-%5BYTS.MX%5D.mp4"
+                type="video/mp4">
+
+            <!-- <source
+                        src="../../../../../../../Downloads/WeAreTheMillers/WeAreTheMillers.mp4"
+                        type="video/mp4" /> -->
+
+            <!-- <track label="English" kind="subtitles" srclang="en"
+                        src="../../../../../../../Downloads/WeAreTheMillers/WeAreTheMillers.vtt"
+                        default /> -->
+
+            <track label="English" kind="subtitles" srclang="en"
+                src="../../../../assets/Minions.The.Rise.of.Gru.2022.1080p.AMZN.WEBRip.DDP5.1.Atmos.x264-NOGRP-HI.vtt"
+                default />
+        </video>
+    </div>
+</div>

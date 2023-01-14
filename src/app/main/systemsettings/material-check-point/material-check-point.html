@@ -1,0 +1,328 @@
+<div id="material-check-point" layout="row" layout-align="start top" style="min-height: 100%; height:100%; overflow:hidden; ">
+
+
+    <div class="left" flex style="min-height: 100%; height:100%; max-height: 100%; width: 100%;" layout="column" layout-align="start top">
+
+        <ms-widget layout="column" style="padding: 0; min-height: 100%; height:100%; width: 100%" layout-align="start top">
+
+            <ms-widget-front style="min-height: 100%; height:100%; width: 100%;" layout="column" layout-align="start top">
+
+                <div class="h-35 font-size-16 pl-5 grey-200-bg border-bottom" layout="row" layout-align="space-between center">
+                    <div class="ml-10" layout="row">
+                        <span> Material Check Point </span>
+                    </div>
+                    <div class="mr-20">
+                        <md-button ng-click="vm.saveMaterialCheckPointDefects()" class="cool-btn-md"> Save </md-button>
+                    </div>
+                </div>
+
+                <div style="height: calc(100% - 50px);
+            max-height: calc(100% - 50px);
+            min-height: calc(100% - 50px);
+            width: 100%;" ms-scroll>
+
+                    <div class="" layout="row">
+                        <div class="left w-250" flex style="min-height: 100%; height:100%; max-height: 100%; width: 100%;" layout="column" layout-align="start top">
+
+                            <ms-widget layout="column" style="padding: 0; min-height: 100%; height:100%; width: 100%" layout-align="start top">
+
+                                <ms-widget-front style="min-height: 100%; height:100%; width: 100%;" layout="column" layout-align="start top">
+
+                                    <div class="" layout="column">
+                                        <!--  -->
+                                        <div class="m-5 border etd-item">
+                                            <!-- <div layout="start" class="border-bottom h-30 p-5 grey-200-bg" layout-align="start center" flex>
+                            <span class="pl-5"> {{material.groupCode}} </span>
+                          </div> -->
+                                            <div class="ml-10" layout="row" layout-align="start center">
+                                                <span class="w-70"> Category </span>
+                                                <span> : </span>
+                                                <div class="h-45 w-190" layout="row" layout-align="start center">
+                                                    <md-input-container>
+                                                        <md-select aria-label="Category" ng-model="vm.categoryId" ng-change="vm.getTypesByCategoryId()">
+                                                            <md-option ng-repeat="categoryMat in vm.categoryMaterials" ng-value="categoryMat.TECHDISER_ID">
+                                                                {{categoryMat.title}}
+                                                            </md-option>
+                                                        </md-select>
+                                                    </md-input-container>
+                                                </div>
+                                            </div>
+                                            <div class="ml-10" layout="row" layout-align="start center">
+                                                <span class="w-70"> Type </span>
+                                                <span> : </span>
+                                                <div class="h-45 w-190" layout="row" layout-align="start center">
+                                                    <md-input-container>
+                                                        <md-select aria-label="Type" ng-model="vm.typeId">
+                                                            <md-option ng-repeat="materialType in vm.materialTypes" ng-value="materialType.TECHDISER_ID">
+                                                                {{materialType.title}}
+                                                            </md-option>
+                                                        </md-select>
+                                                    </md-input-container>
+                                                </div>
+                                            </div>
+                                            <div class="ml-10" layout="row" layout-align="start center">
+                                                <span class="w-70"> Defect </span>
+                                                <span> : </span>
+                                                <!-- start from here get type specific and get Defects -->
+                                                <md-button class="md-icon-button cursor-pointer" aria-label="Toggle" ng-click="vm.selectTypeSpecific()">
+                                                    <md-icon ng-if="vm.isTypeSpecific==0" md-font-icon="icon-checkbox-blank-outline" class="icon"></md-icon>
+                                                    <md-icon ng-if="vm.isTypeSpecific==1" md-font-icon="icon-checkbox-marked-outline" class="md-accent icon"></md-icon>
+                                                </md-button>
+                                                <span> Type Specific </span>
+                                            </div>
+
+                                            <div layout="start" class="p-5" layout-align="end center" flex>
+                                                <div class="mr-5">
+                                                    <md-button ng-click="vm.getCategoryTypeSpecificDefects()" class="cool-btn-sm"> Search </md-button>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <!--  -->
+                                        <div class="p-5 etd-list" ms-scroll style="min-height: calc(100% - 300px); height:calc(100% - 300px); width: 100%;">
+                                            <div ng-repeat="cpDefect in vm.checkPointDefects" ng-if="vm.checkPointDefects.length > 0">
+
+                                                <div ng-click="vm.selectDefect(cpDefect)" class="mb-5 border etd-item" ng-class="{'selected-defect': cpDefect.TECHDISER_ID == vm.selectedDefect.TECHDISER_ID}">
+
+                                                    <div layout="column" class="p-5 mt-5 h-45">
+
+                                                        <div layout="row" layout-align="start center" class="ml-5 mb-10">
+                                                            <span class="secondary-text"> Defect </span>
+                                                            <span class="secondary-text pl-5"> : </span>
+                                                            <span class="pl-10"> {{vm.getDefectTitle(cpDefect.defectId)}} </span>
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                </ms-widget-front>
+                            </ms-widget>
+                        </div>
+
+
+                        <div class="right" flex style="min-height: 100%; height:100%; max-height: 100%; width: 100%;" layout="column" layout-align="start top">
+
+                            <ms-widget layout="column" style="padding: 0; min-height: 100%; height:100%; width: 100% " layout-align="start top">
+
+                                <ms-widget-front style="min-height: 100%; height:100%; width: 100%;" layout="column" layout-align="start top">
+
+                                    <div class="h-35 pl-5 grey-200-bg border-bottom" layout="row" layout-align="start center">
+
+                                        <div class="font-size-16 ml-10" layout="row" layout-align="start center">
+                                            <span class="pl-15"> <span class="secondary-text"> Category : </span> {{vm.getCategoryTitle(vm.categoryId)}} </span>
+                                            <span class="pl-15"> <span class="secondary-text"> Type : </span> {{vm.getCategoryTypeTitle(vm.typeId)}} </span>
+
+                                        </div>
+
+                                    </div>
+
+                                    <div style="height: calc(100% - 50px);
+                        max-height: calc(100% - 50px);
+                        min-height: calc(100% - 50px);
+                        width: 100%;" ms-scroll>
+
+                                        <div class="" layout="column">
+
+                                            <div class="content">
+                                                <md-tabs md-dynamic-height class="tabs" md-selected="0">
+                                                    <md-tab label="Inspection">
+                                                        <div layout="column" flex>
+                                                            <!-- Inspection start -->
+                                                            <div class="ml-10 mt-10" layout="row" layout-align="start center">
+                                                                <md-button class="md-icon-button cursor-pointer" aria-label="Toggle" ng-click="vm.selectPreProduction()">
+                                                                    <md-icon ng-if="vm.selectedDefect.inspection.isPreProduction==0" md-font-icon="icon-checkbox-blank-outline" class="icon"></md-icon>
+                                                                    <md-icon ng-if="vm.selectedDefect.inspection.isPreProduction==1" md-font-icon="icon-checkbox-marked-outline" class="md-accent icon"></md-icon>
+                                                                </md-button>
+                                                                <span> Pre Production </span>
+                                                            </div>
+
+                                                            <div class="ml-10" layout="row" layout-align="start center">
+                                                                <md-button class="md-icon-button cursor-pointer" aria-label="Toggle" ng-click="vm.selectPreShipmentInspection()">
+                                                                    <md-icon ng-if="vm.selectedDefect.inspection.isPreShipmentInspection==0" md-font-icon="icon-checkbox-blank-outline" class="icon"></md-icon>
+                                                                    <md-icon ng-if="vm.selectedDefect.inspection.isPreShipmentInspection==1" md-font-icon="icon-checkbox-marked-outline" class="md-accent icon"></md-icon>
+                                                                </md-button>
+                                                                <span> PSI (Pre Shipment Inspection) </span>
+                                                            </div>
+
+                                                            <div class="mt-5">
+
+                                                                <div class="h-35 m-10  border-bottom" layout="row" layout-align="space-between center">
+                                                                    <div layout="row" layout-align="start center">
+                                                                        <div class="pl-10 mr-50">
+                                                                            DUPRO (During Production) Inspection
+                                                                        </div>
+                                                                        <div>
+                                                                            <md-button ng-click="vm.addDefectDeproInspection()" class="cool-btn-md">Add</md-button>
+                                                                        </div>
+                                                                    </div>
+                                                                    <!-- <div layout="column" layout-align="center center"  class="mr-10">
+                                              <md-button ng-click="vm.saveDeproInspection()" class="cool-btn-md">Save</md-button>
+                                            </div> -->
+                                                                </div>
+                                                                <div layout="column" layout-align="start start">
+
+                                                                    <div ng-repeat="duproInspection in vm.selectedDefect.inspection.duproInspections" layout="row" layout-align="start top">
+                                                                        <div layout="row" flex="100" class="p-5 m-5 b row-hover">
+                                                                            <div flex>
+                                                                                <div layout="row" layout-wrap ng-init="duproInsDef = vm.getDuproInspectionDetail(duproInspection.duproInspectionId)">
+                                                                                    <div class="p-5 pr-5">
+                                                                                        <span class="pr-5 grey-600-fg">Title : </span> {{duproInsDef.title}}
+                                                                                    </div>
+                                                                                    <div class="p-5 pr-5">
+                                                                                        <span class="pr-5 grey-600-fg">Code : </span> {{duproInsDef.code}}
+                                                                                    </div>
+                                                                                    <div class="p-5 pr-5">
+                                                                                        <span class="pr-5 grey-600-fg">Description : </span> {{duproInsDef.description}}
+                                                                                    </div>
+                                                                                    <div class="p-5 pr-5">
+                                                                                        <span class="pr-5 grey-600-fg">Category : </span> {{vm.getCatalogTitle(duproInsDef.catalogId)}}
+                                                                                    </div>
+                                                                                    <div class="p-5 pr-5">
+                                                                                        <span class="pr-5 grey-600-fg">Job : </span> {{vm.getJobProcessTitle(duproInsDef, 'job')}}
+                                                                                    </div>
+                                                                                    <div ng-if="duproInsDef.isOnlyJob == 0" class="p-5 pr-5">
+                                                                                        <span class="pr-5 grey-600-fg">Process : </span> {{vm.getJobProcessTitle(duproInsDef, 'process')}}
+                                                                                    </div>
+                                                                                    <div class="p-5 pr-5">
+                                                                                        <span class="pr-5 grey-600-fg">Time : </span> {{duproInsDef.time}}
+                                                                                    </div>
+                                                                                    <div class="p-5 pr-10">
+                                                                                        <span class="pr-5 grey-600-fg">Hourly Frequency : </span> {{duproInsDef.hourlyFrequency}}
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div layout="column" layout-align="center center" class="p-5">
+                                                                                <md-icon ng-click="vm.removeDuproInspection(duproInspection, duproInsDef.title)" md-font-icon="icon-close" class="icon s20 b cursor-pointer red-500-fg"></md-icon>
+                                                                            </div>
+
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+                                                            <!-- Inspection end -->
+                                                        </div>
+                                                    </md-tab>
+                                                    <md-tab label="QC">
+                                                        <div layout="column" flex>
+                                                            <!-- QC start -->
+                                                            <div class="mt-5">
+
+                                                                <div class="h-35 m-10  border-bottom" layout="row" layout-align="space-between center">
+                                                                    <div layout="row" layout-align="start center">
+                                                                        <div class="pl-10 mr-50">
+                                                                            DUPRO (During Production) QC
+                                                                        </div>
+                                                                        <div>
+                                                                            <md-button ng-click="vm.addDefectQcInspection()" class="cool-btn-md">Add</md-button>
+                                                                        </div>
+                                                                    </div>
+                                                                    <!-- <div layout="column" layout-align="center center"  class="mr-10">
+                                              <md-button ng-click="vm.saveDeproInspection()" class="cool-btn-md">Save</md-button>
+                                            </div> -->
+                                                                </div>
+                                                                <div layout="column" layout-align="start start">
+
+                                                                    <div ng-repeat="duproQc in vm.selectedDefect.qualityControls" layout="row" layout-align="start top">
+                                                                        <div layout="row" flex="100" class="p-5 m-5 b row-hover">
+                                                                            <div flex>
+                                                                                <div layout="row" layout-wrap ng-init="duproQcDef = vm.getDuproQcDetail(duproQc.duproQcId)">
+                                                                                    <div class="p-5 pr-5">
+                                                                                        <span class="pr-5 grey-600-fg">Title : </span> {{duproQcDef.title}}
+                                                                                    </div>
+                                                                                    <div class="p-5 pr-5">
+                                                                                        <span class="pr-5 grey-600-fg">Code : </span> {{duproQcDef.code}}
+                                                                                    </div>
+                                                                                    <div class="p-5 pr-5">
+                                                                                        <span class="pr-5 grey-600-fg">Description : </span> {{duproQcDef.description}}
+                                                                                    </div>
+                                                                                    <div class="p-5 pr-5">
+                                                                                        <span class="pr-5 grey-600-fg">Category : </span> {{vm.getCatalogTitle(duproQcDef.catalogId)}}
+                                                                                    </div>
+                                                                                    <div class="p-5 pr-5">
+                                                                                        <span class="pr-5 grey-600-fg">Job : </span> {{vm.getJobProcessTitle(duproQcDef, 'job')}}
+                                                                                    </div>
+                                                                                    <div ng-if="duproQcDef.isOnlyJob == 0" class="p-5 pr-5">
+                                                                                        <span class="pr-5 grey-600-fg">Process : </span> {{vm.getJobProcessTitle(duproQcDef, 'process')}}
+                                                                                    </div>
+                                                                                    <div class="p-5 pr-5">
+                                                                                        <span class="pr-5 grey-600-fg">Time : </span> {{duproQcDef.time}}
+                                                                                    </div>
+                                                                                    <div class="p-5 pr-10">
+                                                                                        <span class="pr-5 grey-600-fg">Hourly Frequency : </span> {{duproQcDef.hourlyFrequency}}
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div layout="column" layout-align="center center" class="p-5">
+                                                                                <md-icon ng-click="vm.removeDuproQc(duproQc, duproQcDef.title)" md-font-icon="icon-close" class="icon s20 b cursor-pointer red-500-fg"></md-icon>
+                                                                            </div>
+
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+                                                            <!-- QC end -->
+                                                        </div>
+                                                    </md-tab>
+                                                    <md-tab label="Approvals">
+                                                        <div layout="column" flex>
+                                                            <!-- Approvals start -->
+                                                            <div class="mt-5">
+
+                                                                <div class="h-35 m-10  border-bottom" layout="row" layout-align="space-between center">
+                                                                    <div layout="row" layout-align="start center">
+                                                                        <div class="pl-10 mr-50">
+                                                                            Approvals Inspection
+                                                                        </div>
+                                                                        <!-- <div>
+                                                  <md-button ng-click="vm.addDefectQcInspection()" class="cool-btn-md">Add</md-button>
+                                                </div> -->
+                                                                    </div>
+                                                                    <!-- <div layout="column" layout-align="center center"  class="mr-10">
+                                                <md-button ng-click="vm.saveDeproInspection()" class="cool-btn-md">Save</md-button>
+                                              </div> -->
+                                                                </div>
+                                                                <div layout="column" layout-align="start start" class="mb-10">
+
+                                                                    <div ng-repeat="defectApproval in vm.selectedDefect.approvals" layout="row" layout-align="start top">
+                                                                        <div class="ml-10" layout="row" layout-align="start center">
+                                                                            <md-button class="md-icon-button cursor-pointer" aria-label="Toggle" ng-click="vm.selectDefectApproval(defectApproval)">
+                                                                                <md-icon ng-if="defectApproval.isSelected==0" md-font-icon="icon-checkbox-blank-outline" class="icon"></md-icon>
+                                                                                <md-icon ng-if="defectApproval.isSelected==1" md-font-icon="icon-checkbox-marked-outline" class="md-accent icon"></md-icon>
+                                                                            </md-button>
+                                                                            <span> {{vm.getApprovalTitle(defectApproval.materialApprovalId)}} </span>
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+                                                            <!-- Approvals end -->
+                                                        </div>
+                                                    </md-tab>
+                                                </md-tabs>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </ms-widget-front>
+                            </ms-widget>
+                        </div>
+
+                    </div>
+
+                </div>
+            </ms-widget-front>
+        </ms-widget>
+    </div>
+
+
+</div>

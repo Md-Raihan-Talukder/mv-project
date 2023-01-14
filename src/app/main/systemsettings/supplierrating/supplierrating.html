@@ -1,0 +1,142 @@
+<div id="systemsettings" class="item-detail register-definition page-layout simple tabbed" layout="row">
+    <md-sidenav class="main-sidenav w-250" md-component-id="main-sidenav" md-is-locked-open="$mdMedia('gt-md') && vm.leftNavPined" ng-include="'app/main/systemsettings/sidenavs/main/main-sidenav.html'" ms-scroll ms-sidenav-helper>
+    </md-sidenav>
+    <div class="center" layout="column" flex>
+
+        <div class="header md-accent-bg">
+
+            <div class="header-content" layout="column" layout-align="space-between">
+
+                <div class="toolbar" layout="row" layout-align="space-between">
+
+                    <div layout="row" layout-align="start center">
+                        <md-button class="md-icon-button main-sidenav-toggle" ng-click="vm.toggleSidenav('main-sidenav')" aria-label="Toggle Main Sidenav">
+                            <md-icon md-font-icon="icon-backburger" class="icon" ng-class="{'transform-180' : !vm.leftNavPined}"></md-icon>
+                        </md-button>
+
+                        <div class="breadcrumb text-truncate" layout="row" layout-align="start center">
+                            <span>Rating
+                                <md-icon md-font-icon="icon-chevron-right" class="icon separator"></md-icon>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div layout="row">
+            <div layout="column">
+                <md-sidenav class="sidenav md-sidenav-left main-sidenav" md-is-locked-open="true" md-component-id="job-sidenav" ng-include="'app/main/systemsettings/supplierrating/sidenavs/main/issue-sidenav.html'" ms-scroll ms-sidenav-helper>
+                </md-sidenav>
+            </div>
+            <div ng-if="vm.selectedIssue.comparisonType!=='DIRECT'" class="content border center" flex>
+                <div class="h-40 md-grey-100-bg pl-15 pt-5 pb-5" layout="row">
+                    <span class="font-size-14">
+                        Issue: <b class="mr-10">{{vm.selectedIssue.title}}</b>
+                        Issue Type: <b class="mr-10">{{vm.selectedIssueType.title}}</b>
+                        Comparison Type: <b class="mr-10">{{vm.selectedIssue.comparisonType}}</b>
+                    </span>
+                </div>
+                <div ng-if="vm.selectedIssue.comparisonType!=='BOOLEAN'" class="p-10">
+
+                    <div layout="row" class="border">
+                        <md-input-container ng-if="vm.selectedIssue.comparisonType === 'RANGE'" class="w-80">
+                            <label>Value</label>
+                            <input ng-model="vm.ratingClass.value" ng-keypress="vm.isNumberKey($event)" autocomplete="off">
+                        </md-input-container>
+                        <md-input-container ng-if="vm.selectedIssue.comparisonType === 'EQUAL'" class="w-150">
+                            <label>Value</label>
+                            <input ng-model="vm.ratingClass.value" autocomplete="off">
+                        </md-input-container>
+                        <md-input-container class="w-80">
+                            <label>Rating({{vm.selectedIssue.scale}})</label>
+                            <input ng-model="vm.ratingClass.rating" ng-keypress="vm.isNumberKey($event)" autocomplete="off">
+                        </md-input-container>
+                        <div class="description ml-10 mt-10">
+                            <span style="color:#A3A5AA">Impact:</span>
+                            <md-input-container>
+                                <md-radio-group class="md-primary" ng-model="vm.ratingClass.impact">
+                                    <md-radio-button style="display:inline; color:#272727" value="P">P</md-radio-button>
+                                    <md-radio-button style="display:inline; color:#272727" value="N">N</md-radio-button>
+                                </md-radio-group>
+                            </md-input-container>
+                        </div>
+                        <md-button ng-click="vm.addRatingClass(vm.ratingClass)" class="mt-35 h-25 font-size-10 text-bold md-raised md-primary" style="line-height: 2;text-transform: capitalize">Add Rating</md-button>
+                    </div>
+
+                    <div class="days-distribution mt-20">
+                        <table class="dataTable row-border hover">
+                            <thead>
+                                <tr>
+                                    <th class="h5">{{vm.selectedIssue.classTitle}}</th>
+                                    <th class="h5">Rating</th>
+                                    <th class="h5">Impact</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="(index, ratingClass) in vm.selectedIssue.classes">
+                                    <td ng-if="vm.selectedIssue.comparisonType==='RANGE' && index===0 && ratingClass.value===null" class="h5">{{vm.greaterThan}}0</td>
+                                    <td ng-if="vm.selectedIssue.comparisonType==='RANGE' && index===0 && ratingClass.value!==null" class="h5">0 - {{ratingClass.value}}</td>
+                                    <td ng-if="vm.selectedIssue.comparisonType==='RANGE' && index!==0 && ratingClass.value!==null" class="h5">{{vm.selectedIssue.classes[index-1].value + 1}} - {{ratingClass.value}}</td>
+                                    <td ng-if="vm.selectedIssue.comparisonType==='RANGE' && index!==0 && ratingClass.value===null" class="h5">{{vm.greaterThan}}{{vm.selectedIssue.classes[index-1].value}}</td>
+                                    <td ng-if="vm.selectedIssue.comparisonType==='EQUAL'" class="h5">{{ratingClass.value}}</td>
+                                    <td class="h5">{{ratingClass.rating}}</td>
+                                    <td class="h5">{{ratingClass.impact}}</td>
+                                    <td>
+                                        <md-icon md-font-icon="icon-close" class="s18 ml-20" ng-click="vm.deleteRatingClass(ratingClass)">
+                                            <md-tooltip>Delete Rating</md-tooltip>
+                                        </md-icon>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div ng-if="vm.selectedIssue.comparisonType==='BOOLEAN'">
+                    <div layout="row" class="border">
+                        <md-input-container class="w-80">
+                            <label>Value</label>
+                            <input ng-model="vm.ratingClass.value" autocomplete="off">
+                        </md-input-container>
+                        <md-input-container class="w-100">
+                            <label>Rating-True({{vm.selectedIssue.scale}})</label>
+                            <input ng-model="vm.ratingClass.ratingForTrue" ng-keypress="vm.isNumberKey($event)" autocomplete="off">
+                        </md-input-container>
+                        <md-input-container class="w-100">
+                            <label>Rating-False({{vm.selectedIssue.scale}})</label>
+                            <input ng-model="vm.ratingClass.ratingForFalse" ng-keypress="vm.isNumberKey($event)" autocomplete="off">
+                        </md-input-container>
+                        <md-button ng-click="vm.addRatingClass(vm.ratingClass)" class="mt-35 h-25 font-size-10 text-bold md-raised md-primary" style="line-height: 2;text-transform: capitalize">Add Rating</md-button>
+                    </div>
+
+                    <div class="days-distribution mt-20">
+                        <table class="dataTable row-border hover">
+                            <thead>
+                                <tr>
+                                    <th class="h5">{{vm.selectedIssue.classTitle}}</th>
+                                    <th class="h5">Rating(True)</th>
+                                    <th class="h5">Rating(False)</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="ratingClass in vm.selectedIssue.classes">
+                                    <td class="h5">{{ratingClass.value}}</td>
+                                    <td class="h5">{{ratingClass.ratingForTrue}}</td>
+                                    <td class="h5">{{ratingClass.ratingForFalse}}</td>
+                                    <td>
+                                        <md-icon md-font-icon="icon-close" class="s18 ml-20" ng-click="vm.deleteRatingClass(ratingClass)">
+                                            <md-tooltip>Delete Rating</md-tooltip>
+                                        </md-icon>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

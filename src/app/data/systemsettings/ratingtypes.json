@@ -1,0 +1,24 @@
+{
+    "data": [
+        {
+            "TECHDISER_ID": "RatingType1",
+            "TECHDISER_SERIAL_NO": 1,
+            "type": "supplier",
+            "deptWeight": [
+                {
+                    "deptId": "Dept1",
+                    "weight": 10
+                },
+                {
+                    "deptId": "Dept2",
+                    "weight": 8
+                },
+                {
+                    "deptId": "Dept3",
+                    "weight": 12
+                }
+            ],
+            "deleted": false
+        }
+    ]
+}

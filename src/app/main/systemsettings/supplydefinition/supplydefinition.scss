@@ -1,0 +1,26 @@
+#systemsettings {
+  .selectedSupplyType {
+    color: #ff3399;
+  }
+
+  .selectedSupply {
+    color: #1d8a5b;
+  }
+
+  .left-side,
+  .right-side {
+    padding-top: 2px;
+    box-shadow: $whiteframe-shadow-8dp;
+  }
+
+  .center {
+    position: relative;
+  }
+
+  .right-side {
+    width: 300px;
+    min-width: 300px;
+    max-width: 300px;
+    min-height: 300px;
+  }
+}

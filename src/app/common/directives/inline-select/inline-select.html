@@ -1,0 +1,57 @@
+<ms-widget layout="column" style="padding: 0;  margin: 0; min-height: 100%; height:100%; width: 100% " layout-align="start top">
+
+    <ms-widget-front style="min-height: 100%; height:100%; width: 100%; margin: 0; padding: 0;" layout="column" layout-align="start top">
+
+        <div ng-if="!stripDef" ms-scroll style="max-height: 100%;">
+
+            <div class="border ph-5 grey-100-bg cursor-pointer" ng-repeat="item in vm.items" ng-click="vm.onItemClick(item)" layout="row" layout-align="space-between center">
+
+                <div class="w-50">
+
+                    <md-icon ng-if="item.selected" md-font-icon="icon-checkbox-marked-outline" class="md-accent">
+
+                    </md-icon>
+
+                    <md-icon ng-if="!item.selected" md-font-icon="icon-checkbox-blank-outline">
+
+                    </md-icon>
+                </div>
+
+                <div layout="row" layout-align="start center" flex>
+
+                    <div class="ml-5 mr-10" ng-if="vm.getImageColumn()">
+                        <img ng-src="{{item[vm.getImageColumn()]}}" style=" max-height: 100px;" />
+                    </div>
+
+
+                    <div layout="column" layout-align="start top" class="p-10">
+
+                        <div layout="row" layout-align="start center" layout-wrap>
+                            <div class="mr-25" ng-if="col.type !== 'iconPicture'" ng-repeat="col in vm.listColumns">
+                                <span>{{col.label}}</span>
+                                <span ng-if="col.label.length">:</span>
+                                <span class="ml-5 " ng-class="{'font-weight-900': col.label.length}">
+                                    {{item[col.key]}}
+                                </span>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div ng-if="stripDef && vm.ready" ms-scroll style="max-height: 100%;">
+
+            <msb-strip strip-type="'list'" strip-def-code="stripDef.stripCode" selectable="stripDef.selectable" selected-ids="vm.selectedIds" single-selection="vm.singleSelection" strip-title="stripDef.title" strip-task-id="stripDef.taskId" load-id="stripDef.loadId" strip-parameters="stripDef.parameters" strip-objects="vm.stripsObjects" item-selected="vm.stripSelected(strip, helperItems, selectedIds)">
+            </msb-strip>
+
+
+        </div>
+
+
+    </ms-widget-front>
+
+</ms-widget>

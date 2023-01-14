@@ -1,0 +1,157 @@
+{
+    "data": [
+        {
+            "TECHDISER_ID": "j12121hgiksdjidsduhgjdfn",
+            "TECHDISER_SERIAL_NO": "1",
+            "title": "Baby",
+            "ageGroup": [
+                {
+                    "title": "1-3 Months",
+                    "sizes": [
+                        "1M",
+                        "2M",
+                        "3M"
+                    ]
+                },
+                {
+                    "title": "3-12 Months",
+                    "sizes": [
+                        "3M",
+                        "4M",
+                        "5M",
+                        "6M",
+                        "7M",
+                        "8M",
+                        "9M",
+                        "10M",
+                        "11M",
+                        "12M"
+                    ]
+                },
+                {
+                    "title": "12-36 Months",
+                    "sizes": [
+                        "12M",
+                        "13M",
+                        "14M",
+                        "15M",
+                        "16M",
+                        "17M",
+                        "18M",
+                        "19M",
+                        "20M",
+                        "21M",
+                        "22M",
+                        "23M",
+                        "24M",
+                        "25M",
+                        "26M",
+                        "27M",
+                        "28M",
+                        "29M",
+                        "30M",
+                        "31M",
+                        "32M",
+                        "33M",
+                        "34M",
+                        "35M",
+                        "36M"
+                    ]
+                }
+            ]
+        },
+        {
+            "TECHDISER_ID": "54dsf4d8f54d5f4d5fd4fd5f",
+            "TECHDISER_SERIAL_NO": "2",
+            "title": "Child",
+            "ageGroup": [
+                {
+                    "title": "3-5 Years",
+                    "sizes": [
+                        "3",
+                        "4",
+                        "5"
+                    ]
+                },
+                {
+                    "title": "5-7 Years",
+                    "sizes": [
+                        "5",
+                        "6",
+                        "7"
+                    ]
+                },
+                {
+                    "title": "7-13 Years",
+                    "sizes": [
+                        "7",
+                        "8",
+                        "9",
+                        "10",
+                        "11",
+                        "12",
+                        "13"
+                    ]
+                }
+            ]
+        },
+        {
+            "TECHDISER_ID": "f654g6f5g4f6g4f6gf5gf",
+            "TECHDISER_SERIAL_NO": "3",
+            "title": "Adult",
+            "ageGroup": [
+                {
+                    "title": "Small",
+                    "sizes": [
+                        "23",
+                        "24",
+                        "25"
+                    ]
+                },
+                {
+                    "title": "Medium",
+                    "sizes": [
+                        "25",
+                        "26",
+                        "27",
+                        "28",
+                        "29",
+                        "30"
+                    ]
+                },
+                {
+                    "title": "Large",
+                    "sizes": [
+                        "31",
+                        "32"
+                    ]
+                },
+                {
+                    "title": "XL",
+                    "sizes": [
+                        "33",
+                        "34",
+                        "35"
+                    ]
+                },
+                {
+                    "title": "XXL",
+                    "sizes": [
+                        "36",
+                        "38"
+                    ]
+                },
+                {
+                    "title": "Flat Size",
+                    "sizes": [
+                        "S",
+                        "M",
+                        "L",
+                        "XL",
+                        "XXL"
+                    ]
+                }
+            ]
+        }
+    ]
+}

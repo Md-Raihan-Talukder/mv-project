@@ -1,0 +1,61 @@
+<td-common-detail-prev-next un-save-state="unSaveState" on-save="vm.save(callBack)">
+</td-common-detail-prev-next>
+<div class="md-accent-bg h-50 font-size-16 p-10">
+    Category Wise Job Group
+</div>
+<div>
+    <div ng-repeat="cat in vm.catalogs">
+        <msb-expand-collapse>
+            <div class="msb-collapse-header cursor-pointer">
+                <div class="grey-300-bg h-45 font-size-14 p-10 bb" layout="row">
+                    <div flex class="text-bold font-size-16">
+                        {{cat.title}}
+                    </div>
+                    <div ng-click="$event.stopPropagation()">
+                        <md-button ng-click="vm.addNewJobCat(cat, 1)" class="cool-btn-md m-0">Add New {{cat.title}} Job Grp</md-button>
+                    </div>
+                </div>
+            </div>
+            <div class="msb-collapse-content" style="display:{{($index!=0)?'none': ''}}">
+                <div>
+                    <div ng-repeat="jobCat in vm.jobCats track by $index" ng-if="jobCat.catalogId==cat.TECHDISER_ID">
+                        <div class="grey-200-bg h-35 font-size-14 p-10 bb" layout="row">
+                            <div class="text-bold">
+                                {{jobCat.title}}
+                            </div>
+                            <div flex class="pl-30">
+                                {{jobCat.description}}
+                            </div>
+                            <div class="pr-20">
+                                <md-icon ng-click="vm.editCat(cat, jobCat)" md-font-icon="icon-eye" class="class md-accent"></md-icon>
+                            </div>
+                            <div>
+                                <!-- <md-icon ng-click="vm.removeCat(jobCat)" md-font-icon="icon-close" class="class red-500-fg b"></md-icon> -->
+                            </div>
+                        </div>
+                        <div>
+                            <div layout="row" layout-wrap>
+                                <div ng-repeat="jobGrp in jobCat.groups">
+                                    <div class="box-shadow brad-5 m-10" style="min-width:300px;min-height:200px;max-width:300px;">
+                                        <div>
+                                            <div class="grey-100-bg h-30 font-size-14 p-5 bb" layout="row">
+                                                <div class="mt-5 ml-5" ng-style="{'border-radius': '0px','background-color': jobGrp.colorCode, 'height': '10px', 'width': '15px'}"></div>
+                                                <div class="pl-10">{{jobGrp.title}}</div>
+                                            </div>
+                                            <div layout="row" layout-wrap>
+                                                <div ng-repeat="job in jobGrp.jobs" class="p-5 m-5 b brad-5">
+                                                    {{job.value}}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </msb-expand-collapse>
+
+    </div>
+</div>

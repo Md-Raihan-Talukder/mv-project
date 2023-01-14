@@ -1,0 +1,40 @@
+{
+    "data": [
+        {
+            "TECHDISER_ID": "Info_Owner_1",
+            "roleId": "card1",
+            "infoType": "buyer",
+            "infoTypeIds": [
+                "buyer1",
+                "buyer2"
+            ]
+        },
+        {
+            "TECHDISER_ID": "Info_Owner_2",
+            "roleId": "card1",
+            "infoType": "style",
+            "infoTypeIds": [
+                "enq_style_1",
+                "enq_style_2"
+            ]
+        },
+        {
+            "TECHDISER_ID": "Info_Owner_3",
+            "roleId": "card1",
+            "infoType": "product",
+            "infoTypeIds": [
+                "Product_Casual_Leather",
+                "sawfdsfdsfe"
+            ]
+        },
+        {
+            "TECHDISER_ID": "Info_Owner_4",
+            "roleId": "card1",
+            "infoType": "zone",
+            "infoTypeIds": [
+                "MAR_Zone_1",
+                "MAR_Zone_2"
+            ]
+        }
+    ]
+}

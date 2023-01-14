@@ -1,0 +1,146 @@
+<div id="export-inco" class="content page-layout simple inco-mainnav" layout="row">
+    <md-sidenav class="main-sidenav" md-component-id="main-sidenav" md-is-locked-open="$mdMedia('gt-md') && vm.leftNavPined" ng-include="'app/main/systemsettings/export-inco/sidenavs/main/main-sidenav.html'" ms-scroll ms-sidenav-helper>
+    </md-sidenav>
+    <div class="content">
+        <md-tabs md-dynamic-height class="tabs" md-selected="0">
+            <md-tab label="Definition">
+                <md-divider></md-divider>
+                <div layout="column" flex>
+                    <div layout="row" flex>
+                        <div class="center" flex="65">
+                            <div layout="row" class="h-35 mt-10">
+                                <div flex="30">
+                                    <span class="md-subhead ml-10">{{vm.selectedIncoType.title}}</span>
+                                </div>
+                                <div class="ml-10 cursor-pointer">
+                                    <md-icon ng-if="!vm.selectedIncoType.isPortToPortTransport" md-font-icon="icon-checkbox-blank-outline" class="icon">
+                                    </md-icon>
+                                    <md-icon ng-if="vm.selectedIncoType.isPortToPortTransport" md-font-icon="icon-checkbox-marked-outline" class="icon md-accent">
+                                    </md-icon>
+                                    Transport required
+                                </div>
+                            </div>
+                            <md-divider></md-divider>
+                            <md-content class="content" flex ms-scroll>
+                                <div ng-include="'app/main/systemsettings/export-inco/list/list-view.html'"></div>
+                            </md-content>
+                        </div>
+                        <div flex="35" class="data-sidenav">
+                            <div layout="row" layout-align="start center" flex class="header font-size-16 section-head">
+                                <span flex>Data Sheet</span>
+                                <div class="p-15">
+                                    <a ng-click="vm.isExapndDataSheet=true; vm.dataSheet={}; vm.isNewDataSheet=true; vm.updateDataSheet=false">
+                                        <u>New</u>
+                                        <md-tooltip>
+                                            <span>New Data Sheet</span>
+                                        </md-tooltip>
+                                    </a>
+                                </div>
+                            </div>
+                            <md-divider></md-divider>
+                            <div ng-if="vm.isExapndDataSheet">
+                                <ms-widget flippable="false" layout="column" class="test-card">
+                                    <ms-widget-front class="white-bg p-5">
+                                        <div layout="row" layout-align="end center" flex>
+                                            <md-icon ng-click="vm.isExapndDataSheet=false" md-font-icon="icon-cancel" class="icon red-500-fg s14" style="position:relative; left:75px; top:-2px">
+                                            </md-icon>
+                                        </div>
+                                        <div flex class="description" layout="column" layout-align="start start">
+                                            <div>
+                                                <md-input-container class="md-block">
+                                                    <label>
+                                                        <span>Title</span>
+                                                    </label>
+                                                    <input class="md-subhead" name="Title" ng-model="vm.dataSheet.title" required autocomplete="off">
+                                                    <div ng-messages="categoryForm.title.$error" role="alert">
+                                                        <div ng-message="required">
+                                                            <span>Title is required</span>
+                                                        </div>
+                                                    </div>
+                                                </md-input-container>
+                                            </div>
+
+                                        </div>
+                                        <div layout="row" layout-align="end center" flex>
+                                            <div ng-if="vm.isExapndDataSheet">
+                                                <md-button ng-click="vm.saveDataSheet(vm.selectedIncoType, vm.dataSheet, vm.isNewDataSheet); vm.dataSheet={}" class="md-raised md-light-blue-200-bg font-size-10 text-bold h-25 w-60" style="line-height: 0px" aria-label="save">
+                                                    <span ng-if="vm.isNewDataSheet">Add</span><span ng-if="vm.updateDataSheet">Update</span>
+                                                </md-button>
+                                            </div>
+                                        </div>
+                                    </ms-widget-front>
+                                </ms-widget>
+                            </div>
+                            <div layout="column" flex class="p-10">
+                                <div class="widget-group" layout="row" layout-align="start center" flex="100" layout-wrap>
+                                    <ms-widget ng-repeat="dataSheet in vm.selectedIncoType.dataSheet" ng-click="vm.selectDataSheet(dataSheet)" ng-class="{'selected':vm.selectedDataSheet === dataSheet}" flippable="false" layout="column" class="test-card card-padding">
+                                        <ms-widget-front class="white-bg p-5 h-auto w-175">
+                                            <div layout="row" flex="100">
+                                                <div layout="column" flex="90">
+                                                    <div class="line-height-small">{{dataSheet}}</div>
+                                                </div>
+                                                <div ng-if="vm.selectedDataSheet === dataSheet" flex="10" layout="column" layout-align="center end">
+                                                    <md-icon ng-click="vm.deleteDataSheet(vm.selectedIncoType, dataSheet)" md-font-icon="icon-cancel" class="icon red-500-fg s14" style="position:relative; left:0px; top:0px">
+                                                    </md-icon>
+                                                    <md-icon ng-click="vm.isExapndDataSheet=true" md-font-icon="icon-pencil" class="icon md-accent s14" style="position:relative; left:0px; top:5px">
+                                                    </md-icon>
+                                                    <div flex></div>
+                                                </div>
+                                            </div>
+                                        </ms-widget-front>
+                                    </ms-widget>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </md-tab>
+            <md-tab label="Document">
+                <md-divider></md-divider>
+                <div layout="column" flex>
+                    <div layout="row" layout-align="start center" flex class="md-subhead ml-20 h-45">
+                        <div class="" flex="90">
+                            <span>Documents</span>
+                        </div>
+                        <div flex="10">
+                            <md-button class="md-icon-button mb-10" aria-label="Add" ng-click="vm.addTypeDocument(vm.typeDocument, true)">
+                                <md-icon class="md-background md-accent" md-font-icon="icon-plus-box"></md-icon>
+                                <md-tooltip><span>Add Document</span></md-tooltip>
+                            </md-button>
+                        </div>
+                    </div>
+                    <md-divider></md-divider>
+                    <div flex>
+                        <div class="widget-group ml-10" layout="row" flex="100" layout-wrap>
+                            <ms-widget ng-repeat="document in vm.inCoDocumentDefs" class="tags card-document" ng-click="vm.selectDocument(document)" ng-class="{'selected':vm.selectedDocument.TECHDISER_ID === document.TECHDISER_ID}" flippable="false" layout="column">
+                                <ms-widget-front class="white-bg h-auto w-500 tags m-5 p-5">
+                                    <div layout="column" flex="100" class="p-5">
+                                        <div layout="row" class="">
+                                            <div flex="95">
+                                                <div class="user-list-sidenav-user-info">Title: <strong>{{document.title}}</strong></div>
+                                                <div class="user-list-sidenav-user-info">Purpose: {{document.purpose}}</div>
+                                            </div>
+                                            <div flex="5">
+                                                <md-icon ng-click="vm.addTypeDocument(document, false); $event.stopPropagation()" md-font-icon="icon-pencil" class="s16 md-accent" style="position:relative; border-radius:100px; left:10px">
+                                                </md-icon>
+                                            </div>
+                                        </div>
+                                        <div ms-scroll class="h-auto">
+                                            <td-attachments item-list="document.templates" type="attachment" self="true">
+                                            </td-attachments>
+                                        </div>
+                                    </div>
+                                </ms-widget-front>
+                            </ms-widget>
+                        </div>
+                    </div>
+                </div>
+            </md-tab>
+        </md-tabs>
+
+    </div>
+
+    <md-sidenav class="sidenav type-details-sidenav md-sidenav-right" md-is-locked-open="$mdMedia('gt-md')" md-component-id="details-sidenav" ng-include="'app/main/systemsettings/export-inco/sidenavs/details/shipment-type-document-sidenav.html'" ms-scroll ms-sidenav-helper>
+    </md-sidenav>
+
+</div>

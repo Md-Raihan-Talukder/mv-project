@@ -1,0 +1,32 @@
+<md-content class="content" flex ms-scroll>
+    <div class="center" layout="column" flex>
+        <div layout="row" layout-align="start center" flex class="md-subhead ml-20 h-45">
+            <!-- <div flex>{{vm.selectedIncoType.title}}</div> -->
+            <div flex ng-if="vm.selectedInCoTypeStep">
+                <a ng-click="vm.selectTypeDocumentDialog(vm.selectedInCoTypeStep.documentId)" class="md-background md-accent" aria-label="Add">
+                    <u>Select Document</u>
+                    <md-tooltip><span>Select Document</span></md-tooltip>
+                </a>
+            </div>
+        </div>
+        <md-divider></md-divider>
+
+        <div flex>
+            <div class="widget-group ml-10" layout="row" flex="100" layout-wrap>
+                <ms-widget ng-repeat="document in vm.inCoDocumentDefs | filter: vm.filterBySelectedDocuments" ng-click="vm.selectTypeDocument(document)" ng-class="{'selected':vm.selectedTypeDocument.TECHDISER_ID === document.TECHDISER_ID}" class="tags card-document" flippable="false" layout="column">
+                    <ms-widget-front class="white-bg h-auto w-250 tags m-5 p-5">
+                        <div layout="column" flex="100" class="p-5">
+                            <div class="user-list-sidenav-user-info">Title: {{document.title}}</div>
+                            <div class="user-list-sidenav-user-info">Purpose: {{document.purpose}}</div>
+                            <!-- <div ms-scroll class="h-auto">
+                                <td-attachments item-list="document.templates" type="attachment" self="true">
+                               </td-attachments>
+                            </div> -->
+                        </div>
+                    </ms-widget-front>
+                </ms-widget>
+            </div>
+        </div>
+
+    </div>
+</md-content>

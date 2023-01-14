@@ -1,0 +1,156 @@
+{
+    "data": [
+        {
+            "TECHDISER_ID": "Stitch1",
+            "TECHDISER_SERIAL_NO": 1,
+            "title": "Chain Stitch",
+            "description": "Class-100",
+            "stitchImage": [],
+            "threads": [
+                {
+                    "TECHDISER_ID": "ThreadPosition11",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "position": "Top",
+                    "consumptionPerMeter": 11,
+                    "description": "Thread11 Description"
+                },
+                {
+                    "TECHDISER_ID": "ThreadPosition12",
+                    "TECHDISER_SERIAL_NO": 2,
+                    "position": "Bottom",
+                    "consumptionPerMeter": 12,
+                    "description": "Thread12 Description"
+                },
+                {
+                    "TECHDISER_ID": "ThreadPosition61",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "position": "Bottom Left",
+                    "consumptionPerMeter": 61,
+                    "description": "Thread61 Description"
+                },
+                {
+                    "TECHDISER_ID": "ThreadPosition62",
+                    "TECHDISER_SERIAL_NO": 2,
+                    "position": "Top Right",
+                    "consumptionPerMeter": 62,
+                    "description": "Thread62 Description"
+                }
+            ]
+        },
+        {
+            "TECHDISER_ID": "Stitch2",
+            "TECHDISER_SERIAL_NO": 2,
+            "title": "Hand Stitch",
+            "description": "Class-200",
+            "stitchImage": [],
+            "threads": [
+                {
+                    "TECHDISER_ID": "ThreadPosition21",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "position": "Top Left",
+                    "consumptionPerMeter": 21,
+                    "description": "Thread21 Description"
+                },
+                {
+                    "TECHDISER_ID": "ThreadPosition22",
+                    "TECHDISER_SERIAL_NO": 2,
+                    "position": "Bottom Right",
+                    "consumptionPerMeter": 22,
+                    "description": "Thread22 Description"
+                }
+            ]
+        },
+        {
+            "TECHDISER_ID": "Stitch3",
+            "TECHDISER_SERIAL_NO": 3,
+            "title": "Lock Stitch",
+            "description": "Class-300",
+            "stitchImage": [],
+            "threads": [
+                {
+                    "TECHDISER_ID": "ThreadPosition31",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "position": "Top Right",
+                    "consumptionPerMeter": 31,
+                    "description": "Thread31 Description"
+                },
+                {
+                    "TECHDISER_ID": "ThreadPosition32",
+                    "TECHDISER_SERIAL_NO": 2,
+                    "position": "Bottom Left",
+                    "consumptionPerMeter": 32,
+                    "description": "Thread32 Description"
+                }
+            ]
+        },
+        {
+            "TECHDISER_ID": "Stitch4",
+            "TECHDISER_SERIAL_NO": 4,
+            "title": "Multi Thread Stitch",
+            "description": "Class-400",
+            "stitchImage": [],
+            "threads": [
+                {
+                    "TECHDISER_ID": "ThreadPosition41",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "position": "Bottom",
+                    "consumptionPerMeter": 41,
+                    "description": "Thread41 Description"
+                },
+                {
+                    "TECHDISER_ID": "ThreadPosition42",
+                    "TECHDISER_SERIAL_NO": 2,
+                    "position": "Top",
+                    "consumptionPerMeter": 42,
+                    "description": "Thread42 Description"
+                }
+            ]
+        },
+        {
+            "TECHDISER_ID": "Stitch5",
+            "TECHDISER_SERIAL_NO": 5,
+            "title": "Over Edge Stitch",
+            "description": "Class-500",
+            "stitchImage": [],
+            "threads": [
+                {
+                    "TECHDISER_ID": "ThreadPosition51",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "position": "Bottom Right",
+                    "consumptionPerMeter": 51,
+                    "description": "Thread51 Description"
+                },
+                {
+                    "TECHDISER_ID": "ThreadPosition52",
+                    "TECHDISER_SERIAL_NO": 2,
+                    "position": "Top Left",
+                    "consumptionPerMeter": 52,
+                    "description": "Thread52 Description"
+                }
+            ]
+        },
+        {
+            "TECHDISER_ID": "Stitch6",
+            "TECHDISER_SERIAL_NO": 6,
+            "title": "Covering Chain Stitch",
+            "description": "Class-600",
+            "stitchImage": [],
+            "threads": [
+                {
+                    "TECHDISER_ID": "ThreadPosition61",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "position": "Bottom Left",
+                    "consumptionPerMeter": 61,
+                    "description": "Thread61 Description"
+                },
+                {
+                    "TECHDISER_ID": "ThreadPosition62",
+                    "TECHDISER_SERIAL_NO": 2,
+                    "position": "Top Right",
+                    "consumptionPerMeter": 62,
+                    "description": "Thread62 Description"
+                }
+            ]
+        }
+    ]
+}

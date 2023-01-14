@@ -1,0 +1,67 @@
+<md-dialog id="export-inco" class="shipment-dialog" aria-label="Shipment Type Dialog" data-drag="1" data-jqyoui-options jqyoui-draggable="{animate:true}">
+    <form>
+        <md-toolbar class="md-accent" style="cursor:pointer;">
+            <div class="md-toolbar-tools">
+                <div>
+                    <label>{{vm.title}}</label>
+                </div>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="vm.closeDialog()" aria-label="Close Dialog">
+                    <md-icon md-font-icon="icon-close"></md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+        <div layout="row" flex="100">
+            <div layout="column" flex="100" ms-scroll>
+                <md-dialog-content ms-scroll>
+                    <form name="addShipmentCountryForm" novalidate>
+                        <div layout="column">
+                            <!-- <div class="mb-10">
+                                <msb-form column-defs="vm.shipmentTypeColumns"
+                                    object-property="vm.shipmentType">
+
+                                </msb-form>
+                            </div> -->
+                            <div layout="column" layout-align="start start">
+                                <div>
+                                    <md-input-container class="md-block">
+                                        <label>
+                                            <span>Title</span>
+                                        </label>
+                                        <input class="md-subhead" name="title" ng-model="vm.shipmentCountry.title" required autocomplete="off">
+                                        <div ng-messages="addShipmentCountryForm.title.$error" role="alert">
+                                            <div ng-message="required">
+                                                <span>Title is required</span>
+                                            </div>
+                                        </div>
+                                    </md-input-container>
+                                </div>
+                                <!-- <div>
+                                     <md-input-container class="md-block">
+                                        <label>
+                                            <span>Description</span>
+                                        </label>
+                                        <input class="md-subhead" name="description"
+                                                ng-model="vm.testItem.description"  required autocomplete="off">
+                                        <div ng-messages="addShipmentCountryForm.description.$error" role="alert">
+                                            <div ng-message="required">
+                                                <span>Description is required</span>
+                                            </div>
+                                        </div>
+                                    </md-input-container>
+                                </div> -->
+                            </div>
+                        </div>
+                    </form>
+                </md-dialog-content>
+            </div>
+        </div>
+    </form>
+    <md-dialog-actions layout="row" layout-align="end center" class="h-50">
+        <div layout="row" layout-align="start center">
+            <md-button ng-disabled="!vm.shipmentCountry.title" ng-click="vm.addShipmentCountryDetail(vm.shipmentCountry)" class="send-button md-accent md-raised" ng-disabled="addShipmentCountryForm.$invalid" aria-label="SAVE">
+                <span ng-if="vm.isNew">Add</span><span ng-if="!vm.isNew">Update</span>
+            </md-button>
+        </div>
+    </md-dialog-actions>
+</md-dialog>

@@ -1,0 +1,26 @@
+<div class="msb-selectable cursor-pointer width-100-percent" ng-click="vm.selectItem()" ng-if="type==='label-only'" layout="column" layout-align="center center">
+    {{helperItems[1].label}}
+</div>
+
+<div class="msb-selectable cursor-pointer width-100-percent" ng-click="vm.selectItem()" ng-if="type !=='label-only'" style="min-height:50px;" layout="column" layout-align="center center">
+    <div class="width-100-percent h-25" ng-class="{'border-bottom': vm.items.length > 1}" ng-repeat="item in vm.items" layout="row" layout-align="start center">
+
+        <!-- <div class="ml-5 mr-10"
+                    ng-if="vm.getImageColumn()"> 
+                    <img ng-src="{{item[vm.getImageColumn()]}}" style=" max-height: 120px;" />
+                </div> -->
+
+        <div layout="column" layout-align="start center">
+
+            <div layout="row" layout-align="start center" layout-wrap>
+                <div class="mr-10" ng-if="col.type !== 'iconPicture'" ng-repeat="col in vm.listColumns">
+                    <span>{{col.label}}</span>
+                    <span ng-if="col.label.length">:</span>
+                    <span class="ml-5 " ng-class="{'font-weight-900': col.label.length}">{{item[col.key]}}</span>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>

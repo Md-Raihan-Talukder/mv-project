@@ -1,0 +1,158 @@
+<md-dialog id="assort-label" class="common-dialog" style="min-width: 800px; width: 0px;" aria-label="Card Card Dialog" data-drag="1" data-jqyoui-options jqyoui-draggable="{animate:true}">
+    <md-toolbar class="md-accent" style="cursor:pointer;">
+        <div class="md-toolbar-tools">
+            <div>
+                <label>Add Bar-Code</label>
+            </div>
+            <span flex></span>
+            <md-button class="md-icon-button" ng-click="vm.closeDialog()" aria-label="Close Dialog">
+                <md-icon md-font-icon="icon-close"></md-icon>
+            </md-button>
+        </div>
+    </md-toolbar>
+    <md-dialog-content class="m-0 p-0" ms-scroll style="min-height: 500px;">
+        <form name="labelForm">
+            <div class="p-10" layout="column" layout-align="start">
+                <div class="mb-20" layout="column" layout-align="start">
+                    <div layout="row" layout-align="start center">
+                        <div class="" style="width: 560px;" layout="row" layout-align="start center">
+                            <span class="font-size-16">Title:</span>
+                            <md-input-container class="md-block mr-20" flex-gt-sm>
+                                <input name="labelForm.title" ng-model="vm.barcode.title" required autocomplete="off">
+                            </md-input-container>
+                        </div>
+                        <div class="" layout="row" layout-align="start center">
+                            <md-icon ng-click="vm.setQrCode()" ng-if="vm.barcode.isQrCode == 1" md-font-icon="icon-checkbox-marked-outline">
+                            </md-icon>
+                            <md-icon ng-click="vm.setQrCode()" ng-if="vm.barcode.isQrCode == 0 || vm.barcode.isQrCode == undefined" md-font-icon="icon-checkbox-blank-outline">
+                            </md-icon>
+                            <span class="mr-10">QR Code</span>
+                        </div>
+                        <div class="" layout="row" layout-align="start center">
+                            <md-icon ng-click="vm.setBarcode()" ng-if="vm.barcode.isBarCode == 1" md-font-icon="icon-checkbox-marked-outline">
+                            </md-icon>
+                            <md-icon ng-click="vm.setBarcode()" ng-if="vm.barcode.isBarCode == 0 || vm.barcode.isBarCode == undefined" md-font-icon="icon-checkbox-blank-outline">
+                            </md-icon>
+                            <span class="mr-10">Barcode</span>
+                        </div>
+                    </div>
+
+                    <div class="msb-collapse-content">
+                        <msb-expand-collapse>
+                            <div class="msb-collapse-header grey-200-bg mb-5 h-40 b cursor-pointer" layout="row" layout-align="start center">
+                                <span class="p-10 grey-700-fg font-size-16">Package Marking Attributes</span>
+                            </div>
+                            <div class="msb-collapse-content">
+                                <div ng-repeat="packageMarkAttribute in vm.getPackageMarkAttributes()" layout="row">
+                                    <div class="p-10" layout="row">
+                                        <md-icon ng-click="vm.changeAttribute(packageMarkAttribute)" ng-if="vm.isExist(packageMarkAttribute)" md-font-icon="icon-checkbox-marked-outline">
+
+                                        </md-icon>
+                                        <md-icon ng-click="vm.changeAttribute(packageMarkAttribute)" ng-if="!vm.isExist(packageMarkAttribute)" md-font-icon="icon-checkbox-blank-outline">
+                                        </md-icon>
+                                        <span ng-click="vm.changeAttribute(packageMarkAttribute)">{{packageMarkAttribute.attributeTitle}}</span>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </msb-expand-collapse>
+                    </div>
+
+                    <div class="msb-collapse-content">
+                        <msb-expand-collapse>
+                            <div class="msb-collapse-header grey-200-bg mb-5 h-40 b cursor-pointer" layout="row" layout-align="start center">
+                                <span class="p-10 grey-700-fg font-size-16">Material Attributes</span>
+                            </div>
+                            <div class="msb-collapse-content">
+                                <div ng-repeat="matAttribute in vm.getMaterialAttributes()" layout="row">
+                                    <div class="p-10" layout="row">
+                                        <md-icon ng-click="vm.changeAttribute(matAttribute)" ng-if="vm.isExist(matAttribute)" md-font-icon="icon-checkbox-marked-outline">
+
+                                        </md-icon>
+                                        <md-icon ng-click="vm.changeAttribute(matAttribute)" ng-if="!vm.isExist(matAttribute)" md-font-icon="icon-checkbox-blank-outline">
+                                        </md-icon>
+                                        <span ng-click="vm.changeAttribute(matAttribute)">{{matAttribute.attributeTitle}}</span>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </msb-expand-collapse>
+                    </div>
+                    <div class="msb-collapse-content">
+                        <msb-expand-collapse>
+                            <div class="msb-collapse-header grey-200-bg mb-5 h-40 b cursor-pointer" layout="row" layout-align="start center">
+                                <span class="p-10 grey-700-fg font-size-16">Unit Packaging Attributes</span>
+                            </div>
+                            <div class="msb-collapse-content">
+                                <div ng-repeat="unitContainer in vm.getUnitContainers()" layout="column" layout-align="start">
+                                    <div class="h-35 grey-50-bg b" layout="row" layout-align="start center">
+                                        <span class="p-10">{{vm.getContainerTitle(unitContainer.containerId)}}</span>
+                                    </div>
+                                    <div ng-if="unitContainer[vm.primaryColumnName] == unitPackAttribute.sourceId" ng-repeat="unitPackAttribute in vm.getUnitPackagingAttributes()" layout="row">
+                                        <div class="p-10" layout="row">
+                                            <md-icon ng-click="vm.changeAttribute(unitPackAttribute)" ng-if="vm.isExist(unitPackAttribute)" md-font-icon="icon-checkbox-marked-outline">
+
+                                            </md-icon>
+                                            <md-icon ng-click="vm.changeAttribute(unitPackAttribute)" ng-if="!vm.isExist(unitPackAttribute)" md-font-icon="icon-checkbox-blank-outline">
+                                            </md-icon>
+                                            <span ng-click="vm.changeAttribute(unitPackAttribute)">{{unitPackAttribute.attributeTitle}}</span>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </msb-expand-collapse>
+                    </div>
+                    <div class="msb-collapse-content">
+                        <msb-expand-collapse>
+                            <div class="msb-collapse-header grey-200-bg mb-5 h-40 b cursor-pointer" layout="row" layout-align="start center">
+                                <span class="p-10 grey-700-fg font-size-16">Container Packaging Attributes</span>
+                            </div>
+                            <div class="msb-collapse-content">
+                                <div ng-repeat="container in vm.getContainers()">
+                                    <div class="h-35 grey-50-bg b" layout="row" layout-align="start center">
+                                        <span class="p-10">{{vm.getContainerTitle(container.containerId)}}</span>
+                                    </div>
+                                    <div ng-if="container[vm.primaryColumnName] == contPackAttribute.sourceId" ng-repeat="contPackAttribute in vm.getContainerPackagingAttributes()" layout="row">
+                                        <div class="p-10" layout="row">
+                                            <md-icon ng-click="vm.changeAttribute(contPackAttribute)" ng-if="vm.isExist(contPackAttribute)" md-font-icon="icon-checkbox-marked-outline">
+
+                                            </md-icon>
+                                            <md-icon ng-click="vm.changeAttribute(contPackAttribute)" ng-if="!vm.isExist(contPackAttribute)" md-font-icon="icon-checkbox-blank-outline">
+                                            </md-icon>
+                                            <span ng-click="vm.changeAttribute(contPackAttribute)">{{contPackAttribute.attributeTitle}}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </msb-expand-collapse>
+                    </div>
+
+                    <!-- <div class="mb-10 font-size-16 border-bottom">
+                        Attributes:
+                    </div>
+                    <div layout="row" layout-align="start center" layout-wrap>
+                        <div ng-repeat="attribute in vm.labelAttributes" class="w-270">
+                            <md-icon ng-click="vm.changeAttribute(attribute)" ng-if="vm.isExist(attribute)" md-font-icon="icon-checkbox-marked-outline">
+
+                            </md-icon>
+                            <md-icon ng-click="vm.changeAttribute(attribute)" ng-if="!vm.isExist(attribute)" md-font-icon="icon-checkbox-blank-outline">
+                            </md-icon>
+                            <span ng-click="vm.changeAttribute(attribute)">{{attribute.label}}</span>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </form>
+    </md-dialog-content>
+    <md-dialog-actions layout="row" layout-align="space-between center">
+        <div>
+
+        </div>
+        <div>
+            <md-button ng-disabled="labelForm.$invalid" ng-click="vm.ok()" class="send-button md-accent md-raised" aria-label="SAVE">
+                <span>Ok</span>
+            </md-button>
+        </div>
+    </md-dialog-actions>
+</md-dialog>

@@ -1,0 +1,70 @@
+{
+    "data": [
+        {
+            "TECHDISER_ID": "hdgfwye523reyte52yre27",
+            "organizationId": "Organization_1",
+            "moduleName": "Production",
+            "active": true,
+            "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "features": [
+                "RM",
+                "Requisition & Approval for Production",
+                "Cutting and send to Line",
+                "Artwork / Monitoring",
+                "PRINTING OR EMBROIDERY to/from Fact.",
+                "Line Input",
+                "Hourly Sewing Production",
+                "Send to WASHING",
+                "Receive from WASHING",
+                "Thread Cutting after wash",
+                "Final QC",
+                "Carton & Packing",
+                "Prepare Packing List"
+            ]
+        },
+        {
+            "TECHDISER_ID": "hdgfwye523reyte52yr7",
+            "organizationId": "0363.3e720236e9492.4d71bc74f9ea6.93a22ca1971ca.f2b8c820b9e76.50740bd55f51e.5d945f769",
+            "moduleName": "Accounting",
+            "active": false,
+            "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "features": [
+                "Accounting All Items",
+                "Requisition & Approval for Production",
+                "Cutting and send to Line",
+                "Artwork / Monitoring",
+                "PRINTING OR EMBROIDERY to/from Fact.",
+                "Line Input",
+                "Hourly Sewing Production",
+                "Send to WASHING",
+                "Receive from WASHING",
+                "Thread Cutting after wash",
+                "Final QC",
+                "Carton & Packing",
+                "Prepare Packing List"
+            ]
+        },
+        {
+            "TECHDISER_ID": "hdgfwye523rgeyte52yr7",
+            "organizationId": "0363.3e720236e9492.4d71bc74f9ea6.93a22ca1971ca.f2b8c820b9e76.50740bd55f51e.5d945f769",
+            "moduleName": "HR",
+            "active": false,
+            "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "features": [
+                "Human Resource",
+                "Requisition & Approval for Production",
+                "Cutting and send to Line",
+                "Artwork / Monitoring",
+                "PRINTING OR EMBROIDERY to/from Fact.",
+                "Line Input",
+                "Hourly Sewing Production",
+                "Send to WASHING",
+                "Receive from WASHING",
+                "Thread Cutting after wash",
+                "Final QC",
+                "Carton & Packing",
+                "Prepare Packing List"
+            ]
+        }
+    ]
+}

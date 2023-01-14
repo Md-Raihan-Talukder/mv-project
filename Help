@@ -1,0 +1,23 @@
+Pre-requisite:
+
+1. Install nodejs.
+2. Install bower globaly
+
+How to run:
+
+1. Clone source from bitbucket.
+2. Go to the root directory where the "package.json" file exists.
+3. Open terminal and run: "sudo nmp install".
+4. There will be some error related to phantomjs, ignore it 
+   or run, "sudo nmp install" again.   
+5. run, "bower install"   
+6. System will ask you to select jquery version, select 4.
+7. Rebuild node-sass: "sudo npm rebuild node-sass"
+8. Use this command if you find some gulp related error:
+
+	echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
+
+9. run "gulp serve" to run the system
+10.run "gulp build" to build the system 	
+
+

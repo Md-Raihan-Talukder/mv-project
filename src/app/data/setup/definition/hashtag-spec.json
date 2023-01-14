@@ -1,0 +1,67 @@
+{
+    "data": [
+        {
+            "TECHDISER_ID": "hashTag_spec_1",
+            "hashTag": "Cuff",
+            "styleDefs": [
+                {
+                    "TECHDISER_ID": "cuff_style_def_1",
+                    "style": "Mitred cuff",
+                    "description": "This classic wardrobe staple features a single button and sharp right angle corner."
+                },
+                {
+                    "TECHDISER_ID": "cuff_style_def_2",
+                    "style": "Standard cuff",
+                    "description": "angled cuff."
+                },
+                {
+                    "TECHDISER_ID": "cuff_style_def_3",
+                    "style": "French cuff",
+                    "description": "double cuff."
+                }
+            ]
+        },
+        {
+            "TECHDISER_ID": "hashTag_spec_2",
+            "hashTag": "Collar",
+            "styleDefs": [
+                {
+                    "TECHDISER_ID": "cuff_style_def_4",
+                    "style": "Straight point collar",
+                    "description": "The straight point collar."
+                },
+                {
+                    "TECHDISER_ID": "cuff_style_def_5",
+                    "style": "Semi spread collar",
+                    "description": "The semi spread collar."
+                },
+                {
+                    "TECHDISER_ID": "cuff_style_def_6",
+                    "style": "Cutaway collar.",
+                    "description": "The cutaway collar."
+                }
+            ]
+        },
+        {
+            "TECHDISER_ID": "hashTag_spec_3",
+            "hashTag": "Fabric",
+            "styleDefs": [
+                {
+                    "TECHDISER_ID": "cuff_style_def_7",
+                    "style": "Cotton Fabric.",
+                    "description": "Wide range of 100% natural cottons"
+                },
+                {
+                    "TECHDISER_ID": "cuff_style_def_8",
+                    "style": "Linen Fabric",
+                    "description": "Range of 100% natural linen"
+                },
+                {
+                    "TECHDISER_ID": "cuff_style_def_9",
+                    "style": "Jersey Fabric",
+                    "description": "Jersey Fabric"
+                }
+            ]
+        }
+    ]
+}

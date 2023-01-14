@@ -1,0 +1,19 @@
+﻿Pre-Sew Jobs Schedule
+
+
+e1. DayEndBalance(x,y) = DayStartBalance(x, y) + ProdQty(x, y) – IssueQty(x+1, y+1)
+
+e2. DayStartBalance(x+1, y) = DayEndBalance(x, y)
+
+e3. PreSewProdQty(x, y) = {ProdQty(x, y) : IssueQty(x+1, y+1) > DayStartQty(x, y)}
+
+
+
+Post-Sew Jobs Schedule
+
+
+e1. PostSewProdQty(x, y) = {ProdQty(x, y) : DayEndBalance(x-1, y-1) >= issueQty(x, y)}
+
+e2. DayEndBalance(x, y) = DayStartBalance(x, y) + ProdQty(x, y)
+
+e3. DayStartBalance(x, y)

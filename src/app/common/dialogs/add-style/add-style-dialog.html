@@ -1,0 +1,120 @@
+<md-dialog class="page-setup-dialog" aria-label="Tearms and conditions">
+    <form class="md-inline-form">
+        <md-toolbar class="md-accent md-hue-2">
+            <div class="md-toolbar-tools" layout="row" layout-align="space-between center">
+                <span class="title">Set style</span>
+                <md-button class="md-icon-button" ng-click="vm.closeDialog()" aria-label="Close dialog">
+                    <md-icon md-font-icon="icon-close"></md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+
+        <md-dialog-content ms-scroll>
+            <div layout-gt-sm="row" layout-align-gt-sm="start center" layout="column" layout-align="start start" ng-if="vm.type !=='row'">
+                <div layout-align="start center" layout="row" flex>
+                    <md-input-container class="mr-20">
+                        <label>Font size</label>
+                        <input ng-model="vm.style.fontSize" type="number" ng-min="1" step="1" aria-label="reminder">
+                    </md-input-container>
+                    <md-input-container class="mr-20">
+                        <label>Width</label>
+                        <input type="number" ng-min="0" step="1" ng-model="vm.style.width" type="text" aria-label="reminder">
+                    </md-input-container>
+
+                </div>
+
+                <div layout-align="start center" layout="row" flex>
+
+                    <md-checkbox ng-model="vm.style.isBold" aria-label="Remember Me" class="mt-15">
+                        <span>Bold</span>
+                    </md-checkbox>
+                    <md-checkbox ng-model="vm.style.isItalic" aria-label="Remember Me" class="mt-15" style="margin-left: 20px !important;">
+                        <span>Italic</span>
+                    </md-checkbox>
+                </div>
+
+            </div>
+
+            <div layout-gt-sm="row" layout-align-gt-sm="start center" layout="column" layout-align="start start" ng-if="vm.type !=='row'">
+                <div flex>
+                    <md-input-container class="md-block ">
+                        <label>Alignment</label>
+                        <md-select class="mr-20 w-300" name="pageSize" ng-model="vm.style.allignment" aria-label="datatype">
+                            <md-option>None</md-option>
+                            <md-option value="left">Left</md-option>
+                            <md-option value="right">Right</md-option>
+                            <md-option value="center">Center</md-option>
+                            <md-option value="justify">Justify</md-option>
+                        </md-select>
+                    </md-input-container>
+                </div>
+                <div flex>
+                    <md-input-container flex class="md-block">
+                        <label>Decoration</label>
+                        <md-select class="w-300" name="pageSize" ng-model="vm.style.decoration" aria-label="datatype">
+                            <md-option>None</md-option>
+                            <md-option value="underline">Underline</md-option>
+                            <md-option value="lineThrough">LineThrough</md-option>
+                            <md-option value="overline">Overline</md-option>
+                        </md-select>
+                    </md-input-container>
+                </div>
+
+
+            </div>
+
+
+            <div layout-gt-sm="row" layout-align-gt-sm="start center" layout="column" layout-align="start start">
+                <div flex>
+                    <label class="mr-20">Margins:</label>
+                    <md-input-container>
+                        <label>Left</label>
+                        <input class="w-50 mr-10" ng-model="vm.style.margins[0]" type="number" ng-min="0" step="1" aria-label="reminder">
+                    </md-input-container>
+                    <md-input-container>
+                        <label>Top</label>
+                        <input class="w-50 mr-10" ng-model="vm.style.margins[1]" type="number" ng-min="0" step="1" aria-label="reminder">
+                    </md-input-container>
+                    <md-input-container>
+                        <label>Right</label>
+                        <input class="w-50 mr-10" ng-model="vm.style.margins[2]" type="number" ng-min="0" step="1" aria-label="reminder">
+                    </md-input-container>
+                    <md-input-container>
+                        <label>Bottom</label>
+                        <input class="w-50 mr-10" ng-model="vm.style.margins[3]" type="number" ng-min="0" step="1" aria-label="reminder">
+                    </md-input-container>
+                </div>
+
+                <div flex>
+                    <md-input-container class="mr-20">
+                        <label>Colspan</label>
+                        <input type="number" ng-min="0" step="1" ng-model="vm.style.colSpan" type="text" aria-label="reminder">
+                    </md-input-container>
+                </div>
+
+
+            </div>
+
+            <div layout-gt-sm="row" layout-align-gt-sm="start center" layout="column" layout-align="start start" ng-if="vm.type ==='row'">
+
+                <div layout-align="start center" layout="row" flex>
+                    <md-checkbox ng-model="vm.style.drawLine" aria-label="Remember Me" class="mt-15" style="margin-left: 20px !important;">
+                        <span>Draw Line</span>
+                    </md-checkbox>
+                </div>
+
+            </div>
+        </md-dialog-content>
+
+        <md-dialog-actions layout-gt-sm="row" layout-align-gt-sm="start center" layout="column" layout-align="start start">
+            <md-button ng-click="vm.saveSetup()" class="md-accent md-raised" aria-label="save">
+                OK
+            </md-button>
+
+            <md-button ng-click="vm.closeDialog()" class="close-button md-accent md-raised" aria-label="Close">
+                CLOSE
+            </md-button>
+
+        </md-dialog-actions>
+    </form>
+</md-dialog>

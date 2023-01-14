@@ -1,0 +1,270 @@
+<md-dialog class="layout-dialog" aria-label="Dialog" data-drag="true" jqyoui-draggable="{animate:true}" data-jqyoui-options="{ handle: '.drag-handle'}">
+
+    <md-toolbar class="md-accent drag-handle">
+
+        <div class="md-toolbar-tools" layout="row" layout-align="space-between center">
+            <span class="title">Template </span>
+
+            <md-button class="md-icon-button" ng-click="vm.closeDialog()">
+                <md-icon md-font-icon="icon-close" aria-label="Close dialog"></md-icon>
+            </md-button>
+        </div>
+
+    </md-toolbar>
+
+    <md-dialog-content style="min-height: 600px;" ms-scroll>
+        <md-tabs md-dynamic-height class="tabs">
+            <md-tab label="Template">
+                <div layout="row" flex="100">
+                    <div class="shadow-right" flex="50" ms-scroll>
+                        <div class="content">
+
+                            <div class="mt-5 grey-700-fg grey-200-bg b p-10 text-bold font-size-16 border-bottom">
+                                Package Marking
+                            </div>
+                            <div layout="row" layout-wrap class="p-10">
+                                <div class="p-10 border m-5" ng-repeat="packageMarkAttribute in vm.matAttributes.packageMarkAttributes" layout="row" layout-align="start center" ng-init="dragInfo = { type:'static', attr : packageMarkAttribute}" data-drag="true" data-jqyoui-options="{revert: 'invalid', helper: 'clone', appendTo: 'body', handle: '.material-handle'}" jqyoui-draggable="{animate:true}">
+
+                                    <div class="w-15 material-handle cursor-pointer" ng-click="vm.preventDefault($event)" ;>
+                                        <md-icon md-font-icon="icon-drag" class="icon">
+                                        </md-icon>
+                                    </div>
+
+                                    <span class="p-5 ml-10">{{packageMarkAttribute.attributeTitle}}</span>
+                                </div>
+                            </div>
+
+                            <div class="mt-5 grey-700-fg grey-200-bg b p-10 text-bold font-size-16 border-bottom">
+                                Bar Code
+                            </div>
+                            <div layout="row" layout-wrap class="p-10">
+                                <div class="p-10 border m-5" ng-repeat="barcodeAttribute in vm.matAttributes.barcodeAttributes" layout="row" layout-align="start center" ng-init="dragInfo = { type:'static', attr : barcodeAttribute}" data-drag="true" data-jqyoui-options="{revert: 'invalid', helper: 'clone', appendTo: 'body', handle: '.material-handle'}" jqyoui-draggable="{animate:true}">
+
+                                    <div class="w-15 material-handle cursor-pointer" ng-click="vm.preventDefault($event)" ;>
+                                        <md-icon md-font-icon="icon-drag" class="icon">
+                                        </md-icon>
+                                    </div>
+
+                                    <span class="p-5 ml-10">{{barcodeAttribute.attributeTitle}}</span>
+                                </div>
+                            </div>
+
+                            <div class="mt-5 grey-700-fg grey-200-bg b p-10 text-bold font-size-16 border-bottom">
+                                Material Attributes
+                            </div>
+                            <div layout="row" layout-wrap class="p-10">
+                                <div class="p-10 border m-5" ng-repeat="matAttribute in vm.matAttributes.materialAttributes" layout="row" layout-align="start center" ng-init="dragInfo = { type:'static', attr : matAttribute}" data-drag="true" data-jqyoui-options="{revert: 'invalid', helper: 'clone', appendTo: 'body', handle: '.material-handle'}" jqyoui-draggable="{animate:true}">
+
+                                    <div class="w-15 material-handle cursor-pointer" ng-click="vm.preventDefault($event)" ;>
+                                        <md-icon md-font-icon="icon-drag" class="icon">
+                                        </md-icon>
+                                    </div>
+
+                                    <span class="p-5 ml-10">{{matAttribute.attributeTitle}}</span>
+                                </div>
+                            </div>
+
+                            <div class="mt-5 grey-700-fg grey-200-bg b p-10 text-bold font-size-16 border-bottom">
+                                Container Packing Attributes
+                            </div>
+                            <div layout="row" layout-wrap class="p-10">
+                                <div class="p-10 border m-5" ng-repeat="contAttribute in vm.matAttributes.containerPackagingAttributes" layout="row" layout-align="start center" ng-init="dragInfo = { type:'static', attr : contAttribute}" data-drag="true" data-jqyoui-options="{revert: 'invalid', helper: 'clone', appendTo: 'body', handle: '.material-handle'}" jqyoui-draggable="{animate:true}">
+
+                                    <div class="w-15 material-handle cursor-pointer" ng-click="vm.preventDefault($event)" ;>
+                                        <md-icon md-font-icon="icon-drag" class="icon">
+                                        </md-icon>
+                                    </div>
+
+                                    <span class="p-5 ml-10">{{contAttribute.attributeTitle}}</span>
+                                </div>
+                            </div>
+
+                            <div class="mt-5 grey-700-fg grey-200-bg b p-10 text-bold font-size-16 border-bottom">
+                                Unit Packing Attributes
+                            </div>
+                            <div layout="row" layout-wrap class="p-10">
+                                <div class="p-10 border m-5" ng-repeat="unitAttribute in vm.matAttributes.unitPackagingAttributes" layout="row" layout-align="start center" ng-init="dragInfo = { type:'static', attr : unitAttribute}" data-drag="true" data-jqyoui-options="{revert: 'invalid', helper: 'clone', appendTo: 'body', handle: '.material-handle'}" jqyoui-draggable="{animate:true}">
+
+                                    <div class="w-15 material-handle cursor-pointer" ng-click="vm.preventDefault($event)" ;>
+                                        <md-icon md-font-icon="icon-drag" class="icon">
+                                        </md-icon>
+                                    </div>
+
+                                    <span class="p-5 ml-10">{{unitAttribute.attributeTitle}}</span>
+                                </div>
+                            </div>
+
+                            <div class="grey-700-fg grey-200-bg b p-10 text-bold font-size-16">
+                                Text
+                            </div>
+
+                            <div layout="row" layout-wrap class="p-10">
+                                <div class=" border" layout="row" layout-align="start center" ng-init="dragInfo = { 'type':'staticText', 'staticText': staticText}" data-drag="true" data-jqyoui-options="{revert: 'invalid', helper: 'clone', appendTo: 'body', handle: '.material-handle'}" jqyoui-draggable="{animate:true}">
+
+                                    <div class="w-35 ml-10 material-handle cursor-pointer" ng-click="vm.preventDefault($event)" ;>
+                                        <md-icon md-font-icon="icon-drag" class="icon">
+                                        </md-icon>
+                                    </div>
+                                    <md-input-container class="w-300" md-no-float class="md-block">
+                                        <input ng-model="staticText.text" placeholder="Text">
+                                    </md-input-container>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="shadow-right" flex="50" ms-scroll>
+                        <div>
+                            <md-button ng-click="vm.createNewRow()" class="b md-accent" style="border-color: #009999;" aria-label="Use Android">
+                                <!-- <md-icon md-font-icon="icon-plus"></md-icon> -->
+                                Add Row
+                            </md-button>
+                        </div>
+
+                        <div layout="column" layout-align="start start" style="width: 100%;" ng-if="vm.label.template">
+
+                            <div flex ng-repeat="row in vm.label.template.rows" style="width: 100%;" layout="row" layout-wrap layout-align="start center" class="border p-5 mb-10 grey-200-bg " ng-class="row.class" ng-style="{{row.style}}">
+
+                                <div flex="100/row.columns.length" ng-repeat="col in row.columns" ng-class="col.class" ng-style="{{col.style}}" class="border p-5 " layout="row" layout-align="start center">
+
+                                    <div flex layout="column" layout-align="start start">
+
+
+                                        <div ng-repeat="hSegment in col.hSegments" style="width: 100%;" ng-class="hSegment.class" ng-style="{{hSegment.style}}" class="border p-5 " layout="row" layout-align="start center" flex>
+
+                                            <div ng-repeat="vSegment in hSegment.vSegments" class="border p-5 white-bg  " layout="row" layout-align="start center" ng-click="vm.addDef($event, vSegment)" flex="100/hSegment.vSegments.length" data-drop="true" data-jqyoui-options="{tolerance: 'pointer'}" jqyoui-droppable="{onDrop:'vm.onDrop'}">
+
+
+                                                <div flex style="width: 100%;">
+                                                    <div ng-if="vSegment.type === 'static'" ng-class="vSegment.class" ng-style="{{vSegment.style}}">
+                                                        <span>{{vSegment.value}}</span>
+                                                    </div>
+                                                    <div ng-if="vSegment.type === 'column'" ng-class="vSegment.class" ng-style="{{vSegment.style}}">
+                                                        <span>{{vSegment.colPropertyCode}}</span>
+                                                    </div>
+
+                                                    <div ng-if="!vSegment.value && !vSegment.colPropertyCode" ng-class="vSegment.class" ng-style="{{vSegment.style}}">
+                                                        <span>Define value</span>
+                                                    </div>
+
+                                                </div>
+
+                                                <md-menu>
+                                                    <md-icon md-font-icon="icon-dots-vertical" class="cursor-pointer" ng-click="$mdOpenMenu($event)"></md-icon>
+
+                                                    <md-menu-content width="3">
+                                                        <md-menu-item ng-if="hSegment.vSegments.length>1">
+                                                            <md-button aria-label="Toggle done" ng-click="vm.removeVsegment($event, hSegment, vSegment)">
+                                                                <span>Remove Vertical Segment</span>
+                                                            </md-button>
+                                                        </md-menu-item>
+                                                        <md-menu-item>
+                                                            <md-button aria-label="Toggle done" ng-click="vm.addStyle(null, null, null, vSegment, 'vSegment')">
+                                                                <span>Add Style</span>
+                                                            </md-button>
+                                                        </md-menu-item>
+                                                    </md-menu-content>
+                                                </md-menu>
+
+                                            </div>
+
+                                            <md-menu>
+                                                <md-icon md-font-icon="icon-dots-vertical" class="cursor-pointer" ng-click="$mdOpenMenu($event)"></md-icon>
+
+                                                <md-menu-content width="3">
+                                                    <md-menu-item>
+                                                        <md-button aria-label="Toggle done" ng-click="vm.addNewVSegment($event, hSegment)">
+                                                            <span>Add Vertical Segment</span>
+                                                        </md-button>
+                                                    </md-menu-item>
+                                                    <md-menu-item ng-if="col.hSegments.length>1">
+                                                        <md-button aria-label="Toggle done" ng-click="vm.removeHsegment($event, col, hSegment)">
+                                                            <span>Remove Horizontal Segment</span>
+                                                        </md-button>
+                                                    </md-menu-item>
+                                                    <md-menu-item>
+                                                        <md-button aria-label="Toggle done" ng-click="vm.addStyle(null, null, hSegment, null, 'hSegment')">
+                                                            <span>Add Style</span>
+                                                        </md-button>
+                                                    </md-menu-item>
+                                                </md-menu-content>
+                                            </md-menu>
+
+                                        </div>
+                                    </div>
+
+                                    <md-menu>
+                                        <md-icon md-font-icon="icon-dots-vertical" class="cursor-pointer" ng-click="$mdOpenMenu($event)"></md-icon>
+
+                                        <md-menu-content width="3">
+                                            <md-menu-item>
+                                                <md-button aria-label="Toggle done" ng-click="vm.addNewHSegment($event, col)">
+                                                    <span>Add Horizontal Segment</span>
+                                                </md-button>
+                                            </md-menu-item>
+                                            <md-menu-item ng-if="row.columns.length>1">
+                                                <md-button aria-label="Toggle done" ng-click="vm.removeColumn($event, row, col)">
+                                                    <span>Remove Column</span>
+                                                </md-button>
+                                            </md-menu-item>
+                                            <md-menu-item>
+                                                <md-button aria-label="Toggle done" ng-click="vm.addStyle(null, col, null, null, 'column')">
+                                                    <span>Add Style</span>
+                                                </md-button>
+                                            </md-menu-item>
+                                        </md-menu-content>
+                                    </md-menu>
+
+                                </div>
+
+                                <md-menu>
+                                    <md-icon md-font-icon="icon-dots-vertical" class="cursor-pointer" ng-click="$mdOpenMenu($event)"></md-icon>
+
+                                    <md-menu-content width="3">
+                                        <md-menu-item>
+                                            <md-button aria-label="Toggle done" ng-click="vm.addNewColumn($event, row)">
+                                                <span>Add Column</span>
+                                            </md-button>
+                                        </md-menu-item>
+                                        <md-menu-item>
+                                            <md-button aria-label="Toggle done" ng-click="vm.removeRow($event, vm.template, row)">
+                                                <span>Remove Row</span>
+                                            </md-button>
+                                        </md-menu-item>
+                                        <md-menu-item>
+                                            <md-button aria-label="Toggle done" ng-click="vm.addStyle(row, null, null, null, 'row')">
+                                                <span>Add Style</span>
+                                            </md-button>
+                                        </md-menu-item>
+                                    </md-menu-content>
+                                </md-menu>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </md-tab>
+            <md-tab ng-click="vm.setStripDef()" label="Preview">
+                <div class="b mt-10" ng-if="vm.stripDef">
+                    <msb-strip-form strip-columns="vm.labelColumns" strips="vm.strips" row-height="vm.rowHeight" strip-object="vm.stripObject" strip-def="vm.stripDef" on-change="vm.onChangeValue(column, strip, isAuto)">
+                    </msb-strip-form>
+                </div>
+            </md-tab>
+        </md-tabs>
+    </md-dialog-content>
+
+
+    <md-dialog-actions layout="row" layout-align="space-between center">
+
+        <md-button ng-click="vm.onOk()" class="md-accent md-raised" aria-label="SAVE">
+            OK
+        </md-button>
+
+        <md-button ng-click="vm.closeDialog()" class="md-raised" aria-label="Close">
+            Cancel
+        </md-button>
+
+    </md-dialog-actions>
+
+
+</md-dialog>

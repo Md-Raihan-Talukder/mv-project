@@ -1,0 +1,88 @@
+<div ng-repeat="hSegment in columnData.hSegments" layout="row" layout-align="start space-between" layout-wrap class="border">
+
+    <div class="tags border-right" flex layout="row" ng-repeat="vSegment in hSegment.vSegments" ng-click="vm.editSegment($event, vSegment, hSegment);
+			 vm.preventDefault($event)" layout-align="start space-between" layout-wrap class="border">
+        <div flex style="padding: 9px; font-weight:400">
+            <span>{{vSegment.dataValue}}</span>
+        </div>
+
+
+        <md-menu>
+            <md-button class="md-icon-button" aria-label="More">
+                <md-icon md-font-icon="icon-dots-vertical" ng-click="$mdOpenMenu($event)"></md-icon>
+            </md-button>
+
+            <md-menu-content width="3">
+                <md-menu-item>
+                    <md-button aria-label="Toggle done" ng-click="vm.editSegment($event, vSegment, hSegment)">
+                        <span>Edit segment</span>
+                    </md-button>
+                </md-menu-item>
+
+                <md-menu-item ng-if="rowData.columns.length>1">
+                    <md-button ng-click="vm.addNewHSegment(columnData)" aria-label="Toggle done">
+                        <span>Add horizontal segment</span>
+                    </md-button>
+                </md-menu-item>
+
+                <md-menu-item ng-if="columnData.hSegments.length>1">
+                    <md-button ng-click="vm.addNewVSegment(hSegment)" aria-label="Toggle done">
+                        <span>Add vertical segment</span>
+                    </md-button>
+                </md-menu-item>
+
+                <md-menu-item ng-if="hSegment.vSegments.length>1">
+                    <md-button aria-label="Toggle done" ng-click="vm.removeVSegment($event, vSegment, hSegment)">
+                        <span>Remove vertical segment</span>
+                    </md-button>
+                </md-menu-item>
+
+                <md-menu-item ng-if="columnData.hSegments.length>1">
+                    <md-button aria-label="Toggle done" ng-click="vm.removeHSegment($event, hSegment)">
+                        <span>Remove horizontal segment</span>
+                    </md-button>
+                </md-menu-item>
+
+                <md-menu-divider ng-if="columnData.hSegments.length>1">
+
+                </md-menu-divider>
+
+                <!-- <md-menu-item  ng-if= "hSegment.vSegments.length>1">
+		                            <md-button aria-label="Toggle done"
+		                            ng-click="vm.showColumnStyleDialog($event, pdfColumnData,
+		                             hSegment, vSegment, 'vSegment')">
+		                                <span>Style vertical segment</span>
+		                            </md-button>
+		                        </md-menu-item> -->
+
+                <md-menu-item ng-if="columnData.hSegments.length>1">
+                    <md-button aria-label="Toggle done" ng-click="vm.showColumnStyleDialog($event, columnData,
+		                             hSegment, vSegment, 'hSegment')">
+                        <span>Style horizontal segment</span>
+                    </md-button>
+                </md-menu-item>
+                <md-menu-item ng-if="rowData.columns.length>1">
+                    <md-button ng-click="vm.showColumnStyleDialog($event, columnData, 
+		                              hSegment, vSegment, 'column')" aria-label="detail">
+                        <span>Style column</span>
+                    </md-button>
+                </md-menu-item>
+
+                <md-menu-divider ng-if="rowData.columns.length>1">
+
+                </md-menu-divider>
+
+
+                <md-menu-item ng-if="rowData.columns.length>1">
+                    <md-button ng-click="vm.removeColumn($event, columnData)" aria-label="detail">
+                        <span>Remove column</span>
+                    </md-button>
+                </md-menu-item>
+
+            </md-menu-content>
+
+        </md-menu>
+    </div>
+
+
+</div>

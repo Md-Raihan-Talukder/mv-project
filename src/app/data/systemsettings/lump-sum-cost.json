@@ -1,0 +1,42 @@
+{
+    "data": [
+        {
+            "TECHDISER_ID": "LumpSumCost_MaterialType1",
+            "TECHDISER_SERIAL_NO": 1,
+            "materialCategoryId": "SupplyDefinitionMaterialCategory1",
+            "materialTypeId": "SupplyDefinitionMaterialType1",
+            "lastUpdatedData": "21.04.2018",
+            "Color": "White",
+            "Width": 60,
+            "Length": 100,
+            "Composition": "94 X 6",
+            "Weight": 55,
+            "countryWiseUnitCost": [
+                {
+                    "TECHDISER_ID": "CountryUnitCost1",
+                    "TECHDISER_SERIAL_NO": 1,
+                    "shipmentCountryId": "CountryZone1",
+                    "unitCost": 0
+                },
+                {
+                    "TECHDISER_ID": "CountryUnitCost2",
+                    "TECHDISER_SERIAL_NO": 2,
+                    "shipmentCountryId": "CountryZone2",
+                    "unitCost": 1
+                },
+                {
+                    "TECHDISER_ID": "CountryUnitCost3",
+                    "TECHDISER_SERIAL_NO": 3,
+                    "shipmentCountryId": "CountryZone3",
+                    "unitCost": 2
+                },
+                {
+                    "TECHDISER_ID": "CountryUnitCost4",
+                    "TECHDISER_SERIAL_NO": 4,
+                    "shipmentCountryId": "CountryZone4",
+                    "unitCost": 3
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,19 @@
+<md-dialog class="galary-dialog" aria-label="galary-dialog">
+    <md-dialog-content ms-scroll class="content" layout="column" layout-align="center  top">
+        <md-button class="md-icon-button maximage-close-dialog" ng-click="vm.closeDialog();" aria-label="Close dialog">
+            <md-icon md-font-icon="icon-close-circle" class="icon"></md-icon>
+        </md-button>
+        <img id="maxdialog-image" ng-src="{{vm.image.src}}" alt="{{vm.image.alt}}" />
+
+        <div ng-if="vm.image.info" class="info white-fg ph-5 pv-5">
+            <div class="title md-subhead" ng-if="vm.image.info.title">
+                {{vm.image.info.title}}
+            </div>
+
+            <div class="text" style="width:{{vm.getWidth()}}px; margin-top: 10px;" ng-if="vm.image.info.desc">
+                {{vm.image.info.desc}}
+            </div>
+        </div>
+
+    </md-dialog-content>
+</md-dialog>

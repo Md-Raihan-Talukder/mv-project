@@ -1,0 +1,133 @@
+<md-input-container class="md-block  mr-20" ng-if="vm.getCategory(col) === 'text'">
+    <label>{{col.title}}</label>
+
+    <input ng-if="col.type === 'text'" name="{{col.data}}" ng-model="item[col.data]" type="text" aria-label="input" ng-readonly="isReadOnly">
+
+    <input ng-if="col.type === 'numeric'" name="{{col.data}}" ng-model="item[col.data]" type="text" ng-readonly="isReadOnly || col.formula" ng-keypress="vm.isNumberKey($event, item[col.data]);" aria-label="input">
+
+    <textarea ng-if="col.type === 'multilineText'" name="{{col.data}}" ng-model="item[col.data]" aria-label="input" columns="1" max-rows="4"></textarea>
+
+</md-input-container>
+
+<div ng-if="col.type === 'multiCheck'" flex class="p-5">
+    <label class="mr-5">{{col.title}}</label>
+    <div layout='row' layout-align="start center" layout-wrap>
+        <md-checkbox style="margin: 10px 0 0 10px;" ng-repeat="chkItem in col.items" ng-checked="vm.multyCheckExists(chkItem, item, col)" ng-click="vm.multyCheckToggle(chkItem, item, col)">
+            {{ chkItem }}
+        </md-checkbox>
+    </div>
+</div>
+
+<div ng-if="col.type === 'radio'" flex class="p-5">
+    <label class="mr-5">{{col.title}}</label>
+
+    <md-radio-group ng-model="item[col.data]" layout='row' layout-align="start center" layout-wrap>
+        <md-radio-button value="{{chkItem}}" style="margin: 10px 0 0 10px;" ng-repeat="chkItem in col.items">
+            {{chkItem}}
+        </md-radio-button>
+    </md-radio-group>
+</div>
+
+
+<md-checkbox ng-if="vm.getCategory(col) === 'checkbox'" flex class="p-15" name="checkbox" style="margin: 10px 0 0 10px;" ng-model="item[col.data]" aria-label="checkbox">
+    <span>{{col.title}}</span>
+</md-checkbox>
+
+<td-date-time-picker date-time="item[col.data]" ng-if="col.type === 'date'" date-time-text="vm.getDatePickerTitle(col.title)" is-date='true' picker-class="''">
+</td-date-time-picker>
+
+<td-date-time-picker date-time="item[col.data]" ng-if="col.type === 'dateTime'" date-time-text="vm.getDatePickerTitle(col.title)" is-time='true' is-date='true' picker-class="''" no-width="true">
+</td-date-time-picker>
+
+<div layout="column" ng-if="col.type === 'html'">
+    <div>
+        <span class="md-subhead">{{col.title}} :</span>
+        <md-icon ng-click="vm.updateColumnMode(col)" ng-if="!col.editMode" md-font-icon="icon-pencil" class="icon">
+        </md-icon>
+        <md-icon ng-click="vm.updateColumnMode(col)" ng-if="col.editMode" md-font-icon="icon-close" class="icon">
+        </md-icon>
+    </div>
+
+    <text-angular ng-if="col.editMode" ta-toolbar="vm.taToolbar" ng-model="item[col.data]">
+
+    </text-angular>
+
+    <span ng-if="!col.editMode" ng-bind-html="item[col.data] | unsafeHtml">
+    </span>
+
+
+</div>
+
+<td-attachments ng-if="col.type === 'attachment'" item-list="item[col.data]" self="true">
+</td-attachments>
+
+<td-image-loader ng-if="col.type === 'image'" type="inform" item-list="item[col.data]" image-title="col.title">
+</td-image-loader>
+
+<div ng-if="col.type === 'select' || col.type === 'multiSelect'">
+    <div class="border-bottom p-15" layout='row' layout-align="space-between center">
+        <span>{{col.title}}</span>
+        <div ng-click="vm.selectItem(col, item)" class="cursor-pointer" style="color: rgb(3,155,229); font-weight: bold;">
+            <u>Select {{col.title}}</u>
+        </div>
+    </div>
+    <div ng-if="vm[col.data]" class="mt-10">
+
+        <div class="border mb-5 p-5 grey-200-bg cursor-pointer" ng-if="col.type==='multiSelect'" ng-repeat="listItem in vm[col.data]" layout="row" layout-align="space-between center">
+
+            <div layout="row" layout-align="start center">
+
+                <div class="ml-5 mr-10" ng-if="vm.getImageColumn(col)">
+                    <img ng-src="{{listItem[vm.getImageColumn(col)]}}" style=" max-height: 100px;" />
+                </div>
+
+
+                <div layout="column" layout-align="start top" class="p-10">
+
+                    <div layout="row" layout-align="start center" layout-wrap>
+                        <div class="mr-25" ng-if="refCol.type !== 'iconPicture'" ng-repeat="refCol in col.refferenceColumns">
+                            <span>{{refCol.label}}:</span>
+                            <span class="ml-5 text-bold"">
+                                           {{listItem[refCol.key]}}</span>
+
+                                       </div>
+                                    </div>
+
+                              </div>
+                          </div>
+                          <div class=" cursor-pointer border" ng-click="vm.removeItem(item, col, listItem)">
+                                <md-icon md-font-icon="icon-close" style="color: red;">
+                                </md-icon>
+                        </div>
+                    </div>
+
+                    <div class="border mb-5 p-5 grey-200-bg cursor-pointer" ng-if="col.type==='select'" layout="row" layout-align="space-between center">
+
+                        <div layout="row" layout-align="start center">
+
+                            <div class="ml-5 mr-10" ng-if="vm.getImageColumn(col)">
+                                <img ng-src="{{vm[col.data][vm.getImageColumn(col)]}}" style=" max-height: 100px;" />
+                            </div>
+
+
+                            <div layout="column" layout-align="start top" class="p-10">
+
+                                <div layout="row" layout-align="start center" layout-wrap>
+                                    <div class="mr-25" ng-if="refCol.type !== 'iconPicture'" ng-repeat="refCol in col.refferenceColumns">
+                                        <span>{{refCol.label}}:</span>
+                                        <span class="ml-5 text-bold"">
+                                           {{vm[col.data][refCol.key]}}</span>
+
+                                       </div>
+                                    </div>
+
+                              </div>
+                          </div>
+                          <div class=" cursor-pointer border" ng-click="vm.removeItem(item, col, listItem)">
+                                            <md-icon md-font-icon="icon-close" style="color: red;">
+                                            </md-icon>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>

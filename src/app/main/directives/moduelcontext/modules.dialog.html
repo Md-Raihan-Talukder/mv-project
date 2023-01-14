@@ -1,0 +1,52 @@
+<md-dialog class="modules-dialog common-dialog" aria-label="Dialog">
+
+    <md-toolbar class="md-accent">
+        <div class="md-toolbar-tools" layout="row" layout-align="space-between center">
+            <span class="title">Select Module</span>
+            <md-button class="md-icon-button" ng-click="vm.closeDialog()">
+                <md-icon md-font-icon="icon-close" aria-label="Close dialog"></md-icon>
+            </md-button>
+        </div>
+    </md-toolbar>
+
+
+
+    <md-dialog-content ms-scroll style="padding-top: 24px;">
+        <div layout="row" layout-wrap layout-align="start start">
+            <div class="widget-group" layout="row" layout-wrap ng-repeat="module in vm.modules">
+                <ms-widget class="buyer-card" flippable="false" layout="column">
+                    <ms-widget-front class="white-bg h-200 w-300">
+                        <div class="border-bottom border-top h-45" layout="row" layout-align="start center">
+                            <div class="mr-15 ml-10">
+                                <md-icon ng-if="module.isDefault" md-font-icon="icon-checkbox-marked-outline" aria-label="checked" class="icon md-accent">
+                                </md-icon>
+                                <md-icon ng-if="!module.isDefault" md-font-icon="icon-checkbox-blank-outline" aria-label="checked" class="icon">
+                                </md-icon>
+                            </div>
+
+                            <div class="buyer-name md-subhead">{{module.title}}</div>
+                        </div>
+
+                        <div class="h-125 p-5" ms-scroll class="content" layout="column" layout-align="start start">
+                            <p>{{module.description}}</p>
+                        </div>
+
+                        <div class="border-top h-35" layout="row" layout-align="space-between center">
+
+                            <div class="md-raised md-button" flex ng-click="vm.makeDefault(module)">
+                                Set As Default
+                            </div>
+                            <div class="md-raised md-button" flex ng-click="vm.openModule(module)">
+                                Open
+                            </div>
+
+                        </div>
+
+                    </ms-widget-front>
+                </ms-widget>
+            </div>
+        </div>
+    </md-dialog-content>
+
+
+</md-dialog>

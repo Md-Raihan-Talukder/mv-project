@@ -1,0 +1,126 @@
+{
+    "data": [
+        {
+            "TECHDISER_ID": "material123",
+            "materialCategoryId": "materialCat1234",
+            "specSummary": {
+                "title": "Shell Fabric 1",
+                "type": "",
+                "technique": "",
+                "description": "Shell Fabric 1 description"
+            },
+            "color": "White",
+            "sizeDef": {
+                "sizeWidth": {
+                    "widthValue": "60",
+                    "sizeUnit": "inch"
+                }
+            }
+        },
+        {
+            "TECHDISER_ID": "material234",
+            "materialCategoryId": "materialCat1234",
+            "specSummary": {
+                "title": "Shell Fabric 2",
+                "description": "Shell Fabric 2 description"
+            },
+            "color": "Navy Blue",
+            "sizeDef": {
+                "sizeWidth": {
+                    "widthValue": "60",
+                    "sizeUnit": "inch"
+                }
+            }
+        },
+        {
+            "TECHDISER_ID": "material345",
+            "materialCategoryId": "materialCat3456",
+            "specSummary": {
+                "title": "Button 1",
+                "description": "Button 1 description"
+            },
+            "color": "White",
+            "sizeDef": {
+                "sizeRadius": {
+                    "widthValue": "12",
+                    "sizeUnit": "mm"
+                }
+            }
+        },
+        {
+            "TECHDISER_ID": "material456",
+            "materialCategoryId": "materialCat3456",
+            "specSummary": {
+                "title": "Button 2",
+                "description": "Button 2 description"
+            },
+            "color": "White",
+            "sizeDef": {
+                "sizeRadius": {
+                    "widthValue": "12",
+                    "sizeUnit": "mm"
+                }
+            }
+        },
+        {
+            "TECHDISER_ID": "material567",
+            "materialCategoryId": "materialCat3456",
+            "specSummary": {
+                "title": "Button 3",
+                "description": "Button 3 description"
+            },
+            "color": "White",
+            "sizeDef": {
+                "sizeRadius": {
+                    "widthValue": "12",
+                    "sizeUnit": "mm"
+                }
+            }
+        },
+        {
+            "TECHDISER_ID": "material678",
+            "materialCategoryId": "materialCat6789",
+            "specSummary": {
+                "title": "Cotrast 1",
+                "description": "Cotrast 1 description"
+            },
+            "color": "White",
+            "sizeDef": {
+                "sizeRadius": {
+                    "widthValue": "12",
+                    "sizeUnit": "mm"
+                }
+            }
+        },
+        {
+            "TECHDISER_ID": "material789",
+            "materialCategoryId": "materialCat6789",
+            "specSummary": {
+                "title": "Cotrast 2",
+                "description": "Cotrast 2 description"
+            },
+            "color": "White",
+            "sizeDef": {
+                "sizeRadius": {
+                    "widthValue": "12",
+                    "sizeUnit": "mm"
+                }
+            }
+        },
+        {
+            "TECHDISER_ID": "material890",
+            "materialCategoryId": "materialCat6789",
+            "specSummary": {
+                "title": "Cotrast 3",
+                "description": "Cotrast 3 description"
+            },
+            "color": "White",
+            "sizeDef": {
+                "sizeRadius": {
+                    "widthValue": "12",
+                    "sizeUnit": "mm"
+                }
+            }
+        }
+    ]
+}

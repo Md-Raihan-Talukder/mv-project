@@ -1,0 +1,537 @@
+<div class="page-layout simple fullwidth pdf-template">
+
+    <div class="header md-accent-bg">
+        <div class="white-fg" layout="column" layout-align="start start">
+            <div layout="row" layout-align="start center">
+                <div layout="row" layout-align="start center" class="column-menu-container mt-5">
+
+                    <div ng-if="viewType === 'detail'" class="ml-20 mr-20" style="font-size: 16px; ">
+                        <span>Layout Type: </span>
+                        <select name="layouttype" ng-model="registerItem.detailTemplate.layoutType" aria-label="layouttype" ng-change="vm.onLayoutTypeChange()">
+                            <option value="flat">Flat</option>
+                            <option value="left-menu">Left Menu</option>
+                            <option value="top-menu">Top Menu</option>
+                            <option value="left-top-menu">Left and Top Menu</option>
+                        </select>
+
+                    </div>
+                    <md-icon md-font-icon="icon-plus-box" ng-if="viewType === 'landing' ||
+	                     	 registerItem.detailTemplate.layoutType==='flat'" ng-click="vm.addNewRow($event);
+	                         vm.preventDefault($event)" class="icon cursor-pointer">
+                        <md-tooltip md-direction="bottom">Add row</md-tooltip>
+                    </md-icon>
+
+
+                </div>
+
+                <div class="template-header-buttons">
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="content md-background-bg" style="min-height: 500px;">
+
+        <div layout="column" layout-align="start start" flex="100" ng-if="viewType === 'landing'">
+
+            <div class="todo-items" ng-sortable="vm.sortableOptions" ng-model="registerItem.landingTemplate.rows" style="width: 100%;">
+
+                <div class="todo-item pt-5 pb-5" ng-repeat="item in registerItem.landingTemplate.rows" layout="row" layout-align="start center" flex>
+
+                    <div class="handle" ng-click="vm.preventDefault($event)">
+                        <md-icon md-font-icon="icon-drag-vertical" class="icon"></md-icon>
+                    </div>
+
+                    <div class="common-tags pl-15" layout="row" layout-align="start center" style="width: 100%;">
+                        <td-form-layout-row row-data="item" register-columns="registerItem.columns">
+                        </td-form-layout-row>
+                    </div>
+
+                    <md-menu>
+                        <md-button class="md-icon-button" aria-label="More">
+                            <md-icon md-font-icon="icon-dots-vertical" ng-click="$mdOpenMenu($event)"></md-icon>
+                        </md-button>
+
+                        <md-menu-content width="3">
+                            <md-menu-item ng-if="!isBody">
+                                <md-button ng-click="vm.addMargin($event, item)" aria-label="Toggle done">
+                                    <span>Add margin</span>
+                                </md-button>
+                            </md-menu-item>
+
+                            <md-menu-item>
+                                <md-button ng-click="vm.addNewColumn(item)" aria-label="av">
+                                    <span>Add vertical segment</span>
+                                </md-button>
+                            </md-menu-item>
+                            <md-menu-item>
+                                <md-button ng-click="vm.removeRow(item)" aria-label="rr">
+                                    <span>Remove row</span>
+                                </md-button>
+                            </md-menu-item>
+                        </md-menu-content>
+                    </md-menu>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div ng-if="viewType === 'detail'">
+            <div ng-if="registerItem.detailTemplate.layoutType==='flat'">
+                <div layout="column" layout-align="start start" flex="100">
+                    <div class="todo-items" ng-sortable="vm.sortableOptions" ng-model="registerItem.detailTemplate.rows" style="width: 100%;">
+
+                        <div class="todo-item pt-5 pb-5" ng-repeat="item in registerItem.detailTemplate.rows 
+							    | filter: vm.flatMenuRowFilter" layout="row" layout-align="start center" flex>
+
+                            <div class="handle" ng-click="vm.preventDefault($event)">
+                                <md-icon md-font-icon="icon-drag-vertical" class="icon"></md-icon>
+                            </div>
+
+                            <div class="common-tags pl-15" layout="row" layout-align="start center" style="width: 100%;">
+                                <td-form-layout-row row-data="item" register-columns="registerItem.columns">
+                                </td-form-layout-row>
+                            </div>
+
+                            <md-menu>
+                                <md-button class="md-icon-button" aria-label="More">
+                                    <md-icon md-font-icon="icon-dots-vertical" ng-click="$mdOpenMenu($event)"></md-icon>
+                                </md-button>
+
+                                <md-menu-content width="3">
+                                    <md-menu-item ng-if="!isBody">
+                                        <md-button ng-click="vm.addMargin($event, item)" aria-label="Toggle done">
+                                            <span>Add margin</span>
+                                        </md-button>
+                                    </md-menu-item>
+
+                                    <md-menu-item>
+                                        <md-button ng-click="vm.addNewColumn(item)" aria-label="av">
+                                            <span>Add vertical segment</span>
+                                        </md-button>
+                                    </md-menu-item>
+                                    <md-menu-item>
+                                        <md-button ng-click="vm.removeRow(item)" aria-label="rr">
+                                            <span>Remove row</span>
+                                        </md-button>
+                                    </md-menu-item>
+                                </md-menu-content>
+                            </md-menu>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div ng-if="registerItem.detailTemplate.layoutType==='left-menu'" layout="row" layout-align="start top">
+                <div layout="column" flex="20" layout-align="start top" class="border">
+
+                    <div class="md-raised md-button md-ink-ripple" aria-label="lm" ng-class="{'layout-menu-selected': lMenu.id === vm.selectedLeftMenu.id }" style="width: 100%; padding: 0; 
+		            		     margin: 5px 0;" ng-repeat="lMenu in registerItem.detailTemplate.leftMenus" ng-click="vm.selectMenu($event, lMenu, 'left-menu')">
+                        <div layout="row" layout-align="space-between center" class="pl-5 pr-5">
+                            <span class="title">{{lMenu.title}}</span>
+                            <span>
+                                <md-icon md-font-icon="icon-pencil" ng-click="vm.addMenu($event, lMenu, 'left-menu'); vm.preventDefault($event)"></md-icon>
+                                <md-icon md-font-icon="icon-close" ng-click="vm.removeMenu($event, lMenu, 'left-menu'); vm.preventDefault($event)"></md-icon>
+                            </span>
+                        </div>
+                    </div>
+
+                    <md-button style="float: right; margin: 10px;" class="md-fab md-accent md-icon-button small-add-button" ng-click="vm.addMenu($event, false, 'left-menu')" aria-label="add left menu">
+                        <md-icon md-font-icon="icon-plus"></md-icon>
+                    </md-button>
+                </div>
+                <div layout="column" layout-align="start top" flex="80" style="width: 100%;" class="border-left">
+
+
+                    <div flex="100" class="mt-10 ml-10 common-title">
+                        <span>Common Header</span>
+                        <md-icon md-font-icon="icon-plus-box" ng-click="vm.addNewHeaderRow($event)" class="icon cursor-pointer">
+                            <md-tooltip md-direction="bottom">Add row</md-tooltip>
+                        </md-icon>
+                    </div>
+
+                    <div class="todo-items" ng-sortable="vm.sortableOptions" ng-model="registerItem.detailTemplate.header" style="width: 100%;">
+
+                        <div class="todo-item pt-5 pb-5" ng-repeat="item in registerItem.detailTemplate.header" layout="row" layout-align="start center" flex>
+
+                            <div class="handle" ng-click="vm.preventDefault($event)">
+                                <md-icon md-font-icon="icon-drag-vertical" class="icon"></md-icon>
+                            </div>
+
+                            <div class="common-tags pl-15" layout="row" layout-align="start center" style="width: 100%;">
+                                <td-form-layout-row row-data="item" register-columns="registerItem.columns">
+                                </td-form-layout-row>
+                            </div>
+
+                            <md-menu>
+                                <md-button class="md-icon-button" aria-label="More">
+                                    <md-icon md-font-icon="icon-dots-vertical" ng-click="$mdOpenMenu($event)"></md-icon>
+                                </md-button>
+
+                                <md-menu-content width="3">
+                                    <md-menu-item ng-if="!isBody">
+                                        <md-button ng-click="vm.addMargin($event, item)" aria-label="Toggle done">
+                                            <span>Add margin</span>
+                                        </md-button>
+                                    </md-menu-item>
+
+                                    <md-menu-item>
+                                        <md-button ng-click="vm.addNewColumn(item)" aria-label="av">
+                                            <span>Add vertical segment</span>
+                                        </md-button>
+                                    </md-menu-item>
+                                    <md-menu-item>
+                                        <md-button ng-click="vm.removeHeaderRow(item)" aria-label="rr">
+                                            <span>Remove row</span>
+                                        </md-button>
+                                    </md-menu-item>
+                                </md-menu-content>
+                            </md-menu>
+
+                        </div>
+                    </div>
+
+
+
+                    <div flex="100" class="mt-10 ml-10 common-title" ng-if="vm.selectedLeftMenu">
+                        <span>Body of {{vm.selectedLeftMenu.title}}</span>
+                        <md-icon md-font-icon="icon-plus-box" ng-click="vm.addNewRow($event)" class="icon cursor-pointer">
+                            <md-tooltip md-direction="bottom">Add row</md-tooltip>
+                        </md-icon>
+                    </div>
+
+                    <div class="todo-items" ng-sortable="vm.sortableOptions" ng-model="registerItem.detailTemplate.rows" style="width: 100%;">
+
+                        <div class="todo-item pt-5 pb-5" ng-repeat="item in registerItem.detailTemplate.rows
+							      | filter: vm.leftMenuRowFilter" layout="row" layout-align="start center" flex>
+
+                            <div class="handle" ng-click="vm.preventDefault($event)">
+                                <md-icon md-font-icon="icon-drag-vertical" class="icon"></md-icon>
+                            </div>
+
+                            <div class="common-tags pl-15" layout="row" layout-align="start center" style="width: 100%;">
+                                <td-form-layout-row row-data="item" register-columns="registerItem.columns">
+                                </td-form-layout-row>
+                            </div>
+
+                            <md-menu>
+                                <md-button class="md-icon-button" aria-label="More">
+                                    <md-icon md-font-icon="icon-dots-vertical" ng-click="$mdOpenMenu($event)"></md-icon>
+                                </md-button>
+
+                                <md-menu-content width="3">
+                                    <md-menu-item ng-if="!isBody">
+                                        <md-button ng-click="vm.addMargin($event, item)" aria-label="Toggle done">
+                                            <span>Add margin</span>
+                                        </md-button>
+                                    </md-menu-item>
+
+                                    <md-menu-item>
+                                        <md-button ng-click="vm.addNewColumn(item)" aria-label="av">
+                                            <span>Add vertical segment</span>
+                                        </md-button>
+                                    </md-menu-item>
+                                    <md-menu-item>
+                                        <md-button ng-click="vm.removeRow(item)" aria-label="rr">
+                                            <span>Remove row</span>
+                                        </md-button>
+                                    </md-menu-item>
+                                </md-menu-content>
+                            </md-menu>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div ng-if="registerItem.detailTemplate.layoutType==='top-menu'" layout="row" layout-align="start top">
+                <div layout="column" layout-align="start top" flex="100" style="width: 100%;" class="border-left">
+
+
+                    <div flex="100" class="mt-10 ml-10 common-title">
+                        <span>Common Header</span>
+                        <md-icon md-font-icon="icon-plus-box" ng-click="vm.addNewHeaderRow($event)" class="icon cursor-pointer">
+                            <md-tooltip md-direction="bottom">Add row</md-tooltip>
+                        </md-icon>
+                    </div>
+
+                    <div class="todo-items" ng-sortable="vm.sortableOptions" ng-model="registerItem.detailTemplate.header" style="width: 100%;">
+
+                        <div class="todo-item pt-5 pb-5" ng-repeat="item in registerItem.detailTemplate.header" layout="row" layout-align="start center" flex>
+
+                            <div class="handle" ng-click="vm.preventDefault($event)">
+                                <md-icon md-font-icon="icon-drag-vertical" class="icon"></md-icon>
+                            </div>
+
+                            <div class="common-tags pl-15" layout="row" layout-align="start center" style="width: 100%;">
+                                <td-form-layout-row row-data="item" register-columns="registerItem.columns">
+                                </td-form-layout-row>
+                            </div>
+
+                            <md-menu>
+                                <md-button class="md-icon-button" aria-label="More">
+                                    <md-icon md-font-icon="icon-dots-vertical" ng-click="$mdOpenMenu($event)"></md-icon>
+                                </md-button>
+
+                                <md-menu-content width="3">
+                                    <md-menu-item ng-if="!isBody">
+                                        <md-button ng-click="vm.addMargin($event, item)" aria-label="Toggle done">
+                                            <span>Add margin</span>
+                                        </md-button>
+                                    </md-menu-item>
+
+                                    <md-menu-item>
+                                        <md-button ng-click="vm.addNewColumn(item)" aria-label="av">
+                                            <span>Add vertical segment</span>
+                                        </md-button>
+                                    </md-menu-item>
+                                    <md-menu-item>
+                                        <md-button ng-click="vm.removeHeaderRow(item)" aria-label="rr">
+                                            <span>Remove row</span>
+                                        </md-button>
+                                    </md-menu-item>
+                                </md-menu-content>
+                            </md-menu>
+
+                        </div>
+                    </div>
+
+                    <div flex="100" class="mt-10 ml-10 common-title" ng-if="registerItem.detailTemplate.header.length">
+                        <span>Top Menu</span>
+                    </div>
+
+                    <div layout="row" layout-align="start center" flex="100" class="border p-15" style="width: 100%;">
+
+
+                        <div class="md-raised md-button md-ink-ripple" aria-label="lm" style="padding: 0; margin: 0 5px;" ng-repeat="tMenu in registerItem.detailTemplate.topMenus" ng-class="{'layout-menu-selected': tMenu.id === vm.selectedTopMenu.id }" ng-click="vm.selectMenu($event, tMenu, 'top-menu')">
+                            <div layout="row" layout-align="space-between center" class="pl-5 pr-5">
+                                <span class="title mr-25">{{tMenu.title}}</span>
+                                <span>
+                                    <md-icon md-font-icon="icon-pencil" ng-click="vm.addMenu($event, tMenu, 'top-menu'); vm.preventDefault($event)"></md-icon>
+                                    <md-icon md-font-icon="icon-close" ng-click="vm.removeMenu($event, tMenu, 'top-menu'); vm.preventDefault($event)"></md-icon>
+                                </span>
+                            </div>
+                        </div>
+
+
+                        <md-button style="float: right; margin: 10px;" class="md-fab md-accent md-icon-button small-add-button" ng-click="vm.addMenu($event, false, 'top-menu')" aria-label="add left menu">
+                            <md-icon md-font-icon="icon-plus"></md-icon>
+                        </md-button>
+                    </div>
+
+
+
+                    <div flex="100" class="mt-10 ml-10 common-title" ng-if="vm.selectedTopMenu">
+                        <span>Body of {{vm.selectedTopMenu.title}}</span>
+                        <md-icon md-font-icon="icon-plus-box" ng-click="vm.addNewRow($event)" class="icon cursor-pointer">
+                            <md-tooltip md-direction="bottom">Add row</md-tooltip>
+                        </md-icon>
+                    </div>
+
+                    <div class="todo-items" ng-sortable="vm.sortableOptions" ng-model="registerItem.detailTemplate.rows" style="width: 100%;">
+
+                        <div class="todo-item pt-5 pb-5" ng-repeat="item in registerItem.detailTemplate.rows
+							      | filter: vm.topMenuRowFilter" layout="row" layout-align="start center" flex>
+
+                            <div class="handle" ng-click="vm.preventDefault($event)">
+                                <md-icon md-font-icon="icon-drag-vertical" class="icon"></md-icon>
+                            </div>
+
+                            <div class="common-tags pl-15" layout="row" layout-align="start center" style="width: 100%;">
+                                <td-form-layout-row row-data="item" register-columns="registerItem.columns">
+                                </td-form-layout-row>
+                            </div>
+
+                            <md-menu>
+                                <md-button class="md-icon-button" aria-label="More">
+                                    <md-icon md-font-icon="icon-dots-vertical" ng-click="$mdOpenMenu($event)"></md-icon>
+                                </md-button>
+
+                                <md-menu-content width="3">
+                                    <md-menu-item ng-if="!isBody">
+                                        <md-button ng-click="vm.addMargin($event, item)" aria-label="Toggle done">
+                                            <span>Add margin</span>
+                                        </md-button>
+                                    </md-menu-item>
+
+                                    <md-menu-item>
+                                        <md-button ng-click="vm.addNewColumn(item)" aria-label="av">
+                                            <span>Add vertical segment</span>
+                                        </md-button>
+                                    </md-menu-item>
+                                    <md-menu-item>
+                                        <md-button ng-click="vm.removeRow(item)" aria-label="rr">
+                                            <span>Remove row</span>
+                                        </md-button>
+                                    </md-menu-item>
+                                </md-menu-content>
+                            </md-menu>
+
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+
+            <div ng-if="registerItem.detailTemplate.layoutType==='left-top-menu'" layout="row" layout-align="start top">
+                <div layout="column" flex="20" layout-align="start top" class="border">
+
+                    <div class="md-raised md-button md-ink-ripple" aria-label="lm" style="width: 100%; padding: 0; margin: 5px 0;" ng-repeat="lMenu in registerItem.detailTemplate.leftMenus" ng-class="{'layout-menu-selected': lMenu.id === vm.selectedLeftMenu.id }" ng-click="vm.selectMenu($event, lMenu, 'left-menu')">
+                        <div layout="row" layout-align="space-between center" class="pl-5 pr-5">
+                            <span class="title">{{lMenu.title}}</span>
+                            <span>
+                                <md-icon md-font-icon="icon-pencil" ng-click="vm.addMenu($event, lMenu, 'left-menu'); vm.preventDefault($event)"></md-icon>
+                                <md-icon md-font-icon="icon-close" ng-click="vm.removeMenu($event, lMenu, 'left-menu'); vm.preventDefault($event)"></md-icon>
+                            </span>
+                        </div>
+                    </div>
+
+                    <md-button style="float: right; margin: 10px;" class="md-fab md-accent md-icon-button small-add-button" ng-click="vm.addMenu($event, false, 'left-menu', true)" aria-label="add left menu">
+                        <md-icon md-font-icon="icon-plus"></md-icon>
+                    </md-button>
+                </div>
+                <div layout="column" layout-align="start top" flex="80" style="width: 100%;" class="border-left">
+
+
+                    <div flex="100" class="mt-10 ml-10 common-title">
+                        <span>Common Header</span>
+                        <md-icon md-font-icon="icon-plus-box" ng-click="vm.addNewHeaderRow($event)" class="icon cursor-pointer">
+                            <md-tooltip md-direction="bottom">Add row</md-tooltip>
+                        </md-icon>
+                    </div>
+
+                    <div class="todo-items" ng-sortable="vm.sortableOptions" ng-model="registerItem.detailTemplate.header" style="width: 100%;">
+
+                        <div class="todo-item pt-5 pb-5" ng-repeat="item in registerItem.detailTemplate.header" layout="row" layout-align="start center" flex>
+
+                            <div class="handle" ng-click="vm.preventDefault($event)">
+                                <md-icon md-font-icon="icon-drag-vertical" class="icon"></md-icon>
+                            </div>
+
+                            <div class="common-tags pl-15" layout="row" layout-align="start center" style="width: 100%;">
+                                <td-form-layout-row row-data="item" register-columns="registerItem.columns">
+                                </td-form-layout-row>
+                            </div>
+
+                            <md-menu>
+                                <md-button class="md-icon-button" aria-label="More">
+                                    <md-icon md-font-icon="icon-dots-vertical" ng-click="$mdOpenMenu($event)"></md-icon>
+                                </md-button>
+
+                                <md-menu-content width="3">
+                                    <md-menu-item ng-if="!isBody">
+                                        <md-button ng-click="vm.addMargin($event, item)" aria-label="Toggle done">
+                                            <span>Add margin</span>
+                                        </md-button>
+                                    </md-menu-item>
+
+                                    <md-menu-item>
+                                        <md-button ng-click="vm.addNewColumn(item)" aria-label="av">
+                                            <span>Add vertical segment</span>
+                                        </md-button>
+                                    </md-menu-item>
+                                    <md-menu-item>
+                                        <md-button ng-click="vm.removeHeaderRow(item)" aria-label="rr">
+                                            <span>Remove row</span>
+                                        </md-button>
+                                    </md-menu-item>
+                                </md-menu-content>
+                            </md-menu>
+
+                        </div>
+                    </div>
+
+                    <div flex="100" class="mt-10 ml-10 common-title" ng-if="registerItem.detailTemplate.header.length">
+                        <span>Top Menu</span>
+                    </div>
+
+                    <div layout="row" layout-align="start center" flex="100" class="border p-15" style="width: 100%;">
+
+
+                        <div class="md-raised md-button md-ink-ripple" aria-label="lm" style="padding: 0; margin: 0 5px;" ng-repeat="ltMenu in vm.selectedLeftMenu.topMenus" ng-class="{'layout-menu-selected': ltMenu.id === vm.selectedTopMenu.id }" ng-click="vm.selectMenu($event, ltMenu, 'left-top-menu')">
+                            <div layout="row" layout-align="space-between center" class="pl-5 pr-5">
+                                <span class="title mr-25">{{ltMenu.title}}</span>
+                                <span>
+                                    <md-icon md-font-icon="icon-pencil" ng-click="vm.addMenu($event, ltMenu, 'left-top-menu'); vm.preventDefault($event)"></md-icon>
+                                    <md-icon md-font-icon="icon-close" ng-click="vm.removeMenu($event, ltMenu, 'left-top-menu'); vm.preventDefault($event)"></md-icon>
+                                </span>
+                            </div>
+                        </div>
+
+
+                        <md-button style="float: right; margin: 10px;" class="md-fab md-accent md-icon-button small-add-button" ng-click="vm.addMenu($event, false, 'left-top-menu')" aria-label="add left menu">
+                            <md-icon md-font-icon="icon-plus"></md-icon>
+                        </md-button>
+                    </div>
+
+
+
+                    <div flex="100" class="mt-10 ml-10 common-title" ng-if="vm.selectedTopMenu && vm.selectedLeftMenu">
+                        <span>Body of {{vm.selectedLeftMenu.title}} of
+                            {{vm.selectedTopMenu.title}}</span>
+                        <md-icon md-font-icon="icon-plus-box" ng-click="vm.addNewRow($event)" class="icon cursor-pointer">
+                            <md-tooltip md-direction="bottom">Add row</md-tooltip>
+                        </md-icon>
+                    </div>
+
+                    <div class="todo-items" ng-sortable="vm.sortableOptions" ng-model="registerItem.detailTemplate.rows" style="width: 100%;">
+
+                        <div class="todo-item pt-5 pb-5" ng-repeat="item in registerItem.detailTemplate.rows
+		                         | filter: vm.leftTopMenuRowFilter" layout="row" layout-align="start center" flex>
+
+                            <div class="handle" ng-click="vm.preventDefault($event)">
+                                <md-icon md-font-icon="icon-drag-vertical" class="icon"></md-icon>
+                            </div>
+
+                            <div class="common-tags pl-15" layout="row" layout-align="start center" style="width: 100%;">
+                                <td-form-layout-row row-data="item" register-columns="registerItem.columns">
+                                </td-form-layout-row>
+                            </div>
+
+                            <md-menu>
+                                <md-button class="md-icon-button" aria-label="More">
+                                    <md-icon md-font-icon="icon-dots-vertical" ng-click="$mdOpenMenu($event)"></md-icon>
+                                </md-button>
+
+                                <md-menu-content width="3">
+                                    <md-menu-item ng-if="!isBody">
+                                        <md-button ng-click="vm.addMargin($event, item)" aria-label="Toggle done">
+                                            <span>Add margin</span>
+                                        </md-button>
+                                    </md-menu-item>
+
+                                    <md-menu-item>
+                                        <md-button ng-click="vm.addNewColumn(item)" aria-label="av">
+                                            <span>Add vertical segment</span>
+                                        </md-button>
+                                    </md-menu-item>
+                                    <md-menu-item>
+                                        <md-button ng-click="vm.removeRow(item)" aria-label="rr">
+                                            <span>Remove row</span>
+                                        </md-button>
+                                    </md-menu-item>
+                                </md-menu-content>
+                            </md-menu>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+</div>

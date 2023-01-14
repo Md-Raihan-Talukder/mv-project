@@ -1,0 +1,18 @@
+.msb-quick-filters {
+  padding: 0;
+
+  &.navigation-simple {
+    .selected {
+      background-color: #bbdefb !important;
+      /*color: white;*/
+    }
+    .item {
+      line-height: 30px;
+      max-height: 30px;
+      height: 30px;
+    }
+    .subheader {
+      margin-top: 0;
+    }
+  }
+}

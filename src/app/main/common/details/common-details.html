@@ -1,0 +1,72 @@
+<div id="common-detail" class="page-layout simple right-sidenav" layout="row" ng-if="vm.isReady">
+
+    <md-sidenav ng-if="vm.menuList.length>0" class="left-sidenav" md-component-id="left-sidenav" md-is-locked-open="$mdMedia('gt-md') && vm.leftNavPined " ng-include="'app/main/common/details/sidenavs/left/left-sidenav.html'" ms-sidenav-helper style="overflow:hidden;">
+    </md-sidenav>
+
+
+    <div class="center" layout="column" flex>
+
+        <div class="header md-accent-bg">
+
+            <div class="header-content" layout="column" layout-align="space-between">
+
+                <div class="toolbar" layout="row" layout-align="space-between">
+
+                    <div layout="row" layout-align="start center" flex>
+                        <md-button class="md-icon-button main-sidenav-toggle" ng-click="vm.toggleSidenav('left-sidenav')" aria-label="Toggle Main Sidenav">
+                            <md-icon md-font-icon="icon-backburger" class="icon" ng-class="{'transform-180' : !vm.leftNavPined}"></md-icon>
+                        </md-button>
+
+                        <div class="header-title " layout="row" layout-align="start center" flex>
+
+                            <div class="mr-25" layout="row" layout-align="start center" ng-if="vm.headerTitle">
+
+                                <span>{{vm.headerTitle}}</span>
+
+                            </div>
+
+                            <div class="mr-25" layout="row" layout-align="start center" ng-if="keyVal.show" ng-repeat="keyVal in vm.keyValues">
+                                <span>{{keyVal.label}}</span>
+                                <span ng-if="keyVal.label.length">:</span>
+                                <span class="ml-5 " ng-class="{'font-weight-900': keyVal.label.length}">{{keyVal.value}}</span>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                    <div class="right-side" layout="row">
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+        <md-content class="content" flex style="overflow:hidden;">
+            <div style="min-height: 100%; height:100%;
+                   overflow:hidden;" ui-view="commonDetailContent">
+            </div>
+
+        </md-content>
+
+
+    </div>
+
+    <!--  <md-sidenav class="right-sidenav md-sidenav-right" md-component-id="right-sidenav"
+                ng-include="'app/main/landing/sidenavs/right/right-sidenav.html'"
+                ms-scroll ms-sidenav-helper>
+    </md-sidenav>  -->
+
+
+</div>
+
+<div style="width:100%; min-height:600px;" layout="column" layout-align="center center" ng-if="!vm.isReady">
+    <md-progress-circular class="md-accent" md-mode="indeterminate" md-diameter="32">
+    </md-progress-circular>
+</div>

@@ -1,0 +1,32 @@
+{
+    "data": [
+        {
+            "TECHDISER_ID": "MeasurementUnit",
+            "type": "MeasurementUnit",
+            "units": [
+                {
+                    "TECHDISER_ID": "centimeter",
+                    "title": "cm"
+                },
+                {
+                    "TECHDISER_ID": "metre",
+                    "title": "m"
+                },
+                {
+                    "TECHDISER_ID": "inch",
+                    "title": "Inch"
+                }
+            ]
+        },
+        {
+            "TECHDISER_ID": "ConsumptionUnit",
+            "type": "ConsumptionUnit",
+            "units": [
+                {
+                    "TECHDISER_ID": "squrermetre",
+                    "title": "sqrm"
+                }
+            ]
+        }
+    ]
+}

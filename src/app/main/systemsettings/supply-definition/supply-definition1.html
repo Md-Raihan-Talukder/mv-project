@@ -1,0 +1,444 @@
+<div layout="column" id="supply-definition">
+    <div class="content">
+        <div layout="row" flex="100">
+            <div layout="column" flex="25" class=" p-20 br">
+                <span class="md-subhead">Supply Definition</span>
+                <td-tree-view ng-if="vm.supplies" items="vm.supplies" options="vm.categoryTreeOptions" on-add-item="vm.addNewCategory(item, event, callBack)" on-remove-item="vm.deleteCategory(item, event, callBack)" on-select-item="vm.selectCategory(item, event, callBack)">
+                </td-tree-view>
+            </div>
+            <div layout="column" flex="75">
+
+                <div class="md-blue-grey-50-bg pt-10 pb-5 pl-10" ng-if="!vm.isNewCategory  && !vm.isSelectedCategory">
+                    Supply Item
+                </div>
+                <div ng-if="vm.isNewCategory || vm.isSelectedCategory" class="md-blue-grey-50-bg pt-10 pb-5">
+                    <div layout="row" layout-align="start center" class="md-subhead">
+                        <div class="ml-10" flex="60">
+                            <div layout="row">
+
+                                <div class="mr-10">
+                                    <md-input-container>
+                                        <label>Title</label>
+                                        <input ng-model="vm.category.title" autocomplete="off">
+                                    </md-input-container>
+                                </div>
+
+                                <div class="mr-10">
+                                    <md-input-container class="md-block" style="padding: 0; width: 210px;">
+                                        <label>Type</label>
+                                        <md-select aria-label="Type" ng-model="vm.category.typeId">
+                                            <md-option ng-repeat="type in vm.getCategoryTypeOrCategoryTypeGroup()" value="{{type.key}}">
+                                                {{type.value}}
+                                            </md-option>
+                                        </md-select>
+                                    </md-input-container>
+                                </div>
+
+                                <div ng-click="vm.selectTestDialog()">
+                                    TEST
+                                </div>
+
+                            </div>
+
+                            <div layout="row">
+
+                                <div class="mr-15 cursor-pointer" ng-click="vm.selectCuttableCountableThread(vm.category, 'cuttable')">
+                                    <md-icon ng-if="!vm.category.cuttable" md-font-icon="icon-checkbox-blank-outline" class="icon">
+                                    </md-icon>
+                                    <md-icon ng-if="vm.category.cuttable" md-font-icon="icon-checkbox-marked-outline" class="icon md-accent">
+                                    </md-icon>
+                                    Cuttable
+                                </div>
+                                <div class="mr-15 cursor-pointer" ng-click="vm.selectCuttableCountableThread(vm.category, 'countable')">
+                                    <md-icon ng-if="!vm.category.countable" md-font-icon="icon-checkbox-blank-outline" class="icon">
+                                    </md-icon>
+                                    <md-icon ng-if="vm.category.countable" md-font-icon="icon-checkbox-marked-outline" class="icon md-accent">
+                                    </md-icon>
+                                    Countable
+                                </div>
+                                <div class="mr-15 cursor-pointer" ng-click="vm.selectCuttableCountableThread(vm.category, 'thread')">
+                                    <md-icon ng-if="!vm.category.thread" md-font-icon="icon-checkbox-blank-outline" class="icon">
+                                    </md-icon>
+                                    <md-icon ng-if="vm.category.thread" md-font-icon="icon-checkbox-marked-outline" class="icon md-accent">
+                                    </md-icon>
+                                    Thread
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="ml-10" flex="20">
+                            <div class="mr-20 font-size-14" ng-if="vm.showLeafNode">
+                                <a ng-click="vm.selectCostingHeadsDialog(vm.category)" aria-label="Add">
+                                    <u class="mr-5">Costing Heads</u>
+                                    <span class="grey-900-fg" ng-if="vm.category.costingHeadId">{{vm.leafCostingHead.title}}</span>
+                                    <md-tooltip><span>Select Costing Heads</span></md-tooltip>
+                                </a>
+                            </div>
+                        </div>
+                        <div ng-if="vm.isNewCategory || vm.isSelectedCategory">
+                            <md-button ng-click="vm.saveCategory(vm.category, vm.isNewCategory)" class="md-raised md-light-blue-200-bg font-size-12 text-bold h-30 w-60" aria-label="save">
+                                <span ng-if="vm.addCategory">Add</span><span ng-if="vm.updateCategory">Update</span>
+                            </md-button>
+                        </div>
+                    </div>
+                </div>
+                <md-divider></md-divider>
+                <div layout="row">
+                    <div flex="20" class="side-menu">
+                        <div layout="row" layout-align="start center" flex class="font-size-16 section-head">
+                            <span flex>Type</span>
+                            <div ng-if="vm.isSelectedCategory" class="p-15">
+                                <a ng-click="vm.isExapndType=true; vm.type={};
+                                    vm.isNewType=true; vm.updateType=false">
+                                    <u>New</u>
+                                    <md-tooltip>
+                                        <span>New Type</span>
+                                    </md-tooltip>
+                                </a>
+                            </div>
+                        </div>
+                        <md-divider></md-divider>
+
+                        <div class="p-10" ng-if="vm.isExapndType">
+                            <ms-widget flippable="false" layout="column" class="test-card">
+                                <ms-widget-front class="white-bg p-5">
+                                    <div layout="row" layout-align="end center" flex>
+                                        <md-icon ng-click="vm.isExapndType=false" md-font-icon="icon-cancel" class="icon red-500-fg s14" style="position:relative; left:67px; top:-2px">
+                                        </md-icon>
+                                    </div>
+                                    <!-- <msb-form column-defs="vm.supplyDefTypeColumns"
+                                        object-property="vm.type">
+
+                                    </msb-form> -->
+
+                                    <form name="categoryForm" novalidate>
+                                        <div flex class="description">
+                                            <md-input-container class="md-block">
+                                                <label>
+                                                    <span>Title</span>
+                                                </label>
+                                                <input class="md-subhead" name="title" ng-model="vm.type.title" required autocomplete="off">
+                                                <div ng-messages="categoryForm.title.$error" role="alert">
+                                                    <div ng-message="required">
+                                                        <span>Title is required</span>
+                                                    </div>
+                                                </div>
+                                            </md-input-container>
+                                            <md-input-container class="md-block">
+                                                <label>
+                                                    <span>Category Description</span>
+                                                </label>
+                                                <input class="md-subhead" name="description" ng-model="vm.type.description" autocomplete="off">
+                                                <!-- <div ng-messages="categoryForm.description.$error" role="alert">
+                                                        <div ng-message="required">
+                                                            <span>Description is required</span>
+                                                        </div>
+                                                    </div> -->
+                                            </md-input-container>
+
+                                            <md-input-container class="md-block">
+                                                <label>
+                                                    <span>Category Wastage</span>
+                                                </label>
+                                                <input class="md-subhead" name="wastage" ng-model="vm.type.wastage" required autocomplete="off">
+                                                <div ng-messages="categoryForm.wastage.$error" role="alert">
+                                                    <div ng-message="required">
+                                                        <span>Wastage is required</span>
+                                                    </div>
+                                                </div>
+                                            </md-input-container>
+                                            <div layout="column" class="pl-5 box-shadow mt-5 mb-5 ml-5 h-130 w-180 font-size-12" flex="100">
+                                                <div>
+                                                    <td-image-loader type="inform" selection-type="'inform'" image-object="" max-size="5" item-list="instruction.image" on-upload="vm.onUpload(info)">
+                                                    </td-image-loader>
+                                                </div>
+                                                <md-content class="content" ms-scroll>
+                                                    <p align="center" ng-if="!instruction.image[0]">
+                                                        <img src="http://www.logimine.com/wp-content/themes/linstar/assets/images/default.jpg" class="h-70 w-60" style="border-radius:0px;">
+                                                    </p>
+                                                    <div ng-repeat="img in instruction.image">
+                                                        <p align="center">
+                                                            <img class="h-70 w-60" style="border-radius:0px;" ng-src="{{img.data}}" />
+                                                        </p>
+                                                    </div>
+                                                </md-content>
+                                            </div>
+
+                                        </div>
+                                    </form>
+
+                                    <!--  -->
+
+
+                                    <div layout="row" layout-align="end center" flex>
+                                        <div ng-if="vm.isExapndType">
+                                            <md-button ng-click="vm.saveType(vm.category, vm.type, vm.isNewType); vm.type={}" class="md-raised md-light-blue-200-bg font-size-10 text-bold h-25 w-60" style="line-height: 0px" aria-label="save">
+                                                <span ng-if="vm.isNewType">Add</span><span ng-if="vm.updateType">Update</span>
+                                            </md-button>
+                                        </div>
+                                    </div>
+                                </ms-widget-front>
+                            </ms-widget>
+                        </div>
+                        <div layout="column" flex class="p-10">
+                            <div ng-if="vm.category.types.length > 0" class="widget-group mt-15" layout="row" layout-align="start center" flex="100" layout-wrap>
+                                <ms-widget ng-repeat="type in vm.category.types" ng-click="vm.selectType(type)" ng-class="{'selected':vm.selectedType === type}" flippable="false" layout="column" class="test-card">
+                                    <ms-widget-front class="white-bg p-5 h-auto w-155">
+                                        <div layout="row" flex="100">
+                                            <div layout="column" flex="90">
+                                                <div class="line-height-small">
+                                                    <label>{{type.title}}</label>
+                                                    <div class="line-height-small">{{type.description}}</div>
+                                                    <div class="line-height-small">{{type.wastage}}</div>
+                                                </div>
+                                            </div>
+                                            <div ng-if="vm.selectedType.TECHDISER_ID === type.TECHDISER_ID" flex="10" layout="column" layout-align="center end">
+                                                <md-icon ng-click="vm.deleteType(vm.category, type)" md-font-icon="icon-cancel" class="icon red-500-fg s14" style="position:relative; left:3px; top:0px">
+                                                </md-icon>
+                                                <md-icon ng-click="vm.isExapndType=true" md-font-icon="icon-pencil" class="icon md-accent s14" style="position:relative; left:3px; top:5px">
+                                                </md-icon>
+                                                <div flex></div>
+                                            </div>
+                                        </div>
+                                    </ms-widget-front>
+                                </ms-widget>
+                            </div>
+                        </div>
+                    </div>
+                    <div flex="15" class="side-menu">
+                        <div layout="row" layout-align="start center" flex class="font-size-16 section-head">
+                            <span flex>Spec Sheet</span>
+                            <div ng-if="vm.isSelectedCategory" class="p-15">
+                                <a ng-click="vm.isExapndDataSheet=true; vm.dataSheet={}; vm.isNewDataSheet=true; vm.updateDataSheet=false">
+                                    <u>New</u>
+                                    <md-tooltip>
+                                        <span>New Spec Sheet</span>
+                                    </md-tooltip>
+                                </a>
+                            </div>
+                        </div>
+                        <md-divider></md-divider>
+                        <div class="p-10" ng-if="vm.isExapndDataSheet">
+                            <ms-widget flippable="false" layout="column" class="test-card">
+                                <ms-widget-front class="white-bg p-5">
+                                    <div layout="row" layout-align="end center" flex>
+                                        <md-icon ng-click="vm.isExapndDataSheet=false" md-font-icon="icon-cancel" class="icon red-500-fg s14" style="position:relative; left:45px; top:-2px">
+                                        </md-icon>
+                                    </div>
+                                    <msb-form column-defs="vm.supplyDefCatDataSheetColumns" object-property="vm.dataSheet">
+
+                                    </msb-form>
+                                    <div layout="row" layout-align="end center" flex>
+                                        <div ng-if="vm.isExapndDataSheet">
+                                            <md-button ng-click="vm.saveDataSheet(vm.category, vm.dataSheet, vm.isNewDataSheet); vm.dataSheet={}" class="md-raised md-light-blue-200-bg font-size-10 text-bold h-25 w-60" style="line-height: 0px" aria-label="save">
+                                                <span ng-if="vm.isNewDataSheet">Add</span><span ng-if="vm.updateDataSheet">Update</span>
+                                            </md-button>
+                                        </div>
+                                    </div>
+                                </ms-widget-front>
+                            </ms-widget>
+                        </div>
+                        <div layout="column" flex class="p-10">
+                            <div class="widget-group mt-15" layout="row" layout-align="start center" flex="100" layout-wrap>
+                                <ms-widget ng-repeat="dataSheet in vm.category.dataSheet" ng-click="vm.selectDataSheet(dataSheet)" ng-class="{'selected':vm.selectedDataSheet === dataSheet}" flippable="false" layout="column" class="test-card">
+                                    <ms-widget-front class="white-bg p-5 h-auto w-110">
+                                        <div layout="row" flex="100">
+                                            <div layout="column" flex="90">
+                                                <div class="line-height-small">{{dataSheet}}</div>
+                                            </div>
+                                            <div ng-if="vm.selectedDataSheet === dataSheet" flex="10" layout="column" layout-align="center end">
+                                                <md-icon ng-click="vm.deleteDataSheet(vm.category, dataSheet)" md-font-icon="icon-cancel" class="icon red-500-fg s14" style="position:relative; left:0px; top:0px">
+                                                </md-icon>
+                                                <md-icon ng-click="vm.isExapndDataSheet=true" md-font-icon="icon-pencil" class="icon md-accent s14" style="position:relative; left:0px; top:5px">
+                                                </md-icon>
+                                                <div flex></div>
+                                            </div>
+                                        </div>
+                                    </ms-widget-front>
+                                </ms-widget>
+                            </div>
+                        </div>
+                    </div>
+                    <div flex="15" class="side-menu">
+                        <div layout="row" layout-align="start center" flex class="font-size-16 section-head">
+                            <span flex>Position</span>
+                            <div ng-if="vm.isSelectedCategory" class="p-15">
+                                <a ng-click="vm.isExapndPositionItem=true; vm.positionItem={}; vm.isNewPositionItem=true; vm.updatePositionItem=false">
+                                    <u>New</u>
+                                    <md-tooltip>
+                                        <span>New Position</span>
+                                    </md-tooltip>
+                                </a>
+                            </div>
+                        </div>
+                        <md-divider></md-divider>
+                        <div class="p-10" ng-if="vm.isExapndPositionItem">
+                            <ms-widget flippable="false" layout="column" class="test-card">
+                                <ms-widget-front class="white-bg p-5">
+                                    <div layout="row" layout-align="end center" flex>
+                                        <md-icon ng-click="vm.isExapndPositionItem=false" md-font-icon="icon-cancel" class="icon red-500-fg s14" style="position:relative; left:45px; top:-2px">
+                                        </md-icon>
+                                    </div>
+                                    <msb-form column-defs="vm.supplyDefCatPositionColumns" object-property="vm.positionItem">
+
+                                    </msb-form>
+                                    <div layout="row" layout-align="end center" flex>
+                                        <div ng-if="vm.isExapndPositionItem">
+                                            <md-button ng-click="vm.savePositionItem(vm.category, vm.positionItem, vm.isNewPositionItem); vm.positionItem={}" class="md-raised md-light-blue-200-bg font-size-10 text-bold h-25 w-60" style="line-height: 0px" aria-label="save">
+                                                <span ng-if="vm.isNewPositionItem">Add</span><span ng-if="vm.updatePositionItem">Update</span>
+                                            </md-button>
+                                        </div>
+                                    </div>
+                                </ms-widget-front>
+                            </ms-widget>
+                        </div>
+                        <div layout="column" flex class="p-10">
+                            <div class="widget-group mt-15" layout="row" layout-align="start center" flex="100" layout-wrap>
+                                <ms-widget ng-repeat="positionItem in vm.category.positions" ng-click="vm.selectPositionItem(positionItem)" ng-class="{'selected':vm.selectedPositionItem === positionItem}" flippable="false" layout="column" class="test-card">
+                                    <ms-widget-front class="white-bg p-5 h-auto w-110">
+                                        <div layout="row" flex="100">
+                                            <div layout="column" flex="90">
+                                                <div class="line-height-small">{{positionItem.title}}</div>
+                                            </div>
+                                            <div ng-if="vm.selectedPositionItem === positionItem" flex="10" layout="column" layout-align="center end">
+                                                <md-icon ng-click="vm.deletePositionItem(vm.category, positionItem)" md-font-icon="icon-cancel" class="icon red-500-fg s14" style="position:relative; left:0px; top:0px">
+                                                </md-icon>
+                                                <md-icon ng-click="vm.isExapndPositionItem=true" md-font-icon="icon-pencil" class="icon md-accent s14" style="position:relative; left:0px; top:5px">
+                                                </md-icon>
+                                                <div flex></div>
+                                            </div>
+                                        </div>
+                                    </ms-widget-front>
+                                </ms-widget>
+                            </div>
+                        </div>
+                    </div>
+                    <div flex class="side-menu">
+                        <div layout="row" layout-align="start center" flex class="font-size-16 section-head">
+                            <span flex>Test</span>
+                            <div ng-if="vm.isSelectedCategory" class="p-15">
+                                <a ng-click="vm.isExapndTestItem=true; vm.testItem={}; vm.isNewTestItem=true; vm.updateTestItem=false">
+                                    <u>New</u>
+                                    <md-tooltip>
+                                        <span>New Test Item</span>
+                                    </md-tooltip>
+                                </a>
+                            </div>
+                        </div>
+                        <md-divider></md-divider>
+                        <div class="p-10" ng-if="vm.isExapndTestItem">
+                            <ms-widget flippable="false" layout="column" class="test-card">
+                                <ms-widget-front class="white-bg p-5">
+                                    <div layout="row" layout-align="end center" flex>
+                                        <md-icon ng-click="vm.isExapndTestItem=false" md-font-icon="icon-cancel" class="icon red-500-fg s14" style="position:relative; left:90px; top:-3px">
+                                        </md-icon>
+                                    </div>
+                                    <msb-form column-defs="vm.supplyDefCatTestColumns" object-property="vm.testItem">
+
+                                    </msb-form>
+                                    <div layout="row" layout-align="end center" flex>
+                                        <div ng-if="vm.isExapndTestItem">
+                                            <md-button ng-click="vm.saveTestItem(vm.category, vm.testItem, vm.isNewTestItem); vm.testItem={}" class="md-raised md-light-blue-200-bg font-size-10 text-bold h-25 w-60" style="line-height: 0px" aria-label="save">
+                                                <span ng-if="vm.isNewTestItem">Add</span><span ng-if="vm.updateTestItem">Update</span>
+                                            </md-button>
+                                        </div>
+                                    </div>
+                                </ms-widget-front>
+                            </ms-widget>
+                        </div>
+                        <div layout="column" flex class="p-10">
+                            <div class="widget-group mt-15" layout="row" layout-align="start center" flex="100" layout-wrap>
+                                <ms-widget ng-repeat="testItem in vm.category.tests" ng-click="vm.selectTestItem(testItem)" ng-class="{'selected':vm.selectedTestItem === testItem}" flippable="false" layout="column" class="test-card">
+                                    <ms-widget-front class="white-bg p-5 h-auto w-200">
+                                        <div layout="row" flex="100">
+                                            <div layout="column" flex="90">
+                                                <div class="line-height-small">
+                                                    <label>{{testItem.title}}</label>
+                                                </div>
+                                                <div>
+                                                    <label>Range: {{testItem.minRange}} - {{testItem.maxRange}}</label>
+                                                </div>
+                                                <div class="line-height-small">{{testItem.description}}</div>
+                                                <div ng-init="typeList = vm.getTypeNameForTestItem(vm.category, testItem)" layout="row">
+                                                    <div ng-repeat="typeTitle in typeList" class="label-chip line-height-small">{{typeTitle}}</div>
+                                                </div>
+                                            </div>
+
+                                            <div ng-if="vm.selectedTestItem.TECHDISER_ID === testItem.TECHDISER_ID" flex="10" layout="column" layout-align="center end">
+                                                <md-icon ng-click="vm.deleteTestItem(vm.category, testItem)" md-font-icon="icon-cancel" class="icon red-500-fg s14" style="position:relative; left:3px; top:0px">
+                                                </md-icon>
+                                                <md-icon ng-click="vm.isExapndTestItem=true" md-font-icon="icon-pencil" class="icon md-accent s14" style="position:relative; left:3px; top:5px">
+                                                </md-icon>
+                                                <div flex></div>
+                                            </div>
+                                        </div>
+                                    </ms-widget-front>
+                                </ms-widget>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div flex class="side-menu">
+                        <div layout="row" layout-align="start center" flex class="font-size-16 section-head">
+                            <span flex>Defect Definition</span>
+                            <div ng-if="vm.isSelectedCategory" class="p-15">
+                                <a ng-click="vm.isExapndDefectItem=true; vm.defectItem={};
+                                    vm.isNewDefectItem=true; vm.updateDefectItem=false">
+                                    <u>New</u>
+                                    <md-tooltip>
+                                        <span>New Defect item</span>
+                                    </md-tooltip>
+                                </a>
+                            </div>
+                        </div>
+                        <md-divider></md-divider>
+                        <div class="p-10" ng-if="vm.isExapndDefectItem">
+                            <ms-widget flippable="false" layout="column" class="test-card">
+                                <ms-widget-front class="white-bg p-5">
+                                    <div layout="row" layout-align="end center" flex>
+                                        <md-icon ng-click="vm.isExapndDefectItem=false" md-font-icon="icon-cancel" class="icon red-500-fg s14" style="position:relative; left:90px; top:-3px">
+                                        </md-icon>
+                                    </div>
+                                    <msb-form column-defs="vm.supplyDefCatDefectColumns" object-property="vm.defectItem">
+
+                                    </msb-form>
+                                    <div layout="row" layout-align="end center" flex>
+                                        <div ng-if="vm.isExapndDefectItem">
+                                            <md-button ng-click="vm.saveDefectItem(vm.category, vm.defectItem, vm.isNewDefectItem); vm.defectItem={}" class="md-raised md-light-blue-200-bg font-size-10 text-bold h-25 w-60" style="line-height: 0px" aria-label="save">
+                                                <span ng-if="vm.isNewDefectItem">Add</span><span ng-if="vm.updateDefectItem">Update</span>
+                                            </md-button>
+                                        </div>
+                                    </div>
+                                </ms-widget-front>
+                            </ms-widget>
+                        </div>
+                        <div layout="column" flex class="p-10">
+                            <div class="widget-group mt-15" layout="row" layout-align="start center" flex="100" layout-wrap>
+                                <ms-widget ng-repeat="defectItem in vm.category.defectDef" ng-click="vm.selectDefectItem(defectItem)" ng-class="{'selected':vm.selectedDefectItem === defectItem}" flippable="false" layout="column" class="test-card">
+                                    <ms-widget-front class="white-bg p-5 h-auto w-200">
+                                        <div layout="row" flex="100">
+                                            <div layout="column" flex="90">
+                                                <label>{{defectItem.title}}</label>
+                                                <div class="line-height-small">{{defectItem.description}}</div>
+                                                <div ng-init="typeList = vm.getTypeNameForDefectItem(vm.category, defectItem)" layout="row">
+                                                    <div ng-repeat="typeTitle in typeList" class="label-chip line-height-small">{{typeTitle}}</div>
+                                                </div>
+                                            </div>
+                                            <div ng-if="vm.selectedDefectItem.TECHDISER_ID === defectItem.TECHDISER_ID" flex="10" layout="column" layout-align="center end">
+                                                <md-icon ng-click="vm.deleteDefectItem(vm.category, defectItem)" md-font-icon="icon-cancel" class="icon red-500-fg s14" style="position:relative; left:3px; top:0px">
+                                                </md-icon>
+                                                <md-icon ng-click="vm.isExapndDefectItem=true" md-font-icon="icon-pencil" class="icon md-accent s14" style="position:relative; left:3px; top:5px">
+                                                </md-icon>
+                                                <div flex></div>
+                                            </div>
+                                        </div>
+                                    </ms-widget-front>
+                                </ms-widget>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+{
+    "data": [
+        {
+            "TECHDISER_ID": "ratingissuetype1",
+            "TECHDISER_SERIAL_NO": 1,
+            "title": "Experience",
+            "code": "EXP7",
+            "deleted": false
+        },
+        {
+            "TECHDISER_ID": "ratingissuetype2",
+            "TECHDISER_SERIAL_NO": 2,
+            "title": "Payment",
+            "code": "P7",
+            "deleted": false
+        },
+        {
+            "TECHDISER_ID": "ratingissuetype3",
+            "TECHDISER_SERIAL_NO": 3,
+            "title": "Time",
+            "code": "T7",
+            "deleted": false
+        }
+    ]
+}

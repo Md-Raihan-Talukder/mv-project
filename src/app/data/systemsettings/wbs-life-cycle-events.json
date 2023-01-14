@@ -1,0 +1,68 @@
+{
+    "data": [
+        {
+            "TECHDISER_ID": "WbsLifeCycleEnent1",
+            "TECHDISER_SERIAL_NO": 1,
+            "configTitle": "shipmentStarts",
+            "type": "material",
+            "title": "Shipment Starts",
+            "date": ""
+        },
+        {
+            "TECHDISER_ID": "WbsLifeCycleEnent2",
+            "TECHDISER_SERIAL_NO": 2,
+            "configTitle": "shipmentEnds",
+            "type": "material",
+            "title": "Shipment Ends",
+            "date": ""
+        },
+        {
+            "TECHDISER_ID": "WbsLifeCycleEnent3",
+            "TECHDISER_SERIAL_NO": 3,
+            "configTitle": "productionStarts",
+            "type": "material",
+            "title": "Production Starts",
+            "date": ""
+        },
+        {
+            "TECHDISER_ID": "WbsLifeCycleEnent4",
+            "TECHDISER_SERIAL_NO": 4,
+            "configTitle": "productionEnds",
+            "type": "material",
+            "title": "Production Ends",
+            "date": ""
+        },
+        {
+            "TECHDISER_ID": "WbsLifeCycleEnent5",
+            "TECHDISER_SERIAL_NO": 5,
+            "configTitle": "xFactDate",
+            "type": "material",
+            "title": "Material X-Factory",
+            "date": ""
+        },
+        {
+            "TECHDISER_ID": "WbsLifeCycleEnent6",
+            "TECHDISER_SERIAL_NO": 6,
+            "configTitle": "paymentConfirmationDate",
+            "type": "material",
+            "title": "Payment Confirmation Date",
+            "date": ""
+        },
+        {
+            "TECHDISER_ID": "WbsLifeCycleEnent7",
+            "TECHDISER_SERIAL_NO": 7,
+            "configTitle": "orderConfirmationDate",
+            "type": "material",
+            "title": "Order Confirmation Date",
+            "date": ""
+        },
+        {
+            "TECHDISER_ID": "WbsLifeCycleEnent8",
+            "TECHDISER_SERIAL_NO": 8,
+            "configTitle": "bookingDate",
+            "type": "material",
+            "title": "Booking Date",
+            "date": ""
+        }
+    ]
+}

@@ -1,0 +1,70 @@
+<div id="login-v2" layout="row" layout-align="start">
+    <div id="login-v2-intro" flex hide show-gt-sm>
+        <div class="logo md-accent-bg">
+            <span>TD</span>
+        </div>
+        <div class="title">
+            Welcome to TechDiser!
+        </div>
+        <div class="description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ullamcorper nisl erat,
+            vel convallis elit fermentum pellentesque. Sed mollis velit facilisis facilisis viverra.
+        </div>
+    </div>
+
+    <div id="login-v2-form-wrapper" class="flex-scrollable md-whiteframe-8dp" ms-scroll>
+        <div id="login-v2-form">
+            <div class="logo md-accent-bg" hide-gt-sm>
+                <span>TD</span>
+            </div>
+
+            <div class="title">Log in to your account</div>
+            <div class="description">Sed mollis velit facilisis facilisis viverra</div>
+
+            <form name="loginForm" novalidate>
+                <md-input-container class="md-block" md-no-float>
+                    <label>Email or Mobile Number</label>
+                    <input name="email" ng-model="vm.loginInfo.emailOrMobile" required>
+                    <div ng-messages="loginForm.email.$error" role="alert" multiple>
+                        <div ng-message="required">
+                            <span>Email or Mobile Number field is required</span>
+                        </div>
+                        <!-- <div ng-message="pattern">
+                            <span>Email must be a valid e-mail address</span>
+                        </div> -->
+                    </div>
+                </md-input-container>
+
+                <md-input-container class="md-block" md-no-float>
+                    <label>Password</label>
+                    <input type="password" name="password" ng-model="vm.loginInfo.password" required>
+                    <div ng-messages="loginForm.password.$error" role="alert">
+                        <div ng-message="required">
+                            <span>Password field is required</span>
+                        </div>
+                    </div>
+                </md-input-container>
+
+                <div class="remember-forgot-password" layout="row" layout-sm="column" layout-align="space-between center">
+                    <md-checkbox class="remember-me" ng-model="data.cb1" aria-label="Remember Me">
+                        <span>Remember Me</span>
+                    </md-checkbox>
+
+                    <a ui-sref="app.pages_auth_forgot-password" class="forgot-password md-accent-color">Forgot Password?</a>
+                </div>
+
+                <md-button class="md-raised md-accent submit-button" aria-label="LOG IN" ng-disabled="loginForm.$invalid || loginForm.$pristine" ng-click="vm.login()">
+                    LOG IN
+                </md-button>
+            </form>
+
+
+
+            <div class="register" layout="row" layout-sm="column" layout-align="center center">
+                <span class="text">Don't have an account?</span>
+                <a class="link" ui-sref="app.pages_auth_register-v2">Create an
+                    account</a>
+            </div>
+        </div>
+    </div>
+</div>
